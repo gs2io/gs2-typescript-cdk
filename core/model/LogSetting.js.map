@@ -1,0 +1,1 @@
+{"version":3,"file":"LogSetting.js","sourceRoot":"","sources":["LogSetting.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;AAEH,MAAqB,UAAU;IAI3B,YACI,kBAA0B;QAE1B,IAAI,CAAC,kBAAkB,GAAG,kBAAkB,CAAC;IACjD,CAAC;IAEM,UAAU;QACb,OAAO;YACH,oBAAoB,EAAE,IAAI,CAAC,kBAAkB;SAChD,CAAC;IACN,CAAC;CACJ;AAfD,6BAeC"}
