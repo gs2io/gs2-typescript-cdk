@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,6 +20,9 @@ import core from "../../core";
 import {GetAttr} from "../../core/func";
 import {CdkResource, Stack} from "../../core/model";
 
+export interface AttachSecurityPolicyOptions {
+}
+
 export default class AttachSecurityPolicy extends CdkResource {
 
     private stack: Stack;
@@ -30,11 +33,14 @@ export default class AttachSecurityPolicy extends CdkResource {
         stack: Stack,
         userName: string,
         securityPolicyId: string,
+        options: AttachSecurityPolicyOptions|null = null,
     ) {
         super("Identifier_AttachSecurityPolicy_" + userName);
         this.stack = stack;
         this.userName = userName;
         this.securityPolicyId = securityPolicyId;
+
+        stack.addResource(this);
     }
 
     public resourceType(): string {
@@ -44,10 +50,10 @@ export default class AttachSecurityPolicy extends CdkResource {
     public properties(): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
         if (this.userName != null) {
-            properties.put("UserName", this.userName);
+            properties["UserName"] = this.userName;
         }
         if (this.securityPolicyId != null) {
-            properties.put("SecurityPolicyId", this.securityPolicyId);
+            properties["SecurityPolicyId"] = this.securityPolicyId;
         }
         return properties;
     }

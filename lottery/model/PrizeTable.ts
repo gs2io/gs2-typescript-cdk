@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,50 +13,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import Prize from "../model/Prize";
-
-import PrizeTableRef from "../ref/PrizeTableRef";
-
-export interface PrizeTableOptions {
-    metadata?: string|null|undefined;
-}
-
+import { AcquireAction } from "../../core/model";
+import Prize from "./Prize";
+import { PrizeTableOptions } from "./options/PrizeTableOptions";
 
 export default class PrizeTable {
-	private readonly name: string;
+    private readonly name: string;
+    private readonly prizes: Prize[];
     private readonly metadata: string|null = null;
-	private readonly prizes: Prize[];
 
     public constructor(
-            name: string,
-            prizes: Prize[],
-            options?: PrizeTableOptions,
+        name: string,
+        prizes: Prize[],
+        options: PrizeTableOptions|null = null,
     ) {
         this.name = name;
-        this.metadata = options?.metadata ?? null;
         this.prizes = prizes;
+        this.metadata = options?.metadata ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.prizes != null) {
-            properties["Prizes"] = this.prizes.map(v => v.properties());
+            properties["prizes"] = this.prizes.map(v => v.properties(
+                ));
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-    ): PrizeTableRef {
-        return new PrizeTableRef(
-            namespaceName,
-            this.name,
-        );
+        return properties;
     }
 }

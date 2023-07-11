@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,7 +15,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CurrentMasterData extends model_1.CdkResource {
     constructor(stack, namespaceName, staminaModels) {
@@ -24,17 +24,26 @@ class CurrentMasterData extends model_1.CdkResource {
         this.staminaModels = staminaModels;
         stack.addResource(this);
     }
+    alternateKeys() {
+        return this.namespaceName;
+    }
     resourceType() {
         return "GS2::Stamina::CurrentStaminaMaster";
     }
     properties() {
-        return {
-            "NamespaceName": this.namespaceName,
-            "Settings": {
-                "version": this.version,
-                "staminaModels": this.staminaModels.map(v => v.properties()),
-            },
-        };
+        let properties = {};
+        let settings = {};
+        settings["version"] = this.version;
+        if (this.staminaModels != null) {
+            settings["staminaModels"] = this.staminaModels.map(v => v.properties());
+        }
+        if (this.namespaceName != null) {
+            properties["NamespaceName"] = this.namespaceName;
+        }
+        if (settings != null) {
+            properties["Settings"] = settings;
+        }
+        return properties;
     }
 }
 exports.default = CurrentMasterData;

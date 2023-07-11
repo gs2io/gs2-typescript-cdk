@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,20 +17,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetCapacityByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, inventoryName, newCapacityValue, userId = '#{userId}') {
+    constructor(namespaceName, inventoryName, newCapacityValue, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (inventoryName != null) {
-            properties["inventoryName"] = inventoryName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (newCapacityValue != null) {
-            properties["newCapacityValue"] = newCapacityValue;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["inventoryName"] = inventoryName;
+        properties["newCapacityValue"] = newCapacityValue;
+        properties["userId"] = userId;
         super("Gs2Inventory:SetCapacityByUserId", properties);
     }
 }

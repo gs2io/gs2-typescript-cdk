@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DistributorModelMaster = exports.Namespace = exports.CurrentMasterData = exports.DistributorModel = exports.DistributeResource = void 0;
+exports.CurrentMasterData = exports.DistributeResource = exports.StampSheetResult = exports.DistributorModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,14 +17,14 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-const DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource"));
-exports.DistributeResource = DistributeResource_1.default;
-const DistributorModel_1 = tslib_1.__importDefault(require("./DistributorModel"));
-exports.DistributorModel = DistributorModel_1.default;
-const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
-exports.CurrentMasterData = CurrentMasterData_1.default;
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-const DistributorModelMaster_1 = tslib_1.__importDefault(require("./DistributorModelMaster"));
-exports.DistributorModelMaster = DistributorModelMaster_1.default;
+const DistributorModel_1 = tslib_1.__importDefault(require("./DistributorModel"));
+exports.DistributorModel = DistributorModel_1.default;
+const StampSheetResult_1 = tslib_1.__importDefault(require("./StampSheetResult"));
+exports.StampSheetResult = StampSheetResult_1.default;
+const DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource"));
+exports.DistributeResource = DistributeResource_1.default;
+const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
+exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

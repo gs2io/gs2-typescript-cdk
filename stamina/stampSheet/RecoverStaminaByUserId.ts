@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,24 +19,18 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 export default class RecoverStaminaByUserId extends AcquireAction {
 
     public constructor(
-            namespaceName: string,
-            staminaName: string,
-            recoverValue: number,
-            userId: string = '#{userId}',
+        namespaceName: string,
+        staminaName: string,
+        recoverValue: number,
+        userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (staminaName != null) {
-            properties["staminaName"] = staminaName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (recoverValue != null) {
-            properties["recoverValue"] = recoverValue;
-        }
+
+        properties["namespaceName"] = namespaceName
+        properties["staminaName"] = staminaName
+        properties["recoverValue"] = recoverValue
+        properties["userId"] = userId
+
         super(
             "Gs2Stamina:RecoverStaminaByUserId",
             properties,

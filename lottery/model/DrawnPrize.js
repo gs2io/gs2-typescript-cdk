@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class DrawnPrize {
-    constructor(prizeId, options) {
+    constructor(prizeId, options = null) {
         var _a;
         this.acquireActions = null;
         this.prizeId = prizeId;
@@ -10,10 +10,10 @@ class DrawnPrize {
     properties() {
         let properties = {};
         if (this.prizeId != null) {
-            properties["PrizeId"] = this.prizeId;
+            properties["prizeId"] = this.prizeId;
         }
         if (this.acquireActions != null) {
-            properties["AcquireActions"] = this.acquireActions.map(v => v.properties());
+            properties["acquireActions"] = this.acquireActions.map(v => v.properties());
         }
         return properties;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,20 +19,16 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 export default class UseByUserId extends ConsumeAction {
 
     public constructor(
-            namespaceName: string,
-            code: string,
-            userId: string = '#{userId}',
+        namespaceName: string,
+        code: string,
+        userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (code != null) {
-            properties["code"] = code;
-        }
+
+        properties["namespaceName"] = namespaceName
+        properties["code"] = code
+        properties["userId"] = userId
+
         super(
             "Gs2SerialKey:UseByUserId",
             properties,

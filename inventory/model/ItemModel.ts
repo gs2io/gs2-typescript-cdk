@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,63 +13,49 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-import ItemModelRef from "../ref/ItemModelRef";
-
-export interface ItemModelOptions {
-    metadata?: string|null|undefined;
-}
-
+import { ItemModelOptions } from "./options/ItemModelOptions";
 
 export default class ItemModel {
-	private readonly name: string;
+    private readonly name: string;
+    private readonly stackingLimit: number;
+    private readonly allowMultipleStacks: boolean;
+    private readonly sortValue: number;
     private readonly metadata: string|null = null;
-	private readonly stackingLimit: number;
-	private readonly allowMultipleStacks: boolean;
-	private readonly sortValue: number;
 
     public constructor(
-            name: string,
-            stackingLimit: number,
-            allowMultipleStacks: boolean,
-            sortValue: number,
-            options?: ItemModelOptions,
+        name: string,
+        stackingLimit: number,
+        allowMultipleStacks: boolean,
+        sortValue: number,
+        options: ItemModelOptions|null = null,
     ) {
         this.name = name;
-        this.metadata = options?.metadata ?? null;
         this.stackingLimit = stackingLimit;
         this.allowMultipleStacks = allowMultipleStacks;
         this.sortValue = sortValue;
+        this.metadata = options?.metadata ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.stackingLimit != null) {
-            properties["StackingLimit"] = this.stackingLimit;
+            properties["stackingLimit"] = this.stackingLimit;
         }
         if (this.allowMultipleStacks != null) {
-            properties["AllowMultipleStacks"] = this.allowMultipleStacks;
+            properties["allowMultipleStacks"] = this.allowMultipleStacks;
         }
         if (this.sortValue != null) {
-            properties["SortValue"] = this.sortValue;
+            properties["sortValue"] = this.sortValue;
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-            inventoryName: string,
-    ): ItemModelRef {
-        return new ItemModelRef(
-            namespaceName,
-            inventoryName,
-            this.name,
-        );
+        return properties;
     }
 }

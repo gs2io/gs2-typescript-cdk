@@ -1,6 +1,6 @@
 export default class MaxStaminaTableRef {
-    private namespaceName;
-    private maxStaminaTableName;
+    private readonly namespaceName;
+    private readonly maxStaminaTableName;
     constructor(namespaceName: string, maxStaminaTableName: string);
     grn(): string;
 }

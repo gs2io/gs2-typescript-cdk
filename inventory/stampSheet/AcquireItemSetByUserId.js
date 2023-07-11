@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,32 +17,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireItemSetByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, inventoryName, itemName, acquireCount, expiresAt, createNewItemSet, itemSetName = null, userId = '#{userId}') {
+    constructor(namespaceName, inventoryName, itemName, acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (inventoryName != null) {
-            properties["inventoryName"] = inventoryName;
-        }
-        if (itemName != null) {
-            properties["itemName"] = itemName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (acquireCount != null) {
-            properties["acquireCount"] = acquireCount;
-        }
-        if (expiresAt != null) {
-            properties["expiresAt"] = expiresAt;
-        }
-        if (createNewItemSet != null) {
-            properties["createNewItemSet"] = createNewItemSet;
-        }
-        if (itemSetName != null) {
-            properties["itemSetName"] = itemSetName;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["inventoryName"] = inventoryName;
+        properties["itemName"] = itemName;
+        properties["acquireCount"] = acquireCount;
+        properties["expiresAt"] = expiresAt;
+        properties["createNewItemSet"] = createNewItemSet;
+        properties["itemSetName"] = itemSetName;
+        properties["userId"] = userId;
         super("Gs2Inventory:AcquireItemSetByUserId", properties);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,31 +14,32 @@
  * permissions and limitations under the License.
  */
 import { AcquireAction } from "../../core/model";
-
-export interface DrawnPrizeOptions {
-    acquireActions?: AcquireAction[]|null|undefined;
-}
+import { DrawnPrizeOptions } from "./options/DrawnPrizeOptions";
 
 export default class DrawnPrize {
-	private readonly prizeId: string;
+    private readonly prizeId: string;
     private readonly acquireActions: AcquireAction[]|null = null;
 
     public constructor(
-            prizeId: string,
-            options?: DrawnPrizeOptions,
+        prizeId: string,
+        options: DrawnPrizeOptions|null = null,
     ) {
         this.prizeId = prizeId;
         this.acquireActions = options?.acquireActions ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.prizeId != null) {
-            properties["PrizeId"] = this.prizeId;
+            properties["prizeId"] = this.prizeId;
         }
         if (this.acquireActions != null) {
-            properties["AcquireActions"] = this.acquireActions.map(v => v.properties());
+            properties["acquireActions"] = this.acquireActions.map(v => v.properties(
+                ));
         }
+
         return properties;
     }
 }

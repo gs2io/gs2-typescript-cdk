@@ -1,16 +1,11 @@
-export interface ExecuteStampSheetLogCountOptions {
-    service?: string | null | undefined;
-    method?: string | null | undefined;
-    userId?: string | null | undefined;
-    action?: string | null | undefined;
-}
+import { ExecuteStampSheetLogCountOptions } from "./options/ExecuteStampSheetLogCountOptions";
 export default class ExecuteStampSheetLogCount {
+    private readonly count;
     private readonly service;
     private readonly method;
     private readonly userId;
     private readonly action;
-    private readonly count;
-    constructor(count: number, options?: ExecuteStampSheetLogCountOptions);
+    constructor(count: number, options?: ExecuteStampSheetLogCountOptions | null);
     properties(): {
         [name: string]: any;
     };

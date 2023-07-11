@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,17 +17,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class OpenMessageByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, messageName, userId = '#{userId}') {
+    constructor(namespaceName, messageName = null, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (messageName != null) {
-            properties["messageName"] = messageName;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["messageName"] = messageName;
+        properties["userId"] = userId;
         super("Gs2Inbox:OpenMessageByUserId", properties);
     }
 }

@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,25 +17,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const CurrentMessageMasterRef_1 = tslib_1.__importDefault(require("./CurrentMessageMasterRef"));
 const GlobalMessageRef_1 = tslib_1.__importDefault(require("./GlobalMessageRef"));
-const GlobalMessageMasterRef_1 = tslib_1.__importDefault(require("./GlobalMessageMasterRef"));
 const SendMessageByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SendMessageByUserId"));
+const OpenMessageByUserId_1 = tslib_1.__importDefault(require("../stampSheet/OpenMessageByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
-    currentMessageMaster() {
-        return new CurrentMessageMasterRef_1.default(this.namespaceName);
-    }
     globalMessage(globalMessageName) {
         return new GlobalMessageRef_1.default(this.namespaceName, globalMessageName);
     }
-    globalMessageMaster(globalMessageName) {
-        return new GlobalMessageMasterRef_1.default(this.namespaceName, globalMessageName);
-    }
-    sendMessage(metadata, readAcquireActions = null, expiresAt = null, expiresTimeSpan = null, userId = '#{userId}') {
+    sendMessage(metadata, readAcquireActions = null, expiresAt = null, expiresTimeSpan = null, userId = "#{userId}") {
         return new SendMessageByUserId_1.default(this.namespaceName, metadata, readAcquireActions, expiresAt, expiresTimeSpan, userId);
+    }
+    openMessage(messageName, userId = "#{userId}") {
+        return new OpenMessageByUserId_1.default(this.namespaceName, messageName, userId);
     }
     grn() {
         return new func_1.Join(":", [
@@ -44,7 +40,7 @@ class NamespaceRef {
             func_1.GetAttr.region().str(),
             func_1.GetAttr.ownerId().str(),
             "inbox",
-            this.namespaceName
+            this.namespaceName,
         ]).str();
     }
 }

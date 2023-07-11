@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,14 +16,13 @@
 
 import {GetAttr, Join} from "../../core/func";
 
-
 export default class IdentifierRef {
-    private userName: string;
-    private clientId: string;
+    private readonly userName: string;
+    private readonly clientId: string;
 
     public constructor(
-            userName: string,
-            clientId: string,
+        userName: string,
+        clientId: string,
     ) {
         this.userName = userName;
         this.clientId = clientId;

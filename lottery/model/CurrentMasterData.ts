@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,45 +13,66 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 import {CdkResource, Stack} from "../../core/model";
 import LotteryModel from "./LotteryModel";
 import PrizeTable from "./PrizeTable";
 
 export default class CurrentMasterData extends CdkResource {
-
-    private version: string = "2019-02-21";
-    private namespaceName: string;
-        private readonly lotteryModels: LotteryModel[];
-        private readonly prizeTables: PrizeTable[];
+    private readonly version: string= "2019-02-21";
+    private readonly namespaceName: string;
+    private readonly lotteryModels: LotteryModel[];
+    private readonly prizeTables: PrizeTable[];
 
     public constructor(
-            stack: Stack,
-            namespaceName: string,
-            lotteryModels: LotteryModel[],
-            prizeTables: PrizeTable[],
+        stack: Stack,
+        namespaceName: string,
+        lotteryModels: LotteryModel[],
+        prizeTables: PrizeTable[],
     ) {
-        super("Lottery_CurrentLotteryMaster_" + namespaceName);
+        super(
+            "Lottery_CurrentLotteryMaster_" + namespaceName
+        );
 
         this.namespaceName = namespaceName;
         this.lotteryModels = lotteryModels;
         this.prizeTables = prizeTables;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+    public alternateKeys(
+    ) {
+        return this.namespaceName;
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Lottery::CurrentLotteryMaster";
     }
 
-    public properties(): {[name: string]: any} {
-        return {
-            "NamespaceName": this.namespaceName,
-            "Settings": {
-                "version": this.version,
-                "lotteryModels": this.lotteryModels.map(v => v.properties()),
-                "prizeTables": this.prizeTables.map(v => v.properties()),
-            },
-        };
+    public properties(
+    ): {[name: string]: any} {
+        let properties: {[name: string]: any} = {};
+        let settings: {[name: string]: any} = {};
+
+        settings["version"] = this.version
+        if (this.lotteryModels != null) {
+            settings["lotteryModels"] = this.lotteryModels.map(v => v.properties(
+                ));
+        }
+        if (this.prizeTables != null) {
+            settings["prizeTables"] = this.prizeTables.map(v => v.properties(
+                ));
+        }
+
+        if (this.namespaceName != null) {
+            properties["NamespaceName"] = this.namespaceName;
+        }
+        if (settings != null) {
+            properties["Settings"] = settings;
+        }
+
+        return properties;
     }
 }

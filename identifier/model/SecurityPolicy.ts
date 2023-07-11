@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,42 +12,56 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- *
- * deny overwrite
  */
 
-import Policy from "../model/Policy";
-import SecurityPolicyRef from "../ref/SecurityPolicyRef";
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
+import Policy from "./Policy";
+
+import SecurityPolicyRef from "../ref/SecurityPolicyRef";
+
+import { SecurityPolicyOptions } from "./options/SecurityPolicyOptions";
 
 export default class SecurityPolicy extends CdkResource {
-
-    private stack: Stack;
+    private readonly stack: Stack;
     private readonly name: string;
-    private readonly description: string|null = null;
     private readonly policy: Policy;
+    private readonly description: string|null = null;
 
     public constructor(
         stack: Stack,
         name: string,
         policy: Policy,
+        options: SecurityPolicyOptions|null = null,
     ) {
-        super("Identifier_SecurityPolicy_" + name);
+        super(
+            "Identifier_SecurityPolicy_" + name
+        );
 
         this.stack = stack;
         this.name = name;
         this.policy = policy;
-
-        stack.addResource(this);
+        this.description = options?.description ?? null;
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+
+    public alternateKeys(
+    ) {
+        return "name";
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Identifier::SecurityPolicy";
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
             properties["Name"] = this.name;
         }
@@ -55,23 +69,30 @@ export default class SecurityPolicy extends CdkResource {
             properties["Description"] = this.description;
         }
         if (this.policy != null) {
-            properties["Policy"] = this.policy.properties();
+            properties["Policy"] = this.policy?.properties(
+            );
         }
+
         return properties;
     }
 
     public ref(
     ): SecurityPolicyRef {
         return new SecurityPolicyRef(
-            this.name,
+            this.name!,
         );
     }
+    public static applicationAccessGrn(
+    ): string {
+        return "grn:gs2::system:identifier:securityPolicy:ApplicationAccess";
+    }
 
-    public getAttrSecurityPolicyId(): GetAttr {
+    public getAttrSecurityPolicyId(
+    ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.SecurityPolicyId"
+            "Item.SecurityPolicyId",
         );
     }
 }

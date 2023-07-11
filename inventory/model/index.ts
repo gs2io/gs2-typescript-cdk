@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,18 +13,36 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import InventoryModel from "./InventoryModel";
-import ItemModel from "./ItemModel";
-import CurrentMasterData from "./CurrentMasterData";
 import Namespace from "./Namespace";
-import InventoryModelMaster from "./InventoryModelMaster";
-import ItemModelMaster from "./ItemModelMaster";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import InventoryModel from "./InventoryModel";
+import { InventoryModelOptions } from "./options/InventoryModelOptions";
+import ItemModel from "./ItemModel";
+import { ItemModelOptions } from "./options/ItemModelOptions";
+import SimpleInventoryModel from "./SimpleInventoryModel";
+import { SimpleInventoryModelOptions } from "./options/SimpleInventoryModelOptions";
+import SimpleItemModel from "./SimpleItemModel";
+import { SimpleItemModelOptions } from "./options/SimpleItemModelOptions";
+import AcquireCount from "./AcquireCount";
+import { AcquireCountOptions } from "./options/AcquireCountOptions";
+import ConsumeCount from "./ConsumeCount";
+import { ConsumeCountOptions } from "./options/ConsumeCountOptions";
+import CurrentMasterData from "./CurrentMasterData";
 
 export {
-    InventoryModel,
-    ItemModel,
-    CurrentMasterData,
     Namespace,
-    InventoryModelMaster,
-    ItemModelMaster,
+    NamespaceOptions,
+    InventoryModel,
+    InventoryModelOptions,
+    ItemModel,
+    ItemModelOptions,
+    SimpleInventoryModel,
+    SimpleInventoryModelOptions,
+    SimpleItemModel,
+    SimpleItemModelOptions,
+    AcquireCount,
+    AcquireCountOptions,
+    ConsumeCount,
+    ConsumeCountOptions,
+    CurrentMasterData,
 }

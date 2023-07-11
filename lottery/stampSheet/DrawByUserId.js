@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,23 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DrawByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, lotteryName, count, config = null, userId = '#{userId}') {
+    constructor(namespaceName, lotteryName, count, config = null, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (lotteryName != null) {
-            properties["lotteryName"] = lotteryName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (count != null) {
-            properties["count"] = count;
-        }
-        if (config != null) {
-            properties["config"] = config;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["lotteryName"] = lotteryName;
+        properties["count"] = count;
+        properties["config"] = config;
+        properties["userId"] = userId;
         super("Gs2Lottery:DrawByUserId", properties);
     }
 }

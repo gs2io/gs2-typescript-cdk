@@ -1,5 +1,5 @@
 export default class IdentifierRef {
-    private userName;
-    private clientId;
+    private readonly userName;
+    private readonly clientId;
     constructor(userName: string, clientId: string);
 }

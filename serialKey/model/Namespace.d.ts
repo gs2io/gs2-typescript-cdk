@@ -1,19 +1,15 @@
-import core from "../../core";
+import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
-import { Stack } from "../../core/model";
-import LogSetting from "../../core/model/LogSetting";
-import CampaignModel from "./CampaignModel";
 import NamespaceRef from "../ref/NamespaceRef";
-export interface NamespaceOptions {
-    description?: string | null | undefined;
-    logSetting?: LogSetting | null | undefined;
-}
-export default class Namespace extends core.CdkResource {
-    private stack;
+import CampaignModel from "./CampaignModel";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+export default class Namespace extends CdkResource {
+    private readonly stack;
     private readonly name;
     private readonly description;
     private readonly logSetting;
-    constructor(stack: Stack, name: string, options?: NamespaceOptions);
+    constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
+    alternateKeys(): string;
     resourceType(): string;
     properties(): {
         [name: string]: any;

@@ -1,0 +1,24 @@
+import { CdkResource, Stack } from "../../core/model";
+import { GetAttr } from "../../core/func";
+import NamespaceRef from "../ref/NamespaceRef";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+export default class Namespace extends CdkResource {
+    private readonly stack;
+    private readonly name;
+    private readonly description;
+    private readonly changePasswordIfTakeOver;
+    private readonly differentUserIdForLoginAndDataRetention;
+    private readonly createAccountScript;
+    private readonly authenticationScript;
+    private readonly createTakeOverScript;
+    private readonly doTakeOverScript;
+    private readonly logSetting;
+    constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
+    alternateKeys(): string;
+    resourceType(): string;
+    properties(): {
+        [name: string]: any;
+    };
+    ref(): NamespaceRef;
+    getAttrNamespaceId(): GetAttr;
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,43 +17,47 @@
 import {GetAttr, Join} from "../../core/func";
 import UseByUserId from "../stampSheet/UseByUserId";
 
-
 export default class SerialKeyRef {
-    private namespaceName: string;
-    private serialKeyCode: string;
+    private readonly namespaceName: string;
+    private readonly code: string;
 
     public constructor(
-            namespaceName: string,
-            serialKeyCode: string,
+        namespaceName: string,
+        code: string,
     ) {
         this.namespaceName = namespaceName;
-        this.serialKeyCode = serialKeyCode;
+        this.code = code;
     }
 
     public use(
-            code: string,
-            userId: string = '#{userId}',
+        userId: string|null = "#{userId}",
     ): UseByUserId {
         return new UseByUserId(
             this.namespaceName,
-            code,
+            this.code,
             userId,
         );
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "serialKey",
                 this.namespaceName,
                 "serialKey",
-                this.serialKeyCode
-            ]
-        ).str();
+                this.code,
+            ],
+        ).str(
+        );
     }
 }

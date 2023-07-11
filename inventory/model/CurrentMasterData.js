@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,27 +15,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CurrentMasterData extends model_1.CdkResource {
-    constructor(stack, namespaceName, inventoryModels) {
+    constructor(stack, namespaceName, inventoryModels, simpleInventoryModels) {
         super("Inventory_CurrentItemModelMaster_" + namespaceName);
         this.version = "2019-02-05";
         this.namespaceName = namespaceName;
         this.inventoryModels = inventoryModels;
+        this.simpleInventoryModels = simpleInventoryModels;
         stack.addResource(this);
+    }
+    alternateKeys() {
+        return this.namespaceName;
     }
     resourceType() {
         return "GS2::Inventory::CurrentItemModelMaster";
     }
     properties() {
-        return {
-            "NamespaceName": this.namespaceName,
-            "Settings": {
-                "version": this.version,
-                "inventoryModels": this.inventoryModels.map(v => v.properties()),
-            },
-        };
+        let properties = {};
+        let settings = {};
+        settings["version"] = this.version;
+        if (this.inventoryModels != null) {
+            settings["inventoryModels"] = this.inventoryModels.map(v => v.properties());
+        }
+        if (this.simpleInventoryModels != null) {
+            settings["simpleInventoryModels"] = this.simpleInventoryModels.map(v => v.properties());
+        }
+        if (this.namespaceName != null) {
+            properties["NamespaceName"] = this.namespaceName;
+        }
+        if (settings != null) {
+            properties["Settings"] = settings;
+        }
+        return properties;
     }
 }
 exports.default = CurrentMasterData;

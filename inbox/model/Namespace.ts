@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,48 +14,39 @@
  * permissions and limitations under the License.
  */
 
-import core from "../../core";
+import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import {Stack} from "../../core/model";
 import TransactionSetting from "../../core/model/TransactionSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
+
+import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import GlobalMessage from "./GlobalMessage";
 
-import NamespaceRef from "../ref/NamespaceRef";
+import { NamespaceOptions } from "./options/NamespaceOptions";
 
-export interface NamespaceOptions {
-    description?: string|null|undefined;
-    isAutomaticDeletingEnabled?: boolean|null|undefined;
-    transactionSetting?: TransactionSetting|null|undefined;
-    receiveMessageScript?: ScriptSetting|null|undefined;
-    readMessageScript?: ScriptSetting|null|undefined;
-    deleteMessageScript?: ScriptSetting|null|undefined;
-    receiveNotification?: NotificationSetting|null|undefined;
-    logSetting?: LogSetting|null|undefined;
-}
-
-export default class Namespace extends core.CdkResource {
-
-    private stack: Stack;
-	private readonly name: string;
-	private readonly description: string|null = null;
-	private readonly isAutomaticDeletingEnabled: boolean|null = null;
-	private readonly transactionSetting: TransactionSetting|null = null;
-	private readonly receiveMessageScript: ScriptSetting|null = null;
-	private readonly readMessageScript: ScriptSetting|null = null;
-	private readonly deleteMessageScript: ScriptSetting|null = null;
-	private readonly receiveNotification: NotificationSetting|null = null;
-	private readonly logSetting: LogSetting|null = null;
+export default class Namespace extends CdkResource {
+    private readonly stack: Stack;
+    private readonly name: string;
+    private readonly description: string|null = null;
+    private readonly isAutomaticDeletingEnabled: boolean|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly receiveMessageScript: ScriptSetting|null = null;
+    private readonly readMessageScript: ScriptSetting|null = null;
+    private readonly deleteMessageScript: ScriptSetting|null = null;
+    private readonly receiveNotification: NotificationSetting|null = null;
+    private readonly logSetting: LogSetting|null = null;
 
     public constructor(
-            stack: Stack,
-            name: string,
-            options?: NamespaceOptions,
+        stack: Stack,
+        name: string,
+        options: NamespaceOptions|null = null,
     ) {
-        super("Inbox_Namespace_" + name);
+        super(
+            "Inbox_Namespace_" + name
+        );
 
         this.stack = stack;
         this.name = name;
@@ -67,16 +58,26 @@ export default class Namespace extends core.CdkResource {
         this.deleteMessageScript = options?.deleteMessageScript ?? null;
         this.receiveNotification = options?.receiveNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+
+    public alternateKeys(
+    ) {
+        return "name";
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Inbox::Namespace";
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
             properties["Name"] = this.name;
         }
@@ -87,50 +88,58 @@ export default class Namespace extends core.CdkResource {
             properties["IsAutomaticDeletingEnabled"] = this.isAutomaticDeletingEnabled;
         }
         if (this.transactionSetting != null) {
-            properties["TransactionSetting"] = this.transactionSetting.properties();
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
         }
         if (this.receiveMessageScript != null) {
-            properties["ReceiveMessageScript"] = this.receiveMessageScript.properties();
+            properties["ReceiveMessageScript"] = this.receiveMessageScript?.properties(
+            );
         }
         if (this.readMessageScript != null) {
-            properties["ReadMessageScript"] = this.readMessageScript.properties();
+            properties["ReadMessageScript"] = this.readMessageScript?.properties(
+            );
         }
         if (this.deleteMessageScript != null) {
-            properties["DeleteMessageScript"] = this.deleteMessageScript.properties();
+            properties["DeleteMessageScript"] = this.deleteMessageScript?.properties(
+            );
         }
         if (this.receiveNotification != null) {
-            properties["ReceiveNotification"] = this.receiveNotification.properties();
+            properties["ReceiveNotification"] = this.receiveNotification?.properties(
+            );
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = this.logSetting?.properties(
+            );
         }
+
         return properties;
     }
 
     public ref(
     ): NamespaceRef {
         return new NamespaceRef(
-            this.name,
+            this.name!,
         );
     }
 
-    public getAttrNamespaceId(): GetAttr {
+    public getAttrNamespaceId(
+    ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.NamespaceId"
+            "Item.NamespaceId",
         );
     }
 
     public masterData(
-            globalMessages: GlobalMessage[],
+        globalMessages: GlobalMessage[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             globalMessages,
         ).addDependsOn(
-            this
+            this,
         );
         return this;
     }

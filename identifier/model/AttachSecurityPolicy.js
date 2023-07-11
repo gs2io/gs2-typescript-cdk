@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,11 +19,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AttachSecurityPolicy extends model_1.CdkResource {
-    constructor(stack, userName, securityPolicyId) {
+    constructor(stack, userName, securityPolicyId, options = null) {
         super("Identifier_AttachSecurityPolicy_" + userName);
         this.stack = stack;
         this.userName = userName;
         this.securityPolicyId = securityPolicyId;
+        stack.addResource(this);
     }
     resourceType() {
         return "GS2::Identifier::AttachSecurityPolicy";
@@ -31,10 +32,10 @@ class AttachSecurityPolicy extends model_1.CdkResource {
     properties() {
         let properties = {};
         if (this.userName != null) {
-            properties.put("UserName", this.userName);
+            properties["UserName"] = this.userName;
         }
         if (this.securityPolicyId != null) {
-            properties.put("SecurityPolicyId", this.securityPolicyId);
+            properties["SecurityPolicyId"] = this.securityPolicyId;
         }
         return properties;
     }

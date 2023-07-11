@@ -1,8 +1,6 @@
-import IssueJobRef from "./IssueJobRef";
 export default class CampaignModelRef {
-    private namespaceName;
-    private campaignModelName;
+    private readonly namespaceName;
+    private readonly campaignModelName;
     constructor(namespaceName: string, campaignModelName: string);
-    issueJob(issueJobName: string): IssueJobRef;
     grn(): string;
 }

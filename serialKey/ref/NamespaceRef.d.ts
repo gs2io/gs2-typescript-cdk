@@ -1,13 +1,9 @@
-import CurrentCampaignMasterRef from "./CurrentCampaignMasterRef";
 import CampaignModelRef from "./CampaignModelRef";
-import SerialKeyRef from "./SerialKeyRef";
-import CampaignModelMasterRef from "./CampaignModelMasterRef";
+import UseByUserId from "../stampSheet/UseByUserId";
 export default class NamespaceRef {
-    private namespaceName;
+    private readonly namespaceName;
     constructor(namespaceName: string);
-    currentCampaignMaster(): CurrentCampaignMasterRef;
     campaignModel(campaignModelName: string): CampaignModelRef;
-    serialKey(serialKeyCode: string): SerialKeyRef;
-    campaignModelMaster(campaignModelName: string): CampaignModelMasterRef;
+    use(code: string, userId?: string | null): UseByUserId;
     grn(): string;
 }

@@ -1,5 +1,4 @@
-export interface ExecuteStampSheetLogOptions {
-}
+import { ExecuteStampSheetLogOptions } from "./options/ExecuteStampSheetLogOptions";
 export default class ExecuteStampSheetLog {
     private readonly timestamp;
     private readonly transactionId;
@@ -8,7 +7,7 @@ export default class ExecuteStampSheetLog {
     private readonly userId;
     private readonly action;
     private readonly args;
-    constructor(timestamp: number, transactionId: string, service: string, method: string, userId: string, action: string, args: string, options?: ExecuteStampSheetLogOptions);
+    constructor(timestamp: number, transactionId: string, service: string, method: string, userId: string, action: string, args: string, options?: ExecuteStampSheetLogOptions | null);
     properties(): {
         [name: string]: any;
     };

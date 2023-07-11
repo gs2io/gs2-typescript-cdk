@@ -1,15 +1,11 @@
-import RecoverValueTableRef from "../ref/RecoverValueTableRef";
-export interface RecoverValueTableOptions {
-    metadata?: string | null | undefined;
-}
+import { RecoverValueTableOptions } from "./options/RecoverValueTableOptions";
 export default class RecoverValueTable {
     private readonly name;
-    private readonly metadata;
     private readonly experienceModelId;
     private readonly values;
-    constructor(name: string, experienceModelId: string, values: number[], options?: RecoverValueTableOptions);
+    private readonly metadata;
+    constructor(name: string, experienceModelId: string, values: number[], options?: RecoverValueTableOptions | null);
     properties(): {
         [name: string]: any;
     };
-    ref(namespaceName: string): RecoverValueTableRef;
 }

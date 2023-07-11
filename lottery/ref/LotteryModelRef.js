@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -23,7 +23,7 @@ class LotteryModelRef {
         this.namespaceName = namespaceName;
         this.lotteryName = lotteryName;
     }
-    draw(count, config = null, userId = '#{userId}') {
+    draw(count, config = null, userId = "#{userId}") {
         return new DrawByUserId_1.default(this.namespaceName, this.lotteryName, count, config, userId);
     }
     grn() {
@@ -35,7 +35,7 @@ class LotteryModelRef {
             "lottery",
             this.namespaceName,
             "lotteryModel",
-            this.lotteryName
+            this.lotteryName,
         ]).str();
     }
 }

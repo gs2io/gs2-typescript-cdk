@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignModelMaster = exports.Namespace = exports.CurrentMasterData = exports.CampaignModel = void 0;
+exports.CurrentMasterData = exports.CampaignModel = exports.IssueJobStatus = exports.IssueJob = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,12 +17,14 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
+exports.Namespace = Namespace_1.default;
+const IssueJob_1 = tslib_1.__importDefault(require("./IssueJob"));
+exports.IssueJob = IssueJob_1.default;
+const IssueJobStatus_1 = require("./enum/IssueJobStatus");
+Object.defineProperty(exports, "IssueJobStatus", { enumerable: true, get: function () { return IssueJobStatus_1.IssueJobStatus; } });
 const CampaignModel_1 = tslib_1.__importDefault(require("./CampaignModel"));
 exports.CampaignModel = CampaignModel_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
-const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
-exports.Namespace = Namespace_1.default;
-const CampaignModelMaster_1 = tslib_1.__importDefault(require("./CampaignModelMaster"));
-exports.CampaignModelMaster = CampaignModelMaster_1.default;
 //# sourceMappingURL=index.js.map

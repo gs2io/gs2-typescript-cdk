@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,68 +13,56 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import ItemModel from "../model/ItemModel";
-
-import InventoryModelRef from "../ref/InventoryModelRef";
-
-export interface InventoryModelOptions {
-    metadata?: string|null|undefined;
-    protectReferencedItem?: boolean|null|undefined;
-    itemModels?: ItemModel[]|null|undefined;
-}
-
+import ItemModel from "./ItemModel";
+import { InventoryModelOptions } from "./options/InventoryModelOptions";
 
 export default class InventoryModel {
-	private readonly name: string;
+    private readonly name: string;
+    private readonly initialCapacity: number;
+    private readonly maxCapacity: number;
+    private readonly itemModels: ItemModel[];
     private readonly metadata: string|null = null;
-	private readonly initialCapacity: number;
-	private readonly maxCapacity: number;
     private readonly protectReferencedItem: boolean|null = null;
-    private readonly itemModels: ItemModel[]|null = null;
 
     public constructor(
-            name: string,
-            initialCapacity: number,
-            maxCapacity: number,
-            options?: InventoryModelOptions,
+        name: string,
+        initialCapacity: number,
+        maxCapacity: number,
+        itemModels: ItemModel[],
+        options: InventoryModelOptions|null = null,
     ) {
         this.name = name;
-        this.metadata = options?.metadata ?? null;
         this.initialCapacity = initialCapacity;
         this.maxCapacity = maxCapacity;
+        this.itemModels = itemModels;
+        this.metadata = options?.metadata ?? null;
         this.protectReferencedItem = options?.protectReferencedItem ?? null;
-        this.itemModels = options?.itemModels ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.initialCapacity != null) {
-            properties["InitialCapacity"] = this.initialCapacity;
+            properties["initialCapacity"] = this.initialCapacity;
         }
         if (this.maxCapacity != null) {
-            properties["MaxCapacity"] = this.maxCapacity;
+            properties["maxCapacity"] = this.maxCapacity;
         }
         if (this.protectReferencedItem != null) {
-            properties["ProtectReferencedItem"] = this.protectReferencedItem;
+            properties["protectReferencedItem"] = this.protectReferencedItem;
         }
         if (this.itemModels != null) {
-            properties["ItemModels"] = this.itemModels.map(v => v.properties());
+            properties["itemModels"] = this.itemModels.map(v => v.properties(
+                ));
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-    ): InventoryModelRef {
-        return new InventoryModelRef(
-            namespaceName,
-            this.name,
-        );
+        return properties;
     }
 }

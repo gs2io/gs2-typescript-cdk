@@ -1,23 +1,25 @@
-import CurrentStaminaMasterRef from "./CurrentStaminaMasterRef";
 import MaxStaminaTableRef from "./MaxStaminaTableRef";
 import RecoverIntervalTableRef from "./RecoverIntervalTableRef";
 import RecoverValueTableRef from "./RecoverValueTableRef";
 import StaminaModelRef from "./StaminaModelRef";
-import RecoverIntervalTableMasterRef from "./RecoverIntervalTableMasterRef";
-import MaxStaminaTableMasterRef from "./MaxStaminaTableMasterRef";
-import RecoverValueTableMasterRef from "./RecoverValueTableMasterRef";
-import StaminaModelMasterRef from "./StaminaModelMasterRef";
+import RecoverStaminaByUserId from "../stampSheet/RecoverStaminaByUserId";
+import RaiseMaxValueByUserId from "../stampSheet/RaiseMaxValueByUserId";
+import SetMaxValueByUserId from "../stampSheet/SetMaxValueByUserId";
+import SetRecoverIntervalByUserId from "../stampSheet/SetRecoverIntervalByUserId";
+import SetRecoverValueByUserId from "../stampSheet/SetRecoverValueByUserId";
+import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
 export default class NamespaceRef {
-    private namespaceName;
+    private readonly namespaceName;
     constructor(namespaceName: string);
-    currentStaminaMaster(): CurrentStaminaMasterRef;
     maxStaminaTable(maxStaminaTableName: string): MaxStaminaTableRef;
     recoverIntervalTable(recoverIntervalTableName: string): RecoverIntervalTableRef;
     recoverValueTable(recoverValueTableName: string): RecoverValueTableRef;
     staminaModel(staminaName: string): StaminaModelRef;
-    recoverIntervalTableMaster(recoverIntervalTableName: string): RecoverIntervalTableMasterRef;
-    maxStaminaTableMaster(maxStaminaTableName: string): MaxStaminaTableMasterRef;
-    recoverValueTableMaster(recoverValueTableName: string): RecoverValueTableMasterRef;
-    staminaModelMaster(staminaName: string): StaminaModelMasterRef;
+    recoverStamina(staminaName: string, recoverValue: number, userId?: string | null): RecoverStaminaByUserId;
+    raiseMaxValue(staminaName: string, raiseValue: number, userId?: string | null): RaiseMaxValueByUserId;
+    setMaxValue(staminaName: string, maxValue: number, userId?: string | null): SetMaxValueByUserId;
+    setRecoverInterval(staminaName: string, recoverIntervalMinutes: number, userId?: string | null): SetRecoverIntervalByUserId;
+    setRecoverValue(staminaName: string, recoverValue: number, userId?: string | null): SetRecoverValueByUserId;
+    consumeStamina(staminaName: string, consumeValue: number, userId?: string | null): ConsumeStaminaByUserId;
     grn(): string;
 }

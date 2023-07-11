@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecoverValueTableRef = exports.RecoverIntervalTableRef = exports.MaxStaminaTableRef = exports.StaminaModelRef = exports.CurrentStaminaMasterRef = exports.RecoverValueTableMasterRef = exports.RecoverIntervalTableMasterRef = exports.MaxStaminaTableMasterRef = exports.StaminaModelMasterRef = exports.NamespaceRef = void 0;
+exports.RecoverValueTableRef = exports.RecoverIntervalTableRef = exports.MaxStaminaTableRef = exports.StaminaModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,16 +19,6 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
-const StaminaModelMasterRef_1 = tslib_1.__importDefault(require("./StaminaModelMasterRef"));
-exports.StaminaModelMasterRef = StaminaModelMasterRef_1.default;
-const MaxStaminaTableMasterRef_1 = tslib_1.__importDefault(require("./MaxStaminaTableMasterRef"));
-exports.MaxStaminaTableMasterRef = MaxStaminaTableMasterRef_1.default;
-const RecoverIntervalTableMasterRef_1 = tslib_1.__importDefault(require("./RecoverIntervalTableMasterRef"));
-exports.RecoverIntervalTableMasterRef = RecoverIntervalTableMasterRef_1.default;
-const RecoverValueTableMasterRef_1 = tslib_1.__importDefault(require("./RecoverValueTableMasterRef"));
-exports.RecoverValueTableMasterRef = RecoverValueTableMasterRef_1.default;
-const CurrentStaminaMasterRef_1 = tslib_1.__importDefault(require("./CurrentStaminaMasterRef"));
-exports.CurrentStaminaMasterRef = CurrentStaminaMasterRef_1.default;
 const StaminaModelRef_1 = tslib_1.__importDefault(require("./StaminaModelRef"));
 exports.StaminaModelRef = StaminaModelRef_1.default;
 const MaxStaminaTableRef_1 = tslib_1.__importDefault(require("./MaxStaminaTableRef"));

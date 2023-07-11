@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,32 +16,37 @@
 
 import {GetAttr, Join} from "../../core/func";
 
-
 export default class RecoverIntervalTableRef {
-    private namespaceName: string;
-    private recoverIntervalTableName: string;
+    private readonly namespaceName: string;
+    private readonly recoverIntervalTableName: string;
 
     public constructor(
-            namespaceName: string,
-            recoverIntervalTableName: string,
+        namespaceName: string,
+        recoverIntervalTableName: string,
     ) {
         this.namespaceName = namespaceName;
         this.recoverIntervalTableName = recoverIntervalTableName;
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "stamina",
                 this.namespaceName,
                 "recoverIntervalTable",
-                this.recoverIntervalTableName
-            ]
-        ).str();
+                this.recoverIntervalTableName,
+            ],
+        ).str(
+        );
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,49 +13,37 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-import CampaignModelRef from "../ref/CampaignModelRef";
-
-export interface CampaignModelOptions {
-    metadata?: string|null|undefined;
-}
-
+import { CampaignModelOptions } from "./options/CampaignModelOptions";
 
 export default class CampaignModel {
-	private readonly name: string;
+    private readonly name: string;
+    private readonly enableCampaignCode: boolean;
     private readonly metadata: string|null = null;
-	private readonly enableCampaignCode: boolean;
 
     public constructor(
-            name: string,
-            enableCampaignCode: boolean,
-            options?: CampaignModelOptions,
+        name: string,
+        enableCampaignCode: boolean,
+        options: CampaignModelOptions|null = null,
     ) {
         this.name = name;
-        this.metadata = options?.metadata ?? null;
         this.enableCampaignCode = enableCampaignCode;
+        this.metadata = options?.metadata ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.enableCampaignCode != null) {
-            properties["EnableCampaignCode"] = this.enableCampaignCode;
+            properties["enableCampaignCode"] = this.enableCampaignCode;
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-    ): CampaignModelRef {
-        return new CampaignModelRef(
-            namespaceName,
-            this.name,
-        );
+        return properties;
     }
 }

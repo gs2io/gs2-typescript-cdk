@@ -1,5 +1,5 @@
 export default class AttachSecurityPolicyRef {
-    private userName;
+    private readonly userName;
     constructor(userName: string);
     grn(): string;
 }

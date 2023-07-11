@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,18 +17,19 @@
 import {GetAttr, Join} from "../../core/func";
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
+import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
-
+import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
 
 export default class ItemModelRef {
-    private namespaceName: string;
-    private inventoryName: string;
-    private itemName: string;
+    private readonly namespaceName: string;
+    private readonly inventoryName: string;
+    private readonly itemName: string;
 
     public constructor(
-            namespaceName: string,
-            inventoryName: string,
-            itemName: string,
+        namespaceName: string,
+        inventoryName: string,
+        itemName: string,
     ) {
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
@@ -36,11 +37,11 @@ export default class ItemModelRef {
     }
 
     public acquireItemSet(
-            acquireCount: number,
-            expiresAt: number,
-            createNewItemSet: boolean,
-            itemSetName: string|null = null,
-            userId: string = '#{userId}',
+        acquireCount: number,
+        expiresAt: number,
+        createNewItemSet: boolean,
+        itemSetName: string|null = null,
+        userId: string|null = "#{userId}",
     ): AcquireItemSetByUserId {
         return new AcquireItemSetByUserId(
             this.namespaceName,
@@ -55,9 +56,9 @@ export default class ItemModelRef {
     }
 
     public addReferenceOf(
-            itemSetName: string,
-            referenceOf: string,
-            userId: string = '#{userId}',
+        itemSetName: string,
+        referenceOf: string,
+        userId: string|null = "#{userId}",
     ): AddReferenceOfByUserId {
         return new AddReferenceOfByUserId(
             this.namespaceName,
@@ -69,10 +70,25 @@ export default class ItemModelRef {
         );
     }
 
+    public deleteReferenceOf(
+        itemSetName: string,
+        referenceOf: string,
+        userId: string|null = "#{userId}",
+    ): DeleteReferenceOfByUserId {
+        return new DeleteReferenceOfByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            this.itemName,
+            itemSetName,
+            referenceOf,
+            userId,
+        );
+    }
+
     public consumeItemSet(
-            consumeCount: number,
-            itemSetName: string|null = null,
-            userId: string = '#{userId}',
+        consumeCount: number,
+        itemSetName: string|null = null,
+        userId: string|null = "#{userId}",
     ): ConsumeItemSetByUserId {
         return new ConsumeItemSetByUserId(
             this.namespaceName,
@@ -84,21 +100,44 @@ export default class ItemModelRef {
         );
     }
 
-    public grn(): string {
+    public verifyReferenceOf(
+        itemSetName: string,
+        referenceOf: string,
+        verifyType: string,
+        userId: string|null = "#{userId}",
+    ): VerifyReferenceOfByUserId {
+        return new VerifyReferenceOfByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            this.itemName,
+            itemSetName,
+            referenceOf,
+            verifyType,
+            userId,
+        );
+    }
+
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "inventory",
                 this.namespaceName,
                 "model",
                 this.inventoryName,
                 "item",
-                this.itemName
-            ]
-        ).str();
+                this.itemName,
+            ],
+        ).str(
+        );
     }
 }

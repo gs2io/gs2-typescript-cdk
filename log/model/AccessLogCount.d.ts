@@ -1,14 +1,10 @@
-export interface AccessLogCountOptions {
-    service?: string | null | undefined;
-    method?: string | null | undefined;
-    userId?: string | null | undefined;
-}
+import { AccessLogCountOptions } from "./options/AccessLogCountOptions";
 export default class AccessLogCount {
+    private readonly count;
     private readonly service;
     private readonly method;
     private readonly userId;
-    private readonly count;
-    constructor(count: number, options?: AccessLogCountOptions);
+    constructor(count: number, options?: AccessLogCountOptions | null);
     properties(): {
         [name: string]: any;
     };

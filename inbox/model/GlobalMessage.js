@@ -1,9 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const GlobalMessageRef_1 = tslib_1.__importDefault(require("../ref/GlobalMessageRef"));
 class GlobalMessage {
-    constructor(name, metadata, options) {
+    constructor(name, metadata, options = null) {
         var _a, _b, _c;
         this.readAcquireActions = null;
         this.expiresTimeSpan = null;
@@ -15,26 +13,24 @@ class GlobalMessage {
         this.expiresAt = (_c = options === null || options === void 0 ? void 0 : options.expiresAt) !== null && _c !== void 0 ? _c : null;
     }
     properties() {
+        var _a;
         let properties = {};
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.readAcquireActions != null) {
-            properties["ReadAcquireActions"] = this.readAcquireActions.map(v => v.properties());
+            properties["readAcquireActions"] = this.readAcquireActions.map(v => v.properties());
         }
         if (this.expiresTimeSpan != null) {
-            properties["ExpiresTimeSpan"] = this.expiresTimeSpan.properties();
+            properties["expiresTimeSpan"] = (_a = this.expiresTimeSpan) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.expiresAt != null) {
-            properties["ExpiresAt"] = this.expiresAt;
+            properties["expiresAt"] = this.expiresAt;
         }
         return properties;
-    }
-    ref(namespaceName) {
-        return new GlobalMessageRef_1.default(namespaceName, this.name);
     }
 }
 exports.default = GlobalMessage;

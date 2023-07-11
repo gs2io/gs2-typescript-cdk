@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AttachSecurityPolicyRef = exports.PasswordRef = exports.IdentifierRef = exports.SecurityPolicyRef = exports.UserRef = void 0;
 const tslib_1 = require("tslib");
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").

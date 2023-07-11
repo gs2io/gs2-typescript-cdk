@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,31 +13,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-export interface DistributeResourceOptions {
-}
+import { DistributeResourceOptions } from "./options/DistributeResourceOptions";
 
 export default class DistributeResource {
-	private readonly action: string;
-	private readonly request: string;
+    private readonly action: string;
+    private readonly request: string;
 
     public constructor(
-            action: string,
-            request: string,
-            options?: DistributeResourceOptions,
+        action: string,
+        request: string,
+        options: DistributeResourceOptions|null = null,
     ) {
         this.action = action;
         this.request = request;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.action != null) {
-            properties["Action"] = this.action;
+            properties["action"] = this.action;
         }
         if (this.request != null) {
-            properties["Request"] = this.request;
+            properties["request"] = this.request;
         }
+
         return properties;
     }
 }

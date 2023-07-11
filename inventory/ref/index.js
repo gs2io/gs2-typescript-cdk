@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentItemModelMasterRef = exports.ItemModelRef = exports.ItemModelMasterRef = exports.InventoryModelRef = exports.InventoryModelMasterRef = exports.NamespaceRef = void 0;
+exports.SimpleItemModelRef = exports.SimpleInventoryModelRef = exports.ItemModelRef = exports.InventoryModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,14 +19,12 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
-const InventoryModelMasterRef_1 = tslib_1.__importDefault(require("./InventoryModelMasterRef"));
-exports.InventoryModelMasterRef = InventoryModelMasterRef_1.default;
 const InventoryModelRef_1 = tslib_1.__importDefault(require("./InventoryModelRef"));
 exports.InventoryModelRef = InventoryModelRef_1.default;
-const ItemModelMasterRef_1 = tslib_1.__importDefault(require("./ItemModelMasterRef"));
-exports.ItemModelMasterRef = ItemModelMasterRef_1.default;
 const ItemModelRef_1 = tslib_1.__importDefault(require("./ItemModelRef"));
 exports.ItemModelRef = ItemModelRef_1.default;
-const CurrentItemModelMasterRef_1 = tslib_1.__importDefault(require("./CurrentItemModelMasterRef"));
-exports.CurrentItemModelMasterRef = CurrentItemModelMasterRef_1.default;
+const SimpleInventoryModelRef_1 = tslib_1.__importDefault(require("./SimpleInventoryModelRef"));
+exports.SimpleInventoryModelRef = SimpleInventoryModelRef_1.default;
+const SimpleItemModelRef_1 = tslib_1.__importDefault(require("./SimpleItemModelRef"));
+exports.SimpleItemModelRef = SimpleItemModelRef_1.default;
 //# sourceMappingURL=index.js.map

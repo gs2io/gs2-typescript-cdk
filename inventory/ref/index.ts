@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,17 +14,15 @@
  * permissions and limitations under the License.
  */
 import NamespaceRef from "./NamespaceRef";
-import InventoryModelMasterRef from "./InventoryModelMasterRef";
 import InventoryModelRef from "./InventoryModelRef";
-import ItemModelMasterRef from "./ItemModelMasterRef";
 import ItemModelRef from "./ItemModelRef";
-import CurrentItemModelMasterRef from "./CurrentItemModelMasterRef";
+import SimpleInventoryModelRef from "./SimpleInventoryModelRef";
+import SimpleItemModelRef from "./SimpleItemModelRef";
 
 export {
     NamespaceRef,
-    InventoryModelMasterRef,
     InventoryModelRef,
-    ItemModelMasterRef,
     ItemModelRef,
-    CurrentItemModelMasterRef,
+    SimpleInventoryModelRef,
+    SimpleItemModelRef,
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,16 +15,10 @@
  */
 import NamespaceRef from "./NamespaceRef";
 import IssueJobRef from "./IssueJobRef";
-import SerialKeyRef from "./SerialKeyRef";
 import CampaignModelRef from "./CampaignModelRef";
-import CampaignModelMasterRef from "./CampaignModelMasterRef";
-import CurrentCampaignMasterRef from "./CurrentCampaignMasterRef";
 
 export {
     NamespaceRef,
     IssueJobRef,
-    SerialKeyRef,
     CampaignModelRef,
-    CampaignModelMasterRef,
-    CurrentCampaignMasterRef,
 }

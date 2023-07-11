@@ -1,6 +1,6 @@
 export default class RecoverIntervalTableRef {
-    private namespaceName;
-    private recoverIntervalTableName;
+    private readonly namespaceName;
+    private readonly recoverIntervalTableName;
     constructor(namespaceName: string, recoverIntervalTableName: string);
     grn(): string;
 }

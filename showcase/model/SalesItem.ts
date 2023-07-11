@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,43 +15,44 @@
  */
 import { ConsumeAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
-
-export interface SalesItemOptions {
-    metadata?: string|null|undefined;
-}
+import { SalesItemOptions } from "./options/SalesItemOptions";
 
 export default class SalesItem {
-	private readonly name: string;
+    private readonly name: string;
+    private readonly acquireActions: AcquireAction[];
     private readonly metadata: string|null = null;
-	private readonly consumeActions: ConsumeAction[];
-	private readonly acquireActions: AcquireAction[];
+    private readonly consumeActions: ConsumeAction[]|null = null;
 
     public constructor(
-            name: string,
-            consumeActions: ConsumeAction[],
-            acquireActions: AcquireAction[],
-            options?: SalesItemOptions,
+        name: string,
+        acquireActions: AcquireAction[],
+        options: SalesItemOptions|null = null,
     ) {
         this.name = name;
-        this.metadata = options?.metadata ?? null;
-        this.consumeActions = consumeActions;
         this.acquireActions = acquireActions;
+        this.metadata = options?.metadata ?? null;
+        this.consumeActions = options?.consumeActions ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.consumeActions != null) {
-            properties["ConsumeActions"] = this.consumeActions.map(v => v.properties());
+            properties["consumeActions"] = this.consumeActions.map(v => v.properties(
+                ));
         }
         if (this.acquireActions != null) {
-            properties["AcquireActions"] = this.acquireActions.map(v => v.properties());
+            properties["acquireActions"] = this.acquireActions.map(v => v.properties(
+                ));
         }
+
         return properties;
     }
 }

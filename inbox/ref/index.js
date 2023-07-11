@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GlobalMessageRef = exports.GlobalMessageMasterRef = exports.CurrentMessageMasterRef = exports.NamespaceRef = void 0;
+exports.GlobalMessageRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,10 +19,6 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
-const CurrentMessageMasterRef_1 = tslib_1.__importDefault(require("./CurrentMessageMasterRef"));
-exports.CurrentMessageMasterRef = CurrentMessageMasterRef_1.default;
-const GlobalMessageMasterRef_1 = tslib_1.__importDefault(require("./GlobalMessageMasterRef"));
-exports.GlobalMessageMasterRef = GlobalMessageMasterRef_1.default;
 const GlobalMessageRef_1 = tslib_1.__importDefault(require("./GlobalMessageRef"));
 exports.GlobalMessageRef = GlobalMessageRef_1.default;
 //# sourceMappingURL=index.js.map

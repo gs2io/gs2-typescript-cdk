@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -22,7 +22,7 @@ class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
-    push(jobs = null, userId = '#{userId}') {
+    push(jobs = null, userId = "#{userId}") {
         return new PushByUserId_1.default(this.namespaceName, jobs, userId);
     }
     grn() {
@@ -32,7 +32,7 @@ class NamespaceRef {
             func_1.GetAttr.region().str(),
             func_1.GetAttr.ownerId().str(),
             "queue",
-            this.namespaceName
+            this.namespaceName,
         ]).str();
     }
 }

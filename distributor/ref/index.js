@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentDistributorMasterRef = exports.DistributorModelRef = exports.DistributorModelMasterRef = exports.NamespaceRef = void 0;
+exports.DistributorModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,10 +19,6 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
-const DistributorModelMasterRef_1 = tslib_1.__importDefault(require("./DistributorModelMasterRef"));
-exports.DistributorModelMasterRef = DistributorModelMasterRef_1.default;
 const DistributorModelRef_1 = tslib_1.__importDefault(require("./DistributorModelRef"));
 exports.DistributorModelRef = DistributorModelRef_1.default;
-const CurrentDistributorMasterRef_1 = tslib_1.__importDefault(require("./CurrentDistributorMasterRef"));
-exports.CurrentDistributorMasterRef = CurrentDistributorMasterRef_1.default;
 //# sourceMappingURL=index.js.map

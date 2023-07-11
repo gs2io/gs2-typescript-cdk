@@ -1,7 +1,7 @@
 export default class PrizeLimitRef {
-    private namespaceName;
-    private prizeTableName;
-    private prizeId;
+    private readonly namespaceName;
+    private readonly prizeTableName;
+    private readonly prizeId;
     constructor(namespaceName: string, prizeTableName: string, prizeId: string);
     grn(): string;
 }

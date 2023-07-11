@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,56 +14,62 @@
  * permissions and limitations under the License.
  */
 
-import core from "../../core";
+import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import {Stack} from "../../core/model";
 import TransactionSetting from "../../core/model/TransactionSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
+
+import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import Showcase from "./Showcase";
 
-import NamespaceRef from "../ref/NamespaceRef";
+import { NamespaceOptions } from "./options/NamespaceOptions";
 
-export interface NamespaceOptions {
-    description?: string|null|undefined;
-    buyScript?: ScriptSetting|null|undefined;
-    logSetting?: LogSetting|null|undefined;
-}
-
-export default class Namespace extends core.CdkResource {
-
-    private stack: Stack;
-	private readonly name: string;
-	private readonly description: string|null = null;
-	private readonly transactionSetting: TransactionSetting;
-	private readonly buyScript: ScriptSetting|null = null;
-	private readonly logSetting: LogSetting|null = null;
+export default class Namespace extends CdkResource {
+    private readonly stack: Stack;
+    private readonly name: string;
+    private readonly transactionSetting: TransactionSetting;
+    private readonly description: string|null = null;
+    private readonly buyScript: ScriptSetting|null = null;
+    private readonly logSetting: LogSetting|null = null;
 
     public constructor(
-            stack: Stack,
-            name: string,
-            transactionSetting: TransactionSetting,
-            options?: NamespaceOptions,
+        stack: Stack,
+        name: string,
+        transactionSetting: TransactionSetting,
+        options: NamespaceOptions|null = null,
     ) {
-        super("Showcase_Namespace_" + name);
+        super(
+            "Showcase_Namespace_" + name
+        );
 
         this.stack = stack;
         this.name = name;
-        this.description = options?.description ?? null;
         this.transactionSetting = transactionSetting;
+        this.description = options?.description ?? null;
         this.buyScript = options?.buyScript ?? null;
         this.logSetting = options?.logSetting ?? null;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+
+    public alternateKeys(
+    ) {
+        return "name";
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Showcase::Namespace";
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
             properties["Name"] = this.name;
         }
@@ -71,41 +77,46 @@ export default class Namespace extends core.CdkResource {
             properties["Description"] = this.description;
         }
         if (this.transactionSetting != null) {
-            properties["TransactionSetting"] = this.transactionSetting.properties();
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
         }
         if (this.buyScript != null) {
-            properties["BuyScript"] = this.buyScript.properties();
+            properties["BuyScript"] = this.buyScript?.properties(
+            );
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = this.logSetting?.properties(
+            );
         }
+
         return properties;
     }
 
     public ref(
     ): NamespaceRef {
         return new NamespaceRef(
-            this.name,
+            this.name!,
         );
     }
 
-    public getAttrNamespaceId(): GetAttr {
+    public getAttrNamespaceId(
+    ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.NamespaceId"
+            "Item.NamespaceId",
         );
     }
 
     public masterData(
-            showcases: Showcase[],
+        showcases: Showcase[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             showcases,
         ).addDependsOn(
-            this
+            this,
         );
         return this;
     }

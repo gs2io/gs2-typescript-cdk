@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,30 +16,35 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const core_1 = tslib_1.__importDefault(require("../../core"));
+const model_1 = require("../../core/model");
 const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
-class Namespace extends core_1.default.CdkResource {
-    constructor(stack, name, enableAutoRun, options) {
-        var _a, _b, _c, _d;
+class Namespace extends model_1.CdkResource {
+    constructor(stack, name, options = null) {
+        var _a, _b, _c, _d, _e;
         super("JobQueue_Namespace_" + name);
         this.description = null;
+        this.enableAutoRun = null;
         this.pushNotification = null;
         this.runNotification = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.enableAutoRun = enableAutoRun;
-        this.pushNotification = (_b = options === null || options === void 0 ? void 0 : options.pushNotification) !== null && _b !== void 0 ? _b : null;
-        this.runNotification = (_c = options === null || options === void 0 ? void 0 : options.runNotification) !== null && _c !== void 0 ? _c : null;
-        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
+        this.enableAutoRun = (_b = options === null || options === void 0 ? void 0 : options.enableAutoRun) !== null && _b !== void 0 ? _b : null;
+        this.pushNotification = (_c = options === null || options === void 0 ? void 0 : options.pushNotification) !== null && _c !== void 0 ? _c : null;
+        this.runNotification = (_d = options === null || options === void 0 ? void 0 : options.runNotification) !== null && _d !== void 0 ? _d : null;
+        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
         stack.addResource(this);
+    }
+    alternateKeys() {
+        return "name";
     }
     resourceType() {
         return "GS2::JobQueue::Namespace";
     }
     properties() {
+        var _a, _b, _c;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -51,13 +56,13 @@ class Namespace extends core_1.default.CdkResource {
             properties["EnableAutoRun"] = this.enableAutoRun;
         }
         if (this.pushNotification != null) {
-            properties["PushNotification"] = this.pushNotification.properties();
+            properties["PushNotification"] = (_a = this.pushNotification) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.runNotification != null) {
-            properties["RunNotification"] = this.runNotification.properties();
+            properties["RunNotification"] = (_b = this.runNotification) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
         }
         return properties;
     }

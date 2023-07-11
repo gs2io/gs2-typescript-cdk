@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,38 +14,33 @@
  * permissions and limitations under the License.
  */
 
-import core from "../../core";
+import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import {Stack} from "../../core/model";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
+
+import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import DistributorModel from "./DistributorModel";
 
-import NamespaceRef from "../ref/NamespaceRef";
+import { NamespaceOptions } from "./options/NamespaceOptions";
 
-export interface NamespaceOptions {
-    description?: string|null|undefined;
-    assumeUserId?: string|null|undefined;
-    autoRunStampSheetNotification?: NotificationSetting|null|undefined;
-    logSetting?: LogSetting|null|undefined;
-}
-
-export default class Namespace extends core.CdkResource {
-
-    private stack: Stack;
-	private readonly name: string;
-	private readonly description: string|null = null;
-	private readonly assumeUserId: string|null = null;
-	private readonly autoRunStampSheetNotification: NotificationSetting|null = null;
-	private readonly logSetting: LogSetting|null = null;
+export default class Namespace extends CdkResource {
+    private readonly stack: Stack;
+    private readonly name: string;
+    private readonly description: string|null = null;
+    private readonly assumeUserId: string|null = null;
+    private readonly autoRunStampSheetNotification: NotificationSetting|null = null;
+    private readonly logSetting: LogSetting|null = null;
 
     public constructor(
-            stack: Stack,
-            name: string,
-            options?: NamespaceOptions,
+        stack: Stack,
+        name: string,
+        options: NamespaceOptions|null = null,
     ) {
-        super("Distributor_Namespace_" + name);
+        super(
+            "Distributor_Namespace_" + name
+        );
 
         this.stack = stack;
         this.name = name;
@@ -53,16 +48,26 @@ export default class Namespace extends core.CdkResource {
         this.assumeUserId = options?.assumeUserId ?? null;
         this.autoRunStampSheetNotification = options?.autoRunStampSheetNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+
+    public alternateKeys(
+    ) {
+        return "name";
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Distributor::Namespace";
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
             properties["Name"] = this.name;
         }
@@ -73,38 +78,42 @@ export default class Namespace extends core.CdkResource {
             properties["AssumeUserId"] = this.assumeUserId;
         }
         if (this.autoRunStampSheetNotification != null) {
-            properties["AutoRunStampSheetNotification"] = this.autoRunStampSheetNotification.properties();
+            properties["AutoRunStampSheetNotification"] = this.autoRunStampSheetNotification?.properties(
+            );
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = this.logSetting?.properties(
+            );
         }
+
         return properties;
     }
 
     public ref(
     ): NamespaceRef {
         return new NamespaceRef(
-            this.name,
+            this.name!,
         );
     }
 
-    public getAttrNamespaceId(): GetAttr {
+    public getAttrNamespaceId(
+    ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.NamespaceId"
+            "Item.NamespaceId",
         );
     }
 
     public masterData(
-            distributorModels: DistributorModel[],
+        distributorModels: DistributorModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             distributorModels,
         ).addDependsOn(
-            this
+            this,
         );
         return this;
     }

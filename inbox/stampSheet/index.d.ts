@@ -1,2 +1,3 @@
+import SendMessageByUserId from "./SendMessageByUserId";
 import OpenMessageByUserId from "./OpenMessageByUserId";
-export { OpenMessageByUserId, };
+export { SendMessageByUserId, OpenMessageByUserId, };

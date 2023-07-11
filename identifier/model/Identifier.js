@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,18 +13,21 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- *
- * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const core_1 = tslib_1.__importDefault(require("../../core"));
-class Identifier extends core_1.default.CdkResource {
-    constructor(stack, userName) {
-        super("Identifier_Identifier_");
+const model_1 = require("../../core/model");
+const func_1 = require("../../core/func");
+const IdentifierRef_1 = tslib_1.__importDefault(require("../ref/IdentifierRef"));
+class Identifier extends model_1.CdkResource {
+    constructor(stack, userName, options = null) {
+        super("Identifier_Identifier_" + userName);
         this.stack = stack;
         this.userName = userName;
         stack.addResource(this);
+    }
+    alternateKeys() {
+        return "userName";
     }
     resourceType() {
         return "GS2::Identifier::Identifier";
@@ -36,11 +39,14 @@ class Identifier extends core_1.default.CdkResource {
         }
         return properties;
     }
+    ref(clientId) {
+        return new IdentifierRef_1.default(this.userName, clientId);
+    }
     getAttrClientId() {
-        return new core_1.default.GetAttr(null, null, "Item.ClientId");
+        return new func_1.GetAttr(null, null, "Item.ClientId");
     }
     getAttrClientSecret() {
-        return new core_1.default.GetAttr(null, null, "ClientSecret");
+        return new func_1.GetAttr(null, null, "ClientSecret");
     }
 }
 exports.default = Identifier;

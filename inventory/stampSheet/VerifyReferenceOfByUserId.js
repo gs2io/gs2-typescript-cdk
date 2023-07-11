@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,29 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyReferenceOfByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, inventoryName, itemName, itemSetName, referenceOf, verifyType, userId = '#{userId}') {
+    constructor(namespaceName, inventoryName, itemName, referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (inventoryName != null) {
-            properties["inventoryName"] = inventoryName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (itemName != null) {
-            properties["itemName"] = itemName;
-        }
-        if (itemSetName != null) {
-            properties["itemSetName"] = itemSetName;
-        }
-        if (referenceOf != null) {
-            properties["referenceOf"] = referenceOf;
-        }
-        if (verifyType != null) {
-            properties["verifyType"] = verifyType;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["inventoryName"] = inventoryName;
+        properties["itemName"] = itemName;
+        properties["referenceOf"] = referenceOf;
+        properties["verifyType"] = verifyType;
+        properties["itemSetName"] = itemSetName;
+        properties["userId"] = userId;
         super("Gs2Inventory:VerifyReferenceOfByUserId", properties);
     }
 }

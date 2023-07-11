@@ -1,6 +1,6 @@
 export default class GlobalMessageRef {
-    private namespaceName;
-    private globalMessageName;
+    private readonly namespaceName;
+    private readonly globalMessageName;
     constructor(namespaceName: string, globalMessageName: string);
     grn(): string;
 }

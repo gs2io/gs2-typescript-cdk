@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,52 +14,58 @@
  * permissions and limitations under the License.
  */
 
-import core from "../../core";
+import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import {Stack} from "../../core/model";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
+
+import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import StaminaModel from "./StaminaModel";
 
-import NamespaceRef from "../ref/NamespaceRef";
+import { NamespaceOptions } from "./options/NamespaceOptions";
 
-export interface NamespaceOptions {
-    description?: string|null|undefined;
-    overflowTriggerScript?: ScriptSetting|null|undefined;
-    logSetting?: LogSetting|null|undefined;
-}
-
-export default class Namespace extends core.CdkResource {
-
-    private stack: Stack;
-	private readonly name: string;
-	private readonly description: string|null = null;
-	private readonly overflowTriggerScript: ScriptSetting|null = null;
-	private readonly logSetting: LogSetting|null = null;
+export default class Namespace extends CdkResource {
+    private readonly stack: Stack;
+    private readonly name: string;
+    private readonly description: string|null = null;
+    private readonly overflowTriggerScript: ScriptSetting|null = null;
+    private readonly logSetting: LogSetting|null = null;
 
     public constructor(
-            stack: Stack,
-            name: string,
-            options?: NamespaceOptions,
+        stack: Stack,
+        name: string,
+        options: NamespaceOptions|null = null,
     ) {
-        super("Stamina_Namespace_" + name);
+        super(
+            "Stamina_Namespace_" + name
+        );
 
         this.stack = stack;
         this.name = name;
         this.description = options?.description ?? null;
         this.overflowTriggerScript = options?.overflowTriggerScript ?? null;
         this.logSetting = options?.logSetting ?? null;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+
+    public alternateKeys(
+    ) {
+        return "name";
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Stamina::Namespace";
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
             properties["Name"] = this.name;
         }
@@ -67,38 +73,42 @@ export default class Namespace extends core.CdkResource {
             properties["Description"] = this.description;
         }
         if (this.overflowTriggerScript != null) {
-            properties["OverflowTriggerScript"] = this.overflowTriggerScript.properties();
+            properties["OverflowTriggerScript"] = this.overflowTriggerScript?.properties(
+            );
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = this.logSetting?.properties(
+            );
         }
+
         return properties;
     }
 
     public ref(
     ): NamespaceRef {
         return new NamespaceRef(
-            this.name,
+            this.name!,
         );
     }
 
-    public getAttrNamespaceId(): GetAttr {
+    public getAttrNamespaceId(
+    ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.NamespaceId"
+            "Item.NamespaceId",
         );
     }
 
     public masterData(
-            staminaModels: StaminaModel[],
+        staminaModels: StaminaModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             staminaModels,
         ).addDependsOn(
-            this
+            this,
         );
         return this;
     }

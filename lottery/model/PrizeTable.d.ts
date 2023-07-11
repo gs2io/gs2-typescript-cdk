@@ -1,15 +1,11 @@
-import Prize from "../model/Prize";
-import PrizeTableRef from "../ref/PrizeTableRef";
-export interface PrizeTableOptions {
-    metadata?: string | null | undefined;
-}
+import Prize from "./Prize";
+import { PrizeTableOptions } from "./options/PrizeTableOptions";
 export default class PrizeTable {
     private readonly name;
-    private readonly metadata;
     private readonly prizes;
-    constructor(name: string, prizes: Prize[], options?: PrizeTableOptions);
+    private readonly metadata;
+    constructor(name: string, prizes: Prize[], options?: PrizeTableOptions | null);
     properties(): {
         [name: string]: any;
     };
-    ref(namespaceName: string): PrizeTableRef;
 }

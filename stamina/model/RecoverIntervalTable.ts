@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,55 +13,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-import RecoverIntervalTableRef from "../ref/RecoverIntervalTableRef";
-
-export interface RecoverIntervalTableOptions {
-    metadata?: string|null|undefined;
-}
-
+import { RecoverIntervalTableOptions } from "./options/RecoverIntervalTableOptions";
 
 export default class RecoverIntervalTable {
-	private readonly name: string;
+    private readonly name: string;
+    private readonly experienceModelId: string;
+    private readonly values: number[];
     private readonly metadata: string|null = null;
-	private readonly experienceModelId: string;
-	private readonly values: number[];
 
     public constructor(
-            name: string,
-            experienceModelId: string,
-            values: number[],
-            options?: RecoverIntervalTableOptions,
+        name: string,
+        experienceModelId: string,
+        values: number[],
+        options: RecoverIntervalTableOptions|null = null,
     ) {
         this.name = name;
-        this.metadata = options?.metadata ?? null;
         this.experienceModelId = experienceModelId;
         this.values = values;
+        this.metadata = options?.metadata ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.experienceModelId != null) {
-            properties["ExperienceModelId"] = this.experienceModelId;
+            properties["experienceModelId"] = this.experienceModelId;
         }
         if (this.values != null) {
-            properties["Values"] = this.values;
+            properties["values"] = this.values;
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-    ): RecoverIntervalTableRef {
-        return new RecoverIntervalTableRef(
-            namespaceName,
-            this.name,
-        );
+        return properties;
     }
 }

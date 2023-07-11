@@ -1,1 +1,1 @@
-{"version":3,"file":"IdentifierRef.js","sourceRoot":"","sources":["IdentifierRef.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;AAKH,MAAqB,aAAa;IAI9B,YACQ,QAAgB,EAChB,QAAgB;QAEpB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;QACzB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;IAC7B,CAAC;CACJ;AAXD,gCAWC"}
+{"version":3,"file":"IdentifierRef.js","sourceRoot":"","sources":["IdentifierRef.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;AAIH,MAAqB,aAAa;IAI9B,YACI,QAAgB,EAChB,QAAgB;QAEhB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;QACzB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;IAC7B,CAAC;CACJ;AAXD,gCAWC"}

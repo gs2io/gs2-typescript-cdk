@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,40 +19,26 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 export default class AcquireItemSetByUserId extends AcquireAction {
 
     public constructor(
-            namespaceName: string,
-            inventoryName: string,
-            itemName: string,
-            acquireCount: number,
-            expiresAt: number,
-            createNewItemSet: boolean,
-            itemSetName: string|null = null,
-            userId: string = '#{userId}',
+        namespaceName: string,
+        inventoryName: string,
+        itemName: string,
+        acquireCount: number,
+        expiresAt: number|null = null,
+        createNewItemSet: boolean|null = null,
+        itemSetName: string|null = null,
+        userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (inventoryName != null) {
-            properties["inventoryName"] = inventoryName;
-        }
-        if (itemName != null) {
-            properties["itemName"] = itemName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (acquireCount != null) {
-            properties["acquireCount"] = acquireCount;
-        }
-        if (expiresAt != null) {
-            properties["expiresAt"] = expiresAt;
-        }
-        if (createNewItemSet != null) {
-            properties["createNewItemSet"] = createNewItemSet;
-        }
-        if (itemSetName != null) {
-            properties["itemSetName"] = itemSetName;
-        }
+
+        properties["namespaceName"] = namespaceName
+        properties["inventoryName"] = inventoryName
+        properties["itemName"] = itemName
+        properties["acquireCount"] = acquireCount
+        properties["expiresAt"] = expiresAt
+        properties["createNewItemSet"] = createNewItemSet
+        properties["itemSetName"] = itemSetName
+        properties["userId"] = userId
+
         super(
             "Gs2Inventory:AcquireItemSetByUserId",
             properties,

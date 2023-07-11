@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,29 +15,19 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import CurrentDistributorMasterRef from "./CurrentDistributorMasterRef";
 import DistributorModelRef from "./DistributorModelRef";
-import DistributorModelMasterRef from "./DistributorModelMasterRef";
-
 
 export default class NamespaceRef {
-    private namespaceName: string;
+    private readonly namespaceName: string;
 
     public constructor(
-            namespaceName: string,
+        namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
     }
 
-    public currentDistributorMaster(
-    ): CurrentDistributorMasterRef {
-        return new CurrentDistributorMasterRef(
-            this.namespaceName,
-        );
-    }
-
     public distributorModel(
-            distributorName: string,
+        distributorName: string,
     ): DistributorModelRef {
         return new DistributorModelRef(
             this.namespaceName,
@@ -45,26 +35,23 @@ export default class NamespaceRef {
         );
     }
 
-    public distributorModelMaster(
-            distributorName: string,
-    ): DistributorModelMasterRef {
-        return new DistributorModelMasterRef(
-            this.namespaceName,
-            distributorName,
-        );
-    }
-
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "distributor",
-                this.namespaceName
-            ]
-        ).str();
+                this.namespaceName,
+            ],
+        ).str(
+        );
     }
 }

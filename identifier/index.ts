@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,21 +17,25 @@
 import * as model from "./model";
 import * as ref from "./ref";
 import * as stampSheet from "./stampSheet";
+import { UserRef } from "./ref";
+import { SecurityPolicyRef } from "./ref";
+
 
 function user(
-        userName: string,
-): ref.UserRef {
-    return new ref.UserRef(
+    userName: string,
+): UserRef {
+    return new UserRef(
         userName,
-    )
+    );
 }
 
+
 function securityPolicy(
-        securityPolicyName: string,
-): ref.SecurityPolicyRef {
-    return new ref.SecurityPolicyRef(
+    securityPolicyName: string,
+): SecurityPolicyRef {
+    return new SecurityPolicyRef(
         securityPolicyName,
-    )
+    );
 }
 
 export default {

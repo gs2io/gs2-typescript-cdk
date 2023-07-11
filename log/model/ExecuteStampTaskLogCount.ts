@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,49 +13,46 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-export interface ExecuteStampTaskLogCountOptions {
-    service?: string|null|undefined;
-    method?: string|null|undefined;
-    userId?: string|null|undefined;
-    action?: string|null|undefined;
-}
+import { ExecuteStampTaskLogCountOptions } from "./options/ExecuteStampTaskLogCountOptions";
 
 export default class ExecuteStampTaskLogCount {
+    private readonly count: number;
     private readonly service: string|null = null;
     private readonly method: string|null = null;
     private readonly userId: string|null = null;
     private readonly action: string|null = null;
-	private readonly count: number;
 
     public constructor(
-            count: number,
-            options?: ExecuteStampTaskLogCountOptions,
+        count: number,
+        options: ExecuteStampTaskLogCountOptions|null = null,
     ) {
+        this.count = count;
         this.service = options?.service ?? null;
         this.method = options?.method ?? null;
         this.userId = options?.userId ?? null;
         this.action = options?.action ?? null;
-        this.count = count;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.service != null) {
-            properties["Service"] = this.service;
+            properties["service"] = this.service;
         }
         if (this.method != null) {
-            properties["Method"] = this.method;
+            properties["method"] = this.method;
         }
         if (this.userId != null) {
-            properties["UserId"] = this.userId;
+            properties["userId"] = this.userId;
         }
         if (this.action != null) {
-            properties["Action"] = this.action;
+            properties["action"] = this.action;
         }
         if (this.count != null) {
-            properties["Count"] = this.count;
+            properties["count"] = this.count;
         }
+
         return properties;
     }
 }

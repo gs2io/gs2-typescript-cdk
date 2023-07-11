@@ -1,9 +1,7 @@
-export interface ProjectTokenOptions {
-    token?: string | null | undefined;
-}
+import { ProjectTokenOptions } from "./options/ProjectTokenOptions";
 export default class ProjectToken {
     private readonly token;
-    constructor(options?: ProjectTokenOptions);
+    constructor(options?: ProjectTokenOptions | null);
     properties(): {
         [name: string]: any;
     };

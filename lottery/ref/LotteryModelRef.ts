@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -18,23 +18,22 @@ import {GetAttr, Join} from "../../core/func";
 import DrawByUserId from "../stampSheet/DrawByUserId";
 import { Config } from "../../core/model";
 
-
 export default class LotteryModelRef {
-    private namespaceName: string;
-    private lotteryName: string;
+    private readonly namespaceName: string;
+    private readonly lotteryName: string;
 
     public constructor(
-            namespaceName: string,
-            lotteryName: string,
+        namespaceName: string,
+        lotteryName: string,
     ) {
         this.namespaceName = namespaceName;
         this.lotteryName = lotteryName;
     }
 
     public draw(
-            count: number,
-            config: Config[]|null = null,
-            userId: string = '#{userId}',
+        count: number,
+        config: Config[]|null = null,
+        userId: string|null = "#{userId}",
     ): DrawByUserId {
         return new DrawByUserId(
             this.namespaceName,
@@ -45,19 +44,25 @@ export default class LotteryModelRef {
         );
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "lottery",
                 this.namespaceName,
                 "lotteryModel",
-                this.lotteryName
-            ]
-        ).str();
+                this.lotteryName,
+            ],
+        ).str(
+        );
     }
 }

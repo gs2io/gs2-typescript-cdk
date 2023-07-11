@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,61 +13,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-export interface AccessLogOptions {
-    userId?: string|null|undefined;
-}
+import { AccessLogOptions } from "./options/AccessLogOptions";
 
 export default class AccessLog {
-	private readonly timestamp: number;
-	private readonly requestId: string;
-	private readonly service: string;
-	private readonly method: string;
+    private readonly timestamp: number;
+    private readonly requestId: string;
+    private readonly service: string;
+    private readonly method: string;
+    private readonly request: string;
+    private readonly result: string;
     private readonly userId: string|null = null;
-	private readonly request: string;
-	private readonly result: string;
 
     public constructor(
-            timestamp: number,
-            requestId: string,
-            service: string,
-            method: string,
-            request: string,
-            result: string,
-            options?: AccessLogOptions,
+        timestamp: number,
+        requestId: string,
+        service: string,
+        method: string,
+        request: string,
+        result: string,
+        options: AccessLogOptions|null = null,
     ) {
         this.timestamp = timestamp;
         this.requestId = requestId;
         this.service = service;
         this.method = method;
-        this.userId = options?.userId ?? null;
         this.request = request;
         this.result = result;
+        this.userId = options?.userId ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.timestamp != null) {
-            properties["Timestamp"] = this.timestamp;
+            properties["timestamp"] = this.timestamp;
         }
         if (this.requestId != null) {
-            properties["RequestId"] = this.requestId;
+            properties["requestId"] = this.requestId;
         }
         if (this.service != null) {
-            properties["Service"] = this.service;
+            properties["service"] = this.service;
         }
         if (this.method != null) {
-            properties["Method"] = this.method;
+            properties["method"] = this.method;
         }
         if (this.userId != null) {
-            properties["UserId"] = this.userId;
+            properties["userId"] = this.userId;
         }
         if (this.request != null) {
-            properties["Request"] = this.request;
+            properties["request"] = this.request;
         }
         if (this.result != null) {
-            properties["Result"] = this.result;
+            properties["result"] = this.result;
         }
+
         return properties;
     }
 }

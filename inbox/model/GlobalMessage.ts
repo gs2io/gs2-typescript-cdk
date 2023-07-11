@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,29 +13,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import AcquireAction from "../../core/model/AcquireAction";
-import TimeSpan from "../model/TimeSpan";
-
-import GlobalMessageRef from "../ref/GlobalMessageRef";
-
-export interface GlobalMessageOptions {
-    readAcquireActions?: AcquireAction[]|null|undefined;
-    expiresTimeSpan?: TimeSpan|null|undefined;
-    expiresAt?: number|null|undefined;
-}
-
+import { AcquireAction } from "../../core/model";
+import TimeSpan from "./TimeSpan";
+import { GlobalMessageOptions } from "./options/GlobalMessageOptions";
 
 export default class GlobalMessage {
-	private readonly name: string;
-	private readonly metadata: string;
+    private readonly name: string;
+    private readonly metadata: string;
     private readonly readAcquireActions: AcquireAction[]|null = null;
     private readonly expiresTimeSpan: TimeSpan|null = null;
     private readonly expiresAt: number|null = null;
 
     public constructor(
-            name: string,
-            metadata: string,
-            options?: GlobalMessageOptions,
+        name: string,
+        metadata: string,
+        options: GlobalMessageOptions|null = null,
     ) {
         this.name = name;
         this.metadata = metadata;
@@ -44,32 +36,28 @@ export default class GlobalMessage {
         this.expiresAt = options?.expiresAt ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.readAcquireActions != null) {
-            properties["ReadAcquireActions"] = this.readAcquireActions.map(v => v.properties());
+            properties["readAcquireActions"] = this.readAcquireActions.map(v => v.properties(
+                ));
         }
         if (this.expiresTimeSpan != null) {
-            properties["ExpiresTimeSpan"] = this.expiresTimeSpan.properties();
+            properties["expiresTimeSpan"] = this.expiresTimeSpan?.properties(
+            );
         }
         if (this.expiresAt != null) {
-            properties["ExpiresAt"] = this.expiresAt;
+            properties["expiresAt"] = this.expiresAt;
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-    ): GlobalMessageRef {
-        return new GlobalMessageRef(
-            namespaceName,
-            this.name,
-        );
+        return properties;
     }
 }

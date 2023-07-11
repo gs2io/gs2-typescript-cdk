@@ -1,8 +1,13 @@
-import Policy from "./Policy";
-import ProjectToken from "./ProjectToken";
-import Statement from "./Statement";
 import User from "./User";
+import { UserOptions } from "./options/UserOptions";
 import SecurityPolicy from "./SecurityPolicy";
+import { SecurityPolicyOptions } from "./options/SecurityPolicyOptions";
 import Identifier from "./Identifier";
+import { IdentifierOptions } from "./options/IdentifierOptions";
 import Password from "./Password";
-export { Policy, ProjectToken, Statement, User, SecurityPolicy, Identifier, Password, };
+import { PasswordOptions } from "./options/PasswordOptions";
+import AttachSecurityPolicy from "./AttachSecurityPolicy";
+import { AttachSecurityPolicyOptions } from "./options/AttachSecurityPolicyOptions";
+import ProjectToken from "./ProjectToken";
+import { ProjectTokenOptions } from "./options/ProjectTokenOptions";
+export { User, UserOptions, SecurityPolicy, SecurityPolicyOptions, Identifier, IdentifierOptions, Password, PasswordOptions, AttachSecurityPolicy, AttachSecurityPolicyOptions, ProjectToken, ProjectTokenOptions, };

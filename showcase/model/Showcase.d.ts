@@ -1,17 +1,12 @@
-import DisplayItem from "../model/DisplayItem";
-import ShowcaseRef from "../ref/ShowcaseRef";
-export interface ShowcaseOptions {
-    metadata?: string | null | undefined;
-    salesPeriodEventId?: string | null | undefined;
-}
+import DisplayItem from "./DisplayItem";
+import { ShowcaseOptions } from "./options/ShowcaseOptions";
 export default class Showcase {
     private readonly name;
+    private readonly displayItems;
     private readonly metadata;
     private readonly salesPeriodEventId;
-    private readonly displayItems;
-    constructor(name: string, displayItems: DisplayItem[], options?: ShowcaseOptions);
+    constructor(name: string, displayItems: DisplayItem[], options?: ShowcaseOptions | null);
     properties(): {
         [name: string]: any;
     };
-    ref(namespaceName: string): ShowcaseRef;
 }

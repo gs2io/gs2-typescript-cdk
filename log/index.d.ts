@@ -1,7 +1,8 @@
 import * as model from "./model";
 import * as ref from "./ref";
 import * as stampSheet from "./stampSheet";
-declare function namespace(namespaceName: string): ref.NamespaceRef;
+import { NamespaceRef } from "./ref";
+declare function namespace(namespaceName: string): NamespaceRef;
 declare const _default: {
     model: typeof model;
     ref: typeof ref;

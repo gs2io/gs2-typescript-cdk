@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -22,22 +22,21 @@ import SetRecoverIntervalByUserId from "../stampSheet/SetRecoverIntervalByUserId
 import SetRecoverValueByUserId from "../stampSheet/SetRecoverValueByUserId";
 import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
 
-
 export default class StaminaModelRef {
-    private namespaceName: string;
-    private staminaName: string;
+    private readonly namespaceName: string;
+    private readonly staminaName: string;
 
     public constructor(
-            namespaceName: string,
-            staminaName: string,
+        namespaceName: string,
+        staminaName: string,
     ) {
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
     }
 
     public recoverStamina(
-            recoverValue: number,
-            userId: string = '#{userId}',
+        recoverValue: number,
+        userId: string|null = "#{userId}",
     ): RecoverStaminaByUserId {
         return new RecoverStaminaByUserId(
             this.namespaceName,
@@ -48,8 +47,8 @@ export default class StaminaModelRef {
     }
 
     public raiseMaxValue(
-            raiseValue: number,
-            userId: string = '#{userId}',
+        raiseValue: number,
+        userId: string|null = "#{userId}",
     ): RaiseMaxValueByUserId {
         return new RaiseMaxValueByUserId(
             this.namespaceName,
@@ -60,8 +59,8 @@ export default class StaminaModelRef {
     }
 
     public setMaxValue(
-            maxValue: number,
-            userId: string = '#{userId}',
+        maxValue: number,
+        userId: string|null = "#{userId}",
     ): SetMaxValueByUserId {
         return new SetMaxValueByUserId(
             this.namespaceName,
@@ -72,8 +71,8 @@ export default class StaminaModelRef {
     }
 
     public setRecoverInterval(
-            recoverIntervalMinutes: number,
-            userId: string = '#{userId}',
+        recoverIntervalMinutes: number,
+        userId: string|null = "#{userId}",
     ): SetRecoverIntervalByUserId {
         return new SetRecoverIntervalByUserId(
             this.namespaceName,
@@ -84,8 +83,8 @@ export default class StaminaModelRef {
     }
 
     public setRecoverValue(
-            recoverValue: number,
-            userId: string = '#{userId}',
+        recoverValue: number,
+        userId: string|null = "#{userId}",
     ): SetRecoverValueByUserId {
         return new SetRecoverValueByUserId(
             this.namespaceName,
@@ -96,8 +95,8 @@ export default class StaminaModelRef {
     }
 
     public consumeStamina(
-            consumeValue: number,
-            userId: string = '#{userId}',
+        consumeValue: number,
+        userId: string|null = "#{userId}",
     ): ConsumeStaminaByUserId {
         return new ConsumeStaminaByUserId(
             this.namespaceName,
@@ -107,19 +106,25 @@ export default class StaminaModelRef {
         );
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "stamina",
                 this.namespaceName,
                 "model",
-                this.staminaName
-            ]
-        ).str();
+                this.staminaName,
+            ],
+        ).str(
+        );
     }
 }

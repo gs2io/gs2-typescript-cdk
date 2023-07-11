@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,22 +13,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-export interface JobResultBodyOptions {
-}
+import { JobResultBodyOptions } from "./options/JobResultBodyOptions";
 
 export default class JobResultBody {
-	private readonly tryNumber: number;
-	private readonly statusCode: number;
-	private readonly result: string;
-	private readonly tryAt: number;
+    private readonly tryNumber: number;
+    private readonly statusCode: number;
+    private readonly result: string;
+    private readonly tryAt: number;
 
     public constructor(
-            tryNumber: number,
-            statusCode: number,
-            result: string,
-            tryAt: number,
-            options?: JobResultBodyOptions,
+        tryNumber: number,
+        statusCode: number,
+        result: string,
+        tryAt: number,
+        options: JobResultBodyOptions|null = null,
     ) {
         this.tryNumber = tryNumber;
         this.statusCode = statusCode;
@@ -36,20 +34,23 @@ export default class JobResultBody {
         this.tryAt = tryAt;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.tryNumber != null) {
-            properties["TryNumber"] = this.tryNumber;
+            properties["tryNumber"] = this.tryNumber;
         }
         if (this.statusCode != null) {
-            properties["StatusCode"] = this.statusCode;
+            properties["statusCode"] = this.statusCode;
         }
         if (this.result != null) {
-            properties["Result"] = this.result;
+            properties["result"] = this.result;
         }
         if (this.tryAt != null) {
-            properties["TryAt"] = this.tryAt;
+            properties["tryAt"] = this.tryAt;
         }
+
         return properties;
     }
 }

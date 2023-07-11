@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,50 +14,40 @@
  * permissions and limitations under the License.
  */
 import { AcquireAction } from "../../core/model";
-
-export const PrizeType = {
-    ACTION: "action",
-    PRIZE_TABLE: "prize_table",
-} as const;
-export type PrizeType = typeof PrizeType[keyof typeof PrizeType];
-
-export interface PrizeOptions {
-    acquireActions?: AcquireAction[]|null|undefined;
-    drawnLimit?: number|null|undefined;
-    limitFailOverPrizeId?: string|null|undefined;
-    prizeTableName?: string|null|undefined;
-}
+import { PrizeOptions } from "./options/PrizeOptions";
+import { PrizeTypeIsActionOptions } from "./options/PrizeTypeIsActionOptions";
+import { PrizeTypeIsPrizeTableOptions } from "./options/PrizeTypeIsPrizeTableOptions";
+import { PrizeType } from "./enum/PrizeType";
 
 export default class Prize {
-	private readonly prizeId: string;
-	private readonly type: PrizeType;
+    private readonly prizeId: string;
+    private readonly type: PrizeType;
+    private readonly weight: number;
     private readonly acquireActions: AcquireAction[]|null = null;
     private readonly drawnLimit: number|null = null;
     private readonly limitFailOverPrizeId: string|null = null;
     private readonly prizeTableName: string|null = null;
-	private readonly weight: number;
 
     public constructor(
-            prizeId: string,
-            type: PrizeType,
-            weight: number,
-            options?: PrizeOptions,
+        prizeId: string,
+        type: PrizeType,
+        weight: number,
+        options: PrizeOptions|null = null,
     ) {
         this.prizeId = prizeId;
         this.type = type;
+        this.weight = weight;
         this.acquireActions = options?.acquireActions ?? null;
         this.drawnLimit = options?.drawnLimit ?? null;
         this.limitFailOverPrizeId = options?.limitFailOverPrizeId ?? null;
         this.prizeTableName = options?.prizeTableName ?? null;
-        this.weight = weight;
     }
 
-    public static action(
+    public static typeIsAction(
         prizeId: string,
-        acquireActions: AcquireAction[],
         weight: number,
-        drawnLimit: number|null = null,
-        limitFailOverPrizeId: string|null = null,
+        acquireActions: AcquireAction[],
+        options: PrizeTypeIsActionOptions|null = null,
     ): Prize {
         return new Prize(
             prizeId,
@@ -65,53 +55,55 @@ export default class Prize {
             weight,
             {
                 acquireActions: acquireActions,
-                drawnLimit: drawnLimit,
-                limitFailOverPrizeId: limitFailOverPrizeId,
-            }
-        )
+                drawnLimit: options?.drawnLimit,
+            },
+        );
     }
 
-    public static prizeTable(
+    public static typeIsPrizeTable(
         prizeId: string,
-        acquireActions: AcquireAction[],
-        prizeTableName: string,
         weight: number,
-        drawnLimit: number|null = null,
+        prizeTableName: string,
+        options: PrizeTypeIsPrizeTableOptions|null = null,
     ): Prize {
         return new Prize(
             prizeId,
             PrizeType.PRIZE_TABLE,
             weight,
             {
-                drawnLimit: drawnLimit,
                 prizeTableName: prizeTableName,
-            }
-        )
+                drawnLimit: options?.drawnLimit,
+            },
+        );
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.prizeId != null) {
-            properties["PrizeId"] = this.prizeId;
+            properties["prizeId"] = this.prizeId;
         }
         if (this.type != null) {
-            properties["Type"] = this.type.toString();
+            properties["type"] = this.type;
         }
         if (this.acquireActions != null) {
-            properties["AcquireActions"] = this.acquireActions.map(v => v.properties());
+            properties["acquireActions"] = this.acquireActions.map(v => v.properties(
+                ));
         }
         if (this.drawnLimit != null) {
-            properties["DrawnLimit"] = this.drawnLimit;
+            properties["drawnLimit"] = this.drawnLimit;
         }
         if (this.limitFailOverPrizeId != null) {
-            properties["LimitFailOverPrizeId"] = this.limitFailOverPrizeId;
+            properties["limitFailOverPrizeId"] = this.limitFailOverPrizeId;
         }
         if (this.prizeTableName != null) {
-            properties["PrizeTableName"] = this.prizeTableName;
+            properties["prizeTableName"] = this.prizeTableName;
         }
         if (this.weight != null) {
-            properties["Weight"] = this.weight;
+            properties["weight"] = this.weight;
         }
+
         return properties;
     }
 }

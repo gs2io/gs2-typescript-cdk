@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,11 +19,13 @@ const tslib_1 = require("tslib");
 const model = tslib_1.__importStar(require("./model"));
 const ref = tslib_1.__importStar(require("./ref"));
 const stampSheet = tslib_1.__importStar(require("./stampSheet"));
+const ref_1 = require("./ref");
+const ref_2 = require("./ref");
 function user(userName) {
-    return new ref.UserRef(userName);
+    return new ref_1.UserRef(userName);
 }
 function securityPolicy(securityPolicyName) {
-    return new ref.SecurityPolicyRef(securityPolicyName);
+    return new ref_2.SecurityPolicyRef(securityPolicyName);
 }
 exports.default = {
     model,

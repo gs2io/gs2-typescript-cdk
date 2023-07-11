@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,65 +14,40 @@
  * permissions and limitations under the License.
  */
 
-import core from "../../core";
+import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import {Stack} from "../../core/model";
-
-export const NamespaceType = {
-    GS2: "gs2",
-    BIGQUERY: "bigquery",
-    FIREHOSE: "firehose",
-} as const;
-export type NamespaceType = typeof NamespaceType[keyof typeof NamespaceType];
 
 import NamespaceRef from "../ref/NamespaceRef";
+import { NamespaceType } from "./enum/NamespaceType";
 
-export interface NamespaceOptions {
-    description?: string|null|undefined;
-    gcpCredentialJson?: string|null|undefined;
-    bigQueryDatasetName?: string|null|undefined;
-    logExpireDays?: number|null|undefined;
-    awsRegion?: string|null|undefined;
-    awsAccessKeyId?: string|null|undefined;
-    awsSecretAccessKey?: string|null|undefined;
-    firehoseStreamName?: string|null|undefined;
-}
+import { NamespaceOptions } from "./options/NamespaceOptions";
 
-export interface NamespaceGs2Options {
-}
-
-export interface NamespaceBigqueryOptions {
-}
-
-export interface NamespaceFirehoseOptions {
-}
-
-export default class Namespace extends core.CdkResource {
-
-    private stack: Stack;
-	private readonly name: string;
-	private readonly description: string|null = null;
-	private readonly type: NamespaceType;
-	private readonly gcpCredentialJson: string|null = null;
-	private readonly bigQueryDatasetName: string|null = null;
-	private readonly logExpireDays: number|null = null;
-	private readonly awsRegion: string|null = null;
-	private readonly awsAccessKeyId: string|null = null;
-	private readonly awsSecretAccessKey: string|null = null;
-	private readonly firehoseStreamName: string|null = null;
+export default class Namespace extends CdkResource {
+    private readonly stack: Stack;
+    private readonly name: string;
+    private readonly description: string|null = null;
+    private readonly type: NamespaceType|null = null;
+    private readonly gcpCredentialJson: string|null = null;
+    private readonly bigQueryDatasetName: string|null = null;
+    private readonly logExpireDays: number|null = null;
+    private readonly awsRegion: string|null = null;
+    private readonly awsAccessKeyId: string|null = null;
+    private readonly awsSecretAccessKey: string|null = null;
+    private readonly firehoseStreamName: string|null = null;
 
     public constructor(
-            stack: Stack,
-            name: string,
-            type: NamespaceType,
-            options?: NamespaceOptions,
+        stack: Stack,
+        name: string,
+        options: NamespaceOptions|null = null,
     ) {
-        super("Log_Namespace_" + name);
+        super(
+            "Log_Namespace_" + name
+        );
 
         this.stack = stack;
         this.name = name;
         this.description = options?.description ?? null;
-        this.type = type;
+        this.type = options?.type ?? null;
         this.gcpCredentialJson = options?.gcpCredentialJson ?? null;
         this.bigQueryDatasetName = options?.bigQueryDatasetName ?? null;
         this.logExpireDays = options?.logExpireDays ?? null;
@@ -80,16 +55,26 @@ export default class Namespace extends core.CdkResource {
         this.awsAccessKeyId = options?.awsAccessKeyId ?? null;
         this.awsSecretAccessKey = options?.awsSecretAccessKey ?? null;
         this.firehoseStreamName = options?.firehoseStreamName ?? null;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+
+    public alternateKeys(
+    ) {
+        return "name";
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Log::Namespace";
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
             properties["Name"] = this.name;
         }
@@ -120,21 +105,23 @@ export default class Namespace extends core.CdkResource {
         if (this.firehoseStreamName != null) {
             properties["FirehoseStreamName"] = this.firehoseStreamName;
         }
+
         return properties;
     }
 
     public ref(
     ): NamespaceRef {
         return new NamespaceRef(
-            this.name,
+            this.name!,
         );
     }
 
-    public getAttrNamespaceId(): GetAttr {
+    public getAttrNamespaceId(
+    ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.NamespaceId"
+            "Item.NamespaceId",
         );
     }
 }

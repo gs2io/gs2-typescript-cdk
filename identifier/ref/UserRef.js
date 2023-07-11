@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,15 +15,10 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const IdentifierRef_1 = tslib_1.__importDefault(require("./IdentifierRef"));
 class UserRef {
     constructor(userName) {
         this.userName = userName;
-    }
-    identifier(userName) {
-        return new IdentifierRef_1.default(this.userName, userName);
     }
     grn() {
         return new func_1.Join(":", [
@@ -33,7 +28,7 @@ class UserRef {
             func_1.GetAttr.ownerId().str(),
             "identifier",
             "user",
-            this.userName
+            this.userName,
         ]).str();
     }
 }

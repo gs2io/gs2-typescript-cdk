@@ -1,12 +1,10 @@
 import SalesItem from "./SalesItem";
-export interface SalesItemGroupOptions {
-    metadata?: string | null | undefined;
-}
+import { SalesItemGroupOptions } from "./options/SalesItemGroupOptions";
 export default class SalesItemGroup {
     private readonly name;
-    private readonly metadata;
     private readonly salesItems;
-    constructor(name: string, salesItems: SalesItem[], options?: SalesItemGroupOptions);
+    private readonly metadata;
+    constructor(name: string, salesItems: SalesItem[], options?: SalesItemGroupOptions | null);
     properties(): {
         [name: string]: any;
     };

@@ -1,22 +1,7 @@
 "use strict";
-/*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://www.apache.org/licenses/LICENSE-2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 class ExecuteStampTaskLog {
-    constructor(timestamp, taskId, service, method, userId, action, args, options) {
+    constructor(timestamp, taskId, service, method, userId, action, args, options = null) {
         this.timestamp = timestamp;
         this.taskId = taskId;
         this.service = service;
@@ -28,25 +13,25 @@ class ExecuteStampTaskLog {
     properties() {
         let properties = {};
         if (this.timestamp != null) {
-            properties["Timestamp"] = this.timestamp;
+            properties["timestamp"] = this.timestamp;
         }
         if (this.taskId != null) {
-            properties["TaskId"] = this.taskId;
+            properties["taskId"] = this.taskId;
         }
         if (this.service != null) {
-            properties["Service"] = this.service;
+            properties["service"] = this.service;
         }
         if (this.method != null) {
-            properties["Method"] = this.method;
+            properties["method"] = this.method;
         }
         if (this.userId != null) {
-            properties["UserId"] = this.userId;
+            properties["userId"] = this.userId;
         }
         if (this.action != null) {
-            properties["Action"] = this.action;
+            properties["action"] = this.action;
         }
         if (this.args != null) {
-            properties["Args"] = this.args;
+            properties["args"] = this.args;
         }
         return properties;
     }

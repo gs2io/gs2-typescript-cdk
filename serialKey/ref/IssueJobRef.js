@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -35,7 +35,7 @@ class IssueJobRef {
             this.campaignModelName,
             "issue",
             "job",
-            this.issueJobName
+            this.issueJobName,
         ]).str();
     }
 }

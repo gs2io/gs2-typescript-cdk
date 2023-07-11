@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,26 +13,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import StaminaModel from "./StaminaModel";
-import MaxStaminaTable from "./MaxStaminaTable";
-import RecoverIntervalTable from "./RecoverIntervalTable";
-import RecoverValueTable from "./RecoverValueTable";
-import CurrentMasterData from "./CurrentMasterData";
 import Namespace from "./Namespace";
-import StaminaModelMaster from "./StaminaModelMaster";
-import MaxStaminaTableMaster from "./MaxStaminaTableMaster";
-import RecoverIntervalTableMaster from "./RecoverIntervalTableMaster";
-import RecoverValueTableMaster from "./RecoverValueTableMaster";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import StaminaModel from "./StaminaModel";
+import { StaminaModelOptions } from "./options/StaminaModelOptions";
+import MaxStaminaTable from "./MaxStaminaTable";
+import { MaxStaminaTableOptions } from "./options/MaxStaminaTableOptions";
+import RecoverIntervalTable from "./RecoverIntervalTable";
+import { RecoverIntervalTableOptions } from "./options/RecoverIntervalTableOptions";
+import RecoverValueTable from "./RecoverValueTable";
+import { RecoverValueTableOptions } from "./options/RecoverValueTableOptions";
+import CurrentMasterData from "./CurrentMasterData";
 
 export {
-    StaminaModel,
-    MaxStaminaTable,
-    RecoverIntervalTable,
-    RecoverValueTable,
-    CurrentMasterData,
     Namespace,
-    StaminaModelMaster,
-    MaxStaminaTableMaster,
-    RecoverIntervalTableMaster,
-    RecoverValueTableMaster,
+    NamespaceOptions,
+    StaminaModel,
+    StaminaModelOptions,
+    MaxStaminaTable,
+    MaxStaminaTableOptions,
+    RecoverIntervalTable,
+    RecoverIntervalTableOptions,
+    RecoverValueTable,
+    RecoverValueTableOptions,
+    CurrentMasterData,
 }

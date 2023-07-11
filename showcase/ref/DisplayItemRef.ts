@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,14 +15,34 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-
+import SalesItemRef from "./SalesItemRef";
+import SalesItemGroupRef from "./SalesItemGroupRef";
 
 export default class DisplayItemRef {
-    private namespaceName: string;
+    private readonly namespaceName: string;
+    private readonly displayItemId: string;
 
     public constructor(
-            namespaceName: string,
+        namespaceName: string,
+        displayItemId: string,
     ) {
         this.namespaceName = namespaceName;
+        this.displayItemId = displayItemId;
+    }
+
+    public salesItem(
+    ): SalesItemRef {
+        return new SalesItemRef(
+            this.namespaceName,
+            this.displayItemId,
+        );
+    }
+
+    public salesItemGroup(
+    ): SalesItemGroupRef {
+        return new SalesItemGroupRef(
+            this.namespaceName,
+            this.displayItemId,
+        );
     }
 }

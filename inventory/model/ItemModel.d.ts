@@ -1,16 +1,12 @@
-import ItemModelRef from "../ref/ItemModelRef";
-export interface ItemModelOptions {
-    metadata?: string | null | undefined;
-}
+import { ItemModelOptions } from "./options/ItemModelOptions";
 export default class ItemModel {
     private readonly name;
-    private readonly metadata;
     private readonly stackingLimit;
     private readonly allowMultipleStacks;
     private readonly sortValue;
-    constructor(name: string, stackingLimit: number, allowMultipleStacks: boolean, sortValue: number, options?: ItemModelOptions);
+    private readonly metadata;
+    constructor(name: string, stackingLimit: number, allowMultipleStacks: boolean, sortValue: number, options?: ItemModelOptions | null);
     properties(): {
         [name: string]: any;
     };
-    ref(namespaceName: string, inventoryName: string): ItemModelRef;
 }

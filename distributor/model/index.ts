@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,16 +13,24 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import DistributeResource from "./DistributeResource";
-import DistributorModel from "./DistributorModel";
-import CurrentMasterData from "./CurrentMasterData";
 import Namespace from "./Namespace";
-import DistributorModelMaster from "./DistributorModelMaster";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import DistributorModel from "./DistributorModel";
+import { DistributorModelOptions } from "./options/DistributorModelOptions";
+import StampSheetResult from "./StampSheetResult";
+import { StampSheetResultOptions } from "./options/StampSheetResultOptions";
+import DistributeResource from "./DistributeResource";
+import { DistributeResourceOptions } from "./options/DistributeResourceOptions";
+import CurrentMasterData from "./CurrentMasterData";
 
 export {
-    DistributeResource,
-    DistributorModel,
-    CurrentMasterData,
     Namespace,
-    DistributorModelMaster,
+    NamespaceOptions,
+    DistributorModel,
+    DistributorModelOptions,
+    StampSheetResult,
+    StampSheetResultOptions,
+    DistributeResource,
+    DistributeResourceOptions,
+    CurrentMasterData,
 }

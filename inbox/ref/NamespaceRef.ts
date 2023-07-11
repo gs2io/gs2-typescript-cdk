@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,32 +15,23 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import CurrentMessageMasterRef from "./CurrentMessageMasterRef";
 import GlobalMessageRef from "./GlobalMessageRef";
-import GlobalMessageMasterRef from "./GlobalMessageMasterRef";
 import SendMessageByUserId from "../stampSheet/SendMessageByUserId";
 import { AcquireAction } from "../../core/model";
 import TimeSpan from "../model/TimeSpan";
-
+import OpenMessageByUserId from "../stampSheet/OpenMessageByUserId";
 
 export default class NamespaceRef {
-    private namespaceName: string;
+    private readonly namespaceName: string;
 
     public constructor(
-            namespaceName: string,
+        namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
     }
 
-    public currentMessageMaster(
-    ): CurrentMessageMasterRef {
-        return new CurrentMessageMasterRef(
-            this.namespaceName,
-        );
-    }
-
     public globalMessage(
-            globalMessageName: string,
+        globalMessageName: string,
     ): GlobalMessageRef {
         return new GlobalMessageRef(
             this.namespaceName,
@@ -48,21 +39,12 @@ export default class NamespaceRef {
         );
     }
 
-    public globalMessageMaster(
-            globalMessageName: string,
-    ): GlobalMessageMasterRef {
-        return new GlobalMessageMasterRef(
-            this.namespaceName,
-            globalMessageName,
-        );
-    }
-
     public sendMessage(
-            metadata: string,
-            readAcquireActions: AcquireAction[]|null = null,
-            expiresAt: number|null = null,
-            expiresTimeSpan: TimeSpan|null = null,
-            userId: string = '#{userId}',
+        metadata: string,
+        readAcquireActions: AcquireAction[]|null = null,
+        expiresAt: number|null = null,
+        expiresTimeSpan: TimeSpan|null = null,
+        userId: string|null = "#{userId}",
     ): SendMessageByUserId {
         return new SendMessageByUserId(
             this.namespaceName,
@@ -74,17 +56,34 @@ export default class NamespaceRef {
         );
     }
 
-    public grn(): string {
+    public openMessage(
+        messageName: string,
+        userId: string|null = "#{userId}",
+    ): OpenMessageByUserId {
+        return new OpenMessageByUserId(
+            this.namespaceName,
+            messageName,
+            userId,
+        );
+    }
+
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "inbox",
-                this.namespaceName
-            ]
-        ).str();
+                this.namespaceName,
+            ],
+        ).str(
+        );
     }
 }

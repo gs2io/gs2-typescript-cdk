@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,23 +13,26 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- *
- * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const core_1 = tslib_1.__importDefault(require("../../core"));
+const model_1 = require("../../core/model");
 const func_1 = require("../../core/func");
-const UserRef_1 = tslib_1.__importDefault(require("../ref/UserRef"));
 const Identifier_1 = tslib_1.__importDefault(require("./Identifier"));
 const AttachSecurityPolicy_1 = tslib_1.__importDefault(require("./AttachSecurityPolicy"));
-class User extends core_1.default.CdkResource {
-    constructor(stack, name) {
+const UserRef_1 = tslib_1.__importDefault(require("../ref/UserRef"));
+class User extends model_1.CdkResource {
+    constructor(stack, name, options = null) {
+        var _a;
         super("Identifier_User_" + name);
         this.description = null;
         this.stack = stack;
         this.name = name;
+        this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         stack.addResource(this);
+    }
+    alternateKeys() {
+        return "name";
     }
     resourceType() {
         return "GS2::Identifier::User";
@@ -49,6 +52,10 @@ class User extends core_1.default.CdkResource {
     }
     attach(securityPolicy) {
         new AttachSecurityPolicy_1.default(this.stack, this.name, securityPolicy.getAttrSecurityPolicyId().str()).addDependsOn(this).addDependsOn(securityPolicy);
+        return this;
+    }
+    attachGrn(securityPolicyGrn) {
+        new AttachSecurityPolicy_1.default(this.stack, this.name, securityPolicyGrn).addDependsOn(this);
         return this;
     }
     identifier() {

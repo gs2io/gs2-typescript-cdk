@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,21 +15,16 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NamespaceType = void 0;
 const tslib_1 = require("tslib");
-const core_1 = tslib_1.__importDefault(require("../../core"));
+const model_1 = require("../../core/model");
 const func_1 = require("../../core/func");
-exports.NamespaceType = {
-    GS2: "gs2",
-    BIGQUERY: "bigquery",
-    FIREHOSE: "firehose",
-};
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
-class Namespace extends core_1.default.CdkResource {
-    constructor(stack, name, type, options) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+class Namespace extends model_1.CdkResource {
+    constructor(stack, name, options = null) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         super("Log_Namespace_" + name);
         this.description = null;
+        this.type = null;
         this.gcpCredentialJson = null;
         this.bigQueryDatasetName = null;
         this.logExpireDays = null;
@@ -40,15 +35,18 @@ class Namespace extends core_1.default.CdkResource {
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.type = type;
-        this.gcpCredentialJson = (_b = options === null || options === void 0 ? void 0 : options.gcpCredentialJson) !== null && _b !== void 0 ? _b : null;
-        this.bigQueryDatasetName = (_c = options === null || options === void 0 ? void 0 : options.bigQueryDatasetName) !== null && _c !== void 0 ? _c : null;
-        this.logExpireDays = (_d = options === null || options === void 0 ? void 0 : options.logExpireDays) !== null && _d !== void 0 ? _d : null;
-        this.awsRegion = (_e = options === null || options === void 0 ? void 0 : options.awsRegion) !== null && _e !== void 0 ? _e : null;
-        this.awsAccessKeyId = (_f = options === null || options === void 0 ? void 0 : options.awsAccessKeyId) !== null && _f !== void 0 ? _f : null;
-        this.awsSecretAccessKey = (_g = options === null || options === void 0 ? void 0 : options.awsSecretAccessKey) !== null && _g !== void 0 ? _g : null;
-        this.firehoseStreamName = (_h = options === null || options === void 0 ? void 0 : options.firehoseStreamName) !== null && _h !== void 0 ? _h : null;
+        this.type = (_b = options === null || options === void 0 ? void 0 : options.type) !== null && _b !== void 0 ? _b : null;
+        this.gcpCredentialJson = (_c = options === null || options === void 0 ? void 0 : options.gcpCredentialJson) !== null && _c !== void 0 ? _c : null;
+        this.bigQueryDatasetName = (_d = options === null || options === void 0 ? void 0 : options.bigQueryDatasetName) !== null && _d !== void 0 ? _d : null;
+        this.logExpireDays = (_e = options === null || options === void 0 ? void 0 : options.logExpireDays) !== null && _e !== void 0 ? _e : null;
+        this.awsRegion = (_f = options === null || options === void 0 ? void 0 : options.awsRegion) !== null && _f !== void 0 ? _f : null;
+        this.awsAccessKeyId = (_g = options === null || options === void 0 ? void 0 : options.awsAccessKeyId) !== null && _g !== void 0 ? _g : null;
+        this.awsSecretAccessKey = (_h = options === null || options === void 0 ? void 0 : options.awsSecretAccessKey) !== null && _h !== void 0 ? _h : null;
+        this.firehoseStreamName = (_j = options === null || options === void 0 ? void 0 : options.firehoseStreamName) !== null && _j !== void 0 ? _j : null;
         stack.addResource(this);
+    }
+    alternateKeys() {
+        return "name";
     }
     resourceType() {
         return "GS2::Log::Namespace";

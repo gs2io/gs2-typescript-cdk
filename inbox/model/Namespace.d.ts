@@ -1,24 +1,10 @@
-import core from "../../core";
+import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
-import { Stack } from "../../core/model";
-import TransactionSetting from "../../core/model/TransactionSetting";
-import ScriptSetting from "../../core/model/ScriptSetting";
-import NotificationSetting from "../../core/model/NotificationSetting";
-import LogSetting from "../../core/model/LogSetting";
-import GlobalMessage from "./GlobalMessage";
 import NamespaceRef from "../ref/NamespaceRef";
-export interface NamespaceOptions {
-    description?: string | null | undefined;
-    isAutomaticDeletingEnabled?: boolean | null | undefined;
-    transactionSetting?: TransactionSetting | null | undefined;
-    receiveMessageScript?: ScriptSetting | null | undefined;
-    readMessageScript?: ScriptSetting | null | undefined;
-    deleteMessageScript?: ScriptSetting | null | undefined;
-    receiveNotification?: NotificationSetting | null | undefined;
-    logSetting?: LogSetting | null | undefined;
-}
-export default class Namespace extends core.CdkResource {
-    private stack;
+import GlobalMessage from "./GlobalMessage";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+export default class Namespace extends CdkResource {
+    private readonly stack;
     private readonly name;
     private readonly description;
     private readonly isAutomaticDeletingEnabled;
@@ -28,7 +14,8 @@ export default class Namespace extends core.CdkResource {
     private readonly deleteMessageScript;
     private readonly receiveNotification;
     private readonly logSetting;
-    constructor(stack: Stack, name: string, options?: NamespaceOptions);
+    constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
+    alternateKeys(): string;
     resourceType(): string;
     properties(): {
         [name: string]: any;

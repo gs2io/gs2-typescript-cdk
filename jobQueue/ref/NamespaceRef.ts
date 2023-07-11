@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -18,19 +18,18 @@ import {GetAttr, Join} from "../../core/func";
 import PushByUserId from "../stampSheet/PushByUserId";
 import JobEntry from "../model/JobEntry";
 
-
 export default class NamespaceRef {
-    private namespaceName: string;
+    private readonly namespaceName: string;
 
     public constructor(
-            namespaceName: string,
+        namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
     }
 
     public push(
-            jobs: JobEntry[]|null = null,
-            userId: string = '#{userId}',
+        jobs: JobEntry[]|null = null,
+        userId: string|null = "#{userId}",
     ): PushByUserId {
         return new PushByUserId(
             this.namespaceName,
@@ -39,17 +38,23 @@ export default class NamespaceRef {
         );
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "queue",
-                this.namespaceName
-            ]
-        ).str();
+                this.namespaceName,
+            ],
+        ).str(
+        );
     }
 }

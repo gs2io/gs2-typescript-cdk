@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,16 +13,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import TimeSpan from "./TimeSpan";
-import GlobalMessage from "./GlobalMessage";
-import CurrentMasterData from "./CurrentMasterData";
 import Namespace from "./Namespace";
-import GlobalMessageMaster from "./GlobalMessageMaster";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import GlobalMessage from "./GlobalMessage";
+import { GlobalMessageOptions } from "./options/GlobalMessageOptions";
+import TimeSpan from "./TimeSpan";
+import { TimeSpanOptions } from "./options/TimeSpanOptions";
+import CurrentMasterData from "./CurrentMasterData";
 
 export {
-    TimeSpan,
-    GlobalMessage,
-    CurrentMasterData,
     Namespace,
-    GlobalMessageMaster,
+    NamespaceOptions,
+    GlobalMessage,
+    GlobalMessageOptions,
+    TimeSpan,
+    TimeSpanOptions,
+    CurrentMasterData,
 }

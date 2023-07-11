@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,32 +20,22 @@ import TimeSpan from "../model/TimeSpan";
 export default class SendMessageByUserId extends AcquireAction {
 
     public constructor(
-            namespaceName: string,
-            metadata: string,
-            readAcquireActions: AcquireAction[]|null = null,
-            expiresAt: number|null = null,
-            expiresTimeSpan: TimeSpan|null = null,
-            userId: string = '#{userId}',
+        namespaceName: string,
+        metadata: string,
+        readAcquireActions: AcquireAction[]|null = null,
+        expiresAt: number|null = null,
+        expiresTimeSpan: TimeSpan|null = null,
+        userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (metadata != null) {
-            properties["metadata"] = metadata;
-        }
-        if (readAcquireActions != null) {
-            properties["readAcquireActions"] = readAcquireActions;
-        }
-        if (expiresAt != null) {
-            properties["expiresAt"] = expiresAt;
-        }
-        if (expiresTimeSpan != null) {
-            properties["expiresTimeSpan"] = expiresTimeSpan;
-        }
+
+        properties["namespaceName"] = namespaceName
+        properties["metadata"] = metadata
+        properties["readAcquireActions"] = readAcquireActions
+        properties["expiresAt"] = expiresAt
+        properties["expiresTimeSpan"] = expiresTimeSpan
+        properties["userId"] = userId
+
         super(
             "Gs2Inbox:SendMessageByUserId",
             properties,

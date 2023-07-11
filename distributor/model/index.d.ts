@@ -1,6 +1,10 @@
-import DistributeResource from "./DistributeResource";
-import DistributorModel from "./DistributorModel";
-import CurrentMasterData from "./CurrentMasterData";
 import Namespace from "./Namespace";
-import DistributorModelMaster from "./DistributorModelMaster";
-export { DistributeResource, DistributorModel, CurrentMasterData, Namespace, DistributorModelMaster, };
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import DistributorModel from "./DistributorModel";
+import { DistributorModelOptions } from "./options/DistributorModelOptions";
+import StampSheetResult from "./StampSheetResult";
+import { StampSheetResultOptions } from "./options/StampSheetResultOptions";
+import DistributeResource from "./DistributeResource";
+import { DistributeResourceOptions } from "./options/DistributeResourceOptions";
+import CurrentMasterData from "./CurrentMasterData";
+export { Namespace, NamespaceOptions, DistributorModel, DistributorModelOptions, StampSheetResult, StampSheetResultOptions, DistributeResource, DistributeResourceOptions, CurrentMasterData, };

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,35 +15,28 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import CurrentStaminaMasterRef from "./CurrentStaminaMasterRef";
 import MaxStaminaTableRef from "./MaxStaminaTableRef";
 import RecoverIntervalTableRef from "./RecoverIntervalTableRef";
 import RecoverValueTableRef from "./RecoverValueTableRef";
 import StaminaModelRef from "./StaminaModelRef";
-import RecoverIntervalTableMasterRef from "./RecoverIntervalTableMasterRef";
-import MaxStaminaTableMasterRef from "./MaxStaminaTableMasterRef";
-import RecoverValueTableMasterRef from "./RecoverValueTableMasterRef";
-import StaminaModelMasterRef from "./StaminaModelMasterRef";
-
+import RecoverStaminaByUserId from "../stampSheet/RecoverStaminaByUserId";
+import RaiseMaxValueByUserId from "../stampSheet/RaiseMaxValueByUserId";
+import SetMaxValueByUserId from "../stampSheet/SetMaxValueByUserId";
+import SetRecoverIntervalByUserId from "../stampSheet/SetRecoverIntervalByUserId";
+import SetRecoverValueByUserId from "../stampSheet/SetRecoverValueByUserId";
+import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
 
 export default class NamespaceRef {
-    private namespaceName: string;
+    private readonly namespaceName: string;
 
     public constructor(
-            namespaceName: string,
+        namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
     }
 
-    public currentStaminaMaster(
-    ): CurrentStaminaMasterRef {
-        return new CurrentStaminaMasterRef(
-            this.namespaceName,
-        );
-    }
-
     public maxStaminaTable(
-            maxStaminaTableName: string,
+        maxStaminaTableName: string,
     ): MaxStaminaTableRef {
         return new MaxStaminaTableRef(
             this.namespaceName,
@@ -52,7 +45,7 @@ export default class NamespaceRef {
     }
 
     public recoverIntervalTable(
-            recoverIntervalTableName: string,
+        recoverIntervalTableName: string,
     ): RecoverIntervalTableRef {
         return new RecoverIntervalTableRef(
             this.namespaceName,
@@ -61,7 +54,7 @@ export default class NamespaceRef {
     }
 
     public recoverValueTable(
-            recoverValueTableName: string,
+        recoverValueTableName: string,
     ): RecoverValueTableRef {
         return new RecoverValueTableRef(
             this.namespaceName,
@@ -70,7 +63,7 @@ export default class NamespaceRef {
     }
 
     public staminaModel(
-            staminaName: string,
+        staminaName: string,
     ): StaminaModelRef {
         return new StaminaModelRef(
             this.namespaceName,
@@ -78,53 +71,101 @@ export default class NamespaceRef {
         );
     }
 
-    public recoverIntervalTableMaster(
-            recoverIntervalTableName: string,
-    ): RecoverIntervalTableMasterRef {
-        return new RecoverIntervalTableMasterRef(
-            this.namespaceName,
-            recoverIntervalTableName,
-        );
-    }
-
-    public maxStaminaTableMaster(
-            maxStaminaTableName: string,
-    ): MaxStaminaTableMasterRef {
-        return new MaxStaminaTableMasterRef(
-            this.namespaceName,
-            maxStaminaTableName,
-        );
-    }
-
-    public recoverValueTableMaster(
-            recoverValueTableName: string,
-    ): RecoverValueTableMasterRef {
-        return new RecoverValueTableMasterRef(
-            this.namespaceName,
-            recoverValueTableName,
-        );
-    }
-
-    public staminaModelMaster(
-            staminaName: string,
-    ): StaminaModelMasterRef {
-        return new StaminaModelMasterRef(
+    public recoverStamina(
+        staminaName: string,
+        recoverValue: number,
+        userId: string|null = "#{userId}",
+    ): RecoverStaminaByUserId {
+        return new RecoverStaminaByUserId(
             this.namespaceName,
             staminaName,
+            recoverValue,
+            userId,
         );
     }
 
-    public grn(): string {
+    public raiseMaxValue(
+        staminaName: string,
+        raiseValue: number,
+        userId: string|null = "#{userId}",
+    ): RaiseMaxValueByUserId {
+        return new RaiseMaxValueByUserId(
+            this.namespaceName,
+            staminaName,
+            raiseValue,
+            userId,
+        );
+    }
+
+    public setMaxValue(
+        staminaName: string,
+        maxValue: number,
+        userId: string|null = "#{userId}",
+    ): SetMaxValueByUserId {
+        return new SetMaxValueByUserId(
+            this.namespaceName,
+            staminaName,
+            maxValue,
+            userId,
+        );
+    }
+
+    public setRecoverInterval(
+        staminaName: string,
+        recoverIntervalMinutes: number,
+        userId: string|null = "#{userId}",
+    ): SetRecoverIntervalByUserId {
+        return new SetRecoverIntervalByUserId(
+            this.namespaceName,
+            staminaName,
+            recoverIntervalMinutes,
+            userId,
+        );
+    }
+
+    public setRecoverValue(
+        staminaName: string,
+        recoverValue: number,
+        userId: string|null = "#{userId}",
+    ): SetRecoverValueByUserId {
+        return new SetRecoverValueByUserId(
+            this.namespaceName,
+            staminaName,
+            recoverValue,
+            userId,
+        );
+    }
+
+    public consumeStamina(
+        staminaName: string,
+        consumeValue: number,
+        userId: string|null = "#{userId}",
+    ): ConsumeStaminaByUserId {
+        return new ConsumeStaminaByUserId(
+            this.namespaceName,
+            staminaName,
+            consumeValue,
+            userId,
+        );
+    }
+
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "stamina",
-                this.namespaceName
-            ]
-        ).str();
+                this.namespaceName,
+            ],
+        ).str(
+        );
     }
 }

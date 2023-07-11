@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,43 +17,38 @@
 import {GetAttr, Join} from "../../core/func";
 import IssueJobRef from "./IssueJobRef";
 
-
 export default class CampaignModelRef {
-    private namespaceName: string;
-    private campaignModelName: string;
+    private readonly namespaceName: string;
+    private readonly campaignModelName: string;
 
     public constructor(
-            namespaceName: string,
-            campaignModelName: string,
+        namespaceName: string,
+        campaignModelName: string,
     ) {
         this.namespaceName = namespaceName;
         this.campaignModelName = campaignModelName;
     }
 
-    public issueJob(
-            issueJobName: string,
-    ): IssueJobRef {
-        return new IssueJobRef(
-            this.namespaceName,
-            this.campaignModelName,
-            issueJobName,
-        );
-    }
-
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "serialKey",
                 this.namespaceName,
                 "master",
                 "campaign",
-                this.campaignModelName
-            ]
-        ).str();
+                this.campaignModelName,
+            ],
+        ).str(
+        );
     }
 }

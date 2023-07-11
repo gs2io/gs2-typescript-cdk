@@ -1,22 +1,16 @@
-import core from "../../core";
+import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
-import { Stack } from "../../core/model";
-import ScriptSetting from "../../core/model/ScriptSetting";
-import LogSetting from "../../core/model/LogSetting";
-import StaminaModel from "./StaminaModel";
 import NamespaceRef from "../ref/NamespaceRef";
-export interface NamespaceOptions {
-    description?: string | null | undefined;
-    overflowTriggerScript?: ScriptSetting | null | undefined;
-    logSetting?: LogSetting | null | undefined;
-}
-export default class Namespace extends core.CdkResource {
-    private stack;
+import StaminaModel from "./StaminaModel";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+export default class Namespace extends CdkResource {
+    private readonly stack;
     private readonly name;
     private readonly description;
     private readonly overflowTriggerScript;
     private readonly logSetting;
-    constructor(stack: Stack, name: string, options?: NamespaceOptions);
+    constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
+    alternateKeys(): string;
     resourceType(): string;
     properties(): {
         [name: string]: any;

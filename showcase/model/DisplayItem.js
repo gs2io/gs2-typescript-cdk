@@ -1,14 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisplayItemType = void 0;
-const tslib_1 = require("tslib");
-exports.DisplayItemType = {
-    SALES_ITEM: "salesItem",
-    SALES_ITEM_GROUP: "salesItemGroup",
-};
-const DisplayItemRef_1 = tslib_1.__importDefault(require("../ref/DisplayItemRef"));
+const DisplayItemType_1 = require("./enum/DisplayItemType");
 class DisplayItem {
-    constructor(displayItemId, type, options) {
+    constructor(displayItemId, type, options = null) {
         var _a, _b, _c;
         this.salesItem = null;
         this.salesItemGroup = null;
@@ -19,41 +13,37 @@ class DisplayItem {
         this.salesItemGroup = (_b = options === null || options === void 0 ? void 0 : options.salesItemGroup) !== null && _b !== void 0 ? _b : null;
         this.salesPeriodEventId = (_c = options === null || options === void 0 ? void 0 : options.salesPeriodEventId) !== null && _c !== void 0 ? _c : null;
     }
-    static salesItem(displayItemId, salesItem, options) {
-        var _a, _b;
-        return new DisplayItem(displayItemId, exports.DisplayItemType.SALES_ITEM, {
-            salesItem: (_a = options === null || options === void 0 ? void 0 : options.salesItem) !== null && _a !== void 0 ? _a : null,
-            salesPeriodEventId: (_b = options === null || options === void 0 ? void 0 : options.salesPeriodEventId) !== null && _b !== void 0 ? _b : null,
+    static typeIsSalesItem(displayItemId, salesItem, options = null) {
+        return new DisplayItem(displayItemId, DisplayItemType_1.DisplayItemType.SALES_ITEM, {
+            salesItem: salesItem,
+            salesPeriodEventId: options === null || options === void 0 ? void 0 : options.salesPeriodEventId,
         });
     }
-    static salesItemGroup(displayItemId, salesItemGroup, options) {
-        var _a, _b;
-        return new DisplayItem(displayItemId, exports.DisplayItemType.SALES_ITEM_GROUP, {
-            salesItemGroup: (_a = options === null || options === void 0 ? void 0 : options.salesItemGroup) !== null && _a !== void 0 ? _a : null,
-            salesPeriodEventId: (_b = options === null || options === void 0 ? void 0 : options.salesPeriodEventId) !== null && _b !== void 0 ? _b : null,
+    static typeIsSalesItemGroup(displayItemId, salesItemGroup, options = null) {
+        return new DisplayItem(displayItemId, DisplayItemType_1.DisplayItemType.SALES_ITEM_GROUP, {
+            salesItemGroup: salesItemGroup,
+            salesPeriodEventId: options === null || options === void 0 ? void 0 : options.salesPeriodEventId,
         });
     }
     properties() {
+        var _a, _b;
         let properties = {};
         if (this.displayItemId != null) {
-            properties["DisplayItemId"] = this.displayItemId;
+            properties["displayItemId"] = this.displayItemId;
         }
         if (this.type != null) {
-            properties["Type"] = this.type;
+            properties["type"] = this.type;
         }
         if (this.salesItem != null) {
-            properties["SalesItem"] = this.salesItem.properties();
+            properties["salesItem"] = (_a = this.salesItem) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.salesItemGroup != null) {
-            properties["SalesItemGroup"] = this.salesItemGroup.properties();
+            properties["salesItemGroup"] = (_b = this.salesItemGroup) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.salesPeriodEventId != null) {
-            properties["SalesPeriodEventId"] = this.salesPeriodEventId;
+            properties["salesPeriodEventId"] = this.salesPeriodEventId;
         }
         return properties;
-    }
-    ref(namespaceName) {
-        return new DisplayItemRef_1.default(namespaceName);
     }
 }
 exports.default = DisplayItem;

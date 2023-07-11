@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,12 +19,12 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const UseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UseByUserId"));
 class SerialKeyRef {
-    constructor(namespaceName, serialKeyCode) {
+    constructor(namespaceName, code) {
         this.namespaceName = namespaceName;
-        this.serialKeyCode = serialKeyCode;
+        this.code = code;
     }
-    use(code, userId = '#{userId}') {
-        return new UseByUserId_1.default(this.namespaceName, code, userId);
+    use(userId = "#{userId}") {
+        return new UseByUserId_1.default(this.namespaceName, this.code, userId);
     }
     grn() {
         return new func_1.Join(":", [
@@ -35,7 +35,7 @@ class SerialKeyRef {
             "serialKey",
             this.namespaceName,
             "serialKey",
-            this.serialKeyCode
+            this.code,
         ]).str();
     }
 }

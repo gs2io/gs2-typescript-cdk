@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,28 +20,20 @@ import { Config } from "../../core/model";
 export default class DrawByUserId extends AcquireAction {
 
     public constructor(
-            namespaceName: string,
-            lotteryName: string,
-            count: number,
-            config: Config[]|null = null,
-            userId: string = '#{userId}',
+        namespaceName: string,
+        lotteryName: string,
+        count: number,
+        config: Config[]|null = null,
+        userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (lotteryName != null) {
-            properties["lotteryName"] = lotteryName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (count != null) {
-            properties["count"] = count;
-        }
-        if (config != null) {
-            properties["config"] = config;
-        }
+
+        properties["namespaceName"] = namespaceName
+        properties["lotteryName"] = lotteryName
+        properties["count"] = count
+        properties["config"] = config
+        properties["userId"] = userId
+
         super(
             "Gs2Lottery:DrawByUserId",
             properties,

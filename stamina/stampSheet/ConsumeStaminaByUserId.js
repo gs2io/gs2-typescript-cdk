@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,20 +17,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ConsumeStaminaByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, staminaName, consumeValue, userId = '#{userId}') {
+    constructor(namespaceName, staminaName, consumeValue, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (staminaName != null) {
-            properties["staminaName"] = staminaName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (consumeValue != null) {
-            properties["consumeValue"] = consumeValue;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["staminaName"] = staminaName;
+        properties["consumeValue"] = consumeValue;
+        properties["userId"] = userId;
         super("Gs2Stamina:ConsumeStaminaByUserId", properties);
     }
 }

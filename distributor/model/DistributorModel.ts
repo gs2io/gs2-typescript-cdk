@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,25 +13,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-import DistributorModelRef from "../ref/DistributorModelRef";
-
-export interface DistributorModelOptions {
-    metadata?: string|null|undefined;
-    inboxNamespaceId?: string|null|undefined;
-    whiteListTargetIds?: string[]|null|undefined;
-}
-
+import { DistributorModelOptions } from "./options/DistributorModelOptions";
 
 export default class DistributorModel {
-	private readonly name: string;
+    private readonly name: string;
     private readonly metadata: string|null = null;
     private readonly inboxNamespaceId: string|null = null;
     private readonly whiteListTargetIds: string[]|null = null;
 
     public constructor(
-            name: string,
-            options?: DistributorModelOptions,
+        name: string,
+        options: DistributorModelOptions|null = null,
     ) {
         this.name = name;
         this.metadata = options?.metadata ?? null;
@@ -39,29 +31,23 @@ export default class DistributorModel {
         this.whiteListTargetIds = options?.whiteListTargetIds ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.inboxNamespaceId != null) {
-            properties["InboxNamespaceId"] = this.inboxNamespaceId;
+            properties["inboxNamespaceId"] = this.inboxNamespaceId;
         }
         if (this.whiteListTargetIds != null) {
-            properties["WhiteListTargetIds"] = this.whiteListTargetIds;
+            properties["whiteListTargetIds"] = this.whiteListTargetIds;
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-    ): DistributorModelRef {
-        return new DistributorModelRef(
-            namespaceName,
-            this.name,
-        );
+        return properties;
     }
 }

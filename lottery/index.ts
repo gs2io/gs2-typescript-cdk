@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,13 +17,15 @@
 import * as model from "./model";
 import * as ref from "./ref";
 import * as stampSheet from "./stampSheet";
+import { NamespaceRef } from "./ref";
+
 
 function namespace(
-        namespaceName: string,
-): ref.NamespaceRef {
-    return new ref.NamespaceRef(
+    namespaceName: string,
+): NamespaceRef {
+    return new NamespaceRef(
         namespaceName,
-    )
+    );
 }
 
 export default {

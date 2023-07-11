@@ -1,14 +1,10 @@
-import CampaignModelRef from "../ref/CampaignModelRef";
-export interface CampaignModelOptions {
-    metadata?: string | null | undefined;
-}
+import { CampaignModelOptions } from "./options/CampaignModelOptions";
 export default class CampaignModel {
     private readonly name;
-    private readonly metadata;
     private readonly enableCampaignCode;
-    constructor(name: string, enableCampaignCode: boolean, options?: CampaignModelOptions);
+    private readonly metadata;
+    constructor(name: string, enableCampaignCode: boolean, options?: CampaignModelOptions | null);
     properties(): {
         [name: string]: any;
     };
-    ref(namespaceName: string): CampaignModelRef;
 }

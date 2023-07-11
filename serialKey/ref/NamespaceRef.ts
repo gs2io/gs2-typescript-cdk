@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,30 +15,20 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import CurrentCampaignMasterRef from "./CurrentCampaignMasterRef";
 import CampaignModelRef from "./CampaignModelRef";
-import SerialKeyRef from "./SerialKeyRef";
-import CampaignModelMasterRef from "./CampaignModelMasterRef";
-
+import UseByUserId from "../stampSheet/UseByUserId";
 
 export default class NamespaceRef {
-    private namespaceName: string;
+    private readonly namespaceName: string;
 
     public constructor(
-            namespaceName: string,
+        namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
     }
 
-    public currentCampaignMaster(
-    ): CurrentCampaignMasterRef {
-        return new CurrentCampaignMasterRef(
-            this.namespaceName,
-        );
-    }
-
     public campaignModel(
-            campaignModelName: string,
+        campaignModelName: string,
     ): CampaignModelRef {
         return new CampaignModelRef(
             this.namespaceName,
@@ -46,35 +36,34 @@ export default class NamespaceRef {
         );
     }
 
-    public serialKey(
-            serialKeyCode: string,
-    ): SerialKeyRef {
-        return new SerialKeyRef(
+    public use(
+        code: string,
+        userId: string|null = "#{userId}",
+    ): UseByUserId {
+        return new UseByUserId(
             this.namespaceName,
-            serialKeyCode,
+            code,
+            userId,
         );
     }
 
-    public campaignModelMaster(
-            campaignModelName: string,
-    ): CampaignModelMasterRef {
-        return new CampaignModelMasterRef(
-            this.namespaceName,
-            campaignModelName,
-        );
-    }
-
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "serialKey",
-                this.namespaceName
-            ]
-        ).str();
+                this.namespaceName,
+            ],
+        ).str(
+        );
     }
 }

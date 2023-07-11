@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,7 +28,7 @@ class PasswordRef {
             func_1.GetAttr.ownerId().str(),
             "identifier",
             "user",
-            this.userName
+            this.userName,
         ]).str();
     }
 }

@@ -1,12 +1,9 @@
-import { AcquireAction } from "../../core/model";
-export interface BoxItemOptions {
-    acquireActions?: AcquireAction[] | null | undefined;
-}
+import { BoxItemOptions } from "./options/BoxItemOptions";
 export default class BoxItem {
-    private readonly acquireActions;
     private readonly remaining;
     private readonly initial;
-    constructor(remaining: number, initial: number, options?: BoxItemOptions);
+    private readonly acquireActions;
+    constructor(remaining: number, initial: number, options?: BoxItemOptions | null);
     properties(): {
         [name: string]: any;
     };

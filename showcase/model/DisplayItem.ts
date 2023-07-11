@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,45 +13,26 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import SalesItem from "../model/SalesItem";
-import SalesItemGroup from "../model/SalesItemGroup";
-
-export const DisplayItemType = {
-    SALES_ITEM: "salesItem",
-    SALES_ITEM_GROUP: "salesItemGroup",
-} as const;
-export type DisplayItemType = typeof DisplayItemType[keyof typeof DisplayItemType];
-
-import DisplayItemRef from "../ref/DisplayItemRef";
-
-export interface DisplayItemOptions {
-    salesItem?: SalesItem|null|undefined;
-    salesItemGroup?: SalesItemGroup|null|undefined;
-    salesPeriodEventId?: string|null|undefined;
-}
-
-export interface DisplayItemSalesItemOptions {
-    salesItem?: SalesItem|null|undefined,
-    salesPeriodEventId?: string|null|undefined,
-}
-
-export interface DisplayItemSalesItemGroupOptions {
-    salesItemGroup?: SalesItemGroup|null|undefined,
-    salesPeriodEventId?: string|null|undefined,
-}
-
+import { ConsumeAction } from "../../core/model";
+import { AcquireAction } from "../../core/model";
+import SalesItem from "./SalesItem";
+import SalesItemGroup from "./SalesItemGroup";
+import { DisplayItemOptions } from "./options/DisplayItemOptions";
+import { DisplayItemTypeIsSalesItemOptions } from "./options/DisplayItemTypeIsSalesItemOptions";
+import { DisplayItemTypeIsSalesItemGroupOptions } from "./options/DisplayItemTypeIsSalesItemGroupOptions";
+import { DisplayItemType } from "./enum/DisplayItemType";
 
 export default class DisplayItem {
-	private readonly displayItemId: string;
-	private readonly type: DisplayItemType;
+    private readonly displayItemId: string;
+    private readonly type: DisplayItemType;
     private readonly salesItem: SalesItem|null = null;
     private readonly salesItemGroup: SalesItemGroup|null = null;
     private readonly salesPeriodEventId: string|null = null;
 
     public constructor(
-            displayItemId: string,
-            type: DisplayItemType,
-            options?: DisplayItemOptions,
+        displayItemId: string,
+        type: DisplayItemType,
+        options: DisplayItemOptions|null = null,
     ) {
         this.displayItemId = displayItemId;
         this.type = type;
@@ -60,61 +41,58 @@ export default class DisplayItem {
         this.salesPeriodEventId = options?.salesPeriodEventId ?? null;
     }
 
-    public static salesItem(
+    public static typeIsSalesItem(
         displayItemId: string,
         salesItem: SalesItem,
-        options?: DisplayItemSalesItemOptions,
+        options: DisplayItemTypeIsSalesItemOptions|null = null,
     ): DisplayItem {
         return new DisplayItem(
             displayItemId,
             DisplayItemType.SALES_ITEM,
             {
-                salesItem: options?.salesItem ?? null,
-                salesPeriodEventId: options?.salesPeriodEventId ?? null,
+                salesItem: salesItem,
+                salesPeriodEventId: options?.salesPeriodEventId,
             },
-        )
+        );
     }
 
-    public static salesItemGroup(
+    public static typeIsSalesItemGroup(
         displayItemId: string,
         salesItemGroup: SalesItemGroup,
-        options?: DisplayItemSalesItemGroupOptions,
+        options: DisplayItemTypeIsSalesItemGroupOptions|null = null,
     ): DisplayItem {
         return new DisplayItem(
             displayItemId,
             DisplayItemType.SALES_ITEM_GROUP,
             {
-                salesItemGroup: options?.salesItemGroup ?? null,
-                salesPeriodEventId: options?.salesPeriodEventId ?? null,
+                salesItemGroup: salesItemGroup,
+                salesPeriodEventId: options?.salesPeriodEventId,
             },
-        )
+        );
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.displayItemId != null) {
-            properties["DisplayItemId"] = this.displayItemId;
+            properties["displayItemId"] = this.displayItemId;
         }
         if (this.type != null) {
-            properties["Type"] = this.type;
+            properties["type"] = this.type;
         }
         if (this.salesItem != null) {
-            properties["SalesItem"] = this.salesItem.properties();
+            properties["salesItem"] = this.salesItem?.properties(
+            );
         }
         if (this.salesItemGroup != null) {
-            properties["SalesItemGroup"] = this.salesItemGroup.properties();
+            properties["salesItemGroup"] = this.salesItemGroup?.properties(
+            );
         }
         if (this.salesPeriodEventId != null) {
-            properties["SalesPeriodEventId"] = this.salesPeriodEventId;
+            properties["salesPeriodEventId"] = this.salesPeriodEventId;
         }
-        return properties;
-    }
 
-    public ref(
-            namespaceName: string,
-    ): DisplayItemRef {
-        return new DisplayItemRef(
-            namespaceName,
-        );
+        return properties;
     }
 }

@@ -1,16 +1,11 @@
-export interface IssueStampSheetLogCountOptions {
-    service?: string | null | undefined;
-    method?: string | null | undefined;
-    userId?: string | null | undefined;
-    action?: string | null | undefined;
-}
+import { IssueStampSheetLogCountOptions } from "./options/IssueStampSheetLogCountOptions";
 export default class IssueStampSheetLogCount {
+    private readonly count;
     private readonly service;
     private readonly method;
     private readonly userId;
     private readonly action;
-    private readonly count;
-    constructor(count: number, options?: IssueStampSheetLogCountOptions);
+    constructor(count: number, options?: IssueStampSheetLogCountOptions | null);
     properties(): {
         [name: string]: any;
     };

@@ -1,11 +1,6 @@
 import NamespaceRef from "./NamespaceRef";
-import StaminaModelMasterRef from "./StaminaModelMasterRef";
-import MaxStaminaTableMasterRef from "./MaxStaminaTableMasterRef";
-import RecoverIntervalTableMasterRef from "./RecoverIntervalTableMasterRef";
-import RecoverValueTableMasterRef from "./RecoverValueTableMasterRef";
-import CurrentStaminaMasterRef from "./CurrentStaminaMasterRef";
 import StaminaModelRef from "./StaminaModelRef";
 import MaxStaminaTableRef from "./MaxStaminaTableRef";
 import RecoverIntervalTableRef from "./RecoverIntervalTableRef";
 import RecoverValueTableRef from "./RecoverValueTableRef";
-export { NamespaceRef, StaminaModelMasterRef, MaxStaminaTableMasterRef, RecoverIntervalTableMasterRef, RecoverValueTableMasterRef, CurrentStaminaMasterRef, StaminaModelRef, MaxStaminaTableRef, RecoverIntervalTableRef, RecoverValueTableRef, };
+export { NamespaceRef, StaminaModelRef, MaxStaminaTableRef, RecoverIntervalTableRef, RecoverValueTableRef, };

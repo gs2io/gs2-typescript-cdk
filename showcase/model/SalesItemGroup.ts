@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,38 +13,41 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { ConsumeAction } from "../../core/model";
+import { AcquireAction } from "../../core/model";
 import SalesItem from "./SalesItem";
-
-export interface SalesItemGroupOptions {
-    metadata?: string|null|undefined;
-}
+import { SalesItemGroupOptions } from "./options/SalesItemGroupOptions";
 
 export default class SalesItemGroup {
-	private readonly name: string;
+    private readonly name: string;
+    private readonly salesItems: SalesItem[];
     private readonly metadata: string|null = null;
-	private readonly salesItems: SalesItem[];
 
     public constructor(
-            name: string,
-            salesItems: SalesItem[],
-            options?: SalesItemGroupOptions,
+        name: string,
+        salesItems: SalesItem[],
+        options: SalesItemGroupOptions|null = null,
     ) {
         this.name = name;
-        this.metadata = options?.metadata ?? null;
         this.salesItems = salesItems;
+        this.metadata = options?.metadata ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.metadata != null) {
-            properties["Metadata"] = this.metadata;
+            properties["metadata"] = this.metadata;
         }
         if (this.salesItems != null) {
-            properties["SalesItems"] = this.salesItems.map(v => v.properties());
+            properties["salesItems"] = this.salesItems.map(v => v.properties(
+                ));
         }
+
         return properties;
     }
 }

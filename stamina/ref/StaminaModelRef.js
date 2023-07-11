@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,22 +28,22 @@ class StaminaModelRef {
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
     }
-    recoverStamina(recoverValue, userId = '#{userId}') {
+    recoverStamina(recoverValue, userId = "#{userId}") {
         return new RecoverStaminaByUserId_1.default(this.namespaceName, this.staminaName, recoverValue, userId);
     }
-    raiseMaxValue(raiseValue, userId = '#{userId}') {
+    raiseMaxValue(raiseValue, userId = "#{userId}") {
         return new RaiseMaxValueByUserId_1.default(this.namespaceName, this.staminaName, raiseValue, userId);
     }
-    setMaxValue(maxValue, userId = '#{userId}') {
+    setMaxValue(maxValue, userId = "#{userId}") {
         return new SetMaxValueByUserId_1.default(this.namespaceName, this.staminaName, maxValue, userId);
     }
-    setRecoverInterval(recoverIntervalMinutes, userId = '#{userId}') {
+    setRecoverInterval(recoverIntervalMinutes, userId = "#{userId}") {
         return new SetRecoverIntervalByUserId_1.default(this.namespaceName, this.staminaName, recoverIntervalMinutes, userId);
     }
-    setRecoverValue(recoverValue, userId = '#{userId}') {
+    setRecoverValue(recoverValue, userId = "#{userId}") {
         return new SetRecoverValueByUserId_1.default(this.namespaceName, this.staminaName, recoverValue, userId);
     }
-    consumeStamina(consumeValue, userId = '#{userId}') {
+    consumeStamina(consumeValue, userId = "#{userId}") {
         return new ConsumeStaminaByUserId_1.default(this.namespaceName, this.staminaName, consumeValue, userId);
     }
     grn() {
@@ -55,7 +55,7 @@ class StaminaModelRef {
             "stamina",
             this.namespaceName,
             "model",
-            this.staminaName
+            this.staminaName,
         ]).str();
     }
 }

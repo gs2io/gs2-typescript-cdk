@@ -1,5 +1,5 @@
 export default class PasswordRef {
-    private userName;
+    private readonly userName;
     constructor(userName: string);
     grn(): string;
 }

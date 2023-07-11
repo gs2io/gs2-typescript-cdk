@@ -1,4 +1,4 @@
 import { ConsumeAction } from "../../core/model";
 export default class ConsumeStaminaByUserId extends ConsumeAction {
-    constructor(namespaceName: string, staminaName: string, consumeValue: number, userId?: string);
+    constructor(namespaceName: string, staminaName: string, consumeValue: number, userId?: string | null);
 }

@@ -1,15 +1,13 @@
-import CurrentMessageMasterRef from "./CurrentMessageMasterRef";
 import GlobalMessageRef from "./GlobalMessageRef";
-import GlobalMessageMasterRef from "./GlobalMessageMasterRef";
 import SendMessageByUserId from "../stampSheet/SendMessageByUserId";
 import { AcquireAction } from "../../core/model";
 import TimeSpan from "../model/TimeSpan";
+import OpenMessageByUserId from "../stampSheet/OpenMessageByUserId";
 export default class NamespaceRef {
-    private namespaceName;
+    private readonly namespaceName;
     constructor(namespaceName: string);
-    currentMessageMaster(): CurrentMessageMasterRef;
     globalMessage(globalMessageName: string): GlobalMessageRef;
-    globalMessageMaster(globalMessageName: string): GlobalMessageMasterRef;
-    sendMessage(metadata: string, readAcquireActions?: AcquireAction[] | null, expiresAt?: number | null, expiresTimeSpan?: TimeSpan | null, userId?: string): SendMessageByUserId;
+    sendMessage(metadata: string, readAcquireActions?: AcquireAction[] | null, expiresAt?: number | null, expiresTimeSpan?: TimeSpan | null, userId?: string | null): SendMessageByUserId;
+    openMessage(messageName: string, userId?: string | null): OpenMessageByUserId;
     grn(): string;
 }

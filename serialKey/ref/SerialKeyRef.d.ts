@@ -1,8 +1,8 @@
 import UseByUserId from "../stampSheet/UseByUserId";
 export default class SerialKeyRef {
-    private namespaceName;
-    private serialKeyCode;
-    constructor(namespaceName: string, serialKeyCode: string);
-    use(code: string, userId?: string): UseByUserId;
+    private readonly namespaceName;
+    private readonly code;
+    constructor(namespaceName: string, code: string);
+    use(userId?: string | null): UseByUserId;
     grn(): string;
 }

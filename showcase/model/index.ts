@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,30 +13,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import SalesItem from "./SalesItem";
-import SalesItemGroup from "./SalesItemGroup";
-import DisplayItemMaster from "./DisplayItemMaster";
-import { DisplayItemMasterType } from "./DisplayItemMaster";
-import Showcase from "./Showcase";
-import DisplayItem from "./DisplayItem";
-import { DisplayItemType } from "./DisplayItem";
-import CurrentMasterData from "./CurrentMasterData";
 import Namespace from "./Namespace";
-import SalesItemMaster from "./SalesItemMaster";
-import SalesItemGroupMaster from "./SalesItemGroupMaster";
-import ShowcaseMaster from "./ShowcaseMaster";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import SalesItem from "./SalesItem";
+import { SalesItemOptions } from "./options/SalesItemOptions";
+import SalesItemGroup from "./SalesItemGroup";
+import { SalesItemGroupOptions } from "./options/SalesItemGroupOptions";
+import Showcase from "./Showcase";
+import { ShowcaseOptions } from "./options/ShowcaseOptions";
+import DisplayItem from "./DisplayItem";
+import { DisplayItemOptions } from "./options/DisplayItemOptions";
+import { DisplayItemType } from "./enum/DisplayItemType";
+import { DisplayItemTypeIsSalesItemOptions } from "./options/DisplayItemTypeIsSalesItemOptions"
+import { DisplayItemTypeIsSalesItemGroupOptions } from "./options/DisplayItemTypeIsSalesItemGroupOptions"
+import CurrentMasterData from "./CurrentMasterData";
 
 export {
-    SalesItem,
-    SalesItemGroup,
-    DisplayItemMaster,
-    DisplayItemMasterType,
-    Showcase,
-    DisplayItem,
-    DisplayItemType,
-    CurrentMasterData,
     Namespace,
-    SalesItemMaster,
-    SalesItemGroupMaster,
-    ShowcaseMaster,
+    NamespaceOptions,
+    SalesItem,
+    SalesItemOptions,
+    SalesItemGroup,
+    SalesItemGroupOptions,
+    Showcase,
+    ShowcaseOptions,
+    DisplayItem,
+    DisplayItemOptions,
+    DisplayItemType,
+    DisplayItemTypeIsSalesItemOptions,
+    DisplayItemTypeIsSalesItemGroupOptions,
+    CurrentMasterData,
 }

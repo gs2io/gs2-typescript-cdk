@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -15,16 +15,11 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const IssueJobRef_1 = tslib_1.__importDefault(require("./IssueJobRef"));
 class CampaignModelRef {
     constructor(namespaceName, campaignModelName) {
         this.namespaceName = namespaceName;
         this.campaignModelName = campaignModelName;
-    }
-    issueJob(issueJobName) {
-        return new IssueJobRef_1.default(this.namespaceName, this.campaignModelName, issueJobName);
     }
     grn() {
         return new func_1.Join(":", [
@@ -36,7 +31,7 @@ class CampaignModelRef {
             this.namespaceName,
             "master",
             "campaign",
-            this.campaignModelName
+            this.campaignModelName,
         ]).str();
     }
 }

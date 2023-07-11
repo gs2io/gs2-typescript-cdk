@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,25 +13,25 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-export interface ProjectTokenOptions {
-    token?: string|null|undefined;
-}
+import { ProjectTokenOptions } from "./options/ProjectTokenOptions";
 
 export default class ProjectToken {
     private readonly token: string|null = null;
 
     public constructor(
-            options?: ProjectTokenOptions,
+        options: ProjectTokenOptions|null = null,
     ) {
         this.token = options?.token ?? null;
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.token != null) {
-            properties["Token"] = this.token;
+            properties["token"] = this.token;
         }
+
         return properties;
     }
 }

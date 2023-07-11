@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,20 +20,16 @@ import JobEntry from "../model/JobEntry";
 export default class PushByUserId extends AcquireAction {
 
     public constructor(
-            namespaceName: string,
-            jobs: JobEntry[]|null = null,
-            userId: string = '#{userId}',
+        namespaceName: string,
+        jobs: JobEntry[]|null = null,
+        userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (jobs != null) {
-            properties["jobs"] = jobs;
-        }
+
+        properties["namespaceName"] = namespaceName
+        properties["jobs"] = jobs
+        properties["userId"] = userId
+
         super(
             "Gs2JobQueue:PushByUserId",
             properties,

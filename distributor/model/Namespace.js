@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,12 +16,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const core_1 = tslib_1.__importDefault(require("../../core"));
+const model_1 = require("../../core/model");
 const func_1 = require("../../core/func");
-const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
-class Namespace extends core_1.default.CdkResource {
-    constructor(stack, name, options) {
+const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
+class Namespace extends model_1.CdkResource {
+    constructor(stack, name, options = null) {
         var _a, _b, _c, _d;
         super("Distributor_Namespace_" + name);
         this.description = null;
@@ -36,10 +36,14 @@ class Namespace extends core_1.default.CdkResource {
         this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
         stack.addResource(this);
     }
+    alternateKeys() {
+        return "name";
+    }
     resourceType() {
         return "GS2::Distributor::Namespace";
     }
     properties() {
+        var _a, _b;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -51,10 +55,10 @@ class Namespace extends core_1.default.CdkResource {
             properties["AssumeUserId"] = this.assumeUserId;
         }
         if (this.autoRunStampSheetNotification != null) {
-            properties["AutoRunStampSheetNotification"] = this.autoRunStampSheetNotification.properties();
+            properties["AutoRunStampSheetNotification"] = (_a = this.autoRunStampSheetNotification) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = (_b = this.logSetting) === null || _b === void 0 ? void 0 : _b.properties();
         }
         return properties;
     }

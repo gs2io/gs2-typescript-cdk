@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,20 +17,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetMaxValueByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, staminaName, maxValue, userId = '#{userId}') {
+    constructor(namespaceName, staminaName, maxValue, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (staminaName != null) {
-            properties["staminaName"] = staminaName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (maxValue != null) {
-            properties["maxValue"] = maxValue;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["staminaName"] = staminaName;
+        properties["maxValue"] = maxValue;
+        properties["userId"] = userId;
         super("Gs2Stamina:SetMaxValueByUserId", properties);
     }
 }

@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,17 +17,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class PushByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, jobs = null, userId = '#{userId}') {
+    constructor(namespaceName, jobs = null, userId = "#{userId}") {
         let properties = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (jobs != null) {
-            properties["jobs"] = jobs;
-        }
+        properties["namespaceName"] = namespaceName;
+        properties["jobs"] = jobs;
+        properties["userId"] = userId;
         super("Gs2JobQueue:PushByUserId", properties);
     }
 }

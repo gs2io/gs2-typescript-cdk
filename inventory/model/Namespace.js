@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,12 +16,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const core_1 = tslib_1.__importDefault(require("../../core"));
+const model_1 = require("../../core/model");
 const func_1 = require("../../core/func");
-const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
-class Namespace extends core_1.default.CdkResource {
-    constructor(stack, name, options) {
+const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
+class Namespace extends model_1.CdkResource {
+    constructor(stack, name, options = null) {
         var _a, _b, _c, _d, _e;
         super("Inventory_Namespace_" + name);
         this.description = null;
@@ -38,10 +38,14 @@ class Namespace extends core_1.default.CdkResource {
         this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
         stack.addResource(this);
     }
+    alternateKeys() {
+        return "name";
+    }
     resourceType() {
         return "GS2::Inventory::Namespace";
     }
     properties() {
+        var _a, _b, _c, _d;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -50,16 +54,16 @@ class Namespace extends core_1.default.CdkResource {
             properties["Description"] = this.description;
         }
         if (this.acquireScript != null) {
-            properties["AcquireScript"] = this.acquireScript.properties();
+            properties["AcquireScript"] = (_a = this.acquireScript) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.overflowScript != null) {
-            properties["OverflowScript"] = this.overflowScript.properties();
+            properties["OverflowScript"] = (_b = this.overflowScript) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.consumeScript != null) {
-            properties["ConsumeScript"] = this.consumeScript.properties();
+            properties["ConsumeScript"] = (_c = this.consumeScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
         }
         return properties;
     }
@@ -69,8 +73,8 @@ class Namespace extends core_1.default.CdkResource {
     getAttrNamespaceId() {
         return new func_1.GetAttr(null, null, "Item.NamespaceId");
     }
-    masterData(inventoryModels) {
-        new CurrentMasterData_1.default(this.stack, this.name, inventoryModels).addDependsOn(this);
+    masterData(inventoryModels, simpleInventoryModels) {
+        new CurrentMasterData_1.default(this.stack, this.name, inventoryModels, simpleInventoryModels).addDependsOn(this);
         return this;
     }
 }

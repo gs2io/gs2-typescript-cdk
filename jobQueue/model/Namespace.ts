@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,56 +14,60 @@
  * permissions and limitations under the License.
  */
 
-import core from "../../core";
+import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import {Stack} from "../../core/model";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
 
-export interface NamespaceOptions {
-    description?: string|null|undefined;
-    pushNotification?: NotificationSetting|null|undefined;
-    runNotification?: NotificationSetting|null|undefined;
-    logSetting?: LogSetting|null|undefined;
-}
+import { NamespaceOptions } from "./options/NamespaceOptions";
 
-export default class Namespace extends core.CdkResource {
-
-    private stack: Stack;
-	private readonly name: string;
-	private readonly description: string|null = null;
-	private readonly enableAutoRun: boolean;
-	private readonly pushNotification: NotificationSetting|null = null;
-	private readonly runNotification: NotificationSetting|null = null;
-	private readonly logSetting: LogSetting|null = null;
+export default class Namespace extends CdkResource {
+    private readonly stack: Stack;
+    private readonly name: string;
+    private readonly description: string|null = null;
+    private readonly enableAutoRun: boolean|null = null;
+    private readonly pushNotification: NotificationSetting|null = null;
+    private readonly runNotification: NotificationSetting|null = null;
+    private readonly logSetting: LogSetting|null = null;
 
     public constructor(
-            stack: Stack,
-            name: string,
-            enableAutoRun: boolean,
-            options?: NamespaceOptions,
+        stack: Stack,
+        name: string,
+        options: NamespaceOptions|null = null,
     ) {
-        super("JobQueue_Namespace_" + name);
+        super(
+            "JobQueue_Namespace_" + name
+        );
 
         this.stack = stack;
         this.name = name;
         this.description = options?.description ?? null;
-        this.enableAutoRun = enableAutoRun;
+        this.enableAutoRun = options?.enableAutoRun ?? null;
         this.pushNotification = options?.pushNotification ?? null;
         this.runNotification = options?.runNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+
+    public alternateKeys(
+    ) {
+        return "name";
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::JobQueue::Namespace";
     }
 
-    public properties(): {[name: string]: any} {
+    public properties(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
+
         if (this.name != null) {
             properties["Name"] = this.name;
         }
@@ -74,29 +78,34 @@ export default class Namespace extends core.CdkResource {
             properties["EnableAutoRun"] = this.enableAutoRun;
         }
         if (this.pushNotification != null) {
-            properties["PushNotification"] = this.pushNotification.properties();
+            properties["PushNotification"] = this.pushNotification?.properties(
+            );
         }
         if (this.runNotification != null) {
-            properties["RunNotification"] = this.runNotification.properties();
+            properties["RunNotification"] = this.runNotification?.properties(
+            );
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting.properties();
+            properties["LogSetting"] = this.logSetting?.properties(
+            );
         }
+
         return properties;
     }
 
     public ref(
     ): NamespaceRef {
         return new NamespaceRef(
-            this.name,
+            this.name!,
         );
     }
 
-    public getAttrNamespaceId(): GetAttr {
+    public getAttrNamespaceId(
+    ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.NamespaceId"
+            "Item.NamespaceId",
         );
     }
 }

@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,21 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const CurrentDistributorMasterRef_1 = tslib_1.__importDefault(require("./CurrentDistributorMasterRef"));
 const DistributorModelRef_1 = tslib_1.__importDefault(require("./DistributorModelRef"));
-const DistributorModelMasterRef_1 = tslib_1.__importDefault(require("./DistributorModelMasterRef"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
-    currentDistributorMaster() {
-        return new CurrentDistributorMasterRef_1.default(this.namespaceName);
-    }
     distributorModel(distributorName) {
         return new DistributorModelRef_1.default(this.namespaceName, distributorName);
-    }
-    distributorModelMaster(distributorName) {
-        return new DistributorModelMasterRef_1.default(this.namespaceName, distributorName);
     }
     grn() {
         return new func_1.Join(":", [
@@ -40,7 +32,7 @@ class NamespaceRef {
             func_1.GetAttr.region().str(),
             func_1.GetAttr.ownerId().str(),
             "distributor",
-            this.namespaceName
+            this.namespaceName,
         ]).str();
     }
 }

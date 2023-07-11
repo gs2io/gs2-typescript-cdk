@@ -1,10 +1,13 @@
 import { CdkResource, Stack } from "../../core/model";
 import InventoryModel from "./InventoryModel";
+import SimpleInventoryModel from "./SimpleInventoryModel";
 export default class CurrentMasterData extends CdkResource {
-    private version;
-    private namespaceName;
+    private readonly version;
+    private readonly namespaceName;
     private readonly inventoryModels;
-    constructor(stack: Stack, namespaceName: string, inventoryModels: InventoryModel[]);
+    private readonly simpleInventoryModels;
+    constructor(stack: Stack, namespaceName: string, inventoryModels: InventoryModel[], simpleInventoryModels: SimpleInventoryModel[]);
+    alternateKeys(): string;
     resourceType(): string;
     properties(): {
         [name: string]: any;

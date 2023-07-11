@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,28 +16,31 @@
 
 import {GetAttr, Join} from "../../core/func";
 
-
 export default class SecurityPolicyRef {
-    private securityPolicyName: string;
+    private readonly securityPolicyName: string;
 
     public constructor(
-            securityPolicyName: string,
+        securityPolicyName: string,
     ) {
         this.securityPolicyName = securityPolicyName;
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
                 "",
-                GetAttr.ownerId().str(),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "identifier",
                 "securityPolicy",
-                this.securityPolicyName
-            ]
-        ).str();
+                this.securityPolicyName,
+            ],
+        ).str(
+        );
     }
 }

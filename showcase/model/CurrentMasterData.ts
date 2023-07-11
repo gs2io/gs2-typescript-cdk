@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,40 +13,58 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 import {CdkResource, Stack} from "../../core/model";
 import Showcase from "./Showcase";
 
 export default class CurrentMasterData extends CdkResource {
-
-    private version: string = "2019-04-04";
-    private namespaceName: string;
-        private readonly showcases: Showcase[];
+    private readonly version: string= "2019-04-04";
+    private readonly namespaceName: string;
+    private readonly showcases: Showcase[];
 
     public constructor(
-            stack: Stack,
-            namespaceName: string,
-            showcases: Showcase[],
+        stack: Stack,
+        namespaceName: string,
+        showcases: Showcase[],
     ) {
-        super("Showcase_CurrentShowcaseMaster_" + namespaceName);
+        super(
+            "Showcase_CurrentShowcaseMaster_" + namespaceName
+        );
 
         this.namespaceName = namespaceName;
         this.showcases = showcases;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+    public alternateKeys(
+    ) {
+        return this.namespaceName;
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Showcase::CurrentShowcaseMaster";
     }
 
-    public properties(): {[name: string]: any} {
-        return {
-            "NamespaceName": this.namespaceName,
-            "Settings": {
-                "version": this.version,
-                "showcases": this.showcases.map(v => v.properties()),
-            },
-        };
+    public properties(
+    ): {[name: string]: any} {
+        let properties: {[name: string]: any} = {};
+        let settings: {[name: string]: any} = {};
+
+        settings["version"] = this.version
+        if (this.showcases != null) {
+            settings["showcases"] = this.showcases.map(v => v.properties(
+                ));
+        }
+
+        if (this.namespaceName != null) {
+            properties["NamespaceName"] = this.namespaceName;
+        }
+        if (settings != null) {
+            properties["Settings"] = settings;
+        }
+
+        return properties;
     }
 }

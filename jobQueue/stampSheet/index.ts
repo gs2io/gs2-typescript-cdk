@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import PushByUserId from "./PushByUserId";
 
 export {
+    PushByUserId,
 }

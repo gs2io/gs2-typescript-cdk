@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class ConsumeCount {
+    constructor(itemName, count, options = null) {
+        this.itemName = itemName;
+        this.count = count;
+    }
+    properties() {
+        let properties = {};
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        return properties;
+    }
+}
+exports.default = ConsumeCount;
+//# sourceMappingURL=ConsumeCount.js.map

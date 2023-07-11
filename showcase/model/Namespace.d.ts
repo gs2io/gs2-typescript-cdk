@@ -1,24 +1,18 @@
-import core from "../../core";
+import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
-import { Stack } from "../../core/model";
 import TransactionSetting from "../../core/model/TransactionSetting";
-import ScriptSetting from "../../core/model/ScriptSetting";
-import LogSetting from "../../core/model/LogSetting";
-import Showcase from "./Showcase";
 import NamespaceRef from "../ref/NamespaceRef";
-export interface NamespaceOptions {
-    description?: string | null | undefined;
-    buyScript?: ScriptSetting | null | undefined;
-    logSetting?: LogSetting | null | undefined;
-}
-export default class Namespace extends core.CdkResource {
-    private stack;
+import Showcase from "./Showcase";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+export default class Namespace extends CdkResource {
+    private readonly stack;
     private readonly name;
-    private readonly description;
     private readonly transactionSetting;
+    private readonly description;
     private readonly buyScript;
     private readonly logSetting;
-    constructor(stack: Stack, name: string, transactionSetting: TransactionSetting, options?: NamespaceOptions);
+    constructor(stack: Stack, name: string, transactionSetting: TransactionSetting, options?: NamespaceOptions | null);
+    alternateKeys(): string;
     resourceType(): string;
     properties(): {
         [name: string]: any;

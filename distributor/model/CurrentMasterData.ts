@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,40 +13,58 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 import {CdkResource, Stack} from "../../core/model";
 import DistributorModel from "./DistributorModel";
 
 export default class CurrentMasterData extends CdkResource {
-
-    private version: string = "2019-03-01";
-    private namespaceName: string;
-        private readonly distributorModels: DistributorModel[];
+    private readonly version: string= "2019-03-01";
+    private readonly namespaceName: string;
+    private readonly distributorModels: DistributorModel[];
 
     public constructor(
-            stack: Stack,
-            namespaceName: string,
-            distributorModels: DistributorModel[],
+        stack: Stack,
+        namespaceName: string,
+        distributorModels: DistributorModel[],
     ) {
-        super("Distributor_CurrentDistributorMaster_" + namespaceName);
+        super(
+            "Distributor_CurrentDistributorMaster_" + namespaceName
+        );
 
         this.namespaceName = namespaceName;
         this.distributorModels = distributorModels;
-
-        stack.addResource(this);
+        stack.addResource(
+            this,
+        );
     }
 
-    public resourceType(): string {
+    public alternateKeys(
+    ) {
+        return this.namespaceName;
+    }
+
+    public resourceType(
+    ): string {
         return "GS2::Distributor::CurrentDistributorMaster";
     }
 
-    public properties(): {[name: string]: any} {
-        return {
-            "NamespaceName": this.namespaceName,
-            "Settings": {
-                "version": this.version,
-                "distributorModels": this.distributorModels.map(v => v.properties()),
-            },
-        };
+    public properties(
+    ): {[name: string]: any} {
+        let properties: {[name: string]: any} = {};
+        let settings: {[name: string]: any} = {};
+
+        settings["version"] = this.version
+        if (this.distributorModels != null) {
+            settings["distributorModels"] = this.distributorModels.map(v => v.properties(
+                ));
+        }
+
+        if (this.namespaceName != null) {
+            properties["NamespaceName"] = this.namespaceName;
+        }
+        if (settings != null) {
+            properties["Settings"] = settings;
+        }
+
+        return properties;
     }
 }

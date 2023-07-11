@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,11 +14,6 @@
  * permissions and limitations under the License.
  */
 import NamespaceRef from "./NamespaceRef";
-import StaminaModelMasterRef from "./StaminaModelMasterRef";
-import MaxStaminaTableMasterRef from "./MaxStaminaTableMasterRef";
-import RecoverIntervalTableMasterRef from "./RecoverIntervalTableMasterRef";
-import RecoverValueTableMasterRef from "./RecoverValueTableMasterRef";
-import CurrentStaminaMasterRef from "./CurrentStaminaMasterRef";
 import StaminaModelRef from "./StaminaModelRef";
 import MaxStaminaTableRef from "./MaxStaminaTableRef";
 import RecoverIntervalTableRef from "./RecoverIntervalTableRef";
@@ -26,11 +21,6 @@ import RecoverValueTableRef from "./RecoverValueTableRef";
 
 export {
     NamespaceRef,
-    StaminaModelMasterRef,
-    MaxStaminaTableMasterRef,
-    RecoverIntervalTableMasterRef,
-    RecoverValueTableMasterRef,
-    CurrentStaminaMasterRef,
     StaminaModelRef,
     MaxStaminaTableRef,
     RecoverIntervalTableRef,

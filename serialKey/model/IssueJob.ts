@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,13 +13,56 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { IssueJobOptions } from "./options/IssueJobOptions";
+import { IssueJobStatus } from "./enum/IssueJobStatus";
 
-import core from "../../core";
-import {GetAttr} from "../../core/func";
-import {Stack} from "../../core/model";
+export default class IssueJob {
+    private readonly name: string;
+    private readonly issuedCount: number;
+    private readonly issueRequestCount: number;
+    private readonly status: IssueJobStatus;
+    private readonly createdAt: number;
+    private readonly metadata: string|null = null;
 
-export const IssueJobStatus = {
-    PROCESSING: "PROCESSING",
-    COMPLETE: "COMPLETE",
-} as const;
-export type IssueJobStatus = typeof IssueJobStatus[keyof typeof IssueJobStatus];
+    public constructor(
+        name: string,
+        issuedCount: number,
+        issueRequestCount: number,
+        status: IssueJobStatus,
+        createdAt: number,
+        options: IssueJobOptions|null = null,
+    ) {
+        this.name = name;
+        this.issuedCount = issuedCount;
+        this.issueRequestCount = issueRequestCount;
+        this.status = status;
+        this.createdAt = createdAt;
+        this.metadata = options?.metadata ?? null;
+    }
+
+    public properties(
+    ): {[name: string]: any} {
+        let properties: {[name: string]: any} = {};
+
+        if (this.name != null) {
+            properties["name"] = this.name;
+        }
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
+        }
+        if (this.issuedCount != null) {
+            properties["issuedCount"] = this.issuedCount;
+        }
+        if (this.issueRequestCount != null) {
+            properties["issueRequestCount"] = this.issueRequestCount;
+        }
+        if (this.status != null) {
+            properties["status"] = this.status;
+        }
+        if (this.createdAt != null) {
+            properties["createdAt"] = this.createdAt;
+        }
+
+        return properties;
+    }
+}

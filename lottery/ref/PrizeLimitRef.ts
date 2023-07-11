@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,37 +16,42 @@
 
 import {GetAttr, Join} from "../../core/func";
 
-
 export default class PrizeLimitRef {
-    private namespaceName: string;
-    private prizeTableName: string;
-    private prizeId: string;
+    private readonly namespaceName: string;
+    private readonly prizeTableName: string;
+    private readonly prizeId: string;
 
     public constructor(
-            namespaceName: string,
-            prizeTableName: string,
-            prizeId: string,
+        namespaceName: string,
+        prizeTableName: string,
+        prizeId: string,
     ) {
         this.namespaceName = namespaceName;
         this.prizeTableName = prizeTableName;
         this.prizeId = prizeId;
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "lottery",
                 this.namespaceName,
                 "table",
                 this.prizeTableName,
                 "prize",
-                this.prizeId
-            ]
-        ).str();
+                this.prizeId,
+            ],
+        ).str(
+        );
     }
 }

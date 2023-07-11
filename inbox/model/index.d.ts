@@ -1,6 +1,8 @@
-import TimeSpan from "./TimeSpan";
-import GlobalMessage from "./GlobalMessage";
-import CurrentMasterData from "./CurrentMasterData";
 import Namespace from "./Namespace";
-import GlobalMessageMaster from "./GlobalMessageMaster";
-export { TimeSpan, GlobalMessage, CurrentMasterData, Namespace, GlobalMessageMaster, };
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import GlobalMessage from "./GlobalMessage";
+import { GlobalMessageOptions } from "./options/GlobalMessageOptions";
+import TimeSpan from "./TimeSpan";
+import { TimeSpanOptions } from "./options/TimeSpanOptions";
+import CurrentMasterData from "./CurrentMasterData";
+export { Namespace, NamespaceOptions, GlobalMessage, GlobalMessageOptions, TimeSpan, TimeSpanOptions, CurrentMasterData, };

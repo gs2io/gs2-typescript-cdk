@@ -1,7 +1,7 @@
 export default class IssueJobRef {
-    private namespaceName;
-    private campaignModelName;
-    private issueJobName;
+    private readonly namespaceName;
+    private readonly campaignModelName;
+    private readonly issueJobName;
     constructor(namespaceName: string, campaignModelName: string, issueJobName: string);
     grn(): string;
 }

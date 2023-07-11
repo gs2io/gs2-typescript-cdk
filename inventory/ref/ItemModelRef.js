@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,21 +19,29 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const AcquireItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireItemSetByUserId"));
 const AddReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddReferenceOfByUserId"));
+const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteReferenceOfByUserId"));
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeItemSetByUserId"));
+const VerifyReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyReferenceOfByUserId"));
 class ItemModelRef {
     constructor(namespaceName, inventoryName, itemName) {
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.itemName = itemName;
     }
-    acquireItemSet(acquireCount, expiresAt, createNewItemSet, itemSetName = null, userId = '#{userId}') {
+    acquireItemSet(acquireCount, expiresAt, createNewItemSet, itemSetName = null, userId = "#{userId}") {
         return new AcquireItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, acquireCount, expiresAt, createNewItemSet, itemSetName, userId);
     }
-    addReferenceOf(itemSetName, referenceOf, userId = '#{userId}') {
+    addReferenceOf(itemSetName, referenceOf, userId = "#{userId}") {
         return new AddReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, itemSetName, referenceOf, userId);
     }
-    consumeItemSet(consumeCount, itemSetName = null, userId = '#{userId}') {
+    deleteReferenceOf(itemSetName, referenceOf, userId = "#{userId}") {
+        return new DeleteReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, itemSetName, referenceOf, userId);
+    }
+    consumeItemSet(consumeCount, itemSetName = null, userId = "#{userId}") {
         return new ConsumeItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, consumeCount, itemSetName, userId);
+    }
+    verifyReferenceOf(itemSetName, referenceOf, verifyType, userId = "#{userId}") {
+        return new VerifyReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, itemSetName, referenceOf, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [
@@ -46,7 +54,7 @@ class ItemModelRef {
             "model",
             this.inventoryName,
             "item",
-            this.itemName
+            this.itemName,
         ]).str();
     }
 }

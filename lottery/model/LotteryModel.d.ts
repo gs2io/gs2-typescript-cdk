@@ -1,39 +1,19 @@
-export declare const LotteryModelMode: {
-    readonly NORMAL: "normal";
-    readonly BOX: "box";
-};
-export declare type LotteryModelMode = typeof LotteryModelMode[keyof typeof LotteryModelMode];
-export declare const LotteryModelMethod: {
-    readonly PRIZE_TABLE: "prize_table";
-    readonly SCRIPT: "script";
-};
-export declare type LotteryModelMethod = typeof LotteryModelMethod[keyof typeof LotteryModelMethod];
-import LotteryModelRef from "../ref/LotteryModelRef";
-export interface LotteryModelOptions {
-    metadata?: string | null | undefined;
-    prizeTableName?: string | null | undefined;
-    choicePrizeTableScriptId?: string | null | undefined;
-}
-export interface LotteryModelPrizeTableOptions {
-    metadata?: string | null | undefined;
-    prizeTableName?: string | null | undefined;
-}
-export interface LotteryModelScriptOptions {
-    metadata?: string | null | undefined;
-    choicePrizeTableScriptId?: string | null | undefined;
-}
+import { LotteryModelOptions } from "./options/LotteryModelOptions";
+import { LotteryModelMethodIsPrizeTableOptions } from "./options/LotteryModelMethodIsPrizeTableOptions";
+import { LotteryModelMethodIsScriptOptions } from "./options/LotteryModelMethodIsScriptOptions";
+import { LotteryModelMode } from "./enum/LotteryModelMode";
+import { LotteryModelMethod } from "./enum/LotteryModelMethod";
 export default class LotteryModel {
     private readonly name;
-    private readonly metadata;
     private readonly mode;
     private readonly method;
+    private readonly metadata;
     private readonly prizeTableName;
     private readonly choicePrizeTableScriptId;
-    constructor(name: string, mode: LotteryModelMode, method: LotteryModelMethod, options?: LotteryModelOptions);
-    static prizeTable(name: string, mode: LotteryModelMode, prizeTableName: string, options?: LotteryModelPrizeTableOptions): LotteryModel;
-    static script(name: string, mode: LotteryModelMode, choicePrizeTableScriptId: string, options?: LotteryModelScriptOptions): LotteryModel;
+    constructor(name: string, mode: LotteryModelMode, method: LotteryModelMethod, options?: LotteryModelOptions | null);
+    static methodIsPrizeTable(name: string, mode: LotteryModelMode, options?: LotteryModelMethodIsPrizeTableOptions | null): LotteryModel;
+    static methodIsScript(name: string, mode: LotteryModelMode, options?: LotteryModelMethodIsScriptOptions | null): LotteryModel;
     properties(): {
         [name: string]: any;
     };
-    ref(namespaceName: string): LotteryModelRef;
 }

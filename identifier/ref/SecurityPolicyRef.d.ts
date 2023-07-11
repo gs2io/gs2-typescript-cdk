@@ -1,5 +1,5 @@
 export default class SecurityPolicyRef {
-    private securityPolicyName;
+    private readonly securityPolicyName;
     constructor(securityPolicyName: string);
     grn(): string;
 }

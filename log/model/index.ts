@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,30 +13,50 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import AccessLog from "./AccessLog";
-import AccessLogCount from "./AccessLogCount";
-import IssueStampSheetLog from "./IssueStampSheetLog";
-import IssueStampSheetLogCount from "./IssueStampSheetLogCount";
-import ExecuteStampSheetLog from "./ExecuteStampSheetLog";
-import ExecuteStampSheetLogCount from "./ExecuteStampSheetLogCount";
-import ExecuteStampTaskLog from "./ExecuteStampTaskLog";
-import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount";
 import Namespace from "./Namespace";
-import { NamespaceType } from "./Namespace";
-import Insight from "./Insight";
-import { InsightStatus } from "./Insight";
+import { NamespaceOptions } from "./options/NamespaceOptions";
+import { NamespaceType } from "./enum/NamespaceType";
+import { NamespaceTypeIsGs2Options } from "./options/NamespaceTypeIsGs2Options"
+import { NamespaceTypeIsBigqueryOptions } from "./options/NamespaceTypeIsBigqueryOptions"
+import { NamespaceTypeIsFirehoseOptions } from "./options/NamespaceTypeIsFirehoseOptions"
+import AccessLog from "./AccessLog";
+import { AccessLogOptions } from "./options/AccessLogOptions";
+import AccessLogCount from "./AccessLogCount";
+import { AccessLogCountOptions } from "./options/AccessLogCountOptions";
+import IssueStampSheetLog from "./IssueStampSheetLog";
+import { IssueStampSheetLogOptions } from "./options/IssueStampSheetLogOptions";
+import IssueStampSheetLogCount from "./IssueStampSheetLogCount";
+import { IssueStampSheetLogCountOptions } from "./options/IssueStampSheetLogCountOptions";
+import ExecuteStampSheetLog from "./ExecuteStampSheetLog";
+import { ExecuteStampSheetLogOptions } from "./options/ExecuteStampSheetLogOptions";
+import ExecuteStampSheetLogCount from "./ExecuteStampSheetLogCount";
+import { ExecuteStampSheetLogCountOptions } from "./options/ExecuteStampSheetLogCountOptions";
+import ExecuteStampTaskLog from "./ExecuteStampTaskLog";
+import { ExecuteStampTaskLogOptions } from "./options/ExecuteStampTaskLogOptions";
+import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount";
+import { ExecuteStampTaskLogCountOptions } from "./options/ExecuteStampTaskLogCountOptions";
 
 export {
-    AccessLog,
-    AccessLogCount,
-    IssueStampSheetLog,
-    IssueStampSheetLogCount,
-    ExecuteStampSheetLog,
-    ExecuteStampSheetLogCount,
-    ExecuteStampTaskLog,
-    ExecuteStampTaskLogCount,
     Namespace,
+    NamespaceOptions,
     NamespaceType,
-    Insight,
-    InsightStatus,
+    NamespaceTypeIsGs2Options,
+    NamespaceTypeIsBigqueryOptions,
+    NamespaceTypeIsFirehoseOptions,
+    AccessLog,
+    AccessLogOptions,
+    AccessLogCount,
+    AccessLogCountOptions,
+    IssueStampSheetLog,
+    IssueStampSheetLogOptions,
+    IssueStampSheetLogCount,
+    IssueStampSheetLogCountOptions,
+    ExecuteStampSheetLog,
+    ExecuteStampSheetLogOptions,
+    ExecuteStampSheetLogCount,
+    ExecuteStampSheetLogCountOptions,
+    ExecuteStampTaskLog,
+    ExecuteStampTaskLogOptions,
+    ExecuteStampTaskLogCount,
+    ExecuteStampTaskLogCountOptions,
 }

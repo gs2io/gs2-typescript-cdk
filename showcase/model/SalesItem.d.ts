@@ -1,14 +1,11 @@
-import { ConsumeAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
-export interface SalesItemOptions {
-    metadata?: string | null | undefined;
-}
+import { SalesItemOptions } from "./options/SalesItemOptions";
 export default class SalesItem {
     private readonly name;
+    private readonly acquireActions;
     private readonly metadata;
     private readonly consumeActions;
-    private readonly acquireActions;
-    constructor(name: string, consumeActions: ConsumeAction[], acquireActions: AcquireAction[], options?: SalesItemOptions);
+    constructor(name: string, acquireActions: AcquireAction[], options?: SalesItemOptions | null);
     properties(): {
         [name: string]: any;
     };

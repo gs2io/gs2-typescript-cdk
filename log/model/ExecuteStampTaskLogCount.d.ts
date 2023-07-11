@@ -1,16 +1,11 @@
-export interface ExecuteStampTaskLogCountOptions {
-    service?: string | null | undefined;
-    method?: string | null | undefined;
-    userId?: string | null | undefined;
-    action?: string | null | undefined;
-}
+import { ExecuteStampTaskLogCountOptions } from "./options/ExecuteStampTaskLogCountOptions";
 export default class ExecuteStampTaskLogCount {
+    private readonly count;
     private readonly service;
     private readonly method;
     private readonly userId;
     private readonly action;
-    private readonly count;
-    constructor(count: number, options?: ExecuteStampTaskLogCountOptions);
+    constructor(count: number, options?: ExecuteStampTaskLogCountOptions | null);
     properties(): {
         [name: string]: any;
     };

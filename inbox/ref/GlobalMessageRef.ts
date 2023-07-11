@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,32 +16,37 @@
 
 import {GetAttr, Join} from "../../core/func";
 
-
 export default class GlobalMessageRef {
-    private namespaceName: string;
-    private globalMessageName: string;
+    private readonly namespaceName: string;
+    private readonly globalMessageName: string;
 
     public constructor(
-            namespaceName: string,
-            globalMessageName: string,
+        namespaceName: string,
+        globalMessageName: string,
     ) {
         this.namespaceName = namespaceName;
         this.globalMessageName = globalMessageName;
     }
 
-    public grn(): string {
+    public grn(
+    ): string {
         return new Join(
             ":",
             [
                 "grn",
                 "gs2",
-                GetAttr.region().str(),
-                GetAttr.ownerId().str(),
+                GetAttr.region(
+                ).str(
+                ),
+                GetAttr.ownerId(
+                ).str(
+                ),
                 "inbox",
                 this.namespaceName,
                 "globalMessage",
-                this.globalMessageName
-            ]
-        ).str();
+                this.globalMessageName,
+            ],
+        ).str(
+        );
     }
 }

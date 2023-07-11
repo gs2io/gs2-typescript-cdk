@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,36 +19,24 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 export default class VerifyReferenceOfByUserId extends ConsumeAction {
 
     public constructor(
-            namespaceName: string,
-            inventoryName: string,
-            itemName: string,
-            itemSetName: string,
-            referenceOf: string,
-            verifyType: string,
-            userId: string = '#{userId}',
+        namespaceName: string,
+        inventoryName: string,
+        itemName: string,
+        referenceOf: string,
+        verifyType: string,
+        itemSetName: string|null = null,
+        userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
-        if (namespaceName != null) {
-            properties["namespaceName"] = namespaceName;
-        }
-        if (inventoryName != null) {
-            properties["inventoryName"] = inventoryName;
-        }
-        if (userId != null) {
-            properties["userId"] = userId;
-        }
-        if (itemName != null) {
-            properties["itemName"] = itemName;
-        }
-        if (itemSetName != null) {
-            properties["itemSetName"] = itemSetName;
-        }
-        if (referenceOf != null) {
-            properties["referenceOf"] = referenceOf;
-        }
-        if (verifyType != null) {
-            properties["verifyType"] = verifyType;
-        }
+
+        properties["namespaceName"] = namespaceName
+        properties["inventoryName"] = inventoryName
+        properties["itemName"] = itemName
+        properties["referenceOf"] = referenceOf
+        properties["verifyType"] = verifyType
+        properties["itemSetName"] = itemSetName
+        properties["userId"] = userId
+
         super(
             "Gs2Inventory:VerifyReferenceOfByUserId",
             properties,

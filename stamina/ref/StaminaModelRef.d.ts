@@ -5,14 +5,14 @@ import SetRecoverIntervalByUserId from "../stampSheet/SetRecoverIntervalByUserId
 import SetRecoverValueByUserId from "../stampSheet/SetRecoverValueByUserId";
 import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
 export default class StaminaModelRef {
-    private namespaceName;
-    private staminaName;
+    private readonly namespaceName;
+    private readonly staminaName;
     constructor(namespaceName: string, staminaName: string);
-    recoverStamina(recoverValue: number, userId?: string): RecoverStaminaByUserId;
-    raiseMaxValue(raiseValue: number, userId?: string): RaiseMaxValueByUserId;
-    setMaxValue(maxValue: number, userId?: string): SetMaxValueByUserId;
-    setRecoverInterval(recoverIntervalMinutes: number, userId?: string): SetRecoverIntervalByUserId;
-    setRecoverValue(recoverValue: number, userId?: string): SetRecoverValueByUserId;
-    consumeStamina(consumeValue: number, userId?: string): ConsumeStaminaByUserId;
+    recoverStamina(recoverValue: number, userId?: string | null): RecoverStaminaByUserId;
+    raiseMaxValue(raiseValue: number, userId?: string | null): RaiseMaxValueByUserId;
+    setMaxValue(maxValue: number, userId?: string | null): SetMaxValueByUserId;
+    setRecoverInterval(recoverIntervalMinutes: number, userId?: string | null): SetRecoverIntervalByUserId;
+    setRecoverValue(recoverValue: number, userId?: string | null): SetRecoverValueByUserId;
+    consumeStamina(consumeValue: number, userId?: string | null): ConsumeStaminaByUserId;
     grn(): string;
 }
