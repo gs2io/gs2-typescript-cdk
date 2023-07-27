@@ -13,6 +13,8 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
@@ -56,6 +58,9 @@ class Namespace extends model_1.CdkResource {
     }
     getAttrNamespaceId() {
         return new func_1.GetAttr(null, null, "Item.NamespaceId");
+    }
+    getName() {
+        return this.name;
     }
 }
 exports.default = Namespace;

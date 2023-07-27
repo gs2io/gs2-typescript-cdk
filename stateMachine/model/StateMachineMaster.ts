@@ -18,31 +18,32 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import LogSetting from "../../core/model/LogSetting";
 
-import NamespaceRef from "../ref/NamespaceRef";
+import StateMachineMasterRef from "../ref/StateMachineMasterRef";
 
-import { NamespaceOptions } from "./options/NamespaceOptions";
+import { StateMachineMasterOptions } from "./options/StateMachineMasterOptions";
 
-export default class Namespace extends CdkResource {
+export default class StateMachineMaster extends CdkResource {
     private readonly stack: Stack;
-    private readonly name: string;
-    private readonly description: string|null = null;
-    private readonly logSetting: LogSetting|null = null;
+    private readonly namespaceName: string;
+    private readonly mainStateMachineName: string;
+    private readonly payload: string;
 
     public constructor(
         stack: Stack,
-        name: string,
-        options: NamespaceOptions|null = null,
+        namespaceName: string,
+        mainStateMachineName: string,
+        payload: string,
+        options: StateMachineMasterOptions|null = null,
     ) {
         super(
-            "Script_Namespace_" + name
+            "StateMachine_StateMachineMaster_" + namespaceName
         );
 
         this.stack = stack;
-        this.name = name;
-        this.description = options?.description ?? null;
-        this.logSetting = options?.logSetting ?? null;
+        this.namespaceName = namespaceName;
+        this.mainStateMachineName = mainStateMachineName;
+        this.payload = payload;
         stack.addResource(
             this,
         );
@@ -51,50 +52,46 @@ export default class Namespace extends CdkResource {
 
     public alternateKeys(
     ) {
-        return "name";
+        return "version";
     }
 
     public resourceType(
     ): string {
-        return "GS2::Script::Namespace";
+        return "GS2::StateMachine::StateMachineMaster";
     }
 
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        if (this.name != null) {
-            properties["Name"] = this.name;
+        if (this.namespaceName != null) {
+            properties["NamespaceName"] = this.namespaceName;
         }
-        if (this.description != null) {
-            properties["Description"] = this.description;
+        if (this.mainStateMachineName != null) {
+            properties["MainStateMachineName"] = this.mainStateMachineName;
         }
-        if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting?.properties(
-            );
+        if (this.payload != null) {
+            properties["Payload"] = this.payload;
         }
 
         return properties;
     }
 
     public ref(
-    ): NamespaceRef {
-        return new NamespaceRef(
-            this.name!,
+        version: number,
+    ): StateMachineMasterRef {
+        return new StateMachineMasterRef(
+            this.namespaceName,
+            version!,
         );
     }
 
-    public getAttrNamespaceId(
+    public getAttrStateMachineId(
     ): GetAttr {
         return new GetAttr(
             null,
             null,
-            "Item.NamespaceId",
+            "Item.StateMachineId",
         );
-    }
-
-    public getName(
-    ): string {
-        return this.name;
     }
 }
