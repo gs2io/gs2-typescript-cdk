@@ -19,18 +19,15 @@ import { ScopedValueResetType } from "./enum/ScopedValueResetType";
 export default class ScopedValue {
     private readonly resetType: ScopedValueResetType;
     private readonly value: number;
-    private readonly updatedAt: number;
     private readonly nextResetAt: number|null = null;
 
     public constructor(
         resetType: ScopedValueResetType,
         value: number,
-        updatedAt: number,
         options: ScopedValueOptions|null = null,
     ) {
         this.resetType = resetType;
         this.value = value;
-        this.updatedAt = updatedAt;
         this.nextResetAt = options?.nextResetAt ?? null;
     }
 
@@ -46,9 +43,6 @@ export default class ScopedValue {
         }
         if (this.nextResetAt != null) {
             properties["nextResetAt"] = this.nextResetAt;
-        }
-        if (this.updatedAt != null) {
-            properties["updatedAt"] = this.updatedAt;
         }
 
         return properties;
