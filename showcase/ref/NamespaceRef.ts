@@ -15,6 +15,8 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import ForceReDrawByUserId from "../stampSheet/ForceReDrawByUserId";
+import IncrementPurchaseCountByUserId from "../stampSheet/IncrementPurchaseCountByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -23,6 +25,32 @@ export default class NamespaceRef {
         namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
+    }
+
+    public forceReDraw(
+        showcaseName: string,
+        userId: string|null = "#{userId}",
+    ): ForceReDrawByUserId {
+        return new ForceReDrawByUserId(
+            this.namespaceName,
+            showcaseName,
+            userId,
+        );
+    }
+
+    public incrementPurchaseCount(
+        showcaseName: string,
+        displayItemName: string,
+        count: number,
+        userId: string|null = "#{userId}",
+    ): IncrementPurchaseCountByUserId {
+        return new IncrementPurchaseCountByUserId(
+            this.namespaceName,
+            showcaseName,
+            displayItemName,
+            count,
+            userId,
+        );
     }
 
     public grn(

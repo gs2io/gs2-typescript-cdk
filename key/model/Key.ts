@@ -85,9 +85,9 @@ export default class Key extends CdkResource {
     public getAttrKeyId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.KeyId",
+            null,
         );
     }
 }

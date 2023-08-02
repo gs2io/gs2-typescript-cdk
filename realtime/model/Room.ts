@@ -101,9 +101,9 @@ export default class Room extends CdkResource {
     public getAttrRoomId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.RoomId",
+            null,
         );
     }
 }

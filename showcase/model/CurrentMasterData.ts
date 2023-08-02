@@ -15,16 +15,19 @@
  */
 import {CdkResource, Stack} from "../../core/model";
 import Showcase from "./Showcase";
+import RandomShowcase from "./RandomShowcase";
 
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2019-04-04";
     private readonly namespaceName: string;
     private readonly showcases: Showcase[];
+    private readonly randomShowcases: RandomShowcase[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
         showcases: Showcase[],
+        randomShowcases: RandomShowcase[],
     ) {
         super(
             "Showcase_CurrentShowcaseMaster_" + namespaceName
@@ -32,6 +35,7 @@ export default class CurrentMasterData extends CdkResource {
 
         this.namespaceName = namespaceName;
         this.showcases = showcases;
+        this.randomShowcases = randomShowcases;
         stack.addResource(
             this,
         );
@@ -55,6 +59,10 @@ export default class CurrentMasterData extends CdkResource {
         settings["version"] = this.version
         if (this.showcases != null) {
             settings["showcases"] = this.showcases.map(v => v.properties(
+                ));
+        }
+        if (this.randomShowcases != null) {
+            settings["randomShowcases"] = this.randomShowcases.map(v => v.properties(
                 ));
         }
 

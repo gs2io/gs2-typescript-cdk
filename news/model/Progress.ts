@@ -19,22 +19,16 @@ export default class Progress {
     private readonly uploadToken: string;
     private readonly generated: number;
     private readonly patternCount: number;
-    private readonly createdAt: number;
-    private readonly updatedAt: number;
 
     public constructor(
         uploadToken: string,
         generated: number,
         patternCount: number,
-        createdAt: number,
-        updatedAt: number,
         options: ProgressOptions|null = null,
     ) {
         this.uploadToken = uploadToken;
         this.generated = generated;
         this.patternCount = patternCount;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public properties(
@@ -49,12 +43,6 @@ export default class Progress {
         }
         if (this.patternCount != null) {
             properties["patternCount"] = this.patternCount;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
-        }
-        if (this.updatedAt != null) {
-            properties["updatedAt"] = this.updatedAt;
         }
 
         return properties;

@@ -91,9 +91,9 @@ export default class Script extends CdkResource {
     public getAttrScriptId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.ScriptId",
+            null,
         );
     }
 }

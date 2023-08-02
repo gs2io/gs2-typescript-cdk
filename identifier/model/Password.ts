@@ -79,9 +79,9 @@ export default class Password extends CdkResource {
     public getAttrPasswordId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.PasswordId",
+            null,
         );
     }
 }

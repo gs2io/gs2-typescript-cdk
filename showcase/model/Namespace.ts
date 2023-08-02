@@ -23,6 +23,7 @@ import LogSetting from "../../core/model/LogSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import Showcase from "./Showcase";
+import RandomShowcase from "./RandomShowcase";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -102,19 +103,21 @@ export default class Namespace extends CdkResource {
     public getAttrNamespaceId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.NamespaceId",
+            null,
         );
     }
 
     public masterData(
         showcases: Showcase[],
+        randomShowcases: RandomShowcase[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             showcases,
+            randomShowcases,
         ).addDependsOn(
             this,
         );

@@ -18,20 +18,14 @@ import { PrizeLimitOptions } from "./options/PrizeLimitOptions";
 export default class PrizeLimit {
     private readonly prizeId: string;
     private readonly drawnCount: number;
-    private readonly createdAt: number;
-    private readonly updatedAt: number;
 
     public constructor(
         prizeId: string,
         drawnCount: number,
-        createdAt: number,
-        updatedAt: number,
         options: PrizeLimitOptions|null = null,
     ) {
         this.prizeId = prizeId;
         this.drawnCount = drawnCount;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public properties(
@@ -43,12 +37,6 @@ export default class PrizeLimit {
         }
         if (this.drawnCount != null) {
             properties["drawnCount"] = this.drawnCount;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
-        }
-        if (this.updatedAt != null) {
-            properties["updatedAt"] = this.updatedAt;
         }
 
         return properties;

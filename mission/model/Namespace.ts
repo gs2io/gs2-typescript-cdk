@@ -122,21 +122,21 @@ export default class Namespace extends CdkResource {
     public getAttrNamespaceId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.NamespaceId",
+            null,
         );
     }
 
     public masterData(
-        missionGroupModels: MissionGroupModel[],
-        counterModels: CounterModel[],
+        groups: MissionGroupModel[],
+        counters: CounterModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
-            missionGroupModels,
-            counterModels,
+            groups,
+            counters,
         ).addDependsOn(
             this,
         );

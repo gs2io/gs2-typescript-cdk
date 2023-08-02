@@ -21,7 +21,6 @@ export default class IssueJob {
     private readonly issuedCount: number;
     private readonly issueRequestCount: number;
     private readonly status: IssueJobStatus;
-    private readonly createdAt: number;
     private readonly metadata: string|null = null;
 
     public constructor(
@@ -29,14 +28,12 @@ export default class IssueJob {
         issuedCount: number,
         issueRequestCount: number,
         status: IssueJobStatus,
-        createdAt: number,
         options: IssueJobOptions|null = null,
     ) {
         this.name = name;
         this.issuedCount = issuedCount;
         this.issueRequestCount = issueRequestCount;
         this.status = status;
-        this.createdAt = createdAt;
         this.metadata = options?.metadata ?? null;
     }
 
@@ -58,9 +55,6 @@ export default class IssueJob {
         }
         if (this.status != null) {
             properties["status"] = this.status;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
         }
 
         return properties;

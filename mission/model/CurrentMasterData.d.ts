@@ -4,9 +4,9 @@ import CounterModel from "./CounterModel";
 export default class CurrentMasterData extends CdkResource {
     private readonly version;
     private readonly namespaceName;
-    private readonly missionGroupModels;
-    private readonly counterModels;
-    constructor(stack: Stack, namespaceName: string, missionGroupModels: MissionGroupModel[], counterModels: CounterModel[]);
+    private readonly groups;
+    private readonly counters;
+    constructor(stack: Stack, namespaceName: string, groups: MissionGroupModel[], counters: CounterModel[]);
     alternateKeys(): string;
     resourceType(): string;
     properties(): {

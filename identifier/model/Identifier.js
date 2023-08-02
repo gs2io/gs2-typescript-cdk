@@ -43,10 +43,10 @@ class Identifier extends model_1.CdkResource {
         return new IdentifierRef_1.default(this.userName, clientId);
     }
     getAttrClientId() {
-        return new func_1.GetAttr(null, null, "Item.ClientId");
+        return new func_1.GetAttr(this, "Item.ClientId", null);
     }
     getAttrClientSecret() {
-        return new func_1.GetAttr(null, null, "ClientSecret");
+        return new func_1.GetAttr(this, "ClientSecret", null);
     }
 }
 exports.default = Identifier;

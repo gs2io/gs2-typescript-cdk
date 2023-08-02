@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Layer {
-    constructor(areaModelName, layerModelName, numberOfMinEntries, numberOfMaxEntries, height, createdAt, options = null) {
+    constructor(areaModelName, layerModelName, numberOfMinEntries, numberOfMaxEntries, height, options = null) {
         var _a;
         this.root = null;
         this.areaModelName = areaModelName;
@@ -9,7 +9,6 @@ class Layer {
         this.numberOfMinEntries = numberOfMinEntries;
         this.numberOfMaxEntries = numberOfMaxEntries;
         this.height = height;
-        this.createdAt = createdAt;
         this.root = (_a = options === null || options === void 0 ? void 0 : options.root) !== null && _a !== void 0 ? _a : null;
     }
     properties() {
@@ -31,9 +30,6 @@ class Layer {
         }
         if (this.height != null) {
             properties["height"] = this.height;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
         }
         return properties;
     }

@@ -14,8 +14,10 @@
  * permissions and limitations under the License.
  */
 import Threshold from "../Threshold";
+import AcquireActionRate from "../AcquireActionRate";
 
 export interface ExperienceModelOptions {
     metadata?: string|null;
+    acquireActionRates?: AcquireActionRate[]|null;
 }
 

@@ -70,7 +70,7 @@ class Namespace extends model_1.CdkResource {
         return new NamespaceRef_1.default(this.name);
     }
     getAttrNamespaceId() {
-        return new func_1.GetAttr(null, null, "Item.NamespaceId");
+        return new func_1.GetAttr(this, "Item.NamespaceId", null);
     }
     masterData(versionModels) {
         new CurrentMasterData_1.default(this.stack, this.name, versionModels).addDependsOn(this);

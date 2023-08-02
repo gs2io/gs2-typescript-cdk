@@ -67,7 +67,7 @@ class Room extends model_1.CdkResource {
         return new RoomRef_1.default(this.namespaceName, this.name);
     }
     getAttrRoomId() {
-        return new func_1.GetAttr(null, null, "Item.RoomId");
+        return new func_1.GetAttr(this, "Item.RoomId", null);
     }
 }
 exports.default = Room;

@@ -15,10 +15,19 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const ForceReDrawByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ForceReDrawByUserId"));
+const IncrementPurchaseCountByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncrementPurchaseCountByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
+    }
+    forceReDraw(showcaseName, userId = "#{userId}") {
+        return new ForceReDrawByUserId_1.default(this.namespaceName, showcaseName, userId);
+    }
+    incrementPurchaseCount(showcaseName, displayItemName, count, userId = "#{userId}") {
+        return new IncrementPurchaseCountByUserId_1.default(this.namespaceName, showcaseName, displayItemName, count, userId);
     }
     grn() {
         return new func_1.Join(":", [

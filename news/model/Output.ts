@@ -16,33 +16,21 @@
 import { OutputOptions } from "./options/OutputOptions";
 
 export default class Output {
-    private readonly name: string;
     private readonly text: string;
-    private readonly createdAt: number;
 
     public constructor(
-        name: string,
         text: string,
-        createdAt: number,
         options: OutputOptions|null = null,
     ) {
-        this.name = name;
         this.text = text;
-        this.createdAt = createdAt;
     }
 
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        if (this.name != null) {
-            properties["name"] = this.name;
-        }
         if (this.text != null) {
             properties["text"] = this.text;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
         }
 
         return properties;

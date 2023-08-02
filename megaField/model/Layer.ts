@@ -21,7 +21,6 @@ export default class Layer {
     private readonly numberOfMinEntries: number;
     private readonly numberOfMaxEntries: number;
     private readonly height: number;
-    private readonly createdAt: number;
     private readonly root: string|null = null;
 
     public constructor(
@@ -30,7 +29,6 @@ export default class Layer {
         numberOfMinEntries: number,
         numberOfMaxEntries: number,
         height: number,
-        createdAt: number,
         options: LayerOptions|null = null,
     ) {
         this.areaModelName = areaModelName;
@@ -38,7 +36,6 @@ export default class Layer {
         this.numberOfMinEntries = numberOfMinEntries;
         this.numberOfMaxEntries = numberOfMaxEntries;
         this.height = height;
-        this.createdAt = createdAt;
         this.root = options?.root ?? null;
     }
 
@@ -63,9 +60,6 @@ export default class Layer {
         }
         if (this.height != null) {
             properties["height"] = this.height;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
         }
 
         return properties;

@@ -3,6 +3,7 @@ import { GetAttr } from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import Showcase from "./Showcase";
+import RandomShowcase from "./RandomShowcase";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
@@ -19,5 +20,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(showcases: Showcase[]): Namespace;
+    masterData(showcases: Showcase[], randomShowcases: RandomShowcase[]): Namespace;
 }

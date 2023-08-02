@@ -127,9 +127,9 @@ export default class User extends CdkResource {
     public getAttrUserId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.UserId",
+            null,
         );
     }
 }

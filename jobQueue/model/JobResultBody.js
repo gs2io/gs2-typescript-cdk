@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class JobResultBody {
-    constructor(tryNumber, statusCode, result, tryAt, options = null) {
+    constructor(tryNumber, statusCode, result, options = null) {
         this.tryNumber = tryNumber;
         this.statusCode = statusCode;
         this.result = result;
-        this.tryAt = tryAt;
     }
     properties() {
         let properties = {};
@@ -17,9 +16,6 @@ class JobResultBody {
         }
         if (this.result != null) {
             properties["result"] = this.result;
-        }
-        if (this.tryAt != null) {
-            properties["tryAt"] = this.tryAt;
         }
         return properties;
     }

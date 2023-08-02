@@ -19,19 +19,16 @@ export default class JobResultBody {
     private readonly tryNumber: number;
     private readonly statusCode: number;
     private readonly result: string;
-    private readonly tryAt: number;
 
     public constructor(
         tryNumber: number,
         statusCode: number,
         result: string,
-        tryAt: number,
         options: JobResultBodyOptions|null = null,
     ) {
         this.tryNumber = tryNumber;
         this.statusCode = statusCode;
         this.result = result;
-        this.tryAt = tryAt;
     }
 
     public properties(
@@ -46,9 +43,6 @@ export default class JobResultBody {
         }
         if (this.result != null) {
             properties["result"] = this.result;
-        }
-        if (this.tryAt != null) {
-            properties["tryAt"] = this.tryAt;
         }
 
         return properties;

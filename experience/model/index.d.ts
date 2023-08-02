@@ -4,5 +4,7 @@ import ExperienceModel from "./ExperienceModel";
 import { ExperienceModelOptions } from "./options/ExperienceModelOptions";
 import Threshold from "./Threshold";
 import { ThresholdOptions } from "./options/ThresholdOptions";
+import AcquireActionRate from "./AcquireActionRate";
+import { AcquireActionRateOptions } from "./options/AcquireActionRateOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, ExperienceModel, ExperienceModelOptions, Threshold, ThresholdOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, ExperienceModel, ExperienceModelOptions, Threshold, ThresholdOptions, AcquireActionRate, AcquireActionRateOptions, CurrentMasterData, };

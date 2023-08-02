@@ -17,21 +17,18 @@ import { AccessTokenOptions } from "./options/AccessTokenOptions";
 
 export default class AccessToken {
     private readonly ownerId: string;
-    private readonly token: string;
     private readonly userId: string;
     private readonly expire: number;
     private readonly timeOffset: number;
 
     public constructor(
         ownerId: string,
-        token: string,
         userId: string,
         expire: number,
         timeOffset: number,
         options: AccessTokenOptions|null = null,
     ) {
         this.ownerId = ownerId;
-        this.token = token;
         this.userId = userId;
         this.expire = expire;
         this.timeOffset = timeOffset;
@@ -43,9 +40,6 @@ export default class AccessToken {
 
         if (this.ownerId != null) {
             properties["ownerId"] = this.ownerId;
-        }
-        if (this.token != null) {
-            properties["token"] = this.token;
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;

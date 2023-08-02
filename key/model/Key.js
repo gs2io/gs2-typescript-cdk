@@ -53,7 +53,7 @@ class Key extends model_1.CdkResource {
         return new KeyRef_1.default(this.namespaceName, this.name);
     }
     getAttrKeyId() {
-        return new func_1.GetAttr(null, null, "Item.KeyId");
+        return new func_1.GetAttr(this, "Item.KeyId", null);
     }
 }
 exports.default = Key;

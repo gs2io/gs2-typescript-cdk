@@ -20,22 +20,22 @@ import CounterModel from "./CounterModel";
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2019-05-28";
     private readonly namespaceName: string;
-    private readonly missionGroupModels: MissionGroupModel[];
-    private readonly counterModels: CounterModel[];
+    private readonly groups: MissionGroupModel[];
+    private readonly counters: CounterModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
-        missionGroupModels: MissionGroupModel[],
-        counterModels: CounterModel[],
+        groups: MissionGroupModel[],
+        counters: CounterModel[],
     ) {
         super(
             "Mission_CurrentMissionMaster_" + namespaceName
         );
 
         this.namespaceName = namespaceName;
-        this.missionGroupModels = missionGroupModels;
-        this.counterModels = counterModels;
+        this.groups = groups;
+        this.counters = counters;
         stack.addResource(
             this,
         );
@@ -57,12 +57,12 @@ export default class CurrentMasterData extends CdkResource {
         let settings: {[name: string]: any} = {};
 
         settings["version"] = this.version
-        if (this.missionGroupModels != null) {
-            settings["missionGroupModels"] = this.missionGroupModels.map(v => v.properties(
+        if (this.groups != null) {
+            settings["groups"] = this.groups.map(v => v.properties(
                 ));
         }
-        if (this.counterModels != null) {
-            settings["counterModels"] = this.counterModels.map(v => v.properties(
+        if (this.counters != null) {
+            settings["counters"] = this.counters.map(v => v.properties(
                 ));
         }
 

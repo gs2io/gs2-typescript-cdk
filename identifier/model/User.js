@@ -64,7 +64,7 @@ class User extends model_1.CdkResource {
         return identifier;
     }
     getAttrUserId() {
-        return new func_1.GetAttr(null, null, "Item.UserId");
+        return new func_1.GetAttr(this, "Item.UserId", null);
     }
 }
 exports.default = User;

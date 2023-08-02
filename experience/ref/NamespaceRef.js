@@ -21,6 +21,7 @@ const ExperienceModelRef_1 = tslib_1.__importDefault(require("./ExperienceModelR
 const AddExperienceByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddExperienceByUserId"));
 const AddRankCapByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddRankCapByUserId"));
 const SetRankCapByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetRankCapByUserId"));
+const MultiplyAcquireActionsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/MultiplyAcquireActionsByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -36,6 +37,9 @@ class NamespaceRef {
     }
     setRankCap(experienceName, propertyId, rankCapValue, userId = "#{userId}") {
         return new SetRankCapByUserId_1.default(this.namespaceName, experienceName, propertyId, rankCapValue, userId);
+    }
+    multiplyAcquireActions(experienceName, propertyId, rateName, acquireActions = null, userId = "#{userId}") {
+        return new MultiplyAcquireActionsByUserId_1.default(this.namespaceName, experienceName, propertyId, rateName, acquireActions, userId);
     }
     grn() {
         return new func_1.Join(":", [

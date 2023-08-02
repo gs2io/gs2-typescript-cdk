@@ -23,5 +23,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(missionGroupModels: MissionGroupModel[], counterModels: CounterModel[]): Namespace;
+    masterData(groups: MissionGroupModel[], counters: CounterModel[]): Namespace;
 }

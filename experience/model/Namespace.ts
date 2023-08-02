@@ -16,6 +16,7 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
+import TransactionSetting from "../../core/model/TransactionSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
@@ -29,6 +30,7 @@ export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
     private readonly description: string|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
     private readonly experienceCapScriptId: string|null = null;
     private readonly changeExperienceScript: ScriptSetting|null = null;
     private readonly changeRankScript: ScriptSetting|null = null;
@@ -48,6 +50,7 @@ export default class Namespace extends CdkResource {
         this.stack = stack;
         this.name = name;
         this.description = options?.description ?? null;
+        this.transactionSetting = options?.transactionSetting ?? null;
         this.experienceCapScriptId = options?.experienceCapScriptId ?? null;
         this.changeExperienceScript = options?.changeExperienceScript ?? null;
         this.changeRankScript = options?.changeRankScript ?? null;
@@ -79,6 +82,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
         }
         if (this.experienceCapScriptId != null) {
             properties["ExperienceCapScriptId"] = this.experienceCapScriptId;
@@ -117,9 +124,9 @@ export default class Namespace extends CdkResource {
     public getAttrNamespaceId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.NamespaceId",
+            null,
         );
     }
 

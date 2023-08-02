@@ -26,6 +26,12 @@ import { DisplayItemOptions } from "./options/DisplayItemOptions";
 import { DisplayItemType } from "./enum/DisplayItemType";
 import { DisplayItemTypeIsSalesItemOptions } from "./options/DisplayItemTypeIsSalesItemOptions"
 import { DisplayItemTypeIsSalesItemGroupOptions } from "./options/DisplayItemTypeIsSalesItemGroupOptions"
+import RandomShowcase from "./RandomShowcase";
+import { RandomShowcaseOptions } from "./options/RandomShowcaseOptions";
+import PurchaseCount from "./PurchaseCount";
+import { PurchaseCountOptions } from "./options/PurchaseCountOptions";
+import RandomDisplayItemModel from "./RandomDisplayItemModel";
+import { RandomDisplayItemModelOptions } from "./options/RandomDisplayItemModelOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -42,5 +48,11 @@ export {
     DisplayItemType,
     DisplayItemTypeIsSalesItemOptions,
     DisplayItemTypeIsSalesItemGroupOptions,
+    RandomShowcase,
+    RandomShowcaseOptions,
+    PurchaseCount,
+    PurchaseCountOptions,
+    RandomDisplayItemModel,
+    RandomDisplayItemModelOptions,
     CurrentMasterData,
 }

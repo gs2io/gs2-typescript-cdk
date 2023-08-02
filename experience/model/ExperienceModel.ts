@@ -14,6 +14,7 @@
  * permissions and limitations under the License.
  */
 import Threshold from "./Threshold";
+import AcquireActionRate from "./AcquireActionRate";
 import { ExperienceModelOptions } from "./options/ExperienceModelOptions";
 
 export default class ExperienceModel {
@@ -23,6 +24,7 @@ export default class ExperienceModel {
     private readonly maxRankCap: number;
     private readonly rankThreshold: Threshold;
     private readonly metadata: string|null = null;
+    private readonly acquireActionRates: AcquireActionRate[]|null = null;
 
     public constructor(
         name: string,
@@ -38,6 +40,7 @@ export default class ExperienceModel {
         this.maxRankCap = maxRankCap;
         this.rankThreshold = rankThreshold;
         this.metadata = options?.metadata ?? null;
+        this.acquireActionRates = options?.acquireActionRates ?? null;
     }
 
     public properties(
@@ -62,6 +65,10 @@ export default class ExperienceModel {
         if (this.rankThreshold != null) {
             properties["rankThreshold"] = this.rankThreshold?.properties(
             );
+        }
+        if (this.acquireActionRates != null) {
+            properties["acquireActionRates"] = this.acquireActionRates.map(v => v.properties(
+                ));
         }
 
         return properties;

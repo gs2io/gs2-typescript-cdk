@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class PrizeLimit {
-    constructor(prizeId, drawnCount, createdAt, updatedAt, options = null) {
+    constructor(prizeId, drawnCount, options = null) {
         this.prizeId = prizeId;
         this.drawnCount = drawnCount;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
     properties() {
         let properties = {};
@@ -14,12 +12,6 @@ class PrizeLimit {
         }
         if (this.drawnCount != null) {
             properties["drawnCount"] = this.drawnCount;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
-        }
-        if (this.updatedAt != null) {
-            properties["updatedAt"] = this.updatedAt;
         }
         return properties;
     }

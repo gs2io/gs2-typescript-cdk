@@ -90,9 +90,9 @@ export default class SecurityPolicy extends CdkResource {
     public getAttrSecurityPolicyId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.SecurityPolicyId",
+            null,
         );
     }
 }

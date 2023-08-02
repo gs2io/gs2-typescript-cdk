@@ -22,9 +22,10 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         super("Experience_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.experienceCapScriptId = null;
         this.changeExperienceScript = null;
         this.changeRankScript = null;
@@ -34,12 +35,13 @@ class Namespace extends model_1.CdkResource {
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.experienceCapScriptId = (_b = options === null || options === void 0 ? void 0 : options.experienceCapScriptId) !== null && _b !== void 0 ? _b : null;
-        this.changeExperienceScript = (_c = options === null || options === void 0 ? void 0 : options.changeExperienceScript) !== null && _c !== void 0 ? _c : null;
-        this.changeRankScript = (_d = options === null || options === void 0 ? void 0 : options.changeRankScript) !== null && _d !== void 0 ? _d : null;
-        this.changeRankCapScript = (_e = options === null || options === void 0 ? void 0 : options.changeRankCapScript) !== null && _e !== void 0 ? _e : null;
-        this.overflowExperienceScript = (_f = options === null || options === void 0 ? void 0 : options.overflowExperienceScript) !== null && _f !== void 0 ? _f : null;
-        this.logSetting = (_g = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _g !== void 0 ? _g : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.experienceCapScriptId = (_c = options === null || options === void 0 ? void 0 : options.experienceCapScriptId) !== null && _c !== void 0 ? _c : null;
+        this.changeExperienceScript = (_d = options === null || options === void 0 ? void 0 : options.changeExperienceScript) !== null && _d !== void 0 ? _d : null;
+        this.changeRankScript = (_e = options === null || options === void 0 ? void 0 : options.changeRankScript) !== null && _e !== void 0 ? _e : null;
+        this.changeRankCapScript = (_f = options === null || options === void 0 ? void 0 : options.changeRankCapScript) !== null && _f !== void 0 ? _f : null;
+        this.overflowExperienceScript = (_g = options === null || options === void 0 ? void 0 : options.overflowExperienceScript) !== null && _g !== void 0 ? _g : null;
+        this.logSetting = (_h = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _h !== void 0 ? _h : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -49,7 +51,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Experience::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -57,23 +59,26 @@ class Namespace extends model_1.CdkResource {
         if (this.description != null) {
             properties["Description"] = this.description;
         }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
+        }
         if (this.experienceCapScriptId != null) {
             properties["ExperienceCapScriptId"] = this.experienceCapScriptId;
         }
         if (this.changeExperienceScript != null) {
-            properties["ChangeExperienceScript"] = (_a = this.changeExperienceScript) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["ChangeExperienceScript"] = (_b = this.changeExperienceScript) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.changeRankScript != null) {
-            properties["ChangeRankScript"] = (_b = this.changeRankScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["ChangeRankScript"] = (_c = this.changeRankScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.changeRankCapScript != null) {
-            properties["ChangeRankCapScript"] = (_c = this.changeRankCapScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["ChangeRankCapScript"] = (_d = this.changeRankCapScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.overflowExperienceScript != null) {
-            properties["OverflowExperienceScript"] = (_d = this.overflowExperienceScript) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["OverflowExperienceScript"] = (_e = this.overflowExperienceScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_e = this.logSetting) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
         }
         return properties;
     }
@@ -81,7 +86,7 @@ class Namespace extends model_1.CdkResource {
         return new NamespaceRef_1.default(this.name);
     }
     getAttrNamespaceId() {
-        return new func_1.GetAttr(null, null, "Item.NamespaceId");
+        return new func_1.GetAttr(this, "Item.NamespaceId", null);
     }
     masterData(experienceModels) {
         new CurrentMasterData_1.default(this.stack, this.name, experienceModels).addDependsOn(this);

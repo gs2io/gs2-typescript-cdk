@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class AccessToken {
-    constructor(ownerId, token, userId, expire, timeOffset, options = null) {
+    constructor(ownerId, userId, expire, timeOffset, options = null) {
         this.ownerId = ownerId;
-        this.token = token;
         this.userId = userId;
         this.expire = expire;
         this.timeOffset = timeOffset;
@@ -12,9 +11,6 @@ class AccessToken {
         let properties = {};
         if (this.ownerId != null) {
             properties["ownerId"] = this.ownerId;
-        }
-        if (this.token != null) {
-            properties["token"] = this.token;
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;

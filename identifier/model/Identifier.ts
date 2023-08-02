@@ -75,9 +75,9 @@ export default class Identifier extends CdkResource {
     public getAttrClientId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.ClientId",
+            null,
         );
     }
 
@@ -85,9 +85,9 @@ export default class Identifier extends CdkResource {
     public getAttrClientSecret(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "ClientSecret",
+            null,
         );
     }
 }

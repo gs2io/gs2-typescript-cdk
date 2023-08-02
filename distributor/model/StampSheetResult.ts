@@ -21,8 +21,6 @@ export default class StampSheetResult {
     private readonly userId: string;
     private readonly transactionId: string;
     private readonly sheetRequest: AcquireAction;
-    private readonly createdAt: number;
-    private readonly ttlAt: number;
     private readonly taskRequests: ConsumeAction[]|null = null;
     private readonly taskResults: string[]|null = null;
     private readonly sheetResult: string|null = null;
@@ -32,15 +30,11 @@ export default class StampSheetResult {
         userId: string,
         transactionId: string,
         sheetRequest: AcquireAction,
-        createdAt: number,
-        ttlAt: number,
         options: StampSheetResultOptions|null = null,
     ) {
         this.userId = userId;
         this.transactionId = transactionId;
         this.sheetRequest = sheetRequest;
-        this.createdAt = createdAt;
-        this.ttlAt = ttlAt;
         this.taskRequests = options?.taskRequests ?? null;
         this.taskResults = options?.taskResults ?? null;
         this.sheetResult = options?.sheetResult ?? null;
@@ -73,12 +67,6 @@ export default class StampSheetResult {
         }
         if (this.nextTransactionId != null) {
             properties["nextTransactionId"] = this.nextTransactionId;
-        }
-        if (this.createdAt != null) {
-            properties["createdAt"] = this.createdAt;
-        }
-        if (this.ttlAt != null) {
-            properties["ttlAt"] = this.ttlAt;
         }
 
         return properties;

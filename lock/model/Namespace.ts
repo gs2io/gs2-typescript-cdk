@@ -85,9 +85,9 @@ export default class Namespace extends CdkResource {
     public getAttrNamespaceId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.NamespaceId",
+            null,
         );
     }
 }

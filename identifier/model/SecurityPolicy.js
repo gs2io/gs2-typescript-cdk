@@ -57,7 +57,7 @@ class SecurityPolicy extends model_1.CdkResource {
         return "grn:gs2::system:identifier:securityPolicy:ApplicationAccess";
     }
     getAttrSecurityPolicyId() {
-        return new func_1.GetAttr(null, null, "Item.SecurityPolicyId");
+        return new func_1.GetAttr(this, "Item.SecurityPolicyId", null);
     }
 }
 exports.default = SecurityPolicy;

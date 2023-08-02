@@ -47,7 +47,7 @@ class Password extends model_1.CdkResource {
         return new PasswordRef_1.default(this.userName);
     }
     getAttrPasswordId() {
-        return new func_1.GetAttr(null, null, "Item.PasswordId");
+        return new func_1.GetAttr(this, "Item.PasswordId", null);
     }
 }
 exports.default = Password;
