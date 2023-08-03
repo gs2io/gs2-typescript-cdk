@@ -15,6 +15,7 @@ export default class CategoryModel {
     private readonly calculateFixedTimingHour;
     private readonly calculateFixedTimingMinute;
     private readonly calculateIntervalMinutes;
+    private readonly additionalScopes;
     private readonly entryPeriodEventId;
     private readonly accessPeriodEventId;
     private readonly ignoreUserIds;

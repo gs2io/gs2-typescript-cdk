@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const CategoryModelScope_1 = require("./enum/CategoryModelScope");
 class CategoryModel {
     constructor(name, orderDirection, scope, uniqueByUserId, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         this.metadata = null;
         this.minimumValue = null;
         this.maximumValue = null;
@@ -11,6 +11,7 @@ class CategoryModel {
         this.calculateFixedTimingHour = null;
         this.calculateFixedTimingMinute = null;
         this.calculateIntervalMinutes = null;
+        this.additionalScopes = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
         this.ignoreUserIds = null;
@@ -26,10 +27,11 @@ class CategoryModel {
         this.calculateFixedTimingHour = (_e = options === null || options === void 0 ? void 0 : options.calculateFixedTimingHour) !== null && _e !== void 0 ? _e : null;
         this.calculateFixedTimingMinute = (_f = options === null || options === void 0 ? void 0 : options.calculateFixedTimingMinute) !== null && _f !== void 0 ? _f : null;
         this.calculateIntervalMinutes = (_g = options === null || options === void 0 ? void 0 : options.calculateIntervalMinutes) !== null && _g !== void 0 ? _g : null;
-        this.entryPeriodEventId = (_h = options === null || options === void 0 ? void 0 : options.entryPeriodEventId) !== null && _h !== void 0 ? _h : null;
-        this.accessPeriodEventId = (_j = options === null || options === void 0 ? void 0 : options.accessPeriodEventId) !== null && _j !== void 0 ? _j : null;
-        this.ignoreUserIds = (_k = options === null || options === void 0 ? void 0 : options.ignoreUserIds) !== null && _k !== void 0 ? _k : null;
-        this.generation = (_l = options === null || options === void 0 ? void 0 : options.generation) !== null && _l !== void 0 ? _l : null;
+        this.additionalScopes = (_h = options === null || options === void 0 ? void 0 : options.additionalScopes) !== null && _h !== void 0 ? _h : null;
+        this.entryPeriodEventId = (_j = options === null || options === void 0 ? void 0 : options.entryPeriodEventId) !== null && _j !== void 0 ? _j : null;
+        this.accessPeriodEventId = (_k = options === null || options === void 0 ? void 0 : options.accessPeriodEventId) !== null && _k !== void 0 ? _k : null;
+        this.ignoreUserIds = (_l = options === null || options === void 0 ? void 0 : options.ignoreUserIds) !== null && _l !== void 0 ? _l : null;
+        this.generation = (_m = options === null || options === void 0 ? void 0 : options.generation) !== null && _m !== void 0 ? _m : null;
     }
     static scopeIsGlobal(name, orderDirection, uniqueByUserId, calculateIntervalMinutes, options = null) {
         return new CategoryModel(name, orderDirection, CategoryModelScope_1.CategoryModelScope.GLOBAL, uniqueByUserId, {
@@ -39,6 +41,7 @@ class CategoryModel {
             maximumValue: options === null || options === void 0 ? void 0 : options.maximumValue,
             calculateFixedTimingHour: options === null || options === void 0 ? void 0 : options.calculateFixedTimingHour,
             calculateFixedTimingMinute: options === null || options === void 0 ? void 0 : options.calculateFixedTimingMinute,
+            additionalScopes: options === null || options === void 0 ? void 0 : options.additionalScopes,
             entryPeriodEventId: options === null || options === void 0 ? void 0 : options.entryPeriodEventId,
             accessPeriodEventId: options === null || options === void 0 ? void 0 : options.accessPeriodEventId,
             ignoreUserIds: options === null || options === void 0 ? void 0 : options.ignoreUserIds,
@@ -52,6 +55,7 @@ class CategoryModel {
             maximumValue: options === null || options === void 0 ? void 0 : options.maximumValue,
             calculateFixedTimingHour: options === null || options === void 0 ? void 0 : options.calculateFixedTimingHour,
             calculateFixedTimingMinute: options === null || options === void 0 ? void 0 : options.calculateFixedTimingMinute,
+            additionalScopes: options === null || options === void 0 ? void 0 : options.additionalScopes,
             entryPeriodEventId: options === null || options === void 0 ? void 0 : options.entryPeriodEventId,
             accessPeriodEventId: options === null || options === void 0 ? void 0 : options.accessPeriodEventId,
             ignoreUserIds: options === null || options === void 0 ? void 0 : options.ignoreUserIds,
@@ -92,6 +96,9 @@ class CategoryModel {
         }
         if (this.calculateIntervalMinutes != null) {
             properties["calculateIntervalMinutes"] = this.calculateIntervalMinutes;
+        }
+        if (this.additionalScopes != null) {
+            properties["additionalScopes"] = this.additionalScopes.map(v => v.properties());
         }
         if (this.entryPeriodEventId != null) {
             properties["entryPeriodEventId"] = this.entryPeriodEventId;

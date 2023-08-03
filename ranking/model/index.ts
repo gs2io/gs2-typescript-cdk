@@ -21,6 +21,8 @@ import { CategoryModelOrderDirection } from "./enum/CategoryModelOrderDirection"
 import { CategoryModelScope } from "./enum/CategoryModelScope";
 import { CategoryModelScopeIsGlobalOptions } from "./options/CategoryModelScopeIsGlobalOptions"
 import { CategoryModelScopeIsScopedOptions } from "./options/CategoryModelScopeIsScopedOptions"
+import Scope from "./Scope";
+import { ScopeOptions } from "./options/ScopeOptions";
 import CalculatedAt from "./CalculatedAt";
 import { CalculatedAtOptions } from "./options/CalculatedAtOptions";
 import CurrentMasterData from "./CurrentMasterData";
@@ -34,6 +36,8 @@ export {
     CategoryModelScope,
     CategoryModelScopeIsGlobalOptions,
     CategoryModelScopeIsScopedOptions,
+    Scope,
+    ScopeOptions,
     CalculatedAt,
     CalculatedAtOptions,
     CurrentMasterData,

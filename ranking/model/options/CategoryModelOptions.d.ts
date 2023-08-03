@@ -1,3 +1,4 @@
+import Scope from "../Scope";
 export interface CategoryModelOptions {
     metadata?: string | null;
     minimumValue?: number | null;
@@ -6,6 +7,7 @@ export interface CategoryModelOptions {
     calculateFixedTimingHour?: number | null;
     calculateFixedTimingMinute?: number | null;
     calculateIntervalMinutes?: number | null;
+    additionalScopes?: Scope[] | null;
     entryPeriodEventId?: string | null;
     accessPeriodEventId?: string | null;
     ignoreUserIds?: string[] | null;

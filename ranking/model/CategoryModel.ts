@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import Scope from "./Scope";
 import { CategoryModelOptions } from "./options/CategoryModelOptions";
 import { CategoryModelScopeIsGlobalOptions } from "./options/CategoryModelScopeIsGlobalOptions";
 import { CategoryModelScopeIsScopedOptions } from "./options/CategoryModelScopeIsScopedOptions";
@@ -31,6 +32,7 @@ export default class CategoryModel {
     private readonly calculateFixedTimingHour: number|null = null;
     private readonly calculateFixedTimingMinute: number|null = null;
     private readonly calculateIntervalMinutes: number|null = null;
+    private readonly additionalScopes: Scope[]|null = null;
     private readonly entryPeriodEventId: string|null = null;
     private readonly accessPeriodEventId: string|null = null;
     private readonly ignoreUserIds: string[]|null = null;
@@ -54,6 +56,7 @@ export default class CategoryModel {
         this.calculateFixedTimingHour = options?.calculateFixedTimingHour ?? null;
         this.calculateFixedTimingMinute = options?.calculateFixedTimingMinute ?? null;
         this.calculateIntervalMinutes = options?.calculateIntervalMinutes ?? null;
+        this.additionalScopes = options?.additionalScopes ?? null;
         this.entryPeriodEventId = options?.entryPeriodEventId ?? null;
         this.accessPeriodEventId = options?.accessPeriodEventId ?? null;
         this.ignoreUserIds = options?.ignoreUserIds ?? null;
@@ -79,6 +82,7 @@ export default class CategoryModel {
                 maximumValue: options?.maximumValue,
                 calculateFixedTimingHour: options?.calculateFixedTimingHour,
                 calculateFixedTimingMinute: options?.calculateFixedTimingMinute,
+                additionalScopes: options?.additionalScopes,
                 entryPeriodEventId: options?.entryPeriodEventId,
                 accessPeriodEventId: options?.accessPeriodEventId,
                 ignoreUserIds: options?.ignoreUserIds,
@@ -104,6 +108,7 @@ export default class CategoryModel {
                 maximumValue: options?.maximumValue,
                 calculateFixedTimingHour: options?.calculateFixedTimingHour,
                 calculateFixedTimingMinute: options?.calculateFixedTimingMinute,
+                additionalScopes: options?.additionalScopes,
                 entryPeriodEventId: options?.entryPeriodEventId,
                 accessPeriodEventId: options?.accessPeriodEventId,
                 ignoreUserIds: options?.ignoreUserIds,
@@ -148,6 +153,10 @@ export default class CategoryModel {
         }
         if (this.calculateIntervalMinutes != null) {
             properties["calculateIntervalMinutes"] = this.calculateIntervalMinutes;
+        }
+        if (this.additionalScopes != null) {
+            properties["additionalScopes"] = this.additionalScopes.map(v => v.properties(
+                ));
         }
         if (this.entryPeriodEventId != null) {
             properties["entryPeriodEventId"] = this.entryPeriodEventId;

@@ -12,15 +12,20 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 
 import {GetAttr, Join} from "../../core/func";
 import BalanceParameterModelRef from "./BalanceParameterModelRef";
 import RarityParameterModelRef from "./RarityParameterModelRef";
 import ReDrawBalanceParameterStatusByUserId from "../stampSheet/ReDrawBalanceParameterStatusByUserId";
+import SetBalanceParameterStatusByUserId from "../stampSheet/SetBalanceParameterStatusByUserId";
 import ReDrawRarityParameterStatusByUserId from "../stampSheet/ReDrawRarityParameterStatusByUserId";
 import AddRarityParameterStatusByUserId from "../stampSheet/AddRarityParameterStatusByUserId";
+import SetRarityParameterStatusByUserId from "../stampSheet/SetRarityParameterStatusByUserId";
 import VerifyRarityParameterStatusByUserId from "../stampSheet/VerifyRarityParameterStatusByUserId";
+import {BalanceParameterValue, RarityParameterValue} from "../model";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -64,6 +69,21 @@ export default class NamespaceRef {
         );
     }
 
+    public setBalanceParameterStatus(
+        parameterName: string,
+        propertyId: string,
+        parameterValues: BalanceParameterValue[],
+        userId: string|null = "#{userId}",
+    ): SetBalanceParameterStatusByUserId {
+        return new SetBalanceParameterStatusByUserId(
+            this.namespaceName,
+            parameterName,
+            propertyId,
+            parameterValues,
+            userId,
+        );
+    }
+
     public reDrawRarityParameterStatus(
         parameterName: string,
         propertyId: string,
@@ -90,6 +110,21 @@ export default class NamespaceRef {
             parameterName,
             propertyId,
             count,
+            userId,
+        );
+    }
+
+    public setRarityParameterStatus(
+        parameterName: string,
+        propertyId: string,
+        parameterValues: RarityParameterValue[]|null = null,
+        userId: string|null = "#{userId}",
+    ): SetRarityParameterStatusByUserId {
+        return new SetRarityParameterStatusByUserId(
+            this.namespaceName,
+            parameterName,
+            propertyId,
+            parameterValues,
             userId,
         );
     }
