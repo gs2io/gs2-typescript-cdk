@@ -15,12 +15,14 @@
  */
 import { AcquireAction } from "../../core/model";
 import { MissionTaskModelOptions } from "./options/MissionTaskModelOptions";
+import { MissionTaskModelTargetResetType } from "./enum/MissionTaskModelTargetResetType";
 
 export default class MissionTaskModel {
     private readonly name: string;
     private readonly counterName: string;
     private readonly targetValue: number;
     private readonly metadata: string|null = null;
+    private readonly targetResetType: MissionTaskModelTargetResetType|null = null;
     private readonly completeAcquireActions: AcquireAction[]|null = null;
     private readonly challengePeriodEventId: string|null = null;
     private readonly premiseMissionTaskName: string|null = null;
@@ -35,6 +37,7 @@ export default class MissionTaskModel {
         this.counterName = counterName;
         this.targetValue = targetValue;
         this.metadata = options?.metadata ?? null;
+        this.targetResetType = options?.targetResetType ?? null;
         this.completeAcquireActions = options?.completeAcquireActions ?? null;
         this.challengePeriodEventId = options?.challengePeriodEventId ?? null;
         this.premiseMissionTaskName = options?.premiseMissionTaskName ?? null;
@@ -52,6 +55,9 @@ export default class MissionTaskModel {
         }
         if (this.counterName != null) {
             properties["counterName"] = this.counterName;
+        }
+        if (this.targetResetType != null) {
+            properties["targetResetType"] = this.targetResetType;
         }
         if (this.targetValue != null) {
             properties["targetValue"] = this.targetValue;

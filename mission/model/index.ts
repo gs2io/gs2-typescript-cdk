@@ -35,6 +35,7 @@ import { MissionGroupModelResetTypeIsWeeklyOptions } from "./options/MissionGrou
 import { MissionGroupModelResetTypeIsMonthlyOptions } from "./options/MissionGroupModelResetTypeIsMonthlyOptions"
 import MissionTaskModel from "./MissionTaskModel";
 import { MissionTaskModelOptions } from "./options/MissionTaskModelOptions";
+import { MissionTaskModelTargetResetType } from "./enum/MissionTaskModelTargetResetType";
 import ScopedValue from "./ScopedValue";
 import { ScopedValueOptions } from "./options/ScopedValueOptions";
 import { ScopedValueResetType } from "./enum/ScopedValueResetType";
@@ -63,6 +64,7 @@ export {
     MissionGroupModelResetTypeIsMonthlyOptions,
     MissionTaskModel,
     MissionTaskModelOptions,
+    MissionTaskModelTargetResetType,
     ScopedValue,
     ScopedValueOptions,
     ScopedValueResetType,

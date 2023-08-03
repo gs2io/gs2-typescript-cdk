@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.ScopedValueResetType = exports.ScopedValue = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModel = void 0;
+exports.CurrentMasterData = exports.ScopedValueResetType = exports.ScopedValue = exports.MissionTaskModelTargetResetType = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModel = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,8 @@ const MissionGroupModelResetDayOfWeek_1 = require("./enum/MissionGroupModelReset
 Object.defineProperty(exports, "MissionGroupModelResetDayOfWeek", { enumerable: true, get: function () { return MissionGroupModelResetDayOfWeek_1.MissionGroupModelResetDayOfWeek; } });
 const MissionTaskModel_1 = tslib_1.__importDefault(require("./MissionTaskModel"));
 exports.MissionTaskModel = MissionTaskModel_1.default;
+const MissionTaskModelTargetResetType_1 = require("./enum/MissionTaskModelTargetResetType");
+Object.defineProperty(exports, "MissionTaskModelTargetResetType", { enumerable: true, get: function () { return MissionTaskModelTargetResetType_1.MissionTaskModelTargetResetType; } });
 const ScopedValue_1 = tslib_1.__importDefault(require("./ScopedValue"));
 exports.ScopedValue = ScopedValue_1.default;
 const ScopedValueResetType_1 = require("./enum/ScopedValueResetType");

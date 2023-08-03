@@ -4,6 +4,7 @@ export default class MissionTaskModel {
     private readonly counterName;
     private readonly targetValue;
     private readonly metadata;
+    private readonly targetResetType;
     private readonly completeAcquireActions;
     private readonly challengePeriodEventId;
     private readonly premiseMissionTaskName;
