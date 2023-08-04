@@ -26,6 +26,7 @@ export default class IncrementalRateModel {
     private readonly consumeAction: ConsumeAction;
     private readonly calculateType: IncrementalRateModelCalculateType;
     private readonly exchangeCountId: string;
+    private readonly maximumExchangeCount: number;
     private readonly metadata: string|null = null;
     private readonly baseValue: number|null = null;
     private readonly coefficientValue: number|null = null;
@@ -37,12 +38,14 @@ export default class IncrementalRateModel {
         consumeAction: ConsumeAction,
         calculateType: IncrementalRateModelCalculateType,
         exchangeCountId: string,
+        maximumExchangeCount: number,
         options: IncrementalRateModelOptions|null = null,
     ) {
         this.name = name;
         this.consumeAction = consumeAction;
         this.calculateType = calculateType;
         this.exchangeCountId = exchangeCountId;
+        this.maximumExchangeCount = maximumExchangeCount;
         this.metadata = options?.metadata ?? null;
         this.baseValue = options?.baseValue ?? null;
         this.coefficientValue = options?.coefficientValue ?? null;
@@ -54,6 +57,7 @@ export default class IncrementalRateModel {
         name: string,
         consumeAction: ConsumeAction,
         exchangeCountId: string,
+        maximumExchangeCount: number,
         baseValue: number,
         coefficientValue: number,
         options: IncrementalRateModelCalculateTypeIsLinearOptions|null = null,
@@ -63,6 +67,7 @@ export default class IncrementalRateModel {
             consumeAction,
             IncrementalRateModelCalculateType.LINEAR,
             exchangeCountId,
+            maximumExchangeCount,
             {
                 baseValue: baseValue,
                 coefficientValue: coefficientValue,
@@ -76,6 +81,7 @@ export default class IncrementalRateModel {
         name: string,
         consumeAction: ConsumeAction,
         exchangeCountId: string,
+        maximumExchangeCount: number,
         coefficientValue: number,
         options: IncrementalRateModelCalculateTypeIsPowerOptions|null = null,
     ): IncrementalRateModel {
@@ -84,6 +90,7 @@ export default class IncrementalRateModel {
             consumeAction,
             IncrementalRateModelCalculateType.POWER,
             exchangeCountId,
+            maximumExchangeCount,
             {
                 coefficientValue: coefficientValue,
                 metadata: options?.metadata,
@@ -96,6 +103,7 @@ export default class IncrementalRateModel {
         name: string,
         consumeAction: ConsumeAction,
         exchangeCountId: string,
+        maximumExchangeCount: number,
         calculateScriptId: string,
         options: IncrementalRateModelCalculateTypeIsGs2ScriptOptions|null = null,
     ): IncrementalRateModel {
@@ -104,6 +112,7 @@ export default class IncrementalRateModel {
             consumeAction,
             IncrementalRateModelCalculateType.GS2_SCRIPT,
             exchangeCountId,
+            maximumExchangeCount,
             {
                 calculateScriptId: calculateScriptId,
                 metadata: options?.metadata,
@@ -140,6 +149,9 @@ export default class IncrementalRateModel {
         }
         if (this.exchangeCountId != null) {
             properties["exchangeCountId"] = this.exchangeCountId;
+        }
+        if (this.maximumExchangeCount != null) {
+            properties["maximumExchangeCount"] = this.maximumExchangeCount;
         }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties(
