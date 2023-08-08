@@ -17,36 +17,8 @@
 import {GetAttr, Join} from "../../core/func";
 
 export default class MaxStaminaTableRef {
-    private readonly namespaceName: string;
-    private readonly maxStaminaTableName: string;
 
     public constructor(
-        namespaceName: string,
-        maxStaminaTableName: string,
     ) {
-        this.namespaceName = namespaceName;
-        this.maxStaminaTableName = maxStaminaTableName;
-    }
-
-    public grn(
-    ): string {
-        return new Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.ownerId(
-                ).str(
-                ),
-                "stamina",
-                this.namespaceName,
-                "maxStaminaTable",
-                this.maxStaminaTableName,
-            ],
-        ).str(
-        );
     }
 }

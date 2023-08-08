@@ -15,9 +15,6 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import MaxStaminaTableRef from "./MaxStaminaTableRef";
-import RecoverIntervalTableRef from "./RecoverIntervalTableRef";
-import RecoverValueTableRef from "./RecoverValueTableRef";
 import StaminaModelRef from "./StaminaModelRef";
 import RecoverStaminaByUserId from "../stampSheet/RecoverStaminaByUserId";
 import RaiseMaxValueByUserId from "../stampSheet/RaiseMaxValueByUserId";
@@ -33,33 +30,6 @@ export default class NamespaceRef {
         namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
-    }
-
-    public maxStaminaTable(
-        maxStaminaTableName: string,
-    ): MaxStaminaTableRef {
-        return new MaxStaminaTableRef(
-            this.namespaceName,
-            maxStaminaTableName,
-        );
-    }
-
-    public recoverIntervalTable(
-        recoverIntervalTableName: string,
-    ): RecoverIntervalTableRef {
-        return new RecoverIntervalTableRef(
-            this.namespaceName,
-            recoverIntervalTableName,
-        );
-    }
-
-    public recoverValueTable(
-        recoverValueTableName: string,
-    ): RecoverValueTableRef {
-        return new RecoverValueTableRef(
-            this.namespaceName,
-            recoverValueTableName,
-        );
     }
 
     public staminaModel(

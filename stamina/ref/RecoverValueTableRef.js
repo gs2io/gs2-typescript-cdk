@@ -15,23 +15,8 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const func_1 = require("../../core/func");
 class RecoverValueTableRef {
-    constructor(namespaceName, recoverValueTableName) {
-        this.namespaceName = namespaceName;
-        this.recoverValueTableName = recoverValueTableName;
-    }
-    grn() {
-        return new func_1.Join(":", [
-            "grn",
-            "gs2",
-            func_1.GetAttr.region().str(),
-            func_1.GetAttr.ownerId().str(),
-            "stamina",
-            this.namespaceName,
-            "recoverValueTable",
-            this.recoverValueTableName,
-        ]).str();
+    constructor() {
     }
 }
 exports.default = RecoverValueTableRef;

@@ -1,6 +1,3 @@
-import MaxStaminaTableRef from "./MaxStaminaTableRef";
-import RecoverIntervalTableRef from "./RecoverIntervalTableRef";
-import RecoverValueTableRef from "./RecoverValueTableRef";
 import StaminaModelRef from "./StaminaModelRef";
 import RecoverStaminaByUserId from "../stampSheet/RecoverStaminaByUserId";
 import RaiseMaxValueByUserId from "../stampSheet/RaiseMaxValueByUserId";
@@ -11,9 +8,6 @@ import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
 export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
-    maxStaminaTable(maxStaminaTableName: string): MaxStaminaTableRef;
-    recoverIntervalTable(recoverIntervalTableName: string): RecoverIntervalTableRef;
-    recoverValueTable(recoverValueTableName: string): RecoverValueTableRef;
     staminaModel(staminaName: string): StaminaModelRef;
     recoverStamina(staminaName: string, recoverValue: number, userId?: string | null): RecoverStaminaByUserId;
     raiseMaxValue(staminaName: string, raiseValue: number, userId?: string | null): RaiseMaxValueByUserId;

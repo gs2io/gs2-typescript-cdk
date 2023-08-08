@@ -17,36 +17,8 @@
 import {GetAttr, Join} from "../../core/func";
 
 export default class RecoverIntervalTableRef {
-    private readonly namespaceName: string;
-    private readonly recoverIntervalTableName: string;
 
     public constructor(
-        namespaceName: string,
-        recoverIntervalTableName: string,
     ) {
-        this.namespaceName = namespaceName;
-        this.recoverIntervalTableName = recoverIntervalTableName;
-    }
-
-    public grn(
-    ): string {
-        return new Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.ownerId(
-                ).str(
-                ),
-                "stamina",
-                this.namespaceName,
-                "recoverIntervalTable",
-                this.recoverIntervalTableName,
-            ],
-        ).str(
-        );
     }
 }

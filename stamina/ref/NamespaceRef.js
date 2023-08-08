@@ -17,9 +17,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const MaxStaminaTableRef_1 = tslib_1.__importDefault(require("./MaxStaminaTableRef"));
-const RecoverIntervalTableRef_1 = tslib_1.__importDefault(require("./RecoverIntervalTableRef"));
-const RecoverValueTableRef_1 = tslib_1.__importDefault(require("./RecoverValueTableRef"));
 const StaminaModelRef_1 = tslib_1.__importDefault(require("./StaminaModelRef"));
 const RecoverStaminaByUserId_1 = tslib_1.__importDefault(require("../stampSheet/RecoverStaminaByUserId"));
 const RaiseMaxValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/RaiseMaxValueByUserId"));
@@ -30,15 +27,6 @@ const ConsumeStaminaByUserId_1 = tslib_1.__importDefault(require("../stampSheet/
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
-    }
-    maxStaminaTable(maxStaminaTableName) {
-        return new MaxStaminaTableRef_1.default(this.namespaceName, maxStaminaTableName);
-    }
-    recoverIntervalTable(recoverIntervalTableName) {
-        return new RecoverIntervalTableRef_1.default(this.namespaceName, recoverIntervalTableName);
-    }
-    recoverValueTable(recoverValueTableName) {
-        return new RecoverValueTableRef_1.default(this.namespaceName, recoverValueTableName);
     }
     staminaModel(staminaName) {
         return new StaminaModelRef_1.default(this.namespaceName, staminaName);

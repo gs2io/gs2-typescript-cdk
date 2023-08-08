@@ -17,36 +17,8 @@
 import {GetAttr, Join} from "../../core/func";
 
 export default class RecoverValueTableRef {
-    private readonly namespaceName: string;
-    private readonly recoverValueTableName: string;
 
     public constructor(
-        namespaceName: string,
-        recoverValueTableName: string,
     ) {
-        this.namespaceName = namespaceName;
-        this.recoverValueTableName = recoverValueTableName;
-    }
-
-    public grn(
-    ): string {
-        return new Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.ownerId(
-                ).str(
-                ),
-                "stamina",
-                this.namespaceName,
-                "recoverValueTable",
-                this.recoverValueTableName,
-            ],
-        ).str(
-        );
     }
 }

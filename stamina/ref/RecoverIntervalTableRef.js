@@ -15,23 +15,8 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const func_1 = require("../../core/func");
 class RecoverIntervalTableRef {
-    constructor(namespaceName, recoverIntervalTableName) {
-        this.namespaceName = namespaceName;
-        this.recoverIntervalTableName = recoverIntervalTableName;
-    }
-    grn() {
-        return new func_1.Join(":", [
-            "grn",
-            "gs2",
-            func_1.GetAttr.region().str(),
-            func_1.GetAttr.ownerId().str(),
-            "stamina",
-            this.namespaceName,
-            "recoverIntervalTable",
-            this.recoverIntervalTableName,
-        ]).str();
+    constructor() {
     }
 }
 exports.default = RecoverIntervalTableRef;
