@@ -17,12 +17,14 @@ import { OutputOptions } from "./options/OutputOptions";
 
 export default class Output {
     private readonly text: string;
+    private readonly revision: number|null = null;
 
     public constructor(
         text: string,
         options: OutputOptions|null = null,
     ) {
         this.text = text;
+        this.revision = options?.revision ?? null;
     }
 
     public properties(

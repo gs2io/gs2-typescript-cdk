@@ -18,6 +18,7 @@ import { PrizeLimitOptions } from "./options/PrizeLimitOptions";
 export default class PrizeLimit {
     private readonly prizeId: string;
     private readonly drawnCount: number;
+    private readonly revision: number|null = null;
 
     public constructor(
         prizeId: string,
@@ -26,6 +27,7 @@ export default class PrizeLimit {
     ) {
         this.prizeId = prizeId;
         this.drawnCount = drawnCount;
+        this.revision = options?.revision ?? null;
     }
 
     public properties(

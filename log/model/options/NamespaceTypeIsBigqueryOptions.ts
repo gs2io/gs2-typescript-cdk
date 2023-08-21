@@ -18,4 +18,5 @@ import { NamespaceType } from "../enum/NamespaceType";
 export interface NamespaceTypeIsBigqueryOptions {
     description?: string|null;
     status?: string|null;
+    revision?: number|null;
 }

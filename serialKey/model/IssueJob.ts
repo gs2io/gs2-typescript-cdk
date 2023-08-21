@@ -22,6 +22,7 @@ export default class IssueJob {
     private readonly issueRequestCount: number;
     private readonly status: IssueJobStatus;
     private readonly metadata: string|null = null;
+    private readonly revision: number|null = null;
 
     public constructor(
         name: string,
@@ -35,6 +36,7 @@ export default class IssueJob {
         this.issueRequestCount = issueRequestCount;
         this.status = status;
         this.metadata = options?.metadata ?? null;
+        this.revision = options?.revision ?? null;
     }
 
     public properties(

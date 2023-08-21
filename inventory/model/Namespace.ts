@@ -23,6 +23,7 @@ import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import InventoryModel from "./InventoryModel";
 import SimpleInventoryModel from "./SimpleInventoryModel";
+import BigInventoryModel from "./BigInventoryModel";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -116,12 +117,14 @@ export default class Namespace extends CdkResource {
     public masterData(
         inventoryModels: InventoryModel[],
         simpleInventoryModels: SimpleInventoryModel[],
+        bigInventoryModels: BigInventoryModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             inventoryModels,
             simpleInventoryModels,
+            bigInventoryModels,
         ).addDependsOn(
             this,
         );

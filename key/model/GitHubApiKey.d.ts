@@ -4,6 +4,7 @@ export default class GitHubApiKey {
     private readonly apiKey;
     private readonly encryptionKeyName;
     private readonly description;
+    private readonly revision;
     constructor(name: string, apiKey: string, encryptionKeyName: string, options?: GitHubApiKeyOptions | null);
     properties(): {
         [name: string]: any;

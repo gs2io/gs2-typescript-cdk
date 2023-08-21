@@ -9,4 +9,5 @@ export interface NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions {
     completeNotification?: NotificationSetting | null;
     changeRatingNotification?: NotificationSetting | null;
     logSetting?: LogSetting | null;
+    revision?: number | null;
 }

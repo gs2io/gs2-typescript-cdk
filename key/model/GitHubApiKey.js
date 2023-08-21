@@ -2,12 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class GitHubApiKey {
     constructor(name, apiKey, encryptionKeyName, options = null) {
-        var _a;
+        var _a, _b;
         this.description = null;
+        this.revision = null;
         this.name = name;
         this.apiKey = apiKey;
         this.encryptionKeyName = encryptionKeyName;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
+        this.revision = (_b = options === null || options === void 0 ? void 0 : options.revision) !== null && _b !== void 0 ? _b : null;
     }
     properties() {
         let properties = {};

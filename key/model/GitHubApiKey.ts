@@ -20,6 +20,7 @@ export default class GitHubApiKey {
     private readonly apiKey: string;
     private readonly encryptionKeyName: string;
     private readonly description: string|null = null;
+    private readonly revision: number|null = null;
 
     public constructor(
         name: string,
@@ -31,6 +32,7 @@ export default class GitHubApiKey {
         this.apiKey = apiKey;
         this.encryptionKeyName = encryptionKeyName;
         this.description = options?.description ?? null;
+        this.revision = options?.revision ?? null;
     }
 
     public properties(

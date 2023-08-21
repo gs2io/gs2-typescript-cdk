@@ -2,11 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class StampSheetResult {
     constructor(userId, transactionId, sheetRequest, options = null) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         this.taskRequests = null;
         this.taskResults = null;
         this.sheetResult = null;
         this.nextTransactionId = null;
+        this.revision = null;
         this.userId = userId;
         this.transactionId = transactionId;
         this.sheetRequest = sheetRequest;
@@ -14,6 +15,7 @@ class StampSheetResult {
         this.taskResults = (_b = options === null || options === void 0 ? void 0 : options.taskResults) !== null && _b !== void 0 ? _b : null;
         this.sheetResult = (_c = options === null || options === void 0 ? void 0 : options.sheetResult) !== null && _c !== void 0 ? _c : null;
         this.nextTransactionId = (_d = options === null || options === void 0 ? void 0 : options.nextTransactionId) !== null && _d !== void 0 ? _d : null;
+        this.revision = (_e = options === null || options === void 0 ? void 0 : options.revision) !== null && _e !== void 0 ? _e : null;
     }
     properties() {
         var _a;

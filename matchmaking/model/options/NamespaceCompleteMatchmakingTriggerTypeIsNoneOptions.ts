@@ -27,4 +27,5 @@ export interface NamespaceCompleteMatchmakingTriggerTypeIsNoneOptions {
     completeNotification?: NotificationSetting|null;
     changeRatingNotification?: NotificationSetting|null;
     logSetting?: LogSetting|null;
+    revision?: number|null;
 }

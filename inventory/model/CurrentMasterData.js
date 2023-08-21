@@ -17,12 +17,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const model_1 = require("../../core/model");
 class CurrentMasterData extends model_1.CdkResource {
-    constructor(stack, namespaceName, inventoryModels, simpleInventoryModels) {
+    constructor(stack, namespaceName, inventoryModels, simpleInventoryModels, bigInventoryModels) {
         super("Inventory_CurrentItemModelMaster_" + namespaceName);
         this.version = "2019-02-05";
         this.namespaceName = namespaceName;
         this.inventoryModels = inventoryModels;
         this.simpleInventoryModels = simpleInventoryModels;
+        this.bigInventoryModels = bigInventoryModels;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -40,6 +41,9 @@ class CurrentMasterData extends model_1.CdkResource {
         }
         if (this.simpleInventoryModels != null) {
             settings["simpleInventoryModels"] = this.simpleInventoryModels.map(v => v.properties());
+        }
+        if (this.bigInventoryModels != null) {
+            settings["bigInventoryModels"] = this.bigInventoryModels.map(v => v.properties());
         }
         if (this.namespaceName != null) {
             properties["NamespaceName"] = this.namespaceName;

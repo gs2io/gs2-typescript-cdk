@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.ConsumeItemSetByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
+exports.ConsumeBigItemByUserId = exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.ConsumeItemSetByUserId = exports.AcquireBigItemByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -29,10 +29,14 @@ const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("./DeleteRef
 exports.DeleteReferenceOfByUserId = DeleteReferenceOfByUserId_1.default;
 const AcquireSimpleItemsByUserId_1 = tslib_1.__importDefault(require("./AcquireSimpleItemsByUserId"));
 exports.AcquireSimpleItemsByUserId = AcquireSimpleItemsByUserId_1.default;
+const AcquireBigItemByUserId_1 = tslib_1.__importDefault(require("./AcquireBigItemByUserId"));
+exports.AcquireBigItemByUserId = AcquireBigItemByUserId_1.default;
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("./ConsumeItemSetByUserId"));
 exports.ConsumeItemSetByUserId = ConsumeItemSetByUserId_1.default;
 const VerifyReferenceOfByUserId_1 = tslib_1.__importDefault(require("./VerifyReferenceOfByUserId"));
 exports.VerifyReferenceOfByUserId = VerifyReferenceOfByUserId_1.default;
 const ConsumeSimpleItemsByUserId_1 = tslib_1.__importDefault(require("./ConsumeSimpleItemsByUserId"));
 exports.ConsumeSimpleItemsByUserId = ConsumeSimpleItemsByUserId_1.default;
+const ConsumeBigItemByUserId_1 = tslib_1.__importDefault(require("./ConsumeBigItemByUserId"));
+exports.ConsumeBigItemByUserId = ConsumeBigItemByUserId_1.default;
 //# sourceMappingURL=index.js.map

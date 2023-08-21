@@ -25,6 +25,7 @@ export default class StampSheetResult {
     private readonly taskResults: string[]|null = null;
     private readonly sheetResult: string|null = null;
     private readonly nextTransactionId: string|null = null;
+    private readonly revision: number|null = null;
 
     public constructor(
         userId: string,
@@ -39,6 +40,7 @@ export default class StampSheetResult {
         this.taskResults = options?.taskResults ?? null;
         this.sheetResult = options?.sheetResult ?? null;
         this.nextTransactionId = options?.nextTransactionId ?? null;
+        this.revision = options?.revision ?? null;
     }
 
     public properties(

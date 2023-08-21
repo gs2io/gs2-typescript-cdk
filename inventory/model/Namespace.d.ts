@@ -3,6 +3,7 @@ import { GetAttr } from "../../core/func";
 import NamespaceRef from "../ref/NamespaceRef";
 import InventoryModel from "./InventoryModel";
 import SimpleInventoryModel from "./SimpleInventoryModel";
+import BigInventoryModel from "./BigInventoryModel";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
@@ -20,5 +21,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(inventoryModels: InventoryModel[], simpleInventoryModels: SimpleInventoryModel[]): Namespace;
+    masterData(inventoryModels: InventoryModel[], simpleInventoryModels: SimpleInventoryModel[], bigInventoryModels: BigInventoryModel[]): Namespace;
 }

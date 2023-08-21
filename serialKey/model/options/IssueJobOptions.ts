@@ -17,5 +17,6 @@ import { IssueJobStatus } from "../enum/IssueJobStatus";
 
 export interface IssueJobOptions {
     metadata?: string|null;
+    revision?: number|null;
 }
 

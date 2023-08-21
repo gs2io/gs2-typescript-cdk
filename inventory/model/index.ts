@@ -23,6 +23,10 @@ import SimpleInventoryModel from "./SimpleInventoryModel";
 import { SimpleInventoryModelOptions } from "./options/SimpleInventoryModelOptions";
 import SimpleItemModel from "./SimpleItemModel";
 import { SimpleItemModelOptions } from "./options/SimpleItemModelOptions";
+import BigInventoryModel from "./BigInventoryModel";
+import { BigInventoryModelOptions } from "./options/BigInventoryModelOptions";
+import BigItemModel from "./BigItemModel";
+import { BigItemModelOptions } from "./options/BigItemModelOptions";
 import AcquireCount from "./AcquireCount";
 import { AcquireCountOptions } from "./options/AcquireCountOptions";
 import ConsumeCount from "./ConsumeCount";
@@ -40,6 +44,10 @@ export {
     SimpleInventoryModelOptions,
     SimpleItemModel,
     SimpleItemModelOptions,
+    BigInventoryModel,
+    BigInventoryModelOptions,
+    BigItemModel,
+    BigItemModelOptions,
     AcquireCount,
     AcquireCountOptions,
     ConsumeCount,

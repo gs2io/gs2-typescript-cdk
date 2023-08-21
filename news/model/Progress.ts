@@ -19,6 +19,7 @@ export default class Progress {
     private readonly uploadToken: string;
     private readonly generated: number;
     private readonly patternCount: number;
+    private readonly revision: number|null = null;
 
     public constructor(
         uploadToken: string,
@@ -29,6 +30,7 @@ export default class Progress {
         this.uploadToken = uploadToken;
         this.generated = generated;
         this.patternCount = patternCount;
+        this.revision = options?.revision ?? null;
     }
 
     public properties(

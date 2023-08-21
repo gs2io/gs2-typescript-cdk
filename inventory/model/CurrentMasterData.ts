@@ -16,18 +16,21 @@
 import {CdkResource, Stack} from "../../core/model";
 import InventoryModel from "./InventoryModel";
 import SimpleInventoryModel from "./SimpleInventoryModel";
+import BigInventoryModel from "./BigInventoryModel";
 
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2019-02-05";
     private readonly namespaceName: string;
     private readonly inventoryModels: InventoryModel[];
     private readonly simpleInventoryModels: SimpleInventoryModel[];
+    private readonly bigInventoryModels: BigInventoryModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
         inventoryModels: InventoryModel[],
         simpleInventoryModels: SimpleInventoryModel[],
+        bigInventoryModels: BigInventoryModel[],
     ) {
         super(
             "Inventory_CurrentItemModelMaster_" + namespaceName
@@ -36,6 +39,7 @@ export default class CurrentMasterData extends CdkResource {
         this.namespaceName = namespaceName;
         this.inventoryModels = inventoryModels;
         this.simpleInventoryModels = simpleInventoryModels;
+        this.bigInventoryModels = bigInventoryModels;
         stack.addResource(
             this,
         );
@@ -63,6 +67,10 @@ export default class CurrentMasterData extends CdkResource {
         }
         if (this.simpleInventoryModels != null) {
             settings["simpleInventoryModels"] = this.simpleInventoryModels.map(v => v.properties(
+                ));
+        }
+        if (this.bigInventoryModels != null) {
+            settings["bigInventoryModels"] = this.bigInventoryModels.map(v => v.properties(
                 ));
         }
 

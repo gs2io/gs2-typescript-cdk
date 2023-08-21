@@ -19,9 +19,11 @@ import AcquireItemSetByUserId from "./AcquireItemSetByUserId";
 import AddReferenceOfByUserId from "./AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "./DeleteReferenceOfByUserId";
 import AcquireSimpleItemsByUserId from "./AcquireSimpleItemsByUserId";
+import AcquireBigItemByUserId from "./AcquireBigItemByUserId";
 import ConsumeItemSetByUserId from "./ConsumeItemSetByUserId";
 import VerifyReferenceOfByUserId from "./VerifyReferenceOfByUserId";
 import ConsumeSimpleItemsByUserId from "./ConsumeSimpleItemsByUserId";
+import ConsumeBigItemByUserId from "./ConsumeBigItemByUserId";
 
 export {
     AddCapacityByUserId,
@@ -30,7 +32,9 @@ export {
     AddReferenceOfByUserId,
     DeleteReferenceOfByUserId,
     AcquireSimpleItemsByUserId,
+    AcquireBigItemByUserId,
     ConsumeItemSetByUserId,
     VerifyReferenceOfByUserId,
     ConsumeSimpleItemsByUserId,
+    ConsumeBigItemByUserId,
 }

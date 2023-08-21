@@ -73,8 +73,8 @@ class Namespace extends model_1.CdkResource {
     getAttrNamespaceId() {
         return new func_1.GetAttr(this, "Item.NamespaceId", null);
     }
-    masterData(inventoryModels, simpleInventoryModels) {
-        new CurrentMasterData_1.default(this.stack, this.name, inventoryModels, simpleInventoryModels).addDependsOn(this);
+    masterData(inventoryModels, simpleInventoryModels, bigInventoryModels) {
+        new CurrentMasterData_1.default(this.stack, this.name, inventoryModels, simpleInventoryModels, bigInventoryModels).addDependsOn(this);
         return this;
     }
 }

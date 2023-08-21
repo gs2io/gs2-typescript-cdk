@@ -21,5 +21,6 @@ export interface StampSheetResultOptions {
     taskResults?: string[]|null;
     sheetResult?: string|null;
     nextTransactionId?: string|null;
+    revision?: number|null;
 }
 

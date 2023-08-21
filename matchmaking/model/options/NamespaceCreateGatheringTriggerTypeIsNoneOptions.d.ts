@@ -9,4 +9,5 @@ export interface NamespaceCreateGatheringTriggerTypeIsNoneOptions {
     completeNotification?: NotificationSetting | null;
     changeRatingNotification?: NotificationSetting | null;
     logSetting?: LogSetting | null;
+    revision?: number | null;
 }

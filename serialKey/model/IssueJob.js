@@ -2,13 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class IssueJob {
     constructor(name, issuedCount, issueRequestCount, status, options = null) {
-        var _a;
+        var _a, _b;
         this.metadata = null;
+        this.revision = null;
         this.name = name;
         this.issuedCount = issuedCount;
         this.issueRequestCount = issueRequestCount;
         this.status = status;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
+        this.revision = (_b = options === null || options === void 0 ? void 0 : options.revision) !== null && _b !== void 0 ? _b : null;
     }
     properties() {
         let properties = {};

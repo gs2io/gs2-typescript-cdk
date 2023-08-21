@@ -8,6 +8,7 @@ export default class StampSheetResult {
     private readonly taskResults;
     private readonly sheetResult;
     private readonly nextTransactionId;
+    private readonly revision;
     constructor(userId: string, transactionId: string, sheetRequest: AcquireAction, options?: StampSheetResultOptions | null);
     properties(): {
         [name: string]: any;
