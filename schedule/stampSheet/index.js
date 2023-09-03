@@ -1,4 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TriggerByUserId = void 0;
+const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -14,5 +17,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+const TriggerByUserId_1 = tslib_1.__importDefault(require("./TriggerByUserId"));
+exports.TriggerByUserId = TriggerByUserId_1.default;
 //# sourceMappingURL=index.js.map

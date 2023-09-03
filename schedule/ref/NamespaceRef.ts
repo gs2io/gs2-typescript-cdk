@@ -15,6 +15,7 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import TriggerByUserId from "../stampSheet/TriggerByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -23,6 +24,21 @@ export default class NamespaceRef {
         namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
+    }
+
+    public trigger(
+        triggerName: string,
+        triggerStrategy: string,
+        ttl: number,
+        userId: string|null = "#{userId}",
+    ): TriggerByUserId {
+        return new TriggerByUserId(
+            this.namespaceName,
+            triggerName,
+            triggerStrategy,
+            ttl,
+            userId,
+        );
     }
 
     public grn(

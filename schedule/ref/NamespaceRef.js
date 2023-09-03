@@ -15,10 +15,15 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const TriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/TriggerByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
+    }
+    trigger(triggerName, triggerStrategy, ttl, userId = "#{userId}") {
+        return new TriggerByUserId_1.default(this.namespaceName, triggerName, triggerStrategy, ttl, userId);
     }
     grn() {
         return new func_1.Join(":", [
