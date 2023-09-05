@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const DepositByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DepositByUserId"));
+const RevertRecordReceipt_1 = tslib_1.__importDefault(require("../stampSheet/RevertRecordReceipt"));
 const WithdrawByUserId_1 = tslib_1.__importDefault(require("../stampSheet/WithdrawByUserId"));
 const RecordReceipt_1 = tslib_1.__importDefault(require("../stampSheet/RecordReceipt"));
 class NamespaceRef {
@@ -26,6 +27,9 @@ class NamespaceRef {
     }
     deposit(slot, price, count, userId = "#{userId}") {
         return new DepositByUserId_1.default(this.namespaceName, slot, price, count, userId);
+    }
+    revertRecordReceipt(receipt, userId = "#{userId}") {
+        return new RevertRecordReceipt_1.default(this.namespaceName, receipt, userId);
     }
     withdraw(slot, count, paidOnly, userId = "#{userId}") {
         return new WithdrawByUserId_1.default(this.namespaceName, slot, count, paidOnly, userId);

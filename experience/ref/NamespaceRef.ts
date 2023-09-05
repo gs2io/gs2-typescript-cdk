@@ -21,6 +21,8 @@ import AddRankCapByUserId from "../stampSheet/AddRankCapByUserId";
 import SetRankCapByUserId from "../stampSheet/SetRankCapByUserId";
 import MultiplyAcquireActionsByUserId from "../stampSheet/MultiplyAcquireActionsByUserId";
 import { AcquireAction } from "../../core/model";
+import SubExperienceByUserId from "../stampSheet/SubExperienceByUserId";
+import SubRankCapByUserId from "../stampSheet/SubRankCapByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -98,6 +100,36 @@ export default class NamespaceRef {
             propertyId,
             rateName,
             acquireActions,
+            userId,
+        );
+    }
+
+    public subExperience(
+        experienceName: string,
+        propertyId: string,
+        experienceValue: number,
+        userId: string|null = "#{userId}",
+    ): SubExperienceByUserId {
+        return new SubExperienceByUserId(
+            this.namespaceName,
+            experienceName,
+            propertyId,
+            experienceValue,
+            userId,
+        );
+    }
+
+    public subRankCap(
+        experienceName: string,
+        propertyId: string,
+        rankCapValue: number,
+        userId: string|null = "#{userId}",
+    ): SubRankCapByUserId {
+        return new SubRankCapByUserId(
+            this.namespaceName,
+            experienceName,
+            propertyId,
+            rankCapValue,
             userId,
         );
     }

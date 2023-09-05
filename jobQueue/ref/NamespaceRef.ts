@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import PushByUserId from "../stampSheet/PushByUserId";
 import JobEntry from "../model/JobEntry";
+import DeleteJobByUserId from "../stampSheet/DeleteJobByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -34,6 +35,17 @@ export default class NamespaceRef {
         return new PushByUserId(
             this.namespaceName,
             jobs,
+            userId,
+        );
+    }
+
+    public deleteJob(
+        jobName: string,
+        userId: string|null = "#{userId}",
+    ): DeleteJobByUserId {
+        return new DeleteJobByUserId(
+            this.namespaceName,
+            jobName,
             userId,
         );
     }

@@ -20,6 +20,7 @@ import SendMessageByUserId from "../stampSheet/SendMessageByUserId";
 import { AcquireAction } from "../../core/model";
 import TimeSpan from "../model/TimeSpan";
 import OpenMessageByUserId from "../stampSheet/OpenMessageByUserId";
+import DeleteMessageByUserId from "../stampSheet/DeleteMessageByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -61,6 +62,17 @@ export default class NamespaceRef {
         userId: string|null = "#{userId}",
     ): OpenMessageByUserId {
         return new OpenMessageByUserId(
+            this.namespaceName,
+            messageName,
+            userId,
+        );
+    }
+
+    public deleteMessage(
+        messageName: string,
+        userId: string|null = "#{userId}",
+    ): DeleteMessageByUserId {
+        return new DeleteMessageByUserId(
             this.namespaceName,
             messageName,
             userId,

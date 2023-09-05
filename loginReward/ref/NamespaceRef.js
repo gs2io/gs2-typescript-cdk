@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const BonusModelRef_1 = tslib_1.__importDefault(require("./BonusModelRef"));
 const DeleteReceiveStatusByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteReceiveStatusByUserId"));
+const UnmarkReceivedByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UnmarkReceivedByUserId"));
 const MarkReceivedByUserId_1 = tslib_1.__importDefault(require("../stampSheet/MarkReceivedByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
@@ -29,6 +30,9 @@ class NamespaceRef {
     }
     deleteReceiveStatus(bonusModelName, userId = "#{userId}") {
         return new DeleteReceiveStatusByUserId_1.default(this.namespaceName, bonusModelName, userId);
+    }
+    unmarkReceived(bonusModelName, stepNumber, userId = "#{userId}") {
+        return new UnmarkReceivedByUserId_1.default(this.namespaceName, bonusModelName, stepNumber, userId);
     }
     markReceived(bonusModelName, stepNumber, userId = "#{userId}") {
         return new MarkReceivedByUserId_1.default(this.namespaceName, bonusModelName, stepNumber, userId);

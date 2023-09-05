@@ -20,6 +20,7 @@ import RaiseMaxValueByUserId from "../stampSheet/RaiseMaxValueByUserId";
 import SetMaxValueByUserId from "../stampSheet/SetMaxValueByUserId";
 import SetRecoverIntervalByUserId from "../stampSheet/SetRecoverIntervalByUserId";
 import SetRecoverValueByUserId from "../stampSheet/SetRecoverValueByUserId";
+import DecreaseMaxValueByUserId from "../stampSheet/DecreaseMaxValueByUserId";
 import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
 
 export default class StaminaModelRef {
@@ -90,6 +91,18 @@ export default class StaminaModelRef {
             this.namespaceName,
             this.staminaName,
             recoverValue,
+            userId,
+        );
+    }
+
+    public decreaseMaxValue(
+        decreaseValue: number,
+        userId: string|null = "#{userId}",
+    ): DecreaseMaxValueByUserId {
+        return new DecreaseMaxValueByUserId(
+            this.namespaceName,
+            this.staminaName,
+            decreaseValue,
             userId,
         );
     }

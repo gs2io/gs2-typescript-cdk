@@ -1,2 +1,3 @@
 import TriggerByUserId from "./TriggerByUserId";
-export { TriggerByUserId, };
+import DeleteTriggerByUserId from "./DeleteTriggerByUserId";
+export { TriggerByUserId, DeleteTriggerByUserId, };

@@ -18,12 +18,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const TriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/TriggerByUserId"));
+const DeleteTriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteTriggerByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
     trigger(triggerName, triggerStrategy, ttl, userId = "#{userId}") {
         return new TriggerByUserId_1.default(this.namespaceName, triggerName, triggerStrategy, ttl, userId);
+    }
+    deleteTrigger(triggerName, userId = "#{userId}") {
+        return new DeleteTriggerByUserId_1.default(this.namespaceName, triggerName, userId);
     }
     grn() {
         return new func_1.Join(":", [

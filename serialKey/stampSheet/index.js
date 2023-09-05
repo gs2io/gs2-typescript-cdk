@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UseByUserId = void 0;
+exports.UseByUserId = exports.RevertUseByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -17,6 +17,8 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+const RevertUseByUserId_1 = tslib_1.__importDefault(require("./RevertUseByUserId"));
+exports.RevertUseByUserId = RevertUseByUserId_1.default;
 const UseByUserId_1 = tslib_1.__importDefault(require("./UseByUserId"));
 exports.UseByUserId = UseByUserId_1.default;
 //# sourceMappingURL=index.js.map

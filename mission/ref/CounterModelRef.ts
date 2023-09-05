@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
+import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 
 export default class CounterModelRef {
     private readonly namespaceName: string;
@@ -34,6 +35,18 @@ export default class CounterModelRef {
         userId: string|null = "#{userId}",
     ): IncreaseCounterByUserId {
         return new IncreaseCounterByUserId(
+            this.namespaceName,
+            this.counterName,
+            value,
+            userId,
+        );
+    }
+
+    public decreaseCounter(
+        value: number,
+        userId: string|null = "#{userId}",
+    ): DecreaseCounterByUserId {
+        return new DecreaseCounterByUserId(
             this.namespaceName,
             this.counterName,
             value,

@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import TriggerByUserId from "../stampSheet/TriggerByUserId";
+import DeleteTriggerByUserId from "../stampSheet/DeleteTriggerByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -37,6 +38,17 @@ export default class NamespaceRef {
             triggerName,
             triggerStrategy,
             ttl,
+            userId,
+        );
+    }
+
+    public deleteTrigger(
+        triggerName: string,
+        userId: string|null = "#{userId}",
+    ): DeleteTriggerByUserId {
+        return new DeleteTriggerByUserId(
+            this.namespaceName,
+            triggerName,
             userId,
         );
     }

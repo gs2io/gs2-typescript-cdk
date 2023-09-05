@@ -13,10 +13,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import RevertReceiveByUserId from "./RevertReceiveByUserId";
 import IncreaseCounterByUserId from "./IncreaseCounterByUserId";
 import ReceiveByUserId from "./ReceiveByUserId";
+import DecreaseCounterByUserId from "./DecreaseCounterByUserId";
 
 export {
+    RevertReceiveByUserId,
     IncreaseCounterByUserId,
     ReceiveByUserId,
+    DecreaseCounterByUserId,
 }

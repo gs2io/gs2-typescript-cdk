@@ -20,6 +20,7 @@ import SetMoldCapacityByUserId from "../stampSheet/SetMoldCapacityByUserId";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
 import { AcquireAction } from "../../core/model";
 import AcquireActionConfig from "../model/AcquireActionConfig";
+import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 
 export default class MoldModelRef {
     private readonly namespaceName: string;
@@ -69,6 +70,18 @@ export default class MoldModelRef {
             index,
             acquireAction,
             config,
+            userId,
+        );
+    }
+
+    public subMoldCapacity(
+        capacity: number,
+        userId: string|null = "#{userId}",
+    ): SubMoldCapacityByUserId {
+        return new SubMoldCapacityByUserId(
+            this.namespaceName,
+            this.moldName,
+            capacity,
             userId,
         );
     }

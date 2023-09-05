@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import LimitModelRef from "./LimitModelRef";
+import CountDownByUserId from "../stampSheet/CountDownByUserId";
 import DeleteCounterByUserId from "../stampSheet/DeleteCounterByUserId";
 import CountUpByUserId from "../stampSheet/CountUpByUserId";
 
@@ -34,6 +35,21 @@ export default class NamespaceRef {
         return new LimitModelRef(
             this.namespaceName,
             limitName,
+        );
+    }
+
+    public countDown(
+        limitName: string,
+        counterName: string,
+        countDownValue: number,
+        userId: string|null = "#{userId}",
+    ): CountDownByUserId {
+        return new CountDownByUserId(
+            this.namespaceName,
+            limitName,
+            counterName,
+            countDownValue,
+            userId,
         );
     }
 

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CountUpByUserId = exports.DeleteCounterByUserId = void 0;
+exports.CountUpByUserId = exports.DeleteCounterByUserId = exports.CountDownByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -17,6 +17,8 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+const CountDownByUserId_1 = tslib_1.__importDefault(require("./CountDownByUserId"));
+exports.CountDownByUserId = CountDownByUserId_1.default;
 const DeleteCounterByUserId_1 = tslib_1.__importDefault(require("./DeleteCounterByUserId"));
 exports.DeleteCounterByUserId = DeleteCounterByUserId_1.default;
 const CountUpByUserId_1 = tslib_1.__importDefault(require("./CountUpByUserId"));

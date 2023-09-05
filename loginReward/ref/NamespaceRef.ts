@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import BonusModelRef from "./BonusModelRef";
 import DeleteReceiveStatusByUserId from "../stampSheet/DeleteReceiveStatusByUserId";
+import UnmarkReceivedByUserId from "../stampSheet/UnmarkReceivedByUserId";
 import MarkReceivedByUserId from "../stampSheet/MarkReceivedByUserId";
 
 export default class NamespaceRef {
@@ -44,6 +45,19 @@ export default class NamespaceRef {
         return new DeleteReceiveStatusByUserId(
             this.namespaceName,
             bonusModelName,
+            userId,
+        );
+    }
+
+    public unmarkReceived(
+        bonusModelName: string,
+        stepNumber: number,
+        userId: string|null = "#{userId}",
+    ): UnmarkReceivedByUserId {
+        return new UnmarkReceivedByUserId(
+            this.namespaceName,
+            bonusModelName,
+            stepNumber,
             userId,
         );
     }

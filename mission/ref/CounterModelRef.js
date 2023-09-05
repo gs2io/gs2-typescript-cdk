@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const IncreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseCounterByUserId"));
+const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseCounterByUserId"));
 class CounterModelRef {
     constructor(namespaceName, counterName) {
         this.namespaceName = namespaceName;
@@ -25,6 +26,9 @@ class CounterModelRef {
     }
     increaseCounter(value, userId = "#{userId}") {
         return new IncreaseCounterByUserId_1.default(this.namespaceName, this.counterName, value, userId);
+    }
+    decreaseCounter(value, userId = "#{userId}") {
+        return new DecreaseCounterByUserId_1.default(this.namespaceName, this.counterName, value, userId);
     }
     grn() {
         return new func_1.Join(":", [

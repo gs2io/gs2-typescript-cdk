@@ -17,8 +17,10 @@
 import {GetAttr, Join} from "../../core/func";
 import MissionGroupModelRef from "./MissionGroupModelRef";
 import CounterModelRef from "./CounterModelRef";
+import RevertReceiveByUserId from "../stampSheet/RevertReceiveByUserId";
 import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
 import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
+import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -47,6 +49,19 @@ export default class NamespaceRef {
         );
     }
 
+    public revertReceive(
+        missionGroupName: string,
+        missionTaskName: string,
+        userId: string|null = "#{userId}",
+    ): RevertReceiveByUserId {
+        return new RevertReceiveByUserId(
+            this.namespaceName,
+            missionGroupName,
+            missionTaskName,
+            userId,
+        );
+    }
+
     public increaseCounter(
         counterName: string,
         value: number,
@@ -69,6 +84,19 @@ export default class NamespaceRef {
             this.namespaceName,
             missionGroupName,
             missionTaskName,
+            userId,
+        );
+    }
+
+    public decreaseCounter(
+        counterName: string,
+        value: number,
+        userId: string|null = "#{userId}",
+    ): DecreaseCounterByUserId {
+        return new DecreaseCounterByUserId(
+            this.namespaceName,
+            counterName,
+            value,
             userId,
         );
     }

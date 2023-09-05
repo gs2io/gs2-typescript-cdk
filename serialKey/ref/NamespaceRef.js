@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const CampaignModelRef_1 = tslib_1.__importDefault(require("./CampaignModelRef"));
+const RevertUseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/RevertUseByUserId"));
 const UseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UseByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
@@ -25,6 +26,9 @@ class NamespaceRef {
     }
     campaignModel(campaignModelName) {
         return new CampaignModelRef_1.default(this.namespaceName, campaignModelName);
+    }
+    revertUse(code, userId = "#{userId}") {
+        return new RevertUseByUserId_1.default(this.namespaceName, code, userId);
     }
     use(code, userId = "#{userId}") {
         return new UseByUserId_1.default(this.namespaceName, code, userId);

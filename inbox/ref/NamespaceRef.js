@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const GlobalMessageRef_1 = tslib_1.__importDefault(require("./GlobalMessageRef"));
 const SendMessageByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SendMessageByUserId"));
 const OpenMessageByUserId_1 = tslib_1.__importDefault(require("../stampSheet/OpenMessageByUserId"));
+const DeleteMessageByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteMessageByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -32,6 +33,9 @@ class NamespaceRef {
     }
     openMessage(messageName, userId = "#{userId}") {
         return new OpenMessageByUserId_1.default(this.namespaceName, messageName, userId);
+    }
+    deleteMessage(messageName, userId = "#{userId}") {
+        return new DeleteMessageByUserId_1.default(this.namespaceName, messageName, userId);
     }
     grn() {
         return new func_1.Join(":", [

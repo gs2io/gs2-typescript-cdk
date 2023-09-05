@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const CategoryModelRef_1 = tslib_1.__importDefault(require("./CategoryModelRef"));
 const IncreaseMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseMaximumIdleMinutesByUserId"));
+const DecreaseMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseMaximumIdleMinutesByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -28,6 +29,9 @@ class NamespaceRef {
     }
     increaseMaximumIdleMinutes(categoryName, increaseMinutes = null, userId = "#{userId}") {
         return new IncreaseMaximumIdleMinutesByUserId_1.default(this.namespaceName, categoryName, increaseMinutes, userId);
+    }
+    decreaseMaximumIdleMinutes(categoryName, decreaseMinutes = null, userId = "#{userId}") {
+        return new DecreaseMaximumIdleMinutesByUserId_1.default(this.namespaceName, categoryName, decreaseMinutes, userId);
     }
     grn() {
         return new func_1.Join(":", [

@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const AddMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddMoldCapacityByUserId"));
 const SetMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMoldCapacityByUserId"));
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
+const SubMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SubMoldCapacityByUserId"));
 class MoldModelRef {
     constructor(namespaceName, moldName) {
         this.namespaceName = namespaceName;
@@ -33,6 +34,9 @@ class MoldModelRef {
     }
     acquireActionsToFormProperties(index, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToFormProperties_1.default(this.namespaceName, this.moldName, index, acquireAction, config, userId);
+    }
+    subMoldCapacity(capacity, userId = "#{userId}") {
+        return new SubMoldCapacityByUserId_1.default(this.namespaceName, this.moldName, capacity, userId);
     }
     grn() {
         return new func_1.Join(":", [

@@ -15,6 +15,7 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import DecrementPurchaseCountByUserId from "../stampSheet/DecrementPurchaseCountByUserId";
 import ForceReDrawByUserId from "../stampSheet/ForceReDrawByUserId";
 import IncrementPurchaseCountByUserId from "../stampSheet/IncrementPurchaseCountByUserId";
 
@@ -25,6 +26,21 @@ export default class NamespaceRef {
         namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
+    }
+
+    public decrementPurchaseCount(
+        showcaseName: string,
+        displayItemName: string,
+        count: number,
+        userId: string|null = "#{userId}",
+    ): DecrementPurchaseCountByUserId {
+        return new DecrementPurchaseCountByUserId(
+            this.namespaceName,
+            showcaseName,
+            displayItemName,
+            count,
+            userId,
+        );
     }
 
     public forceReDraw(

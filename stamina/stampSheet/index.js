@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumeStaminaByUserId = exports.SetRecoverValueByUserId = exports.SetRecoverIntervalByUserId = exports.SetMaxValueByUserId = exports.RaiseMaxValueByUserId = exports.RecoverStaminaByUserId = void 0;
+exports.ConsumeStaminaByUserId = exports.DecreaseMaxValueByUserId = exports.SetRecoverValueByUserId = exports.SetRecoverIntervalByUserId = exports.SetMaxValueByUserId = exports.RaiseMaxValueByUserId = exports.RecoverStaminaByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,8 @@ const SetRecoverIntervalByUserId_1 = tslib_1.__importDefault(require("./SetRecov
 exports.SetRecoverIntervalByUserId = SetRecoverIntervalByUserId_1.default;
 const SetRecoverValueByUserId_1 = tslib_1.__importDefault(require("./SetRecoverValueByUserId"));
 exports.SetRecoverValueByUserId = SetRecoverValueByUserId_1.default;
+const DecreaseMaxValueByUserId_1 = tslib_1.__importDefault(require("./DecreaseMaxValueByUserId"));
+exports.DecreaseMaxValueByUserId = DecreaseMaxValueByUserId_1.default;
 const ConsumeStaminaByUserId_1 = tslib_1.__importDefault(require("./ConsumeStaminaByUserId"));
 exports.ConsumeStaminaByUserId = ConsumeStaminaByUserId_1.default;
 //# sourceMappingURL=index.js.map

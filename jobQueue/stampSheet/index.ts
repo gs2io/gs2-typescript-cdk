@@ -14,7 +14,9 @@
  * permissions and limitations under the License.
  */
 import PushByUserId from "./PushByUserId";
+import DeleteJobByUserId from "./DeleteJobByUserId";
 
 export {
     PushByUserId,
+    DeleteJobByUserId,
 }

@@ -22,6 +22,7 @@ const RaiseMaxValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/R
 const SetMaxValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMaxValueByUserId"));
 const SetRecoverIntervalByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetRecoverIntervalByUserId"));
 const SetRecoverValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetRecoverValueByUserId"));
+const DecreaseMaxValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseMaxValueByUserId"));
 const ConsumeStaminaByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeStaminaByUserId"));
 class StaminaModelRef {
     constructor(namespaceName, staminaName) {
@@ -42,6 +43,9 @@ class StaminaModelRef {
     }
     setRecoverValue(recoverValue, userId = "#{userId}") {
         return new SetRecoverValueByUserId_1.default(this.namespaceName, this.staminaName, recoverValue, userId);
+    }
+    decreaseMaxValue(decreaseValue, userId = "#{userId}") {
+        return new DecreaseMaxValueByUserId_1.default(this.namespaceName, this.staminaName, decreaseValue, userId);
     }
     consumeStamina(consumeValue, userId = "#{userId}") {
         return new ConsumeStaminaByUserId_1.default(this.namespaceName, this.staminaName, consumeValue, userId);

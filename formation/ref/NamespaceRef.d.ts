@@ -6,6 +6,7 @@ import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormPr
 import { AcquireAction } from "../../core/model";
 import AcquireActionConfig from "../model/AcquireActionConfig";
 import AcquireActionsToPropertyFormProperties from "../stampSheet/AcquireActionsToPropertyFormProperties";
+import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
@@ -15,5 +16,6 @@ export default class NamespaceRef {
     setMoldCapacity(moldName: string, capacity: number, userId?: string | null): SetMoldCapacityByUserId;
     acquireActionsToFormProperties(moldName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
     acquireActionsToPropertyFormProperties(formModelName: string, propertyId: string, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToPropertyFormProperties;
+    subMoldCapacity(moldName: string, capacity: number, userId?: string | null): SubMoldCapacityByUserId;
     grn(): string;
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecordReceipt = exports.WithdrawByUserId = exports.DepositByUserId = void 0;
+exports.RecordReceipt = exports.WithdrawByUserId = exports.RevertRecordReceipt = exports.DepositByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const DepositByUserId_1 = tslib_1.__importDefault(require("./DepositByUserId"));
 exports.DepositByUserId = DepositByUserId_1.default;
+const RevertRecordReceipt_1 = tslib_1.__importDefault(require("./RevertRecordReceipt"));
+exports.RevertRecordReceipt = RevertRecordReceipt_1.default;
 const WithdrawByUserId_1 = tslib_1.__importDefault(require("./WithdrawByUserId"));
 exports.WithdrawByUserId = WithdrawByUserId_1.default;
 const RecordReceipt_1 = tslib_1.__importDefault(require("./RecordReceipt"));

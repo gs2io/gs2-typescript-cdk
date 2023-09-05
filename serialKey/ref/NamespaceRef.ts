@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import CampaignModelRef from "./CampaignModelRef";
+import RevertUseByUserId from "../stampSheet/RevertUseByUserId";
 import UseByUserId from "../stampSheet/UseByUserId";
 
 export default class NamespaceRef {
@@ -33,6 +34,17 @@ export default class NamespaceRef {
         return new CampaignModelRef(
             this.namespaceName,
             campaignModelName,
+        );
+    }
+
+    public revertUse(
+        code: string,
+        userId: string|null = "#{userId}",
+    ): RevertUseByUserId {
+        return new RevertUseByUserId(
+            this.namespaceName,
+            code,
+            userId,
         );
     }
 

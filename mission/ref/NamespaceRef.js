@@ -19,8 +19,10 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const MissionGroupModelRef_1 = tslib_1.__importDefault(require("./MissionGroupModelRef"));
 const CounterModelRef_1 = tslib_1.__importDefault(require("./CounterModelRef"));
+const RevertReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/RevertReceiveByUserId"));
 const IncreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseCounterByUserId"));
 const ReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ReceiveByUserId"));
+const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseCounterByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -31,11 +33,17 @@ class NamespaceRef {
     counterModel(counterName) {
         return new CounterModelRef_1.default(this.namespaceName, counterName);
     }
+    revertReceive(missionGroupName, missionTaskName, userId = "#{userId}") {
+        return new RevertReceiveByUserId_1.default(this.namespaceName, missionGroupName, missionTaskName, userId);
+    }
     increaseCounter(counterName, value, userId = "#{userId}") {
         return new IncreaseCounterByUserId_1.default(this.namespaceName, counterName, value, userId);
     }
     receive(missionGroupName, missionTaskName, userId = "#{userId}") {
         return new ReceiveByUserId_1.default(this.namespaceName, missionGroupName, missionTaskName, userId);
+    }
+    decreaseCounter(counterName, value, userId = "#{userId}") {
+        return new DecreaseCounterByUserId_1.default(this.namespaceName, counterName, value, userId);
     }
     grn() {
         return new func_1.Join(":", [

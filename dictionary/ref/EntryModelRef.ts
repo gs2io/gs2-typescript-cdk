@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import AddEntriesByUserId from "../stampSheet/AddEntriesByUserId";
+import DeleteEntriesByUserId from "../stampSheet/DeleteEntriesByUserId";
 
 export default class EntryModelRef {
     private readonly namespaceName: string;
@@ -34,6 +35,17 @@ export default class EntryModelRef {
         userId: string|null = "#{userId}",
     ): AddEntriesByUserId {
         return new AddEntriesByUserId(
+            this.namespaceName,
+            entryModelNames,
+            userId,
+        );
+    }
+
+    public deleteEntries(
+        entryModelNames: string[]|null = null,
+        userId: string|null = "#{userId}",
+    ): DeleteEntriesByUserId {
+        return new DeleteEntriesByUserId(
             this.namespaceName,
             entryModelNames,
             userId,

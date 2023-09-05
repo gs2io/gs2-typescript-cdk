@@ -1,2 +1,3 @@
 import IncreaseMaximumIdleMinutesByUserId from "./IncreaseMaximumIdleMinutesByUserId";
-export { IncreaseMaximumIdleMinutesByUserId, };
+import DecreaseMaximumIdleMinutesByUserId from "./DecreaseMaximumIdleMinutesByUserId";
+export { IncreaseMaximumIdleMinutesByUserId, DecreaseMaximumIdleMinutesByUserId, };

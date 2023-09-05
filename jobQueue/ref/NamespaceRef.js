@@ -18,12 +18,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const PushByUserId_1 = tslib_1.__importDefault(require("../stampSheet/PushByUserId"));
+const DeleteJobByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteJobByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
     push(jobs = null, userId = "#{userId}") {
         return new PushByUserId_1.default(this.namespaceName, jobs, userId);
+    }
+    deleteJob(jobName, userId = "#{userId}") {
+        return new DeleteJobByUserId_1.default(this.namespaceName, jobName, userId);
     }
     grn() {
         return new func_1.Join(":", [

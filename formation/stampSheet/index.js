@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AcquireActionsToPropertyFormProperties = exports.AcquireActionsToFormProperties = exports.SetMoldCapacityByUserId = exports.AddMoldCapacityByUserId = void 0;
+exports.SubMoldCapacityByUserId = exports.AcquireActionsToPropertyFormProperties = exports.AcquireActionsToFormProperties = exports.SetMoldCapacityByUserId = exports.AddMoldCapacityByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,4 +25,6 @@ const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("./Acqu
 exports.AcquireActionsToFormProperties = AcquireActionsToFormProperties_1.default;
 const AcquireActionsToPropertyFormProperties_1 = tslib_1.__importDefault(require("./AcquireActionsToPropertyFormProperties"));
 exports.AcquireActionsToPropertyFormProperties = AcquireActionsToPropertyFormProperties_1.default;
+const SubMoldCapacityByUserId_1 = tslib_1.__importDefault(require("./SubMoldCapacityByUserId"));
+exports.SubMoldCapacityByUserId = SubMoldCapacityByUserId_1.default;
 //# sourceMappingURL=index.js.map

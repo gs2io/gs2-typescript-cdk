@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IncrementPurchaseCountByUserId = exports.ForceReDrawByUserId = void 0;
+exports.IncrementPurchaseCountByUserId = exports.ForceReDrawByUserId = exports.DecrementPurchaseCountByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -17,6 +17,8 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+const DecrementPurchaseCountByUserId_1 = tslib_1.__importDefault(require("./DecrementPurchaseCountByUserId"));
+exports.DecrementPurchaseCountByUserId = DecrementPurchaseCountByUserId_1.default;
 const ForceReDrawByUserId_1 = tslib_1.__importDefault(require("./ForceReDrawByUserId"));
 exports.ForceReDrawByUserId = ForceReDrawByUserId_1.default;
 const IncrementPurchaseCountByUserId_1 = tslib_1.__importDefault(require("./IncrementPurchaseCountByUserId"));

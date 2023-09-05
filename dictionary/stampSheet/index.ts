@@ -14,7 +14,9 @@
  * permissions and limitations under the License.
  */
 import AddEntriesByUserId from "./AddEntriesByUserId";
+import DeleteEntriesByUserId from "./DeleteEntriesByUserId";
 
 export {
     AddEntriesByUserId,
+    DeleteEntriesByUserId,
 }

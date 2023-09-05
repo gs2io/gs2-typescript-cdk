@@ -23,6 +23,7 @@ import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormPr
 import { AcquireAction } from "../../core/model";
 import AcquireActionConfig from "../model/AcquireActionConfig";
 import AcquireActionsToPropertyFormProperties from "../stampSheet/AcquireActionsToPropertyFormProperties";
+import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -107,6 +108,19 @@ export default class NamespaceRef {
             propertyId,
             acquireAction,
             config,
+            userId,
+        );
+    }
+
+    public subMoldCapacity(
+        moldName: string,
+        capacity: number,
+        userId: string|null = "#{userId}",
+    ): SubMoldCapacityByUserId {
+        return new SubMoldCapacityByUserId(
+            this.namespaceName,
+            moldName,
+            capacity,
             userId,
         );
     }

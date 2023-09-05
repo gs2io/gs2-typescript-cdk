@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PushByUserId = void 0;
+exports.DeleteJobByUserId = exports.PushByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,4 +19,6 @@ const tslib_1 = require("tslib");
  */
 const PushByUserId_1 = tslib_1.__importDefault(require("./PushByUserId"));
 exports.PushByUserId = PushByUserId_1.default;
+const DeleteJobByUserId_1 = tslib_1.__importDefault(require("./DeleteJobByUserId"));
+exports.DeleteJobByUserId = DeleteJobByUserId_1.default;
 //# sourceMappingURL=index.js.map

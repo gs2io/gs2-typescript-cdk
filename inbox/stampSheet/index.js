@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OpenMessageByUserId = exports.SendMessageByUserId = void 0;
+exports.DeleteMessageByUserId = exports.OpenMessageByUserId = exports.SendMessageByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,6 @@ const SendMessageByUserId_1 = tslib_1.__importDefault(require("./SendMessageByUs
 exports.SendMessageByUserId = SendMessageByUserId_1.default;
 const OpenMessageByUserId_1 = tslib_1.__importDefault(require("./OpenMessageByUserId"));
 exports.OpenMessageByUserId = OpenMessageByUserId_1.default;
+const DeleteMessageByUserId_1 = tslib_1.__importDefault(require("./DeleteMessageByUserId"));
+exports.DeleteMessageByUserId = DeleteMessageByUserId_1.default;
 //# sourceMappingURL=index.js.map

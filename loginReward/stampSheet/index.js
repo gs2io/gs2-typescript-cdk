@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MarkReceivedByUserId = exports.DeleteReceiveStatusByUserId = void 0;
+exports.MarkReceivedByUserId = exports.UnmarkReceivedByUserId = exports.DeleteReceiveStatusByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const DeleteReceiveStatusByUserId_1 = tslib_1.__importDefault(require("./DeleteReceiveStatusByUserId"));
 exports.DeleteReceiveStatusByUserId = DeleteReceiveStatusByUserId_1.default;
+const UnmarkReceivedByUserId_1 = tslib_1.__importDefault(require("./UnmarkReceivedByUserId"));
+exports.UnmarkReceivedByUserId = UnmarkReceivedByUserId_1.default;
 const MarkReceivedByUserId_1 = tslib_1.__importDefault(require("./MarkReceivedByUserId"));
 exports.MarkReceivedByUserId = MarkReceivedByUserId_1.default;
 //# sourceMappingURL=index.js.map

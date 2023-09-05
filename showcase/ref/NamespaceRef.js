@@ -17,11 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const DecrementPurchaseCountByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecrementPurchaseCountByUserId"));
 const ForceReDrawByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ForceReDrawByUserId"));
 const IncrementPurchaseCountByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncrementPurchaseCountByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
+    }
+    decrementPurchaseCount(showcaseName, displayItemName, count, userId = "#{userId}") {
+        return new DecrementPurchaseCountByUserId_1.default(this.namespaceName, showcaseName, displayItemName, count, userId);
     }
     forceReDraw(showcaseName, userId = "#{userId}") {
         return new ForceReDrawByUserId_1.default(this.namespaceName, showcaseName, userId);

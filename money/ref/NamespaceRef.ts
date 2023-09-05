@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import DepositByUserId from "../stampSheet/DepositByUserId";
+import RevertRecordReceipt from "../stampSheet/RevertRecordReceipt";
 import WithdrawByUserId from "../stampSheet/WithdrawByUserId";
 import RecordReceipt from "../stampSheet/RecordReceipt";
 
@@ -39,6 +40,17 @@ export default class NamespaceRef {
             slot,
             price,
             count,
+            userId,
+        );
+    }
+
+    public revertRecordReceipt(
+        receipt: string,
+        userId: string|null = "#{userId}",
+    ): RevertRecordReceipt {
+        return new RevertRecordReceipt(
+            this.namespaceName,
+            receipt,
             userId,
         );
     }

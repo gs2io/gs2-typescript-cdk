@@ -23,6 +23,7 @@ const AddMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet
 const SetMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMoldCapacityByUserId"));
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
 const AcquireActionsToPropertyFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToPropertyFormProperties"));
+const SubMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SubMoldCapacityByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -44,6 +45,9 @@ class NamespaceRef {
     }
     acquireActionsToPropertyFormProperties(formModelName, propertyId, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToPropertyFormProperties_1.default(this.namespaceName, formModelName, propertyId, acquireAction, config, userId);
+    }
+    subMoldCapacity(moldName, capacity, userId = "#{userId}") {
+        return new SubMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
     }
     grn() {
         return new func_1.Join(":", [

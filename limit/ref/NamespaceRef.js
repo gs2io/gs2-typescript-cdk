@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const LimitModelRef_1 = tslib_1.__importDefault(require("./LimitModelRef"));
+const CountDownByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CountDownByUserId"));
 const DeleteCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteCounterByUserId"));
 const CountUpByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CountUpByUserId"));
 class NamespaceRef {
@@ -26,6 +27,9 @@ class NamespaceRef {
     }
     limitModel(limitName) {
         return new LimitModelRef_1.default(this.namespaceName, limitName);
+    }
+    countDown(limitName, counterName, countDownValue, userId = "#{userId}") {
+        return new CountDownByUserId_1.default(this.namespaceName, limitName, counterName, countDownValue, userId);
     }
     deleteCounter(limitName, counterName, userId = "#{userId}") {
         return new DeleteCounterByUserId_1.default(this.namespaceName, limitName, counterName, userId);

@@ -1,2 +1,3 @@
 import PushByUserId from "./PushByUserId";
-export { PushByUserId, };
+import DeleteJobByUserId from "./DeleteJobByUserId";
+export { PushByUserId, DeleteJobByUserId, };
