@@ -16,7 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import MoldModelRef from "./MoldModelRef";
-import FormModelRef from "./FormModelRef";
+import PropertyFormModelRef from "./PropertyFormModelRef";
 import AddMoldCapacityByUserId from "../stampSheet/AddMoldCapacityByUserId";
 import SetMoldCapacityByUserId from "../stampSheet/SetMoldCapacityByUserId";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
@@ -35,20 +35,20 @@ export default class NamespaceRef {
     }
 
     public moldModel(
-        moldName: string,
+        moldModelName: string,
     ): MoldModelRef {
         return new MoldModelRef(
             this.namespaceName,
-            moldName,
+            moldModelName,
         );
     }
 
-    public formModel(
-        formModelName: string,
-    ): FormModelRef {
-        return new FormModelRef(
+    public propertyFormModel(
+        propertyFormModelName: string,
+    ): PropertyFormModelRef {
+        return new PropertyFormModelRef(
             this.namespaceName,
-            formModelName,
+            propertyFormModelName,
         );
     }
 
@@ -96,7 +96,7 @@ export default class NamespaceRef {
     }
 
     public acquireActionsToPropertyFormProperties(
-        formModelName: string,
+        propertyFormModelName: string,
         propertyId: string,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
@@ -104,7 +104,7 @@ export default class NamespaceRef {
     ): AcquireActionsToPropertyFormProperties {
         return new AcquireActionsToPropertyFormProperties(
             this.namespaceName,
-            formModelName,
+            propertyFormModelName,
             propertyId,
             acquireAction,
             config,

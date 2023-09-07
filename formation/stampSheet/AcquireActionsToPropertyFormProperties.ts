@@ -21,7 +21,7 @@ export default class AcquireActionsToPropertyFormProperties extends AcquireActio
 
     public constructor(
         namespaceName: string,
-        formModelName: string,
+        propertyFormModelName: string,
         propertyId: string,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
@@ -30,7 +30,7 @@ export default class AcquireActionsToPropertyFormProperties extends AcquireActio
         let properties: {[name: string]: any} = {};
 
         properties["namespaceName"] = namespaceName
-        properties["formModelName"] = formModelName
+        properties["propertyFormModelName"] = propertyFormModelName
         properties["propertyId"] = propertyId
         properties["acquireAction"] = acquireAction
         properties["config"] = config

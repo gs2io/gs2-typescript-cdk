@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.AcquireActionConfig = exports.SlotWithSignaturePropertyType = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.MoldModel = exports.FormModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.AcquireActionConfig = exports.SlotWithSignaturePropertyType = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.PropertyFormModel = exports.MoldModel = exports.FormModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,8 @@ const FormModel_1 = tslib_1.__importDefault(require("./FormModel"));
 exports.FormModel = FormModel_1.default;
 const MoldModel_1 = tslib_1.__importDefault(require("./MoldModel"));
 exports.MoldModel = MoldModel_1.default;
+const PropertyFormModel_1 = tslib_1.__importDefault(require("./PropertyFormModel"));
+exports.PropertyFormModel = PropertyFormModel_1.default;
 const Slot_1 = tslib_1.__importDefault(require("./Slot"));
 exports.Slot = Slot_1.default;
 const SlotModel_1 = tslib_1.__importDefault(require("./SlotModel"));

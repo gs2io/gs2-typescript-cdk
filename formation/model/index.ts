@@ -19,6 +19,8 @@ import FormModel from "./FormModel";
 import { FormModelOptions } from "./options/FormModelOptions";
 import MoldModel from "./MoldModel";
 import { MoldModelOptions } from "./options/MoldModelOptions";
+import PropertyFormModel from "./PropertyFormModel";
+import { PropertyFormModelOptions } from "./options/PropertyFormModelOptions";
 import Slot from "./Slot";
 import { SlotOptions } from "./options/SlotOptions";
 import SlotModel from "./SlotModel";
@@ -37,6 +39,8 @@ export {
     FormModelOptions,
     MoldModel,
     MoldModelOptions,
+    PropertyFormModel,
+    PropertyFormModelOptions,
     Slot,
     SlotOptions,
     SlotModel,

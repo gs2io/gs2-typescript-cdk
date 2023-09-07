@@ -15,19 +15,19 @@
  */
 import {CdkResource, Stack} from "../../core/model";
 import MoldModel from "./MoldModel";
-import FormModel from "./FormModel";
+import PropertyFormModel from "./PropertyFormModel";
 
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2019-09-09";
     private readonly namespaceName: string;
     private readonly moldModels: MoldModel[];
-    private readonly formModels: FormModel[];
+    private readonly propertyFormModels: PropertyFormModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
         moldModels: MoldModel[],
-        formModels: FormModel[],
+        propertyFormModels: PropertyFormModel[],
     ) {
         super(
             "Formation_CurrentFormMaster_" + namespaceName
@@ -35,7 +35,7 @@ export default class CurrentMasterData extends CdkResource {
 
         this.namespaceName = namespaceName;
         this.moldModels = moldModels;
-        this.formModels = formModels;
+        this.propertyFormModels = propertyFormModels;
         stack.addResource(
             this,
         );
@@ -61,8 +61,8 @@ export default class CurrentMasterData extends CdkResource {
             settings["moldModels"] = this.moldModels.map(v => v.properties(
                 ));
         }
-        if (this.formModels != null) {
-            settings["formModels"] = this.formModels.map(v => v.properties(
+        if (this.propertyFormModels != null) {
+            settings["propertyFormModels"] = this.propertyFormModels.map(v => v.properties(
                 ));
         }
 

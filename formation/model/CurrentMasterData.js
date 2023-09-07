@@ -17,12 +17,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const model_1 = require("../../core/model");
 class CurrentMasterData extends model_1.CdkResource {
-    constructor(stack, namespaceName, moldModels, formModels) {
+    constructor(stack, namespaceName, moldModels, propertyFormModels) {
         super("Formation_CurrentFormMaster_" + namespaceName);
         this.version = "2019-09-09";
         this.namespaceName = namespaceName;
         this.moldModels = moldModels;
-        this.formModels = formModels;
+        this.propertyFormModels = propertyFormModels;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -38,8 +38,8 @@ class CurrentMasterData extends model_1.CdkResource {
         if (this.moldModels != null) {
             settings["moldModels"] = this.moldModels.map(v => v.properties());
         }
-        if (this.formModels != null) {
-            settings["formModels"] = this.formModels.map(v => v.properties());
+        if (this.propertyFormModels != null) {
+            settings["propertyFormModels"] = this.propertyFormModels.map(v => v.properties());
         }
         if (this.namespaceName != null) {
             properties["NamespaceName"] = this.namespaceName;

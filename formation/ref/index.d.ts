@@ -1,4 +1,5 @@
 import NamespaceRef from "./NamespaceRef";
 import FormModelRef from "./FormModelRef";
 import MoldModelRef from "./MoldModelRef";
-export { NamespaceRef, FormModelRef, MoldModelRef, };
+import PropertyFormModelRef from "./PropertyFormModelRef";
+export { NamespaceRef, FormModelRef, MoldModelRef, PropertyFormModelRef, };

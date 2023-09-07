@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MoldModelRef = exports.FormModelRef = exports.NamespaceRef = void 0;
+exports.PropertyFormModelRef = exports.MoldModelRef = exports.FormModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,4 +23,6 @@ const FormModelRef_1 = tslib_1.__importDefault(require("./FormModelRef"));
 exports.FormModelRef = FormModelRef_1.default;
 const MoldModelRef_1 = tslib_1.__importDefault(require("./MoldModelRef"));
 exports.MoldModelRef = MoldModelRef_1.default;
+const PropertyFormModelRef_1 = tslib_1.__importDefault(require("./PropertyFormModelRef"));
+exports.PropertyFormModelRef = PropertyFormModelRef_1.default;
 //# sourceMappingURL=index.js.map

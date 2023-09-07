@@ -23,7 +23,7 @@ import LogSetting from "../../core/model/LogSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import MoldModel from "./MoldModel";
-import FormModel from "./FormModel";
+import PropertyFormModel from "./PropertyFormModel";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -116,13 +116,13 @@ export default class Namespace extends CdkResource {
 
     public masterData(
         moldModels: MoldModel[],
-        formModels: FormModel[],
+        propertyFormModels: PropertyFormModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             moldModels,
-            formModels,
+            propertyFormModels,
         ).addDependsOn(
             this,
         );

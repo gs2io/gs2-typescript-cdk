@@ -15,6 +15,7 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import FormModelRef from "./FormModelRef";
 import AddMoldCapacityByUserId from "../stampSheet/AddMoldCapacityByUserId";
 import SetMoldCapacityByUserId from "../stampSheet/SetMoldCapacityByUserId";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
@@ -24,41 +25,54 @@ import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 
 export default class MoldModelRef {
     private readonly namespaceName: string;
-    private readonly moldName: string;
+    private readonly moldModelName: string;
 
     public constructor(
         namespaceName: string,
-        moldName: string,
+        moldModelName: string,
     ) {
         this.namespaceName = namespaceName;
-        this.moldName = moldName;
+        this.moldModelName = moldModelName;
+    }
+
+    public formModel(
+        formModelName: string,
+    ): FormModelRef {
+        return new FormModelRef(
+            this.namespaceName,
+            this.moldModelName,
+            formModelName,
+        );
     }
 
     public addMoldCapacity(
+        moldName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): AddMoldCapacityByUserId {
         return new AddMoldCapacityByUserId(
             this.namespaceName,
-            this.moldName,
+            moldName,
             capacity,
             userId,
         );
     }
 
     public setMoldCapacity(
+        moldName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): SetMoldCapacityByUserId {
         return new SetMoldCapacityByUserId(
             this.namespaceName,
-            this.moldName,
+            moldName,
             capacity,
             userId,
         );
     }
 
     public acquireActionsToFormProperties(
+        moldName: string,
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
@@ -66,7 +80,7 @@ export default class MoldModelRef {
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
             this.namespaceName,
-            this.moldName,
+            moldName,
             index,
             acquireAction,
             config,
@@ -75,12 +89,13 @@ export default class MoldModelRef {
     }
 
     public subMoldCapacity(
+        moldName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): SubMoldCapacityByUserId {
         return new SubMoldCapacityByUserId(
             this.namespaceName,
-            this.moldName,
+            moldName,
             capacity,
             userId,
         );
@@ -103,7 +118,7 @@ export default class MoldModelRef {
                 this.namespaceName,
                 "model",
                 "mold",
-                this.moldName,
+                this.moldModelName,
             ],
         ).str(
         );

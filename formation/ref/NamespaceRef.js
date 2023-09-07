@@ -18,7 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const MoldModelRef_1 = tslib_1.__importDefault(require("./MoldModelRef"));
-const FormModelRef_1 = tslib_1.__importDefault(require("./FormModelRef"));
+const PropertyFormModelRef_1 = tslib_1.__importDefault(require("./PropertyFormModelRef"));
 const AddMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddMoldCapacityByUserId"));
 const SetMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMoldCapacityByUserId"));
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
@@ -28,11 +28,11 @@ class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
-    moldModel(moldName) {
-        return new MoldModelRef_1.default(this.namespaceName, moldName);
+    moldModel(moldModelName) {
+        return new MoldModelRef_1.default(this.namespaceName, moldModelName);
     }
-    formModel(formModelName) {
-        return new FormModelRef_1.default(this.namespaceName, formModelName);
+    propertyFormModel(propertyFormModelName) {
+        return new PropertyFormModelRef_1.default(this.namespaceName, propertyFormModelName);
     }
     addMoldCapacity(moldName, capacity, userId = "#{userId}") {
         return new AddMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
@@ -43,8 +43,8 @@ class NamespaceRef {
     acquireActionsToFormProperties(moldName, index, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldName, index, acquireAction, config, userId);
     }
-    acquireActionsToPropertyFormProperties(formModelName, propertyId, acquireAction, config = null, userId = "#{userId}") {
-        return new AcquireActionsToPropertyFormProperties_1.default(this.namespaceName, formModelName, propertyId, acquireAction, config, userId);
+    acquireActionsToPropertyFormProperties(propertyFormModelName, propertyId, acquireAction, config = null, userId = "#{userId}") {
+        return new AcquireActionsToPropertyFormProperties_1.default(this.namespaceName, propertyFormModelName, propertyId, acquireAction, config, userId);
     }
     subMoldCapacity(moldName, capacity, userId = "#{userId}") {
         return new SubMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);

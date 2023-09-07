@@ -13,14 +13,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import FormModelRef from "./FormModelRef";
-import MoldModelRef from "./MoldModelRef";
-import PropertyFormModelRef from "./PropertyFormModelRef";
+import SlotModel from "../SlotModel";
 
-export {
-    NamespaceRef,
-    FormModelRef,
-    MoldModelRef,
-    PropertyFormModelRef,
+export interface PropertyFormModelOptions {
+    metadata?: string|null;
 }
+

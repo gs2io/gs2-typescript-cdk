@@ -2,7 +2,7 @@ import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
 import NamespaceRef from "../ref/NamespaceRef";
 import MoldModel from "./MoldModel";
-import FormModel from "./FormModel";
+import PropertyFormModel from "./PropertyFormModel";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
@@ -20,5 +20,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(moldModels: MoldModel[], formModels: FormModel[]): Namespace;
+    masterData(moldModels: MoldModel[], propertyFormModels: PropertyFormModel[]): Namespace;
 }

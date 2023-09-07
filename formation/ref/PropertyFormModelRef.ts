@@ -15,36 +15,32 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
+import AcquireActionsToPropertyFormProperties from "../stampSheet/AcquireActionsToPropertyFormProperties";
 import { AcquireAction } from "../../core/model";
 import AcquireActionConfig from "../model/AcquireActionConfig";
 
-export default class FormModelRef {
+export default class PropertyFormModelRef {
     private readonly namespaceName: string;
-    private readonly moldModelName: string;
-    private readonly formModelName: string;
+    private readonly propertyFormModelName: string;
 
     public constructor(
         namespaceName: string,
-        moldModelName: string,
-        formModelName: string,
+        propertyFormModelName: string,
     ) {
         this.namespaceName = namespaceName;
-        this.moldModelName = moldModelName;
-        this.formModelName = formModelName;
+        this.propertyFormModelName = propertyFormModelName;
     }
 
-    public acquireActionsToFormProperties(
-        moldName: string,
-        index: number,
+    public acquireActionsToPropertyFormProperties(
+        propertyId: string,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
         userId: string|null = "#{userId}",
-    ): AcquireActionsToFormProperties {
-        return new AcquireActionsToFormProperties(
+    ): AcquireActionsToPropertyFormProperties {
+        return new AcquireActionsToPropertyFormProperties(
             this.namespaceName,
-            moldName,
-            index,
+            this.propertyFormModelName,
+            propertyId,
             acquireAction,
             config,
             userId,
@@ -67,11 +63,8 @@ export default class FormModelRef {
                 "formation",
                 this.namespaceName,
                 "model",
-                "mold",
-                this.moldModelName,
-                "model",
-                "form",
-                this.formModelName,
+                "propertyForm",
+                this.propertyFormModelName,
             ],
         ).str(
         );

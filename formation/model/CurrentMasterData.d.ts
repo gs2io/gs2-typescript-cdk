@@ -1,12 +1,12 @@
 import { CdkResource, Stack } from "../../core/model";
 import MoldModel from "./MoldModel";
-import FormModel from "./FormModel";
+import PropertyFormModel from "./PropertyFormModel";
 export default class CurrentMasterData extends CdkResource {
     private readonly version;
     private readonly namespaceName;
     private readonly moldModels;
-    private readonly formModels;
-    constructor(stack: Stack, namespaceName: string, moldModels: MoldModel[], formModels: FormModel[]);
+    private readonly propertyFormModels;
+    constructor(stack: Stack, namespaceName: string, moldModels: MoldModel[], propertyFormModels: PropertyFormModel[]);
     alternateKeys(): string;
     resourceType(): string;
     properties(): {

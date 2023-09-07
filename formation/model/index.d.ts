@@ -4,6 +4,8 @@ import FormModel from "./FormModel";
 import { FormModelOptions } from "./options/FormModelOptions";
 import MoldModel from "./MoldModel";
 import { MoldModelOptions } from "./options/MoldModelOptions";
+import PropertyFormModel from "./PropertyFormModel";
+import { PropertyFormModelOptions } from "./options/PropertyFormModelOptions";
 import Slot from "./Slot";
 import { SlotOptions } from "./options/SlotOptions";
 import SlotModel from "./SlotModel";
@@ -14,4 +16,4 @@ import { SlotWithSignaturePropertyType } from "./enum/SlotWithSignaturePropertyT
 import AcquireActionConfig from "./AcquireActionConfig";
 import { AcquireActionConfigOptions } from "./options/AcquireActionConfigOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, FormModel, FormModelOptions, MoldModel, MoldModelOptions, Slot, SlotOptions, SlotModel, SlotModelOptions, SlotWithSignature, SlotWithSignatureOptions, SlotWithSignaturePropertyType, AcquireActionConfig, AcquireActionConfigOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, FormModel, FormModelOptions, MoldModel, MoldModelOptions, PropertyFormModel, PropertyFormModelOptions, Slot, SlotOptions, SlotModel, SlotModelOptions, SlotWithSignature, SlotWithSignatureOptions, SlotWithSignaturePropertyType, AcquireActionConfig, AcquireActionConfigOptions, CurrentMasterData, };

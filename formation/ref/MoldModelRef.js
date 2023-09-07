@@ -17,26 +17,30 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const FormModelRef_1 = tslib_1.__importDefault(require("./FormModelRef"));
 const AddMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddMoldCapacityByUserId"));
 const SetMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMoldCapacityByUserId"));
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
 const SubMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SubMoldCapacityByUserId"));
 class MoldModelRef {
-    constructor(namespaceName, moldName) {
+    constructor(namespaceName, moldModelName) {
         this.namespaceName = namespaceName;
-        this.moldName = moldName;
+        this.moldModelName = moldModelName;
     }
-    addMoldCapacity(capacity, userId = "#{userId}") {
-        return new AddMoldCapacityByUserId_1.default(this.namespaceName, this.moldName, capacity, userId);
+    formModel(formModelName) {
+        return new FormModelRef_1.default(this.namespaceName, this.moldModelName, formModelName);
     }
-    setMoldCapacity(capacity, userId = "#{userId}") {
-        return new SetMoldCapacityByUserId_1.default(this.namespaceName, this.moldName, capacity, userId);
+    addMoldCapacity(moldName, capacity, userId = "#{userId}") {
+        return new AddMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
     }
-    acquireActionsToFormProperties(index, acquireAction, config = null, userId = "#{userId}") {
-        return new AcquireActionsToFormProperties_1.default(this.namespaceName, this.moldName, index, acquireAction, config, userId);
+    setMoldCapacity(moldName, capacity, userId = "#{userId}") {
+        return new SetMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
     }
-    subMoldCapacity(capacity, userId = "#{userId}") {
-        return new SubMoldCapacityByUserId_1.default(this.namespaceName, this.moldName, capacity, userId);
+    acquireActionsToFormProperties(moldName, index, acquireAction, config = null, userId = "#{userId}") {
+        return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldName, index, acquireAction, config, userId);
+    }
+    subMoldCapacity(moldName, capacity, userId = "#{userId}") {
+        return new SubMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
     }
     grn() {
         return new func_1.Join(":", [
@@ -48,7 +52,7 @@ class MoldModelRef {
             this.namespaceName,
             "model",
             "mold",
-            this.moldName,
+            this.moldModelName,
         ]).str();
     }
 }

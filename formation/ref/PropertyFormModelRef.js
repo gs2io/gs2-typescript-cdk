@@ -17,15 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
-class FormModelRef {
-    constructor(namespaceName, moldModelName, formModelName) {
+const AcquireActionsToPropertyFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToPropertyFormProperties"));
+class PropertyFormModelRef {
+    constructor(namespaceName, propertyFormModelName) {
         this.namespaceName = namespaceName;
-        this.moldModelName = moldModelName;
-        this.formModelName = formModelName;
+        this.propertyFormModelName = propertyFormModelName;
     }
-    acquireActionsToFormProperties(moldName, index, acquireAction, config = null, userId = "#{userId}") {
-        return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldName, index, acquireAction, config, userId);
+    acquireActionsToPropertyFormProperties(propertyId, acquireAction, config = null, userId = "#{userId}") {
+        return new AcquireActionsToPropertyFormProperties_1.default(this.namespaceName, this.propertyFormModelName, propertyId, acquireAction, config, userId);
     }
     grn() {
         return new func_1.Join(":", [
@@ -36,13 +35,10 @@ class FormModelRef {
             "formation",
             this.namespaceName,
             "model",
-            "mold",
-            this.moldModelName,
-            "model",
-            "form",
-            this.formModelName,
+            "propertyForm",
+            this.propertyFormModelName,
         ]).str();
     }
 }
-exports.default = FormModelRef;
-//# sourceMappingURL=FormModelRef.js.map
+exports.default = PropertyFormModelRef;
+//# sourceMappingURL=PropertyFormModelRef.js.map
