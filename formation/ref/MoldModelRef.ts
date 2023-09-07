@@ -46,33 +46,30 @@ export default class MoldModelRef {
     }
 
     public addMoldCapacity(
-        moldName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): AddMoldCapacityByUserId {
         return new AddMoldCapacityByUserId(
             this.namespaceName,
-            moldName,
+            this.moldModelName,
             capacity,
             userId,
         );
     }
 
     public setMoldCapacity(
-        moldName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): SetMoldCapacityByUserId {
         return new SetMoldCapacityByUserId(
             this.namespaceName,
-            moldName,
+            this.moldModelName,
             capacity,
             userId,
         );
     }
 
     public acquireActionsToFormProperties(
-        moldName: string,
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
@@ -80,7 +77,7 @@ export default class MoldModelRef {
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
             this.namespaceName,
-            moldName,
+            this.moldModelName,
             index,
             acquireAction,
             config,
@@ -89,13 +86,12 @@ export default class MoldModelRef {
     }
 
     public subMoldCapacity(
-        moldName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): SubMoldCapacityByUserId {
         return new SubMoldCapacityByUserId(
             this.namespaceName,
-            moldName,
+            this.moldModelName,
             capacity,
             userId,
         );

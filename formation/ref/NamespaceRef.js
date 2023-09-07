@@ -34,20 +34,20 @@ class NamespaceRef {
     propertyFormModel(propertyFormModelName) {
         return new PropertyFormModelRef_1.default(this.namespaceName, propertyFormModelName);
     }
-    addMoldCapacity(moldName, capacity, userId = "#{userId}") {
-        return new AddMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
+    addMoldCapacity(moldModelName, capacity, userId = "#{userId}") {
+        return new AddMoldCapacityByUserId_1.default(this.namespaceName, moldModelName, capacity, userId);
     }
-    setMoldCapacity(moldName, capacity, userId = "#{userId}") {
-        return new SetMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
+    setMoldCapacity(moldModelName, capacity, userId = "#{userId}") {
+        return new SetMoldCapacityByUserId_1.default(this.namespaceName, moldModelName, capacity, userId);
     }
-    acquireActionsToFormProperties(moldName, index, acquireAction, config = null, userId = "#{userId}") {
-        return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldName, index, acquireAction, config, userId);
+    acquireActionsToFormProperties(moldModelName, index, acquireAction, config = null, userId = "#{userId}") {
+        return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldModelName, index, acquireAction, config, userId);
     }
     acquireActionsToPropertyFormProperties(propertyFormModelName, propertyId, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToPropertyFormProperties_1.default(this.namespaceName, propertyFormModelName, propertyId, acquireAction, config, userId);
     }
-    subMoldCapacity(moldName, capacity, userId = "#{userId}") {
-        return new SubMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
+    subMoldCapacity(moldModelName, capacity, userId = "#{userId}") {
+        return new SubMoldCapacityByUserId_1.default(this.namespaceName, moldModelName, capacity, userId);
     }
     grn() {
         return new func_1.Join(":", [

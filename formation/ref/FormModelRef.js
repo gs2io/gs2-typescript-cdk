@@ -24,8 +24,8 @@ class FormModelRef {
         this.moldModelName = moldModelName;
         this.formModelName = formModelName;
     }
-    acquireActionsToFormProperties(moldName, index, acquireAction, config = null, userId = "#{userId}") {
-        return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldName, index, acquireAction, config, userId);
+    acquireActionsToFormProperties(index, acquireAction, config = null, userId = "#{userId}") {
+        return new AcquireActionsToFormProperties_1.default(this.namespaceName, this.moldModelName, index, acquireAction, config, userId);
     }
     grn() {
         return new func_1.Join(":", [

@@ -53,33 +53,33 @@ export default class NamespaceRef {
     }
 
     public addMoldCapacity(
-        moldName: string,
+        moldModelName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): AddMoldCapacityByUserId {
         return new AddMoldCapacityByUserId(
             this.namespaceName,
-            moldName,
+            moldModelName,
             capacity,
             userId,
         );
     }
 
     public setMoldCapacity(
-        moldName: string,
+        moldModelName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): SetMoldCapacityByUserId {
         return new SetMoldCapacityByUserId(
             this.namespaceName,
-            moldName,
+            moldModelName,
             capacity,
             userId,
         );
     }
 
     public acquireActionsToFormProperties(
-        moldName: string,
+        moldModelName: string,
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
@@ -87,7 +87,7 @@ export default class NamespaceRef {
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
             this.namespaceName,
-            moldName,
+            moldModelName,
             index,
             acquireAction,
             config,
@@ -113,13 +113,13 @@ export default class NamespaceRef {
     }
 
     public subMoldCapacity(
-        moldName: string,
+        moldModelName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ): SubMoldCapacityByUserId {
         return new SubMoldCapacityByUserId(
             this.namespaceName,
-            moldName,
+            moldModelName,
             capacity,
             userId,
         );

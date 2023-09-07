@@ -17,10 +17,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SubMoldCapacityByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, moldName, capacity, userId = "#{userId}") {
+    constructor(namespaceName, moldModelName, capacity, userId = "#{userId}") {
         let properties = {};
         properties["namespaceName"] = namespaceName;
-        properties["moldName"] = moldName;
+        properties["moldModelName"] = moldModelName;
         properties["capacity"] = capacity;
         properties["userId"] = userId;
         super("Gs2Formation:SubMoldCapacityByUserId", properties);

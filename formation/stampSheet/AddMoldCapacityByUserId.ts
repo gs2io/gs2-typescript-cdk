@@ -20,14 +20,14 @@ export default class AddMoldCapacityByUserId extends AcquireAction {
 
     public constructor(
         namespaceName: string,
-        moldName: string,
+        moldModelName: string,
         capacity: number,
         userId: string|null = "#{userId}",
     ) {
         let properties: {[name: string]: any} = {};
 
         properties["namespaceName"] = namespaceName
-        properties["moldName"] = moldName
+        properties["moldModelName"] = moldModelName
         properties["capacity"] = capacity
         properties["userId"] = userId
 

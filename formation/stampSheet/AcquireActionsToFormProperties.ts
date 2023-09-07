@@ -21,7 +21,7 @@ export default class AcquireActionsToFormProperties extends AcquireAction {
 
     public constructor(
         namespaceName: string,
-        moldName: string,
+        moldModelName: string,
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
@@ -30,7 +30,7 @@ export default class AcquireActionsToFormProperties extends AcquireAction {
         let properties: {[name: string]: any} = {};
 
         properties["namespaceName"] = namespaceName
-        properties["moldName"] = moldName
+        properties["moldModelName"] = moldModelName
         properties["index"] = index
         properties["acquireAction"] = acquireAction
         properties["config"] = config

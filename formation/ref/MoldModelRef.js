@@ -30,17 +30,17 @@ class MoldModelRef {
     formModel(formModelName) {
         return new FormModelRef_1.default(this.namespaceName, this.moldModelName, formModelName);
     }
-    addMoldCapacity(moldName, capacity, userId = "#{userId}") {
-        return new AddMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
+    addMoldCapacity(capacity, userId = "#{userId}") {
+        return new AddMoldCapacityByUserId_1.default(this.namespaceName, this.moldModelName, capacity, userId);
     }
-    setMoldCapacity(moldName, capacity, userId = "#{userId}") {
-        return new SetMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
+    setMoldCapacity(capacity, userId = "#{userId}") {
+        return new SetMoldCapacityByUserId_1.default(this.namespaceName, this.moldModelName, capacity, userId);
     }
-    acquireActionsToFormProperties(moldName, index, acquireAction, config = null, userId = "#{userId}") {
-        return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldName, index, acquireAction, config, userId);
+    acquireActionsToFormProperties(index, acquireAction, config = null, userId = "#{userId}") {
+        return new AcquireActionsToFormProperties_1.default(this.namespaceName, this.moldModelName, index, acquireAction, config, userId);
     }
-    subMoldCapacity(moldName, capacity, userId = "#{userId}") {
-        return new SubMoldCapacityByUserId_1.default(this.namespaceName, moldName, capacity, userId);
+    subMoldCapacity(capacity, userId = "#{userId}") {
+        return new SubMoldCapacityByUserId_1.default(this.namespaceName, this.moldModelName, capacity, userId);
     }
     grn() {
         return new func_1.Join(":", [

@@ -12,10 +12,10 @@ export default class NamespaceRef {
     constructor(namespaceName: string);
     moldModel(moldModelName: string): MoldModelRef;
     propertyFormModel(propertyFormModelName: string): PropertyFormModelRef;
-    addMoldCapacity(moldName: string, capacity: number, userId?: string | null): AddMoldCapacityByUserId;
-    setMoldCapacity(moldName: string, capacity: number, userId?: string | null): SetMoldCapacityByUserId;
-    acquireActionsToFormProperties(moldName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
+    addMoldCapacity(moldModelName: string, capacity: number, userId?: string | null): AddMoldCapacityByUserId;
+    setMoldCapacity(moldModelName: string, capacity: number, userId?: string | null): SetMoldCapacityByUserId;
+    acquireActionsToFormProperties(moldModelName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
     acquireActionsToPropertyFormProperties(propertyFormModelName: string, propertyId: string, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToPropertyFormProperties;
-    subMoldCapacity(moldName: string, capacity: number, userId?: string | null): SubMoldCapacityByUserId;
+    subMoldCapacity(moldModelName: string, capacity: number, userId?: string | null): SubMoldCapacityByUserId;
     grn(): string;
 }

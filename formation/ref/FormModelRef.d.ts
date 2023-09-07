@@ -6,6 +6,6 @@ export default class FormModelRef {
     private readonly moldModelName;
     private readonly formModelName;
     constructor(namespaceName: string, moldModelName: string, formModelName: string);
-    acquireActionsToFormProperties(moldName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
+    acquireActionsToFormProperties(index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
     grn(): string;
 }

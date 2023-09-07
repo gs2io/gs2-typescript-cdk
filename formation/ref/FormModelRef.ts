@@ -35,7 +35,6 @@ export default class FormModelRef {
     }
 
     public acquireActionsToFormProperties(
-        moldName: string,
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
@@ -43,7 +42,7 @@ export default class FormModelRef {
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
             this.namespaceName,
-            moldName,
+            this.moldModelName,
             index,
             acquireAction,
             config,

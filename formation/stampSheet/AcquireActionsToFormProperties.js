@@ -17,10 +17,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireActionsToFormProperties extends model_1.AcquireAction {
-    constructor(namespaceName, moldName, index, acquireAction, config = null, userId = "#{userId}") {
+    constructor(namespaceName, moldModelName, index, acquireAction, config = null, userId = "#{userId}") {
         let properties = {};
         properties["namespaceName"] = namespaceName;
-        properties["moldName"] = moldName;
+        properties["moldModelName"] = moldModelName;
         properties["index"] = index;
         properties["acquireAction"] = acquireAction;
         properties["config"] = config;
