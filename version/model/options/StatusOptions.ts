@@ -14,6 +14,7 @@
  * permissions and limitations under the License.
  */
 import Version from "../Version";
+import ScheduleVersion from "../ScheduleVersion";
 import VersionModel from "../VersionModel";
 
 export interface StatusOptions {

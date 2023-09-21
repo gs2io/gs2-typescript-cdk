@@ -14,8 +14,11 @@
  * permissions and limitations under the License.
  */
 import Version from "../Version";
+import ScheduleVersion from "../ScheduleVersion";
 import { VersionModelScope } from "../enum/VersionModelScope";
+import { VersionModelType } from "../enum/VersionModelType";
 
 export interface VersionModelScopeIsActiveOptions {
     metadata?: string|null;
+    scheduleVersions?: ScheduleVersion[]|null;
 }

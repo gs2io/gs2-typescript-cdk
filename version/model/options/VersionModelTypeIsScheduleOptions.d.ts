@@ -1,5 +1,5 @@
 import ScheduleVersion from "../ScheduleVersion";
-export interface VersionModelScopeIsActiveOptions {
+export interface VersionModelTypeIsScheduleOptions {
     metadata?: string | null;
     scheduleVersions?: ScheduleVersion[] | null;
 }

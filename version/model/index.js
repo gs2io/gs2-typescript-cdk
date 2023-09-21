@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.VersionModelScope = exports.VersionModel = exports.Version = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.ScheduleVersion = exports.Version = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.VersionModelType = exports.VersionModelScope = exports.VersionModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,18 +19,22 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-const Version_1 = tslib_1.__importDefault(require("./Version"));
-exports.Version = Version_1.default;
 const VersionModel_1 = tslib_1.__importDefault(require("./VersionModel"));
 exports.VersionModel = VersionModel_1.default;
 const VersionModelScope_1 = require("./enum/VersionModelScope");
 Object.defineProperty(exports, "VersionModelScope", { enumerable: true, get: function () { return VersionModelScope_1.VersionModelScope; } });
+const VersionModelType_1 = require("./enum/VersionModelType");
+Object.defineProperty(exports, "VersionModelType", { enumerable: true, get: function () { return VersionModelType_1.VersionModelType; } });
 const Status_1 = tslib_1.__importDefault(require("./Status"));
 exports.Status = Status_1.default;
 const TargetVersion_1 = tslib_1.__importDefault(require("./TargetVersion"));
 exports.TargetVersion = TargetVersion_1.default;
 const SignTargetVersion_1 = tslib_1.__importDefault(require("./SignTargetVersion"));
 exports.SignTargetVersion = SignTargetVersion_1.default;
+const Version_1 = tslib_1.__importDefault(require("./Version"));
+exports.Version = Version_1.default;
+const ScheduleVersion_1 = tslib_1.__importDefault(require("./ScheduleVersion"));
+exports.ScheduleVersion = ScheduleVersion_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

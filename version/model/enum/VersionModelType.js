@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,12 +14,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import Version from "../Version";
-import ScheduleVersion from "../ScheduleVersion";
-import { VersionModelScope } from "../enum/VersionModelScope";
-import { VersionModelType } from "../enum/VersionModelType";
-
-export interface VersionModelScopeIsPassiveOptions {
-    metadata?: string|null;
-    scheduleVersions?: ScheduleVersion[]|null;
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VersionModelType = void 0;
+exports.VersionModelType = {
+    SIMPLE: "simple",
+    SCHEDULE: "schedule",
+};
+//# sourceMappingURL=VersionModelType.js.map

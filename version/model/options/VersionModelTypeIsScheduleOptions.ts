@@ -18,7 +18,7 @@ import ScheduleVersion from "../ScheduleVersion";
 import { VersionModelScope } from "../enum/VersionModelScope";
 import { VersionModelType } from "../enum/VersionModelType";
 
-export interface VersionModelScopeIsPassiveOptions {
+export interface VersionModelTypeIsScheduleOptions {
     metadata?: string|null;
     scheduleVersions?: ScheduleVersion[]|null;
 }

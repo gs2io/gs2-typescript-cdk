@@ -18,19 +18,18 @@ import { TargetVersionOptions } from "./options/TargetVersionOptions";
 
 export default class TargetVersion {
     private readonly versionName: string;
-    private readonly version: Version;
     private readonly body: string|null = null;
     private readonly signature: string|null = null;
+    private readonly version: Version|null = null;
 
     public constructor(
         versionName: string,
-        version: Version,
         options: TargetVersionOptions|null = null,
     ) {
         this.versionName = versionName;
-        this.version = version;
         this.body = options?.body ?? null;
         this.signature = options?.signature ?? null;
+        this.version = options?.version ?? null;
     }
 
     public properties(
@@ -40,15 +39,15 @@ export default class TargetVersion {
         if (this.versionName != null) {
             properties["versionName"] = this.versionName;
         }
-        if (this.version != null) {
-            properties["version"] = this.version?.properties(
-            );
-        }
         if (this.body != null) {
             properties["body"] = this.body;
         }
         if (this.signature != null) {
             properties["signature"] = this.signature;
+        }
+        if (this.version != null) {
+            properties["version"] = this.version?.properties(
+            );
         }
 
         return properties;

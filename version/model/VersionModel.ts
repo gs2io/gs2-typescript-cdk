@@ -14,72 +14,111 @@
  * permissions and limitations under the License.
  */
 import Version from "./Version";
+import ScheduleVersion from "./ScheduleVersion";
 import { VersionModelOptions } from "./options/VersionModelOptions";
+import { VersionModelTypeIsSimpleOptions } from "./options/VersionModelTypeIsSimpleOptions";
+import { VersionModelTypeIsScheduleOptions } from "./options/VersionModelTypeIsScheduleOptions";
 import { VersionModelScopeIsPassiveOptions } from "./options/VersionModelScopeIsPassiveOptions";
 import { VersionModelScopeIsActiveOptions } from "./options/VersionModelScopeIsActiveOptions";
 import { VersionModelScope } from "./enum/VersionModelScope";
+import { VersionModelType } from "./enum/VersionModelType";
 
 export default class VersionModel {
     private readonly name: string;
-    private readonly warningVersion: Version;
-    private readonly errorVersion: Version;
     private readonly scope: VersionModelScope;
+    private readonly type: VersionModelType;
     private readonly metadata: string|null = null;
     private readonly currentVersion: Version|null = null;
+    private readonly warningVersion: Version|null = null;
+    private readonly errorVersion: Version|null = null;
+    private readonly scheduleVersions: ScheduleVersion[]|null = null;
     private readonly needSignature: boolean|null = null;
     private readonly signatureKeyId: string|null = null;
 
     public constructor(
         name: string,
-        warningVersion: Version,
-        errorVersion: Version,
         scope: VersionModelScope,
+        type: VersionModelType,
         options: VersionModelOptions|null = null,
     ) {
         this.name = name;
-        this.warningVersion = warningVersion;
-        this.errorVersion = errorVersion;
         this.scope = scope;
+        this.type = type;
         this.metadata = options?.metadata ?? null;
         this.currentVersion = options?.currentVersion ?? null;
+        this.warningVersion = options?.warningVersion ?? null;
+        this.errorVersion = options?.errorVersion ?? null;
+        this.scheduleVersions = options?.scheduleVersions ?? null;
         this.needSignature = options?.needSignature ?? null;
         this.signatureKeyId = options?.signatureKeyId ?? null;
     }
 
-    public static scopeIsPassive(
+    public static typeIsSimple(
         name: string,
+        scope: VersionModelScope,
         warningVersion: Version,
         errorVersion: Version,
+        options: VersionModelTypeIsSimpleOptions|null = null,
+    ): VersionModel {
+        return new VersionModel(
+            name,
+            scope,
+            VersionModelType.SIMPLE,
+            {
+                warningVersion: warningVersion,
+                errorVersion: errorVersion,
+                metadata: options?.metadata,
+                scheduleVersions: options?.scheduleVersions,
+            },
+        );
+    }
+
+    public static typeIsSchedule(
+        name: string,
+        scope: VersionModelScope,
+        options: VersionModelTypeIsScheduleOptions|null = null,
+    ): VersionModel {
+        return new VersionModel(
+            name,
+            scope,
+            VersionModelType.SCHEDULE,
+            {
+                metadata: options?.metadata,
+                scheduleVersions: options?.scheduleVersions,
+            },
+        );
+    }
+
+    public static scopeIsPassive(
+        name: string,
+        type: VersionModelType,
         needSignature: boolean,
         options: VersionModelScopeIsPassiveOptions|null = null,
     ): VersionModel {
         return new VersionModel(
             name,
-            warningVersion,
-            errorVersion,
             VersionModelScope.PASSIVE,
+            type,
             {
                 needSignature: needSignature,
                 metadata: options?.metadata,
+                scheduleVersions: options?.scheduleVersions,
             },
         );
     }
 
     public static scopeIsActive(
         name: string,
-        warningVersion: Version,
-        errorVersion: Version,
-        currentVersion: Version,
+        type: VersionModelType,
         options: VersionModelScopeIsActiveOptions|null = null,
     ): VersionModel {
         return new VersionModel(
             name,
-            warningVersion,
-            errorVersion,
             VersionModelScope.ACTIVE,
+            type,
             {
-                currentVersion: currentVersion,
                 metadata: options?.metadata,
+                scheduleVersions: options?.scheduleVersions,
             },
         );
     }
@@ -94,6 +133,16 @@ export default class VersionModel {
         if (this.metadata != null) {
             properties["metadata"] = this.metadata;
         }
+        if (this.scope != null) {
+            properties["scope"] = this.scope;
+        }
+        if (this.type != null) {
+            properties["type"] = this.type;
+        }
+        if (this.currentVersion != null) {
+            properties["currentVersion"] = this.currentVersion?.properties(
+            );
+        }
         if (this.warningVersion != null) {
             properties["warningVersion"] = this.warningVersion?.properties(
             );
@@ -102,12 +151,9 @@ export default class VersionModel {
             properties["errorVersion"] = this.errorVersion?.properties(
             );
         }
-        if (this.scope != null) {
-            properties["scope"] = this.scope;
-        }
-        if (this.currentVersion != null) {
-            properties["currentVersion"] = this.currentVersion?.properties(
-            );
+        if (this.scheduleVersions != null) {
+            properties["scheduleVersions"] = this.scheduleVersions.map(v => v.properties(
+                ));
         }
         if (this.needSignature != null) {
             properties["needSignature"] = this.needSignature;

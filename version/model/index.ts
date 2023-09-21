@@ -15,11 +15,12 @@
  */
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
-import Version from "./Version";
-import { VersionOptions } from "./options/VersionOptions";
 import VersionModel from "./VersionModel";
 import { VersionModelOptions } from "./options/VersionModelOptions";
 import { VersionModelScope } from "./enum/VersionModelScope";
+import { VersionModelType } from "./enum/VersionModelType";
+import { VersionModelTypeIsSimpleOptions } from "./options/VersionModelTypeIsSimpleOptions"
+import { VersionModelTypeIsScheduleOptions } from "./options/VersionModelTypeIsScheduleOptions"
 import { VersionModelScopeIsPassiveOptions } from "./options/VersionModelScopeIsPassiveOptions"
 import { VersionModelScopeIsActiveOptions } from "./options/VersionModelScopeIsActiveOptions"
 import Status from "./Status";
@@ -28,16 +29,21 @@ import TargetVersion from "./TargetVersion";
 import { TargetVersionOptions } from "./options/TargetVersionOptions";
 import SignTargetVersion from "./SignTargetVersion";
 import { SignTargetVersionOptions } from "./options/SignTargetVersionOptions";
+import Version from "./Version";
+import { VersionOptions } from "./options/VersionOptions";
+import ScheduleVersion from "./ScheduleVersion";
+import { ScheduleVersionOptions } from "./options/ScheduleVersionOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
     Namespace,
     NamespaceOptions,
-    Version,
-    VersionOptions,
     VersionModel,
     VersionModelOptions,
     VersionModelScope,
+    VersionModelType,
+    VersionModelTypeIsSimpleOptions,
+    VersionModelTypeIsScheduleOptions,
     VersionModelScopeIsPassiveOptions,
     VersionModelScopeIsActiveOptions,
     Status,
@@ -46,5 +52,9 @@ export {
     TargetVersionOptions,
     SignTargetVersion,
     SignTargetVersionOptions,
+    Version,
+    VersionOptions,
+    ScheduleVersion,
+    ScheduleVersionOptions,
     CurrentMasterData,
 }
