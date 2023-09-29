@@ -36,12 +36,10 @@ export default class MoldModelRef {
     }
 
     public formModel(
-        formModelName: string,
     ): FormModelRef {
         return new FormModelRef(
             this.namespaceName,
             this.moldModelName,
-            formModelName,
         );
     }
 

@@ -27,8 +27,8 @@ class MoldModelRef {
         this.namespaceName = namespaceName;
         this.moldModelName = moldModelName;
     }
-    formModel(formModelName) {
-        return new FormModelRef_1.default(this.namespaceName, this.moldModelName, formModelName);
+    formModel() {
+        return new FormModelRef_1.default(this.namespaceName, this.moldModelName);
     }
     addMoldCapacity(capacity, userId = "#{userId}") {
         return new AddMoldCapacityByUserId_1.default(this.namespaceName, this.moldModelName, capacity, userId);

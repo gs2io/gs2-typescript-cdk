@@ -19,10 +19,9 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
 class FormModelRef {
-    constructor(namespaceName, moldModelName, formModelName) {
+    constructor(namespaceName, moldModelName) {
         this.namespaceName = namespaceName;
         this.moldModelName = moldModelName;
-        this.formModelName = formModelName;
     }
     acquireActionsToFormProperties(index, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToFormProperties_1.default(this.namespaceName, this.moldModelName, index, acquireAction, config, userId);
@@ -38,9 +37,7 @@ class FormModelRef {
             "model",
             "mold",
             this.moldModelName,
-            "model",
             "form",
-            this.formModelName,
         ]).str();
     }
 }

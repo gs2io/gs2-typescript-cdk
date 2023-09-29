@@ -17,15 +17,18 @@ import { AcquireAction } from "../../core/model";
 import { BoxItemOptions } from "./options/BoxItemOptions";
 
 export default class BoxItem {
+    private readonly prizeId: string;
     private readonly remaining: number;
     private readonly initial: number;
     private readonly acquireActions: AcquireAction[]|null = null;
 
     public constructor(
+        prizeId: string,
         remaining: number,
         initial: number,
         options: BoxItemOptions|null = null,
     ) {
+        this.prizeId = prizeId;
         this.remaining = remaining;
         this.initial = initial;
         this.acquireActions = options?.acquireActions ?? null;
@@ -35,6 +38,9 @@ export default class BoxItem {
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
+        if (this.prizeId != null) {
+            properties["prizeId"] = this.prizeId;
+        }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties(
                 ));

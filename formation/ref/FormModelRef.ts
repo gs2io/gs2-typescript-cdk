@@ -22,16 +22,13 @@ import AcquireActionConfig from "../model/AcquireActionConfig";
 export default class FormModelRef {
     private readonly namespaceName: string;
     private readonly moldModelName: string;
-    private readonly formModelName: string;
 
     public constructor(
         namespaceName: string,
         moldModelName: string,
-        formModelName: string,
     ) {
         this.namespaceName = namespaceName;
         this.moldModelName = moldModelName;
-        this.formModelName = formModelName;
     }
 
     public acquireActionsToFormProperties(
@@ -68,9 +65,7 @@ export default class FormModelRef {
                 "model",
                 "mold",
                 this.moldModelName,
-                "model",
                 "form",
-                this.formModelName,
             ],
         ).str(
         );
