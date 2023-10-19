@@ -58,7 +58,7 @@ export default class NamespaceRef {
     }
 
     public openMessage(
-        messageName: string,
+        messageName: string|null = null,
         userId: string|null = "#{userId}",
     ): OpenMessageByUserId {
         return new OpenMessageByUserId(
@@ -69,7 +69,7 @@ export default class NamespaceRef {
     }
 
     public deleteMessage(
-        messageName: string,
+        messageName: string|null = null,
         userId: string|null = "#{userId}",
     ): DeleteMessageByUserId {
         return new DeleteMessageByUserId(

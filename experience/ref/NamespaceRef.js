@@ -24,6 +24,8 @@ const SetRankCapByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetR
 const MultiplyAcquireActionsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/MultiplyAcquireActionsByUserId"));
 const SubExperienceByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SubExperienceByUserId"));
 const SubRankCapByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SubRankCapByUserId"));
+const VerifyRankByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyRankByUserId"));
+const VerifyRankCapByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyRankCapByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -31,7 +33,7 @@ class NamespaceRef {
     experienceModel(experienceName) {
         return new ExperienceModelRef_1.default(this.namespaceName, experienceName);
     }
-    addExperience(experienceName, propertyId, experienceValue, userId = "#{userId}") {
+    addExperience(experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
         return new AddExperienceByUserId_1.default(this.namespaceName, experienceName, propertyId, experienceValue, userId);
     }
     addRankCap(experienceName, propertyId, rankCapValue, userId = "#{userId}") {
@@ -43,11 +45,17 @@ class NamespaceRef {
     multiplyAcquireActions(experienceName, propertyId, rateName, acquireActions = null, userId = "#{userId}") {
         return new MultiplyAcquireActionsByUserId_1.default(this.namespaceName, experienceName, propertyId, rateName, acquireActions, userId);
     }
-    subExperience(experienceName, propertyId, experienceValue, userId = "#{userId}") {
+    subExperience(experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
         return new SubExperienceByUserId_1.default(this.namespaceName, experienceName, propertyId, experienceValue, userId);
     }
     subRankCap(experienceName, propertyId, rankCapValue, userId = "#{userId}") {
         return new SubRankCapByUserId_1.default(this.namespaceName, experienceName, propertyId, rankCapValue, userId);
+    }
+    verifyRank(experienceName, verifyType, propertyId, rankValue = null, userId = "#{userId}") {
+        return new VerifyRankByUserId_1.default(this.namespaceName, experienceName, verifyType, propertyId, rankValue, userId);
+    }
+    verifyRankCap(experienceName, verifyType, propertyId, rankCapValue, userId = "#{userId}") {
+        return new VerifyRankCapByUserId_1.default(this.namespaceName, experienceName, verifyType, propertyId, rankCapValue, userId);
     }
     grn() {
         return new func_1.Join(":", [

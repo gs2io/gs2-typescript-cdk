@@ -42,7 +42,7 @@ export default class NamespaceRef {
         rateName: string,
         targetItemSetId: string,
         materials: Material[]|null = null,
-        force: boolean,
+        force: boolean|null = null,
         userId: string|null = "#{userId}",
     ): CreateProgressByUserId {
         return new CreateProgressByUserId(

@@ -1,3 +1,4 @@
 import AddEntriesByUserId from "./AddEntriesByUserId";
 import DeleteEntriesByUserId from "./DeleteEntriesByUserId";
-export { AddEntriesByUserId, DeleteEntriesByUserId, };
+import VerifyEntryByUserId from "./VerifyEntryByUserId";
+export { AddEntriesByUserId, DeleteEntriesByUserId, VerifyEntryByUserId, };

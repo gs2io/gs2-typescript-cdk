@@ -5,6 +5,6 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     push(jobs?: JobEntry[] | null, userId?: string | null): PushByUserId;
-    deleteJob(jobName: string, userId?: string | null): DeleteJobByUserId;
+    deleteJob(jobName?: string | null, userId?: string | null): DeleteJobByUserId;
     grn(): string;
 }

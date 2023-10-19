@@ -7,7 +7,7 @@ export default class NamespaceRef {
     constructor(namespaceName: string);
     deposit(slot: number, price: number, count: number, userId?: string | null): DepositByUserId;
     revertRecordReceipt(receipt: string, userId?: string | null): RevertRecordReceipt;
-    withdraw(slot: number, count: number, paidOnly: boolean, userId?: string | null): WithdrawByUserId;
+    withdraw(slot: number, count: number, paidOnly?: boolean | null, userId?: string | null): WithdrawByUserId;
     recordReceipt(contentsId: string, receipt: string, userId?: string | null): RecordReceipt;
     grn(): string;
 }

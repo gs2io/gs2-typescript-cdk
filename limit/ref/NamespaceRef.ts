@@ -19,6 +19,7 @@ import LimitModelRef from "./LimitModelRef";
 import CountDownByUserId from "../stampSheet/CountDownByUserId";
 import DeleteCounterByUserId from "../stampSheet/DeleteCounterByUserId";
 import CountUpByUserId from "../stampSheet/CountUpByUserId";
+import VerifyCounterByUserId from "../stampSheet/VerifyCounterByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -41,7 +42,7 @@ export default class NamespaceRef {
     public countDown(
         limitName: string,
         counterName: string,
-        countDownValue: number,
+        countDownValue: number|null = null,
         userId: string|null = "#{userId}",
     ): CountDownByUserId {
         return new CountDownByUserId(
@@ -69,7 +70,7 @@ export default class NamespaceRef {
     public countUp(
         limitName: string,
         counterName: string,
-        countUpValue: number,
+        countUpValue: number|null = null,
         maxValue: number|null = null,
         userId: string|null = "#{userId}",
     ): CountUpByUserId {
@@ -79,6 +80,23 @@ export default class NamespaceRef {
             counterName,
             countUpValue,
             maxValue,
+            userId,
+        );
+    }
+
+    public verifyCounter(
+        limitName: string,
+        counterName: string,
+        verifyType: string,
+        count: number|null = null,
+        userId: string|null = "#{userId}",
+    ): VerifyCounterByUserId {
+        return new VerifyCounterByUserId(
+            this.namespaceName,
+            limitName,
+            counterName,
+            verifyType,
+            count,
             userId,
         );
     }

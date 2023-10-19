@@ -26,7 +26,7 @@ class Namespace extends model_1.CdkResource {
         super("Experience_Namespace_" + name);
         this.description = null;
         this.transactionSetting = null;
-        this.experienceCapScriptId = null;
+        this.rankCapScriptId = null;
         this.changeExperienceScript = null;
         this.changeRankScript = null;
         this.changeRankCapScript = null;
@@ -36,7 +36,7 @@ class Namespace extends model_1.CdkResource {
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.experienceCapScriptId = (_c = options === null || options === void 0 ? void 0 : options.experienceCapScriptId) !== null && _c !== void 0 ? _c : null;
+        this.rankCapScriptId = (_c = options === null || options === void 0 ? void 0 : options.rankCapScriptId) !== null && _c !== void 0 ? _c : null;
         this.changeExperienceScript = (_d = options === null || options === void 0 ? void 0 : options.changeExperienceScript) !== null && _d !== void 0 ? _d : null;
         this.changeRankScript = (_e = options === null || options === void 0 ? void 0 : options.changeRankScript) !== null && _e !== void 0 ? _e : null;
         this.changeRankCapScript = (_f = options === null || options === void 0 ? void 0 : options.changeRankCapScript) !== null && _f !== void 0 ? _f : null;
@@ -62,8 +62,8 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
-        if (this.experienceCapScriptId != null) {
-            properties["ExperienceCapScriptId"] = this.experienceCapScriptId;
+        if (this.rankCapScriptId != null) {
+            properties["RankCapScriptId"] = this.rankCapScriptId;
         }
         if (this.changeExperienceScript != null) {
             properties["ChangeExperienceScript"] = (_b = this.changeExperienceScript) === null || _b === void 0 ? void 0 : _b.properties();

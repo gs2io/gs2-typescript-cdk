@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const AddEntriesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddEntriesByUserId"));
 const DeleteEntriesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteEntriesByUserId"));
+const VerifyEntryByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyEntryByUserId"));
 class EntryModelRef {
     constructor(namespaceName, entryName) {
         this.namespaceName = namespaceName;
@@ -29,6 +30,9 @@ class EntryModelRef {
     }
     deleteEntries(entryModelNames = null, userId = "#{userId}") {
         return new DeleteEntriesByUserId_1.default(this.namespaceName, entryModelNames, userId);
+    }
+    verifyEntry(entryModelName, verifyType, userId = "#{userId}") {
+        return new VerifyEntryByUserId_1.default(this.namespaceName, entryModelName, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [

@@ -31,10 +31,10 @@ class NamespaceRef {
     sendMessage(metadata, readAcquireActions = null, expiresAt = null, expiresTimeSpan = null, userId = "#{userId}") {
         return new SendMessageByUserId_1.default(this.namespaceName, metadata, readAcquireActions, expiresAt, expiresTimeSpan, userId);
     }
-    openMessage(messageName, userId = "#{userId}") {
+    openMessage(messageName = null, userId = "#{userId}") {
         return new OpenMessageByUserId_1.default(this.namespaceName, messageName, userId);
     }
-    deleteMessage(messageName, userId = "#{userId}") {
+    deleteMessage(messageName = null, userId = "#{userId}") {
         return new DeleteMessageByUserId_1.default(this.namespaceName, messageName, userId);
     }
     grn() {

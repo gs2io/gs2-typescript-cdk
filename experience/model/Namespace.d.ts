@@ -8,7 +8,7 @@ export default class Namespace extends CdkResource {
     private readonly name;
     private readonly description;
     private readonly transactionSetting;
-    private readonly experienceCapScriptId;
+    private readonly rankCapScriptId;
     private readonly changeExperienceScript;
     private readonly changeRankScript;
     private readonly changeRankCapScript;

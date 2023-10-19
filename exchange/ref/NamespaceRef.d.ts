@@ -14,7 +14,7 @@ export default class NamespaceRef {
     exchange(rateName: string, count: number, config?: Config[] | null, userId?: string | null): ExchangeByUserId;
     incrementalExchange(rateName: string, count: number, config?: Config[] | null, userId?: string | null): IncrementalExchangeByUserId;
     unlockIncrementalExchange(rateName: string, lockTransactionId: string, userId?: string | null): UnlockIncrementalExchangeByUserId;
-    createAwait(rateName: string, count: number, userId?: string | null): CreateAwaitByUserId;
-    deleteAwait(awaitName: string, userId?: string | null): DeleteAwaitByUserId;
+    createAwait(rateName: string, count?: number | null, userId?: string | null): CreateAwaitByUserId;
+    deleteAwait(awaitName?: string | null, userId?: string | null): DeleteAwaitByUserId;
     grn(): string;
 }

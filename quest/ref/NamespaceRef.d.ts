@@ -6,7 +6,7 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     questGroupModel(questGroupName: string): QuestGroupModelRef;
-    createProgress(questModelId: string, force: boolean, config?: Config[] | null, userId?: string | null): CreateProgressByUserId;
+    createProgress(questModelId: string, force?: boolean | null, config?: Config[] | null, userId?: string | null): CreateProgressByUserId;
     deleteProgress(userId?: string | null): DeleteProgressByUserId;
     grn(): string;
 }

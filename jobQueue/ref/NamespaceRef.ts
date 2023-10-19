@@ -40,7 +40,7 @@ export default class NamespaceRef {
     }
 
     public deleteJob(
-        jobName: string,
+        jobName: string|null = null,
         userId: string|null = "#{userId}",
     ): DeleteJobByUserId {
         return new DeleteJobByUserId(

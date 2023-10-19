@@ -21,6 +21,7 @@ const AcquireItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/
 const AddReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddReferenceOfByUserId"));
 const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteReferenceOfByUserId"));
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeItemSetByUserId"));
+const VerifyItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyItemSetByUserId"));
 const VerifyReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyReferenceOfByUserId"));
 class ItemModelRef {
     constructor(namespaceName, inventoryName, itemName) {
@@ -28,20 +29,23 @@ class ItemModelRef {
         this.inventoryName = inventoryName;
         this.itemName = itemName;
     }
-    acquireItemSet(acquireCount, expiresAt, createNewItemSet, itemSetName = null, userId = "#{userId}") {
+    acquireItemSet(acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, userId = "#{userId}") {
         return new AcquireItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, acquireCount, expiresAt, createNewItemSet, itemSetName, userId);
     }
-    addReferenceOf(itemSetName, referenceOf, userId = "#{userId}") {
-        return new AddReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, itemSetName, referenceOf, userId);
+    addReferenceOf(referenceOf, itemSetName = null, userId = "#{userId}") {
+        return new AddReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, referenceOf, itemSetName, userId);
     }
-    deleteReferenceOf(itemSetName, referenceOf, userId = "#{userId}") {
-        return new DeleteReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, itemSetName, referenceOf, userId);
+    deleteReferenceOf(referenceOf, itemSetName = null, userId = "#{userId}") {
+        return new DeleteReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, referenceOf, itemSetName, userId);
     }
     consumeItemSet(consumeCount, itemSetName = null, userId = "#{userId}") {
         return new ConsumeItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, consumeCount, itemSetName, userId);
     }
-    verifyReferenceOf(itemSetName, referenceOf, verifyType, userId = "#{userId}") {
-        return new VerifyReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, itemSetName, referenceOf, verifyType, userId);
+    verifyItemSet(verifyType, count, itemSetName = null, userId = "#{userId}") {
+        return new VerifyItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, verifyType, count, itemSetName, userId);
+    }
+    verifyReferenceOf(referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
+        return new VerifyReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, referenceOf, verifyType, itemSetName, userId);
     }
     grn() {
         return new func_1.Join(":", [

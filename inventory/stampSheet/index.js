@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumeBigItemByUserId = exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.ConsumeItemSetByUserId = exports.AcquireBigItemByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
+exports.VerifyBigItemByUserId = exports.ConsumeBigItemByUserId = exports.VerifySimpleItemByUserId = exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.VerifyItemSetByUserId = exports.ConsumeItemSetByUserId = exports.VerifyInventoryCurrentMaxCapacityByUserId = exports.AcquireBigItemByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -31,12 +31,20 @@ const AcquireSimpleItemsByUserId_1 = tslib_1.__importDefault(require("./AcquireS
 exports.AcquireSimpleItemsByUserId = AcquireSimpleItemsByUserId_1.default;
 const AcquireBigItemByUserId_1 = tslib_1.__importDefault(require("./AcquireBigItemByUserId"));
 exports.AcquireBigItemByUserId = AcquireBigItemByUserId_1.default;
+const VerifyInventoryCurrentMaxCapacityByUserId_1 = tslib_1.__importDefault(require("./VerifyInventoryCurrentMaxCapacityByUserId"));
+exports.VerifyInventoryCurrentMaxCapacityByUserId = VerifyInventoryCurrentMaxCapacityByUserId_1.default;
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("./ConsumeItemSetByUserId"));
 exports.ConsumeItemSetByUserId = ConsumeItemSetByUserId_1.default;
+const VerifyItemSetByUserId_1 = tslib_1.__importDefault(require("./VerifyItemSetByUserId"));
+exports.VerifyItemSetByUserId = VerifyItemSetByUserId_1.default;
 const VerifyReferenceOfByUserId_1 = tslib_1.__importDefault(require("./VerifyReferenceOfByUserId"));
 exports.VerifyReferenceOfByUserId = VerifyReferenceOfByUserId_1.default;
 const ConsumeSimpleItemsByUserId_1 = tslib_1.__importDefault(require("./ConsumeSimpleItemsByUserId"));
 exports.ConsumeSimpleItemsByUserId = ConsumeSimpleItemsByUserId_1.default;
+const VerifySimpleItemByUserId_1 = tslib_1.__importDefault(require("./VerifySimpleItemByUserId"));
+exports.VerifySimpleItemByUserId = VerifySimpleItemByUserId_1.default;
 const ConsumeBigItemByUserId_1 = tslib_1.__importDefault(require("./ConsumeBigItemByUserId"));
 exports.ConsumeBigItemByUserId = ConsumeBigItemByUserId_1.default;
+const VerifyBigItemByUserId_1 = tslib_1.__importDefault(require("./VerifyBigItemByUserId"));
+exports.VerifyBigItemByUserId = VerifyBigItemByUserId_1.default;
 //# sourceMappingURL=index.js.map

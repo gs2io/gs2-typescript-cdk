@@ -26,7 +26,7 @@ class NamespaceRef {
     push(jobs = null, userId = "#{userId}") {
         return new PushByUserId_1.default(this.namespaceName, jobs, userId);
     }
-    deleteJob(jobName, userId = "#{userId}") {
+    deleteJob(jobName = null, userId = "#{userId}") {
         return new DeleteJobByUserId_1.default(this.namespaceName, jobName, userId);
     }
     grn() {

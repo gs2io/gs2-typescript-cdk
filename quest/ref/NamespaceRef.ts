@@ -40,7 +40,7 @@ export default class NamespaceRef {
 
     public createProgress(
         questModelId: string,
-        force: boolean,
+        force: boolean|null = null,
         config: Config[]|null = null,
         userId: string|null = "#{userId}",
     ): CreateProgressByUserId {

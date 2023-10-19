@@ -19,6 +19,8 @@ import SetRankCapByUserId from "./SetRankCapByUserId";
 import MultiplyAcquireActionsByUserId from "./MultiplyAcquireActionsByUserId";
 import SubExperienceByUserId from "./SubExperienceByUserId";
 import SubRankCapByUserId from "./SubRankCapByUserId";
+import VerifyRankByUserId from "./VerifyRankByUserId";
+import VerifyRankCapByUserId from "./VerifyRankCapByUserId";
 
 export {
     AddExperienceByUserId,
@@ -27,4 +29,6 @@ export {
     MultiplyAcquireActionsByUserId,
     SubExperienceByUserId,
     SubRankCapByUserId,
+    VerifyRankByUserId,
+    VerifyRankCapByUserId,
 }

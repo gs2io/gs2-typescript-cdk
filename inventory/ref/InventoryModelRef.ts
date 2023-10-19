@@ -21,7 +21,9 @@ import SetCapacityByUserId from "../stampSheet/SetCapacityByUserId";
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
+import VerifyInventoryCurrentMaxCapacityByUserId from "../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
+import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
 
 export default class InventoryModelRef {
@@ -73,8 +75,8 @@ export default class InventoryModelRef {
     public acquireItemSet(
         itemName: string,
         acquireCount: number,
-        expiresAt: number,
-        createNewItemSet: boolean,
+        expiresAt: number|null = null,
+        createNewItemSet: boolean|null = null,
         itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): AcquireItemSetByUserId {
@@ -92,32 +94,46 @@ export default class InventoryModelRef {
 
     public addReferenceOf(
         itemName: string,
-        itemSetName: string,
         referenceOf: string,
+        itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): AddReferenceOfByUserId {
         return new AddReferenceOfByUserId(
             this.namespaceName,
             this.inventoryName,
             itemName,
-            itemSetName,
             referenceOf,
+            itemSetName,
             userId,
         );
     }
 
     public deleteReferenceOf(
         itemName: string,
-        itemSetName: string,
         referenceOf: string,
+        itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): DeleteReferenceOfByUserId {
         return new DeleteReferenceOfByUserId(
             this.namespaceName,
             this.inventoryName,
             itemName,
-            itemSetName,
             referenceOf,
+            itemSetName,
+            userId,
+        );
+    }
+
+    public verifyInventoryCurrentMaxCapacity(
+        verifyType: string,
+        currentInventoryMaxCapacity: number,
+        userId: string|null = "#{userId}",
+    ): VerifyInventoryCurrentMaxCapacityByUserId {
+        return new VerifyInventoryCurrentMaxCapacityByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            verifyType,
+            currentInventoryMaxCapacity,
             userId,
         );
     }
@@ -138,20 +154,38 @@ export default class InventoryModelRef {
         );
     }
 
+    public verifyItemSet(
+        itemName: string,
+        verifyType: string,
+        count: number,
+        itemSetName: string|null = null,
+        userId: string|null = "#{userId}",
+    ): VerifyItemSetByUserId {
+        return new VerifyItemSetByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            itemName,
+            verifyType,
+            count,
+            itemSetName,
+            userId,
+        );
+    }
+
     public verifyReferenceOf(
         itemName: string,
-        itemSetName: string,
         referenceOf: string,
         verifyType: string,
+        itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): VerifyReferenceOfByUserId {
         return new VerifyReferenceOfByUserId(
             this.namespaceName,
             this.inventoryName,
             itemName,
-            itemSetName,
             referenceOf,
             verifyType,
+            itemSetName,
             userId,
         );
     }

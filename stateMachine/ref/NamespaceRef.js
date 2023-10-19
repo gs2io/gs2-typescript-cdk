@@ -22,7 +22,7 @@ class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
-    startStateMachine(args, ttl = null, userId = "#{userId}") {
+    startStateMachine(args = null, ttl = null, userId = "#{userId}") {
         return new StartStateMachineByUserId_1.default(this.namespaceName, args, ttl, userId);
     }
     grn() {

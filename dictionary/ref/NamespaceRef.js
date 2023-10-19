@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const EntryModelRef_1 = tslib_1.__importDefault(require("./EntryModelRef"));
 const AddEntriesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddEntriesByUserId"));
 const DeleteEntriesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteEntriesByUserId"));
+const VerifyEntryByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyEntryByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -32,6 +33,9 @@ class NamespaceRef {
     }
     deleteEntries(entryModelNames = null, userId = "#{userId}") {
         return new DeleteEntriesByUserId_1.default(this.namespaceName, entryModelNames, userId);
+    }
+    verifyEntry(entryModelName, verifyType, userId = "#{userId}") {
+        return new VerifyEntryByUserId_1.default(this.namespaceName, entryModelName, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [

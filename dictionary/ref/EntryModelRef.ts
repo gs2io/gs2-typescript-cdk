@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import AddEntriesByUserId from "../stampSheet/AddEntriesByUserId";
 import DeleteEntriesByUserId from "../stampSheet/DeleteEntriesByUserId";
+import VerifyEntryByUserId from "../stampSheet/VerifyEntryByUserId";
 
 export default class EntryModelRef {
     private readonly namespaceName: string;
@@ -48,6 +49,19 @@ export default class EntryModelRef {
         return new DeleteEntriesByUserId(
             this.namespaceName,
             entryModelNames,
+            userId,
+        );
+    }
+
+    public verifyEntry(
+        entryModelName: string,
+        verifyType: string,
+        userId: string|null = "#{userId}",
+    ): VerifyEntryByUserId {
+        return new VerifyEntryByUserId(
+            this.namespaceName,
+            entryModelName,
+            verifyType,
             userId,
         );
     }

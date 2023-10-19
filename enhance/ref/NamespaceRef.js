@@ -27,7 +27,7 @@ class NamespaceRef {
     rateModel(rateName) {
         return new RateModelRef_1.default(this.namespaceName, rateName);
     }
-    createProgress(rateName, targetItemSetId, materials = null, force, userId = "#{userId}") {
+    createProgress(rateName, targetItemSetId, materials = null, force = null, userId = "#{userId}") {
         return new CreateProgressByUserId_1.default(this.namespaceName, rateName, targetItemSetId, materials, force, userId);
     }
     deleteProgress(userId = "#{userId}") {

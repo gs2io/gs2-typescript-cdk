@@ -23,7 +23,9 @@ const SetCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/Set
 const AcquireItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireItemSetByUserId"));
 const AddReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddReferenceOfByUserId"));
 const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteReferenceOfByUserId"));
+const VerifyInventoryCurrentMaxCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId"));
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeItemSetByUserId"));
+const VerifyItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyItemSetByUserId"));
 const VerifyReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyReferenceOfByUserId"));
 class InventoryModelRef {
     constructor(namespaceName, inventoryName) {
@@ -39,20 +41,26 @@ class InventoryModelRef {
     setCapacity(newCapacityValue, userId = "#{userId}") {
         return new SetCapacityByUserId_1.default(this.namespaceName, this.inventoryName, newCapacityValue, userId);
     }
-    acquireItemSet(itemName, acquireCount, expiresAt, createNewItemSet, itemSetName = null, userId = "#{userId}") {
+    acquireItemSet(itemName, acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, userId = "#{userId}") {
         return new AcquireItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, acquireCount, expiresAt, createNewItemSet, itemSetName, userId);
     }
-    addReferenceOf(itemName, itemSetName, referenceOf, userId = "#{userId}") {
-        return new AddReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, itemSetName, referenceOf, userId);
+    addReferenceOf(itemName, referenceOf, itemSetName = null, userId = "#{userId}") {
+        return new AddReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, referenceOf, itemSetName, userId);
     }
-    deleteReferenceOf(itemName, itemSetName, referenceOf, userId = "#{userId}") {
-        return new DeleteReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, itemSetName, referenceOf, userId);
+    deleteReferenceOf(itemName, referenceOf, itemSetName = null, userId = "#{userId}") {
+        return new DeleteReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, referenceOf, itemSetName, userId);
+    }
+    verifyInventoryCurrentMaxCapacity(verifyType, currentInventoryMaxCapacity, userId = "#{userId}") {
+        return new VerifyInventoryCurrentMaxCapacityByUserId_1.default(this.namespaceName, this.inventoryName, verifyType, currentInventoryMaxCapacity, userId);
     }
     consumeItemSet(itemName, consumeCount, itemSetName = null, userId = "#{userId}") {
         return new ConsumeItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, consumeCount, itemSetName, userId);
     }
-    verifyReferenceOf(itemName, itemSetName, referenceOf, verifyType, userId = "#{userId}") {
-        return new VerifyReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, itemSetName, referenceOf, verifyType, userId);
+    verifyItemSet(itemName, verifyType, count, itemSetName = null, userId = "#{userId}") {
+        return new VerifyItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, verifyType, count, itemSetName, userId);
+    }
+    verifyReferenceOf(itemName, referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
+        return new VerifyReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, referenceOf, verifyType, itemSetName, userId);
     }
     grn() {
         return new func_1.Join(":", [

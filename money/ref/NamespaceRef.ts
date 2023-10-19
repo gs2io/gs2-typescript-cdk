@@ -58,7 +58,7 @@ export default class NamespaceRef {
     public withdraw(
         slot: number,
         count: number,
-        paidOnly: boolean,
+        paidOnly: boolean|null = null,
         userId: string|null = "#{userId}",
     ): WithdrawByUserId {
         return new WithdrawByUserId(

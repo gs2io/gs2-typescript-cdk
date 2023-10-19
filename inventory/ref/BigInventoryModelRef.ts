@@ -18,6 +18,7 @@ import {GetAttr, Join} from "../../core/func";
 import BigItemModelRef from "./BigItemModelRef";
 import AcquireBigItemByUserId from "../stampSheet/AcquireBigItemByUserId";
 import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
+import VerifyBigItemByUserId from "../stampSheet/VerifyBigItemByUserId";
 
 export default class BigInventoryModelRef {
     private readonly namespaceName: string;
@@ -65,6 +66,22 @@ export default class BigInventoryModelRef {
             this.inventoryName,
             itemName,
             consumeCount,
+            userId,
+        );
+    }
+
+    public verifyBigItem(
+        itemName: string,
+        verifyType: string,
+        count: string,
+        userId: string|null = "#{userId}",
+    ): VerifyBigItemByUserId {
+        return new VerifyBigItemByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            itemName,
+            verifyType,
+            count,
             userId,
         );
     }

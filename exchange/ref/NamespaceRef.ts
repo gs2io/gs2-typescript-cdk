@@ -96,7 +96,7 @@ export default class NamespaceRef {
 
     public createAwait(
         rateName: string,
-        count: number,
+        count: number|null = null,
         userId: string|null = "#{userId}",
     ): CreateAwaitByUserId {
         return new CreateAwaitByUserId(
@@ -108,7 +108,7 @@ export default class NamespaceRef {
     }
 
     public deleteAwait(
-        awaitName: string,
+        awaitName: string|null = null,
         userId: string|null = "#{userId}",
     ): DeleteAwaitByUserId {
         return new DeleteAwaitByUserId(

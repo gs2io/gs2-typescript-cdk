@@ -23,6 +23,8 @@ import MultiplyAcquireActionsByUserId from "../stampSheet/MultiplyAcquireActions
 import { AcquireAction } from "../../core/model";
 import SubExperienceByUserId from "../stampSheet/SubExperienceByUserId";
 import SubRankCapByUserId from "../stampSheet/SubRankCapByUserId";
+import VerifyRankByUserId from "../stampSheet/VerifyRankByUserId";
+import VerifyRankCapByUserId from "../stampSheet/VerifyRankCapByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -45,7 +47,7 @@ export default class NamespaceRef {
     public addExperience(
         experienceName: string,
         propertyId: string,
-        experienceValue: number,
+        experienceValue: number|null = null,
         userId: string|null = "#{userId}",
     ): AddExperienceByUserId {
         return new AddExperienceByUserId(
@@ -107,7 +109,7 @@ export default class NamespaceRef {
     public subExperience(
         experienceName: string,
         propertyId: string,
-        experienceValue: number,
+        experienceValue: number|null = null,
         userId: string|null = "#{userId}",
     ): SubExperienceByUserId {
         return new SubExperienceByUserId(
@@ -128,6 +130,40 @@ export default class NamespaceRef {
         return new SubRankCapByUserId(
             this.namespaceName,
             experienceName,
+            propertyId,
+            rankCapValue,
+            userId,
+        );
+    }
+
+    public verifyRank(
+        experienceName: string,
+        verifyType: string,
+        propertyId: string,
+        rankValue: number|null = null,
+        userId: string|null = "#{userId}",
+    ): VerifyRankByUserId {
+        return new VerifyRankByUserId(
+            this.namespaceName,
+            experienceName,
+            verifyType,
+            propertyId,
+            rankValue,
+            userId,
+        );
+    }
+
+    public verifyRankCap(
+        experienceName: string,
+        verifyType: string,
+        propertyId: string,
+        rankCapValue: number,
+        userId: string|null = "#{userId}",
+    ): VerifyRankCapByUserId {
+        return new VerifyRankCapByUserId(
+            this.namespaceName,
+            experienceName,
+            verifyType,
             propertyId,
             rankCapValue,
             userId,

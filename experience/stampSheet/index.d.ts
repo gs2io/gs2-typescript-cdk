@@ -4,4 +4,6 @@ import SetRankCapByUserId from "./SetRankCapByUserId";
 import MultiplyAcquireActionsByUserId from "./MultiplyAcquireActionsByUserId";
 import SubExperienceByUserId from "./SubExperienceByUserId";
 import SubRankCapByUserId from "./SubRankCapByUserId";
-export { AddExperienceByUserId, AddRankCapByUserId, SetRankCapByUserId, MultiplyAcquireActionsByUserId, SubExperienceByUserId, SubRankCapByUserId, };
+import VerifyRankByUserId from "./VerifyRankByUserId";
+import VerifyRankCapByUserId from "./VerifyRankCapByUserId";
+export { AddExperienceByUserId, AddRankCapByUserId, SetRankCapByUserId, MultiplyAcquireActionsByUserId, SubExperienceByUserId, SubRankCapByUserId, VerifyRankByUserId, VerifyRankCapByUserId, };

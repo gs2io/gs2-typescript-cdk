@@ -27,7 +27,7 @@ class NamespaceRef {
     questGroupModel(questGroupName) {
         return new QuestGroupModelRef_1.default(this.namespaceName, questGroupName);
     }
-    createProgress(questModelId, force, config = null, userId = "#{userId}") {
+    createProgress(questModelId, force = null, config = null, userId = "#{userId}") {
         return new CreateProgressByUserId_1.default(this.namespaceName, questModelId, force, config, userId);
     }
     deleteProgress(userId = "#{userId}") {

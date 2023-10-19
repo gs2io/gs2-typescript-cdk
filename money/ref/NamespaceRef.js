@@ -31,7 +31,7 @@ class NamespaceRef {
     revertRecordReceipt(receipt, userId = "#{userId}") {
         return new RevertRecordReceipt_1.default(this.namespaceName, receipt, userId);
     }
-    withdraw(slot, count, paidOnly, userId = "#{userId}") {
+    withdraw(slot, count, paidOnly = null, userId = "#{userId}") {
         return new WithdrawByUserId_1.default(this.namespaceName, slot, count, paidOnly, userId);
     }
     recordReceipt(contentsId, receipt, userId = "#{userId}") {

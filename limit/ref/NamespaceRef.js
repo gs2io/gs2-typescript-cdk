@@ -21,6 +21,7 @@ const LimitModelRef_1 = tslib_1.__importDefault(require("./LimitModelRef"));
 const CountDownByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CountDownByUserId"));
 const DeleteCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteCounterByUserId"));
 const CountUpByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CountUpByUserId"));
+const VerifyCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCounterByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -28,14 +29,17 @@ class NamespaceRef {
     limitModel(limitName) {
         return new LimitModelRef_1.default(this.namespaceName, limitName);
     }
-    countDown(limitName, counterName, countDownValue, userId = "#{userId}") {
+    countDown(limitName, counterName, countDownValue = null, userId = "#{userId}") {
         return new CountDownByUserId_1.default(this.namespaceName, limitName, counterName, countDownValue, userId);
     }
     deleteCounter(limitName, counterName, userId = "#{userId}") {
         return new DeleteCounterByUserId_1.default(this.namespaceName, limitName, counterName, userId);
     }
-    countUp(limitName, counterName, countUpValue, maxValue = null, userId = "#{userId}") {
+    countUp(limitName, counterName, countUpValue = null, maxValue = null, userId = "#{userId}") {
         return new CountUpByUserId_1.default(this.namespaceName, limitName, counterName, countUpValue, maxValue, userId);
+    }
+    verifyCounter(limitName, counterName, verifyType, count = null, userId = "#{userId}") {
+        return new VerifyCounterByUserId_1.default(this.namespaceName, limitName, counterName, verifyType, count, userId);
     }
     grn() {
         return new func_1.Join(":", [

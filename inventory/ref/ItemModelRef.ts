@@ -19,6 +19,7 @@ import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
+import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
 
 export default class ItemModelRef {
@@ -38,8 +39,8 @@ export default class ItemModelRef {
 
     public acquireItemSet(
         acquireCount: number,
-        expiresAt: number,
-        createNewItemSet: boolean,
+        expiresAt: number|null = null,
+        createNewItemSet: boolean|null = null,
         itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): AcquireItemSetByUserId {
@@ -56,31 +57,31 @@ export default class ItemModelRef {
     }
 
     public addReferenceOf(
-        itemSetName: string,
         referenceOf: string,
+        itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): AddReferenceOfByUserId {
         return new AddReferenceOfByUserId(
             this.namespaceName,
             this.inventoryName,
             this.itemName,
-            itemSetName,
             referenceOf,
+            itemSetName,
             userId,
         );
     }
 
     public deleteReferenceOf(
-        itemSetName: string,
         referenceOf: string,
+        itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): DeleteReferenceOfByUserId {
         return new DeleteReferenceOfByUserId(
             this.namespaceName,
             this.inventoryName,
             this.itemName,
-            itemSetName,
             referenceOf,
+            itemSetName,
             userId,
         );
     }
@@ -100,19 +101,36 @@ export default class ItemModelRef {
         );
     }
 
+    public verifyItemSet(
+        verifyType: string,
+        count: number,
+        itemSetName: string|null = null,
+        userId: string|null = "#{userId}",
+    ): VerifyItemSetByUserId {
+        return new VerifyItemSetByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            this.itemName,
+            verifyType,
+            count,
+            itemSetName,
+            userId,
+        );
+    }
+
     public verifyReferenceOf(
-        itemSetName: string,
         referenceOf: string,
         verifyType: string,
+        itemSetName: string|null = null,
         userId: string|null = "#{userId}",
     ): VerifyReferenceOfByUserId {
         return new VerifyReferenceOfByUserId(
             this.namespaceName,
             this.inventoryName,
             this.itemName,
-            itemSetName,
             referenceOf,
             verifyType,
+            itemSetName,
             userId,
         );
     }
