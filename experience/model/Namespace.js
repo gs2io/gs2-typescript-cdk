@@ -51,7 +51,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Experience::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -75,10 +75,10 @@ class Namespace extends model_1.CdkResource {
             properties["ChangeRankCapScript"] = (_d = this.changeRankCapScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.overflowExperienceScript != null) {
-            properties["OverflowExperienceScript"] = (_e = this.overflowExperienceScript) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["OverflowExperienceScript"] = this.overflowExperienceScript;
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["LogSetting"] = (_e = this.logSetting) === null || _e === void 0 ? void 0 : _e.properties();
         }
         return properties;
     }

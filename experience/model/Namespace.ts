@@ -35,7 +35,7 @@ export default class Namespace extends CdkResource {
     private readonly changeExperienceScript: ScriptSetting|null = null;
     private readonly changeRankScript: ScriptSetting|null = null;
     private readonly changeRankCapScript: ScriptSetting|null = null;
-    private readonly overflowExperienceScript: ScriptSetting|null = null;
+    private readonly overflowExperienceScript: string|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -103,8 +103,7 @@ export default class Namespace extends CdkResource {
             );
         }
         if (this.overflowExperienceScript != null) {
-            properties["OverflowExperienceScript"] = this.overflowExperienceScript?.properties(
-            );
+            properties["OverflowExperienceScript"] = this.overflowExperienceScript;
         }
         if (this.logSetting != null) {
             properties["LogSetting"] = this.logSetting?.properties(

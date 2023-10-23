@@ -8,6 +8,6 @@ export interface NamespaceOptions {
     changeExperienceScript?: ScriptSetting | null;
     changeRankScript?: ScriptSetting | null;
     changeRankCapScript?: ScriptSetting | null;
-    overflowExperienceScript?: ScriptSetting | null;
+    overflowExperienceScript?: string | null;
     logSetting?: LogSetting | null;
 }
