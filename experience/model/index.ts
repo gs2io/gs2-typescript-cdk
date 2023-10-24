@@ -21,6 +21,9 @@ import Threshold from "./Threshold";
 import { ThresholdOptions } from "./options/ThresholdOptions";
 import AcquireActionRate from "./AcquireActionRate";
 import { AcquireActionRateOptions } from "./options/AcquireActionRateOptions";
+import { AcquireActionRateMode } from "./enum/AcquireActionRateMode";
+import { AcquireActionRateModeIsDoubleOptions } from "./options/AcquireActionRateModeIsDoubleOptions"
+import { AcquireActionRateModeIsBigOptions } from "./options/AcquireActionRateModeIsBigOptions"
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -32,5 +35,8 @@ export {
     ThresholdOptions,
     AcquireActionRate,
     AcquireActionRateOptions,
+    AcquireActionRateMode,
+    AcquireActionRateModeIsDoubleOptions,
+    AcquireActionRateModeIsBigOptions,
     CurrentMasterData,
 }

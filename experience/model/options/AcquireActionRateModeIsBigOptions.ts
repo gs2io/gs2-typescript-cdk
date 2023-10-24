@@ -15,8 +15,5 @@
  */
 import { AcquireActionRateMode } from "../enum/AcquireActionRateMode";
 
-export interface AcquireActionRateOptions {
-    rates?: number[]|null;
-    bigRates?: string[]|null;
+export interface AcquireActionRateModeIsBigOptions {
 }
-

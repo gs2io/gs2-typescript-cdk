@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.AcquireActionRate = exports.Threshold = exports.ExperienceModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.AcquireActionRateMode = exports.AcquireActionRate = exports.Threshold = exports.ExperienceModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,8 @@ const Threshold_1 = tslib_1.__importDefault(require("./Threshold"));
 exports.Threshold = Threshold_1.default;
 const AcquireActionRate_1 = tslib_1.__importDefault(require("./AcquireActionRate"));
 exports.AcquireActionRate = AcquireActionRate_1.default;
+const AcquireActionRateMode_1 = require("./enum/AcquireActionRateMode");
+Object.defineProperty(exports, "AcquireActionRateMode", { enumerable: true, get: function () { return AcquireActionRateMode_1.AcquireActionRateMode; } });
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

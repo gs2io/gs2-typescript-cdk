@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,10 +14,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { AcquireActionRateMode } from "../enum/AcquireActionRateMode";
-
-export interface AcquireActionRateOptions {
-    rates?: number[]|null;
-    bigRates?: string[]|null;
-}
-
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AcquireActionRateMode = void 0;
+exports.AcquireActionRateMode = {
+    DOUBLE: "double",
+    BIG: "big",
+};
+//# sourceMappingURL=AcquireActionRateMode.js.map

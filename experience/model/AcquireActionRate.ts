@@ -14,18 +14,53 @@
  * permissions and limitations under the License.
  */
 import { AcquireActionRateOptions } from "./options/AcquireActionRateOptions";
+import { AcquireActionRateModeIsDoubleOptions } from "./options/AcquireActionRateModeIsDoubleOptions";
+import { AcquireActionRateModeIsBigOptions } from "./options/AcquireActionRateModeIsBigOptions";
+import { AcquireActionRateMode } from "./enum/AcquireActionRateMode";
 
 export default class AcquireActionRate {
     private readonly name: string;
-    private readonly rates: number[];
+    private readonly mode: AcquireActionRateMode;
+    private readonly rates: number[]|null = null;
+    private readonly bigRates: string[]|null = null;
 
     public constructor(
         name: string,
-        rates: number[],
+        mode: AcquireActionRateMode,
         options: AcquireActionRateOptions|null = null,
     ) {
         this.name = name;
-        this.rates = rates;
+        this.mode = mode;
+        this.rates = options?.rates ?? null;
+        this.bigRates = options?.bigRates ?? null;
+    }
+
+    public static modeIsDouble(
+        name: string,
+        rates: number[],
+        options: AcquireActionRateModeIsDoubleOptions|null = null,
+    ): AcquireActionRate {
+        return new AcquireActionRate(
+            name,
+            AcquireActionRateMode.DOUBLE,
+            {
+                rates: rates,
+            },
+        );
+    }
+
+    public static modeIsBig(
+        name: string,
+        bigRates: string[],
+        options: AcquireActionRateModeIsBigOptions|null = null,
+    ): AcquireActionRate {
+        return new AcquireActionRate(
+            name,
+            AcquireActionRateMode.BIG,
+            {
+                bigRates: bigRates,
+            },
+        );
     }
 
     public properties(
@@ -35,8 +70,14 @@ export default class AcquireActionRate {
         if (this.name != null) {
             properties["name"] = this.name;
         }
+        if (this.mode != null) {
+            properties["mode"] = this.mode;
+        }
         if (this.rates != null) {
             properties["rates"] = this.rates;
+        }
+        if (this.bigRates != null) {
+            properties["bigRates"] = this.bigRates;
         }
 
         return properties;

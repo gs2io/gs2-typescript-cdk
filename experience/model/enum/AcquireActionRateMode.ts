@@ -13,10 +13,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { AcquireActionRateMode } from "../enum/AcquireActionRateMode";
 
-export interface AcquireActionRateOptions {
-    rates?: number[]|null;
-    bigRates?: string[]|null;
-}
 
+
+export const AcquireActionRateMode = {
+    DOUBLE: "double",
+    BIG: "big",
+} as const;
+export type AcquireActionRateMode = typeof AcquireActionRateMode[keyof typeof AcquireActionRateMode];
