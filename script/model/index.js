@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Script = exports.Namespace = void 0;
+exports.RandomUsed = exports.RandomStatus = exports.Script = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,8 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const Script_1 = tslib_1.__importDefault(require("./Script"));
 exports.Script = Script_1.default;
+const RandomStatus_1 = tslib_1.__importDefault(require("./RandomStatus"));
+exports.RandomStatus = RandomStatus_1.default;
+const RandomUsed_1 = tslib_1.__importDefault(require("./RandomUsed"));
+exports.RandomUsed = RandomUsed_1.default;
 //# sourceMappingURL=index.js.map

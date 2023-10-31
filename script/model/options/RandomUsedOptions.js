@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,22 +14,5 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import Namespace from "./Namespace";
-import { NamespaceOptions } from "./options/NamespaceOptions";
-import Script from "./Script";
-import { ScriptOptions } from "./options/ScriptOptions";
-import RandomStatus from "./RandomStatus";
-import { RandomStatusOptions } from "./options/RandomStatusOptions";
-import RandomUsed from "./RandomUsed";
-import { RandomUsedOptions } from "./options/RandomUsedOptions";
-
-export {
-    Namespace,
-    NamespaceOptions,
-    Script,
-    ScriptOptions,
-    RandomStatus,
-    RandomStatusOptions,
-    RandomUsed,
-    RandomUsedOptions,
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=RandomUsedOptions.js.map
