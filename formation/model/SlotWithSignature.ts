@@ -19,21 +19,19 @@ import { SlotWithSignaturePropertyType } from "./enum/SlotWithSignaturePropertyT
 export default class SlotWithSignature {
     private readonly name: string;
     private readonly propertyType: SlotWithSignaturePropertyType;
-    private readonly body: string;
-    private readonly signature: string;
+    private readonly body: string|null = null;
+    private readonly signature: string|null = null;
     private readonly metadata: string|null = null;
 
     public constructor(
         name: string,
         propertyType: SlotWithSignaturePropertyType,
-        body: string,
-        signature: string,
         options: SlotWithSignatureOptions|null = null,
     ) {
         this.name = name;
         this.propertyType = propertyType;
-        this.body = body;
-        this.signature = signature;
+        this.body = options?.body ?? null;
+        this.signature = options?.signature ?? null;
         this.metadata = options?.metadata ?? null;
     }
 

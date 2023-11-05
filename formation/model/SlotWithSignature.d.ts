@@ -6,7 +6,7 @@ export default class SlotWithSignature {
     private readonly body;
     private readonly signature;
     private readonly metadata;
-    constructor(name: string, propertyType: SlotWithSignaturePropertyType, body: string, signature: string, options?: SlotWithSignatureOptions | null);
+    constructor(name: string, propertyType: SlotWithSignaturePropertyType, options?: SlotWithSignatureOptions | null);
     properties(): {
         [name: string]: any;
     };

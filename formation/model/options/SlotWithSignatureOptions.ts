@@ -16,6 +16,8 @@
 import { SlotWithSignaturePropertyType } from "../enum/SlotWithSignaturePropertyType";
 
 export interface SlotWithSignatureOptions {
+    body?: string|null;
+    signature?: string|null;
     metadata?: string|null;
 }
 
