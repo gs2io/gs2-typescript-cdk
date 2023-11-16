@@ -30,7 +30,7 @@ export default class Namespace extends CdkResource {
     private readonly name: string;
     private readonly description: string|null = null;
     private readonly entryScript: ScriptSetting|null = null;
-    private readonly duplicateEntryScript: ScriptSetting|null = null;
+    private readonly duplicateEntryScript: string|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -79,8 +79,7 @@ export default class Namespace extends CdkResource {
             );
         }
         if (this.duplicateEntryScript != null) {
-            properties["DuplicateEntryScript"] = this.duplicateEntryScript?.properties(
-            );
+            properties["DuplicateEntryScript"] = this.duplicateEntryScript;
         }
         if (this.logSetting != null) {
             properties["LogSetting"] = this.logSetting?.properties(

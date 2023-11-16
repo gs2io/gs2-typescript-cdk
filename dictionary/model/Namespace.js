@@ -43,7 +43,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Dictionary::Namespace";
     }
     properties() {
-        var _a, _b, _c;
+        var _a, _b;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -55,10 +55,10 @@ class Namespace extends model_1.CdkResource {
             properties["EntryScript"] = (_a = this.entryScript) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.duplicateEntryScript != null) {
-            properties["DuplicateEntryScript"] = (_b = this.duplicateEntryScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["DuplicateEntryScript"] = this.duplicateEntryScript;
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LogSetting"] = (_b = this.logSetting) === null || _b === void 0 ? void 0 : _b.properties();
         }
         return properties;
     }

@@ -41,7 +41,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Stamina::Namespace";
     }
     properties() {
-        var _a, _b;
+        var _a;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -50,10 +50,10 @@ class Namespace extends model_1.CdkResource {
             properties["Description"] = this.description;
         }
         if (this.overflowTriggerScript != null) {
-            properties["OverflowTriggerScript"] = (_a = this.overflowTriggerScript) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["OverflowTriggerScript"] = this.overflowTriggerScript;
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_b = this.logSetting) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["LogSetting"] = (_a = this.logSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
         return properties;
     }

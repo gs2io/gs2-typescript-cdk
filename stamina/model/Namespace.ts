@@ -16,7 +16,6 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
-import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
@@ -29,7 +28,7 @@ export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
     private readonly description: string|null = null;
-    private readonly overflowTriggerScript: ScriptSetting|null = null;
+    private readonly overflowTriggerScript: string|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -73,8 +72,7 @@ export default class Namespace extends CdkResource {
             properties["Description"] = this.description;
         }
         if (this.overflowTriggerScript != null) {
-            properties["OverflowTriggerScript"] = this.overflowTriggerScript?.properties(
-            );
+            properties["OverflowTriggerScript"] = this.overflowTriggerScript;
         }
         if (this.logSetting != null) {
             properties["LogSetting"] = this.logSetting?.properties(
