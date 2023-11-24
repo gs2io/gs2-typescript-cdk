@@ -22,6 +22,7 @@ export interface NamespaceOptions {
     admob?: AdMob|null;
     unityAd?: UnityAd|null;
     description?: string|null;
+    changePointNotification?: NotificationSetting|null;
     logSetting?: LogSetting|null;
 }
 

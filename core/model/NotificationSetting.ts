@@ -16,12 +16,12 @@
 
 export default class NotificationSetting {
 
-    gatewayNamespaceId: string;
+    gatewayNamespaceId: string | null;
     enableTransferMobileNotification: boolean | null;
     sound: string | null;
 
     public constructor(
-        gatewayNamespaceId: string,
+        gatewayNamespaceId: string | null = null,
         enableTransferMobileNotification: boolean | null = null,
         sound: string | null = null,
     ) {

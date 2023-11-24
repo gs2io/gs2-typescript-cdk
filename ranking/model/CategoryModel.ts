@@ -24,10 +24,10 @@ export default class CategoryModel {
     private readonly name: string;
     private readonly orderDirection: CategoryModelOrderDirection;
     private readonly scope: CategoryModelScope;
-    private readonly uniqueByUserId: boolean;
     private readonly metadata: string|null = null;
     private readonly minimumValue: number|null = null;
     private readonly maximumValue: number|null = null;
+    private readonly uniqueByUserId: boolean|null = null;
     private readonly sum: boolean|null = null;
     private readonly calculateFixedTimingHour: number|null = null;
     private readonly calculateFixedTimingMinute: number|null = null;
@@ -42,16 +42,15 @@ export default class CategoryModel {
         name: string,
         orderDirection: CategoryModelOrderDirection,
         scope: CategoryModelScope,
-        uniqueByUserId: boolean,
         options: CategoryModelOptions|null = null,
     ) {
         this.name = name;
         this.orderDirection = orderDirection;
         this.scope = scope;
-        this.uniqueByUserId = uniqueByUserId;
         this.metadata = options?.metadata ?? null;
         this.minimumValue = options?.minimumValue ?? null;
         this.maximumValue = options?.maximumValue ?? null;
+        this.uniqueByUserId = options?.uniqueByUserId ?? null;
         this.sum = options?.sum ?? null;
         this.calculateFixedTimingHour = options?.calculateFixedTimingHour ?? null;
         this.calculateFixedTimingMinute = options?.calculateFixedTimingMinute ?? null;
@@ -74,8 +73,8 @@ export default class CategoryModel {
             name,
             orderDirection,
             CategoryModelScope.GLOBAL,
-            uniqueByUserId,
             {
+                uniqueByUserId: uniqueByUserId,
                 calculateIntervalMinutes: calculateIntervalMinutes,
                 metadata: options?.metadata,
                 minimumValue: options?.minimumValue,
@@ -94,14 +93,12 @@ export default class CategoryModel {
     public static scopeIsScoped(
         name: string,
         orderDirection: CategoryModelOrderDirection,
-        uniqueByUserId: boolean,
         options: CategoryModelScopeIsScopedOptions|null = null,
     ): CategoryModel {
         return new CategoryModel(
             name,
             orderDirection,
             CategoryModelScope.SCOPED,
-            uniqueByUserId,
             {
                 metadata: options?.metadata,
                 minimumValue: options?.minimumValue,

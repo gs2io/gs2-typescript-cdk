@@ -7,10 +7,10 @@ export default class CategoryModel {
     private readonly name;
     private readonly orderDirection;
     private readonly scope;
-    private readonly uniqueByUserId;
     private readonly metadata;
     private readonly minimumValue;
     private readonly maximumValue;
+    private readonly uniqueByUserId;
     private readonly sum;
     private readonly calculateFixedTimingHour;
     private readonly calculateFixedTimingMinute;
@@ -20,9 +20,9 @@ export default class CategoryModel {
     private readonly accessPeriodEventId;
     private readonly ignoreUserIds;
     private readonly generation;
-    constructor(name: string, orderDirection: CategoryModelOrderDirection, scope: CategoryModelScope, uniqueByUserId: boolean, options?: CategoryModelOptions | null);
+    constructor(name: string, orderDirection: CategoryModelOrderDirection, scope: CategoryModelScope, options?: CategoryModelOptions | null);
     static scopeIsGlobal(name: string, orderDirection: CategoryModelOrderDirection, uniqueByUserId: boolean, calculateIntervalMinutes: number, options?: CategoryModelScopeIsGlobalOptions | null): CategoryModel;
-    static scopeIsScoped(name: string, orderDirection: CategoryModelOrderDirection, uniqueByUserId: boolean, options?: CategoryModelScopeIsScopedOptions | null): CategoryModel;
+    static scopeIsScoped(name: string, orderDirection: CategoryModelOrderDirection, options?: CategoryModelScopeIsScopedOptions | null): CategoryModel;
     properties(): {
         [name: string]: any;
     };

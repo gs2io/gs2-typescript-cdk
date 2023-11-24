@@ -16,28 +16,21 @@
 
 export default class TransactionSetting {
 
-    enableAutoRun: boolean;
     distributorNamespaceId: string | null;
-    keyId: string | null;
     queueNamespaceId: string | null;
 
     public constructor(
-        enableAutoRun: boolean,
         distributorNamespaceId: string | null = null,
-        keyId: string | null = null,
         queueNamespaceId: string | null = null,
     ) {
-        this.enableAutoRun = enableAutoRun;
         this.distributorNamespaceId = distributorNamespaceId;
-        this.keyId = keyId;
         this.queueNamespaceId = queueNamespaceId;
     }
 
     public properties(): { [name: string]: any } {
         return {
-            "EnableAutoRun": this.enableAutoRun,
+            "EnableAutoRun": true,
             "DistributorNamespaceId": this.distributorNamespaceId,
-            "KeyId": this.keyId,
             "QueueNamespaceId": this.queueNamespaceId,
         };
     }

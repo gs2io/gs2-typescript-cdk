@@ -16,17 +16,14 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 class TransactionSetting {
-    constructor(enableAutoRun, distributorNamespaceId = null, keyId = null, queueNamespaceId = null) {
-        this.enableAutoRun = enableAutoRun;
+    constructor(distributorNamespaceId = null, queueNamespaceId = null) {
         this.distributorNamespaceId = distributorNamespaceId;
-        this.keyId = keyId;
         this.queueNamespaceId = queueNamespaceId;
     }
     properties() {
         return {
-            "EnableAutoRun": this.enableAutoRun,
+            "EnableAutoRun": true,
             "DistributorNamespaceId": this.distributorNamespaceId,
-            "KeyId": this.keyId,
             "QueueNamespaceId": this.queueNamespaceId,
         };
     }

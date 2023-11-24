@@ -28,16 +28,15 @@ import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
-    private readonly changePointNotification: NotificationSetting;
     private readonly admob: AdMob|null = null;
     private readonly unityAd: UnityAd|null = null;
     private readonly description: string|null = null;
+    private readonly changePointNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
         stack: Stack,
         name: string,
-        changePointNotification: NotificationSetting,
         options: NamespaceOptions|null = null,
     ) {
         super(
@@ -46,10 +45,10 @@ export default class Namespace extends CdkResource {
 
         this.stack = stack;
         this.name = name;
-        this.changePointNotification = changePointNotification;
         this.admob = options?.admob ?? null;
         this.unityAd = options?.unityAd ?? null;
         this.description = options?.description ?? null;
+        this.changePointNotification = options?.changePointNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,

@@ -21,6 +21,7 @@ export interface CategoryModelOptions {
     metadata?: string|null;
     minimumValue?: number|null;
     maximumValue?: number|null;
+    uniqueByUserId?: boolean|null;
     sum?: boolean|null;
     calculateFixedTimingHour?: number|null;
     calculateFixedTimingMinute?: number|null;

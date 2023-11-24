@@ -13,99 +13,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-import {CdkResource, Stack} from "../../core/model";
-import {GetAttr} from "../../core/func";
-import NotificationSetting from "../../core/model/NotificationSetting";
-import LogSetting from "../../core/model/LogSetting";
-
-import NamespaceRef from "../ref/NamespaceRef";
-
+import { NotificationSetting } from "../../core/model";
+import { LogSetting } from "../../core/model";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
-export default class Namespace extends CdkResource {
-    private readonly stack: Stack;
+export default class Namespace {
+    private readonly ownerId: string;
     private readonly name: string;
+    private readonly enableAutoRun: boolean;
     private readonly description: string|null = null;
-    private readonly enableAutoRun: boolean|null = null;
-    private readonly pushNotification: NotificationSetting|null = null;
     private readonly runNotification: NotificationSetting|null = null;
+    private readonly pushNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
+    private readonly revision: number|null = null;
 
     public constructor(
-        stack: Stack,
+        ownerId: string,
         name: string,
+        enableAutoRun: boolean,
         options: NamespaceOptions|null = null,
     ) {
-        super(
-            "JobQueue_Namespace_" + name
-        );
-
-        this.stack = stack;
+        this.ownerId = ownerId;
         this.name = name;
+        this.enableAutoRun = enableAutoRun;
         this.description = options?.description ?? null;
-        this.enableAutoRun = options?.enableAutoRun ?? null;
-        this.pushNotification = options?.pushNotification ?? null;
         this.runNotification = options?.runNotification ?? null;
+        this.pushNotification = options?.pushNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
-        stack.addResource(
-            this,
-        );
-    }
-
-
-    public alternateKeys(
-    ) {
-        return "name";
-    }
-
-    public resourceType(
-    ): string {
-        return "GS2::JobQueue::Namespace";
+        this.revision = options?.revision ?? null;
     }
 
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
+        if (this.ownerId != null) {
+            properties["ownerId"] = this.ownerId;
+        }
         if (this.name != null) {
-            properties["Name"] = this.name;
+            properties["name"] = this.name;
         }
         if (this.description != null) {
-            properties["Description"] = this.description;
+            properties["description"] = this.description;
         }
         if (this.enableAutoRun != null) {
-            properties["EnableAutoRun"] = this.enableAutoRun;
-        }
-        if (this.pushNotification != null) {
-            properties["PushNotification"] = this.pushNotification?.properties(
-            );
+            properties["enableAutoRun"] = this.enableAutoRun;
         }
         if (this.runNotification != null) {
-            properties["RunNotification"] = this.runNotification?.properties(
+            properties["runNotification"] = this.runNotification?.properties(
+            );
+        }
+        if (this.pushNotification != null) {
+            properties["pushNotification"] = this.pushNotification?.properties(
             );
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = this.logSetting?.properties(
+            properties["logSetting"] = this.logSetting?.properties(
             );
         }
 
         return properties;
-    }
-
-    public ref(
-    ): NamespaceRef {
-        return new NamespaceRef(
-            this.name!,
-        );
-    }
-
-    public getAttrNamespaceId(
-    ): GetAttr {
-        return new GetAttr(
-            this,
-            "Item.NamespaceId",
-            null,
-        );
     }
 }

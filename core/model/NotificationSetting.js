@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 class NotificationSetting {
-    constructor(gatewayNamespaceId, enableTransferMobileNotification = null, sound = null) {
+    constructor(gatewayNamespaceId = null, enableTransferMobileNotification = null, sound = null) {
         this.gatewayNamespaceId = gatewayNamespaceId;
         this.enableTransferMobileNotification = enableTransferMobileNotification;
         this.sound = sound;
