@@ -1,9 +1,9 @@
-import { NotificationSetting } from "../../../core/model";
-import { LogSetting } from "../../../core/model";
+import NotificationSetting from "../../../core/model/NotificationSetting";
+import LogSetting from "../../../core/model/LogSetting";
 export interface NamespaceOptions {
     description?: string | null;
-    runNotification?: NotificationSetting | null;
+    enableAutoRun?: boolean | null;
     pushNotification?: NotificationSetting | null;
+    runNotification?: NotificationSetting | null;
     logSetting?: LogSetting | null;
-    revision?: number | null;
 }
