@@ -16,5 +16,7 @@ import AcquireCount from "./AcquireCount";
 import { AcquireCountOptions } from "./options/AcquireCountOptions";
 import ConsumeCount from "./ConsumeCount";
 import { ConsumeCountOptions } from "./options/ConsumeCountOptions";
+import HeldCount from "./HeldCount";
+import { HeldCountOptions } from "./options/HeldCountOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, InventoryModel, InventoryModelOptions, ItemModel, ItemModelOptions, SimpleInventoryModel, SimpleInventoryModelOptions, SimpleItemModel, SimpleItemModelOptions, BigInventoryModel, BigInventoryModelOptions, BigItemModel, BigItemModelOptions, AcquireCount, AcquireCountOptions, ConsumeCount, ConsumeCountOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, InventoryModel, InventoryModelOptions, ItemModel, ItemModelOptions, SimpleInventoryModel, SimpleInventoryModelOptions, SimpleItemModel, SimpleItemModelOptions, BigInventoryModel, BigInventoryModelOptions, BigItemModel, BigItemModelOptions, AcquireCount, AcquireCountOptions, ConsumeCount, ConsumeCountOptions, HeldCount, HeldCountOptions, CurrentMasterData, };

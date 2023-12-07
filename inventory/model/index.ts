@@ -31,6 +31,8 @@ import AcquireCount from "./AcquireCount";
 import { AcquireCountOptions } from "./options/AcquireCountOptions";
 import ConsumeCount from "./ConsumeCount";
 import { ConsumeCountOptions } from "./options/ConsumeCountOptions";
+import HeldCount from "./HeldCount";
+import { HeldCountOptions } from "./options/HeldCountOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -52,5 +54,7 @@ export {
     AcquireCountOptions,
     ConsumeCount,
     ConsumeCountOptions,
+    HeldCount,
+    HeldCountOptions,
     CurrentMasterData,
 }

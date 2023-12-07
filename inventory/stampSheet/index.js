@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyBigItemByUserId = exports.ConsumeBigItemByUserId = exports.VerifySimpleItemByUserId = exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.VerifyItemSetByUserId = exports.ConsumeItemSetByUserId = exports.VerifyInventoryCurrentMaxCapacityByUserId = exports.AcquireBigItemByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
+exports.VerifyBigItemByUserId = exports.ConsumeBigItemByUserId = exports.VerifySimpleItemByUserId = exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.VerifyItemSetByUserId = exports.ConsumeItemSetByUserId = exports.VerifyInventoryCurrentMaxCapacityByUserId = exports.SetBigItemByUserId = exports.AcquireBigItemByUserId = exports.SetSimpleItemsByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -29,8 +29,12 @@ const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("./DeleteRef
 exports.DeleteReferenceOfByUserId = DeleteReferenceOfByUserId_1.default;
 const AcquireSimpleItemsByUserId_1 = tslib_1.__importDefault(require("./AcquireSimpleItemsByUserId"));
 exports.AcquireSimpleItemsByUserId = AcquireSimpleItemsByUserId_1.default;
+const SetSimpleItemsByUserId_1 = tslib_1.__importDefault(require("./SetSimpleItemsByUserId"));
+exports.SetSimpleItemsByUserId = SetSimpleItemsByUserId_1.default;
 const AcquireBigItemByUserId_1 = tslib_1.__importDefault(require("./AcquireBigItemByUserId"));
 exports.AcquireBigItemByUserId = AcquireBigItemByUserId_1.default;
+const SetBigItemByUserId_1 = tslib_1.__importDefault(require("./SetBigItemByUserId"));
+exports.SetBigItemByUserId = SetBigItemByUserId_1.default;
 const VerifyInventoryCurrentMaxCapacityByUserId_1 = tslib_1.__importDefault(require("./VerifyInventoryCurrentMaxCapacityByUserId"));
 exports.VerifyInventoryCurrentMaxCapacityByUserId = VerifyInventoryCurrentMaxCapacityByUserId_1.default;
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("./ConsumeItemSetByUserId"));

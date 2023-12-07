@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const BigItemModelRef_1 = tslib_1.__importDefault(require("./BigItemModelRef"));
 const AcquireBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireBigItemByUserId"));
+const SetBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetBigItemByUserId"));
 const ConsumeBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeBigItemByUserId"));
 const VerifyBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyBigItemByUserId"));
 class BigInventoryModelRef {
@@ -31,6 +32,9 @@ class BigInventoryModelRef {
     }
     acquireBigItem(itemName, acquireCount, userId = "#{userId}") {
         return new AcquireBigItemByUserId_1.default(this.namespaceName, this.inventoryName, itemName, acquireCount, userId);
+    }
+    setBigItem(itemName, count, userId = "#{userId}") {
+        return new SetBigItemByUserId_1.default(this.namespaceName, this.inventoryName, itemName, count, userId);
     }
     consumeBigItem(itemName, consumeCount, userId = "#{userId}") {
         return new ConsumeBigItemByUserId_1.default(this.namespaceName, this.inventoryName, itemName, consumeCount, userId);

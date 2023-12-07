@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import AcquireBigItemByUserId from "../stampSheet/AcquireBigItemByUserId";
+import SetBigItemByUserId from "../stampSheet/SetBigItemByUserId";
 import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
 import VerifyBigItemByUserId from "../stampSheet/VerifyBigItemByUserId";
 
@@ -43,6 +44,19 @@ export default class BigItemModelRef {
             this.inventoryName,
             this.itemName,
             acquireCount,
+            userId,
+        );
+    }
+
+    public setBigItem(
+        count: string,
+        userId: string|null = "#{userId}",
+    ): SetBigItemByUserId {
+        return new SetBigItemByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            this.itemName,
+            count,
             userId,
         );
     }

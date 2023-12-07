@@ -19,7 +19,9 @@ import AcquireItemSetByUserId from "./AcquireItemSetByUserId";
 import AddReferenceOfByUserId from "./AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "./DeleteReferenceOfByUserId";
 import AcquireSimpleItemsByUserId from "./AcquireSimpleItemsByUserId";
+import SetSimpleItemsByUserId from "./SetSimpleItemsByUserId";
 import AcquireBigItemByUserId from "./AcquireBigItemByUserId";
+import SetBigItemByUserId from "./SetBigItemByUserId";
 import VerifyInventoryCurrentMaxCapacityByUserId from "./VerifyInventoryCurrentMaxCapacityByUserId";
 import ConsumeItemSetByUserId from "./ConsumeItemSetByUserId";
 import VerifyItemSetByUserId from "./VerifyItemSetByUserId";
@@ -36,7 +38,9 @@ export {
     AddReferenceOfByUserId,
     DeleteReferenceOfByUserId,
     AcquireSimpleItemsByUserId,
+    SetSimpleItemsByUserId,
     AcquireBigItemByUserId,
+    SetBigItemByUserId,
     VerifyInventoryCurrentMaxCapacityByUserId,
     ConsumeItemSetByUserId,
     VerifyItemSetByUserId,

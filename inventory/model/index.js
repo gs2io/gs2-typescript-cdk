@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.ConsumeCount = exports.AcquireCount = exports.BigItemModel = exports.BigInventoryModel = exports.SimpleItemModel = exports.SimpleInventoryModel = exports.ItemModel = exports.InventoryModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.HeldCount = exports.ConsumeCount = exports.AcquireCount = exports.BigItemModel = exports.BigInventoryModel = exports.SimpleItemModel = exports.SimpleInventoryModel = exports.ItemModel = exports.InventoryModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,8 @@ const AcquireCount_1 = tslib_1.__importDefault(require("./AcquireCount"));
 exports.AcquireCount = AcquireCount_1.default;
 const ConsumeCount_1 = tslib_1.__importDefault(require("./ConsumeCount"));
 exports.ConsumeCount = ConsumeCount_1.default;
+const HeldCount_1 = tslib_1.__importDefault(require("./HeldCount"));
+exports.HeldCount = HeldCount_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map
