@@ -33,8 +33,14 @@ export default class DirectEnhanceByUserId extends AcquireAction {
         properties["namespaceName"] = namespaceName
         properties["rateName"] = rateName
         properties["targetItemSetId"] = targetItemSetId
-        properties["materials"] = materials
-        properties["config"] = config
+        if (materials != null) {
+            properties["materials"] = materials.map(v => v.properties(
+                ));
+        }
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties(
+                ));
+        }
         properties["userId"] = userId
 
         super(

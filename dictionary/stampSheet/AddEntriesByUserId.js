@@ -20,7 +20,9 @@ class AddEntriesByUserId extends model_1.AcquireAction {
     constructor(namespaceName, entryModelNames = null, userId = "#{userId}") {
         let properties = {};
         properties["namespaceName"] = namespaceName;
-        properties["entryModelNames"] = entryModelNames;
+        if (entryModelNames != null) {
+            properties["entryModelNames"] = entryModelNames;
+        }
         properties["userId"] = userId;
         super("Gs2Dictionary:AddEntriesByUserId", properties);
     }

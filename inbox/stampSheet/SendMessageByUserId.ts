@@ -31,9 +31,15 @@ export default class SendMessageByUserId extends AcquireAction {
 
         properties["namespaceName"] = namespaceName
         properties["metadata"] = metadata
-        properties["readAcquireActions"] = readAcquireActions
+        if (readAcquireActions != null) {
+            properties["readAcquireActions"] = readAcquireActions.map(v => v.properties(
+                ));
+        }
         properties["expiresAt"] = expiresAt
-        properties["expiresTimeSpan"] = expiresTimeSpan
+        if (expiresTimeSpan != null) {
+            properties["expiresTimeSpan"] = expiresTimeSpan?.properties(
+            );
+        }
         properties["userId"] = userId
 
         super(

@@ -21,7 +21,9 @@ class AcquireSimpleItemsByUserId extends model_1.AcquireAction {
         let properties = {};
         properties["namespaceName"] = namespaceName;
         properties["inventoryName"] = inventoryName;
-        properties["acquireCounts"] = acquireCounts;
+        if (acquireCounts != null) {
+            properties["acquireCounts"] = acquireCounts.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2Inventory:AcquireSimpleItemsByUserId", properties);
     }

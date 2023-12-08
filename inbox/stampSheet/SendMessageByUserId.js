@@ -21,9 +21,13 @@ class SendMessageByUserId extends model_1.AcquireAction {
         let properties = {};
         properties["namespaceName"] = namespaceName;
         properties["metadata"] = metadata;
-        properties["readAcquireActions"] = readAcquireActions;
+        if (readAcquireActions != null) {
+            properties["readAcquireActions"] = readAcquireActions.map(v => v.properties());
+        }
         properties["expiresAt"] = expiresAt;
-        properties["expiresTimeSpan"] = expiresTimeSpan;
+        if (expiresTimeSpan != null) {
+            properties["expiresTimeSpan"] = expiresTimeSpan === null || expiresTimeSpan === void 0 ? void 0 : expiresTimeSpan.properties();
+        }
         properties["userId"] = userId;
         super("Gs2Inbox:SendMessageByUserId", properties);
     }

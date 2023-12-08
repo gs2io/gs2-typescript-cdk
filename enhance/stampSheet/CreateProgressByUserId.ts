@@ -32,7 +32,10 @@ export default class CreateProgressByUserId extends AcquireAction {
         properties["namespaceName"] = namespaceName
         properties["rateName"] = rateName
         properties["targetItemSetId"] = targetItemSetId
-        properties["materials"] = materials
+        if (materials != null) {
+            properties["materials"] = materials.map(v => v.properties(
+                ));
+        }
         properties["force"] = force
         properties["userId"] = userId
 

@@ -26,7 +26,9 @@ export default class AddEntriesByUserId extends AcquireAction {
         let properties: {[name: string]: any} = {};
 
         properties["namespaceName"] = namespaceName
-        properties["entryModelNames"] = entryModelNames
+        if (entryModelNames != null) {
+            properties["entryModelNames"] = entryModelNames;
+        }
         properties["userId"] = userId
 
         super(

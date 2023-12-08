@@ -31,7 +31,10 @@ export default class IncrementalExchangeByUserId extends AcquireAction {
         properties["namespaceName"] = namespaceName
         properties["rateName"] = rateName
         properties["count"] = count
-        properties["config"] = config
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties(
+                ));
+        }
         properties["userId"] = userId
 
         super(

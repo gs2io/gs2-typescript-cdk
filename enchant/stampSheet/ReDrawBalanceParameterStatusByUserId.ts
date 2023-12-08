@@ -30,7 +30,9 @@ export default class ReDrawBalanceParameterStatusByUserId extends AcquireAction 
         properties["namespaceName"] = namespaceName
         properties["parameterName"] = parameterName
         properties["propertyId"] = propertyId
-        properties["fixedParameterNames"] = fixedParameterNames
+        if (fixedParameterNames != null) {
+            properties["fixedParameterNames"] = fixedParameterNames;
+        }
         properties["userId"] = userId
 
         super(

@@ -29,7 +29,10 @@ export default class SetSimpleItemsByUserId extends AcquireAction {
 
         properties["namespaceName"] = namespaceName
         properties["inventoryName"] = inventoryName
-        properties["counts"] = counts
+        if (counts != null) {
+            properties["counts"] = counts.map(v => v.properties(
+                ));
+        }
         properties["userId"] = userId
 
         super(

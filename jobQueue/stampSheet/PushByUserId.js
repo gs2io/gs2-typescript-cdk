@@ -20,7 +20,9 @@ class PushByUserId extends model_1.AcquireAction {
     constructor(namespaceName, jobs = null, userId = "#{userId}") {
         let properties = {};
         properties["namespaceName"] = namespaceName;
-        properties["jobs"] = jobs;
+        if (jobs != null) {
+            properties["jobs"] = jobs.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2JobQueue:PushByUserId", properties);
     }

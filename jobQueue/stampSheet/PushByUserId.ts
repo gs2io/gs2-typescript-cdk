@@ -27,7 +27,10 @@ export default class PushByUserId extends AcquireAction {
         let properties: {[name: string]: any} = {};
 
         properties["namespaceName"] = namespaceName
-        properties["jobs"] = jobs
+        if (jobs != null) {
+            properties["jobs"] = jobs.map(v => v.properties(
+                ));
+        }
         properties["userId"] = userId
 
         super(

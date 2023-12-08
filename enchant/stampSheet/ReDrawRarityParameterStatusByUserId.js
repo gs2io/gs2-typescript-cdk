@@ -22,7 +22,9 @@ class ReDrawRarityParameterStatusByUserId extends model_1.AcquireAction {
         properties["namespaceName"] = namespaceName;
         properties["parameterName"] = parameterName;
         properties["propertyId"] = propertyId;
-        properties["fixedParameterNames"] = fixedParameterNames;
+        if (fixedParameterNames != null) {
+            properties["fixedParameterNames"] = fixedParameterNames;
+        }
         properties["userId"] = userId;
         super("Gs2Enchant:ReDrawRarityParameterStatusByUserId", properties);
     }

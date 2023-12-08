@@ -22,8 +22,12 @@ class AcquireActionsToPropertyFormProperties extends model_1.AcquireAction {
         properties["namespaceName"] = namespaceName;
         properties["propertyFormModelName"] = propertyFormModelName;
         properties["propertyId"] = propertyId;
-        properties["acquireAction"] = acquireAction;
-        properties["config"] = config;
+        if (acquireAction != null) {
+            properties["acquireAction"] = acquireAction === null || acquireAction === void 0 ? void 0 : acquireAction.properties();
+        }
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2Formation:AcquireActionsToPropertyFormProperties", properties);
     }

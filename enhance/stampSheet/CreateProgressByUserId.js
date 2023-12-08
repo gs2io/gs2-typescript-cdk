@@ -22,7 +22,9 @@ class CreateProgressByUserId extends model_1.AcquireAction {
         properties["namespaceName"] = namespaceName;
         properties["rateName"] = rateName;
         properties["targetItemSetId"] = targetItemSetId;
-        properties["materials"] = materials;
+        if (materials != null) {
+            properties["materials"] = materials.map(v => v.properties());
+        }
         properties["force"] = force;
         properties["userId"] = userId;
         super("Gs2Enhance:CreateProgressByUserId", properties);

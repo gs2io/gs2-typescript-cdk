@@ -22,7 +22,9 @@ class DrawByUserId extends model_1.AcquireAction {
         properties["namespaceName"] = namespaceName;
         properties["lotteryName"] = lotteryName;
         properties["count"] = count;
-        properties["config"] = config;
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2Lottery:DrawByUserId", properties);
     }

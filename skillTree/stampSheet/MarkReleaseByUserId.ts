@@ -26,7 +26,9 @@ export default class MarkReleaseByUserId extends AcquireAction {
         let properties: {[name: string]: any} = {};
 
         properties["namespaceName"] = namespaceName
-        properties["nodeModelNames"] = nodeModelNames
+        if (nodeModelNames != null) {
+            properties["nodeModelNames"] = nodeModelNames;
+        }
         properties["userId"] = userId
 
         super(

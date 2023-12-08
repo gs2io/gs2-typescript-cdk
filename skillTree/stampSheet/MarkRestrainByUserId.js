@@ -20,7 +20,9 @@ class MarkRestrainByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, nodeModelNames, userId = "#{userId}") {
         let properties = {};
         properties["namespaceName"] = namespaceName;
-        properties["nodeModelNames"] = nodeModelNames;
+        if (nodeModelNames != null) {
+            properties["nodeModelNames"] = nodeModelNames;
+        }
         properties["userId"] = userId;
         super("Gs2SkillTree:MarkRestrainByUserId", properties);
     }

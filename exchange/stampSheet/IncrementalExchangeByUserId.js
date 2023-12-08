@@ -22,7 +22,9 @@ class IncrementalExchangeByUserId extends model_1.AcquireAction {
         properties["namespaceName"] = namespaceName;
         properties["rateName"] = rateName;
         properties["count"] = count;
-        properties["config"] = config;
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2Exchange:IncrementalExchangeByUserId", properties);
     }

@@ -23,7 +23,9 @@ class MultiplyAcquireActionsByUserId extends model_1.AcquireAction {
         properties["experienceName"] = experienceName;
         properties["propertyId"] = propertyId;
         properties["rateName"] = rateName;
-        properties["acquireActions"] = acquireActions;
+        if (acquireActions != null) {
+            properties["acquireActions"] = acquireActions.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2Experience:MultiplyAcquireActionsByUserId", properties);
     }

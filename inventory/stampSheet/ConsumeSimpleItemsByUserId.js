@@ -21,7 +21,9 @@ class ConsumeSimpleItemsByUserId extends model_1.ConsumeAction {
         let properties = {};
         properties["namespaceName"] = namespaceName;
         properties["inventoryName"] = inventoryName;
-        properties["consumeCounts"] = consumeCounts;
+        if (consumeCounts != null) {
+            properties["consumeCounts"] = consumeCounts.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2Inventory:ConsumeSimpleItemsByUserId", properties);
     }

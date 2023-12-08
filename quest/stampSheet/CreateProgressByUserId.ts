@@ -31,7 +31,10 @@ export default class CreateProgressByUserId extends AcquireAction {
         properties["namespaceName"] = namespaceName
         properties["questModelId"] = questModelId
         properties["force"] = force
-        properties["config"] = config
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties(
+                ));
+        }
         properties["userId"] = userId
 
         super(

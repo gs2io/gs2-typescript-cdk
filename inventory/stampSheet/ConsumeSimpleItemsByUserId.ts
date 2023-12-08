@@ -29,7 +29,10 @@ export default class ConsumeSimpleItemsByUserId extends ConsumeAction {
 
         properties["namespaceName"] = namespaceName
         properties["inventoryName"] = inventoryName
-        properties["consumeCounts"] = consumeCounts
+        if (consumeCounts != null) {
+            properties["consumeCounts"] = consumeCounts.map(v => v.properties(
+                ));
+        }
         properties["userId"] = userId
 
         super(

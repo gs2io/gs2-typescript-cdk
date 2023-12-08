@@ -32,8 +32,14 @@ export default class AcquireActionsToPropertyFormProperties extends AcquireActio
         properties["namespaceName"] = namespaceName
         properties["propertyFormModelName"] = propertyFormModelName
         properties["propertyId"] = propertyId
-        properties["acquireAction"] = acquireAction
-        properties["config"] = config
+        if (acquireAction != null) {
+            properties["acquireAction"] = acquireAction?.properties(
+            );
+        }
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties(
+                ));
+        }
         properties["userId"] = userId
 
         super(

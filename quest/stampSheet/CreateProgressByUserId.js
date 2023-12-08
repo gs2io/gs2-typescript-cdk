@@ -22,7 +22,9 @@ class CreateProgressByUserId extends model_1.AcquireAction {
         properties["namespaceName"] = namespaceName;
         properties["questModelId"] = questModelId;
         properties["force"] = force;
-        properties["config"] = config;
+        if (config != null) {
+            properties["config"] = config.map(v => v.properties());
+        }
         properties["userId"] = userId;
         super("Gs2Quest:CreateProgressByUserId", properties);
     }

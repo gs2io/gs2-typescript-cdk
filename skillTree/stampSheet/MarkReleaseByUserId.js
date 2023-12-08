@@ -20,7 +20,9 @@ class MarkReleaseByUserId extends model_1.AcquireAction {
     constructor(namespaceName, nodeModelNames, userId = "#{userId}") {
         let properties = {};
         properties["namespaceName"] = namespaceName;
-        properties["nodeModelNames"] = nodeModelNames;
+        if (nodeModelNames != null) {
+            properties["nodeModelNames"] = nodeModelNames;
+        }
         properties["userId"] = userId;
         super("Gs2SkillTree:MarkReleaseByUserId", properties);
     }
