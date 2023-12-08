@@ -23,7 +23,21 @@ class AcquireAction {
     properties() {
         return {
             "action": this.action,
-            "request": this.request,
+            "request": (() => {
+                const keys = Object.keys(this.request);
+                let dict = {};
+                for (const key of keys) {
+                    if (!this.request[key])
+                        continue;
+                    if (this.request[key].properties) {
+                        dict[key] = this.request[key].properties();
+                    }
+                    else {
+                        dict[key] = this.request[key];
+                    }
+                }
+                return dict;
+            })(),
         };
     }
 }
