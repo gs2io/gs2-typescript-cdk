@@ -18,16 +18,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CreateProgressByUserId extends model_1.AcquireAction {
     constructor(namespaceName, rateName, targetItemSetId, materials = null, force = null, userId = "#{userId}") {
+        super();
+        this.materials = null;
+        this.force = null;
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.targetItemSetId = targetItemSetId;
+        this.materials = materials !== null && materials !== void 0 ? materials : null;
+        this.force = force !== null && force !== void 0 ? force : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["rateName"] = rateName;
-        properties["targetItemSetId"] = targetItemSetId;
-        if (materials != null) {
-            properties["materials"] = materials.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["force"] = force;
-        properties["userId"] = userId;
-        super("Gs2Enhance:CreateProgressByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.targetItemSetId != null) {
+            properties["targetItemSetId"] = this.targetItemSetId;
+        }
+        if (this.materials != null) {
+            properties["materials"] = this.materials.map(v => v.properties());
+        }
+        if (this.force != null) {
+            properties["force"] = this.force;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enhance:CreateProgressByUserId";
     }
 }
 exports.default = CreateProgressByUserId;

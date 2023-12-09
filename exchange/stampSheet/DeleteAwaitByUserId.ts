@@ -17,21 +17,38 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DeleteAwaitByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly awaitName: string|null = null;
+
 
     public constructor(
         namespaceName: string,
         awaitName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.awaitName = awaitName ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["awaitName"] = awaitName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
 
-        super(
-            "Gs2Exchange:DeleteAwaitByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Exchange:DeleteAwaitByUserId";
     }
 }

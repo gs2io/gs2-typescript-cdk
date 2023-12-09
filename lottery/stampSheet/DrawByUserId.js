@@ -18,15 +18,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DrawByUserId extends model_1.AcquireAction {
     constructor(namespaceName, lotteryName, count, config = null, userId = "#{userId}") {
+        super();
+        this.config = null;
+        this.namespaceName = namespaceName;
+        this.lotteryName = lotteryName;
+        this.count = count;
+        this.config = config !== null && config !== void 0 ? config : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["lotteryName"] = lotteryName;
-        properties["count"] = count;
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Lottery:DrawByUserId", properties);
+        if (this.lotteryName != null) {
+            properties["lotteryName"] = this.lotteryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Lottery:DrawByUserId";
     }
 }
 exports.default = DrawByUserId;

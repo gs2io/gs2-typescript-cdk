@@ -18,16 +18,49 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireItemSetByUserId extends model_1.AcquireAction {
     constructor(namespaceName, inventoryName, itemName, acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, userId = "#{userId}") {
+        super();
+        this.expiresAt = null;
+        this.createNewItemSet = null;
+        this.itemSetName = null;
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.itemName = itemName;
+        this.acquireCount = acquireCount;
+        this.expiresAt = expiresAt !== null && expiresAt !== void 0 ? expiresAt : null;
+        this.createNewItemSet = createNewItemSet !== null && createNewItemSet !== void 0 ? createNewItemSet : null;
+        this.itemSetName = itemSetName !== null && itemSetName !== void 0 ? itemSetName : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["inventoryName"] = inventoryName;
-        properties["itemName"] = itemName;
-        properties["acquireCount"] = acquireCount;
-        properties["expiresAt"] = expiresAt;
-        properties["createNewItemSet"] = createNewItemSet;
-        properties["itemSetName"] = itemSetName;
-        properties["userId"] = userId;
-        super("Gs2Inventory:AcquireItemSetByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.acquireCount != null) {
+            properties["acquireCount"] = this.acquireCount;
+        }
+        if (this.expiresAt != null) {
+            properties["expiresAt"] = this.expiresAt;
+        }
+        if (this.createNewItemSet != null) {
+            properties["createNewItemSet"] = this.createNewItemSet;
+        }
+        if (this.itemSetName != null) {
+            properties["itemSetName"] = this.itemSetName;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inventory:AcquireItemSetByUserId";
     }
 }
 exports.default = AcquireItemSetByUserId;

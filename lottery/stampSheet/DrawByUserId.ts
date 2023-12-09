@@ -18,28 +18,54 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import { Config } from "../../core/model";
 
 export default class DrawByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly lotteryName: string;
+    private readonly userId: string;
+    private readonly count: number;
+    private readonly config: Config[]|null = null;
+
 
     public constructor(
         namespaceName: string,
         lotteryName: string,
         count: number,
         config: Config[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.lotteryName = lotteryName;
+        this.count = count;
+        this.config = config ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["lotteryName"] = lotteryName
-        properties["count"] = count
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.lotteryName != null) {
+            properties["lotteryName"] = this.lotteryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Lottery:DrawByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Lottery:DrawByUserId";
     }
 }

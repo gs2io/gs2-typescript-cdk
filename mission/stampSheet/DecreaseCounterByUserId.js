@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DecreaseCounterByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, counterName, value, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.counterName = counterName;
+        this.value = value;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["counterName"] = counterName;
-        properties["value"] = value;
-        properties["userId"] = userId;
-        super("Gs2Mission:DecreaseCounterByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.value != null) {
+            properties["value"] = this.value;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Mission:DecreaseCounterByUserId";
     }
 }
 exports.default = DecreaseCounterByUserId;

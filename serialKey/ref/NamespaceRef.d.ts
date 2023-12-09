@@ -5,7 +5,7 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     campaignModel(campaignModelName: string): CampaignModelRef;
-    revertUse(code: string, userId?: string | null): RevertUseByUserId;
-    use(code: string, userId?: string | null): UseByUserId;
+    revertUse(code: string, userId?: string): RevertUseByUserId;
+    use(code: string, userId?: string): UseByUserId;
     grn(): string;
 }

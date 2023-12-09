@@ -18,13 +18,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteEntriesByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, entryModelNames = null, userId = "#{userId}") {
+        super();
+        this.entryModelNames = null;
+        this.namespaceName = namespaceName;
+        this.entryModelNames = entryModelNames !== null && entryModelNames !== void 0 ? entryModelNames : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        if (entryModelNames != null) {
-            properties["entryModelNames"] = entryModelNames;
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Dictionary:DeleteEntriesByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.entryModelNames != null) {
+            properties["entryModelNames"] = this.entryModelNames;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Dictionary:DeleteEntriesByUserId";
     }
 }
 exports.default = DeleteEntriesByUserId;

@@ -18,13 +18,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SubExperienceByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
+        super();
+        this.experienceValue = null;
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.propertyId = propertyId;
+        this.experienceValue = experienceValue !== null && experienceValue !== void 0 ? experienceValue : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["experienceName"] = experienceName;
-        properties["propertyId"] = propertyId;
-        properties["experienceValue"] = experienceValue;
-        properties["userId"] = userId;
-        super("Gs2Experience:SubExperienceByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.experienceValue != null) {
+            properties["experienceValue"] = this.experienceValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Experience:SubExperienceByUserId";
     }
 }
 exports.default = SubExperienceByUserId;

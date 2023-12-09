@@ -55,7 +55,7 @@ export default class NamespaceRef {
     public addMoldCapacity(
         moldModelName: string,
         capacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddMoldCapacityByUserId {
         return new AddMoldCapacityByUserId(
             this.namespaceName,
@@ -68,7 +68,7 @@ export default class NamespaceRef {
     public setMoldCapacity(
         moldModelName: string,
         capacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetMoldCapacityByUserId {
         return new SetMoldCapacityByUserId(
             this.namespaceName,
@@ -83,7 +83,7 @@ export default class NamespaceRef {
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
             this.namespaceName,
@@ -100,7 +100,7 @@ export default class NamespaceRef {
         propertyId: string,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireActionsToPropertyFormProperties {
         return new AcquireActionsToPropertyFormProperties(
             this.namespaceName,
@@ -115,7 +115,7 @@ export default class NamespaceRef {
     public subMoldCapacity(
         moldModelName: string,
         capacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SubMoldCapacityByUserId {
         return new SubMoldCapacityByUserId(
             this.namespaceName,

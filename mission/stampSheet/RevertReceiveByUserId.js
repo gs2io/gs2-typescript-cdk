@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class RevertReceiveByUserId extends model_1.AcquireAction {
     constructor(namespaceName, missionGroupName, missionTaskName, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.missionGroupName = missionGroupName;
+        this.missionTaskName = missionTaskName;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["missionGroupName"] = missionGroupName;
-        properties["missionTaskName"] = missionTaskName;
-        properties["userId"] = userId;
-        super("Gs2Mission:RevertReceiveByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.missionGroupName != null) {
+            properties["missionGroupName"] = this.missionGroupName;
+        }
+        if (this.missionTaskName != null) {
+            properties["missionTaskName"] = this.missionTaskName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Mission:RevertReceiveByUserId";
     }
 }
 exports.default = RevertReceiveByUserId;

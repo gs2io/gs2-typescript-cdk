@@ -29,7 +29,7 @@ export default class NamespaceRef {
 
     public acquirePoint(
         point: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquirePointByUserId {
         return new AcquirePointByUserId(
             this.namespaceName,
@@ -40,7 +40,7 @@ export default class NamespaceRef {
 
     public consumePoint(
         point: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumePointByUserId {
         return new ConsumePointByUserId(
             this.namespaceName,

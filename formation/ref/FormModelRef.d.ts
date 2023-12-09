@@ -5,6 +5,6 @@ export default class FormModelRef {
     private readonly namespaceName;
     private readonly moldModelName;
     constructor(namespaceName: string, moldModelName: string);
-    acquireActionsToFormProperties(index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
+    acquireActionsToFormProperties(index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string): AcquireActionsToFormProperties;
     grn(): string;
 }

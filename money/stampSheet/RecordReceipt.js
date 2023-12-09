@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class RecordReceipt extends model_1.ConsumeAction {
     constructor(namespaceName, contentsId, receipt, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.contentsId = contentsId;
+        this.receipt = receipt;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["contentsId"] = contentsId;
-        properties["receipt"] = receipt;
-        properties["userId"] = userId;
-        super("Gs2Money:RecordReceipt", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.contentsId != null) {
+            properties["contentsId"] = this.contentsId;
+        }
+        if (this.receipt != null) {
+            properties["receipt"] = this.receipt;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Money:RecordReceipt";
     }
 }
 exports.default = RecordReceipt;

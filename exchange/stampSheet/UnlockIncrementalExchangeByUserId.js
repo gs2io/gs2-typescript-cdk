@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class UnlockIncrementalExchangeByUserId extends model_1.AcquireAction {
     constructor(namespaceName, rateName, lockTransactionId, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.lockTransactionId = lockTransactionId;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["rateName"] = rateName;
-        properties["lockTransactionId"] = lockTransactionId;
-        properties["userId"] = userId;
-        super("Gs2Exchange:UnlockIncrementalExchangeByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.lockTransactionId != null) {
+            properties["lockTransactionId"] = this.lockTransactionId;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Exchange:UnlockIncrementalExchangeByUserId";
     }
 }
 exports.default = UnlockIncrementalExchangeByUserId;

@@ -39,7 +39,7 @@ export default class NamespaceRef {
 
     public revertUse(
         code: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RevertUseByUserId {
         return new RevertUseByUserId(
             this.namespaceName,
@@ -50,7 +50,7 @@ export default class NamespaceRef {
 
     public use(
         code: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): UseByUserId {
         return new UseByUserId(
             this.namespaceName,

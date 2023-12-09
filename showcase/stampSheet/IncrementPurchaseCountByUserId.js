@@ -18,13 +18,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class IncrementPurchaseCountByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, showcaseName, displayItemName, count, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.showcaseName = showcaseName;
+        this.displayItemName = displayItemName;
+        this.count = count;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["showcaseName"] = showcaseName;
-        properties["displayItemName"] = displayItemName;
-        properties["count"] = count;
-        properties["userId"] = userId;
-        super("Gs2Showcase:IncrementPurchaseCountByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.showcaseName != null) {
+            properties["showcaseName"] = this.showcaseName;
+        }
+        if (this.displayItemName != null) {
+            properties["displayItemName"] = this.displayItemName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Showcase:IncrementPurchaseCountByUserId";
     }
 }
 exports.default = IncrementPurchaseCountByUserId;

@@ -3,6 +3,6 @@ export default class SerialKeyRef {
     private readonly namespaceName;
     private readonly code;
     constructor(namespaceName: string, code: string);
-    use(userId?: string | null): UseByUserId;
+    use(userId?: string): UseByUserId;
     grn(): string;
 }

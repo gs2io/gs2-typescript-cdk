@@ -20,6 +20,7 @@ import AcquireBigItemByUserId from "../stampSheet/AcquireBigItemByUserId";
 import SetBigItemByUserId from "../stampSheet/SetBigItemByUserId";
 import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
 import VerifyBigItemByUserId from "../stampSheet/VerifyBigItemByUserId";
+import { BigItemVerifyType } from "../stampSheet/enum/BigItemVerifyType";
 
 export default class BigInventoryModelRef {
     private readonly namespaceName: string;
@@ -46,7 +47,7 @@ export default class BigInventoryModelRef {
     public acquireBigItem(
         itemName: string,
         acquireCount: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireBigItemByUserId {
         return new AcquireBigItemByUserId(
             this.namespaceName,
@@ -60,7 +61,7 @@ export default class BigInventoryModelRef {
     public setBigItem(
         itemName: string,
         count: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetBigItemByUserId {
         return new SetBigItemByUserId(
             this.namespaceName,
@@ -74,7 +75,7 @@ export default class BigInventoryModelRef {
     public consumeBigItem(
         itemName: string,
         consumeCount: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumeBigItemByUserId {
         return new ConsumeBigItemByUserId(
             this.namespaceName,
@@ -87,9 +88,9 @@ export default class BigInventoryModelRef {
 
     public verifyBigItem(
         itemName: string,
-        verifyType: string,
+        verifyType: BigItemVerifyType,
         count: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): VerifyBigItemByUserId {
         return new VerifyBigItemByUserId(
             this.namespaceName,

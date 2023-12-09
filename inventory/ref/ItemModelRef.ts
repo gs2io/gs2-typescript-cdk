@@ -20,7 +20,9 @@ import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
 import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
+import { ItemSetVerifyType } from "../stampSheet/enum/ItemSetVerifyType";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
+import { ReferenceOfVerifyType } from "../stampSheet/enum/ReferenceOfVerifyType";
 
 export default class ItemModelRef {
     private readonly namespaceName: string;
@@ -42,7 +44,7 @@ export default class ItemModelRef {
         expiresAt: number|null = null,
         createNewItemSet: boolean|null = null,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireItemSetByUserId {
         return new AcquireItemSetByUserId(
             this.namespaceName,
@@ -59,7 +61,7 @@ export default class ItemModelRef {
     public addReferenceOf(
         referenceOf: string,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddReferenceOfByUserId {
         return new AddReferenceOfByUserId(
             this.namespaceName,
@@ -74,7 +76,7 @@ export default class ItemModelRef {
     public deleteReferenceOf(
         referenceOf: string,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteReferenceOfByUserId {
         return new DeleteReferenceOfByUserId(
             this.namespaceName,
@@ -89,7 +91,7 @@ export default class ItemModelRef {
     public consumeItemSet(
         consumeCount: number,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumeItemSetByUserId {
         return new ConsumeItemSetByUserId(
             this.namespaceName,
@@ -102,10 +104,10 @@ export default class ItemModelRef {
     }
 
     public verifyItemSet(
-        verifyType: string,
+        verifyType: ItemSetVerifyType,
         count: number,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): VerifyItemSetByUserId {
         return new VerifyItemSetByUserId(
             this.namespaceName,
@@ -120,9 +122,9 @@ export default class ItemModelRef {
 
     public verifyReferenceOf(
         referenceOf: string,
-        verifyType: string,
+        verifyType: ReferenceOfVerifyType,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): VerifyReferenceOfByUserId {
         return new VerifyReferenceOfByUserId(
             this.namespaceName,

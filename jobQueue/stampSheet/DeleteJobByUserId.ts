@@ -17,21 +17,38 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DeleteJobByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly jobName: string|null = null;
+
 
     public constructor(
         namespaceName: string,
         jobName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.jobName = jobName ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["jobName"] = jobName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
 
-        super(
-            "Gs2JobQueue:DeleteJobByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2JobQueue:DeleteJobByUserId";
     }
 }

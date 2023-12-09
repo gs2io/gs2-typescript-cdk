@@ -8,8 +8,8 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     globalMessage(globalMessageName: string): GlobalMessageRef;
-    sendMessage(metadata: string, readAcquireActions?: AcquireAction[] | null, expiresAt?: number | null, expiresTimeSpan?: TimeSpan | null, userId?: string | null): SendMessageByUserId;
-    openMessage(messageName?: string | null, userId?: string | null): OpenMessageByUserId;
-    deleteMessage(messageName?: string | null, userId?: string | null): DeleteMessageByUserId;
+    sendMessage(metadata: string, readAcquireActions?: AcquireAction[] | null, expiresAt?: number | null, expiresTimeSpan?: TimeSpan | null, userId?: string): SendMessageByUserId;
+    openMessage(messageName?: string | null, userId?: string): OpenMessageByUserId;
+    deleteMessage(messageName?: string | null, userId?: string): DeleteMessageByUserId;
     grn(): string;
 }

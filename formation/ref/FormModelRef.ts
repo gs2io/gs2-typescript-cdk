@@ -35,7 +35,7 @@ export default class FormModelRef {
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
             this.namespaceName,

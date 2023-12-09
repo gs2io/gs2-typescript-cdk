@@ -18,13 +18,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class WithdrawByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, slot, count, paidOnly = null, userId = "#{userId}") {
+        super();
+        this.paidOnly = null;
+        this.namespaceName = namespaceName;
+        this.slot = slot;
+        this.count = count;
+        this.paidOnly = paidOnly !== null && paidOnly !== void 0 ? paidOnly : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["slot"] = slot;
-        properties["count"] = count;
-        properties["paidOnly"] = paidOnly;
-        properties["userId"] = userId;
-        super("Gs2Money:WithdrawByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.slot != null) {
+            properties["slot"] = this.slot;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        if (this.paidOnly != null) {
+            properties["paidOnly"] = this.paidOnly;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Money:WithdrawByUserId";
     }
 }
 exports.default = WithdrawByUserId;

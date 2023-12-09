@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class SetMaxValueByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly staminaName: string;
+    private readonly userId: string;
+    private readonly maxValue: number;
+
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         maxValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.maxValue = maxValue;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["staminaName"] = staminaName
-        properties["maxValue"] = maxValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.maxValue != null) {
+            properties["maxValue"] = this.maxValue;
+        }
 
-        super(
-            "Gs2Stamina:SetMaxValueByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Stamina:SetMaxValueByUserId";
     }
 }

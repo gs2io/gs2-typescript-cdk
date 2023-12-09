@@ -1,5 +1,15 @@
 import { AcquireAction } from "../../core/model";
 import AcquireActionConfig from "../model/AcquireActionConfig";
 export default class AcquireActionsToFormProperties extends AcquireAction {
-    constructor(namespaceName: string, moldModelName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null);
+    private readonly namespaceName;
+    private readonly userId;
+    private readonly moldModelName;
+    private readonly index;
+    private readonly acquireAction;
+    private readonly config;
+    constructor(namespaceName: string, moldModelName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string);
+    request(): {
+        [name: string]: any;
+    };
+    action(): string;
 }

@@ -15,29 +15,62 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { StatusVerifyType } from "./enum/StatusVerifyType";
 
 export default class VerifyRankByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly experienceName: string;
+    private readonly verifyType: StatusVerifyType;
+    private readonly propertyId: string;
+    private readonly rankValue: number|null = null;
+
 
     public constructor(
         namespaceName: string,
         experienceName: string,
-        verifyType: string,
+        verifyType: StatusVerifyType,
         propertyId: string,
         rankValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.verifyType = verifyType;
+        this.propertyId = propertyId;
+        this.rankValue = rankValue ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["experienceName"] = experienceName
-        properties["verifyType"] = verifyType
-        properties["propertyId"] = propertyId
-        properties["rankValue"] = rankValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.rankValue != null) {
+            properties["rankValue"] = this.rankValue;
+        }
 
-        super(
-            "Gs2Experience:VerifyRankByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Experience:VerifyRankByUserId";
     }
 }

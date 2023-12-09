@@ -40,7 +40,7 @@ export default class NamespaceRef {
     public increaseMaximumIdleMinutes(
         categoryName: string,
         increaseMinutes: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): IncreaseMaximumIdleMinutesByUserId {
         return new IncreaseMaximumIdleMinutesByUserId(
             this.namespaceName,
@@ -53,7 +53,7 @@ export default class NamespaceRef {
     public decreaseMaximumIdleMinutes(
         categoryName: string,
         decreaseMinutes: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DecreaseMaximumIdleMinutesByUserId {
         return new DecreaseMaximumIdleMinutesByUserId(
             this.namespaceName,

@@ -12,10 +12,10 @@ export default class NamespaceRef {
     constructor(namespaceName: string);
     moldModel(moldModelName: string): MoldModelRef;
     propertyFormModel(propertyFormModelName: string): PropertyFormModelRef;
-    addMoldCapacity(moldModelName: string, capacity: number, userId?: string | null): AddMoldCapacityByUserId;
-    setMoldCapacity(moldModelName: string, capacity: number, userId?: string | null): SetMoldCapacityByUserId;
-    acquireActionsToFormProperties(moldModelName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
-    acquireActionsToPropertyFormProperties(propertyFormModelName: string, propertyId: string, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToPropertyFormProperties;
-    subMoldCapacity(moldModelName: string, capacity: number, userId?: string | null): SubMoldCapacityByUserId;
+    addMoldCapacity(moldModelName: string, capacity: number, userId?: string): AddMoldCapacityByUserId;
+    setMoldCapacity(moldModelName: string, capacity: number, userId?: string): SetMoldCapacityByUserId;
+    acquireActionsToFormProperties(moldModelName: string, index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string): AcquireActionsToFormProperties;
+    acquireActionsToPropertyFormProperties(propertyFormModelName: string, propertyId: string, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string): AcquireActionsToPropertyFormProperties;
+    subMoldCapacity(moldModelName: string, capacity: number, userId?: string): SubMoldCapacityByUserId;
     grn(): string;
 }

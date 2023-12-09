@@ -17,25 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class AddExperienceByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly experienceName: string;
+    private readonly propertyId: string;
+    private readonly experienceValue: number|null = null;
+
 
     public constructor(
         namespaceName: string,
         experienceName: string,
         propertyId: string,
         experienceValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.propertyId = propertyId;
+        this.experienceValue = experienceValue ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["experienceName"] = experienceName
-        properties["propertyId"] = propertyId
-        properties["experienceValue"] = experienceValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.experienceValue != null) {
+            properties["experienceValue"] = this.experienceValue;
+        }
 
-        super(
-            "Gs2Experience:AddExperienceByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Experience:AddExperienceByUserId";
     }
 }

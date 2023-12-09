@@ -15,31 +15,68 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { ItemSetVerifyType } from "./enum/ItemSetVerifyType";
 
 export default class VerifyItemSetByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly inventoryName: string;
+    private readonly itemName: string;
+    private readonly verifyType: ItemSetVerifyType;
+    private readonly count: number;
+    private readonly itemSetName: string|null = null;
+
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
         itemName: string,
-        verifyType: string,
+        verifyType: ItemSetVerifyType,
         count: number,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.itemName = itemName;
+        this.verifyType = verifyType;
+        this.count = count;
+        this.itemSetName = itemSetName ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        properties["itemName"] = itemName
-        properties["verifyType"] = verifyType
-        properties["count"] = count
-        properties["itemSetName"] = itemSetName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.itemSetName != null) {
+            properties["itemSetName"] = this.itemSetName;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
 
-        super(
-            "Gs2Inventory:VerifyItemSetByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:VerifyItemSetByUserId";
     }
 }

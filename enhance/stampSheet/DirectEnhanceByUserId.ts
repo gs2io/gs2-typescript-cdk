@@ -19,6 +19,13 @@ import Material from "../model/Material";
 import { Config } from "../../core/model";
 
 export default class DirectEnhanceByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly rateName: string;
+    private readonly userId: string;
+    private readonly targetItemSetId: string;
+    private readonly materials: Material[];
+    private readonly config: Config[]|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -26,26 +33,47 @@ export default class DirectEnhanceByUserId extends AcquireAction {
         targetItemSetId: string,
         materials: Material[],
         config: Config[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.targetItemSetId = targetItemSetId;
+        this.materials = materials;
+        this.config = config ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["rateName"] = rateName
-        properties["targetItemSetId"] = targetItemSetId
-        if (materials != null) {
-            properties["materials"] = materials.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.targetItemSetId != null) {
+            properties["targetItemSetId"] = this.targetItemSetId;
+        }
+        if (this.materials != null) {
+            properties["materials"] = this.materials.map(v => v.properties(
                 ));
         }
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties(
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Enhance:DirectEnhanceByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Enhance:DirectEnhanceByUserId";
     }
 }

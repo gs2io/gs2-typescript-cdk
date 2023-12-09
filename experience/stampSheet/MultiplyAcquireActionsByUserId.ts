@@ -17,6 +17,13 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class MultiplyAcquireActionsByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly experienceName: string;
+    private readonly propertyId: string;
+    private readonly rateName: string;
+    private readonly acquireActions: AcquireAction[]|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -24,23 +31,46 @@ export default class MultiplyAcquireActionsByUserId extends AcquireAction {
         propertyId: string,
         rateName: string,
         acquireActions: AcquireAction[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.propertyId = propertyId;
+        this.rateName = rateName;
+        this.acquireActions = acquireActions ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["experienceName"] = experienceName
-        properties["propertyId"] = propertyId
-        properties["rateName"] = rateName
-        if (acquireActions != null) {
-            properties["acquireActions"] = acquireActions.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.acquireActions != null) {
+            properties["acquireActions"] = this.acquireActions.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Experience:MultiplyAcquireActionsByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Experience:MultiplyAcquireActionsByUserId";
     }
 }

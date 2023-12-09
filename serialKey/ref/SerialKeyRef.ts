@@ -30,7 +30,7 @@ export default class SerialKeyRef {
     }
 
     public use(
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): UseByUserId {
         return new UseByUserId(
             this.namespaceName,

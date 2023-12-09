@@ -39,7 +39,7 @@ export default class NamespaceRef {
 
     public markRelease(
         nodeModelNames: string[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): MarkReleaseByUserId {
         return new MarkReleaseByUserId(
             this.namespaceName,
@@ -50,7 +50,7 @@ export default class NamespaceRef {
 
     public markRestrain(
         nodeModelNames: string[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): MarkRestrainByUserId {
         return new MarkRestrainByUserId(
             this.namespaceName,

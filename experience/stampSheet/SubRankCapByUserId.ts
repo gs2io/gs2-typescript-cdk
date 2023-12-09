@@ -17,25 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class SubRankCapByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly experienceName: string;
+    private readonly propertyId: string;
+    private readonly rankCapValue: number;
+
 
     public constructor(
         namespaceName: string,
         experienceName: string,
         propertyId: string,
         rankCapValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.propertyId = propertyId;
+        this.rankCapValue = rankCapValue;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["experienceName"] = experienceName
-        properties["propertyId"] = propertyId
-        properties["rankCapValue"] = rankCapValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.rankCapValue != null) {
+            properties["rankCapValue"] = this.rankCapValue;
+        }
 
-        super(
-            "Gs2Experience:SubRankCapByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Experience:SubRankCapByUserId";
     }
 }

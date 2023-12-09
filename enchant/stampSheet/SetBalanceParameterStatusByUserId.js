@@ -18,15 +18,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetBalanceParameterStatusByUserId extends model_1.AcquireAction {
     constructor(namespaceName, parameterName, propertyId, parameterValues, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.parameterName = parameterName;
+        this.propertyId = propertyId;
+        this.parameterValues = parameterValues;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["parameterName"] = parameterName;
-        properties["propertyId"] = propertyId;
-        if (parameterValues != null) {
-            properties["parameterValues"] = parameterValues.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Enchant:SetBalanceParameterStatusByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.parameterName != null) {
+            properties["parameterName"] = this.parameterName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.parameterValues != null) {
+            properties["parameterValues"] = this.parameterValues.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enchant:SetBalanceParameterStatusByUserId";
     }
 }
 exports.default = SetBalanceParameterStatusByUserId;

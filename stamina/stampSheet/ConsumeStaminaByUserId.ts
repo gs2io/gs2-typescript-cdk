@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class ConsumeStaminaByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly staminaName: string;
+    private readonly userId: string;
+    private readonly consumeValue: number;
+
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         consumeValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.consumeValue = consumeValue;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["staminaName"] = staminaName
-        properties["consumeValue"] = consumeValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.consumeValue != null) {
+            properties["consumeValue"] = this.consumeValue;
+        }
 
-        super(
-            "Gs2Stamina:ConsumeStaminaByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Stamina:ConsumeStaminaByUserId";
     }
 }

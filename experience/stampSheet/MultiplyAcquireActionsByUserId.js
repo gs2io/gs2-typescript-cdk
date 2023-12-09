@@ -18,16 +18,39 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class MultiplyAcquireActionsByUserId extends model_1.AcquireAction {
     constructor(namespaceName, experienceName, propertyId, rateName, acquireActions = null, userId = "#{userId}") {
+        super();
+        this.acquireActions = null;
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.propertyId = propertyId;
+        this.rateName = rateName;
+        this.acquireActions = acquireActions !== null && acquireActions !== void 0 ? acquireActions : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["experienceName"] = experienceName;
-        properties["propertyId"] = propertyId;
-        properties["rateName"] = rateName;
-        if (acquireActions != null) {
-            properties["acquireActions"] = acquireActions.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Experience:MultiplyAcquireActionsByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.acquireActions != null) {
+            properties["acquireActions"] = this.acquireActions.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Experience:MultiplyAcquireActionsByUserId";
     }
 }
 exports.default = MultiplyAcquireActionsByUserId;

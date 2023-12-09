@@ -45,7 +45,7 @@ export default class NamespaceRef {
         readAcquireActions: AcquireAction[]|null = null,
         expiresAt: number|null = null,
         expiresTimeSpan: TimeSpan|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SendMessageByUserId {
         return new SendMessageByUserId(
             this.namespaceName,
@@ -59,7 +59,7 @@ export default class NamespaceRef {
 
     public openMessage(
         messageName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): OpenMessageByUserId {
         return new OpenMessageByUserId(
             this.namespaceName,
@@ -70,7 +70,7 @@ export default class NamespaceRef {
 
     public deleteMessage(
         messageName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteMessageByUserId {
         return new DeleteMessageByUserId(
             this.namespaceName,

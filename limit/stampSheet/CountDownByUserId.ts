@@ -17,25 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class CountDownByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly limitName: string;
+    private readonly counterName: string;
+    private readonly userId: string;
+    private readonly countDownValue: number|null = null;
+
 
     public constructor(
         namespaceName: string,
         limitName: string,
         counterName: string,
         countDownValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.limitName = limitName;
+        this.counterName = counterName;
+        this.countDownValue = countDownValue ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["limitName"] = limitName
-        properties["counterName"] = counterName
-        properties["countDownValue"] = countDownValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.limitName != null) {
+            properties["limitName"] = this.limitName;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.countDownValue != null) {
+            properties["countDownValue"] = this.countDownValue;
+        }
 
-        super(
-            "Gs2Limit:CountDownByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Limit:CountDownByUserId";
     }
 }

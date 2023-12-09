@@ -17,23 +17,41 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DeleteEntriesByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly entryModelNames: string[]|null = null;
+
 
     public constructor(
         namespaceName: string,
         entryModelNames: string[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.entryModelNames = entryModelNames ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        if (entryModelNames != null) {
-            properties["entryModelNames"] = entryModelNames;
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.entryModelNames != null) {
+            properties["entryModelNames"] = this.entryModelNames;
+        }
 
-        super(
-            "Gs2Dictionary:DeleteEntriesByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Dictionary:DeleteEntriesByUserId";
     }
 }

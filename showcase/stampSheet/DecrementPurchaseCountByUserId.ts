@@ -17,25 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DecrementPurchaseCountByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly showcaseName: string;
+    private readonly displayItemName: string;
+    private readonly userId: string;
+    private readonly count: number;
+
 
     public constructor(
         namespaceName: string,
         showcaseName: string,
         displayItemName: string,
         count: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.showcaseName = showcaseName;
+        this.displayItemName = displayItemName;
+        this.count = count;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["showcaseName"] = showcaseName
-        properties["displayItemName"] = displayItemName
-        properties["count"] = count
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.showcaseName != null) {
+            properties["showcaseName"] = this.showcaseName;
+        }
+        if (this.displayItemName != null) {
+            properties["displayItemName"] = this.displayItemName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
 
-        super(
-            "Gs2Showcase:DecrementPurchaseCountByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Showcase:DecrementPurchaseCountByUserId";
     }
 }

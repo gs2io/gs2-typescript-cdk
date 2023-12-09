@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetRecoverIntervalByUserId extends model_1.AcquireAction {
     constructor(namespaceName, staminaName, recoverIntervalMinutes, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.recoverIntervalMinutes = recoverIntervalMinutes;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["staminaName"] = staminaName;
-        properties["recoverIntervalMinutes"] = recoverIntervalMinutes;
-        properties["userId"] = userId;
-        super("Gs2Stamina:SetRecoverIntervalByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.recoverIntervalMinutes != null) {
+            properties["recoverIntervalMinutes"] = this.recoverIntervalMinutes;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Stamina:SetRecoverIntervalByUserId";
     }
 }
 exports.default = SetRecoverIntervalByUserId;

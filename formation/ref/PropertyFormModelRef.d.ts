@@ -5,6 +5,6 @@ export default class PropertyFormModelRef {
     private readonly namespaceName;
     private readonly propertyFormModelName;
     constructor(namespaceName: string, propertyFormModelName: string);
-    acquireActionsToPropertyFormProperties(propertyId: string, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToPropertyFormProperties;
+    acquireActionsToPropertyFormProperties(propertyId: string, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string): AcquireActionsToPropertyFormProperties;
     grn(): string;
 }

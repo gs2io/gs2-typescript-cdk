@@ -18,15 +18,44 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyRarityParameterStatusByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, parameterName, propertyId, verifyType, parameterValueName = null, parameterCount = null, userId = "#{userId}") {
+        super();
+        this.parameterValueName = null;
+        this.parameterCount = null;
+        this.namespaceName = namespaceName;
+        this.parameterName = parameterName;
+        this.propertyId = propertyId;
+        this.verifyType = verifyType;
+        this.parameterValueName = parameterValueName !== null && parameterValueName !== void 0 ? parameterValueName : null;
+        this.parameterCount = parameterCount !== null && parameterCount !== void 0 ? parameterCount : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["parameterName"] = parameterName;
-        properties["propertyId"] = propertyId;
-        properties["verifyType"] = verifyType;
-        properties["parameterValueName"] = parameterValueName;
-        properties["parameterCount"] = parameterCount;
-        properties["userId"] = userId;
-        super("Gs2Enchant:VerifyRarityParameterStatusByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.parameterName != null) {
+            properties["parameterName"] = this.parameterName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.parameterValueName != null) {
+            properties["parameterValueName"] = this.parameterValueName;
+        }
+        if (this.parameterCount != null) {
+            properties["parameterCount"] = this.parameterCount;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enchant:VerifyRarityParameterStatusByUserId";
     }
 }
 exports.default = VerifyRarityParameterStatusByUserId;

@@ -32,7 +32,7 @@ export default class NamespaceRef {
         showcaseName: string,
         displayItemName: string,
         count: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DecrementPurchaseCountByUserId {
         return new DecrementPurchaseCountByUserId(
             this.namespaceName,
@@ -45,7 +45,7 @@ export default class NamespaceRef {
 
     public forceReDraw(
         showcaseName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ForceReDrawByUserId {
         return new ForceReDrawByUserId(
             this.namespaceName,
@@ -58,7 +58,7 @@ export default class NamespaceRef {
         showcaseName: string,
         displayItemName: string,
         count: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): IncrementPurchaseCountByUserId {
         return new IncrementPurchaseCountByUserId(
             this.namespaceName,

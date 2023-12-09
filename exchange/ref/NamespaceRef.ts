@@ -55,7 +55,7 @@ export default class NamespaceRef {
         rateName: string,
         count: number,
         config: Config[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ExchangeByUserId {
         return new ExchangeByUserId(
             this.namespaceName,
@@ -70,7 +70,7 @@ export default class NamespaceRef {
         rateName: string,
         count: number,
         config: Config[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): IncrementalExchangeByUserId {
         return new IncrementalExchangeByUserId(
             this.namespaceName,
@@ -84,7 +84,7 @@ export default class NamespaceRef {
     public unlockIncrementalExchange(
         rateName: string,
         lockTransactionId: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): UnlockIncrementalExchangeByUserId {
         return new UnlockIncrementalExchangeByUserId(
             this.namespaceName,
@@ -97,7 +97,7 @@ export default class NamespaceRef {
     public createAwait(
         rateName: string,
         count: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): CreateAwaitByUserId {
         return new CreateAwaitByUserId(
             this.namespaceName,
@@ -109,7 +109,7 @@ export default class NamespaceRef {
 
     public deleteAwait(
         awaitName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteAwaitByUserId {
         return new DeleteAwaitByUserId(
             this.namespaceName,

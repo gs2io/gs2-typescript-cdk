@@ -33,7 +33,7 @@ export default class LotteryModelRef {
     public draw(
         count: number,
         config: Config[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DrawByUserId {
         return new DrawByUserId(
             this.namespaceName,

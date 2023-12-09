@@ -13,8 +13,6 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- *
- * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
@@ -46,13 +44,13 @@ class NamespaceRef {
     reDrawRarityParameterStatus(parameterName, propertyId, fixedParameterNames = null, userId = "#{userId}") {
         return new ReDrawRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, fixedParameterNames, userId);
     }
-    addRarityParameterStatus(parameterName, propertyId, count, userId = "#{userId}") {
+    addRarityParameterStatus(parameterName, propertyId, count = null, userId = "#{userId}") {
         return new AddRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, count, userId);
     }
     setRarityParameterStatus(parameterName, propertyId, parameterValues = null, userId = "#{userId}") {
         return new SetRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, parameterValues, userId);
     }
-    verifyRarityParameterStatus(parameterName, propertyId, verifyType, parameterValueName, parameterCount, userId = "#{userId}") {
+    verifyRarityParameterStatus(parameterName, propertyId, verifyType, parameterValueName = null, parameterCount = null, userId = "#{userId}") {
         return new VerifyRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, verifyType, parameterValueName, parameterCount, userId);
     }
     grn() {

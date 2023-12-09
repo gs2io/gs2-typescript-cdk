@@ -33,7 +33,7 @@ export default class NamespaceRef {
         slot: number,
         price: number,
         count: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DepositByUserId {
         return new DepositByUserId(
             this.namespaceName,
@@ -46,7 +46,7 @@ export default class NamespaceRef {
 
     public revertRecordReceipt(
         receipt: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RevertRecordReceipt {
         return new RevertRecordReceipt(
             this.namespaceName,
@@ -59,7 +59,7 @@ export default class NamespaceRef {
         slot: number,
         count: number,
         paidOnly: boolean|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): WithdrawByUserId {
         return new WithdrawByUserId(
             this.namespaceName,
@@ -73,7 +73,7 @@ export default class NamespaceRef {
     public recordReceipt(
         contentsId: string,
         receipt: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RecordReceipt {
         return new RecordReceipt(
             this.namespaceName,

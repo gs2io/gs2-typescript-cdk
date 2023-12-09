@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class UnmarkReceivedByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly bonusModelName: string;
+    private readonly userId: string;
+    private readonly stepNumber: number;
+
 
     public constructor(
         namespaceName: string,
         bonusModelName: string,
         stepNumber: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.bonusModelName = bonusModelName;
+        this.stepNumber = stepNumber;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["bonusModelName"] = bonusModelName
-        properties["stepNumber"] = stepNumber
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.bonusModelName != null) {
+            properties["bonusModelName"] = this.bonusModelName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.stepNumber != null) {
+            properties["stepNumber"] = this.stepNumber;
+        }
 
-        super(
-            "Gs2LoginReward:UnmarkReceivedByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2LoginReward:UnmarkReceivedByUserId";
     }
 }

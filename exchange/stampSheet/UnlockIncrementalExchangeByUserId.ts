@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class UnlockIncrementalExchangeByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly rateName: string;
+    private readonly userId: string;
+    private readonly lockTransactionId: string;
+
 
     public constructor(
         namespaceName: string,
         rateName: string,
         lockTransactionId: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.lockTransactionId = lockTransactionId;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["rateName"] = rateName
-        properties["lockTransactionId"] = lockTransactionId
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.lockTransactionId != null) {
+            properties["lockTransactionId"] = this.lockTransactionId;
+        }
 
-        super(
-            "Gs2Exchange:UnlockIncrementalExchangeByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Exchange:UnlockIncrementalExchangeByUserId";
     }
 }

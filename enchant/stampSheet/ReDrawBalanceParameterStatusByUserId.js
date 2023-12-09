@@ -18,15 +18,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ReDrawBalanceParameterStatusByUserId extends model_1.AcquireAction {
     constructor(namespaceName, parameterName, propertyId, fixedParameterNames = null, userId = "#{userId}") {
+        super();
+        this.fixedParameterNames = null;
+        this.namespaceName = namespaceName;
+        this.parameterName = parameterName;
+        this.propertyId = propertyId;
+        this.fixedParameterNames = fixedParameterNames !== null && fixedParameterNames !== void 0 ? fixedParameterNames : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["parameterName"] = parameterName;
-        properties["propertyId"] = propertyId;
-        if (fixedParameterNames != null) {
-            properties["fixedParameterNames"] = fixedParameterNames;
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Enchant:ReDrawBalanceParameterStatusByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.parameterName != null) {
+            properties["parameterName"] = this.parameterName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.fixedParameterNames != null) {
+            properties["fixedParameterNames"] = this.fixedParameterNames;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enchant:ReDrawBalanceParameterStatusByUserId";
     }
 }
 exports.default = ReDrawBalanceParameterStatusByUserId;

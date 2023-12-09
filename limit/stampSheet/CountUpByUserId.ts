@@ -17,6 +17,13 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class CountUpByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly limitName: string;
+    private readonly counterName: string;
+    private readonly userId: string;
+    private readonly countUpValue: number|null = null;
+    private readonly maxValue: number|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -24,20 +31,45 @@ export default class CountUpByUserId extends ConsumeAction {
         counterName: string,
         countUpValue: number|null = null,
         maxValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.limitName = limitName;
+        this.counterName = counterName;
+        this.countUpValue = countUpValue ?? null;
+        this.maxValue = maxValue ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["limitName"] = limitName
-        properties["counterName"] = counterName
-        properties["countUpValue"] = countUpValue
-        properties["maxValue"] = maxValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.limitName != null) {
+            properties["limitName"] = this.limitName;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.countUpValue != null) {
+            properties["countUpValue"] = this.countUpValue;
+        }
+        if (this.maxValue != null) {
+            properties["maxValue"] = this.maxValue;
+        }
 
-        super(
-            "Gs2Limit:CountUpByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Limit:CountUpByUserId";
     }
 }

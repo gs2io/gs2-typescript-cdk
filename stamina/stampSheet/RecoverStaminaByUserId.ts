@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class RecoverStaminaByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly staminaName: string;
+    private readonly userId: string;
+    private readonly recoverValue: number;
+
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         recoverValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.recoverValue = recoverValue;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["staminaName"] = staminaName
-        properties["recoverValue"] = recoverValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.recoverValue != null) {
+            properties["recoverValue"] = this.recoverValue;
+        }
 
-        super(
-            "Gs2Stamina:RecoverStaminaByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Stamina:RecoverStaminaByUserId";
     }
 }

@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetMaxValueByUserId extends model_1.AcquireAction {
     constructor(namespaceName, staminaName, maxValue, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.maxValue = maxValue;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["staminaName"] = staminaName;
-        properties["maxValue"] = maxValue;
-        properties["userId"] = userId;
-        super("Gs2Stamina:SetMaxValueByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.maxValue != null) {
+            properties["maxValue"] = this.maxValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Stamina:SetMaxValueByUserId";
     }
 }
 exports.default = SetMaxValueByUserId;

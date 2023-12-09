@@ -18,18 +18,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SendMessageByUserId extends model_1.AcquireAction {
     constructor(namespaceName, metadata, readAcquireActions = null, expiresAt = null, expiresTimeSpan = null, userId = "#{userId}") {
+        super();
+        this.readAcquireActions = null;
+        this.expiresAt = null;
+        this.expiresTimeSpan = null;
+        this.namespaceName = namespaceName;
+        this.metadata = metadata;
+        this.readAcquireActions = readAcquireActions !== null && readAcquireActions !== void 0 ? readAcquireActions : null;
+        this.expiresAt = expiresAt !== null && expiresAt !== void 0 ? expiresAt : null;
+        this.expiresTimeSpan = expiresTimeSpan !== null && expiresTimeSpan !== void 0 ? expiresTimeSpan : null;
+        this.userId = userId;
+    }
+    request() {
+        var _a;
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["metadata"] = metadata;
-        if (readAcquireActions != null) {
-            properties["readAcquireActions"] = readAcquireActions.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["expiresAt"] = expiresAt;
-        if (expiresTimeSpan != null) {
-            properties["expiresTimeSpan"] = expiresTimeSpan === null || expiresTimeSpan === void 0 ? void 0 : expiresTimeSpan.properties();
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
         }
-        properties["userId"] = userId;
-        super("Gs2Inbox:SendMessageByUserId", properties);
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
+        }
+        if (this.readAcquireActions != null) {
+            properties["readAcquireActions"] = this.readAcquireActions.map(v => v.properties());
+        }
+        if (this.expiresAt != null) {
+            properties["expiresAt"] = this.expiresAt;
+        }
+        if (this.expiresTimeSpan != null) {
+            properties["expiresTimeSpan"] = (_a = this.expiresTimeSpan) === null || _a === void 0 ? void 0 : _a.properties();
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inbox:SendMessageByUserId";
     }
 }
 exports.default = SendMessageByUserId;

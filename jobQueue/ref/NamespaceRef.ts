@@ -30,7 +30,7 @@ export default class NamespaceRef {
 
     public push(
         jobs: JobEntry[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): PushByUserId {
         return new PushByUserId(
             this.namespaceName,
@@ -41,7 +41,7 @@ export default class NamespaceRef {
 
     public deleteJob(
         jobName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteJobByUserId {
         return new DeleteJobByUserId(
             this.namespaceName,

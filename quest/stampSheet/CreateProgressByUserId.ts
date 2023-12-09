@@ -18,28 +18,54 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import { Config } from "../../core/model";
 
 export default class CreateProgressByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly questModelId: string;
+    private readonly force: boolean|null = null;
+    private readonly config: Config[]|null = null;
+
 
     public constructor(
         namespaceName: string,
         questModelId: string,
         force: boolean|null = null,
         config: Config[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.questModelId = questModelId;
+        this.force = force ?? null;
+        this.config = config ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["questModelId"] = questModelId
-        properties["force"] = force
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.questModelId != null) {
+            properties["questModelId"] = this.questModelId;
+        }
+        if (this.force != null) {
+            properties["force"] = this.force;
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Quest:CreateProgressByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Quest:CreateProgressByUserId";
     }
 }

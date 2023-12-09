@@ -11,8 +11,8 @@ export default class LotteryModel {
     private readonly prizeTableName;
     private readonly choicePrizeTableScriptId;
     constructor(name: string, mode: LotteryModelMode, method: LotteryModelMethod, options?: LotteryModelOptions | null);
-    static methodIsPrizeTable(name: string, mode: LotteryModelMode, options?: LotteryModelMethodIsPrizeTableOptions | null): LotteryModel;
-    static methodIsScript(name: string, mode: LotteryModelMode, options?: LotteryModelMethodIsScriptOptions | null): LotteryModel;
+    static methodIsPrizeTable(name: string, mode: LotteryModelMode, prizeTableName: string, options?: LotteryModelMethodIsPrizeTableOptions | null): LotteryModel;
+    static methodIsScript(name: string, mode: LotteryModelMode, choicePrizeTableScriptId: string, options?: LotteryModelMethodIsScriptOptions | null): LotteryModel;
     properties(): {
         [name: string]: any;
     };

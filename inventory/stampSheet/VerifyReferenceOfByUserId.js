@@ -18,15 +18,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyReferenceOfByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, inventoryName, itemName, referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
+        super();
+        this.itemSetName = null;
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.itemName = itemName;
+        this.referenceOf = referenceOf;
+        this.verifyType = verifyType;
+        this.itemSetName = itemSetName !== null && itemSetName !== void 0 ? itemSetName : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["inventoryName"] = inventoryName;
-        properties["itemName"] = itemName;
-        properties["referenceOf"] = referenceOf;
-        properties["verifyType"] = verifyType;
-        properties["itemSetName"] = itemSetName;
-        properties["userId"] = userId;
-        super("Gs2Inventory:VerifyReferenceOfByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.referenceOf != null) {
+            properties["referenceOf"] = this.referenceOf;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inventory:VerifyReferenceOfByUserId";
     }
 }
 exports.default = VerifyReferenceOfByUserId;

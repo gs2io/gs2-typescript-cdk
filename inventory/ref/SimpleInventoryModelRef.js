@@ -13,15 +13,15 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- *
- * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const SimpleItemModelRef_1 = tslib_1.__importDefault(require("./SimpleItemModelRef"));
 const AcquireSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireSimpleItemsByUserId"));
+const SetSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetSimpleItemsByUserId"));
 const ConsumeSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeSimpleItemsByUserId"));
+const VerifySimpleItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifySimpleItemByUserId"));
 class SimpleInventoryModelRef {
     constructor(namespaceName, inventoryName) {
         this.namespaceName = namespaceName;
@@ -33,8 +33,14 @@ class SimpleInventoryModelRef {
     acquireSimpleItems(acquireCounts, userId = "#{userId}") {
         return new AcquireSimpleItemsByUserId_1.default(this.namespaceName, this.inventoryName, acquireCounts, userId);
     }
+    setSimpleItems(counts, userId = "#{userId}") {
+        return new SetSimpleItemsByUserId_1.default(this.namespaceName, this.inventoryName, counts, userId);
+    }
     consumeSimpleItems(consumeCounts, userId = "#{userId}") {
         return new ConsumeSimpleItemsByUserId_1.default(this.namespaceName, this.inventoryName, consumeCounts, userId);
+    }
+    verifySimpleItem(itemName, verifyType, count, userId = "#{userId}") {
+        return new VerifySimpleItemByUserId_1.default(this.namespaceName, this.inventoryName, itemName, verifyType, count, userId);
     }
     grn() {
         return new func_1.Join(":", [

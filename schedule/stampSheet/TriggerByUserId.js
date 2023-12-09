@@ -18,13 +18,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class TriggerByUserId extends model_1.AcquireAction {
     constructor(namespaceName, triggerName, triggerStrategy, ttl, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.triggerName = triggerName;
+        this.triggerStrategy = triggerStrategy;
+        this.ttl = ttl;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["triggerName"] = triggerName;
-        properties["triggerStrategy"] = triggerStrategy;
-        properties["ttl"] = ttl;
-        properties["userId"] = userId;
-        super("Gs2Schedule:TriggerByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.triggerName != null) {
+            properties["triggerName"] = this.triggerName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.triggerStrategy != null) {
+            properties["triggerStrategy"] = this.triggerStrategy;
+        }
+        if (this.ttl != null) {
+            properties["ttl"] = this.ttl;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Schedule:TriggerByUserId";
     }
 }
 exports.default = TriggerByUserId;

@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class CreateAwaitByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly rateName: string;
+    private readonly count: number|null = null;
+
 
     public constructor(
         namespaceName: string,
         rateName: string,
         count: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.count = count ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["rateName"] = rateName
-        properties["count"] = count
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
 
-        super(
-            "Gs2Exchange:CreateAwaitByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Exchange:CreateAwaitByUserId";
     }
 }

@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class UnmarkReceivedByUserId extends model_1.AcquireAction {
     constructor(namespaceName, bonusModelName, stepNumber, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.bonusModelName = bonusModelName;
+        this.stepNumber = stepNumber;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["bonusModelName"] = bonusModelName;
-        properties["stepNumber"] = stepNumber;
-        properties["userId"] = userId;
-        super("Gs2LoginReward:UnmarkReceivedByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.bonusModelName != null) {
+            properties["bonusModelName"] = this.bonusModelName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.stepNumber != null) {
+            properties["stepNumber"] = this.stepNumber;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2LoginReward:UnmarkReceivedByUserId";
     }
 }
 exports.default = UnmarkReceivedByUserId;

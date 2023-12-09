@@ -18,10 +18,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteProgressByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["userId"] = userId;
-        super("Gs2Enhance:DeleteProgressByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enhance:DeleteProgressByUserId";
     }
 }
 exports.default = DeleteProgressByUserId;

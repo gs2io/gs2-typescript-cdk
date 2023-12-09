@@ -18,11 +18,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteTriggerByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, triggerName, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.triggerName = triggerName;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["triggerName"] = triggerName;
-        properties["userId"] = userId;
-        super("Gs2Schedule:DeleteTriggerByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.triggerName != null) {
+            properties["triggerName"] = this.triggerName;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Schedule:DeleteTriggerByUserId";
     }
 }
 exports.default = DeleteTriggerByUserId;

@@ -10,12 +10,12 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     staminaModel(staminaName: string): StaminaModelRef;
-    recoverStamina(staminaName: string, recoverValue: number, userId?: string | null): RecoverStaminaByUserId;
-    raiseMaxValue(staminaName: string, raiseValue: number, userId?: string | null): RaiseMaxValueByUserId;
-    setMaxValue(staminaName: string, maxValue: number, userId?: string | null): SetMaxValueByUserId;
-    setRecoverInterval(staminaName: string, recoverIntervalMinutes: number, userId?: string | null): SetRecoverIntervalByUserId;
-    setRecoverValue(staminaName: string, recoverValue: number, userId?: string | null): SetRecoverValueByUserId;
-    decreaseMaxValue(staminaName: string, decreaseValue: number, userId?: string | null): DecreaseMaxValueByUserId;
-    consumeStamina(staminaName: string, consumeValue: number, userId?: string | null): ConsumeStaminaByUserId;
+    recoverStamina(staminaName: string, recoverValue: number, userId?: string): RecoverStaminaByUserId;
+    raiseMaxValue(staminaName: string, raiseValue: number, userId?: string): RaiseMaxValueByUserId;
+    setMaxValue(staminaName: string, maxValue: number, userId?: string): SetMaxValueByUserId;
+    setRecoverInterval(staminaName: string, recoverIntervalMinutes: number, userId?: string): SetRecoverIntervalByUserId;
+    setRecoverValue(staminaName: string, recoverValue: number, userId?: string): SetRecoverValueByUserId;
+    decreaseMaxValue(staminaName: string, decreaseValue: number, userId?: string): DecreaseMaxValueByUserId;
+    consumeStamina(staminaName: string, consumeValue: number, userId?: string): ConsumeStaminaByUserId;
     grn(): string;
 }

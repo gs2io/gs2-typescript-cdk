@@ -32,7 +32,7 @@ export default class CounterModelRef {
 
     public increaseCounter(
         value: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): IncreaseCounterByUserId {
         return new IncreaseCounterByUserId(
             this.namespaceName,
@@ -44,7 +44,7 @@ export default class CounterModelRef {
 
     public decreaseCounter(
         value: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DecreaseCounterByUserId {
         return new DecreaseCounterByUserId(
             this.namespaceName,

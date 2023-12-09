@@ -17,21 +17,41 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class AcquirePointByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly point: number;
+
 
     public constructor(
         namespaceName: string,
         point: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.point = point;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["point"] = point
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.point != null) {
+            properties["point"] = this.point;
+        }
 
-        super(
-            "Gs2AdReward:AcquirePointByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2AdReward:AcquirePointByUserId";
     }
 }

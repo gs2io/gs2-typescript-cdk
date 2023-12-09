@@ -19,6 +19,7 @@ import EntryModelRef from "./EntryModelRef";
 import AddEntriesByUserId from "../stampSheet/AddEntriesByUserId";
 import DeleteEntriesByUserId from "../stampSheet/DeleteEntriesByUserId";
 import VerifyEntryByUserId from "../stampSheet/VerifyEntryByUserId";
+import { EntryVerifyType } from "../stampSheet/enum/EntryVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -40,7 +41,7 @@ export default class NamespaceRef {
 
     public addEntries(
         entryModelNames: string[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddEntriesByUserId {
         return new AddEntriesByUserId(
             this.namespaceName,
@@ -51,7 +52,7 @@ export default class NamespaceRef {
 
     public deleteEntries(
         entryModelNames: string[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteEntriesByUserId {
         return new DeleteEntriesByUserId(
             this.namespaceName,
@@ -62,8 +63,8 @@ export default class NamespaceRef {
 
     public verifyEntry(
         entryModelName: string,
-        verifyType: string,
-        userId: string|null = "#{userId}",
+        verifyType: EntryVerifyType,
+        userId: string = "#{userId}",
     ): VerifyEntryByUserId {
         return new VerifyEntryByUserId(
             this.namespaceName,

@@ -17,21 +17,41 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class RevertUseByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly code: string;
+
 
     public constructor(
         namespaceName: string,
         code: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.code = code;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["code"] = code
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.code != null) {
+            properties["code"] = this.code;
+        }
 
-        super(
-            "Gs2SerialKey:RevertUseByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2SerialKey:RevertUseByUserId";
     }
 }

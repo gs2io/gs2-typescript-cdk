@@ -18,11 +18,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ForceReDrawByUserId extends model_1.AcquireAction {
     constructor(namespaceName, showcaseName, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.showcaseName = showcaseName;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["showcaseName"] = showcaseName;
-        properties["userId"] = userId;
-        super("Gs2Showcase:ForceReDrawByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.showcaseName != null) {
+            properties["showcaseName"] = this.showcaseName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Showcase:ForceReDrawByUserId";
     }
 }
 exports.default = ForceReDrawByUserId;

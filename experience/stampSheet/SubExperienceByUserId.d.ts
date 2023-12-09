@@ -1,4 +1,13 @@
 import { ConsumeAction } from "../../core/model";
 export default class SubExperienceByUserId extends ConsumeAction {
-    constructor(namespaceName: string, experienceName: string, propertyId: string, experienceValue?: number | null, userId?: string | null);
+    private readonly namespaceName;
+    private readonly userId;
+    private readonly experienceName;
+    private readonly propertyId;
+    private readonly experienceValue;
+    constructor(namespaceName: string, experienceName: string, propertyId: string, experienceValue?: number | null, userId?: string);
+    request(): {
+        [name: string]: any;
+    };
+    action(): string;
 }

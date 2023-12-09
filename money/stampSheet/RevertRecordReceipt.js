@@ -18,11 +18,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class RevertRecordReceipt extends model_1.AcquireAction {
     constructor(namespaceName, receipt, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.receipt = receipt;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["receipt"] = receipt;
-        properties["userId"] = userId;
-        super("Gs2Money:RevertRecordReceipt", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.receipt != null) {
+            properties["receipt"] = this.receipt;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Money:RevertRecordReceipt";
     }
 }
 exports.default = RevertRecordReceipt;

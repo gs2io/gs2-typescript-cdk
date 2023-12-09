@@ -15,29 +15,62 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { CounterVerifyType } from "./enum/CounterVerifyType";
 
 export default class VerifyCounterByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly limitName: string;
+    private readonly counterName: string;
+    private readonly verifyType: CounterVerifyType;
+    private readonly count: number|null = null;
+
 
     public constructor(
         namespaceName: string,
         limitName: string,
         counterName: string,
-        verifyType: string,
+        verifyType: CounterVerifyType,
         count: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.limitName = limitName;
+        this.counterName = counterName;
+        this.verifyType = verifyType;
+        this.count = count ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["limitName"] = limitName
-        properties["counterName"] = counterName
-        properties["verifyType"] = verifyType
-        properties["count"] = count
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.limitName != null) {
+            properties["limitName"] = this.limitName;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
 
-        super(
-            "Gs2Limit:VerifyCounterByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Limit:VerifyCounterByUserId";
     }
 }

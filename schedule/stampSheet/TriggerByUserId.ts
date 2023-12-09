@@ -15,27 +15,56 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { TriggerTriggerStrategy } from "./enum/TriggerTriggerStrategy";
 
 export default class TriggerByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly triggerName: string;
+    private readonly userId: string;
+    private readonly triggerStrategy: TriggerTriggerStrategy;
+    private readonly ttl: number;
+
 
     public constructor(
         namespaceName: string,
         triggerName: string,
-        triggerStrategy: string,
+        triggerStrategy: TriggerTriggerStrategy,
         ttl: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.triggerName = triggerName;
+        this.triggerStrategy = triggerStrategy;
+        this.ttl = ttl;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["triggerName"] = triggerName
-        properties["triggerStrategy"] = triggerStrategy
-        properties["ttl"] = ttl
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.triggerName != null) {
+            properties["triggerName"] = this.triggerName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.triggerStrategy != null) {
+            properties["triggerStrategy"] = this.triggerStrategy;
+        }
+        if (this.ttl != null) {
+            properties["ttl"] = this.ttl;
+        }
 
-        super(
-            "Gs2Schedule:TriggerByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Schedule:TriggerByUserId";
     }
 }

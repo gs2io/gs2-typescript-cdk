@@ -17,23 +17,41 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class MarkReleaseByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly nodeModelNames: string[];
+
 
     public constructor(
         namespaceName: string,
         nodeModelNames: string[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.nodeModelNames = nodeModelNames;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        if (nodeModelNames != null) {
-            properties["nodeModelNames"] = nodeModelNames;
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.nodeModelNames != null) {
+            properties["nodeModelNames"] = this.nodeModelNames;
+        }
 
-        super(
-            "Gs2SkillTree:MarkReleaseByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2SkillTree:MarkReleaseByUserId";
     }
 }

@@ -18,6 +18,13 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import Material from "../model/Material";
 
 export default class CreateProgressByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly rateName: string;
+    private readonly targetItemSetId: string;
+    private readonly materials: Material[]|null = null;
+    private readonly force: boolean|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -25,23 +32,46 @@ export default class CreateProgressByUserId extends AcquireAction {
         targetItemSetId: string,
         materials: Material[]|null = null,
         force: boolean|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.targetItemSetId = targetItemSetId;
+        this.materials = materials ?? null;
+        this.force = force ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["rateName"] = rateName
-        properties["targetItemSetId"] = targetItemSetId
-        if (materials != null) {
-            properties["materials"] = materials.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.targetItemSetId != null) {
+            properties["targetItemSetId"] = this.targetItemSetId;
+        }
+        if (this.materials != null) {
+            properties["materials"] = this.materials.map(v => v.properties(
                 ));
         }
-        properties["force"] = force
-        properties["userId"] = userId
+        if (this.force != null) {
+            properties["force"] = this.force;
+        }
 
-        super(
-            "Gs2Enhance:CreateProgressByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Enhance:CreateProgressByUserId";
     }
 }

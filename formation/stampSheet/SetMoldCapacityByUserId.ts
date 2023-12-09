@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class SetMoldCapacityByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly moldModelName: string;
+    private readonly capacity: number;
+
 
     public constructor(
         namespaceName: string,
         moldModelName: string,
         capacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.moldModelName = moldModelName;
+        this.capacity = capacity;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["moldModelName"] = moldModelName
-        properties["capacity"] = capacity
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.moldModelName != null) {
+            properties["moldModelName"] = this.moldModelName;
+        }
+        if (this.capacity != null) {
+            properties["capacity"] = this.capacity;
+        }
 
-        super(
-            "Gs2Formation:SetMoldCapacityByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Formation:SetMoldCapacityByUserId";
     }
 }

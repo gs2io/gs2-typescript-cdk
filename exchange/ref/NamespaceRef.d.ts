@@ -11,10 +11,10 @@ export default class NamespaceRef {
     constructor(namespaceName: string);
     rateModel(rateName: string): RateModelRef;
     incrementalRateModel(rateName: string): IncrementalRateModelRef;
-    exchange(rateName: string, count: number, config?: Config[] | null, userId?: string | null): ExchangeByUserId;
-    incrementalExchange(rateName: string, count: number, config?: Config[] | null, userId?: string | null): IncrementalExchangeByUserId;
-    unlockIncrementalExchange(rateName: string, lockTransactionId: string, userId?: string | null): UnlockIncrementalExchangeByUserId;
-    createAwait(rateName: string, count?: number | null, userId?: string | null): CreateAwaitByUserId;
-    deleteAwait(awaitName?: string | null, userId?: string | null): DeleteAwaitByUserId;
+    exchange(rateName: string, count: number, config?: Config[] | null, userId?: string): ExchangeByUserId;
+    incrementalExchange(rateName: string, count: number, config?: Config[] | null, userId?: string): IncrementalExchangeByUserId;
+    unlockIncrementalExchange(rateName: string, lockTransactionId: string, userId?: string): UnlockIncrementalExchangeByUserId;
+    createAwait(rateName: string, count?: number | null, userId?: string): CreateAwaitByUserId;
+    deleteAwait(awaitName?: string | null, userId?: string): DeleteAwaitByUserId;
     grn(): string;
 }

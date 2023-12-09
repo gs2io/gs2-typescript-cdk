@@ -42,7 +42,7 @@ export default class NamespaceRef {
         questModelId: string,
         force: boolean|null = null,
         config: Config[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): CreateProgressByUserId {
         return new CreateProgressByUserId(
             this.namespaceName,
@@ -54,7 +54,7 @@ export default class NamespaceRef {
     }
 
     public deleteProgress(
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteProgressByUserId {
         return new DeleteProgressByUserId(
             this.namespaceName,

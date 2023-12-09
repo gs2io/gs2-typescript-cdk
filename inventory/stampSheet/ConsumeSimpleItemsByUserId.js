@@ -18,14 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ConsumeSimpleItemsByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, inventoryName, consumeCounts, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.consumeCounts = consumeCounts;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["inventoryName"] = inventoryName;
-        if (consumeCounts != null) {
-            properties["consumeCounts"] = consumeCounts.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Inventory:ConsumeSimpleItemsByUserId", properties);
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.consumeCounts != null) {
+            properties["consumeCounts"] = this.consumeCounts.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inventory:ConsumeSimpleItemsByUserId";
     }
 }
 exports.default = ConsumeSimpleItemsByUserId;

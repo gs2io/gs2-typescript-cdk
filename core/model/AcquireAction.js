@@ -16,24 +16,21 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 class AcquireAction {
-    constructor(action, request) {
-        this.action = action;
-        this.request = request;
-    }
     properties() {
+        const request = this.request();
         return {
-            "action": this.action,
+            "action": this.action(),
             "request": (() => {
-                const keys = Object.keys(this.request);
+                const keys = Object.keys(request);
                 let dict = {};
                 for (const key of keys) {
-                    if (!this.request[key])
+                    if (!request[key])
                         continue;
-                    if (this.request[key].properties) {
-                        dict[key] = this.request[key].properties();
+                    if (request[key].properties) {
+                        dict[key] = request[key].properties();
                     }
                     else {
-                        dict[key] = this.request[key];
+                        dict[key] = request[key];
                     }
                 }
                 return dict;

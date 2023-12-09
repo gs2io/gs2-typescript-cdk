@@ -18,26 +18,48 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import ConsumeCount from "../model/ConsumeCount";
 
 export default class ConsumeSimpleItemsByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly inventoryName: string;
+    private readonly userId: string;
+    private readonly consumeCounts: ConsumeCount[];
+
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
         consumeCounts: ConsumeCount[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.consumeCounts = consumeCounts;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        if (consumeCounts != null) {
-            properties["consumeCounts"] = consumeCounts.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.consumeCounts != null) {
+            properties["consumeCounts"] = this.consumeCounts.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Inventory:ConsumeSimpleItemsByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:ConsumeSimpleItemsByUserId";
     }
 }

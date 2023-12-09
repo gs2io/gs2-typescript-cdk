@@ -89,9 +89,9 @@ export default class StateMachineMaster extends CdkResource {
     public getAttrStateMachineId(
     ): GetAttr {
         return new GetAttr(
-            null,
-            null,
+            this,
             "Item.StateMachineId",
+            null,
         );
     }
 }

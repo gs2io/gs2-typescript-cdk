@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class StartStateMachineByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly args: string|null = null;
+    private readonly ttl: number|null = null;
+
 
     public constructor(
         namespaceName: string,
         args: string|null = null,
         ttl: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.args = args ?? null;
+        this.ttl = ttl ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["args"] = args
-        properties["ttl"] = ttl
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.args != null) {
+            properties["args"] = this.args;
+        }
+        if (this.ttl != null) {
+            properties["ttl"] = this.ttl;
+        }
 
-        super(
-            "Gs2StateMachine:StartStateMachineByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2StateMachine:StartStateMachineByUserId";
     }
 }

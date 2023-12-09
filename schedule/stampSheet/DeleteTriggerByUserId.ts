@@ -17,21 +17,41 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DeleteTriggerByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly triggerName: string;
+
 
     public constructor(
         namespaceName: string,
         triggerName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.triggerName = triggerName;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["triggerName"] = triggerName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.triggerName != null) {
+            properties["triggerName"] = this.triggerName;
+        }
 
-        super(
-            "Gs2Schedule:DeleteTriggerByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Schedule:DeleteTriggerByUserId";
     }
 }

@@ -15,25 +15,50 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { EntryVerifyType } from "./enum/EntryVerifyType";
 
 export default class VerifyEntryByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly entryModelName: string;
+    private readonly verifyType: EntryVerifyType;
+
 
     public constructor(
         namespaceName: string,
         entryModelName: string,
-        verifyType: string,
-        userId: string|null = "#{userId}",
+        verifyType: EntryVerifyType,
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.entryModelName = entryModelName;
+        this.verifyType = verifyType;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["entryModelName"] = entryModelName
-        properties["verifyType"] = verifyType
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.entryModelName != null) {
+            properties["entryModelName"] = this.entryModelName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
 
-        super(
-            "Gs2Dictionary:VerifyEntryByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Dictionary:VerifyEntryByUserId";
     }
 }

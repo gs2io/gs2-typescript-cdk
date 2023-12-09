@@ -9,12 +9,12 @@ export default class StaminaModelRef {
     private readonly namespaceName;
     private readonly staminaName;
     constructor(namespaceName: string, staminaName: string);
-    recoverStamina(recoverValue: number, userId?: string | null): RecoverStaminaByUserId;
-    raiseMaxValue(raiseValue: number, userId?: string | null): RaiseMaxValueByUserId;
-    setMaxValue(maxValue: number, userId?: string | null): SetMaxValueByUserId;
-    setRecoverInterval(recoverIntervalMinutes: number, userId?: string | null): SetRecoverIntervalByUserId;
-    setRecoverValue(recoverValue: number, userId?: string | null): SetRecoverValueByUserId;
-    decreaseMaxValue(decreaseValue: number, userId?: string | null): DecreaseMaxValueByUserId;
-    consumeStamina(consumeValue: number, userId?: string | null): ConsumeStaminaByUserId;
+    recoverStamina(recoverValue: number, userId?: string): RecoverStaminaByUserId;
+    raiseMaxValue(raiseValue: number, userId?: string): RaiseMaxValueByUserId;
+    setMaxValue(maxValue: number, userId?: string): SetMaxValueByUserId;
+    setRecoverInterval(recoverIntervalMinutes: number, userId?: string): SetRecoverIntervalByUserId;
+    setRecoverValue(recoverValue: number, userId?: string): SetRecoverValueByUserId;
+    decreaseMaxValue(decreaseValue: number, userId?: string): DecreaseMaxValueByUserId;
+    consumeStamina(consumeValue: number, userId?: string): ConsumeStaminaByUserId;
     grn(): string;
 }

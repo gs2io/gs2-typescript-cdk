@@ -18,6 +18,13 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import TimeSpan from "../model/TimeSpan";
 
 export default class SendMessageByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly metadata: string;
+    private readonly readAcquireActions: AcquireAction[]|null = null;
+    private readonly expiresAt: number|null = null;
+    private readonly expiresTimeSpan: TimeSpan|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -25,26 +32,47 @@ export default class SendMessageByUserId extends AcquireAction {
         readAcquireActions: AcquireAction[]|null = null,
         expiresAt: number|null = null,
         expiresTimeSpan: TimeSpan|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.metadata = metadata;
+        this.readAcquireActions = readAcquireActions ?? null;
+        this.expiresAt = expiresAt ?? null;
+        this.expiresTimeSpan = expiresTimeSpan ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["metadata"] = metadata
-        if (readAcquireActions != null) {
-            properties["readAcquireActions"] = readAcquireActions.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
+        }
+        if (this.readAcquireActions != null) {
+            properties["readAcquireActions"] = this.readAcquireActions.map(v => v.properties(
                 ));
         }
-        properties["expiresAt"] = expiresAt
-        if (expiresTimeSpan != null) {
-            properties["expiresTimeSpan"] = expiresTimeSpan?.properties(
+        if (this.expiresAt != null) {
+            properties["expiresAt"] = this.expiresAt;
+        }
+        if (this.expiresTimeSpan != null) {
+            properties["expiresTimeSpan"] = this.expiresTimeSpan?.properties(
             );
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Inbox:SendMessageByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inbox:SendMessageByUserId";
     }
 }

@@ -17,25 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class AcquireBigItemByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly inventoryName: string;
+    private readonly userId: string;
+    private readonly itemName: string;
+    private readonly acquireCount: string;
+
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
         itemName: string,
         acquireCount: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.itemName = itemName;
+        this.acquireCount = acquireCount;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        properties["itemName"] = itemName
-        properties["acquireCount"] = acquireCount
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.acquireCount != null) {
+            properties["acquireCount"] = this.acquireCount;
+        }
 
-        super(
-            "Gs2Inventory:AcquireBigItemByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:AcquireBigItemByUserId";
     }
 }

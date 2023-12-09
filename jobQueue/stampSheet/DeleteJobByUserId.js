@@ -18,11 +18,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteJobByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, jobName = null, userId = "#{userId}") {
+        super();
+        this.jobName = null;
+        this.namespaceName = namespaceName;
+        this.jobName = jobName !== null && jobName !== void 0 ? jobName : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["jobName"] = jobName;
-        properties["userId"] = userId;
-        super("Gs2JobQueue:DeleteJobByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2JobQueue:DeleteJobByUserId";
     }
 }
 exports.default = DeleteJobByUserId;

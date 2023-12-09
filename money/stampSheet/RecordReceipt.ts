@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class RecordReceipt extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly contentsId: string;
+    private readonly receipt: string;
+
 
     public constructor(
         namespaceName: string,
         contentsId: string,
         receipt: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.contentsId = contentsId;
+        this.receipt = receipt;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["contentsId"] = contentsId
-        properties["receipt"] = receipt
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.contentsId != null) {
+            properties["contentsId"] = this.contentsId;
+        }
+        if (this.receipt != null) {
+            properties["receipt"] = this.receipt;
+        }
 
-        super(
-            "Gs2Money:RecordReceipt",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Money:RecordReceipt";
     }
 }

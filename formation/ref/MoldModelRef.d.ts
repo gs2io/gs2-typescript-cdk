@@ -10,9 +10,9 @@ export default class MoldModelRef {
     private readonly moldModelName;
     constructor(namespaceName: string, moldModelName: string);
     formModel(): FormModelRef;
-    addMoldCapacity(capacity: number, userId?: string | null): AddMoldCapacityByUserId;
-    setMoldCapacity(capacity: number, userId?: string | null): SetMoldCapacityByUserId;
-    acquireActionsToFormProperties(index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string | null): AcquireActionsToFormProperties;
-    subMoldCapacity(capacity: number, userId?: string | null): SubMoldCapacityByUserId;
+    addMoldCapacity(capacity: number, userId?: string): AddMoldCapacityByUserId;
+    setMoldCapacity(capacity: number, userId?: string): SetMoldCapacityByUserId;
+    acquireActionsToFormProperties(index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string): AcquireActionsToFormProperties;
+    subMoldCapacity(capacity: number, userId?: string): SubMoldCapacityByUserId;
     grn(): string;
 }

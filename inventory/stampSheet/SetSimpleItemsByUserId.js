@@ -18,14 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetSimpleItemsByUserId extends model_1.AcquireAction {
     constructor(namespaceName, inventoryName, counts, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.counts = counts;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["inventoryName"] = inventoryName;
-        if (counts != null) {
-            properties["counts"] = counts.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Inventory:SetSimpleItemsByUserId", properties);
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.counts != null) {
+            properties["counts"] = this.counts.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inventory:SetSimpleItemsByUserId";
     }
 }
 exports.default = SetSimpleItemsByUserId;

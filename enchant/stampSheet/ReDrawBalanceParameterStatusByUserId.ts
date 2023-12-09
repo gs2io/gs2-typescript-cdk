@@ -17,27 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class ReDrawBalanceParameterStatusByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly parameterName: string;
+    private readonly propertyId: string;
+    private readonly fixedParameterNames: string[]|null = null;
+
 
     public constructor(
         namespaceName: string,
         parameterName: string,
         propertyId: string,
         fixedParameterNames: string[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.parameterName = parameterName;
+        this.propertyId = propertyId;
+        this.fixedParameterNames = fixedParameterNames ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["parameterName"] = parameterName
-        properties["propertyId"] = propertyId
-        if (fixedParameterNames != null) {
-            properties["fixedParameterNames"] = fixedParameterNames;
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.parameterName != null) {
+            properties["parameterName"] = this.parameterName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.fixedParameterNames != null) {
+            properties["fixedParameterNames"] = this.fixedParameterNames;
+        }
 
-        super(
-            "Gs2Enchant:ReDrawBalanceParameterStatusByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Enchant:ReDrawBalanceParameterStatusByUserId";
     }
 }

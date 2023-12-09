@@ -18,12 +18,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CreateAwaitByUserId extends model_1.AcquireAction {
     constructor(namespaceName, rateName, count = null, userId = "#{userId}") {
+        super();
+        this.count = null;
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.count = count !== null && count !== void 0 ? count : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["rateName"] = rateName;
-        properties["count"] = count;
-        properties["userId"] = userId;
-        super("Gs2Exchange:CreateAwaitByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Exchange:CreateAwaitByUserId";
     }
 }
 exports.default = CreateAwaitByUserId;

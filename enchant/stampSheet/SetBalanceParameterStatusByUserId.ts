@@ -18,28 +18,54 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import BalanceParameterValue from "../model/BalanceParameterValue";
 
 export default class SetBalanceParameterStatusByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly parameterName: string;
+    private readonly propertyId: string;
+    private readonly parameterValues: BalanceParameterValue[];
+
 
     public constructor(
         namespaceName: string,
         parameterName: string,
         propertyId: string,
         parameterValues: BalanceParameterValue[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.parameterName = parameterName;
+        this.propertyId = propertyId;
+        this.parameterValues = parameterValues;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["parameterName"] = parameterName
-        properties["propertyId"] = propertyId
-        if (parameterValues != null) {
-            properties["parameterValues"] = parameterValues.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.parameterName != null) {
+            properties["parameterName"] = this.parameterName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.parameterValues != null) {
+            properties["parameterValues"] = this.parameterValues.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Enchant:SetBalanceParameterStatusByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Enchant:SetBalanceParameterStatusByUserId";
     }
 }

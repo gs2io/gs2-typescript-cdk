@@ -18,11 +18,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class UseByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, code, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.code = code;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["code"] = code;
-        properties["userId"] = userId;
-        super("Gs2SerialKey:UseByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.code != null) {
+            properties["code"] = this.code;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2SerialKey:UseByUserId";
     }
 }
 exports.default = UseByUserId;

@@ -18,15 +18,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetRarityParameterStatusByUserId extends model_1.AcquireAction {
     constructor(namespaceName, parameterName, propertyId, parameterValues = null, userId = "#{userId}") {
+        super();
+        this.parameterValues = null;
+        this.namespaceName = namespaceName;
+        this.parameterName = parameterName;
+        this.propertyId = propertyId;
+        this.parameterValues = parameterValues !== null && parameterValues !== void 0 ? parameterValues : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["parameterName"] = parameterName;
-        properties["propertyId"] = propertyId;
-        if (parameterValues != null) {
-            properties["parameterValues"] = parameterValues.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Enchant:SetRarityParameterStatusByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.parameterName != null) {
+            properties["parameterName"] = this.parameterName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.parameterValues != null) {
+            properties["parameterValues"] = this.parameterValues.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enchant:SetRarityParameterStatusByUserId";
     }
 }
 exports.default = SetRarityParameterStatusByUserId;

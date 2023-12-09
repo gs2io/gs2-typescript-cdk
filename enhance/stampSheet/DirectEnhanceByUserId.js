@@ -18,18 +18,39 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DirectEnhanceByUserId extends model_1.AcquireAction {
     constructor(namespaceName, rateName, targetItemSetId, materials, config = null, userId = "#{userId}") {
+        super();
+        this.config = null;
+        this.namespaceName = namespaceName;
+        this.rateName = rateName;
+        this.targetItemSetId = targetItemSetId;
+        this.materials = materials;
+        this.config = config !== null && config !== void 0 ? config : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["rateName"] = rateName;
-        properties["targetItemSetId"] = targetItemSetId;
-        if (materials != null) {
-            properties["materials"] = materials.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties());
+        if (this.rateName != null) {
+            properties["rateName"] = this.rateName;
         }
-        properties["userId"] = userId;
-        super("Gs2Enhance:DirectEnhanceByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.targetItemSetId != null) {
+            properties["targetItemSetId"] = this.targetItemSetId;
+        }
+        if (this.materials != null) {
+            properties["materials"] = this.materials.map(v => v.properties());
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enhance:DirectEnhanceByUserId";
     }
 }
 exports.default = DirectEnhanceByUserId;

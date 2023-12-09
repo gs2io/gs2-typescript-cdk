@@ -18,13 +18,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SubRankCapByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, experienceName, propertyId, rankCapValue, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.propertyId = propertyId;
+        this.rankCapValue = rankCapValue;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["experienceName"] = experienceName;
-        properties["propertyId"] = propertyId;
-        properties["rankCapValue"] = rankCapValue;
-        properties["userId"] = userId;
-        super("Gs2Experience:SubRankCapByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.rankCapValue != null) {
+            properties["rankCapValue"] = this.rankCapValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Experience:SubRankCapByUserId";
     }
 }
 exports.default = SubRankCapByUserId;

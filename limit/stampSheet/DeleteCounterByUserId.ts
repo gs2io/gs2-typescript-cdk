@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DeleteCounterByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly limitName: string;
+    private readonly userId: string;
+    private readonly counterName: string;
+
 
     public constructor(
         namespaceName: string,
         limitName: string,
         counterName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.limitName = limitName;
+        this.counterName = counterName;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["limitName"] = limitName
-        properties["counterName"] = counterName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.limitName != null) {
+            properties["limitName"] = this.limitName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
 
-        super(
-            "Gs2Limit:DeleteCounterByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Limit:DeleteCounterByUserId";
     }
 }

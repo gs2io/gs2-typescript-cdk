@@ -17,21 +17,38 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class OpenMessageByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly messageName: string|null = null;
+
 
     public constructor(
         namespaceName: string,
         messageName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.messageName = messageName ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["messageName"] = messageName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
 
-        super(
-            "Gs2Inbox:OpenMessageByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inbox:OpenMessageByUserId";
     }
 }

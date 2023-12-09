@@ -18,14 +18,39 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyRankByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, experienceName, verifyType, propertyId, rankValue = null, userId = "#{userId}") {
+        super();
+        this.rankValue = null;
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.verifyType = verifyType;
+        this.propertyId = propertyId;
+        this.rankValue = rankValue !== null && rankValue !== void 0 ? rankValue : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["experienceName"] = experienceName;
-        properties["verifyType"] = verifyType;
-        properties["propertyId"] = propertyId;
-        properties["rankValue"] = rankValue;
-        properties["userId"] = userId;
-        super("Gs2Experience:VerifyRankByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.rankValue != null) {
+            properties["rankValue"] = this.rankValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Experience:VerifyRankByUserId";
     }
 }
 exports.default = VerifyRankByUserId;

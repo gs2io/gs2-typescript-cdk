@@ -18,14 +18,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CountUpByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, limitName, counterName, countUpValue = null, maxValue = null, userId = "#{userId}") {
+        super();
+        this.countUpValue = null;
+        this.maxValue = null;
+        this.namespaceName = namespaceName;
+        this.limitName = limitName;
+        this.counterName = counterName;
+        this.countUpValue = countUpValue !== null && countUpValue !== void 0 ? countUpValue : null;
+        this.maxValue = maxValue !== null && maxValue !== void 0 ? maxValue : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["limitName"] = limitName;
-        properties["counterName"] = counterName;
-        properties["countUpValue"] = countUpValue;
-        properties["maxValue"] = maxValue;
-        properties["userId"] = userId;
-        super("Gs2Limit:CountUpByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.limitName != null) {
+            properties["limitName"] = this.limitName;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.countUpValue != null) {
+            properties["countUpValue"] = this.countUpValue;
+        }
+        if (this.maxValue != null) {
+            properties["maxValue"] = this.maxValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Limit:CountUpByUserId";
     }
 }
 exports.default = CountUpByUserId;

@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class SetCapacityByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly inventoryName: string;
+    private readonly userId: string;
+    private readonly newCapacityValue: number;
+
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
         newCapacityValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.newCapacityValue = newCapacityValue;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        properties["newCapacityValue"] = newCapacityValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.newCapacityValue != null) {
+            properties["newCapacityValue"] = this.newCapacityValue;
+        }
 
-        super(
-            "Gs2Inventory:SetCapacityByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:SetCapacityByUserId";
     }
 }

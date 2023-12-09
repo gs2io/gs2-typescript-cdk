@@ -35,7 +35,7 @@ export default class PropertyFormModelRef {
         propertyId: string,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireActionsToPropertyFormProperties {
         return new AcquireActionsToPropertyFormProperties(
             this.namespaceName,

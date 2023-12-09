@@ -18,13 +18,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class PushByUserId extends model_1.AcquireAction {
     constructor(namespaceName, jobs = null, userId = "#{userId}") {
+        super();
+        this.jobs = null;
+        this.namespaceName = namespaceName;
+        this.jobs = jobs !== null && jobs !== void 0 ? jobs : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        if (jobs != null) {
-            properties["jobs"] = jobs.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2JobQueue:PushByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.jobs != null) {
+            properties["jobs"] = this.jobs.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2JobQueue:PushByUserId";
     }
 }
 exports.default = PushByUserId;

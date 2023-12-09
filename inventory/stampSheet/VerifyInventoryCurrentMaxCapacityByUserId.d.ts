@@ -1,4 +1,14 @@
 import { ConsumeAction } from "../../core/model";
+import { InventoryVerifyType } from "./enum/InventoryVerifyType";
 export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAction {
-    constructor(namespaceName: string, inventoryName: string, verifyType: string, currentInventoryMaxCapacity: number, userId?: string | null);
+    private readonly namespaceName;
+    private readonly userId;
+    private readonly inventoryName;
+    private readonly verifyType;
+    private readonly currentInventoryMaxCapacity;
+    constructor(namespaceName: string, inventoryName: string, verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, userId?: string);
+    request(): {
+        [name: string]: any;
+    };
+    action(): string;
 }

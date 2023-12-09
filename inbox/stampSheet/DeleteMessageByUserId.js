@@ -18,11 +18,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteMessageByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, messageName = null, userId = "#{userId}") {
+        super();
+        this.messageName = null;
+        this.namespaceName = namespaceName;
+        this.messageName = messageName !== null && messageName !== void 0 ? messageName : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["messageName"] = messageName;
-        properties["userId"] = userId;
-        super("Gs2Inbox:DeleteMessageByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inbox:DeleteMessageByUserId";
     }
 }
 exports.default = DeleteMessageByUserId;

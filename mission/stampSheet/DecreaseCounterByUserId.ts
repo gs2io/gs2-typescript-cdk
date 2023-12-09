@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DecreaseCounterByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly counterName: string;
+    private readonly userId: string;
+    private readonly value: number;
+
 
     public constructor(
         namespaceName: string,
         counterName: string,
         value: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.counterName = counterName;
+        this.value = value;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["counterName"] = counterName
-        properties["value"] = value
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.value != null) {
+            properties["value"] = this.value;
+        }
 
-        super(
-            "Gs2Mission:DecreaseCounterByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Mission:DecreaseCounterByUserId";
     }
 }

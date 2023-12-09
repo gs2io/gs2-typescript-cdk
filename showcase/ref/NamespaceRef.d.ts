@@ -4,8 +4,8 @@ import IncrementPurchaseCountByUserId from "../stampSheet/IncrementPurchaseCount
 export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
-    decrementPurchaseCount(showcaseName: string, displayItemName: string, count: number, userId?: string | null): DecrementPurchaseCountByUserId;
-    forceReDraw(showcaseName: string, userId?: string | null): ForceReDrawByUserId;
-    incrementPurchaseCount(showcaseName: string, displayItemName: string, count: number, userId?: string | null): IncrementPurchaseCountByUserId;
+    decrementPurchaseCount(showcaseName: string, displayItemName: string, count: number, userId?: string): DecrementPurchaseCountByUserId;
+    forceReDraw(showcaseName: string, userId?: string): ForceReDrawByUserId;
+    incrementPurchaseCount(showcaseName: string, displayItemName: string, count: number, userId?: string): IncrementPurchaseCountByUserId;
     grn(): string;
 }

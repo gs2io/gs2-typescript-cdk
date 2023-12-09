@@ -18,13 +18,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DepositByUserId extends model_1.AcquireAction {
     constructor(namespaceName, slot, price, count, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.slot = slot;
+        this.price = price;
+        this.count = count;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["slot"] = slot;
-        properties["price"] = price;
-        properties["count"] = count;
-        properties["userId"] = userId;
-        super("Gs2Money:DepositByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.slot != null) {
+            properties["slot"] = this.slot;
+        }
+        if (this.price != null) {
+            properties["price"] = this.price;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Money:DepositByUserId";
     }
 }
 exports.default = DepositByUserId;

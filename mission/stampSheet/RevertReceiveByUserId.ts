@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class RevertReceiveByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly missionGroupName: string;
+    private readonly missionTaskName: string;
+    private readonly userId: string;
+
 
     public constructor(
         namespaceName: string,
         missionGroupName: string,
         missionTaskName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.missionGroupName = missionGroupName;
+        this.missionTaskName = missionTaskName;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["missionGroupName"] = missionGroupName
-        properties["missionTaskName"] = missionTaskName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.missionGroupName != null) {
+            properties["missionGroupName"] = this.missionGroupName;
+        }
+        if (this.missionTaskName != null) {
+            properties["missionTaskName"] = this.missionTaskName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
 
-        super(
-            "Gs2Mission:RevertReceiveByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Mission:RevertReceiveByUserId";
     }
 }

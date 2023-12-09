@@ -18,6 +18,7 @@ import {GetAttr, Join} from "../../core/func";
 import AddEntriesByUserId from "../stampSheet/AddEntriesByUserId";
 import DeleteEntriesByUserId from "../stampSheet/DeleteEntriesByUserId";
 import VerifyEntryByUserId from "../stampSheet/VerifyEntryByUserId";
+import { EntryVerifyType } from "../stampSheet/enum/EntryVerifyType";
 
 export default class EntryModelRef {
     private readonly namespaceName: string;
@@ -33,7 +34,7 @@ export default class EntryModelRef {
 
     public addEntries(
         entryModelNames: string[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddEntriesByUserId {
         return new AddEntriesByUserId(
             this.namespaceName,
@@ -44,7 +45,7 @@ export default class EntryModelRef {
 
     public deleteEntries(
         entryModelNames: string[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteEntriesByUserId {
         return new DeleteEntriesByUserId(
             this.namespaceName,
@@ -55,8 +56,8 @@ export default class EntryModelRef {
 
     public verifyEntry(
         entryModelName: string,
-        verifyType: string,
-        userId: string|null = "#{userId}",
+        verifyType: EntryVerifyType,
+        userId: string = "#{userId}",
     ): VerifyEntryByUserId {
         return new VerifyEntryByUserId(
             this.namespaceName,

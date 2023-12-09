@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ConsumeStaminaByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, staminaName, consumeValue, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.consumeValue = consumeValue;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["staminaName"] = staminaName;
-        properties["consumeValue"] = consumeValue;
-        properties["userId"] = userId;
-        super("Gs2Stamina:ConsumeStaminaByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.consumeValue != null) {
+            properties["consumeValue"] = this.consumeValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Stamina:ConsumeStaminaByUserId";
     }
 }
 exports.default = ConsumeStaminaByUserId;

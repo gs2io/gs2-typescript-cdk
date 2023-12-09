@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DecreaseMaxValueByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly staminaName: string;
+    private readonly userId: string;
+    private readonly decreaseValue: number;
+
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         decreaseValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.decreaseValue = decreaseValue;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["staminaName"] = staminaName
-        properties["decreaseValue"] = decreaseValue
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.decreaseValue != null) {
+            properties["decreaseValue"] = this.decreaseValue;
+        }
 
-        super(
-            "Gs2Stamina:DecreaseMaxValueByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Stamina:DecreaseMaxValueByUserId";
     }
 }

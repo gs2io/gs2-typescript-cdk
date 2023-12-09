@@ -18,15 +18,43 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyItemSetByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, inventoryName, itemName, verifyType, count, itemSetName = null, userId = "#{userId}") {
+        super();
+        this.itemSetName = null;
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.itemName = itemName;
+        this.verifyType = verifyType;
+        this.count = count;
+        this.itemSetName = itemSetName !== null && itemSetName !== void 0 ? itemSetName : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["inventoryName"] = inventoryName;
-        properties["itemName"] = itemName;
-        properties["verifyType"] = verifyType;
-        properties["count"] = count;
-        properties["itemSetName"] = itemSetName;
-        properties["userId"] = userId;
-        super("Gs2Inventory:VerifyItemSetByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.itemSetName != null) {
+            properties["itemSetName"] = this.itemSetName;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inventory:VerifyItemSetByUserId";
     }
 }
 exports.default = VerifyItemSetByUserId;

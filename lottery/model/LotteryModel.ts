@@ -46,6 +46,7 @@ export default class LotteryModel {
     public static methodIsPrizeTable(
         name: string,
         mode: LotteryModelMode,
+        prizeTableName: string,
         options: LotteryModelMethodIsPrizeTableOptions|null = null,
     ): LotteryModel {
         return new LotteryModel(
@@ -53,8 +54,8 @@ export default class LotteryModel {
             mode,
             LotteryModelMethod.PRIZE_TABLE,
             {
+                prizeTableName: prizeTableName,
                 metadata: options?.metadata,
-                prizeTableName: options?.prizeTableName,
             },
         );
     }
@@ -62,6 +63,7 @@ export default class LotteryModel {
     public static methodIsScript(
         name: string,
         mode: LotteryModelMode,
+        choicePrizeTableScriptId: string,
         options: LotteryModelMethodIsScriptOptions|null = null,
     ): LotteryModel {
         return new LotteryModel(
@@ -69,8 +71,8 @@ export default class LotteryModel {
             mode,
             LotteryModelMethod.SCRIPT,
             {
+                choicePrizeTableScriptId: choicePrizeTableScriptId,
                 metadata: options?.metadata,
-                choicePrizeTableScriptId: options?.choicePrizeTableScriptId,
             },
         );
     }

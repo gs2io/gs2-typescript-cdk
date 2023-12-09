@@ -17,21 +17,41 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class ForceReDrawByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly showcaseName: string;
+    private readonly userId: string;
+
 
     public constructor(
         namespaceName: string,
         showcaseName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.showcaseName = showcaseName;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["showcaseName"] = showcaseName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.showcaseName != null) {
+            properties["showcaseName"] = this.showcaseName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
 
-        super(
-            "Gs2Showcase:ForceReDrawByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Showcase:ForceReDrawByUserId";
     }
 }

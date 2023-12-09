@@ -18,18 +18,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireActionsToFormProperties extends model_1.AcquireAction {
     constructor(namespaceName, moldModelName, index, acquireAction, config = null, userId = "#{userId}") {
+        super();
+        this.config = null;
+        this.namespaceName = namespaceName;
+        this.moldModelName = moldModelName;
+        this.index = index;
+        this.acquireAction = acquireAction;
+        this.config = config !== null && config !== void 0 ? config : null;
+        this.userId = userId;
+    }
+    request() {
+        var _a;
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["moldModelName"] = moldModelName;
-        properties["index"] = index;
-        if (acquireAction != null) {
-            properties["acquireAction"] = acquireAction === null || acquireAction === void 0 ? void 0 : acquireAction.properties();
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties());
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
         }
-        properties["userId"] = userId;
-        super("Gs2Formation:AcquireActionsToFormProperties", properties);
+        if (this.moldModelName != null) {
+            properties["moldModelName"] = this.moldModelName;
+        }
+        if (this.index != null) {
+            properties["index"] = this.index;
+        }
+        if (this.acquireAction != null) {
+            properties["acquireAction"] = (_a = this.acquireAction) === null || _a === void 0 ? void 0 : _a.properties();
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Formation:AcquireActionsToFormProperties";
     }
 }
 exports.default = AcquireActionsToFormProperties;

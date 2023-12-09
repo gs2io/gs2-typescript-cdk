@@ -17,21 +17,41 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DeleteReceiveStatusByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly bonusModelName: string;
+    private readonly userId: string;
+
 
     public constructor(
         namespaceName: string,
         bonusModelName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.bonusModelName = bonusModelName;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["bonusModelName"] = bonusModelName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.bonusModelName != null) {
+            properties["bonusModelName"] = this.bonusModelName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
 
-        super(
-            "Gs2LoginReward:DeleteReceiveStatusByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2LoginReward:DeleteReceiveStatusByUserId";
     }
 }

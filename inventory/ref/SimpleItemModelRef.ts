@@ -12,15 +12,17 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- *
- * deny overwrite
  */
 
 import {GetAttr, Join} from "../../core/func";
 import AcquireSimpleItemsByUserId from "../stampSheet/AcquireSimpleItemsByUserId";
 import AcquireCount from "../model/AcquireCount";
-import ConsumeCount from "../model/ConsumeCount";
+import SetSimpleItemsByUserId from "../stampSheet/SetSimpleItemsByUserId";
+import HeldCount from "../model/HeldCount";
 import ConsumeSimpleItemsByUserId from "../stampSheet/ConsumeSimpleItemsByUserId";
+import ConsumeCount from "../model/ConsumeCount";
+import VerifySimpleItemByUserId from "../stampSheet/VerifySimpleItemByUserId";
+import { SimpleItemVerifyType } from "../stampSheet/enum/SimpleItemVerifyType";
 
 export default class SimpleItemModelRef {
     private readonly namespaceName: string;
@@ -39,7 +41,7 @@ export default class SimpleItemModelRef {
 
     public acquireSimpleItems(
         acquireCounts: AcquireCount[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireSimpleItemsByUserId {
         return new AcquireSimpleItemsByUserId(
             this.namespaceName,
@@ -49,14 +51,41 @@ export default class SimpleItemModelRef {
         );
     }
 
+    public setSimpleItems(
+        counts: HeldCount[],
+        userId: string = "#{userId}",
+    ): SetSimpleItemsByUserId {
+        return new SetSimpleItemsByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            counts,
+            userId,
+        );
+    }
+
     public consumeSimpleItems(
         consumeCounts: ConsumeCount[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumeSimpleItemsByUserId {
         return new ConsumeSimpleItemsByUserId(
             this.namespaceName,
             this.inventoryName,
             consumeCounts,
+            userId,
+        );
+    }
+
+    public verifySimpleItem(
+        verifyType: SimpleItemVerifyType,
+        count: number,
+        userId: string = "#{userId}",
+    ): VerifySimpleItemByUserId {
+        return new VerifySimpleItemByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            this.itemName,
+            verifyType,
+            count,
             userId,
         );
     }

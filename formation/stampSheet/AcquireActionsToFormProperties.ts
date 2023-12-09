@@ -18,6 +18,13 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import AcquireActionConfig from "../model/AcquireActionConfig";
 
 export default class AcquireActionsToFormProperties extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly moldModelName: string;
+    private readonly index: number;
+    private readonly acquireAction: AcquireAction;
+    private readonly config: AcquireActionConfig[]|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -25,26 +32,47 @@ export default class AcquireActionsToFormProperties extends AcquireAction {
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.moldModelName = moldModelName;
+        this.index = index;
+        this.acquireAction = acquireAction;
+        this.config = config ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["moldModelName"] = moldModelName
-        properties["index"] = index
-        if (acquireAction != null) {
-            properties["acquireAction"] = acquireAction?.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.moldModelName != null) {
+            properties["moldModelName"] = this.moldModelName;
+        }
+        if (this.index != null) {
+            properties["index"] = this.index;
+        }
+        if (this.acquireAction != null) {
+            properties["acquireAction"] = this.acquireAction?.properties(
             );
         }
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties(
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Formation:AcquireActionsToFormProperties",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Formation:AcquireActionsToFormProperties";
     }
 }

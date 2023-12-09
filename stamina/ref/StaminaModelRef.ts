@@ -37,7 +37,7 @@ export default class StaminaModelRef {
 
     public recoverStamina(
         recoverValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RecoverStaminaByUserId {
         return new RecoverStaminaByUserId(
             this.namespaceName,
@@ -49,7 +49,7 @@ export default class StaminaModelRef {
 
     public raiseMaxValue(
         raiseValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RaiseMaxValueByUserId {
         return new RaiseMaxValueByUserId(
             this.namespaceName,
@@ -61,7 +61,7 @@ export default class StaminaModelRef {
 
     public setMaxValue(
         maxValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetMaxValueByUserId {
         return new SetMaxValueByUserId(
             this.namespaceName,
@@ -73,7 +73,7 @@ export default class StaminaModelRef {
 
     public setRecoverInterval(
         recoverIntervalMinutes: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetRecoverIntervalByUserId {
         return new SetRecoverIntervalByUserId(
             this.namespaceName,
@@ -85,7 +85,7 @@ export default class StaminaModelRef {
 
     public setRecoverValue(
         recoverValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetRecoverValueByUserId {
         return new SetRecoverValueByUserId(
             this.namespaceName,
@@ -97,7 +97,7 @@ export default class StaminaModelRef {
 
     public decreaseMaxValue(
         decreaseValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DecreaseMaxValueByUserId {
         return new DecreaseMaxValueByUserId(
             this.namespaceName,
@@ -109,7 +109,7 @@ export default class StaminaModelRef {
 
     public consumeStamina(
         consumeValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumeStaminaByUserId {
         return new ConsumeStaminaByUserId(
             this.namespaceName,

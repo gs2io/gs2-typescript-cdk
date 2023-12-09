@@ -14,31 +14,24 @@
  * permissions and limitations under the License.
  */
 
-export default class AcquireAction {
+export default abstract class AcquireAction {
 
-    action: string;
-    request: { [name: string]: any };
-
-    public constructor(
-        action: string,
-        request: { [name: string]: any },
-    ) {
-        this.action = action;
-        this.request = request;
-    }
+    abstract action(): string;
+    abstract request(): { [name: string]: any };
 
     public properties(): { [name: string]: any } {
+        const request = this.request();
         return {
-            "action": this.action,
+            "action": this.action(),
             "request": (() => {
-                const keys = Object.keys(this.request);
+                const keys = Object.keys(request);
                 let dict: {[name: string]: any} = {};
                 for (const key of keys) {
-                    if (!this.request[key]) continue;
-                    if(this.request[key].properties) {
-                        dict[key] = this.request[key].properties();
+                    if (!request[key]) continue;
+                    if(request[key].properties) {
+                        dict[key] = request[key].properties();
                     } else {
-                        dict[key] = this.request[key];
+                        dict[key] = request[key];
                     }
                 }
                 return dict;

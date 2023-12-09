@@ -52,7 +52,7 @@ export default class NamespaceRef {
     public revertReceive(
         missionGroupName: string,
         missionTaskName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RevertReceiveByUserId {
         return new RevertReceiveByUserId(
             this.namespaceName,
@@ -65,7 +65,7 @@ export default class NamespaceRef {
     public increaseCounter(
         counterName: string,
         value: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): IncreaseCounterByUserId {
         return new IncreaseCounterByUserId(
             this.namespaceName,
@@ -78,7 +78,7 @@ export default class NamespaceRef {
     public receive(
         missionGroupName: string,
         missionTaskName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ReceiveByUserId {
         return new ReceiveByUserId(
             this.namespaceName,
@@ -91,7 +91,7 @@ export default class NamespaceRef {
     public decreaseCounter(
         counterName: string,
         value: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DecreaseCounterByUserId {
         return new DecreaseCounterByUserId(
             this.namespaceName,

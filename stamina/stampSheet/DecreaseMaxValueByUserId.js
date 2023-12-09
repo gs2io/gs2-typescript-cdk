@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DecreaseMaxValueByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, staminaName, decreaseValue, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.decreaseValue = decreaseValue;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["staminaName"] = staminaName;
-        properties["decreaseValue"] = decreaseValue;
-        properties["userId"] = userId;
-        super("Gs2Stamina:DecreaseMaxValueByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.decreaseValue != null) {
+            properties["decreaseValue"] = this.decreaseValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Stamina:DecreaseMaxValueByUserId";
     }
 }
 exports.default = DecreaseMaxValueByUserId;

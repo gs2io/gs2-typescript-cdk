@@ -15,27 +15,56 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { InventoryVerifyType } from "./enum/InventoryVerifyType";
 
 export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly inventoryName: string;
+    private readonly verifyType: InventoryVerifyType;
+    private readonly currentInventoryMaxCapacity: number;
+
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
-        verifyType: string,
+        verifyType: InventoryVerifyType,
         currentInventoryMaxCapacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.verifyType = verifyType;
+        this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        properties["verifyType"] = verifyType
-        properties["currentInventoryMaxCapacity"] = currentInventoryMaxCapacity
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.currentInventoryMaxCapacity != null) {
+            properties["currentInventoryMaxCapacity"] = this.currentInventoryMaxCapacity;
+        }
 
-        super(
-            "Gs2Inventory:VerifyInventoryCurrentMaxCapacityByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:VerifyInventoryCurrentMaxCapacityByUserId";
     }
 }

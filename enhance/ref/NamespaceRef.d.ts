@@ -6,7 +6,7 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     rateModel(rateName: string): RateModelRef;
-    createProgress(rateName: string, targetItemSetId: string, materials?: Material[] | null, force?: boolean | null, userId?: string | null): CreateProgressByUserId;
-    deleteProgress(userId?: string | null): DeleteProgressByUserId;
+    createProgress(rateName: string, targetItemSetId: string, materials?: Material[] | null, force?: boolean | null, userId?: string): CreateProgressByUserId;
+    deleteProgress(userId?: string): DeleteProgressByUserId;
     grn(): string;
 }

@@ -18,15 +18,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CreateProgressByUserId extends model_1.AcquireAction {
     constructor(namespaceName, questModelId, force = null, config = null, userId = "#{userId}") {
+        super();
+        this.force = null;
+        this.config = null;
+        this.namespaceName = namespaceName;
+        this.questModelId = questModelId;
+        this.force = force !== null && force !== void 0 ? force : null;
+        this.config = config !== null && config !== void 0 ? config : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["questModelId"] = questModelId;
-        properties["force"] = force;
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties());
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2Quest:CreateProgressByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.questModelId != null) {
+            properties["questModelId"] = this.questModelId;
+        }
+        if (this.force != null) {
+            properties["force"] = this.force;
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Quest:CreateProgressByUserId";
     }
 }
 exports.default = CreateProgressByUserId;

@@ -1,4 +1,12 @@
 import { ConsumeAction } from "../../core/model";
 export default class MarkReceivedByUserId extends ConsumeAction {
-    constructor(namespaceName: string, bonusModelName: string, stepNumber: number, userId?: string | null);
+    private readonly namespaceName;
+    private readonly bonusModelName;
+    private readonly userId;
+    private readonly stepNumber;
+    constructor(namespaceName: string, bonusModelName: string, stepNumber: number, userId?: string);
+    request(): {
+        [name: string]: any;
+    };
+    action(): string;
 }

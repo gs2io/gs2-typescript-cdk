@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AddMoldCapacityByUserId extends model_1.AcquireAction {
     constructor(namespaceName, moldModelName, capacity, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.moldModelName = moldModelName;
+        this.capacity = capacity;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["moldModelName"] = moldModelName;
-        properties["capacity"] = capacity;
-        properties["userId"] = userId;
-        super("Gs2Formation:AddMoldCapacityByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.moldModelName != null) {
+            properties["moldModelName"] = this.moldModelName;
+        }
+        if (this.capacity != null) {
+            properties["capacity"] = this.capacity;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Formation:AddMoldCapacityByUserId";
     }
 }
 exports.default = AddMoldCapacityByUserId;

@@ -40,7 +40,7 @@ export default class NamespaceRef {
 
     public deleteReceiveStatus(
         bonusModelName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteReceiveStatusByUserId {
         return new DeleteReceiveStatusByUserId(
             this.namespaceName,
@@ -52,7 +52,7 @@ export default class NamespaceRef {
     public unmarkReceived(
         bonusModelName: string,
         stepNumber: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): UnmarkReceivedByUserId {
         return new UnmarkReceivedByUserId(
             this.namespaceName,
@@ -65,7 +65,7 @@ export default class NamespaceRef {
     public markReceived(
         bonusModelName: string,
         stepNumber: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): MarkReceivedByUserId {
         return new MarkReceivedByUserId(
             this.namespaceName,

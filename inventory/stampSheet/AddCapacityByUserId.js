@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AddCapacityByUserId extends model_1.AcquireAction {
     constructor(namespaceName, inventoryName, addCapacityValue, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.addCapacityValue = addCapacityValue;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["inventoryName"] = inventoryName;
-        properties["addCapacityValue"] = addCapacityValue;
-        properties["userId"] = userId;
-        super("Gs2Inventory:AddCapacityByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.addCapacityValue != null) {
+            properties["addCapacityValue"] = this.addCapacityValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inventory:AddCapacityByUserId";
     }
 }
 exports.default = AddCapacityByUserId;

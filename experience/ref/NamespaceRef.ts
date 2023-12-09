@@ -24,6 +24,7 @@ import { AcquireAction } from "../../core/model";
 import SubExperienceByUserId from "../stampSheet/SubExperienceByUserId";
 import SubRankCapByUserId from "../stampSheet/SubRankCapByUserId";
 import VerifyRankByUserId from "../stampSheet/VerifyRankByUserId";
+import { StatusVerifyType } from "../stampSheet/enum/StatusVerifyType";
 import VerifyRankCapByUserId from "../stampSheet/VerifyRankCapByUserId";
 
 export default class NamespaceRef {
@@ -48,7 +49,7 @@ export default class NamespaceRef {
         experienceName: string,
         propertyId: string,
         experienceValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddExperienceByUserId {
         return new AddExperienceByUserId(
             this.namespaceName,
@@ -63,7 +64,7 @@ export default class NamespaceRef {
         experienceName: string,
         propertyId: string,
         rankCapValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddRankCapByUserId {
         return new AddRankCapByUserId(
             this.namespaceName,
@@ -78,7 +79,7 @@ export default class NamespaceRef {
         experienceName: string,
         propertyId: string,
         rankCapValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetRankCapByUserId {
         return new SetRankCapByUserId(
             this.namespaceName,
@@ -94,7 +95,7 @@ export default class NamespaceRef {
         propertyId: string,
         rateName: string,
         acquireActions: AcquireAction[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): MultiplyAcquireActionsByUserId {
         return new MultiplyAcquireActionsByUserId(
             this.namespaceName,
@@ -110,7 +111,7 @@ export default class NamespaceRef {
         experienceName: string,
         propertyId: string,
         experienceValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SubExperienceByUserId {
         return new SubExperienceByUserId(
             this.namespaceName,
@@ -125,7 +126,7 @@ export default class NamespaceRef {
         experienceName: string,
         propertyId: string,
         rankCapValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SubRankCapByUserId {
         return new SubRankCapByUserId(
             this.namespaceName,
@@ -138,10 +139,10 @@ export default class NamespaceRef {
 
     public verifyRank(
         experienceName: string,
-        verifyType: string,
+        verifyType: StatusVerifyType,
         propertyId: string,
         rankValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): VerifyRankByUserId {
         return new VerifyRankByUserId(
             this.namespaceName,
@@ -155,10 +156,10 @@ export default class NamespaceRef {
 
     public verifyRankCap(
         experienceName: string,
-        verifyType: string,
+        verifyType: StatusVerifyType,
         propertyId: string,
         rankCapValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): VerifyRankCapByUserId {
         return new VerifyRankCapByUserId(
             this.namespaceName,

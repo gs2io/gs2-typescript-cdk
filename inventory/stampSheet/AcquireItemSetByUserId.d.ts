@@ -1,4 +1,16 @@
 import { AcquireAction } from "../../core/model";
 export default class AcquireItemSetByUserId extends AcquireAction {
-    constructor(namespaceName: string, inventoryName: string, itemName: string, acquireCount: number, expiresAt?: number | null, createNewItemSet?: boolean | null, itemSetName?: string | null, userId?: string | null);
+    private readonly namespaceName;
+    private readonly inventoryName;
+    private readonly itemName;
+    private readonly userId;
+    private readonly acquireCount;
+    private readonly expiresAt;
+    private readonly createNewItemSet;
+    private readonly itemSetName;
+    constructor(namespaceName: string, inventoryName: string, itemName: string, acquireCount: number, expiresAt?: number | null, createNewItemSet?: boolean | null, itemSetName?: string | null, userId?: string);
+    request(): {
+        [name: string]: any;
+    };
+    action(): string;
 }

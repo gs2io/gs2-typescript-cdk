@@ -17,25 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DepositByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly slot: number;
+    private readonly price: number;
+    private readonly count: number;
+
 
     public constructor(
         namespaceName: string,
         slot: number,
         price: number,
         count: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.slot = slot;
+        this.price = price;
+        this.count = count;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["slot"] = slot
-        properties["price"] = price
-        properties["count"] = count
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.slot != null) {
+            properties["slot"] = this.slot;
+        }
+        if (this.price != null) {
+            properties["price"] = this.price;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
 
-        super(
-            "Gs2Money:DepositByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Money:DepositByUserId";
     }
 }

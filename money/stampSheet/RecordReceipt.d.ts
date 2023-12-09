@@ -1,4 +1,12 @@
 import { ConsumeAction } from "../../core/model";
 export default class RecordReceipt extends ConsumeAction {
-    constructor(namespaceName: string, contentsId: string, receipt: string, userId?: string | null);
+    private readonly namespaceName;
+    private readonly userId;
+    private readonly contentsId;
+    private readonly receipt;
+    constructor(namespaceName: string, contentsId: string, receipt: string, userId?: string);
+    request(): {
+        [name: string]: any;
+    };
+    action(): string;
 }

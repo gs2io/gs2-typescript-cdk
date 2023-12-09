@@ -17,6 +17,15 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class AcquireItemSetByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly inventoryName: string;
+    private readonly itemName: string;
+    private readonly userId: string;
+    private readonly acquireCount: number;
+    private readonly expiresAt: number|null = null;
+    private readonly createNewItemSet: boolean|null = null;
+    private readonly itemSetName: string|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -26,22 +35,53 @@ export default class AcquireItemSetByUserId extends AcquireAction {
         expiresAt: number|null = null,
         createNewItemSet: boolean|null = null,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.itemName = itemName;
+        this.acquireCount = acquireCount;
+        this.expiresAt = expiresAt ?? null;
+        this.createNewItemSet = createNewItemSet ?? null;
+        this.itemSetName = itemSetName ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        properties["itemName"] = itemName
-        properties["acquireCount"] = acquireCount
-        properties["expiresAt"] = expiresAt
-        properties["createNewItemSet"] = createNewItemSet
-        properties["itemSetName"] = itemSetName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.acquireCount != null) {
+            properties["acquireCount"] = this.acquireCount;
+        }
+        if (this.expiresAt != null) {
+            properties["expiresAt"] = this.expiresAt;
+        }
+        if (this.createNewItemSet != null) {
+            properties["createNewItemSet"] = this.createNewItemSet;
+        }
+        if (this.itemSetName != null) {
+            properties["itemSetName"] = this.itemSetName;
+        }
 
-        super(
-            "Gs2Inventory:AcquireItemSetByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:AcquireItemSetByUserId";
     }
 }

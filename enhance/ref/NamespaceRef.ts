@@ -43,7 +43,7 @@ export default class NamespaceRef {
         targetItemSetId: string,
         materials: Material[]|null = null,
         force: boolean|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): CreateProgressByUserId {
         return new CreateProgressByUserId(
             this.namespaceName,
@@ -56,7 +56,7 @@ export default class NamespaceRef {
     }
 
     public deleteProgress(
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteProgressByUserId {
         return new DeleteProgressByUserId(
             this.namespaceName,

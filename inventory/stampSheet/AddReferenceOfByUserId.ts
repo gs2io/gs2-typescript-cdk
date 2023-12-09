@@ -17,6 +17,13 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class AddReferenceOfByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly inventoryName: string;
+    private readonly userId: string;
+    private readonly itemName: string;
+    private readonly referenceOf: string;
+    private readonly itemSetName: string|null = null;
+
 
     public constructor(
         namespaceName: string,
@@ -24,20 +31,42 @@ export default class AddReferenceOfByUserId extends AcquireAction {
         itemName: string,
         referenceOf: string,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.itemName = itemName;
+        this.referenceOf = referenceOf;
+        this.itemSetName = itemSetName ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        properties["itemName"] = itemName
-        properties["referenceOf"] = referenceOf
-        properties["itemSetName"] = itemSetName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.itemName != null) {
+            properties["itemName"] = this.itemName;
+        }
+        if (this.referenceOf != null) {
+            properties["referenceOf"] = this.referenceOf;
+        }
 
-        super(
-            "Gs2Inventory:AddReferenceOfByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:AddReferenceOfByUserId";
     }
 }

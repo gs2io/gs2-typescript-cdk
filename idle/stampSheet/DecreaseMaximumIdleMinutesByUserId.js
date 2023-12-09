@@ -18,12 +18,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DecreaseMaximumIdleMinutesByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, categoryName, decreaseMinutes = null, userId = "#{userId}") {
+        super();
+        this.decreaseMinutes = null;
+        this.namespaceName = namespaceName;
+        this.categoryName = categoryName;
+        this.decreaseMinutes = decreaseMinutes !== null && decreaseMinutes !== void 0 ? decreaseMinutes : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["categoryName"] = categoryName;
-        properties["decreaseMinutes"] = decreaseMinutes;
-        properties["userId"] = userId;
-        super("Gs2Idle:DecreaseMaximumIdleMinutesByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.categoryName != null) {
+            properties["categoryName"] = this.categoryName;
+        }
+        if (this.decreaseMinutes != null) {
+            properties["decreaseMinutes"] = this.decreaseMinutes;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Idle:DecreaseMaximumIdleMinutesByUserId";
     }
 }
 exports.default = DecreaseMaximumIdleMinutesByUserId;

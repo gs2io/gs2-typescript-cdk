@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class SetRecoverIntervalByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly staminaName: string;
+    private readonly userId: string;
+    private readonly recoverIntervalMinutes: number;
+
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         recoverIntervalMinutes: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.recoverIntervalMinutes = recoverIntervalMinutes;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["staminaName"] = staminaName
-        properties["recoverIntervalMinutes"] = recoverIntervalMinutes
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.recoverIntervalMinutes != null) {
+            properties["recoverIntervalMinutes"] = this.recoverIntervalMinutes;
+        }
 
-        super(
-            "Gs2Stamina:SetRecoverIntervalByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Stamina:SetRecoverIntervalByUserId";
     }
 }

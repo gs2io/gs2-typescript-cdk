@@ -17,23 +17,47 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DecreaseMaximumIdleMinutesByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly categoryName: string;
+    private readonly decreaseMinutes: number|null = null;
+
 
     public constructor(
         namespaceName: string,
         categoryName: string,
         decreaseMinutes: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.categoryName = categoryName;
+        this.decreaseMinutes = decreaseMinutes ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["categoryName"] = categoryName
-        properties["decreaseMinutes"] = decreaseMinutes
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.categoryName != null) {
+            properties["categoryName"] = this.categoryName;
+        }
+        if (this.decreaseMinutes != null) {
+            properties["decreaseMinutes"] = this.decreaseMinutes;
+        }
 
-        super(
-            "Gs2Idle:DecreaseMaximumIdleMinutesByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Idle:DecreaseMaximumIdleMinutesByUserId";
     }
 }

@@ -18,11 +18,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteAwaitByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, awaitName = null, userId = "#{userId}") {
+        super();
+        this.awaitName = null;
+        this.namespaceName = namespaceName;
+        this.awaitName = awaitName !== null && awaitName !== void 0 ? awaitName : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["awaitName"] = awaitName;
-        properties["userId"] = userId;
-        super("Gs2Exchange:DeleteAwaitByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Exchange:DeleteAwaitByUserId";
     }
 }
 exports.default = DeleteAwaitByUserId;

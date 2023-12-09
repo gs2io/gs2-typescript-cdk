@@ -18,14 +18,38 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyRankCapByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, experienceName, verifyType, propertyId, rankCapValue, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.experienceName = experienceName;
+        this.verifyType = verifyType;
+        this.propertyId = propertyId;
+        this.rankCapValue = rankCapValue;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["experienceName"] = experienceName;
-        properties["verifyType"] = verifyType;
-        properties["propertyId"] = propertyId;
-        properties["rankCapValue"] = rankCapValue;
-        properties["userId"] = userId;
-        super("Gs2Experience:VerifyRankCapByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.experienceName != null) {
+            properties["experienceName"] = this.experienceName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.rankCapValue != null) {
+            properties["rankCapValue"] = this.rankCapValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Experience:VerifyRankCapByUserId";
     }
 }
 exports.default = VerifyRankCapByUserId;

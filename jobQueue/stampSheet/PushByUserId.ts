@@ -18,24 +18,42 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import JobEntry from "../model/JobEntry";
 
 export default class PushByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly jobs: JobEntry[]|null = null;
+
 
     public constructor(
         namespaceName: string,
         jobs: JobEntry[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.jobs = jobs ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        if (jobs != null) {
-            properties["jobs"] = jobs.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.jobs != null) {
+            properties["jobs"] = this.jobs.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2JobQueue:PushByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2JobQueue:PushByUserId";
     }
 }

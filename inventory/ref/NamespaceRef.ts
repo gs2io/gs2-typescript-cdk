@@ -12,13 +12,12 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- *
- * deny overwrite
  */
 
 import {GetAttr, Join} from "../../core/func";
 import InventoryModelRef from "./InventoryModelRef";
 import SimpleInventoryModelRef from "./SimpleInventoryModelRef";
+import BigInventoryModelRef from "./BigInventoryModelRef";
 import AddCapacityByUserId from "../stampSheet/AddCapacityByUserId";
 import SetCapacityByUserId from "../stampSheet/SetCapacityByUserId";
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
@@ -26,10 +25,24 @@ import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import AcquireSimpleItemsByUserId from "../stampSheet/AcquireSimpleItemsByUserId";
 import AcquireCount from "../model/AcquireCount";
-import ConsumeCount from "../model/ConsumeCount";
+import SetSimpleItemsByUserId from "../stampSheet/SetSimpleItemsByUserId";
+import HeldCount from "../model/HeldCount";
+import AcquireBigItemByUserId from "../stampSheet/AcquireBigItemByUserId";
+import SetBigItemByUserId from "../stampSheet/SetBigItemByUserId";
+import VerifyInventoryCurrentMaxCapacityByUserId from "../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId";
+import { InventoryVerifyType } from "../stampSheet/enum/InventoryVerifyType";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
+import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
+import { ItemSetVerifyType } from "../stampSheet/enum/ItemSetVerifyType";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
+import { ReferenceOfVerifyType } from "../stampSheet/enum/ReferenceOfVerifyType";
 import ConsumeSimpleItemsByUserId from "../stampSheet/ConsumeSimpleItemsByUserId";
+import ConsumeCount from "../model/ConsumeCount";
+import VerifySimpleItemByUserId from "../stampSheet/VerifySimpleItemByUserId";
+import { SimpleItemVerifyType } from "../stampSheet/enum/SimpleItemVerifyType";
+import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
+import VerifyBigItemByUserId from "../stampSheet/VerifyBigItemByUserId";
+import { BigItemVerifyType } from "../stampSheet/enum/BigItemVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -58,10 +71,19 @@ export default class NamespaceRef {
         );
     }
 
+    public bigInventoryModel(
+        inventoryName: string,
+    ): BigInventoryModelRef {
+        return new BigInventoryModelRef(
+            this.namespaceName,
+            inventoryName,
+        );
+    }
+
     public addCapacity(
         inventoryName: string,
         addCapacityValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddCapacityByUserId {
         return new AddCapacityByUserId(
             this.namespaceName,
@@ -74,7 +96,7 @@ export default class NamespaceRef {
     public setCapacity(
         inventoryName: string,
         newCapacityValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetCapacityByUserId {
         return new SetCapacityByUserId(
             this.namespaceName,
@@ -88,10 +110,10 @@ export default class NamespaceRef {
         inventoryName: string,
         itemName: string,
         acquireCount: number,
-        expiresAt: number,
-        createNewItemSet: boolean,
+        expiresAt: number|null = null,
+        createNewItemSet: boolean|null = null,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireItemSetByUserId {
         return new AcquireItemSetByUserId(
             this.namespaceName,
@@ -108,16 +130,16 @@ export default class NamespaceRef {
     public addReferenceOf(
         inventoryName: string,
         itemName: string,
-        itemSetName: string,
         referenceOf: string,
-        userId: string|null = "#{userId}",
+        itemSetName: string|null = null,
+        userId: string = "#{userId}",
     ): AddReferenceOfByUserId {
         return new AddReferenceOfByUserId(
             this.namespaceName,
             inventoryName,
             itemName,
-            itemSetName,
             referenceOf,
+            itemSetName,
             userId,
         );
     }
@@ -125,16 +147,16 @@ export default class NamespaceRef {
     public deleteReferenceOf(
         inventoryName: string,
         itemName: string,
-        itemSetName: string,
         referenceOf: string,
-        userId: string|null = "#{userId}",
+        itemSetName: string|null = null,
+        userId: string = "#{userId}",
     ): DeleteReferenceOfByUserId {
         return new DeleteReferenceOfByUserId(
             this.namespaceName,
             inventoryName,
             itemName,
-            itemSetName,
             referenceOf,
+            itemSetName,
             userId,
         );
     }
@@ -142,7 +164,7 @@ export default class NamespaceRef {
     public acquireSimpleItems(
         inventoryName: string,
         acquireCounts: AcquireCount[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireSimpleItemsByUserId {
         return new AcquireSimpleItemsByUserId(
             this.namespaceName,
@@ -152,12 +174,70 @@ export default class NamespaceRef {
         );
     }
 
+    public setSimpleItems(
+        inventoryName: string,
+        counts: HeldCount[],
+        userId: string = "#{userId}",
+    ): SetSimpleItemsByUserId {
+        return new SetSimpleItemsByUserId(
+            this.namespaceName,
+            inventoryName,
+            counts,
+            userId,
+        );
+    }
+
+    public acquireBigItem(
+        inventoryName: string,
+        itemName: string,
+        acquireCount: string,
+        userId: string = "#{userId}",
+    ): AcquireBigItemByUserId {
+        return new AcquireBigItemByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            acquireCount,
+            userId,
+        );
+    }
+
+    public setBigItem(
+        inventoryName: string,
+        itemName: string,
+        count: string,
+        userId: string = "#{userId}",
+    ): SetBigItemByUserId {
+        return new SetBigItemByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            count,
+            userId,
+        );
+    }
+
+    public verifyInventoryCurrentMaxCapacity(
+        inventoryName: string,
+        verifyType: InventoryVerifyType,
+        currentInventoryMaxCapacity: number,
+        userId: string = "#{userId}",
+    ): VerifyInventoryCurrentMaxCapacityByUserId {
+        return new VerifyInventoryCurrentMaxCapacityByUserId(
+            this.namespaceName,
+            inventoryName,
+            verifyType,
+            currentInventoryMaxCapacity,
+            userId,
+        );
+    }
+
     public consumeItemSet(
         inventoryName: string,
         itemName: string,
         consumeCount: number,
         itemSetName: string|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumeItemSetByUserId {
         return new ConsumeItemSetByUserId(
             this.namespaceName,
@@ -169,21 +249,40 @@ export default class NamespaceRef {
         );
     }
 
+    public verifyItemSet(
+        inventoryName: string,
+        itemName: string,
+        verifyType: ItemSetVerifyType,
+        count: number,
+        itemSetName: string|null = null,
+        userId: string = "#{userId}",
+    ): VerifyItemSetByUserId {
+        return new VerifyItemSetByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            verifyType,
+            count,
+            itemSetName,
+            userId,
+        );
+    }
+
     public verifyReferenceOf(
         inventoryName: string,
         itemName: string,
-        itemSetName: string,
         referenceOf: string,
-        verifyType: string,
-        userId: string|null = "#{userId}",
+        verifyType: ReferenceOfVerifyType,
+        itemSetName: string|null = null,
+        userId: string = "#{userId}",
     ): VerifyReferenceOfByUserId {
         return new VerifyReferenceOfByUserId(
             this.namespaceName,
             inventoryName,
             itemName,
-            itemSetName,
             referenceOf,
             verifyType,
+            itemSetName,
             userId,
         );
     }
@@ -191,12 +290,61 @@ export default class NamespaceRef {
     public consumeSimpleItems(
         inventoryName: string,
         consumeCounts: ConsumeCount[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumeSimpleItemsByUserId {
         return new ConsumeSimpleItemsByUserId(
             this.namespaceName,
             inventoryName,
             consumeCounts,
+            userId,
+        );
+    }
+
+    public verifySimpleItem(
+        inventoryName: string,
+        itemName: string,
+        verifyType: SimpleItemVerifyType,
+        count: number,
+        userId: string = "#{userId}",
+    ): VerifySimpleItemByUserId {
+        return new VerifySimpleItemByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            verifyType,
+            count,
+            userId,
+        );
+    }
+
+    public consumeBigItem(
+        inventoryName: string,
+        itemName: string,
+        consumeCount: string,
+        userId: string = "#{userId}",
+    ): ConsumeBigItemByUserId {
+        return new ConsumeBigItemByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            consumeCount,
+            userId,
+        );
+    }
+
+    public verifyBigItem(
+        inventoryName: string,
+        itemName: string,
+        verifyType: BigItemVerifyType,
+        count: string,
+        userId: string = "#{userId}",
+    ): VerifyBigItemByUserId {
+        return new VerifyBigItemByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            verifyType,
+            count,
             userId,
         );
     }

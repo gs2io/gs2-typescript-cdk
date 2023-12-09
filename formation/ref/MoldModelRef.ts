@@ -45,7 +45,7 @@ export default class MoldModelRef {
 
     public addMoldCapacity(
         capacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AddMoldCapacityByUserId {
         return new AddMoldCapacityByUserId(
             this.namespaceName,
@@ -57,7 +57,7 @@ export default class MoldModelRef {
 
     public setMoldCapacity(
         capacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetMoldCapacityByUserId {
         return new SetMoldCapacityByUserId(
             this.namespaceName,
@@ -71,7 +71,7 @@ export default class MoldModelRef {
         index: number,
         acquireAction: AcquireAction,
         config: AcquireActionConfig[]|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
             this.namespaceName,
@@ -85,7 +85,7 @@ export default class MoldModelRef {
 
     public subMoldCapacity(
         capacity: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SubMoldCapacityByUserId {
         return new SubMoldCapacityByUserId(
             this.namespaceName,

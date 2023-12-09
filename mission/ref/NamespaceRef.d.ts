@@ -9,9 +9,9 @@ export default class NamespaceRef {
     constructor(namespaceName: string);
     missionGroupModel(missionGroupName: string): MissionGroupModelRef;
     counterModel(counterName: string): CounterModelRef;
-    revertReceive(missionGroupName: string, missionTaskName: string, userId?: string | null): RevertReceiveByUserId;
-    increaseCounter(counterName: string, value: number, userId?: string | null): IncreaseCounterByUserId;
-    receive(missionGroupName: string, missionTaskName: string, userId?: string | null): ReceiveByUserId;
-    decreaseCounter(counterName: string, value: number, userId?: string | null): DecreaseCounterByUserId;
+    revertReceive(missionGroupName: string, missionTaskName: string, userId?: string): RevertReceiveByUserId;
+    increaseCounter(counterName: string, value: number, userId?: string): IncreaseCounterByUserId;
+    receive(missionGroupName: string, missionTaskName: string, userId?: string): ReceiveByUserId;
+    decreaseCounter(counterName: string, value: number, userId?: string): DecreaseCounterByUserId;
     grn(): string;
 }

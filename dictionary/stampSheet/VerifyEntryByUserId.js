@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyEntryByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, entryModelName, verifyType, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.entryModelName = entryModelName;
+        this.verifyType = verifyType;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["entryModelName"] = entryModelName;
-        properties["verifyType"] = verifyType;
-        properties["userId"] = userId;
-        super("Gs2Dictionary:VerifyEntryByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.entryModelName != null) {
+            properties["entryModelName"] = this.entryModelName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Dictionary:VerifyEntryByUserId";
     }
 }
 exports.default = VerifyEntryByUserId;

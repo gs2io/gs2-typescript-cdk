@@ -18,18 +18,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireActionsToPropertyFormProperties extends model_1.AcquireAction {
     constructor(namespaceName, propertyFormModelName, propertyId, acquireAction, config = null, userId = "#{userId}") {
+        super();
+        this.config = null;
+        this.namespaceName = namespaceName;
+        this.propertyFormModelName = propertyFormModelName;
+        this.propertyId = propertyId;
+        this.acquireAction = acquireAction;
+        this.config = config !== null && config !== void 0 ? config : null;
+        this.userId = userId;
+    }
+    request() {
+        var _a;
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["propertyFormModelName"] = propertyFormModelName;
-        properties["propertyId"] = propertyId;
-        if (acquireAction != null) {
-            properties["acquireAction"] = acquireAction === null || acquireAction === void 0 ? void 0 : acquireAction.properties();
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        if (config != null) {
-            properties["config"] = config.map(v => v.properties());
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
         }
-        properties["userId"] = userId;
-        super("Gs2Formation:AcquireActionsToPropertyFormProperties", properties);
+        if (this.propertyFormModelName != null) {
+            properties["propertyFormModelName"] = this.propertyFormModelName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.acquireAction != null) {
+            properties["acquireAction"] = (_a = this.acquireAction) === null || _a === void 0 ? void 0 : _a.properties();
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties());
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Formation:AcquireActionsToPropertyFormProperties";
     }
 }
 exports.default = AcquireActionsToPropertyFormProperties;

@@ -45,7 +45,7 @@ export default class NamespaceRef {
     public recoverStamina(
         staminaName: string,
         recoverValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RecoverStaminaByUserId {
         return new RecoverStaminaByUserId(
             this.namespaceName,
@@ -58,7 +58,7 @@ export default class NamespaceRef {
     public raiseMaxValue(
         staminaName: string,
         raiseValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): RaiseMaxValueByUserId {
         return new RaiseMaxValueByUserId(
             this.namespaceName,
@@ -71,7 +71,7 @@ export default class NamespaceRef {
     public setMaxValue(
         staminaName: string,
         maxValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetMaxValueByUserId {
         return new SetMaxValueByUserId(
             this.namespaceName,
@@ -84,7 +84,7 @@ export default class NamespaceRef {
     public setRecoverInterval(
         staminaName: string,
         recoverIntervalMinutes: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetRecoverIntervalByUserId {
         return new SetRecoverIntervalByUserId(
             this.namespaceName,
@@ -97,7 +97,7 @@ export default class NamespaceRef {
     public setRecoverValue(
         staminaName: string,
         recoverValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): SetRecoverValueByUserId {
         return new SetRecoverValueByUserId(
             this.namespaceName,
@@ -110,7 +110,7 @@ export default class NamespaceRef {
     public decreaseMaxValue(
         staminaName: string,
         decreaseValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DecreaseMaxValueByUserId {
         return new DecreaseMaxValueByUserId(
             this.namespaceName,
@@ -123,7 +123,7 @@ export default class NamespaceRef {
     public consumeStamina(
         staminaName: string,
         consumeValue: number,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): ConsumeStaminaByUserId {
         return new ConsumeStaminaByUserId(
             this.namespaceName,

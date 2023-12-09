@@ -6,8 +6,8 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     bonusModel(bonusModelName: string): BonusModelRef;
-    deleteReceiveStatus(bonusModelName: string, userId?: string | null): DeleteReceiveStatusByUserId;
-    unmarkReceived(bonusModelName: string, stepNumber: number, userId?: string | null): UnmarkReceivedByUserId;
-    markReceived(bonusModelName: string, stepNumber: number, userId?: string | null): MarkReceivedByUserId;
+    deleteReceiveStatus(bonusModelName: string, userId?: string): DeleteReceiveStatusByUserId;
+    unmarkReceived(bonusModelName: string, stepNumber: number, userId?: string): UnmarkReceivedByUserId;
+    markReceived(bonusModelName: string, stepNumber: number, userId?: string): MarkReceivedByUserId;
     grn(): string;
 }

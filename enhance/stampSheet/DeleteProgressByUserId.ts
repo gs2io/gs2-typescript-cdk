@@ -17,19 +17,35 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class DeleteProgressByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+
 
     public constructor(
         namespaceName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
 
-        super(
-            "Gs2Enhance:DeleteProgressByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Enhance:DeleteProgressByUserId";
     }
 }

@@ -20,6 +20,7 @@ import CountDownByUserId from "../stampSheet/CountDownByUserId";
 import DeleteCounterByUserId from "../stampSheet/DeleteCounterByUserId";
 import CountUpByUserId from "../stampSheet/CountUpByUserId";
 import VerifyCounterByUserId from "../stampSheet/VerifyCounterByUserId";
+import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -43,7 +44,7 @@ export default class NamespaceRef {
         limitName: string,
         counterName: string,
         countDownValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): CountDownByUserId {
         return new CountDownByUserId(
             this.namespaceName,
@@ -57,7 +58,7 @@ export default class NamespaceRef {
     public deleteCounter(
         limitName: string,
         counterName: string,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): DeleteCounterByUserId {
         return new DeleteCounterByUserId(
             this.namespaceName,
@@ -72,7 +73,7 @@ export default class NamespaceRef {
         counterName: string,
         countUpValue: number|null = null,
         maxValue: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): CountUpByUserId {
         return new CountUpByUserId(
             this.namespaceName,
@@ -87,9 +88,9 @@ export default class NamespaceRef {
     public verifyCounter(
         limitName: string,
         counterName: string,
-        verifyType: string,
+        verifyType: CounterVerifyType,
         count: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): VerifyCounterByUserId {
         return new VerifyCounterByUserId(
             this.namespaceName,

@@ -18,12 +18,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class StartStateMachineByUserId extends model_1.AcquireAction {
     constructor(namespaceName, args = null, ttl = null, userId = "#{userId}") {
+        super();
+        this.args = null;
+        this.ttl = null;
+        this.namespaceName = namespaceName;
+        this.args = args !== null && args !== void 0 ? args : null;
+        this.ttl = ttl !== null && ttl !== void 0 ? ttl : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["args"] = args;
-        properties["ttl"] = ttl;
-        properties["userId"] = userId;
-        super("Gs2StateMachine:StartStateMachineByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.args != null) {
+            properties["args"] = this.args;
+        }
+        if (this.ttl != null) {
+            properties["ttl"] = this.ttl;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2StateMachine:StartStateMachineByUserId";
     }
 }
 exports.default = StartStateMachineByUserId;

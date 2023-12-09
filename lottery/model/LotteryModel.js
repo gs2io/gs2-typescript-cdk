@@ -14,16 +14,16 @@ class LotteryModel {
         this.prizeTableName = (_b = options === null || options === void 0 ? void 0 : options.prizeTableName) !== null && _b !== void 0 ? _b : null;
         this.choicePrizeTableScriptId = (_c = options === null || options === void 0 ? void 0 : options.choicePrizeTableScriptId) !== null && _c !== void 0 ? _c : null;
     }
-    static methodIsPrizeTable(name, mode, options = null) {
+    static methodIsPrizeTable(name, mode, prizeTableName, options = null) {
         return new LotteryModel(name, mode, LotteryModelMethod_1.LotteryModelMethod.PRIZE_TABLE, {
+            prizeTableName: prizeTableName,
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
-            prizeTableName: options === null || options === void 0 ? void 0 : options.prizeTableName,
         });
     }
-    static methodIsScript(name, mode, options = null) {
+    static methodIsScript(name, mode, choicePrizeTableScriptId, options = null) {
         return new LotteryModel(name, mode, LotteryModelMethod_1.LotteryModelMethod.SCRIPT, {
+            choicePrizeTableScriptId: choicePrizeTableScriptId,
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
-            choicePrizeTableScriptId: options === null || options === void 0 ? void 0 : options.choicePrizeTableScriptId,
         });
     }
     properties() {

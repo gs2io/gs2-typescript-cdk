@@ -18,13 +18,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyInventoryCurrentMaxCapacityByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, inventoryName, verifyType, currentInventoryMaxCapacity, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.verifyType = verifyType;
+        this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["inventoryName"] = inventoryName;
-        properties["verifyType"] = verifyType;
-        properties["currentInventoryMaxCapacity"] = currentInventoryMaxCapacity;
-        properties["userId"] = userId;
-        super("Gs2Inventory:VerifyInventoryCurrentMaxCapacityByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.verifyType != null) {
+            properties["verifyType"] = this.verifyType;
+        }
+        if (this.currentInventoryMaxCapacity != null) {
+            properties["currentInventoryMaxCapacity"] = this.currentInventoryMaxCapacity;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Inventory:VerifyInventoryCurrentMaxCapacityByUserId";
     }
 }
 exports.default = VerifyInventoryCurrentMaxCapacityByUserId;

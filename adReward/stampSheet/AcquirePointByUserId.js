@@ -18,11 +18,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquirePointByUserId extends model_1.AcquireAction {
     constructor(namespaceName, point, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.point = point;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["point"] = point;
-        properties["userId"] = userId;
-        super("Gs2AdReward:AcquirePointByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.point != null) {
+            properties["point"] = this.point;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2AdReward:AcquirePointByUserId";
     }
 }
 exports.default = AcquirePointByUserId;

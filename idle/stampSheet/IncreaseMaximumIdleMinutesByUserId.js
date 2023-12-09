@@ -18,12 +18,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class IncreaseMaximumIdleMinutesByUserId extends model_1.AcquireAction {
     constructor(namespaceName, categoryName, increaseMinutes = null, userId = "#{userId}") {
+        super();
+        this.increaseMinutes = null;
+        this.namespaceName = namespaceName;
+        this.categoryName = categoryName;
+        this.increaseMinutes = increaseMinutes !== null && increaseMinutes !== void 0 ? increaseMinutes : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["categoryName"] = categoryName;
-        properties["increaseMinutes"] = increaseMinutes;
-        properties["userId"] = userId;
-        super("Gs2Idle:IncreaseMaximumIdleMinutesByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.categoryName != null) {
+            properties["categoryName"] = this.categoryName;
+        }
+        if (this.increaseMinutes != null) {
+            properties["increaseMinutes"] = this.increaseMinutes;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Idle:IncreaseMaximumIdleMinutesByUserId";
     }
 }
 exports.default = IncreaseMaximumIdleMinutesByUserId;

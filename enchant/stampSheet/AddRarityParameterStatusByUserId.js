@@ -18,13 +18,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AddRarityParameterStatusByUserId extends model_1.AcquireAction {
     constructor(namespaceName, parameterName, propertyId, count = null, userId = "#{userId}") {
+        super();
+        this.count = null;
+        this.namespaceName = namespaceName;
+        this.parameterName = parameterName;
+        this.propertyId = propertyId;
+        this.count = count !== null && count !== void 0 ? count : null;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["parameterName"] = parameterName;
-        properties["propertyId"] = propertyId;
-        properties["count"] = count;
-        properties["userId"] = userId;
-        super("Gs2Enchant:AddRarityParameterStatusByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.parameterName != null) {
+            properties["parameterName"] = this.parameterName;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Enchant:AddRarityParameterStatusByUserId";
     }
 }
 exports.default = AddRarityParameterStatusByUserId;

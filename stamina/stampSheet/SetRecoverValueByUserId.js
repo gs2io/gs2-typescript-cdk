@@ -18,12 +18,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetRecoverValueByUserId extends model_1.AcquireAction {
     constructor(namespaceName, staminaName, recoverValue, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.staminaName = staminaName;
+        this.recoverValue = recoverValue;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        properties["staminaName"] = staminaName;
-        properties["recoverValue"] = recoverValue;
-        properties["userId"] = userId;
-        super("Gs2Stamina:SetRecoverValueByUserId", properties);
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.staminaName != null) {
+            properties["staminaName"] = this.staminaName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.recoverValue != null) {
+            properties["recoverValue"] = this.recoverValue;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2Stamina:SetRecoverValueByUserId";
     }
 }
 exports.default = SetRecoverValueByUserId;

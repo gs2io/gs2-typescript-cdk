@@ -18,13 +18,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class MarkRestrainByUserId extends model_1.ConsumeAction {
     constructor(namespaceName, nodeModelNames, userId = "#{userId}") {
+        super();
+        this.namespaceName = namespaceName;
+        this.nodeModelNames = nodeModelNames;
+        this.userId = userId;
+    }
+    request() {
         let properties = {};
-        properties["namespaceName"] = namespaceName;
-        if (nodeModelNames != null) {
-            properties["nodeModelNames"] = nodeModelNames;
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
         }
-        properties["userId"] = userId;
-        super("Gs2SkillTree:MarkRestrainByUserId", properties);
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.nodeModelNames != null) {
+            properties["nodeModelNames"] = this.nodeModelNames;
+        }
+        return properties;
+    }
+    action() {
+        return "Gs2SkillTree:MarkRestrainByUserId";
     }
 }
 exports.default = MarkRestrainByUserId;

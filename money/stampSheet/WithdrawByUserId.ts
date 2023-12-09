@@ -17,25 +17,53 @@
 import {AcquireAction, ConsumeAction} from "../../core/model";
 
 export default class WithdrawByUserId extends ConsumeAction {
+    private readonly namespaceName: string;
+    private readonly userId: string;
+    private readonly slot: number;
+    private readonly count: number;
+    private readonly paidOnly: boolean|null = null;
+
 
     public constructor(
         namespaceName: string,
         slot: number,
         count: number,
         paidOnly: boolean|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.slot = slot;
+        this.count = count;
+        this.paidOnly = paidOnly ?? null;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["slot"] = slot
-        properties["count"] = count
-        properties["paidOnly"] = paidOnly
-        properties["userId"] = userId
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.slot != null) {
+            properties["slot"] = this.slot;
+        }
+        if (this.count != null) {
+            properties["count"] = this.count;
+        }
+        if (this.paidOnly != null) {
+            properties["paidOnly"] = this.paidOnly;
+        }
 
-        super(
-            "Gs2Money:WithdrawByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Money:WithdrawByUserId";
     }
 }

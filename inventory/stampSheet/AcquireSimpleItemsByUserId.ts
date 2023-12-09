@@ -18,26 +18,48 @@ import {AcquireAction, ConsumeAction} from "../../core/model";
 import AcquireCount from "../model/AcquireCount";
 
 export default class AcquireSimpleItemsByUserId extends AcquireAction {
+    private readonly namespaceName: string;
+    private readonly inventoryName: string;
+    private readonly userId: string;
+    private readonly acquireCounts: AcquireCount[];
+
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
         acquireCounts: AcquireCount[],
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ) {
+        super();
+
+        this.namespaceName = namespaceName;
+        this.inventoryName = inventoryName;
+        this.acquireCounts = acquireCounts;
+        this.userId = userId;
+    }
+
+    public request(
+    ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
-        properties["namespaceName"] = namespaceName
-        properties["inventoryName"] = inventoryName
-        if (acquireCounts != null) {
-            properties["acquireCounts"] = acquireCounts.map(v => v.properties(
+        if (this.namespaceName != null) {
+            properties["namespaceName"] = this.namespaceName;
+        }
+        if (this.inventoryName != null) {
+            properties["inventoryName"] = this.inventoryName;
+        }
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+        if (this.acquireCounts != null) {
+            properties["acquireCounts"] = this.acquireCounts.map(v => v.properties(
                 ));
         }
-        properties["userId"] = userId
 
-        super(
-            "Gs2Inventory:AcquireSimpleItemsByUserId",
-            properties,
-        );
+        return properties;
+    }
+
+    public action(): string {
+        return "Gs2Inventory:AcquireSimpleItemsByUserId";
     }
 }

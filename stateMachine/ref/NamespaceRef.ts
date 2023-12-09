@@ -29,7 +29,7 @@ export default class NamespaceRef {
     public startStateMachine(
         args: string|null = null,
         ttl: number|null = null,
-        userId: string|null = "#{userId}",
+        userId: string = "#{userId}",
     ): StartStateMachineByUserId {
         return new StartStateMachineByUserId(
             this.namespaceName,
