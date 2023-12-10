@@ -25,8 +25,12 @@ export default class LogSetting {
     }
 
     public properties(): { [name: string]: any } {
-        return {
-            "LoggingNamespaceId": this.loggingNamespaceId,
-        };
+        let properties: {[name: string]: any} = {};
+
+        if (this.loggingNamespaceId != null) {
+            properties["LoggingNamespaceId"] = this.loggingNamespaceId;
+        }
+
+        return properties;
     }
 }

@@ -1,18 +1,17 @@
 import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
-import TransactionSetting from "../../core/model/TransactionSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import RateModel from "./RateModel";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
     private readonly name;
-    private readonly transactionSetting;
     private readonly description;
     private readonly enableDirectEnhance;
+    private readonly transactionSetting;
     private readonly enhanceScript;
     private readonly logSetting;
-    constructor(stack: Stack, name: string, transactionSetting: TransactionSetting, options?: NamespaceOptions | null);
+    constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;
     resourceType(): string;
     properties(): {

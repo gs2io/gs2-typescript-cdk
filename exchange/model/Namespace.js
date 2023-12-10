@@ -21,22 +21,23 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
-    constructor(stack, name, transactionSetting, options = null) {
-        var _a, _b, _c, _d, _e;
+    constructor(stack, name, options = null) {
+        var _a, _b, _c, _d, _e, _f;
         super("Exchange_Namespace_" + name);
         this.description = null;
         this.enableAwaitExchange = null;
         this.enableDirectExchange = null;
+        this.transactionSetting = null;
         this.exchangeScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
-        this.transactionSetting = transactionSetting;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.enableAwaitExchange = (_b = options === null || options === void 0 ? void 0 : options.enableAwaitExchange) !== null && _b !== void 0 ? _b : null;
         this.enableDirectExchange = (_c = options === null || options === void 0 ? void 0 : options.enableDirectExchange) !== null && _c !== void 0 ? _c : null;
-        this.exchangeScript = (_d = options === null || options === void 0 ? void 0 : options.exchangeScript) !== null && _d !== void 0 ? _d : null;
-        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
+        this.transactionSetting = (_d = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _d !== void 0 ? _d : null;
+        this.exchangeScript = (_e = options === null || options === void 0 ? void 0 : options.exchangeScript) !== null && _e !== void 0 ? _e : null;
+        this.logSetting = (_f = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _f !== void 0 ? _f : null;
         stack.addResource(this);
     }
     alternateKeys() {

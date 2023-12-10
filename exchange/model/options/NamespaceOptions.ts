@@ -21,6 +21,7 @@ export interface NamespaceOptions {
     description?: string|null;
     enableAwaitExchange?: boolean|null;
     enableDirectExchange?: boolean|null;
+    transactionSetting?: TransactionSetting|null;
     exchangeScript?: ScriptSetting|null;
     logSetting?: LogSetting|null;
     queueNamespaceId?: string|null;

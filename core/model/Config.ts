@@ -28,9 +28,15 @@ export default class Config {
     }
 
     public properties(): { [name: string]: any } {
-        return {
-            "Key": this.key,
-            "Value": this.value,
-        };
+        let properties: {[name: string]: any} = {};
+
+        if (this.key != null) {
+            properties["key"] = this.key;
+        }
+        if (this.value != null) {
+            properties["value"] = this.value;
+        }
+
+        return properties;
     }
 }

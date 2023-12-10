@@ -21,16 +21,17 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
-    constructor(stack, name, transactionSetting, options = null) {
-        var _a, _b;
+    constructor(stack, name, options = null) {
+        var _a, _b, _c;
         super("Enchant_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
-        this.transactionSetting = transactionSetting;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.logSetting = (_b = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _b !== void 0 ? _b : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.logSetting = (_c = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _c !== void 0 ? _c : null;
         stack.addResource(this);
     }
     alternateKeys() {

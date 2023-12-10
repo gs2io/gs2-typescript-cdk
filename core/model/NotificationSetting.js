@@ -22,11 +22,17 @@ class NotificationSetting {
         this.sound = sound;
     }
     properties() {
-        return {
-            "GatewayNamespaceId": this.gatewayNamespaceId,
-            "EnableTransferMobileNotification": this.enableTransferMobileNotification,
-            "Sound": this.sound,
-        };
+        let properties = {};
+        if (this.gatewayNamespaceId != null) {
+            properties["GatewayNamespaceId"] = this.gatewayNamespaceId;
+        }
+        if (this.enableTransferMobileNotification != null) {
+            properties["EnableTransferMobileNotification"] = this.enableTransferMobileNotification;
+        }
+        if (this.sound != null) {
+            properties["Sound"] = this.sound;
+        }
+        return properties;
     }
 }
 exports.default = NotificationSetting;

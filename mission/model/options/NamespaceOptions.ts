@@ -20,6 +20,7 @@ import LogSetting from "../../../core/model/LogSetting";
 
 export interface NamespaceOptions {
     description?: string|null;
+    transactionSetting?: TransactionSetting|null;
     missionCompleteScript?: ScriptSetting|null;
     counterIncrementScript?: ScriptSetting|null;
     receiveRewardsScript?: ScriptSetting|null;

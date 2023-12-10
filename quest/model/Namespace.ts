@@ -29,8 +29,8 @@ import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
-    private readonly transactionSetting: TransactionSetting;
     private readonly description: string|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
     private readonly startQuestScript: ScriptSetting|null = null;
     private readonly completeQuestScript: ScriptSetting|null = null;
     private readonly failedQuestScript: ScriptSetting|null = null;
@@ -39,7 +39,6 @@ export default class Namespace extends CdkResource {
     public constructor(
         stack: Stack,
         name: string,
-        transactionSetting: TransactionSetting,
         options: NamespaceOptions|null = null,
     ) {
         super(
@@ -48,8 +47,8 @@ export default class Namespace extends CdkResource {
 
         this.stack = stack;
         this.name = name;
-        this.transactionSetting = transactionSetting;
         this.description = options?.description ?? null;
+        this.transactionSetting = options?.transactionSetting ?? null;
         this.startQuestScript = options?.startQuestScript ?? null;
         this.completeQuestScript = options?.completeQuestScript ?? null;
         this.failedQuestScript = options?.failedQuestScript ?? null;

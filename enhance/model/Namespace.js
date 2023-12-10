@@ -21,20 +21,21 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
-    constructor(stack, name, transactionSetting, options = null) {
-        var _a, _b, _c, _d;
+    constructor(stack, name, options = null) {
+        var _a, _b, _c, _d, _e;
         super("Enhance_Namespace_" + name);
         this.description = null;
         this.enableDirectEnhance = null;
+        this.transactionSetting = null;
         this.enhanceScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
-        this.transactionSetting = transactionSetting;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.enableDirectEnhance = (_b = options === null || options === void 0 ? void 0 : options.enableDirectEnhance) !== null && _b !== void 0 ? _b : null;
-        this.enhanceScript = (_c = options === null || options === void 0 ? void 0 : options.enhanceScript) !== null && _c !== void 0 ? _c : null;
-        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
+        this.transactionSetting = (_c = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _c !== void 0 ? _c : null;
+        this.enhanceScript = (_d = options === null || options === void 0 ? void 0 : options.enhanceScript) !== null && _d !== void 0 ? _d : null;
+        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
         stack.addResource(this);
     }
     alternateKeys() {

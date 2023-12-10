@@ -21,20 +21,21 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
-    constructor(stack, name, transactionSetting, options = null) {
-        var _a, _b, _c, _d;
+    constructor(stack, name, options = null) {
+        var _a, _b, _c, _d, _e;
         super("Lottery_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.lotteryTriggerScriptId = null;
         this.choicePrizeTableScriptId = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
-        this.transactionSetting = transactionSetting;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.lotteryTriggerScriptId = (_b = options === null || options === void 0 ? void 0 : options.lotteryTriggerScriptId) !== null && _b !== void 0 ? _b : null;
-        this.choicePrizeTableScriptId = (_c = options === null || options === void 0 ? void 0 : options.choicePrizeTableScriptId) !== null && _c !== void 0 ? _c : null;
-        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.lotteryTriggerScriptId = (_c = options === null || options === void 0 ? void 0 : options.lotteryTriggerScriptId) !== null && _c !== void 0 ? _c : null;
+        this.choicePrizeTableScriptId = (_d = options === null || options === void 0 ? void 0 : options.choicePrizeTableScriptId) !== null && _d !== void 0 ? _d : null;
+        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
         stack.addResource(this);
     }
     alternateKeys() {

@@ -21,10 +21,14 @@ class Config {
         this.value = value;
     }
     properties() {
-        return {
-            "Key": this.key,
-            "Value": this.value,
-        };
+        let properties = {};
+        if (this.key != null) {
+            properties["key"] = this.key;
+        }
+        if (this.value != null) {
+            properties["value"] = this.value;
+        }
+        return properties;
     }
 }
 exports.default = Config;

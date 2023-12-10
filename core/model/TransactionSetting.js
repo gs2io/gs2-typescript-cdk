@@ -21,11 +21,15 @@ class TransactionSetting {
         this.queueNamespaceId = queueNamespaceId;
     }
     properties() {
-        return {
-            "EnableAutoRun": true,
-            "DistributorNamespaceId": this.distributorNamespaceId,
-            "QueueNamespaceId": this.queueNamespaceId,
-        };
+        let properties = {};
+        properties["EnableAutoRun"] = true;
+        if (this.distributorNamespaceId != null) {
+            properties["DistributorNamespaceId"] = this.distributorNamespaceId;
+        }
+        if (this.queueNamespaceId != null) {
+            properties["QueueNamespaceId"] = this.queueNamespaceId;
+        }
+        return properties;
     }
 }
 exports.default = TransactionSetting;

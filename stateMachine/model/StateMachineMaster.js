@@ -53,7 +53,7 @@ class StateMachineMaster extends model_1.CdkResource {
         return new StateMachineMasterRef_1.default(this.namespaceName, version);
     }
     getAttrStateMachineId() {
-        return new func_1.GetAttr(null, null, "Item.StateMachineId");
+        return new func_1.GetAttr(this, "Item.StateMachineId", null);
     }
 }
 exports.default = StateMachineMaster;

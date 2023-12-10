@@ -19,6 +19,7 @@ import LogSetting from "../../../core/model/LogSetting";
 
 export interface NamespaceOptions {
     description?: string|null;
+    transactionSetting?: TransactionSetting|null;
     buyScript?: ScriptSetting|null;
     queueNamespaceId?: string|null;
     keyId?: string|null;

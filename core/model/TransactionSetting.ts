@@ -28,10 +28,16 @@ export default class TransactionSetting {
     }
 
     public properties(): { [name: string]: any } {
-        return {
-            "EnableAutoRun": true,
-            "DistributorNamespaceId": this.distributorNamespaceId,
-            "QueueNamespaceId": this.queueNamespaceId,
-        };
+        let properties: {[name: string]: any} = {};
+
+        properties["EnableAutoRun"] = true;
+        if (this.distributorNamespaceId != null) {
+            properties["DistributorNamespaceId"] = this.distributorNamespaceId;
+        }
+        if (this.queueNamespaceId != null) {
+            properties["QueueNamespaceId"] = this.queueNamespaceId;
+        }
+
+        return properties;
     }
 }

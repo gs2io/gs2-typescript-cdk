@@ -20,9 +20,11 @@ class LogSetting {
         this.loggingNamespaceId = loggingNamespaceId;
     }
     properties() {
-        return {
-            "LoggingNamespaceId": this.loggingNamespaceId,
-        };
+        let properties = {};
+        if (this.loggingNamespaceId != null) {
+            properties["LoggingNamespaceId"] = this.loggingNamespaceId;
+        }
+        return properties;
     }
 }
 exports.default = LogSetting;

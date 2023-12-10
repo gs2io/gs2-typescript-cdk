@@ -31,10 +31,18 @@ export default class NotificationSetting {
     }
 
     public properties(): { [name: string]: any } {
-        return {
-            "GatewayNamespaceId": this.gatewayNamespaceId,
-            "EnableTransferMobileNotification": this.enableTransferMobileNotification,
-            "Sound": this.sound,
-        };
+        let properties: {[name: string]: any} = {};
+
+        if (this.gatewayNamespaceId != null) {
+            properties["GatewayNamespaceId"] = this.gatewayNamespaceId;
+        }
+        if (this.enableTransferMobileNotification != null) {
+            properties["EnableTransferMobileNotification"] = this.enableTransferMobileNotification;
+        }
+        if (this.sound != null) {
+            properties["Sound"] = this.sound;
+        }
+
+        return properties;
     }
 }

@@ -35,11 +35,21 @@ export default class ScriptSetting {
     }
 
     public properties(): { [name: string]: any } {
-        return {
-            "TriggerScriptId": this.triggerScriptId,
-            "DoneTriggerTargetType": this.doneTriggerTargetType,
-            "DoneTriggerScriptId": this.doneTriggerScriptId,
-            "DoneTriggerQueueNamespaceId": this.doneTriggerQueueNamespaceId,
-        };
+        let properties: {[name: string]: any} = {};
+
+        if (this.triggerScriptId != null) {
+            properties["TriggerScriptId"] = this.triggerScriptId;
+        }
+        if (this.doneTriggerTargetType != null) {
+            properties["DoneTriggerTargetType"] = this.doneTriggerTargetType;
+        }
+        if (this.doneTriggerScriptId != null) {
+            properties["DoneTriggerScriptId"] = this.doneTriggerScriptId;
+        }
+        if (this.doneTriggerQueueNamespaceId != null) {
+            properties["DoneTriggerQueueNamespaceId"] = this.doneTriggerQueueNamespaceId;
+        }
+
+        return properties;
     }
 }
