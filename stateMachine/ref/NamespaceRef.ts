@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import StartStateMachineByUserId from "../stampSheet/StartStateMachineByUserId";
+import { StatusEnableSpeculativeExecution } from "../stampSheet/enum/StatusEnableSpeculativeExecution";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -28,12 +29,14 @@ export default class NamespaceRef {
 
     public startStateMachine(
         args: string|null = null,
+        enableSpeculativeExecution: StatusEnableSpeculativeExecution|null = null,
         ttl: number|null = null,
         userId: string = "#{userId}",
     ): StartStateMachineByUserId {
         return new StartStateMachineByUserId(
             this.namespaceName,
             args,
+            enableSpeculativeExecution,
             ttl,
             userId,
         );

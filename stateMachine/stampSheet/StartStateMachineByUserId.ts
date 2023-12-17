@@ -15,17 +15,20 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { StatusEnableSpeculativeExecution } from "./enum/StatusEnableSpeculativeExecution";
 
 export default class StartStateMachineByUserId extends AcquireAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly args: string|null = null;
+    private readonly enableSpeculativeExecution: StatusEnableSpeculativeExecution|null = null;
     private readonly ttl: number|null = null;
 
 
     public constructor(
         namespaceName: string,
         args: string|null = null,
+        enableSpeculativeExecution: StatusEnableSpeculativeExecution|null = null,
         ttl: number|null = null,
         userId: string = "#{userId}",
     ) {
@@ -33,6 +36,7 @@ export default class StartStateMachineByUserId extends AcquireAction {
 
         this.namespaceName = namespaceName;
         this.args = args ?? null;
+        this.enableSpeculativeExecution = enableSpeculativeExecution ?? null;
         this.ttl = ttl ?? null;
         this.userId = userId;
     }
@@ -49,6 +53,9 @@ export default class StartStateMachineByUserId extends AcquireAction {
         }
         if (this.args != null) {
             properties["args"] = this.args;
+        }
+        if (this.enableSpeculativeExecution != null) {
+            properties["enableSpeculativeExecution"] = this.enableSpeculativeExecution;
         }
         if (this.ttl != null) {
             properties["ttl"] = this.ttl;

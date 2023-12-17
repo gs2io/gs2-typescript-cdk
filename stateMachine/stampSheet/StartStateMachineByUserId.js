@@ -17,12 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class StartStateMachineByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, args = null, ttl = null, userId = "#{userId}") {
+    constructor(namespaceName, args = null, enableSpeculativeExecution = null, ttl = null, userId = "#{userId}") {
         super();
         this.args = null;
+        this.enableSpeculativeExecution = null;
         this.ttl = null;
         this.namespaceName = namespaceName;
         this.args = args !== null && args !== void 0 ? args : null;
+        this.enableSpeculativeExecution = enableSpeculativeExecution !== null && enableSpeculativeExecution !== void 0 ? enableSpeculativeExecution : null;
         this.ttl = ttl !== null && ttl !== void 0 ? ttl : null;
         this.userId = userId;
     }
@@ -36,6 +38,9 @@ class StartStateMachineByUserId extends model_1.AcquireAction {
         }
         if (this.args != null) {
             properties["args"] = this.args;
+        }
+        if (this.enableSpeculativeExecution != null) {
+            properties["enableSpeculativeExecution"] = this.enableSpeculativeExecution;
         }
         if (this.ttl != null) {
             properties["ttl"] = this.ttl;

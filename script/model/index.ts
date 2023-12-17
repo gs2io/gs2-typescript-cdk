@@ -21,6 +21,8 @@ import RandomStatus from "./RandomStatus";
 import { RandomStatusOptions } from "./options/RandomStatusOptions";
 import RandomUsed from "./RandomUsed";
 import { RandomUsedOptions } from "./options/RandomUsedOptions";
+import Transaction from "./Transaction";
+import { TransactionOptions } from "./options/TransactionOptions";
 
 export {
     Namespace,
@@ -31,4 +33,6 @@ export {
     RandomStatusOptions,
     RandomUsed,
     RandomUsedOptions,
+    Transaction,
+    TransactionOptions,
 }
