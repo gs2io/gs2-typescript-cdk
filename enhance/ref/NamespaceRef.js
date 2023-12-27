@@ -17,12 +17,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const UnleashRateModelRef_1 = tslib_1.__importDefault(require("./UnleashRateModelRef"));
 const RateModelRef_1 = tslib_1.__importDefault(require("./RateModelRef"));
 const CreateProgressByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CreateProgressByUserId"));
 const DeleteProgressByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteProgressByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
+    }
+    unleashRateModel(rateName) {
+        return new UnleashRateModelRef_1.default(this.namespaceName, rateName);
     }
     rateModel(rateName) {
         return new RateModelRef_1.default(this.namespaceName, rateName);

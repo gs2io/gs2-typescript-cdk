@@ -15,6 +15,7 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import UnleashRateModelRef from "./UnleashRateModelRef";
 import RateModelRef from "./RateModelRef";
 import CreateProgressByUserId from "../stampSheet/CreateProgressByUserId";
 import Material from "../model/Material";
@@ -27,6 +28,15 @@ export default class NamespaceRef {
         namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
+    }
+
+    public unleashRateModel(
+        rateName: string,
+    ): UnleashRateModelRef {
+        return new UnleashRateModelRef(
+            this.namespaceName,
+            rateName,
+        );
     }
 
     public rateModel(

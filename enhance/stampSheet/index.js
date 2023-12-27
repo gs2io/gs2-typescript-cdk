@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteProgressByUserId = exports.CreateProgressByUserId = exports.DirectEnhanceByUserId = void 0;
+exports.DeleteProgressByUserId = exports.CreateProgressByUserId = exports.UnleashByUserId = exports.DirectEnhanceByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const DirectEnhanceByUserId_1 = tslib_1.__importDefault(require("./DirectEnhanceByUserId"));
 exports.DirectEnhanceByUserId = DirectEnhanceByUserId_1.default;
+const UnleashByUserId_1 = tslib_1.__importDefault(require("./UnleashByUserId"));
+exports.UnleashByUserId = UnleashByUserId_1.default;
 const CreateProgressByUserId_1 = tslib_1.__importDefault(require("./CreateProgressByUserId"));
 exports.CreateProgressByUserId = CreateProgressByUserId_1.default;
 const DeleteProgressByUserId_1 = tslib_1.__importDefault(require("./DeleteProgressByUserId"));

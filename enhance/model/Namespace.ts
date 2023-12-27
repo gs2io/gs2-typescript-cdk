@@ -23,6 +23,7 @@ import LogSetting from "../../core/model/LogSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import RateModel from "./RateModel";
+import UnleashRateModel from "./UnleashRateModel";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -114,11 +115,13 @@ export default class Namespace extends CdkResource {
 
     public masterData(
         rateModels: RateModel[],
+        unleashRateModels: UnleashRateModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             rateModels,
+            unleashRateModels,
         ).addDependsOn(
             this,
         );

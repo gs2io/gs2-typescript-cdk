@@ -17,19 +17,20 @@ import { GradeEntryModelOptions } from "./options/GradeEntryModelOptions";
 
 export default class GradeEntryModel {
     private readonly rankCapValue: number;
+    private readonly propertyIdRegex: string;
     private readonly gradeUpPropertyIdRegex: string;
     private readonly metadata: string|null = null;
-    private readonly propertyIdRegex: string|null = null;
 
     public constructor(
         rankCapValue: number,
+        propertyIdRegex: string,
         gradeUpPropertyIdRegex: string,
         options: GradeEntryModelOptions|null = null,
     ) {
         this.rankCapValue = rankCapValue;
+        this.propertyIdRegex = propertyIdRegex;
         this.gradeUpPropertyIdRegex = gradeUpPropertyIdRegex;
         this.metadata = options?.metadata ?? null;
-        this.propertyIdRegex = options?.propertyIdRegex ?? null;
     }
 
     public properties(

@@ -15,16 +15,19 @@
  */
 import {CdkResource, Stack} from "../../core/model";
 import RateModel from "./RateModel";
+import UnleashRateModel from "./UnleashRateModel";
 
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2020-08-22";
     private readonly namespaceName: string;
     private readonly rateModels: RateModel[];
+    private readonly unleashRateModels: UnleashRateModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
         rateModels: RateModel[],
+        unleashRateModels: UnleashRateModel[],
     ) {
         super(
             "Enhance_CurrentRateMaster_" + namespaceName
@@ -32,6 +35,7 @@ export default class CurrentMasterData extends CdkResource {
 
         this.namespaceName = namespaceName;
         this.rateModels = rateModels;
+        this.unleashRateModels = unleashRateModels;
         stack.addResource(
             this,
         );
@@ -55,6 +59,10 @@ export default class CurrentMasterData extends CdkResource {
         settings["version"] = this.version
         if (this.rateModels != null) {
             settings["rateModels"] = this.rateModels.map(v => v.properties(
+                ));
+        }
+        if (this.unleashRateModels != null) {
+            settings["unleashRateModels"] = this.unleashRateModels.map(v => v.properties(
                 ));
         }
 

@@ -13,8 +13,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import UnleashRateEntryModel from "../UnleashRateEntryModel";
 
-export interface GradeEntryModelOptions {
+export interface UnleashRateModelOptions {
+    description?: string|null;
     metadata?: string|null;
 }
 

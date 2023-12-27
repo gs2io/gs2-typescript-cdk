@@ -14,7 +14,6 @@
  * permissions and limitations under the License.
  */
 
-export interface GradeEntryModelOptions {
-    metadata?: string|null;
+export interface UnleashRateEntryModelOptions {
 }
 

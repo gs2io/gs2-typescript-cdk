@@ -17,10 +17,14 @@ import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import RateModel from "./RateModel";
 import { RateModelOptions } from "./options/RateModelOptions";
+import UnleashRateModel from "./UnleashRateModel";
+import { UnleashRateModelOptions } from "./options/UnleashRateModelOptions";
 import BonusRate from "./BonusRate";
 import { BonusRateOptions } from "./options/BonusRateOptions";
 import Material from "./Material";
 import { MaterialOptions } from "./options/MaterialOptions";
+import UnleashRateEntryModel from "./UnleashRateEntryModel";
+import { UnleashRateEntryModelOptions } from "./options/UnleashRateEntryModelOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -28,9 +32,13 @@ export {
     NamespaceOptions,
     RateModel,
     RateModelOptions,
+    UnleashRateModel,
+    UnleashRateModelOptions,
     BonusRate,
     BonusRateOptions,
     Material,
     MaterialOptions,
+    UnleashRateEntryModel,
+    UnleashRateEntryModelOptions,
     CurrentMasterData,
 }

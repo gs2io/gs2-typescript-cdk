@@ -2,6 +2,7 @@ import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
 import NamespaceRef from "../ref/NamespaceRef";
 import RateModel from "./RateModel";
+import UnleashRateModel from "./UnleashRateModel";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
@@ -19,5 +20,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(rateModels: RateModel[]): Namespace;
+    masterData(rateModels: RateModel[], unleashRateModels: UnleashRateModel[]): Namespace;
 }

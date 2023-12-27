@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.Material = exports.BonusRate = exports.RateModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.UnleashRateEntryModel = exports.Material = exports.BonusRate = exports.UnleashRateModel = exports.RateModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,10 +21,14 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const RateModel_1 = tslib_1.__importDefault(require("./RateModel"));
 exports.RateModel = RateModel_1.default;
+const UnleashRateModel_1 = tslib_1.__importDefault(require("./UnleashRateModel"));
+exports.UnleashRateModel = UnleashRateModel_1.default;
 const BonusRate_1 = tslib_1.__importDefault(require("./BonusRate"));
 exports.BonusRate = BonusRate_1.default;
 const Material_1 = tslib_1.__importDefault(require("./Material"));
 exports.Material = Material_1.default;
+const UnleashRateEntryModel_1 = tslib_1.__importDefault(require("./UnleashRateEntryModel"));
+exports.UnleashRateEntryModel = UnleashRateEntryModel_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

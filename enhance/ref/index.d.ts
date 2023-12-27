@@ -1,3 +1,4 @@
 import NamespaceRef from "./NamespaceRef";
 import RateModelRef from "./RateModelRef";
-export { NamespaceRef, RateModelRef, };
+import UnleashRateModelRef from "./UnleashRateModelRef";
+export { NamespaceRef, RateModelRef, UnleashRateModelRef, };

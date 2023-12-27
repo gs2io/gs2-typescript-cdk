@@ -1,14 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class GradeEntryModel {
-    constructor(rankCapValue, gradeUpPropertyIdRegex, options = null) {
-        var _a, _b;
+    constructor(rankCapValue, propertyIdRegex, gradeUpPropertyIdRegex, options = null) {
+        var _a;
         this.metadata = null;
-        this.propertyIdRegex = null;
         this.rankCapValue = rankCapValue;
+        this.propertyIdRegex = propertyIdRegex;
         this.gradeUpPropertyIdRegex = gradeUpPropertyIdRegex;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
-        this.propertyIdRegex = (_b = options === null || options === void 0 ? void 0 : options.propertyIdRegex) !== null && _b !== void 0 ? _b : null;
     }
     properties() {
         let properties = {};
