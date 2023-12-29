@@ -21,6 +21,7 @@ import BigInventoryModelRef from "./BigInventoryModelRef";
 import AddCapacityByUserId from "../stampSheet/AddCapacityByUserId";
 import SetCapacityByUserId from "../stampSheet/SetCapacityByUserId";
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
+import AcquireItemSetWithGradeByUserId from "../stampSheet/AcquireItemSetWithGradeByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import AcquireSimpleItemsByUserId from "../stampSheet/AcquireSimpleItemsByUserId";
@@ -123,6 +124,23 @@ export default class NamespaceRef {
             expiresAt,
             createNewItemSet,
             itemSetName,
+            userId,
+        );
+    }
+
+    public acquireItemSetWithGrade(
+        inventoryName: string,
+        itemName: string,
+        gradeModelId: string,
+        gradeValue: number,
+        userId: string = "#{userId}",
+    ): AcquireItemSetWithGradeByUserId {
+        return new AcquireItemSetWithGradeByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            gradeModelId,
+            gradeValue,
             userId,
         );
     }

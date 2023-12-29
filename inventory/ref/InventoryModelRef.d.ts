@@ -2,6 +2,7 @@ import ItemModelRef from "./ItemModelRef";
 import AddCapacityByUserId from "../stampSheet/AddCapacityByUserId";
 import SetCapacityByUserId from "../stampSheet/SetCapacityByUserId";
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
+import AcquireItemSetWithGradeByUserId from "../stampSheet/AcquireItemSetWithGradeByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import VerifyInventoryCurrentMaxCapacityByUserId from "../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId";
@@ -19,6 +20,7 @@ export default class InventoryModelRef {
     addCapacity(addCapacityValue: number, userId?: string): AddCapacityByUserId;
     setCapacity(newCapacityValue: number, userId?: string): SetCapacityByUserId;
     acquireItemSet(itemName: string, acquireCount: number, expiresAt?: number | null, createNewItemSet?: boolean | null, itemSetName?: string | null, userId?: string): AcquireItemSetByUserId;
+    acquireItemSetWithGrade(itemName: string, gradeModelId: string, gradeValue: number, userId?: string): AcquireItemSetWithGradeByUserId;
     addReferenceOf(itemName: string, referenceOf: string, itemSetName?: string | null, userId?: string): AddReferenceOfByUserId;
     deleteReferenceOf(itemName: string, referenceOf: string, itemSetName?: string | null, userId?: string): DeleteReferenceOfByUserId;
     verifyInventoryCurrentMaxCapacity(verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, userId?: string): VerifyInventoryCurrentMaxCapacityByUserId;

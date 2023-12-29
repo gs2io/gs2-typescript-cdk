@@ -23,6 +23,7 @@ const BigInventoryModelRef_1 = tslib_1.__importDefault(require("./BigInventoryMo
 const AddCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddCapacityByUserId"));
 const SetCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetCapacityByUserId"));
 const AcquireItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireItemSetByUserId"));
+const AcquireItemSetWithGradeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireItemSetWithGradeByUserId"));
 const AddReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddReferenceOfByUserId"));
 const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteReferenceOfByUserId"));
 const AcquireSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireSimpleItemsByUserId"));
@@ -58,6 +59,9 @@ class NamespaceRef {
     }
     acquireItemSet(inventoryName, itemName, acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, userId = "#{userId}") {
         return new AcquireItemSetByUserId_1.default(this.namespaceName, inventoryName, itemName, acquireCount, expiresAt, createNewItemSet, itemSetName, userId);
+    }
+    acquireItemSetWithGrade(inventoryName, itemName, gradeModelId, gradeValue, userId = "#{userId}") {
+        return new AcquireItemSetWithGradeByUserId_1.default(this.namespaceName, inventoryName, itemName, gradeModelId, gradeValue, userId);
     }
     addReferenceOf(inventoryName, itemName, referenceOf, itemSetName = null, userId = "#{userId}") {
         return new AddReferenceOfByUserId_1.default(this.namespaceName, inventoryName, itemName, referenceOf, itemSetName, userId);

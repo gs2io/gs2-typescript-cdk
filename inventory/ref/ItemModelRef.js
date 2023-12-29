@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const AcquireItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireItemSetByUserId"));
+const AcquireItemSetWithGradeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireItemSetWithGradeByUserId"));
 const AddReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddReferenceOfByUserId"));
 const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteReferenceOfByUserId"));
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeItemSetByUserId"));
@@ -31,6 +32,9 @@ class ItemModelRef {
     }
     acquireItemSet(acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, userId = "#{userId}") {
         return new AcquireItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, acquireCount, expiresAt, createNewItemSet, itemSetName, userId);
+    }
+    acquireItemSetWithGrade(gradeModelId, gradeValue, userId = "#{userId}") {
+        return new AcquireItemSetWithGradeByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, gradeModelId, gradeValue, userId);
     }
     addReferenceOf(referenceOf, itemSetName = null, userId = "#{userId}") {
         return new AddReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, referenceOf, itemSetName, userId);

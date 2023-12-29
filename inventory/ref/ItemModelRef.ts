@@ -16,6 +16,7 @@
 
 import {GetAttr, Join} from "../../core/func";
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
+import AcquireItemSetWithGradeByUserId from "../stampSheet/AcquireItemSetWithGradeByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
@@ -54,6 +55,21 @@ export default class ItemModelRef {
             expiresAt,
             createNewItemSet,
             itemSetName,
+            userId,
+        );
+    }
+
+    public acquireItemSetWithGrade(
+        gradeModelId: string,
+        gradeValue: number,
+        userId: string = "#{userId}",
+    ): AcquireItemSetWithGradeByUserId {
+        return new AcquireItemSetWithGradeByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            this.itemName,
+            gradeModelId,
+            gradeValue,
             userId,
         );
     }

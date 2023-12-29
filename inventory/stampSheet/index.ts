@@ -16,6 +16,7 @@
 import AddCapacityByUserId from "./AddCapacityByUserId";
 import SetCapacityByUserId from "./SetCapacityByUserId";
 import AcquireItemSetByUserId from "./AcquireItemSetByUserId";
+import AcquireItemSetWithGradeByUserId from "./AcquireItemSetWithGradeByUserId";
 import AddReferenceOfByUserId from "./AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "./DeleteReferenceOfByUserId";
 import AcquireSimpleItemsByUserId from "./AcquireSimpleItemsByUserId";
@@ -35,6 +36,7 @@ export {
     AddCapacityByUserId,
     SetCapacityByUserId,
     AcquireItemSetByUserId,
+    AcquireItemSetWithGradeByUserId,
     AddReferenceOfByUserId,
     DeleteReferenceOfByUserId,
     AcquireSimpleItemsByUserId,

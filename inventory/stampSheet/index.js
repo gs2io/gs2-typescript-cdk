@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyBigItemByUserId = exports.ConsumeBigItemByUserId = exports.VerifySimpleItemByUserId = exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.VerifyItemSetByUserId = exports.ConsumeItemSetByUserId = exports.VerifyInventoryCurrentMaxCapacityByUserId = exports.SetBigItemByUserId = exports.AcquireBigItemByUserId = exports.SetSimpleItemsByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
+exports.VerifyBigItemByUserId = exports.ConsumeBigItemByUserId = exports.VerifySimpleItemByUserId = exports.ConsumeSimpleItemsByUserId = exports.VerifyReferenceOfByUserId = exports.VerifyItemSetByUserId = exports.ConsumeItemSetByUserId = exports.VerifyInventoryCurrentMaxCapacityByUserId = exports.SetBigItemByUserId = exports.AcquireBigItemByUserId = exports.SetSimpleItemsByUserId = exports.AcquireSimpleItemsByUserId = exports.DeleteReferenceOfByUserId = exports.AddReferenceOfByUserId = exports.AcquireItemSetWithGradeByUserId = exports.AcquireItemSetByUserId = exports.SetCapacityByUserId = exports.AddCapacityByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,8 @@ const SetCapacityByUserId_1 = tslib_1.__importDefault(require("./SetCapacityByUs
 exports.SetCapacityByUserId = SetCapacityByUserId_1.default;
 const AcquireItemSetByUserId_1 = tslib_1.__importDefault(require("./AcquireItemSetByUserId"));
 exports.AcquireItemSetByUserId = AcquireItemSetByUserId_1.default;
+const AcquireItemSetWithGradeByUserId_1 = tslib_1.__importDefault(require("./AcquireItemSetWithGradeByUserId"));
+exports.AcquireItemSetWithGradeByUserId = AcquireItemSetWithGradeByUserId_1.default;
 const AddReferenceOfByUserId_1 = tslib_1.__importDefault(require("./AddReferenceOfByUserId"));
 exports.AddReferenceOfByUserId = AddReferenceOfByUserId_1.default;
 const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("./DeleteReferenceOfByUserId"));

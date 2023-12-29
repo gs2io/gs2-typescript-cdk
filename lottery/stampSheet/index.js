@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DrawByUserId = void 0;
+exports.ResetBoxByUserId = exports.DrawByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,4 +19,6 @@ const tslib_1 = require("tslib");
  */
 const DrawByUserId_1 = tslib_1.__importDefault(require("./DrawByUserId"));
 exports.DrawByUserId = DrawByUserId_1.default;
+const ResetBoxByUserId_1 = tslib_1.__importDefault(require("./ResetBoxByUserId"));
+exports.ResetBoxByUserId = ResetBoxByUserId_1.default;
 //# sourceMappingURL=index.js.map

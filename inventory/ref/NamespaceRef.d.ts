@@ -4,6 +4,7 @@ import BigInventoryModelRef from "./BigInventoryModelRef";
 import AddCapacityByUserId from "../stampSheet/AddCapacityByUserId";
 import SetCapacityByUserId from "../stampSheet/SetCapacityByUserId";
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
+import AcquireItemSetWithGradeByUserId from "../stampSheet/AcquireItemSetWithGradeByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import AcquireSimpleItemsByUserId from "../stampSheet/AcquireSimpleItemsByUserId";
@@ -35,6 +36,7 @@ export default class NamespaceRef {
     addCapacity(inventoryName: string, addCapacityValue: number, userId?: string): AddCapacityByUserId;
     setCapacity(inventoryName: string, newCapacityValue: number, userId?: string): SetCapacityByUserId;
     acquireItemSet(inventoryName: string, itemName: string, acquireCount: number, expiresAt?: number | null, createNewItemSet?: boolean | null, itemSetName?: string | null, userId?: string): AcquireItemSetByUserId;
+    acquireItemSetWithGrade(inventoryName: string, itemName: string, gradeModelId: string, gradeValue: number, userId?: string): AcquireItemSetWithGradeByUserId;
     addReferenceOf(inventoryName: string, itemName: string, referenceOf: string, itemSetName?: string | null, userId?: string): AddReferenceOfByUserId;
     deleteReferenceOf(inventoryName: string, itemName: string, referenceOf: string, itemSetName?: string | null, userId?: string): DeleteReferenceOfByUserId;
     acquireSimpleItems(inventoryName: string, acquireCounts: AcquireCount[], userId?: string): AcquireSimpleItemsByUserId;

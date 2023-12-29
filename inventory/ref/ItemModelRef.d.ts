@@ -1,4 +1,5 @@
 import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
+import AcquireItemSetWithGradeByUserId from "../stampSheet/AcquireItemSetWithGradeByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
@@ -12,6 +13,7 @@ export default class ItemModelRef {
     private readonly itemName;
     constructor(namespaceName: string, inventoryName: string, itemName: string);
     acquireItemSet(acquireCount: number, expiresAt?: number | null, createNewItemSet?: boolean | null, itemSetName?: string | null, userId?: string): AcquireItemSetByUserId;
+    acquireItemSetWithGrade(gradeModelId: string, gradeValue: number, userId?: string): AcquireItemSetWithGradeByUserId;
     addReferenceOf(referenceOf: string, itemSetName?: string | null, userId?: string): AddReferenceOfByUserId;
     deleteReferenceOf(referenceOf: string, itemSetName?: string | null, userId?: string): DeleteReferenceOfByUserId;
     consumeItemSet(consumeCount: number, itemSetName?: string | null, userId?: string): ConsumeItemSetByUserId;

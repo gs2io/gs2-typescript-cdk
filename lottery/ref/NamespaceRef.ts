@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import PrizeTableRef from "./PrizeTableRef";
 import LotteryModelRef from "./LotteryModelRef";
+import ResetBoxByUserId from "../stampSheet/ResetBoxByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -42,6 +43,17 @@ export default class NamespaceRef {
         return new LotteryModelRef(
             this.namespaceName,
             lotteryName,
+        );
+    }
+
+    public resetBox(
+        prizeTableName: string,
+        userId: string = "#{userId}",
+    ): ResetBoxByUserId {
+        return new ResetBoxByUserId(
+            this.namespaceName,
+            prizeTableName,
+            userId,
         );
     }
 

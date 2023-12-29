@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const PrizeTableRef_1 = tslib_1.__importDefault(require("./PrizeTableRef"));
 const LotteryModelRef_1 = tslib_1.__importDefault(require("./LotteryModelRef"));
+const ResetBoxByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ResetBoxByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -28,6 +29,9 @@ class NamespaceRef {
     }
     lotteryModel(lotteryName) {
         return new LotteryModelRef_1.default(this.namespaceName, lotteryName);
+    }
+    resetBox(prizeTableName, userId = "#{userId}") {
+        return new ResetBoxByUserId_1.default(this.namespaceName, prizeTableName, userId);
     }
     grn() {
         return new func_1.Join(":", [
