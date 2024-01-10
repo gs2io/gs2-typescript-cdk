@@ -17,7 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import AcquireActionsToPropertyFormProperties from "../stampSheet/AcquireActionsToPropertyFormProperties";
 import { AcquireAction } from "../../core/model";
-import AcquireActionConfig from "../model/AcquireActionConfig";
+import { Config } from "../../core/model";
 
 export default class PropertyFormModelRef {
     private readonly namespaceName: string;
@@ -34,7 +34,7 @@ export default class PropertyFormModelRef {
     public acquireActionsToPropertyFormProperties(
         propertyId: string,
         acquireAction: AcquireAction,
-        config: AcquireActionConfig[]|null = null,
+        config: Config[]|null = null,
         userId: string = "#{userId}",
     ): AcquireActionsToPropertyFormProperties {
         return new AcquireActionsToPropertyFormProperties(

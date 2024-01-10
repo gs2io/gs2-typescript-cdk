@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
-import AcquireActionConfig from "../model/AcquireActionConfig";
+import { Config } from "../../core/model";
 
 export default class AcquireActionsToPropertyFormProperties extends AcquireAction {
     private readonly namespaceName: string;
@@ -23,7 +23,7 @@ export default class AcquireActionsToPropertyFormProperties extends AcquireActio
     private readonly propertyFormModelName: string;
     private readonly propertyId: string;
     private readonly acquireAction: AcquireAction;
-    private readonly config: AcquireActionConfig[]|null = null;
+    private readonly config: Config[]|null = null;
 
 
     public constructor(
@@ -31,7 +31,7 @@ export default class AcquireActionsToPropertyFormProperties extends AcquireActio
         propertyFormModelName: string,
         propertyId: string,
         acquireAction: AcquireAction,
-        config: AcquireActionConfig[]|null = null,
+        config: Config[]|null = null,
         userId: string = "#{userId}",
     ) {
         super();

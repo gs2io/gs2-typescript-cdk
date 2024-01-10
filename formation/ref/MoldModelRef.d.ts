@@ -3,7 +3,7 @@ import AddMoldCapacityByUserId from "../stampSheet/AddMoldCapacityByUserId";
 import SetMoldCapacityByUserId from "../stampSheet/SetMoldCapacityByUserId";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
 import { AcquireAction } from "../../core/model";
-import AcquireActionConfig from "../model/AcquireActionConfig";
+import { Config } from "../../core/model";
 import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 export default class MoldModelRef {
     private readonly namespaceName;
@@ -12,7 +12,7 @@ export default class MoldModelRef {
     formModel(): FormModelRef;
     addMoldCapacity(capacity: number, userId?: string): AddMoldCapacityByUserId;
     setMoldCapacity(capacity: number, userId?: string): SetMoldCapacityByUserId;
-    acquireActionsToFormProperties(index: number, acquireAction: AcquireAction, config?: AcquireActionConfig[] | null, userId?: string): AcquireActionsToFormProperties;
+    acquireActionsToFormProperties(index: number, acquireAction: AcquireAction, config?: Config[] | null, userId?: string): AcquireActionsToFormProperties;
     subMoldCapacity(capacity: number, userId?: string): SubMoldCapacityByUserId;
     grn(): string;
 }

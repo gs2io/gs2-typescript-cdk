@@ -20,7 +20,7 @@ import AddMoldCapacityByUserId from "../stampSheet/AddMoldCapacityByUserId";
 import SetMoldCapacityByUserId from "../stampSheet/SetMoldCapacityByUserId";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
 import { AcquireAction } from "../../core/model";
-import AcquireActionConfig from "../model/AcquireActionConfig";
+import { Config } from "../../core/model";
 import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 
 export default class MoldModelRef {
@@ -70,7 +70,7 @@ export default class MoldModelRef {
     public acquireActionsToFormProperties(
         index: number,
         acquireAction: AcquireAction,
-        config: AcquireActionConfig[]|null = null,
+        config: Config[]|null = null,
         userId: string = "#{userId}",
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(

@@ -21,7 +21,7 @@ import AddMoldCapacityByUserId from "../stampSheet/AddMoldCapacityByUserId";
 import SetMoldCapacityByUserId from "../stampSheet/SetMoldCapacityByUserId";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
 import { AcquireAction } from "../../core/model";
-import AcquireActionConfig from "../model/AcquireActionConfig";
+import { Config } from "../../core/model";
 import AcquireActionsToPropertyFormProperties from "../stampSheet/AcquireActionsToPropertyFormProperties";
 import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 
@@ -82,7 +82,7 @@ export default class NamespaceRef {
         moldModelName: string,
         index: number,
         acquireAction: AcquireAction,
-        config: AcquireActionConfig[]|null = null,
+        config: Config[]|null = null,
         userId: string = "#{userId}",
     ): AcquireActionsToFormProperties {
         return new AcquireActionsToFormProperties(
@@ -99,7 +99,7 @@ export default class NamespaceRef {
         propertyFormModelName: string,
         propertyId: string,
         acquireAction: AcquireAction,
-        config: AcquireActionConfig[]|null = null,
+        config: Config[]|null = null,
         userId: string = "#{userId}",
     ): AcquireActionsToPropertyFormProperties {
         return new AcquireActionsToPropertyFormProperties(
