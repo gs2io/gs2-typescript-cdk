@@ -21,6 +21,8 @@ export interface NamespaceOptions {
     acquireScript?: ScriptSetting|null;
     overflowScript?: ScriptSetting|null;
     consumeScript?: ScriptSetting|null;
+    simpleItemAcquireScript?: ScriptSetting|null;
+    simpleItemConsumeScript?: ScriptSetting|null;
     logSetting?: LogSetting|null;
 }
 

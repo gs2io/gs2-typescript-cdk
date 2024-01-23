@@ -18,12 +18,14 @@ import { AcquireAction } from "../../core/model";
 import { TransactionOptions } from "./options/TransactionOptions";
 
 export default class Transaction {
+    private readonly transactionId: string|null = null;
     private readonly consumeActions: ConsumeAction[]|null = null;
     private readonly acquireActions: AcquireAction[]|null = null;
 
     public constructor(
         options: TransactionOptions|null = null,
     ) {
+        this.transactionId = options?.transactionId ?? null;
         this.consumeActions = options?.consumeActions ?? null;
         this.acquireActions = options?.acquireActions ?? null;
     }
@@ -32,6 +34,9 @@ export default class Transaction {
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
+        if (this.transactionId != null) {
+            properties["transactionId"] = this.transactionId;
+        }
         if (this.consumeActions != null) {
             properties["consumeActions"] = this.consumeActions.map(v => v.properties(
                 ));

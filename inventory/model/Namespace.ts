@@ -34,6 +34,8 @@ export default class Namespace extends CdkResource {
     private readonly acquireScript: ScriptSetting|null = null;
     private readonly overflowScript: ScriptSetting|null = null;
     private readonly consumeScript: ScriptSetting|null = null;
+    private readonly simpleItemAcquireScript: ScriptSetting|null = null;
+    private readonly simpleItemConsumeScript: ScriptSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -51,6 +53,8 @@ export default class Namespace extends CdkResource {
         this.acquireScript = options?.acquireScript ?? null;
         this.overflowScript = options?.overflowScript ?? null;
         this.consumeScript = options?.consumeScript ?? null;
+        this.simpleItemAcquireScript = options?.simpleItemAcquireScript ?? null;
+        this.simpleItemConsumeScript = options?.simpleItemConsumeScript ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -88,6 +92,14 @@ export default class Namespace extends CdkResource {
         }
         if (this.consumeScript != null) {
             properties["ConsumeScript"] = this.consumeScript?.properties(
+            );
+        }
+        if (this.simpleItemAcquireScript != null) {
+            properties["SimpleItemAcquireScript"] = this.simpleItemAcquireScript?.properties(
+            );
+        }
+        if (this.simpleItemConsumeScript != null) {
+            properties["SimpleItemConsumeScript"] = this.simpleItemConsumeScript?.properties(
             );
         }
         if (this.logSetting != null) {

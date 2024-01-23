@@ -12,6 +12,8 @@ export default class Namespace extends CdkResource {
     private readonly acquireScript;
     private readonly overflowScript;
     private readonly consumeScript;
+    private readonly simpleItemAcquireScript;
+    private readonly simpleItemConsumeScript;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;
