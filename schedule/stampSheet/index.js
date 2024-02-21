@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteTriggerByUserId = exports.TriggerByUserId = void 0;
+exports.VerifyEventByUserId = exports.DeleteTriggerByUserId = exports.TriggerByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,6 @@ const TriggerByUserId_1 = tslib_1.__importDefault(require("./TriggerByUserId"));
 exports.TriggerByUserId = TriggerByUserId_1.default;
 const DeleteTriggerByUserId_1 = tslib_1.__importDefault(require("./DeleteTriggerByUserId"));
 exports.DeleteTriggerByUserId = DeleteTriggerByUserId_1.default;
+const VerifyEventByUserId_1 = tslib_1.__importDefault(require("./VerifyEventByUserId"));
+exports.VerifyEventByUserId = VerifyEventByUserId_1.default;
 //# sourceMappingURL=index.js.map

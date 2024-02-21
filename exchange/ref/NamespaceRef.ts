@@ -97,12 +97,14 @@ export default class NamespaceRef {
     public createAwait(
         rateName: string,
         count: number|null = null,
+        config: Config[]|null = null,
         userId: string = "#{userId}",
     ): CreateAwaitByUserId {
         return new CreateAwaitByUserId(
             this.namespaceName,
             rateName,
             count,
+            config,
             userId,
         );
     }

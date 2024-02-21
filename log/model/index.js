@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.NamespaceType = exports.Namespace = void 0;
+exports.AccessLogWithTelemetryStatus = exports.AccessLogWithTelemetry = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.NamespaceType = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -37,4 +37,8 @@ const ExecuteStampTaskLog_1 = tslib_1.__importDefault(require("./ExecuteStampTas
 exports.ExecuteStampTaskLog = ExecuteStampTaskLog_1.default;
 const ExecuteStampTaskLogCount_1 = tslib_1.__importDefault(require("./ExecuteStampTaskLogCount"));
 exports.ExecuteStampTaskLogCount = ExecuteStampTaskLogCount_1.default;
+const AccessLogWithTelemetry_1 = tslib_1.__importDefault(require("./AccessLogWithTelemetry"));
+exports.AccessLogWithTelemetry = AccessLogWithTelemetry_1.default;
+const AccessLogWithTelemetryStatus_1 = require("./enum/AccessLogWithTelemetryStatus");
+Object.defineProperty(exports, "AccessLogWithTelemetryStatus", { enumerable: true, get: function () { return AccessLogWithTelemetryStatus_1.AccessLogWithTelemetryStatus; } });
 //# sourceMappingURL=index.js.map

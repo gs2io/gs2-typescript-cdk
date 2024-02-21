@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const TriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/TriggerByUserId"));
 const DeleteTriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteTriggerByUserId"));
+const VerifyEventByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyEventByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -28,6 +29,9 @@ class NamespaceRef {
     }
     deleteTrigger(triggerName, userId = "#{userId}") {
         return new DeleteTriggerByUserId_1.default(this.namespaceName, triggerName, userId);
+    }
+    verifyEvent(eventName, verifyType, userId = "#{userId}") {
+        return new VerifyEventByUserId_1.default(this.namespaceName, eventName, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [

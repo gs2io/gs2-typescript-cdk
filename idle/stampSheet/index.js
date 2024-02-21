@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DecreaseMaximumIdleMinutesByUserId = exports.IncreaseMaximumIdleMinutesByUserId = void 0;
+exports.DecreaseMaximumIdleMinutesByUserId = exports.SetMaximumIdleMinutesByUserId = exports.IncreaseMaximumIdleMinutesByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const IncreaseMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("./IncreaseMaximumIdleMinutesByUserId"));
 exports.IncreaseMaximumIdleMinutesByUserId = IncreaseMaximumIdleMinutesByUserId_1.default;
+const SetMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("./SetMaximumIdleMinutesByUserId"));
+exports.SetMaximumIdleMinutesByUserId = SetMaximumIdleMinutesByUserId_1.default;
 const DecreaseMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("./DecreaseMaximumIdleMinutesByUserId"));
 exports.DecreaseMaximumIdleMinutesByUserId = DecreaseMaximumIdleMinutesByUserId_1.default;
 //# sourceMappingURL=index.js.map

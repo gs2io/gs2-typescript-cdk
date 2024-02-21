@@ -17,9 +17,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class MarkReleaseByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, nodeModelNames, userId = "#{userId}") {
+    constructor(namespaceName, propertyId, nodeModelNames, userId = "#{userId}") {
         super();
         this.namespaceName = namespaceName;
+        this.propertyId = propertyId;
         this.nodeModelNames = nodeModelNames;
         this.userId = userId;
     }
@@ -30,6 +31,9 @@ class MarkReleaseByUserId extends model_1.AcquireAction {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.propertyId != null) {
+            properties["propertyId"] = this.propertyId;
         }
         if (this.nodeModelNames != null) {
             properties["nodeModelNames"] = this.nodeModelNames;

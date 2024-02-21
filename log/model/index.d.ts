@@ -20,4 +20,7 @@ import ExecuteStampTaskLog from "./ExecuteStampTaskLog";
 import { ExecuteStampTaskLogOptions } from "./options/ExecuteStampTaskLogOptions";
 import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount";
 import { ExecuteStampTaskLogCountOptions } from "./options/ExecuteStampTaskLogCountOptions";
-export { Namespace, NamespaceOptions, NamespaceType, NamespaceTypeIsGs2Options, NamespaceTypeIsBigqueryOptions, NamespaceTypeIsFirehoseOptions, AccessLog, AccessLogOptions, AccessLogCount, AccessLogCountOptions, IssueStampSheetLog, IssueStampSheetLogOptions, IssueStampSheetLogCount, IssueStampSheetLogCountOptions, ExecuteStampSheetLog, ExecuteStampSheetLogOptions, ExecuteStampSheetLogCount, ExecuteStampSheetLogCountOptions, ExecuteStampTaskLog, ExecuteStampTaskLogOptions, ExecuteStampTaskLogCount, ExecuteStampTaskLogCountOptions, };
+import AccessLogWithTelemetry from "./AccessLogWithTelemetry";
+import { AccessLogWithTelemetryOptions } from "./options/AccessLogWithTelemetryOptions";
+import { AccessLogWithTelemetryStatus } from "./enum/AccessLogWithTelemetryStatus";
+export { Namespace, NamespaceOptions, NamespaceType, NamespaceTypeIsGs2Options, NamespaceTypeIsBigqueryOptions, NamespaceTypeIsFirehoseOptions, AccessLog, AccessLogOptions, AccessLogCount, AccessLogCountOptions, IssueStampSheetLog, IssueStampSheetLogOptions, IssueStampSheetLogCount, IssueStampSheetLogCountOptions, ExecuteStampSheetLog, ExecuteStampSheetLogOptions, ExecuteStampSheetLogCount, ExecuteStampSheetLogCountOptions, ExecuteStampTaskLog, ExecuteStampTaskLogOptions, ExecuteStampTaskLogCount, ExecuteStampTaskLogCountOptions, AccessLogWithTelemetry, AccessLogWithTelemetryOptions, AccessLogWithTelemetryStatus, };

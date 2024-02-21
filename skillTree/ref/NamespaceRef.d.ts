@@ -5,7 +5,7 @@ export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
     nodeModel(nodeModelName: string): NodeModelRef;
-    markRelease(nodeModelNames: string[], userId?: string): MarkReleaseByUserId;
-    markRestrain(nodeModelNames: string[], userId?: string): MarkRestrainByUserId;
+    markRelease(propertyId: string, nodeModelNames: string[], userId?: string): MarkReleaseByUserId;
+    markRestrain(propertyId: string, nodeModelNames: string[], userId?: string): MarkRestrainByUserId;
     grn(): string;
 }

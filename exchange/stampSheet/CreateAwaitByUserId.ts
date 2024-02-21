@@ -15,18 +15,21 @@
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
+import { Config } from "../../core/model";
 
 export default class CreateAwaitByUserId extends AcquireAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly rateName: string;
     private readonly count: number|null = null;
+    private readonly config: Config[]|null = null;
 
 
     public constructor(
         namespaceName: string,
         rateName: string,
         count: number|null = null,
+        config: Config[]|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +37,7 @@ export default class CreateAwaitByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.rateName = rateName;
         this.count = count ?? null;
+        this.config = config ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +56,10 @@ export default class CreateAwaitByUserId extends AcquireAction {
         }
         if (this.count != null) {
             properties["count"] = this.count;
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties(
+                ));
         }
 
         return properties;

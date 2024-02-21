@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import CategoryModelRef from "./CategoryModelRef";
 import IncreaseMaximumIdleMinutesByUserId from "../stampSheet/IncreaseMaximumIdleMinutesByUserId";
+import SetMaximumIdleMinutesByUserId from "../stampSheet/SetMaximumIdleMinutesByUserId";
 import DecreaseMaximumIdleMinutesByUserId from "../stampSheet/DecreaseMaximumIdleMinutesByUserId";
 
 export default class NamespaceRef {
@@ -46,6 +47,19 @@ export default class NamespaceRef {
             this.namespaceName,
             categoryName,
             increaseMinutes,
+            userId,
+        );
+    }
+
+    public setMaximumIdleMinutes(
+        categoryName: string,
+        maximumIdleMinutes: number|null = null,
+        userId: string = "#{userId}",
+    ): SetMaximumIdleMinutesByUserId {
+        return new SetMaximumIdleMinutesByUserId(
+            this.namespaceName,
+            categoryName,
+            maximumIdleMinutes,
             userId,
         );
     }

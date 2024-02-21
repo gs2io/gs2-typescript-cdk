@@ -5,7 +5,9 @@ export default class StampSheetResult {
     private readonly transactionId;
     private readonly sheetRequest;
     private readonly taskRequests;
+    private readonly taskResultCodes;
     private readonly taskResults;
+    private readonly sheetResultCode;
     private readonly sheetResult;
     private readonly nextTransactionId;
     private readonly revision;

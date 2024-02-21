@@ -1,3 +1,4 @@
 import TriggerByUserId from "./TriggerByUserId";
 import DeleteTriggerByUserId from "./DeleteTriggerByUserId";
-export { TriggerByUserId, DeleteTriggerByUserId, };
+import VerifyEventByUserId from "./VerifyEventByUserId";
+export { TriggerByUserId, DeleteTriggerByUserId, VerifyEventByUserId, };

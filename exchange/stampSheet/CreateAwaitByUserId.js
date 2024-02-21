@@ -17,12 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CreateAwaitByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, rateName, count = null, userId = "#{userId}") {
+    constructor(namespaceName, rateName, count = null, config = null, userId = "#{userId}") {
         super();
         this.count = null;
+        this.config = null;
         this.namespaceName = namespaceName;
         this.rateName = rateName;
         this.count = count !== null && count !== void 0 ? count : null;
+        this.config = config !== null && config !== void 0 ? config : null;
         this.userId = userId;
     }
     request() {
@@ -38,6 +40,9 @@ class CreateAwaitByUserId extends model_1.AcquireAction {
         }
         if (this.count != null) {
             properties["count"] = this.count;
+        }
+        if (this.config != null) {
+            properties["config"] = this.config.map(v => v.properties());
         }
         return properties;
     }

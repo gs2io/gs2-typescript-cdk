@@ -43,8 +43,8 @@ class NamespaceRef {
     unlockIncrementalExchange(rateName, lockTransactionId, userId = "#{userId}") {
         return new UnlockIncrementalExchangeByUserId_1.default(this.namespaceName, rateName, lockTransactionId, userId);
     }
-    createAwait(rateName, count = null, userId = "#{userId}") {
-        return new CreateAwaitByUserId_1.default(this.namespaceName, rateName, count, userId);
+    createAwait(rateName, count = null, config = null, userId = "#{userId}") {
+        return new CreateAwaitByUserId_1.default(this.namespaceName, rateName, count, config, userId);
     }
     deleteAwait(awaitName = null, userId = "#{userId}") {
         return new DeleteAwaitByUserId_1.default(this.namespaceName, awaitName, userId);

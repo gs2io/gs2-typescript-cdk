@@ -35,6 +35,9 @@ import ExecuteStampTaskLog from "./ExecuteStampTaskLog";
 import { ExecuteStampTaskLogOptions } from "./options/ExecuteStampTaskLogOptions";
 import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount";
 import { ExecuteStampTaskLogCountOptions } from "./options/ExecuteStampTaskLogCountOptions";
+import AccessLogWithTelemetry from "./AccessLogWithTelemetry";
+import { AccessLogWithTelemetryOptions } from "./options/AccessLogWithTelemetryOptions";
+import { AccessLogWithTelemetryStatus } from "./enum/AccessLogWithTelemetryStatus";
 
 export {
     Namespace,
@@ -59,4 +62,7 @@ export {
     ExecuteStampTaskLogOptions,
     ExecuteStampTaskLogCount,
     ExecuteStampTaskLogCountOptions,
+    AccessLogWithTelemetry,
+    AccessLogWithTelemetryOptions,
+    AccessLogWithTelemetryStatus,
 }

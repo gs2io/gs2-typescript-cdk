@@ -22,7 +22,9 @@ export default class StampSheetResult {
     private readonly transactionId: string;
     private readonly sheetRequest: AcquireAction;
     private readonly taskRequests: ConsumeAction[]|null = null;
+    private readonly taskResultCodes: number[]|null = null;
     private readonly taskResults: string[]|null = null;
+    private readonly sheetResultCode: number|null = null;
     private readonly sheetResult: string|null = null;
     private readonly nextTransactionId: string|null = null;
     private readonly revision: number|null = null;
@@ -37,7 +39,9 @@ export default class StampSheetResult {
         this.transactionId = transactionId;
         this.sheetRequest = sheetRequest;
         this.taskRequests = options?.taskRequests ?? null;
+        this.taskResultCodes = options?.taskResultCodes ?? null;
         this.taskResults = options?.taskResults ?? null;
+        this.sheetResultCode = options?.sheetResultCode ?? null;
         this.sheetResult = options?.sheetResult ?? null;
         this.nextTransactionId = options?.nextTransactionId ?? null;
         this.revision = options?.revision ?? null;
@@ -61,8 +65,14 @@ export default class StampSheetResult {
             properties["sheetRequest"] = this.sheetRequest?.properties(
             );
         }
+        if (this.taskResultCodes != null) {
+            properties["taskResultCodes"] = this.taskResultCodes;
+        }
         if (this.taskResults != null) {
             properties["taskResults"] = this.taskResults;
+        }
+        if (this.sheetResultCode != null) {
+            properties["sheetResultCode"] = this.sheetResultCode;
         }
         if (this.sheetResult != null) {
             properties["sheetResult"] = this.sheetResult;

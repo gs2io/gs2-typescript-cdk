@@ -38,22 +38,26 @@ export default class NamespaceRef {
     }
 
     public markRelease(
+        propertyId: string,
         nodeModelNames: string[],
         userId: string = "#{userId}",
     ): MarkReleaseByUserId {
         return new MarkReleaseByUserId(
             this.namespaceName,
+            propertyId,
             nodeModelNames,
             userId,
         );
     }
 
     public markRestrain(
+        propertyId: string,
         nodeModelNames: string[],
         userId: string = "#{userId}",
     ): MarkRestrainByUserId {
         return new MarkRestrainByUserId(
             this.namespaceName,
+            propertyId,
             nodeModelNames,
             userId,
         );

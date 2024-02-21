@@ -22,12 +22,13 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         super("Formation_Namespace_" + name);
         this.description = null;
         this.transactionSetting = null;
         this.updateMoldScript = null;
         this.updateFormScript = null;
+        this.updatePropertyFormScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -35,7 +36,8 @@ class Namespace extends model_1.CdkResource {
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
         this.updateMoldScript = (_c = options === null || options === void 0 ? void 0 : options.updateMoldScript) !== null && _c !== void 0 ? _c : null;
         this.updateFormScript = (_d = options === null || options === void 0 ? void 0 : options.updateFormScript) !== null && _d !== void 0 ? _d : null;
-        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
+        this.updatePropertyFormScript = (_e = options === null || options === void 0 ? void 0 : options.updatePropertyFormScript) !== null && _e !== void 0 ? _e : null;
+        this.logSetting = (_f = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _f !== void 0 ? _f : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -45,7 +47,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Formation::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -62,8 +64,11 @@ class Namespace extends model_1.CdkResource {
         if (this.updateFormScript != null) {
             properties["UpdateFormScript"] = (_c = this.updateFormScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
+        if (this.updatePropertyFormScript != null) {
+            properties["UpdatePropertyFormScript"] = (_d = this.updatePropertyFormScript) === null || _d === void 0 ? void 0 : _d.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["LogSetting"] = (_e = this.logSetting) === null || _e === void 0 ? void 0 : _e.properties();
         }
         return properties;
     }

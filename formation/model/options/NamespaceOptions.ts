@@ -22,6 +22,7 @@ export interface NamespaceOptions {
     transactionSetting?: TransactionSetting|null;
     updateMoldScript?: ScriptSetting|null;
     updateFormScript?: ScriptSetting|null;
+    updatePropertyFormScript?: ScriptSetting|null;
     logSetting?: LogSetting|null;
 }
 

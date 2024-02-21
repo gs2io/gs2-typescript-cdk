@@ -27,11 +27,11 @@ class NamespaceRef {
     nodeModel(nodeModelName) {
         return new NodeModelRef_1.default(this.namespaceName, nodeModelName);
     }
-    markRelease(nodeModelNames, userId = "#{userId}") {
-        return new MarkReleaseByUserId_1.default(this.namespaceName, nodeModelNames, userId);
+    markRelease(propertyId, nodeModelNames, userId = "#{userId}") {
+        return new MarkReleaseByUserId_1.default(this.namespaceName, propertyId, nodeModelNames, userId);
     }
-    markRestrain(nodeModelNames, userId = "#{userId}") {
-        return new MarkRestrainByUserId_1.default(this.namespaceName, nodeModelNames, userId);
+    markRestrain(propertyId, nodeModelNames, userId = "#{userId}") {
+        return new MarkRestrainByUserId_1.default(this.namespaceName, propertyId, nodeModelNames, userId);
     }
     grn() {
         return new func_1.Join(":", [
