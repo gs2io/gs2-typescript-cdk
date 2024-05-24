@@ -6,7 +6,8 @@ export default class AcquireItemSetWithGradeByUserId extends AcquireAction {
     private readonly userId;
     private readonly gradeModelId;
     private readonly gradeValue;
-    constructor(namespaceName: string, inventoryName: string, itemName: string, gradeModelId: string, gradeValue: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, itemName: string, gradeModelId: string, gradeValue: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

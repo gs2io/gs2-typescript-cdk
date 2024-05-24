@@ -90,6 +90,7 @@ export default class NamespaceRef {
         counterName: string,
         verifyType: CounterVerifyType,
         count: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyCounterByUserId {
         return new VerifyCounterByUserId(
@@ -98,6 +99,7 @@ export default class NamespaceRef {
             counterName,
             verifyType,
             count,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

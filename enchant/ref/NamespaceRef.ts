@@ -135,6 +135,7 @@ export default class NamespaceRef {
         verifyType: RarityParameterStatusVerifyType,
         parameterValueName: string|null = null,
         parameterCount: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyRarityParameterStatusByUserId {
         return new VerifyRarityParameterStatusByUserId(
@@ -144,6 +145,7 @@ export default class NamespaceRef {
             verifyType,
             parameterValueName,
             parameterCount,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

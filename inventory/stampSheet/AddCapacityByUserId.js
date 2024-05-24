@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AddCapacityByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, inventoryName, addCapacityValue, userId = "#{userId}") {
+    constructor(namespaceName, inventoryName, addCapacityValue, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.addCapacityValue = addCapacityValue;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class AddCapacityByUserId extends model_1.AcquireAction {
         }
         if (this.addCapacityValue != null) {
             properties["addCapacityValue"] = this.addCapacityValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

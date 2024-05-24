@@ -24,6 +24,7 @@ export default class UnleashByUserId extends AcquireAction {
     private readonly targetItemSetId: string;
     private readonly materials: string[];
     private readonly config: Config[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -32,6 +33,7 @@ export default class UnleashByUserId extends AcquireAction {
         targetItemSetId: string,
         materials: string[],
         config: Config[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -41,6 +43,7 @@ export default class UnleashByUserId extends AcquireAction {
         this.targetItemSetId = targetItemSetId;
         this.materials = materials;
         this.config = config ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -66,6 +69,9 @@ export default class UnleashByUserId extends AcquireAction {
         if (this.config != null) {
             properties["config"] = this.config.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

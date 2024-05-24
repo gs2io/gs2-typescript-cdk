@@ -19,8 +19,13 @@ import MissionGroupModelRef from "./MissionGroupModelRef";
 import CounterModelRef from "./CounterModelRef";
 import RevertReceiveByUserId from "../stampSheet/RevertReceiveByUserId";
 import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
+import SetCounterByUserId from "../stampSheet/SetCounterByUserId";
+import ScopedValue from "../model/ScopedValue";
 import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
+import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
+import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
+import { CounterResetType } from "../stampSheet/enum/CounterResetType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -75,6 +80,19 @@ export default class NamespaceRef {
         );
     }
 
+    public setCounter(
+        counterName: string,
+        values: ScopedValue[]|null = null,
+        userId: string = "#{userId}",
+    ): SetCounterByUserId {
+        return new SetCounterByUserId(
+            this.namespaceName,
+            counterName,
+            values,
+            userId,
+        );
+    }
+
     public receive(
         missionGroupName: string,
         missionTaskName: string,
@@ -97,6 +115,25 @@ export default class NamespaceRef {
             this.namespaceName,
             counterName,
             value,
+            userId,
+        );
+    }
+
+    public verifyCounterValue(
+        counterName: string,
+        verifyType: CounterVerifyType,
+        resetType: CounterResetType,
+        value: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyCounterValueByUserId {
+        return new VerifyCounterValueByUserId(
+            this.namespaceName,
+            counterName,
+            verifyType,
+            resetType,
+            value,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

@@ -11,6 +11,6 @@ export default class NamespaceRef {
     countDown(limitName: string, counterName: string, countDownValue?: number | null, userId?: string): CountDownByUserId;
     deleteCounter(limitName: string, counterName: string, userId?: string): DeleteCounterByUserId;
     countUp(limitName: string, counterName: string, countUpValue?: number | null, maxValue?: number | null, userId?: string): CountUpByUserId;
-    verifyCounter(limitName: string, counterName: string, verifyType: CounterVerifyType, count?: number | null, userId?: string): VerifyCounterByUserId;
+    verifyCounter(limitName: string, counterName: string, verifyType: CounterVerifyType, count?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCounterByUserId;
     grn(): string;
 }

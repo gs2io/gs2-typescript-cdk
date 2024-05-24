@@ -12,6 +12,6 @@ export default class BigInventoryModelRef {
     acquireBigItem(itemName: string, acquireCount: string, userId?: string): AcquireBigItemByUserId;
     setBigItem(itemName: string, count: string, userId?: string): SetBigItemByUserId;
     consumeBigItem(itemName: string, consumeCount: string, userId?: string): ConsumeBigItemByUserId;
-    verifyBigItem(itemName: string, verifyType: BigItemVerifyType, count: string, userId?: string): VerifyBigItemByUserId;
+    verifyBigItem(itemName: string, verifyType: BigItemVerifyType, count: string, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyBigItemByUserId;
     grn(): string;
 }

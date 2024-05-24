@@ -147,6 +147,7 @@ export default class InventoryModelRef {
     public verifyInventoryCurrentMaxCapacity(
         verifyType: InventoryVerifyType,
         currentInventoryMaxCapacity: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyInventoryCurrentMaxCapacityByUserId {
         return new VerifyInventoryCurrentMaxCapacityByUserId(
@@ -154,6 +155,7 @@ export default class InventoryModelRef {
             this.inventoryName,
             verifyType,
             currentInventoryMaxCapacity,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }
@@ -179,6 +181,7 @@ export default class InventoryModelRef {
         verifyType: ItemSetVerifyType,
         count: number,
         itemSetName: string|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyItemSetByUserId {
         return new VerifyItemSetByUserId(
@@ -188,6 +191,7 @@ export default class InventoryModelRef {
             verifyType,
             count,
             itemSetName,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

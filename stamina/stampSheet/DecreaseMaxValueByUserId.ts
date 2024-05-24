@@ -21,12 +21,14 @@ export default class DecreaseMaxValueByUserId extends ConsumeAction {
     private readonly staminaName: string;
     private readonly userId: string;
     private readonly decreaseValue: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         decreaseValue: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class DecreaseMaxValueByUserId extends ConsumeAction {
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
         this.decreaseValue = decreaseValue;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class DecreaseMaxValueByUserId extends ConsumeAction {
         }
         if (this.decreaseValue != null) {
             properties["decreaseValue"] = this.decreaseValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

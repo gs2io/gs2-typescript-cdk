@@ -7,7 +7,9 @@ export default class VerifyGradeByUserId extends ConsumeAction {
     private readonly verifyType;
     private readonly propertyId;
     private readonly gradeValue;
-    constructor(namespaceName: string, gradeName: string, verifyType: StatusVerifyType, propertyId: string, gradeValue?: number | null, userId?: string);
+    private readonly multiplyValueSpecifyingQuantity;
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, gradeName: string, verifyType: StatusVerifyType, propertyId: string, gradeValue?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

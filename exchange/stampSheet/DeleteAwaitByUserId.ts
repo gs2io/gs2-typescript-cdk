@@ -20,17 +20,20 @@ export default class DeleteAwaitByUserId extends ConsumeAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly awaitName: string|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         awaitName: string|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.awaitName = awaitName ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -43,6 +46,9 @@ export default class DeleteAwaitByUserId extends ConsumeAction {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

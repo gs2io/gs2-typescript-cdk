@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const ExperienceModelRef_1 = tslib_1.__importDefault(require("./ExperienceModelRef"));
 const AddExperienceByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddExperienceByUserId"));
+const SetExperienceByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetExperienceByUserId"));
 const AddRankCapByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddRankCapByUserId"));
 const SetRankCapByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetRankCapByUserId"));
 const MultiplyAcquireActionsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/MultiplyAcquireActionsByUserId"));
@@ -33,8 +34,11 @@ class NamespaceRef {
     experienceModel(experienceName) {
         return new ExperienceModelRef_1.default(this.namespaceName, experienceName);
     }
-    addExperience(experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
-        return new AddExperienceByUserId_1.default(this.namespaceName, experienceName, propertyId, experienceValue, userId);
+    addExperience(experienceName, propertyId, experienceValue = null, truncateExperienceWhenRankUp = null, userId = "#{userId}") {
+        return new AddExperienceByUserId_1.default(this.namespaceName, experienceName, propertyId, experienceValue, truncateExperienceWhenRankUp, userId);
+    }
+    setExperience(experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
+        return new SetExperienceByUserId_1.default(this.namespaceName, experienceName, propertyId, experienceValue, userId);
     }
     addRankCap(experienceName, propertyId, rankCapValue, userId = "#{userId}") {
         return new AddRankCapByUserId_1.default(this.namespaceName, experienceName, propertyId, rankCapValue, userId);
@@ -51,11 +55,11 @@ class NamespaceRef {
     subRankCap(experienceName, propertyId, rankCapValue, userId = "#{userId}") {
         return new SubRankCapByUserId_1.default(this.namespaceName, experienceName, propertyId, rankCapValue, userId);
     }
-    verifyRank(experienceName, verifyType, propertyId, rankValue = null, userId = "#{userId}") {
-        return new VerifyRankByUserId_1.default(this.namespaceName, experienceName, verifyType, propertyId, rankValue, userId);
+    verifyRank(experienceName, verifyType, propertyId, rankValue = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyRankByUserId_1.default(this.namespaceName, experienceName, verifyType, propertyId, rankValue, multiplyValueSpecifyingQuantity, userId);
     }
-    verifyRankCap(experienceName, verifyType, propertyId, rankCapValue, userId = "#{userId}") {
-        return new VerifyRankCapByUserId_1.default(this.namespaceName, experienceName, verifyType, propertyId, rankCapValue, userId);
+    verifyRankCap(experienceName, verifyType, propertyId, rankCapValue, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyRankCapByUserId_1.default(this.namespaceName, experienceName, verifyType, propertyId, rankCapValue, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

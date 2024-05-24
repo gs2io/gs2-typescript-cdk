@@ -43,8 +43,8 @@ class NamespaceRef {
     subGrade(gradeName, propertyId, gradeValue = null, userId = "#{userId}") {
         return new SubGradeByUserId_1.default(this.namespaceName, gradeName, propertyId, gradeValue, userId);
     }
-    verifyGrade(gradeName, verifyType, propertyId, gradeValue = null, userId = "#{userId}") {
-        return new VerifyGradeByUserId_1.default(this.namespaceName, gradeName, verifyType, propertyId, gradeValue, userId);
+    verifyGrade(gradeName, verifyType, propertyId, gradeValue = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyGradeByUserId_1.default(this.namespaceName, gradeName, verifyType, propertyId, gradeValue, multiplyValueSpecifyingQuantity, userId);
     }
     verifyGradeUpMaterial(gradeName, verifyType, propertyId, materialPropertyId, userId = "#{userId}") {
         return new VerifyGradeUpMaterialByUserId_1.default(this.namespaceName, gradeName, verifyType, propertyId, materialPropertyId, userId);

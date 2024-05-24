@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteJobByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, jobName = null, userId = "#{userId}") {
+    constructor(namespaceName, jobName = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.jobName = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.jobName = jobName !== null && jobName !== void 0 ? jobName : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -31,6 +33,9 @@ class DeleteJobByUserId extends model_1.ConsumeAction {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

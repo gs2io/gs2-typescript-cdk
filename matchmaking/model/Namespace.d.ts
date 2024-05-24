@@ -12,10 +12,15 @@ export default class Namespace extends CdkResource {
     private readonly completeMatchmakingTriggerType;
     private readonly description;
     private readonly enableRating;
+    private readonly enableDisconnectDetection;
+    private readonly disconnectDetectionTimeoutSeconds;
     private readonly createGatheringTriggerRealtimeNamespaceId;
     private readonly createGatheringTriggerScriptId;
     private readonly completeMatchmakingTriggerRealtimeNamespaceId;
     private readonly completeMatchmakingTriggerScriptId;
+    private readonly enableCollaborateSeasonRating;
+    private readonly collaborateSeasonRatingNamespaceId;
+    private readonly collaborateSeasonRatingTtl;
     private readonly changeRatingScript;
     private readonly joinNotification;
     private readonly leaveNotification;

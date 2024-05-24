@@ -6,7 +6,8 @@ export default class DrawByUserId extends AcquireAction {
     private readonly userId;
     private readonly count;
     private readonly config;
-    constructor(namespaceName: string, lotteryName: string, count: number, config?: Config[] | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, lotteryName: string, count: number, config?: Config[] | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

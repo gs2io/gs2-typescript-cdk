@@ -5,6 +5,7 @@ export default class SeasonModel {
     private readonly tiers;
     private readonly experienceModelId;
     private readonly metadata;
+    private readonly challengePeriodEventId;
     constructor(name: string, tiers: TierModel[], experienceModelId: string, options?: SeasonModelOptions | null);
     properties(): {
         [name: string]: any;

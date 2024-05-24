@@ -23,6 +23,7 @@ export default class MultiplyAcquireActionsByUserId extends AcquireAction {
     private readonly propertyId: string;
     private readonly rateName: string;
     private readonly acquireActions: AcquireAction[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -31,6 +32,7 @@ export default class MultiplyAcquireActionsByUserId extends AcquireAction {
         propertyId: string,
         rateName: string,
         acquireActions: AcquireAction[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -40,6 +42,7 @@ export default class MultiplyAcquireActionsByUserId extends AcquireAction {
         this.propertyId = propertyId;
         this.rateName = rateName;
         this.acquireActions = acquireActions ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -65,6 +68,9 @@ export default class MultiplyAcquireActionsByUserId extends AcquireAction {
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

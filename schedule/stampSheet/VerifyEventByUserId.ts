@@ -22,12 +22,14 @@ export default class VerifyEventByUserId extends ConsumeAction {
     private readonly userId: string;
     private readonly eventName: string;
     private readonly verifyType: EventVerifyType;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         eventName: string,
         verifyType: EventVerifyType,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -35,6 +37,7 @@ export default class VerifyEventByUserId extends ConsumeAction {
         this.namespaceName = namespaceName;
         this.eventName = eventName;
         this.verifyType = verifyType;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -53,6 +56,9 @@ export default class VerifyEventByUserId extends ConsumeAction {
         }
         if (this.verifyType != null) {
             properties["verifyType"] = this.verifyType;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

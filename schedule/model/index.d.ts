@@ -12,7 +12,16 @@ import { EventRepeatTypeIsAlwaysOptions } from "./options/EventRepeatTypeIsAlway
 import { EventRepeatTypeIsDailyOptions } from "./options/EventRepeatTypeIsDailyOptions";
 import { EventRepeatTypeIsWeeklyOptions } from "./options/EventRepeatTypeIsWeeklyOptions";
 import { EventRepeatTypeIsMonthlyOptions } from "./options/EventRepeatTypeIsMonthlyOptions";
+import RepeatSetting from "./RepeatSetting";
+import { RepeatSettingOptions } from "./options/RepeatSettingOptions";
+import { RepeatSettingRepeatType } from "./enum/RepeatSettingRepeatType";
+import { RepeatSettingBeginDayOfWeek } from "./enum/RepeatSettingBeginDayOfWeek";
+import { RepeatSettingEndDayOfWeek } from "./enum/RepeatSettingEndDayOfWeek";
+import { RepeatSettingRepeatTypeIsAlwaysOptions } from "./options/RepeatSettingRepeatTypeIsAlwaysOptions";
+import { RepeatSettingRepeatTypeIsDailyOptions } from "./options/RepeatSettingRepeatTypeIsDailyOptions";
+import { RepeatSettingRepeatTypeIsWeeklyOptions } from "./options/RepeatSettingRepeatTypeIsWeeklyOptions";
+import { RepeatSettingRepeatTypeIsMonthlyOptions } from "./options/RepeatSettingRepeatTypeIsMonthlyOptions";
 import RepeatSchedule from "./RepeatSchedule";
 import { RepeatScheduleOptions } from "./options/RepeatScheduleOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, Event, EventOptions, EventScheduleType, EventRepeatType, EventRepeatBeginDayOfWeek, EventRepeatEndDayOfWeek, EventScheduleTypeIsAbsoluteOptions, EventScheduleTypeIsRelativeOptions, EventRepeatTypeIsAlwaysOptions, EventRepeatTypeIsDailyOptions, EventRepeatTypeIsWeeklyOptions, EventRepeatTypeIsMonthlyOptions, RepeatSchedule, RepeatScheduleOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, Event, EventOptions, EventScheduleType, EventRepeatType, EventRepeatBeginDayOfWeek, EventRepeatEndDayOfWeek, EventScheduleTypeIsAbsoluteOptions, EventScheduleTypeIsRelativeOptions, EventRepeatTypeIsAlwaysOptions, EventRepeatTypeIsDailyOptions, EventRepeatTypeIsWeeklyOptions, EventRepeatTypeIsMonthlyOptions, RepeatSetting, RepeatSettingOptions, RepeatSettingRepeatType, RepeatSettingBeginDayOfWeek, RepeatSettingEndDayOfWeek, RepeatSettingRepeatTypeIsAlwaysOptions, RepeatSettingRepeatTypeIsDailyOptions, RepeatSettingRepeatTypeIsWeeklyOptions, RepeatSettingRepeatTypeIsMonthlyOptions, RepeatSchedule, RepeatScheduleOptions, CurrentMasterData, };

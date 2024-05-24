@@ -21,12 +21,14 @@ export default class DeleteCounterByUserId extends AcquireAction {
     private readonly limitName: string;
     private readonly userId: string;
     private readonly counterName: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         limitName: string,
         counterName: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class DeleteCounterByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.limitName = limitName;
         this.counterName = counterName;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class DeleteCounterByUserId extends AcquireAction {
         }
         if (this.counterName != null) {
             properties["counterName"] = this.counterName;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

@@ -17,12 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DepositByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, slot, price, count, userId = "#{userId}") {
+    constructor(namespaceName, slot, price, count, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.slot = slot;
         this.price = price;
         this.count = count;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -41,6 +43,9 @@ class DepositByUserId extends model_1.AcquireAction {
         }
         if (this.count != null) {
             properties["count"] = this.count;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

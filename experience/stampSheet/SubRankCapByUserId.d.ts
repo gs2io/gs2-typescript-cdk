@@ -5,7 +5,8 @@ export default class SubRankCapByUserId extends ConsumeAction {
     private readonly experienceName;
     private readonly propertyId;
     private readonly rankCapValue;
-    constructor(namespaceName: string, experienceName: string, propertyId: string, rankCapValue: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, experienceName: string, propertyId: string, rankCapValue: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

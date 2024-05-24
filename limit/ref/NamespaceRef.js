@@ -38,8 +38,8 @@ class NamespaceRef {
     countUp(limitName, counterName, countUpValue = null, maxValue = null, userId = "#{userId}") {
         return new CountUpByUserId_1.default(this.namespaceName, limitName, counterName, countUpValue, maxValue, userId);
     }
-    verifyCounter(limitName, counterName, verifyType, count = null, userId = "#{userId}") {
-        return new VerifyCounterByUserId_1.default(this.namespaceName, limitName, counterName, verifyType, count, userId);
+    verifyCounter(limitName, counterName, verifyType, count = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyCounterByUserId_1.default(this.namespaceName, limitName, counterName, verifyType, count, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

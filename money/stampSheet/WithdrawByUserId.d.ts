@@ -5,7 +5,8 @@ export default class WithdrawByUserId extends ConsumeAction {
     private readonly slot;
     private readonly count;
     private readonly paidOnly;
-    constructor(namespaceName: string, slot: number, count: number, paidOnly?: boolean | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, slot: number, count: number, paidOnly?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

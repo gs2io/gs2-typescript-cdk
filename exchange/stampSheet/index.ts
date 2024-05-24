@@ -17,6 +17,7 @@ import ExchangeByUserId from "./ExchangeByUserId";
 import IncrementalExchangeByUserId from "./IncrementalExchangeByUserId";
 import UnlockIncrementalExchangeByUserId from "./UnlockIncrementalExchangeByUserId";
 import CreateAwaitByUserId from "./CreateAwaitByUserId";
+import SkipByUserId from "./SkipByUserId";
 import DeleteAwaitByUserId from "./DeleteAwaitByUserId";
 
 export {
@@ -24,5 +25,6 @@ export {
     IncrementalExchangeByUserId,
     UnlockIncrementalExchangeByUserId,
     CreateAwaitByUserId,
+    SkipByUserId,
     DeleteAwaitByUserId,
 }

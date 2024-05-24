@@ -15,14 +15,20 @@
  */
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
+import { NamespaceEnableDisconnectDetection } from "./enum/NamespaceEnableDisconnectDetection";
 import { NamespaceCreateGatheringTriggerType } from "./enum/NamespaceCreateGatheringTriggerType";
 import { NamespaceCompleteMatchmakingTriggerType } from "./enum/NamespaceCompleteMatchmakingTriggerType";
+import { NamespaceEnableCollaborateSeasonRating } from "./enum/NamespaceEnableCollaborateSeasonRating";
+import { NamespaceEnableDisconnectDetectionIsDisableOptions } from "./options/NamespaceEnableDisconnectDetectionIsDisableOptions"
+import { NamespaceEnableDisconnectDetectionIsEnableOptions } from "./options/NamespaceEnableDisconnectDetectionIsEnableOptions"
 import { NamespaceCreateGatheringTriggerTypeIsNoneOptions } from "./options/NamespaceCreateGatheringTriggerTypeIsNoneOptions"
 import { NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions } from "./options/NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions"
 import { NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions } from "./options/NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions"
 import { NamespaceCompleteMatchmakingTriggerTypeIsNoneOptions } from "./options/NamespaceCompleteMatchmakingTriggerTypeIsNoneOptions"
 import { NamespaceCompleteMatchmakingTriggerTypeIsGs2RealtimeOptions } from "./options/NamespaceCompleteMatchmakingTriggerTypeIsGs2RealtimeOptions"
 import { NamespaceCompleteMatchmakingTriggerTypeIsGs2ScriptOptions } from "./options/NamespaceCompleteMatchmakingTriggerTypeIsGs2ScriptOptions"
+import { NamespaceEnableCollaborateSeasonRatingIsEnableOptions } from "./options/NamespaceEnableCollaborateSeasonRatingIsEnableOptions"
+import { NamespaceEnableCollaborateSeasonRatingIsDisableOptions } from "./options/NamespaceEnableCollaborateSeasonRatingIsDisableOptions"
 import RatingModel from "./RatingModel";
 import { RatingModelOptions } from "./options/RatingModelOptions";
 import AttributeRange from "./AttributeRange";
@@ -44,14 +50,20 @@ import CurrentMasterData from "./CurrentMasterData";
 export {
     Namespace,
     NamespaceOptions,
+    NamespaceEnableDisconnectDetection,
     NamespaceCreateGatheringTriggerType,
     NamespaceCompleteMatchmakingTriggerType,
+    NamespaceEnableCollaborateSeasonRating,
+    NamespaceEnableDisconnectDetectionIsDisableOptions,
+    NamespaceEnableDisconnectDetectionIsEnableOptions,
     NamespaceCreateGatheringTriggerTypeIsNoneOptions,
     NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions,
     NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions,
     NamespaceCompleteMatchmakingTriggerTypeIsNoneOptions,
     NamespaceCompleteMatchmakingTriggerTypeIsGs2RealtimeOptions,
     NamespaceCompleteMatchmakingTriggerTypeIsGs2ScriptOptions,
+    NamespaceEnableCollaborateSeasonRatingIsEnableOptions,
+    NamespaceEnableCollaborateSeasonRatingIsDisableOptions,
     RatingModel,
     RatingModelOptions,
     AttributeRange,

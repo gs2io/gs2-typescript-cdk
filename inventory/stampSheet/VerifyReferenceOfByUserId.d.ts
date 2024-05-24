@@ -8,7 +8,8 @@ export default class VerifyReferenceOfByUserId extends ConsumeAction {
     private readonly referenceOf;
     private readonly verifyType;
     private readonly itemSetName;
-    constructor(namespaceName: string, inventoryName: string, itemName: string, referenceOf: string, verifyType: ReferenceOfVerifyType, itemSetName?: string | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, itemName: string, referenceOf: string, verifyType: ReferenceOfVerifyType, itemSetName?: string | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

@@ -5,7 +5,8 @@ export default class ConsumeSimpleItemsByUserId extends ConsumeAction {
     private readonly inventoryName;
     private readonly userId;
     private readonly consumeCounts;
-    constructor(namespaceName: string, inventoryName: string, consumeCounts: ConsumeCount[], userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, consumeCounts: ConsumeCount[], timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

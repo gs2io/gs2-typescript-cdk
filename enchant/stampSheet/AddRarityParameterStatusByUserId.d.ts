@@ -5,7 +5,8 @@ export default class AddRarityParameterStatusByUserId extends AcquireAction {
     private readonly parameterName;
     private readonly propertyId;
     private readonly count;
-    constructor(namespaceName: string, parameterName: string, propertyId: string, count?: number | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, parameterName: string, propertyId: string, count?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

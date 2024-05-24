@@ -13,14 +13,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import TargetCounterModel from "../TargetCounterModel";
+import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
+import { MissionTaskModelVerifyCompleteType } from "../enum/MissionTaskModelVerifyCompleteType";
 import { MissionTaskModelTargetResetType } from "../enum/MissionTaskModelTargetResetType";
 
 export interface MissionTaskModelOptions {
     metadata?: string|null;
-    targetResetType?: MissionTaskModelTargetResetType|null;
+    targetCounter?: TargetCounterModel|null;
+    verifyCompleteConsumeActions?: ConsumeAction[]|null;
     completeAcquireActions?: AcquireAction[]|null;
     challengePeriodEventId?: string|null;
     premiseMissionTaskName?: string|null;
+    targetResetType?: MissionTaskModelTargetResetType|null;
 }
 

@@ -23,6 +23,7 @@ export default class AcquireItemSetWithGradeByUserId extends AcquireAction {
     private readonly userId: string;
     private readonly gradeModelId: string;
     private readonly gradeValue: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -31,6 +32,7 @@ export default class AcquireItemSetWithGradeByUserId extends AcquireAction {
         itemName: string,
         gradeModelId: string,
         gradeValue: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -40,6 +42,7 @@ export default class AcquireItemSetWithGradeByUserId extends AcquireAction {
         this.itemName = itemName;
         this.gradeModelId = gradeModelId;
         this.gradeValue = gradeValue;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -64,6 +67,9 @@ export default class AcquireItemSetWithGradeByUserId extends AcquireAction {
         }
         if (this.gradeValue != null) {
             properties["gradeValue"] = this.gradeValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

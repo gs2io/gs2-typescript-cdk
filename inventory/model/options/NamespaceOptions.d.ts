@@ -7,5 +7,7 @@ export interface NamespaceOptions {
     consumeScript?: ScriptSetting | null;
     simpleItemAcquireScript?: ScriptSetting | null;
     simpleItemConsumeScript?: ScriptSetting | null;
+    bigItemAcquireScript?: ScriptSetting | null;
+    bigItemConsumeScript?: ScriptSetting | null;
     logSetting?: LogSetting | null;
 }

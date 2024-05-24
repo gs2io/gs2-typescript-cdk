@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import ExperienceModelRef from "./ExperienceModelRef";
 import AddExperienceByUserId from "../stampSheet/AddExperienceByUserId";
+import SetExperienceByUserId from "../stampSheet/SetExperienceByUserId";
 import AddRankCapByUserId from "../stampSheet/AddRankCapByUserId";
 import SetRankCapByUserId from "../stampSheet/SetRankCapByUserId";
 import MultiplyAcquireActionsByUserId from "../stampSheet/MultiplyAcquireActionsByUserId";
@@ -49,9 +50,26 @@ export default class NamespaceRef {
         experienceName: string,
         propertyId: string,
         experienceValue: number|null = null,
+        truncateExperienceWhenRankUp: boolean|null = null,
         userId: string = "#{userId}",
     ): AddExperienceByUserId {
         return new AddExperienceByUserId(
+            this.namespaceName,
+            experienceName,
+            propertyId,
+            experienceValue,
+            truncateExperienceWhenRankUp,
+            userId,
+        );
+    }
+
+    public setExperience(
+        experienceName: string,
+        propertyId: string,
+        experienceValue: number|null = null,
+        userId: string = "#{userId}",
+    ): SetExperienceByUserId {
+        return new SetExperienceByUserId(
             this.namespaceName,
             experienceName,
             propertyId,
@@ -142,6 +160,7 @@ export default class NamespaceRef {
         verifyType: StatusVerifyType,
         propertyId: string,
         rankValue: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyRankByUserId {
         return new VerifyRankByUserId(
@@ -150,6 +169,7 @@ export default class NamespaceRef {
             verifyType,
             propertyId,
             rankValue,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }
@@ -159,6 +179,7 @@ export default class NamespaceRef {
         verifyType: StatusVerifyType,
         propertyId: string,
         rankCapValue: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyRankCapByUserId {
         return new VerifyRankCapByUserId(
@@ -167,6 +188,7 @@ export default class NamespaceRef {
             verifyType,
             propertyId,
             rankCapValue,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

@@ -5,7 +5,8 @@ export default class SubExperienceByUserId extends ConsumeAction {
     private readonly experienceName;
     private readonly propertyId;
     private readonly experienceValue;
-    constructor(namespaceName: string, experienceName: string, propertyId: string, experienceValue?: number | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, experienceName: string, propertyId: string, experienceValue?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

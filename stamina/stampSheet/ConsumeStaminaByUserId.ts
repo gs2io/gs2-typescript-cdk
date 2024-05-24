@@ -21,12 +21,14 @@ export default class ConsumeStaminaByUserId extends ConsumeAction {
     private readonly staminaName: string;
     private readonly userId: string;
     private readonly consumeValue: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         consumeValue: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class ConsumeStaminaByUserId extends ConsumeAction {
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
         this.consumeValue = consumeValue;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class ConsumeStaminaByUserId extends ConsumeAction {
         }
         if (this.consumeValue != null) {
             properties["consumeValue"] = this.consumeValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

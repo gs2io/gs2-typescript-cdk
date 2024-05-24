@@ -39,8 +39,8 @@ class BigInventoryModelRef {
     consumeBigItem(itemName, consumeCount, userId = "#{userId}") {
         return new ConsumeBigItemByUserId_1.default(this.namespaceName, this.inventoryName, itemName, consumeCount, userId);
     }
-    verifyBigItem(itemName, verifyType, count, userId = "#{userId}") {
-        return new VerifyBigItemByUserId_1.default(this.namespaceName, this.inventoryName, itemName, verifyType, count, userId);
+    verifyBigItem(itemName, verifyType, count, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyBigItemByUserId_1.default(this.namespaceName, this.inventoryName, itemName, verifyType, count, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

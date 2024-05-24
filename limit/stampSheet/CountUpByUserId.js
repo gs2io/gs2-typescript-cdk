@@ -17,15 +17,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CountUpByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, limitName, counterName, countUpValue = null, maxValue = null, userId = "#{userId}") {
+    constructor(namespaceName, limitName, counterName, countUpValue = null, maxValue = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.countUpValue = null;
         this.maxValue = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.limitName = limitName;
         this.counterName = counterName;
         this.countUpValue = countUpValue !== null && countUpValue !== void 0 ? countUpValue : null;
         this.maxValue = maxValue !== null && maxValue !== void 0 ? maxValue : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -47,6 +49,9 @@ class CountUpByUserId extends model_1.ConsumeAction {
         }
         if (this.maxValue != null) {
             properties["maxValue"] = this.maxValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

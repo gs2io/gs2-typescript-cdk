@@ -17,14 +17,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyCounterByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, limitName, counterName, verifyType, count = null, userId = "#{userId}") {
+    constructor(namespaceName, limitName, counterName, verifyType, count = null, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.limitName = limitName;
         this.counterName = counterName;
         this.verifyType = verifyType;
         this.count = count !== null && count !== void 0 ? count : null;
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity !== null && multiplyValueSpecifyingQuantity !== void 0 ? multiplyValueSpecifyingQuantity : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -46,6 +50,12 @@ class VerifyCounterByUserId extends model_1.ConsumeAction {
         }
         if (this.count != null) {
             properties["count"] = this.count;
+        }
+        if (this.multiplyValueSpecifyingQuantity != null) {
+            properties["multiplyValueSpecifyingQuantity"] = this.multiplyValueSpecifyingQuantity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

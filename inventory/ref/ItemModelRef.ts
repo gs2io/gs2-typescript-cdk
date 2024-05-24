@@ -123,6 +123,7 @@ export default class ItemModelRef {
         verifyType: ItemSetVerifyType,
         count: number,
         itemSetName: string|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyItemSetByUserId {
         return new VerifyItemSetByUserId(
@@ -132,6 +133,7 @@ export default class ItemModelRef {
             verifyType,
             count,
             itemSetName,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

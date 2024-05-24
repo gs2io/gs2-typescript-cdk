@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnityAd = exports.AdMob = exports.Namespace = void 0;
+exports.AppLovinMax = exports.UnityAd = exports.AdMob = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,4 +23,6 @@ const AdMob_1 = tslib_1.__importDefault(require("./AdMob"));
 exports.AdMob = AdMob_1.default;
 const UnityAd_1 = tslib_1.__importDefault(require("./UnityAd"));
 exports.UnityAd = UnityAd_1.default;
+const AppLovinMax_1 = tslib_1.__importDefault(require("./AppLovinMax"));
+exports.AppLovinMax = AppLovinMax_1.default;
 //# sourceMappingURL=index.js.map

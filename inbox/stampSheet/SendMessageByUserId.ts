@@ -24,6 +24,7 @@ export default class SendMessageByUserId extends AcquireAction {
     private readonly readAcquireActions: AcquireAction[]|null = null;
     private readonly expiresAt: number|null = null;
     private readonly expiresTimeSpan: TimeSpan|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -32,6 +33,7 @@ export default class SendMessageByUserId extends AcquireAction {
         readAcquireActions: AcquireAction[]|null = null,
         expiresAt: number|null = null,
         expiresTimeSpan: TimeSpan|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -41,6 +43,7 @@ export default class SendMessageByUserId extends AcquireAction {
         this.readAcquireActions = readAcquireActions ?? null;
         this.expiresAt = expiresAt ?? null;
         this.expiresTimeSpan = expiresTimeSpan ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -67,6 +70,9 @@ export default class SendMessageByUserId extends AcquireAction {
         if (this.expiresTimeSpan != null) {
             properties["expiresTimeSpan"] = this.expiresTimeSpan?.properties(
             );
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

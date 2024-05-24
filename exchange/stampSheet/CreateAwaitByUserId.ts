@@ -23,6 +23,7 @@ export default class CreateAwaitByUserId extends AcquireAction {
     private readonly rateName: string;
     private readonly count: number|null = null;
     private readonly config: Config[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -30,6 +31,7 @@ export default class CreateAwaitByUserId extends AcquireAction {
         rateName: string,
         count: number|null = null,
         config: Config[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -38,6 +40,7 @@ export default class CreateAwaitByUserId extends AcquireAction {
         this.rateName = rateName;
         this.count = count ?? null;
         this.config = config ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -60,6 +63,9 @@ export default class CreateAwaitByUserId extends AcquireAction {
         if (this.config != null) {
             properties["config"] = this.config.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

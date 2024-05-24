@@ -4,7 +4,8 @@ export default class SetRecoverIntervalByUserId extends AcquireAction {
     private readonly staminaName;
     private readonly userId;
     private readonly recoverIntervalMinutes;
-    constructor(namespaceName: string, staminaName: string, recoverIntervalMinutes: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, staminaName: string, recoverIntervalMinutes: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

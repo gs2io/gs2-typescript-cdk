@@ -22,6 +22,8 @@ export default class AddExperienceByUserId extends AcquireAction {
     private readonly experienceName: string;
     private readonly propertyId: string;
     private readonly experienceValue: number|null = null;
+    private readonly truncateExperienceWhenRankUp: boolean|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +31,8 @@ export default class AddExperienceByUserId extends AcquireAction {
         experienceName: string,
         propertyId: string,
         experienceValue: number|null = null,
+        truncateExperienceWhenRankUp: boolean|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +41,8 @@ export default class AddExperienceByUserId extends AcquireAction {
         this.experienceName = experienceName;
         this.propertyId = propertyId;
         this.experienceValue = experienceValue ?? null;
+        this.truncateExperienceWhenRankUp = truncateExperienceWhenRankUp ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +64,12 @@ export default class AddExperienceByUserId extends AcquireAction {
         }
         if (this.experienceValue != null) {
             properties["experienceValue"] = this.experienceValue;
+        }
+        if (this.truncateExperienceWhenRankUp != null) {
+            properties["truncateExperienceWhenRankUp"] = this.truncateExperienceWhenRankUp;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

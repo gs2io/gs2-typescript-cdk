@@ -17,15 +17,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CreateProgressByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, rateName, targetItemSetId, materials = null, force = null, userId = "#{userId}") {
+    constructor(namespaceName, rateName, targetItemSetId, materials = null, force = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.materials = null;
         this.force = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.rateName = rateName;
         this.targetItemSetId = targetItemSetId;
         this.materials = materials !== null && materials !== void 0 ? materials : null;
         this.force = force !== null && force !== void 0 ? force : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -47,6 +49,9 @@ class CreateProgressByUserId extends model_1.AcquireAction {
         }
         if (this.force != null) {
             properties["force"] = this.force;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

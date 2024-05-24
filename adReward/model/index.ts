@@ -19,6 +19,8 @@ import AdMob from "./AdMob";
 import { AdMobOptions } from "./options/AdMobOptions";
 import UnityAd from "./UnityAd";
 import { UnityAdOptions } from "./options/UnityAdOptions";
+import AppLovinMax from "./AppLovinMax";
+import { AppLovinMaxOptions } from "./options/AppLovinMaxOptions";
 
 export {
     Namespace,
@@ -27,4 +29,6 @@ export {
     AdMobOptions,
     UnityAd,
     UnityAdOptions,
+    AppLovinMax,
+    AppLovinMaxOptions,
 }

@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class UnlockIncrementalExchangeByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, rateName, lockTransactionId, userId = "#{userId}") {
+    constructor(namespaceName, rateName, lockTransactionId, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.rateName = rateName;
         this.lockTransactionId = lockTransactionId;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class UnlockIncrementalExchangeByUserId extends model_1.AcquireAction {
         }
         if (this.lockTransactionId != null) {
             properties["lockTransactionId"] = this.lockTransactionId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

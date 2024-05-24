@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TimeSpan = exports.SignedBallot = exports.GameResult = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.RatingModel = exports.NamespaceCompleteMatchmakingTriggerType = exports.NamespaceCreateGatheringTriggerType = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TimeSpan = exports.SignedBallot = exports.GameResult = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.RatingModel = exports.NamespaceEnableCollaborateSeasonRating = exports.NamespaceCompleteMatchmakingTriggerType = exports.NamespaceCreateGatheringTriggerType = exports.NamespaceEnableDisconnectDetection = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,10 +19,14 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
+const NamespaceEnableDisconnectDetection_1 = require("./enum/NamespaceEnableDisconnectDetection");
+Object.defineProperty(exports, "NamespaceEnableDisconnectDetection", { enumerable: true, get: function () { return NamespaceEnableDisconnectDetection_1.NamespaceEnableDisconnectDetection; } });
 const NamespaceCreateGatheringTriggerType_1 = require("./enum/NamespaceCreateGatheringTriggerType");
 Object.defineProperty(exports, "NamespaceCreateGatheringTriggerType", { enumerable: true, get: function () { return NamespaceCreateGatheringTriggerType_1.NamespaceCreateGatheringTriggerType; } });
 const NamespaceCompleteMatchmakingTriggerType_1 = require("./enum/NamespaceCompleteMatchmakingTriggerType");
 Object.defineProperty(exports, "NamespaceCompleteMatchmakingTriggerType", { enumerable: true, get: function () { return NamespaceCompleteMatchmakingTriggerType_1.NamespaceCompleteMatchmakingTriggerType; } });
+const NamespaceEnableCollaborateSeasonRating_1 = require("./enum/NamespaceEnableCollaborateSeasonRating");
+Object.defineProperty(exports, "NamespaceEnableCollaborateSeasonRating", { enumerable: true, get: function () { return NamespaceEnableCollaborateSeasonRating_1.NamespaceEnableCollaborateSeasonRating; } });
 const RatingModel_1 = tslib_1.__importDefault(require("./RatingModel"));
 exports.RatingModel = RatingModel_1.default;
 const AttributeRange_1 = tslib_1.__importDefault(require("./AttributeRange"));

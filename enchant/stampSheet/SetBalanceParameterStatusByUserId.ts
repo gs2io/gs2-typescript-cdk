@@ -23,6 +23,7 @@ export default class SetBalanceParameterStatusByUserId extends AcquireAction {
     private readonly parameterName: string;
     private readonly propertyId: string;
     private readonly parameterValues: BalanceParameterValue[];
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -30,6 +31,7 @@ export default class SetBalanceParameterStatusByUserId extends AcquireAction {
         parameterName: string,
         propertyId: string,
         parameterValues: BalanceParameterValue[],
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -38,6 +40,7 @@ export default class SetBalanceParameterStatusByUserId extends AcquireAction {
         this.parameterName = parameterName;
         this.propertyId = propertyId;
         this.parameterValues = parameterValues;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -60,6 +63,9 @@ export default class SetBalanceParameterStatusByUserId extends AcquireAction {
         if (this.parameterValues != null) {
             properties["parameterValues"] = this.parameterValues.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

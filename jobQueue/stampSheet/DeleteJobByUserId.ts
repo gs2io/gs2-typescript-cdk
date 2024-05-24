@@ -20,17 +20,20 @@ export default class DeleteJobByUserId extends ConsumeAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly jobName: string|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         jobName: string|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.jobName = jobName ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -43,6 +46,9 @@ export default class DeleteJobByUserId extends ConsumeAction {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

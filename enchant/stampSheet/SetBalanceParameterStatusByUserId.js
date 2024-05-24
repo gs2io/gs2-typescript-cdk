@@ -17,12 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetBalanceParameterStatusByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, parameterName, propertyId, parameterValues, userId = "#{userId}") {
+    constructor(namespaceName, parameterName, propertyId, parameterValues, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.parameterName = parameterName;
         this.propertyId = propertyId;
         this.parameterValues = parameterValues;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -41,6 +43,9 @@ class SetBalanceParameterStatusByUserId extends model_1.AcquireAction {
         }
         if (this.parameterValues != null) {
             properties["parameterValues"] = this.parameterValues.map(v => v.properties());
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

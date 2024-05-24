@@ -4,7 +4,8 @@ export default class MarkReceivedByUserId extends ConsumeAction {
     private readonly bonusModelName;
     private readonly userId;
     private readonly stepNumber;
-    constructor(namespaceName: string, bonusModelName: string, stepNumber: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, bonusModelName: string, stepNumber: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

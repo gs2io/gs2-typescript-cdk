@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class RecordReceipt extends model_1.ConsumeAction {
-    constructor(namespaceName, contentsId, receipt, userId = "#{userId}") {
+    constructor(namespaceName, contentsId, receipt, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.contentsId = contentsId;
         this.receipt = receipt;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class RecordReceipt extends model_1.ConsumeAction {
         }
         if (this.receipt != null) {
             properties["receipt"] = this.receipt;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

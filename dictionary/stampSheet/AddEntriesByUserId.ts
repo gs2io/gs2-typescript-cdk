@@ -20,17 +20,20 @@ export default class AddEntriesByUserId extends AcquireAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly entryModelNames: string[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         entryModelNames: string[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.entryModelNames = entryModelNames ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -46,6 +49,9 @@ export default class AddEntriesByUserId extends AcquireAction {
         }
         if (this.entryModelNames != null) {
             properties["entryModelNames"] = this.entryModelNames;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

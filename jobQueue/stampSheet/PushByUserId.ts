@@ -21,17 +21,20 @@ export default class PushByUserId extends AcquireAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly jobs: JobEntry[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         jobs: JobEntry[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.jobs = jobs ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -48,6 +51,9 @@ export default class PushByUserId extends AcquireAction {
         if (this.jobs != null) {
             properties["jobs"] = this.jobs.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class WithdrawByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, slot, count, paidOnly = null, userId = "#{userId}") {
+    constructor(namespaceName, slot, count, paidOnly = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.paidOnly = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.slot = slot;
         this.count = count;
         this.paidOnly = paidOnly !== null && paidOnly !== void 0 ? paidOnly : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -42,6 +44,9 @@ class WithdrawByUserId extends model_1.ConsumeAction {
         }
         if (this.paidOnly != null) {
             properties["paidOnly"] = this.paidOnly;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

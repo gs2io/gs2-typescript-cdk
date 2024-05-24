@@ -4,7 +4,8 @@ export default class SubMoldCapacityByUserId extends ConsumeAction {
     private readonly userId;
     private readonly moldModelName;
     private readonly capacity;
-    constructor(namespaceName: string, moldModelName: string, capacity: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, moldModelName: string, capacity: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

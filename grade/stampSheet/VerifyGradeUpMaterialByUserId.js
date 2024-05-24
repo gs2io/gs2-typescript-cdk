@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyGradeUpMaterialByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, gradeName, verifyType, propertyId, materialPropertyId, userId = "#{userId}") {
+    constructor(namespaceName, gradeName, verifyType, propertyId, materialPropertyId, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.gradeName = gradeName;
         this.verifyType = verifyType;
         this.propertyId = propertyId;
         this.materialPropertyId = materialPropertyId;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -45,6 +47,9 @@ class VerifyGradeUpMaterialByUserId extends model_1.ConsumeAction {
         }
         if (this.materialPropertyId != null) {
             properties["materialPropertyId"] = this.materialPropertyId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

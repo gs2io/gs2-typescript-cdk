@@ -3,7 +3,8 @@ export default class ForceReDrawByUserId extends AcquireAction {
     private readonly namespaceName;
     private readonly showcaseName;
     private readonly userId;
-    constructor(namespaceName: string, showcaseName: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, showcaseName: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

@@ -24,6 +24,8 @@ export default class VerifyRankCapByUserId extends ConsumeAction {
     private readonly verifyType: StatusVerifyType;
     private readonly propertyId: string;
     private readonly rankCapValue: number;
+    private readonly multiplyValueSpecifyingQuantity: boolean|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -32,6 +34,8 @@ export default class VerifyRankCapByUserId extends ConsumeAction {
         verifyType: StatusVerifyType,
         propertyId: string,
         rankCapValue: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -41,6 +45,8 @@ export default class VerifyRankCapByUserId extends ConsumeAction {
         this.verifyType = verifyType;
         this.propertyId = propertyId;
         this.rankCapValue = rankCapValue;
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -65,6 +71,12 @@ export default class VerifyRankCapByUserId extends ConsumeAction {
         }
         if (this.rankCapValue != null) {
             properties["rankCapValue"] = this.rankCapValue;
+        }
+        if (this.multiplyValueSpecifyingQuantity != null) {
+            properties["multiplyValueSpecifyingQuantity"] = this.multiplyValueSpecifyingQuantity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

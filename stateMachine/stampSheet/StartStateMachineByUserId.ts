@@ -21,12 +21,14 @@ export default class StartStateMachineByUserId extends AcquireAction {
     private readonly userId: string;
     private readonly args: string|null = null;
     private readonly ttl: number|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         args: string|null = null,
         ttl: number|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class StartStateMachineByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.args = args ?? null;
         this.ttl = ttl ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class StartStateMachineByUserId extends AcquireAction {
         }
         if (this.ttl != null) {
             properties["ttl"] = this.ttl;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

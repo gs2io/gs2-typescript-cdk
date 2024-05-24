@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.DistributeResource = exports.StampSheetResult = exports.DistributorModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.DistributeResource = exports.DistributorModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,8 +21,6 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const DistributorModel_1 = tslib_1.__importDefault(require("./DistributorModel"));
 exports.DistributorModel = DistributorModel_1.default;
-const StampSheetResult_1 = tslib_1.__importDefault(require("./StampSheetResult"));
-exports.StampSheetResult = StampSheetResult_1.default;
 const DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource"));
 exports.DistributeResource = DistributeResource_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));

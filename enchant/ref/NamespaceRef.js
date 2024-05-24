@@ -50,8 +50,8 @@ class NamespaceRef {
     setRarityParameterStatus(parameterName, propertyId, parameterValues = null, userId = "#{userId}") {
         return new SetRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, parameterValues, userId);
     }
-    verifyRarityParameterStatus(parameterName, propertyId, verifyType, parameterValueName = null, parameterCount = null, userId = "#{userId}") {
-        return new VerifyRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, verifyType, parameterValueName, parameterCount, userId);
+    verifyRarityParameterStatus(parameterName, propertyId, verifyType, parameterValueName = null, parameterCount = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, verifyType, parameterValueName, parameterCount, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

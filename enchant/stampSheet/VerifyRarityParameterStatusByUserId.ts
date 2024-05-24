@@ -25,6 +25,8 @@ export default class VerifyRarityParameterStatusByUserId extends ConsumeAction {
     private readonly verifyType: RarityParameterStatusVerifyType;
     private readonly parameterValueName: string|null = null;
     private readonly parameterCount: number|null = null;
+    private readonly multiplyValueSpecifyingQuantity: boolean|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -34,6 +36,8 @@ export default class VerifyRarityParameterStatusByUserId extends ConsumeAction {
         verifyType: RarityParameterStatusVerifyType,
         parameterValueName: string|null = null,
         parameterCount: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -44,6 +48,8 @@ export default class VerifyRarityParameterStatusByUserId extends ConsumeAction {
         this.verifyType = verifyType;
         this.parameterValueName = parameterValueName ?? null;
         this.parameterCount = parameterCount ?? null;
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -71,6 +77,12 @@ export default class VerifyRarityParameterStatusByUserId extends ConsumeAction {
         }
         if (this.parameterCount != null) {
             properties["parameterCount"] = this.parameterCount;
+        }
+        if (this.multiplyValueSpecifyingQuantity != null) {
+            properties["multiplyValueSpecifyingQuantity"] = this.multiplyValueSpecifyingQuantity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

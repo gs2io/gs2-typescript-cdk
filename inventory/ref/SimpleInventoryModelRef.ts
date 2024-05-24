@@ -87,6 +87,7 @@ export default class SimpleInventoryModelRef {
         itemName: string,
         verifyType: SimpleItemVerifyType,
         count: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifySimpleItemByUserId {
         return new VerifySimpleItemByUserId(
@@ -95,6 +96,7 @@ export default class SimpleInventoryModelRef {
             itemName,
             verifyType,
             count,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

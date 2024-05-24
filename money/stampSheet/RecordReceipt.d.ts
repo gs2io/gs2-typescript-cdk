@@ -4,7 +4,8 @@ export default class RecordReceipt extends ConsumeAction {
     private readonly userId;
     private readonly contentsId;
     private readonly receipt;
-    constructor(namespaceName: string, contentsId: string, receipt: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, contentsId: string, receipt: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

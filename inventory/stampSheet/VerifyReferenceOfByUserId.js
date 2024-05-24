@@ -17,15 +17,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyReferenceOfByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, inventoryName, itemName, referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
+    constructor(namespaceName, inventoryName, itemName, referenceOf, verifyType, itemSetName = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.itemSetName = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.itemName = itemName;
         this.referenceOf = referenceOf;
         this.verifyType = verifyType;
         this.itemSetName = itemSetName !== null && itemSetName !== void 0 ? itemSetName : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -47,6 +49,9 @@ class VerifyReferenceOfByUserId extends model_1.ConsumeAction {
         }
         if (this.verifyType != null) {
             properties["verifyType"] = this.verifyType;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

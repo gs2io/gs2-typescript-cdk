@@ -14,6 +14,7 @@
  * permissions and limitations under the License.
  */
 import AddExperienceByUserId from "./AddExperienceByUserId";
+import SetExperienceByUserId from "./SetExperienceByUserId";
 import AddRankCapByUserId from "./AddRankCapByUserId";
 import SetRankCapByUserId from "./SetRankCapByUserId";
 import MultiplyAcquireActionsByUserId from "./MultiplyAcquireActionsByUserId";
@@ -24,6 +25,7 @@ import VerifyRankCapByUserId from "./VerifyRankCapByUserId";
 
 export {
     AddExperienceByUserId,
+    SetExperienceByUserId,
     AddRankCapByUserId,
     SetRankCapByUserId,
     MultiplyAcquireActionsByUserId,

@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SubExperienceByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
+    constructor(namespaceName, experienceName, propertyId, experienceValue = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.experienceValue = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.experienceName = experienceName;
         this.propertyId = propertyId;
         this.experienceValue = experienceValue !== null && experienceValue !== void 0 ? experienceValue : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -42,6 +44,9 @@ class SubExperienceByUserId extends model_1.ConsumeAction {
         }
         if (this.experienceValue != null) {
             properties["experienceValue"] = this.experienceValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

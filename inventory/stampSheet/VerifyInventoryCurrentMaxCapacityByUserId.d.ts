@@ -6,7 +6,9 @@ export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAc
     private readonly inventoryName;
     private readonly verifyType;
     private readonly currentInventoryMaxCapacity;
-    constructor(namespaceName: string, inventoryName: string, verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, userId?: string);
+    private readonly multiplyValueSpecifyingQuantity;
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, multiplyValueSpecifyingQuantity?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

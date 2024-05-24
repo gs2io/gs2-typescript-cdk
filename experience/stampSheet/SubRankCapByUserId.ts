@@ -22,6 +22,7 @@ export default class SubRankCapByUserId extends ConsumeAction {
     private readonly experienceName: string;
     private readonly propertyId: string;
     private readonly rankCapValue: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class SubRankCapByUserId extends ConsumeAction {
         experienceName: string,
         propertyId: string,
         rankCapValue: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class SubRankCapByUserId extends ConsumeAction {
         this.experienceName = experienceName;
         this.propertyId = propertyId;
         this.rankCapValue = rankCapValue;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class SubRankCapByUserId extends ConsumeAction {
         }
         if (this.rankCapValue != null) {
             properties["rankCapValue"] = this.rankCapValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

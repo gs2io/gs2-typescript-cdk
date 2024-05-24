@@ -6,7 +6,8 @@ export default class CreateAwaitByUserId extends AcquireAction {
     private readonly rateName;
     private readonly count;
     private readonly config;
-    constructor(namespaceName: string, rateName: string, count?: number | null, config?: Config[] | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, rateName: string, count?: number | null, config?: Config[] | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

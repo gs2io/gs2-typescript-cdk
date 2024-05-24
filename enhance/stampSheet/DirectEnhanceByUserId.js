@@ -17,14 +17,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DirectEnhanceByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, rateName, targetItemSetId, materials, config = null, userId = "#{userId}") {
+    constructor(namespaceName, rateName, targetItemSetId, materials, config = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.config = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.rateName = rateName;
         this.targetItemSetId = targetItemSetId;
         this.materials = materials;
         this.config = config !== null && config !== void 0 ? config : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -46,6 +48,9 @@ class DirectEnhanceByUserId extends model_1.AcquireAction {
         }
         if (this.config != null) {
             properties["config"] = this.config.map(v => v.properties());
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

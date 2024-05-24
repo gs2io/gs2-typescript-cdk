@@ -18,7 +18,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const IncreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseCounterByUserId"));
+const SetCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetCounterByUserId"));
 const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseCounterByUserId"));
+const VerifyCounterValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCounterValueByUserId"));
 class CounterModelRef {
     constructor(namespaceName, counterName) {
         this.namespaceName = namespaceName;
@@ -27,8 +29,14 @@ class CounterModelRef {
     increaseCounter(value, userId = "#{userId}") {
         return new IncreaseCounterByUserId_1.default(this.namespaceName, this.counterName, value, userId);
     }
+    setCounter(values = null, userId = "#{userId}") {
+        return new SetCounterByUserId_1.default(this.namespaceName, this.counterName, values, userId);
+    }
     decreaseCounter(value, userId = "#{userId}") {
         return new DecreaseCounterByUserId_1.default(this.namespaceName, this.counterName, value, userId);
+    }
+    verifyCounterValue(verifyType, resetType, value = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyCounterValueByUserId_1.default(this.namespaceName, this.counterName, verifyType, resetType, value, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

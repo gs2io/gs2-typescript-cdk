@@ -23,6 +23,7 @@ export default class TriggerByUserId extends AcquireAction {
     private readonly userId: string;
     private readonly triggerStrategy: TriggerTriggerStrategy;
     private readonly ttl: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -30,6 +31,7 @@ export default class TriggerByUserId extends AcquireAction {
         triggerName: string,
         triggerStrategy: TriggerTriggerStrategy,
         ttl: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -38,6 +40,7 @@ export default class TriggerByUserId extends AcquireAction {
         this.triggerName = triggerName;
         this.triggerStrategy = triggerStrategy;
         this.ttl = ttl;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -59,6 +62,9 @@ export default class TriggerByUserId extends AcquireAction {
         }
         if (this.ttl != null) {
             properties["ttl"] = this.ttl;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

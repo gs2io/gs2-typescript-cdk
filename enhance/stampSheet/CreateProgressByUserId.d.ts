@@ -7,7 +7,8 @@ export default class CreateProgressByUserId extends AcquireAction {
     private readonly targetItemSetId;
     private readonly materials;
     private readonly force;
-    constructor(namespaceName: string, rateName: string, targetItemSetId: string, materials?: Material[] | null, force?: boolean | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, rateName: string, targetItemSetId: string, materials?: Material[] | null, force?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

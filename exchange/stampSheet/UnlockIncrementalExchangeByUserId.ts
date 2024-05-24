@@ -21,12 +21,14 @@ export default class UnlockIncrementalExchangeByUserId extends AcquireAction {
     private readonly rateName: string;
     private readonly userId: string;
     private readonly lockTransactionId: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         rateName: string,
         lockTransactionId: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class UnlockIncrementalExchangeByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.rateName = rateName;
         this.lockTransactionId = lockTransactionId;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class UnlockIncrementalExchangeByUserId extends AcquireAction {
         }
         if (this.lockTransactionId != null) {
             properties["lockTransactionId"] = this.lockTransactionId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

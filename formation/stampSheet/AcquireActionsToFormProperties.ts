@@ -24,6 +24,7 @@ export default class AcquireActionsToFormProperties extends AcquireAction {
     private readonly index: number;
     private readonly acquireAction: AcquireAction;
     private readonly config: Config[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -32,6 +33,7 @@ export default class AcquireActionsToFormProperties extends AcquireAction {
         index: number,
         acquireAction: AcquireAction,
         config: Config[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -41,6 +43,7 @@ export default class AcquireActionsToFormProperties extends AcquireAction {
         this.index = index;
         this.acquireAction = acquireAction;
         this.config = config ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -67,6 +70,9 @@ export default class AcquireActionsToFormProperties extends AcquireAction {
         if (this.config != null) {
             properties["config"] = this.config.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

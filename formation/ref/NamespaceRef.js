@@ -22,6 +22,7 @@ const PropertyFormModelRef_1 = tslib_1.__importDefault(require("./PropertyFormMo
 const AddMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddMoldCapacityByUserId"));
 const SetMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMoldCapacityByUserId"));
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
+const SetFormByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetFormByUserId"));
 const AcquireActionsToPropertyFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToPropertyFormProperties"));
 const SubMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SubMoldCapacityByUserId"));
 class NamespaceRef {
@@ -42,6 +43,9 @@ class NamespaceRef {
     }
     acquireActionsToFormProperties(moldModelName, index, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToFormProperties_1.default(this.namespaceName, moldModelName, index, acquireAction, config, userId);
+    }
+    setForm(moldModelName, index, slots, userId = "#{userId}") {
+        return new SetFormByUserId_1.default(this.namespaceName, moldModelName, index, slots, userId);
     }
     acquireActionsToPropertyFormProperties(propertyFormModelName, propertyId, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToPropertyFormProperties_1.default(this.namespaceName, propertyFormModelName, propertyId, acquireAction, config, userId);

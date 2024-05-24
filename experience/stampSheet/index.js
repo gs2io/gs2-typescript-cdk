@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyRankCapByUserId = exports.VerifyRankByUserId = exports.SubRankCapByUserId = exports.SubExperienceByUserId = exports.MultiplyAcquireActionsByUserId = exports.SetRankCapByUserId = exports.AddRankCapByUserId = exports.AddExperienceByUserId = void 0;
+exports.VerifyRankCapByUserId = exports.VerifyRankByUserId = exports.SubRankCapByUserId = exports.SubExperienceByUserId = exports.MultiplyAcquireActionsByUserId = exports.SetRankCapByUserId = exports.AddRankCapByUserId = exports.SetExperienceByUserId = exports.AddExperienceByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const AddExperienceByUserId_1 = tslib_1.__importDefault(require("./AddExperienceByUserId"));
 exports.AddExperienceByUserId = AddExperienceByUserId_1.default;
+const SetExperienceByUserId_1 = tslib_1.__importDefault(require("./SetExperienceByUserId"));
+exports.SetExperienceByUserId = SetExperienceByUserId_1.default;
 const AddRankCapByUserId_1 = tslib_1.__importDefault(require("./AddRankCapByUserId"));
 exports.AddRankCapByUserId = AddRankCapByUserId_1.default;
 const SetRankCapByUserId_1 = tslib_1.__importDefault(require("./SetRankCapByUserId"));

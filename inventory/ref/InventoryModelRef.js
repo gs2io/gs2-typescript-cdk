@@ -54,14 +54,14 @@ class InventoryModelRef {
     deleteReferenceOf(itemName, referenceOf, itemSetName = null, userId = "#{userId}") {
         return new DeleteReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, referenceOf, itemSetName, userId);
     }
-    verifyInventoryCurrentMaxCapacity(verifyType, currentInventoryMaxCapacity, userId = "#{userId}") {
-        return new VerifyInventoryCurrentMaxCapacityByUserId_1.default(this.namespaceName, this.inventoryName, verifyType, currentInventoryMaxCapacity, userId);
+    verifyInventoryCurrentMaxCapacity(verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyInventoryCurrentMaxCapacityByUserId_1.default(this.namespaceName, this.inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity, userId);
     }
     consumeItemSet(itemName, consumeCount, itemSetName = null, userId = "#{userId}") {
         return new ConsumeItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, consumeCount, itemSetName, userId);
     }
-    verifyItemSet(itemName, verifyType, count, itemSetName = null, userId = "#{userId}") {
-        return new VerifyItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, verifyType, count, itemSetName, userId);
+    verifyItemSet(itemName, verifyType, count, itemSetName = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, verifyType, count, itemSetName, multiplyValueSpecifyingQuantity, userId);
     }
     verifyReferenceOf(itemName, referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
         return new VerifyReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, referenceOf, verifyType, itemSetName, userId);

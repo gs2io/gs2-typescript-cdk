@@ -21,12 +21,14 @@ export default class UnmarkReceivedByUserId extends AcquireAction {
     private readonly bonusModelName: string;
     private readonly userId: string;
     private readonly stepNumber: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         bonusModelName: string,
         stepNumber: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class UnmarkReceivedByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.bonusModelName = bonusModelName;
         this.stepNumber = stepNumber;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class UnmarkReceivedByUserId extends AcquireAction {
         }
         if (this.stepNumber != null) {
             properties["stepNumber"] = this.stepNumber;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

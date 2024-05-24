@@ -4,7 +4,8 @@ export default class SetRecoverValueByUserId extends AcquireAction {
     private readonly staminaName;
     private readonly userId;
     private readonly recoverValue;
-    constructor(namespaceName: string, staminaName: string, recoverValue: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, staminaName: string, recoverValue: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

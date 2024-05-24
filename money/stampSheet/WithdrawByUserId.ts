@@ -22,6 +22,7 @@ export default class WithdrawByUserId extends ConsumeAction {
     private readonly slot: number;
     private readonly count: number;
     private readonly paidOnly: boolean|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class WithdrawByUserId extends ConsumeAction {
         slot: number,
         count: number,
         paidOnly: boolean|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class WithdrawByUserId extends ConsumeAction {
         this.slot = slot;
         this.count = count;
         this.paidOnly = paidOnly ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class WithdrawByUserId extends ConsumeAction {
         }
         if (this.paidOnly != null) {
             properties["paidOnly"] = this.paidOnly;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

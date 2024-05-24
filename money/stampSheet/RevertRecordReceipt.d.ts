@@ -3,7 +3,8 @@ export default class RevertRecordReceipt extends AcquireAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly receipt;
-    constructor(namespaceName: string, receipt: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, receipt: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

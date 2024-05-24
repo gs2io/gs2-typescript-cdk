@@ -6,7 +6,8 @@ export default class CountUpByUserId extends ConsumeAction {
     private readonly userId;
     private readonly countUpValue;
     private readonly maxValue;
-    constructor(namespaceName: string, limitName: string, counterName: string, countUpValue?: number | null, maxValue?: number | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, limitName: string, counterName: string, countUpValue?: number | null, maxValue?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

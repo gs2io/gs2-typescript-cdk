@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class CountDownByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, limitName, counterName, countDownValue = null, userId = "#{userId}") {
+    constructor(namespaceName, limitName, counterName, countDownValue = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.countDownValue = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.limitName = limitName;
         this.counterName = counterName;
         this.countDownValue = countDownValue !== null && countDownValue !== void 0 ? countDownValue : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -42,6 +44,9 @@ class CountDownByUserId extends model_1.AcquireAction {
         }
         if (this.countDownValue != null) {
             properties["countDownValue"] = this.countDownValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

@@ -7,7 +7,9 @@ export default class VerifySimpleItemByUserId extends ConsumeAction {
     private readonly itemName;
     private readonly verifyType;
     private readonly count;
-    constructor(namespaceName: string, inventoryName: string, itemName: string, verifyType: SimpleItemVerifyType, count: number, userId?: string);
+    private readonly multiplyValueSpecifyingQuantity;
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, itemName: string, verifyType: SimpleItemVerifyType, count: number, multiplyValueSpecifyingQuantity?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

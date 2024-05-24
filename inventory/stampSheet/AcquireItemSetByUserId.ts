@@ -25,6 +25,7 @@ export default class AcquireItemSetByUserId extends AcquireAction {
     private readonly expiresAt: number|null = null;
     private readonly createNewItemSet: boolean|null = null;
     private readonly itemSetName: string|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -35,6 +36,7 @@ export default class AcquireItemSetByUserId extends AcquireAction {
         expiresAt: number|null = null,
         createNewItemSet: boolean|null = null,
         itemSetName: string|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -46,6 +48,7 @@ export default class AcquireItemSetByUserId extends AcquireAction {
         this.expiresAt = expiresAt ?? null;
         this.createNewItemSet = createNewItemSet ?? null;
         this.itemSetName = itemSetName ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -76,6 +79,9 @@ export default class AcquireItemSetByUserId extends AcquireAction {
         }
         if (this.itemSetName != null) {
             properties["itemSetName"] = this.itemSetName;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

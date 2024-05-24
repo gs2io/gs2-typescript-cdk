@@ -22,6 +22,7 @@ export default class AcquireBigItemByUserId extends AcquireAction {
     private readonly userId: string;
     private readonly itemName: string;
     private readonly acquireCount: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class AcquireBigItemByUserId extends AcquireAction {
         inventoryName: string,
         itemName: string,
         acquireCount: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class AcquireBigItemByUserId extends AcquireAction {
         this.inventoryName = inventoryName;
         this.itemName = itemName;
         this.acquireCount = acquireCount;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class AcquireBigItemByUserId extends AcquireAction {
         }
         if (this.acquireCount != null) {
             properties["acquireCount"] = this.acquireCount;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

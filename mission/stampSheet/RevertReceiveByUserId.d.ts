@@ -4,7 +4,8 @@ export default class RevertReceiveByUserId extends AcquireAction {
     private readonly missionGroupName;
     private readonly missionTaskName;
     private readonly userId;
-    constructor(namespaceName: string, missionGroupName: string, missionTaskName: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, missionGroupName: string, missionTaskName: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

@@ -21,6 +21,7 @@ export default class SeasonModel {
     private readonly tiers: TierModel[];
     private readonly experienceModelId: string;
     private readonly metadata: string|null = null;
+    private readonly challengePeriodEventId: string|null = null;
 
     public constructor(
         name: string,
@@ -32,6 +33,7 @@ export default class SeasonModel {
         this.tiers = tiers;
         this.experienceModelId = experienceModelId;
         this.metadata = options?.metadata ?? null;
+        this.challengePeriodEventId = options?.challengePeriodEventId ?? null;
     }
 
     public properties(
@@ -50,6 +52,9 @@ export default class SeasonModel {
         }
         if (this.experienceModelId != null) {
             properties["experienceModelId"] = this.experienceModelId;
+        }
+        if (this.challengePeriodEventId != null) {
+            properties["challengePeriodEventId"] = this.challengePeriodEventId;
         }
 
         return properties;

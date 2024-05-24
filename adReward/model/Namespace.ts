@@ -18,6 +18,8 @@ import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import AdMob from "./AdMob";
 import UnityAd from "./UnityAd";
+import AppLovinMax from "./AppLovinMax";
+import ScriptSetting from "../../core/model/ScriptSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
 
@@ -30,7 +32,10 @@ export default class Namespace extends CdkResource {
     private readonly name: string;
     private readonly admob: AdMob|null = null;
     private readonly unityAd: UnityAd|null = null;
+    private readonly appLovinMaxes: AppLovinMax[]|null = null;
     private readonly description: string|null = null;
+    private readonly acquirePointScript: ScriptSetting|null = null;
+    private readonly consumePointScript: ScriptSetting|null = null;
     private readonly changePointNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
@@ -47,7 +52,10 @@ export default class Namespace extends CdkResource {
         this.name = name;
         this.admob = options?.admob ?? null;
         this.unityAd = options?.unityAd ?? null;
+        this.appLovinMaxes = options?.appLovinMaxes ?? null;
         this.description = options?.description ?? null;
+        this.acquirePointScript = options?.acquirePointScript ?? null;
+        this.consumePointScript = options?.consumePointScript ?? null;
         this.changePointNotification = options?.changePointNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
@@ -81,8 +89,20 @@ export default class Namespace extends CdkResource {
             properties["UnityAd"] = this.unityAd?.properties(
             );
         }
+        if (this.appLovinMaxes != null) {
+            properties["AppLovinMaxes"] = this.appLovinMaxes.map(v => v.properties(
+                ));
+        }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.acquirePointScript != null) {
+            properties["AcquirePointScript"] = this.acquirePointScript?.properties(
+            );
+        }
+        if (this.consumePointScript != null) {
+            properties["ConsumePointScript"] = this.consumePointScript?.properties(
+            );
         }
         if (this.changePointNotification != null) {
             properties["ChangePointNotification"] = this.changePointNotification?.properties(

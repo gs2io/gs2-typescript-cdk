@@ -108,6 +108,7 @@ export default class NamespaceRef {
         verifyType: StatusVerifyType,
         propertyId: string,
         gradeValue: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyGradeByUserId {
         return new VerifyGradeByUserId(
@@ -116,6 +117,7 @@ export default class NamespaceRef {
             verifyType,
             propertyId,
             gradeValue,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

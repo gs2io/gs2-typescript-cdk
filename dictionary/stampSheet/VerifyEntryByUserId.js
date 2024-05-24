@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyEntryByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, entryModelName, verifyType, userId = "#{userId}") {
+    constructor(namespaceName, entryModelName, verifyType, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.entryModelName = entryModelName;
         this.verifyType = verifyType;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class VerifyEntryByUserId extends model_1.ConsumeAction {
         }
         if (this.verifyType != null) {
             properties["verifyType"] = this.verifyType;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

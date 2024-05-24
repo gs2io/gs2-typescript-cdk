@@ -45,8 +45,8 @@ class ItemModelRef {
     consumeItemSet(consumeCount, itemSetName = null, userId = "#{userId}") {
         return new ConsumeItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, consumeCount, itemSetName, userId);
     }
-    verifyItemSet(verifyType, count, itemSetName = null, userId = "#{userId}") {
-        return new VerifyItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, verifyType, count, itemSetName, userId);
+    verifyItemSet(verifyType, count, itemSetName = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyItemSetByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, verifyType, count, itemSetName, multiplyValueSpecifyingQuantity, userId);
     }
     verifyReferenceOf(referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
         return new VerifyReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, referenceOf, verifyType, itemSetName, userId);

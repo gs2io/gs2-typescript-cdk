@@ -4,7 +4,8 @@ export default class PushByUserId extends AcquireAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly jobs;
-    constructor(namespaceName: string, jobs?: JobEntry[] | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, jobs?: JobEntry[] | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

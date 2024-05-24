@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SubMoldCapacityByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, moldModelName, capacity, userId = "#{userId}") {
+    constructor(namespaceName, moldModelName, capacity, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.moldModelName = moldModelName;
         this.capacity = capacity;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class SubMoldCapacityByUserId extends model_1.ConsumeAction {
         }
         if (this.capacity != null) {
             properties["capacity"] = this.capacity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

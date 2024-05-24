@@ -5,7 +5,8 @@ export default class CountDownByUserId extends AcquireAction {
     private readonly counterName;
     private readonly userId;
     private readonly countDownValue;
-    constructor(namespaceName: string, limitName: string, counterName: string, countDownValue?: number | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, limitName: string, counterName: string, countDownValue?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

@@ -20,6 +20,5 @@ import { RateModelTimingType } from "../enum/RateModelTimingType";
 export interface RateModelTimingTypeIsAwaitOptions {
     metadata?: string|null;
     consumeActions?: ConsumeAction[]|null;
-    skipConsumeActions?: ConsumeAction[]|null;
     acquireActions?: AcquireAction[]|null;
 }

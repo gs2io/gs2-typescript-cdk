@@ -22,12 +22,14 @@ export default class AcquireSimpleItemsByUserId extends AcquireAction {
     private readonly inventoryName: string;
     private readonly userId: string;
     private readonly acquireCounts: AcquireCount[];
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
         acquireCounts: AcquireCount[],
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -35,6 +37,7 @@ export default class AcquireSimpleItemsByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.acquireCounts = acquireCounts;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -54,6 +57,9 @@ export default class AcquireSimpleItemsByUserId extends AcquireAction {
         if (this.acquireCounts != null) {
             properties["acquireCounts"] = this.acquireCounts.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

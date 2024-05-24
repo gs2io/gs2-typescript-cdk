@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class OpenMessageByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, messageName = null, userId = "#{userId}") {
+    constructor(namespaceName, messageName = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.messageName = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.messageName = messageName !== null && messageName !== void 0 ? messageName : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -31,6 +33,9 @@ class OpenMessageByUserId extends model_1.ConsumeAction {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

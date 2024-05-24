@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ApplyRankCapByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, gradeName, propertyId, userId = "#{userId}") {
+    constructor(namespaceName, gradeName, propertyId, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.gradeName = gradeName;
         this.propertyId = propertyId;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class ApplyRankCapByUserId extends model_1.AcquireAction {
         }
         if (this.propertyId != null) {
             properties["propertyId"] = this.propertyId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

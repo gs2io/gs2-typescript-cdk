@@ -21,12 +21,14 @@ export default class RaiseMaxValueByUserId extends AcquireAction {
     private readonly staminaName: string;
     private readonly userId: string;
     private readonly raiseValue: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         raiseValue: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class RaiseMaxValueByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
         this.raiseValue = raiseValue;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class RaiseMaxValueByUserId extends AcquireAction {
         }
         if (this.raiseValue != null) {
             properties["raiseValue"] = this.raiseValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

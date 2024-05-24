@@ -23,9 +23,9 @@ export default class InventoryModelRef {
     acquireItemSetWithGrade(itemName: string, gradeModelId: string, gradeValue: number, userId?: string): AcquireItemSetWithGradeByUserId;
     addReferenceOf(itemName: string, referenceOf: string, itemSetName?: string | null, userId?: string): AddReferenceOfByUserId;
     deleteReferenceOf(itemName: string, referenceOf: string, itemSetName?: string | null, userId?: string): DeleteReferenceOfByUserId;
-    verifyInventoryCurrentMaxCapacity(verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, userId?: string): VerifyInventoryCurrentMaxCapacityByUserId;
+    verifyInventoryCurrentMaxCapacity(verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyInventoryCurrentMaxCapacityByUserId;
     consumeItemSet(itemName: string, consumeCount: number, itemSetName?: string | null, userId?: string): ConsumeItemSetByUserId;
-    verifyItemSet(itemName: string, verifyType: ItemSetVerifyType, count: number, itemSetName?: string | null, userId?: string): VerifyItemSetByUserId;
+    verifyItemSet(itemName: string, verifyType: ItemSetVerifyType, count: number, itemSetName?: string | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyItemSetByUserId;
     verifyReferenceOf(itemName: string, referenceOf: string, verifyType: ReferenceOfVerifyType, itemSetName?: string | null, userId?: string): VerifyReferenceOfByUserId;
     grn(): string;
 }

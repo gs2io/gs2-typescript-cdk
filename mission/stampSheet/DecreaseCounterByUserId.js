@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DecreaseCounterByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, counterName, value, userId = "#{userId}") {
+    constructor(namespaceName, counterName, value, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.counterName = counterName;
         this.value = value;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class DecreaseCounterByUserId extends model_1.ConsumeAction {
         }
         if (this.value != null) {
             properties["value"] = this.value;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

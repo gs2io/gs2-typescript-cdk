@@ -20,17 +20,20 @@ export default class ResetBoxByUserId extends AcquireAction {
     private readonly namespaceName: string;
     private readonly prizeTableName: string;
     private readonly userId: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         prizeTableName: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.prizeTableName = prizeTableName;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -46,6 +49,9 @@ export default class ResetBoxByUserId extends AcquireAction {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

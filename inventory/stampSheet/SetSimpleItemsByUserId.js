@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetSimpleItemsByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, inventoryName, counts, userId = "#{userId}") {
+    constructor(namespaceName, inventoryName, counts, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.counts = counts;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class SetSimpleItemsByUserId extends model_1.AcquireAction {
         }
         if (this.counts != null) {
             properties["counts"] = this.counts.map(v => v.properties());
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

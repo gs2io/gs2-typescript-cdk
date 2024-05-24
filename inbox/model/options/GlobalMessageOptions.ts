@@ -20,5 +20,6 @@ export interface GlobalMessageOptions {
     readAcquireActions?: AcquireAction[]|null;
     expiresTimeSpan?: TimeSpan|null;
     expiresAt?: number|null;
+    messageReceptionPeriodEventId?: string|null;
 }
 

@@ -24,6 +24,7 @@ export default class CreateProgressByUserId extends AcquireAction {
     private readonly targetItemSetId: string;
     private readonly materials: Material[]|null = null;
     private readonly force: boolean|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -32,6 +33,7 @@ export default class CreateProgressByUserId extends AcquireAction {
         targetItemSetId: string,
         materials: Material[]|null = null,
         force: boolean|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -41,6 +43,7 @@ export default class CreateProgressByUserId extends AcquireAction {
         this.targetItemSetId = targetItemSetId;
         this.materials = materials ?? null;
         this.force = force ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -66,6 +69,9 @@ export default class CreateProgressByUserId extends AcquireAction {
         }
         if (this.force != null) {
             properties["force"] = this.force;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

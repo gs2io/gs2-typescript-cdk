@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class MarkRestrainByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, propertyId, nodeModelNames, userId = "#{userId}") {
+    constructor(namespaceName, propertyId, nodeModelNames, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.propertyId = propertyId;
         this.nodeModelNames = nodeModelNames;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class MarkRestrainByUserId extends model_1.ConsumeAction {
         }
         if (this.nodeModelNames != null) {
             properties["nodeModelNames"] = this.nodeModelNames;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

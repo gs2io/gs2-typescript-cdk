@@ -5,7 +5,8 @@ export default class SetSimpleItemsByUserId extends AcquireAction {
     private readonly inventoryName;
     private readonly userId;
     private readonly counts;
-    constructor(namespaceName: string, inventoryName: string, counts: HeldCount[], userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, counts: HeldCount[], timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

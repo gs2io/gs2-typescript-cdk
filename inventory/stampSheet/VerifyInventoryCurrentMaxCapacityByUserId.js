@@ -17,12 +17,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyInventoryCurrentMaxCapacityByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, inventoryName, verifyType, currentInventoryMaxCapacity, userId = "#{userId}") {
+    constructor(namespaceName, inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.verifyType = verifyType;
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity !== null && multiplyValueSpecifyingQuantity !== void 0 ? multiplyValueSpecifyingQuantity : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -41,6 +45,12 @@ class VerifyInventoryCurrentMaxCapacityByUserId extends model_1.ConsumeAction {
         }
         if (this.currentInventoryMaxCapacity != null) {
             properties["currentInventoryMaxCapacity"] = this.currentInventoryMaxCapacity;
+        }
+        if (this.multiplyValueSpecifyingQuantity != null) {
+            properties["multiplyValueSpecifyingQuantity"] = this.multiplyValueSpecifyingQuantity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

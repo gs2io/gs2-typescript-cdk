@@ -18,6 +18,8 @@ import {GetAttr, Join} from "../../core/func";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
 import { AcquireAction } from "../../core/model";
 import { Config } from "../../core/model";
+import SetFormByUserId from "../stampSheet/SetFormByUserId";
+import Slot from "../model/Slot";
 
 export default class FormModelRef {
     private readonly namespaceName: string;
@@ -43,6 +45,20 @@ export default class FormModelRef {
             index,
             acquireAction,
             config,
+            userId,
+        );
+    }
+
+    public setForm(
+        index: number,
+        slots: Slot[],
+        userId: string = "#{userId}",
+    ): SetFormByUserId {
+        return new SetFormByUserId(
+            this.namespaceName,
+            this.moldModelName,
+            index,
+            slots,
             userId,
         );
     }

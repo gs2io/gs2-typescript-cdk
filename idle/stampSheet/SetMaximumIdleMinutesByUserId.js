@@ -17,12 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetMaximumIdleMinutesByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, categoryName, maximumIdleMinutes = null, userId = "#{userId}") {
+    constructor(namespaceName, categoryName, maximumIdleMinutes = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.maximumIdleMinutes = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.categoryName = categoryName;
         this.maximumIdleMinutes = maximumIdleMinutes !== null && maximumIdleMinutes !== void 0 ? maximumIdleMinutes : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -38,6 +40,9 @@ class SetMaximumIdleMinutesByUserId extends model_1.AcquireAction {
         }
         if (this.maximumIdleMinutes != null) {
             properties["maximumIdleMinutes"] = this.maximumIdleMinutes;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

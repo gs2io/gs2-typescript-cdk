@@ -7,7 +7,8 @@ export default class AcquireActionsToPropertyFormProperties extends AcquireActio
     private readonly propertyId;
     private readonly acquireAction;
     private readonly config;
-    constructor(namespaceName: string, propertyFormModelName: string, propertyId: string, acquireAction: AcquireAction, config?: Config[] | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, propertyFormModelName: string, propertyId: string, acquireAction: AcquireAction, config?: Config[] | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

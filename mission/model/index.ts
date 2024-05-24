@@ -35,10 +35,16 @@ import { MissionGroupModelResetTypeIsWeeklyOptions } from "./options/MissionGrou
 import { MissionGroupModelResetTypeIsMonthlyOptions } from "./options/MissionGroupModelResetTypeIsMonthlyOptions"
 import MissionTaskModel from "./MissionTaskModel";
 import { MissionTaskModelOptions } from "./options/MissionTaskModelOptions";
+import { MissionTaskModelVerifyCompleteType } from "./enum/MissionTaskModelVerifyCompleteType";
 import { MissionTaskModelTargetResetType } from "./enum/MissionTaskModelTargetResetType";
+import { MissionTaskModelVerifyCompleteTypeIsCounterOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsCounterOptions"
+import { MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions"
 import ScopedValue from "./ScopedValue";
 import { ScopedValueOptions } from "./options/ScopedValueOptions";
 import { ScopedValueResetType } from "./enum/ScopedValueResetType";
+import TargetCounterModel from "./TargetCounterModel";
+import { TargetCounterModelOptions } from "./options/TargetCounterModelOptions";
+import { TargetCounterModelResetType } from "./enum/TargetCounterModelResetType";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -64,9 +70,15 @@ export {
     MissionGroupModelResetTypeIsMonthlyOptions,
     MissionTaskModel,
     MissionTaskModelOptions,
+    MissionTaskModelVerifyCompleteType,
     MissionTaskModelTargetResetType,
+    MissionTaskModelVerifyCompleteTypeIsCounterOptions,
+    MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions,
     ScopedValue,
     ScopedValueOptions,
     ScopedValueResetType,
+    TargetCounterModel,
+    TargetCounterModelOptions,
+    TargetCounterModelResetType,
     CurrentMasterData,
 }

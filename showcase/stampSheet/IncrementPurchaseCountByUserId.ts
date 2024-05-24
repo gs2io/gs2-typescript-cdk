@@ -22,6 +22,7 @@ export default class IncrementPurchaseCountByUserId extends ConsumeAction {
     private readonly displayItemName: string;
     private readonly userId: string;
     private readonly count: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class IncrementPurchaseCountByUserId extends ConsumeAction {
         showcaseName: string,
         displayItemName: string,
         count: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class IncrementPurchaseCountByUserId extends ConsumeAction {
         this.showcaseName = showcaseName;
         this.displayItemName = displayItemName;
         this.count = count;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class IncrementPurchaseCountByUserId extends ConsumeAction {
         }
         if (this.count != null) {
             properties["count"] = this.count;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

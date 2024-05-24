@@ -239,6 +239,7 @@ export default class NamespaceRef {
         inventoryName: string,
         verifyType: InventoryVerifyType,
         currentInventoryMaxCapacity: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyInventoryCurrentMaxCapacityByUserId {
         return new VerifyInventoryCurrentMaxCapacityByUserId(
@@ -246,6 +247,7 @@ export default class NamespaceRef {
             inventoryName,
             verifyType,
             currentInventoryMaxCapacity,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }
@@ -273,6 +275,7 @@ export default class NamespaceRef {
         verifyType: ItemSetVerifyType,
         count: number,
         itemSetName: string|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyItemSetByUserId {
         return new VerifyItemSetByUserId(
@@ -282,6 +285,7 @@ export default class NamespaceRef {
             verifyType,
             count,
             itemSetName,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }
@@ -323,6 +327,7 @@ export default class NamespaceRef {
         itemName: string,
         verifyType: SimpleItemVerifyType,
         count: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifySimpleItemByUserId {
         return new VerifySimpleItemByUserId(
@@ -331,6 +336,7 @@ export default class NamespaceRef {
             itemName,
             verifyType,
             count,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }
@@ -355,6 +361,7 @@ export default class NamespaceRef {
         itemName: string,
         verifyType: BigItemVerifyType,
         count: string,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyBigItemByUserId {
         return new VerifyBigItemByUserId(
@@ -363,6 +370,7 @@ export default class NamespaceRef {
             itemName,
             verifyType,
             count,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

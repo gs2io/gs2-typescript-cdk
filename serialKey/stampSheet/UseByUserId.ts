@@ -20,17 +20,20 @@ export default class UseByUserId extends ConsumeAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly code: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         code: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.code = code;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -46,6 +49,9 @@ export default class UseByUserId extends ConsumeAction {
         }
         if (this.code != null) {
             properties["code"] = this.code;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

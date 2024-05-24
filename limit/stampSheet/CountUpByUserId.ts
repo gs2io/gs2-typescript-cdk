@@ -23,6 +23,7 @@ export default class CountUpByUserId extends ConsumeAction {
     private readonly userId: string;
     private readonly countUpValue: number|null = null;
     private readonly maxValue: number|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -31,6 +32,7 @@ export default class CountUpByUserId extends ConsumeAction {
         counterName: string,
         countUpValue: number|null = null,
         maxValue: number|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -40,6 +42,7 @@ export default class CountUpByUserId extends ConsumeAction {
         this.counterName = counterName;
         this.countUpValue = countUpValue ?? null;
         this.maxValue = maxValue ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -64,6 +67,9 @@ export default class CountUpByUserId extends ConsumeAction {
         }
         if (this.maxValue != null) {
             properties["maxValue"] = this.maxValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

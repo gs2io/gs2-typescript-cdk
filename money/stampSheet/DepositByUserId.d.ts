@@ -5,7 +5,8 @@ export default class DepositByUserId extends AcquireAction {
     private readonly slot;
     private readonly price;
     private readonly count;
-    constructor(namespaceName: string, slot: number, price: number, count: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, slot: number, price: number, count: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

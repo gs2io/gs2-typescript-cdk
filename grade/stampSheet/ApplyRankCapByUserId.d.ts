@@ -4,7 +4,8 @@ export default class ApplyRankCapByUserId extends AcquireAction {
     private readonly userId;
     private readonly gradeName;
     private readonly propertyId;
-    constructor(namespaceName: string, gradeName: string, propertyId: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, gradeName: string, propertyId: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

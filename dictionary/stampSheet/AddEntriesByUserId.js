@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AddEntriesByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, entryModelNames = null, userId = "#{userId}") {
+    constructor(namespaceName, entryModelNames = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.entryModelNames = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.entryModelNames = entryModelNames !== null && entryModelNames !== void 0 ? entryModelNames : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -34,6 +36,9 @@ class AddEntriesByUserId extends model_1.AcquireAction {
         }
         if (this.entryModelNames != null) {
             properties["entryModelNames"] = this.entryModelNames;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

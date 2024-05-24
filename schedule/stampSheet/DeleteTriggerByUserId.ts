@@ -20,17 +20,20 @@ export default class DeleteTriggerByUserId extends ConsumeAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly triggerName: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         triggerName: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.triggerName = triggerName;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -46,6 +49,9 @@ export default class DeleteTriggerByUserId extends ConsumeAction {
         }
         if (this.triggerName != null) {
             properties["triggerName"] = this.triggerName;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

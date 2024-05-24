@@ -5,7 +5,8 @@ export default class SubGradeByUserId extends ConsumeAction {
     private readonly gradeName;
     private readonly propertyId;
     private readonly gradeValue;
-    constructor(namespaceName: string, gradeName: string, propertyId: string, gradeValue?: number | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, gradeName: string, propertyId: string, gradeValue?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

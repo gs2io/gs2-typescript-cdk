@@ -24,6 +24,8 @@ export default class VerifyBigItemByUserId extends ConsumeAction {
     private readonly itemName: string;
     private readonly verifyType: BigItemVerifyType;
     private readonly count: string;
+    private readonly multiplyValueSpecifyingQuantity: boolean|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -32,6 +34,8 @@ export default class VerifyBigItemByUserId extends ConsumeAction {
         itemName: string,
         verifyType: BigItemVerifyType,
         count: string,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -41,6 +45,8 @@ export default class VerifyBigItemByUserId extends ConsumeAction {
         this.itemName = itemName;
         this.verifyType = verifyType;
         this.count = count;
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -65,6 +71,12 @@ export default class VerifyBigItemByUserId extends ConsumeAction {
         }
         if (this.count != null) {
             properties["count"] = this.count;
+        }
+        if (this.multiplyValueSpecifyingQuantity != null) {
+            properties["multiplyValueSpecifyingQuantity"] = this.multiplyValueSpecifyingQuantity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

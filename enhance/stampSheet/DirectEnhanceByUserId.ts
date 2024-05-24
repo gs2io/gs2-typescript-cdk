@@ -25,6 +25,7 @@ export default class DirectEnhanceByUserId extends AcquireAction {
     private readonly targetItemSetId: string;
     private readonly materials: Material[];
     private readonly config: Config[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -33,6 +34,7 @@ export default class DirectEnhanceByUserId extends AcquireAction {
         targetItemSetId: string,
         materials: Material[],
         config: Config[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -42,6 +44,7 @@ export default class DirectEnhanceByUserId extends AcquireAction {
         this.targetItemSetId = targetItemSetId;
         this.materials = materials;
         this.config = config ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -68,6 +71,9 @@ export default class DirectEnhanceByUserId extends AcquireAction {
         if (this.config != null) {
             properties["config"] = this.config.map(v => v.properties(
                 ));
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

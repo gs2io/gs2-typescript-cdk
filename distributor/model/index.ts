@@ -17,8 +17,6 @@ import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import DistributorModel from "./DistributorModel";
 import { DistributorModelOptions } from "./options/DistributorModelOptions";
-import StampSheetResult from "./StampSheetResult";
-import { StampSheetResultOptions } from "./options/StampSheetResultOptions";
 import DistributeResource from "./DistributeResource";
 import { DistributeResourceOptions } from "./options/DistributeResourceOptions";
 import CurrentMasterData from "./CurrentMasterData";
@@ -28,8 +26,6 @@ export {
     NamespaceOptions,
     DistributorModel,
     DistributorModelOptions,
-    StampSheetResult,
-    StampSheetResultOptions,
     DistributeResource,
     DistributeResourceOptions,
     CurrentMasterData,

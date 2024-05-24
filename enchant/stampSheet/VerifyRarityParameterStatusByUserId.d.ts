@@ -8,7 +8,9 @@ export default class VerifyRarityParameterStatusByUserId extends ConsumeAction {
     private readonly verifyType;
     private readonly parameterValueName;
     private readonly parameterCount;
-    constructor(namespaceName: string, parameterName: string, propertyId: string, verifyType: RarityParameterStatusVerifyType, parameterValueName?: string | null, parameterCount?: number | null, userId?: string);
+    private readonly multiplyValueSpecifyingQuantity;
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, parameterName: string, propertyId: string, verifyType: RarityParameterStatusVerifyType, parameterValueName?: string | null, parameterCount?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

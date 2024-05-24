@@ -7,7 +7,8 @@ export default class VerifyGradeUpMaterialByUserId extends ConsumeAction {
     private readonly verifyType;
     private readonly propertyId;
     private readonly materialPropertyId;
-    constructor(namespaceName: string, gradeName: string, verifyType: StatusVerifyType, propertyId: string, materialPropertyId: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, gradeName: string, verifyType: StatusVerifyType, propertyId: string, materialPropertyId: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

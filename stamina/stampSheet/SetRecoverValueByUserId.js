@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SetRecoverValueByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, staminaName, recoverValue, userId = "#{userId}") {
+    constructor(namespaceName, staminaName, recoverValue, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
         this.recoverValue = recoverValue;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class SetRecoverValueByUserId extends model_1.AcquireAction {
         }
         if (this.recoverValue != null) {
             properties["recoverValue"] = this.recoverValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

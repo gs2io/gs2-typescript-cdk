@@ -20,17 +20,20 @@ export default class RevertRecordReceipt extends AcquireAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly receipt: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         receipt: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.receipt = receipt;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -46,6 +49,9 @@ export default class RevertRecordReceipt extends AcquireAction {
         }
         if (this.receipt != null) {
             properties["receipt"] = this.receipt;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

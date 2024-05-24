@@ -22,13 +22,14 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         super("Exchange_Namespace_" + name);
         this.description = null;
         this.enableAwaitExchange = null;
         this.enableDirectExchange = null;
         this.transactionSetting = null;
         this.exchangeScript = null;
+        this.incrementalExchangeScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -37,7 +38,8 @@ class Namespace extends model_1.CdkResource {
         this.enableDirectExchange = (_c = options === null || options === void 0 ? void 0 : options.enableDirectExchange) !== null && _c !== void 0 ? _c : null;
         this.transactionSetting = (_d = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _d !== void 0 ? _d : null;
         this.exchangeScript = (_e = options === null || options === void 0 ? void 0 : options.exchangeScript) !== null && _e !== void 0 ? _e : null;
-        this.logSetting = (_f = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _f !== void 0 ? _f : null;
+        this.incrementalExchangeScript = (_f = options === null || options === void 0 ? void 0 : options.incrementalExchangeScript) !== null && _f !== void 0 ? _f : null;
+        this.logSetting = (_g = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _g !== void 0 ? _g : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -47,7 +49,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Exchange::Namespace";
     }
     properties() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -67,8 +69,11 @@ class Namespace extends model_1.CdkResource {
         if (this.exchangeScript != null) {
             properties["ExchangeScript"] = (_b = this.exchangeScript) === null || _b === void 0 ? void 0 : _b.properties();
         }
+        if (this.incrementalExchangeScript != null) {
+            properties["IncrementalExchangeScript"] = (_c = this.incrementalExchangeScript) === null || _c === void 0 ? void 0 : _c.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
         }
         return properties;
     }

@@ -5,6 +5,7 @@ export default class GlobalMessage {
     private readonly readAcquireActions;
     private readonly expiresTimeSpan;
     private readonly expiresAt;
+    private readonly messageReceptionPeriodEventId;
     constructor(name: string, metadata: string, options?: GlobalMessageOptions | null);
     properties(): {
         [name: string]: any;

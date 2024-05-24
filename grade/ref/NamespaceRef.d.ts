@@ -15,7 +15,7 @@ export default class NamespaceRef {
     applyRankCap(gradeName: string, propertyId: string, userId?: string): ApplyRankCapByUserId;
     multiplyAcquireActions(gradeName: string, propertyId: string, rateName: string, acquireActions?: AcquireAction[] | null, userId?: string): MultiplyAcquireActionsByUserId;
     subGrade(gradeName: string, propertyId: string, gradeValue?: number | null, userId?: string): SubGradeByUserId;
-    verifyGrade(gradeName: string, verifyType: StatusVerifyType, propertyId: string, gradeValue?: number | null, userId?: string): VerifyGradeByUserId;
+    verifyGrade(gradeName: string, verifyType: StatusVerifyType, propertyId: string, gradeValue?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyGradeByUserId;
     verifyGradeUpMaterial(gradeName: string, verifyType: StatusVerifyType, propertyId: string, materialPropertyId: string, userId?: string): VerifyGradeUpMaterialByUserId;
     grn(): string;
 }

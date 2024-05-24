@@ -23,6 +23,7 @@ export default class DeleteReferenceOfByUserId extends AcquireAction {
     private readonly itemName: string;
     private readonly referenceOf: string;
     private readonly itemSetName: string|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -31,6 +32,7 @@ export default class DeleteReferenceOfByUserId extends AcquireAction {
         itemName: string,
         referenceOf: string,
         itemSetName: string|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -40,6 +42,7 @@ export default class DeleteReferenceOfByUserId extends AcquireAction {
         this.itemName = itemName;
         this.referenceOf = referenceOf;
         this.itemSetName = itemSetName ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -61,6 +64,9 @@ export default class DeleteReferenceOfByUserId extends AcquireAction {
         }
         if (this.referenceOf != null) {
             properties["referenceOf"] = this.referenceOf;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

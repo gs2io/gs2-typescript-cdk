@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class DeleteAwaitByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, awaitName = null, userId = "#{userId}") {
+    constructor(namespaceName, awaitName = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.awaitName = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.awaitName = awaitName !== null && awaitName !== void 0 ? awaitName : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -31,6 +33,9 @@ class DeleteAwaitByUserId extends model_1.ConsumeAction {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

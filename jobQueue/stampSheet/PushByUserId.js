@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class PushByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, jobs = null, userId = "#{userId}") {
+    constructor(namespaceName, jobs = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.jobs = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.jobs = jobs !== null && jobs !== void 0 ? jobs : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -34,6 +36,9 @@ class PushByUserId extends model_1.AcquireAction {
         }
         if (this.jobs != null) {
             properties["jobs"] = this.jobs.map(v => v.properties());
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

@@ -17,16 +17,15 @@ import { SlotOptions } from "./options/SlotOptions";
 
 export default class Slot {
     private readonly name: string;
-    private readonly propertyId: string;
+    private readonly propertyId: string|null = null;
     private readonly metadata: string|null = null;
 
     public constructor(
         name: string,
-        propertyId: string,
         options: SlotOptions|null = null,
     ) {
         this.name = name;
-        this.propertyId = propertyId;
+        this.propertyId = options?.propertyId ?? null;
         this.metadata = options?.metadata ?? null;
     }
 

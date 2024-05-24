@@ -17,12 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireBigItemByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, inventoryName, itemName, acquireCount, userId = "#{userId}") {
+    constructor(namespaceName, inventoryName, itemName, acquireCount, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.itemName = itemName;
         this.acquireCount = acquireCount;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -41,6 +43,9 @@ class AcquireBigItemByUserId extends model_1.AcquireAction {
         }
         if (this.acquireCount != null) {
             properties["acquireCount"] = this.acquireCount;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

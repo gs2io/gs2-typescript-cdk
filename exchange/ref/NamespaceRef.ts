@@ -22,6 +22,8 @@ import { Config } from "../../core/model";
 import IncrementalExchangeByUserId from "../stampSheet/IncrementalExchangeByUserId";
 import UnlockIncrementalExchangeByUserId from "../stampSheet/UnlockIncrementalExchangeByUserId";
 import CreateAwaitByUserId from "../stampSheet/CreateAwaitByUserId";
+import SkipByUserId from "../stampSheet/SkipByUserId";
+import { AwaitSkipType } from "../stampSheet/enum/AwaitSkipType";
 import DeleteAwaitByUserId from "../stampSheet/DeleteAwaitByUserId";
 
 export default class NamespaceRef {
@@ -105,6 +107,23 @@ export default class NamespaceRef {
             rateName,
             count,
             config,
+            userId,
+        );
+    }
+
+    public skip(
+        awaitName: string|null = null,
+        skipType: AwaitSkipType|null = null,
+        minutes: number|null = null,
+        rate: number|null = null,
+        userId: string = "#{userId}",
+    ): SkipByUserId {
+        return new SkipByUserId(
+            this.namespaceName,
+            awaitName,
+            skipType,
+            minutes,
+            rate,
             userId,
         );
     }

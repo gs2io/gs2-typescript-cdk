@@ -17,7 +17,7 @@ export default class ItemModelRef {
     addReferenceOf(referenceOf: string, itemSetName?: string | null, userId?: string): AddReferenceOfByUserId;
     deleteReferenceOf(referenceOf: string, itemSetName?: string | null, userId?: string): DeleteReferenceOfByUserId;
     consumeItemSet(consumeCount: number, itemSetName?: string | null, userId?: string): ConsumeItemSetByUserId;
-    verifyItemSet(verifyType: ItemSetVerifyType, count: number, itemSetName?: string | null, userId?: string): VerifyItemSetByUserId;
+    verifyItemSet(verifyType: ItemSetVerifyType, count: number, itemSetName?: string | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyItemSetByUserId;
     verifyReferenceOf(referenceOf: string, verifyType: ReferenceOfVerifyType, itemSetName?: string | null, userId?: string): VerifyReferenceOfByUserId;
     grn(): string;
 }

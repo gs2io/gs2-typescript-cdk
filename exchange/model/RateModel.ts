@@ -26,8 +26,6 @@ export default class RateModel {
     private readonly metadata: string|null = null;
     private readonly consumeActions: ConsumeAction[]|null = null;
     private readonly lockTime: number|null = null;
-    private readonly enableSkip: boolean|null = null;
-    private readonly skipConsumeActions: ConsumeAction[]|null = null;
     private readonly acquireActions: AcquireAction[]|null = null;
 
     public constructor(
@@ -40,8 +38,6 @@ export default class RateModel {
         this.metadata = options?.metadata ?? null;
         this.consumeActions = options?.consumeActions ?? null;
         this.lockTime = options?.lockTime ?? null;
-        this.enableSkip = options?.enableSkip ?? null;
-        this.skipConsumeActions = options?.skipConsumeActions ?? null;
         this.acquireActions = options?.acquireActions ?? null;
     }
 
@@ -55,7 +51,6 @@ export default class RateModel {
             {
                 metadata: options?.metadata,
                 consumeActions: options?.consumeActions,
-                skipConsumeActions: options?.skipConsumeActions,
                 acquireActions: options?.acquireActions,
             },
         );
@@ -64,7 +59,6 @@ export default class RateModel {
     public static timingTypeIsAwait(
         name: string,
         lockTime: number,
-        enableSkip: boolean,
         options: RateModelTimingTypeIsAwaitOptions|null = null,
     ): RateModel {
         return new RateModel(
@@ -72,10 +66,8 @@ export default class RateModel {
             RateModelTimingType.AWAIT,
             {
                 lockTime: lockTime,
-                enableSkip: enableSkip,
                 metadata: options?.metadata,
                 consumeActions: options?.consumeActions,
-                skipConsumeActions: options?.skipConsumeActions,
                 acquireActions: options?.acquireActions,
             },
         );
@@ -100,13 +92,6 @@ export default class RateModel {
         }
         if (this.lockTime != null) {
             properties["lockTime"] = this.lockTime;
-        }
-        if (this.enableSkip != null) {
-            properties["enableSkip"] = this.enableSkip;
-        }
-        if (this.skipConsumeActions != null) {
-            properties["skipConsumeActions"] = this.skipConsumeActions.map(v => v.properties(
-                ));
         }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties(

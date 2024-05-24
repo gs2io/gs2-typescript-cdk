@@ -1,23 +1,51 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const MissionTaskModelVerifyCompleteType_1 = require("./enum/MissionTaskModelVerifyCompleteType");
 class MissionTaskModel {
-    constructor(name, counterName, targetValue, options = null) {
-        var _a, _b, _c, _d, _e;
+    constructor(name, verifyCompleteType, counterName, targetValue, options = null) {
+        var _a, _b, _c, _d, _e, _f, _g;
         this.metadata = null;
-        this.targetResetType = null;
+        this.targetCounter = null;
+        this.verifyCompleteConsumeActions = null;
         this.completeAcquireActions = null;
         this.challengePeriodEventId = null;
         this.premiseMissionTaskName = null;
+        this.targetResetType = null;
         this.name = name;
+        this.verifyCompleteType = verifyCompleteType;
         this.counterName = counterName;
         this.targetValue = targetValue;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
-        this.targetResetType = (_b = options === null || options === void 0 ? void 0 : options.targetResetType) !== null && _b !== void 0 ? _b : null;
-        this.completeAcquireActions = (_c = options === null || options === void 0 ? void 0 : options.completeAcquireActions) !== null && _c !== void 0 ? _c : null;
-        this.challengePeriodEventId = (_d = options === null || options === void 0 ? void 0 : options.challengePeriodEventId) !== null && _d !== void 0 ? _d : null;
-        this.premiseMissionTaskName = (_e = options === null || options === void 0 ? void 0 : options.premiseMissionTaskName) !== null && _e !== void 0 ? _e : null;
+        this.targetCounter = (_b = options === null || options === void 0 ? void 0 : options.targetCounter) !== null && _b !== void 0 ? _b : null;
+        this.verifyCompleteConsumeActions = (_c = options === null || options === void 0 ? void 0 : options.verifyCompleteConsumeActions) !== null && _c !== void 0 ? _c : null;
+        this.completeAcquireActions = (_d = options === null || options === void 0 ? void 0 : options.completeAcquireActions) !== null && _d !== void 0 ? _d : null;
+        this.challengePeriodEventId = (_e = options === null || options === void 0 ? void 0 : options.challengePeriodEventId) !== null && _e !== void 0 ? _e : null;
+        this.premiseMissionTaskName = (_f = options === null || options === void 0 ? void 0 : options.premiseMissionTaskName) !== null && _f !== void 0 ? _f : null;
+        this.targetResetType = (_g = options === null || options === void 0 ? void 0 : options.targetResetType) !== null && _g !== void 0 ? _g : null;
+    }
+    static verifyCompleteTypeIsCounter(name, counterName, targetValue, targetCounter, options = null) {
+        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.COUNTER, counterName, targetValue, {
+            targetCounter: targetCounter,
+            metadata: options === null || options === void 0 ? void 0 : options.metadata,
+            verifyCompleteConsumeActions: options === null || options === void 0 ? void 0 : options.verifyCompleteConsumeActions,
+            completeAcquireActions: options === null || options === void 0 ? void 0 : options.completeAcquireActions,
+            challengePeriodEventId: options === null || options === void 0 ? void 0 : options.challengePeriodEventId,
+            premiseMissionTaskName: options === null || options === void 0 ? void 0 : options.premiseMissionTaskName,
+            targetResetType: options === null || options === void 0 ? void 0 : options.targetResetType,
+        });
+    }
+    static verifyCompleteTypeIsConsumeActions(name, counterName, targetValue, options = null) {
+        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.CONSUME_ACTIONS, counterName, targetValue, {
+            metadata: options === null || options === void 0 ? void 0 : options.metadata,
+            verifyCompleteConsumeActions: options === null || options === void 0 ? void 0 : options.verifyCompleteConsumeActions,
+            completeAcquireActions: options === null || options === void 0 ? void 0 : options.completeAcquireActions,
+            challengePeriodEventId: options === null || options === void 0 ? void 0 : options.challengePeriodEventId,
+            premiseMissionTaskName: options === null || options === void 0 ? void 0 : options.premiseMissionTaskName,
+            targetResetType: options === null || options === void 0 ? void 0 : options.targetResetType,
+        });
     }
     properties() {
+        var _a;
         let properties = {};
         if (this.name != null) {
             properties["name"] = this.name;
@@ -25,14 +53,14 @@ class MissionTaskModel {
         if (this.metadata != null) {
             properties["metadata"] = this.metadata;
         }
-        if (this.counterName != null) {
-            properties["counterName"] = this.counterName;
+        if (this.verifyCompleteType != null) {
+            properties["verifyCompleteType"] = this.verifyCompleteType;
         }
-        if (this.targetResetType != null) {
-            properties["targetResetType"] = this.targetResetType;
+        if (this.targetCounter != null) {
+            properties["targetCounter"] = (_a = this.targetCounter) === null || _a === void 0 ? void 0 : _a.properties();
         }
-        if (this.targetValue != null) {
-            properties["targetValue"] = this.targetValue;
+        if (this.verifyCompleteConsumeActions != null) {
+            properties["verifyCompleteConsumeActions"] = this.verifyCompleteConsumeActions.map(v => v.properties());
         }
         if (this.completeAcquireActions != null) {
             properties["completeAcquireActions"] = this.completeAcquireActions.map(v => v.properties());
@@ -42,6 +70,15 @@ class MissionTaskModel {
         }
         if (this.premiseMissionTaskName != null) {
             properties["premiseMissionTaskName"] = this.premiseMissionTaskName;
+        }
+        if (this.counterName != null) {
+            properties["counterName"] = this.counterName;
+        }
+        if (this.targetResetType != null) {
+            properties["targetResetType"] = this.targetResetType;
+        }
+        if (this.targetValue != null) {
+            properties["targetValue"] = this.targetValue;
         }
         return properties;
     }

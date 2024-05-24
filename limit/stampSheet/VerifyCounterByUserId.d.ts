@@ -7,7 +7,9 @@ export default class VerifyCounterByUserId extends ConsumeAction {
     private readonly counterName;
     private readonly verifyType;
     private readonly count;
-    constructor(namespaceName: string, limitName: string, counterName: string, verifyType: CounterVerifyType, count?: number | null, userId?: string);
+    private readonly multiplyValueSpecifyingQuantity;
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, limitName: string, counterName: string, verifyType: CounterVerifyType, count?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

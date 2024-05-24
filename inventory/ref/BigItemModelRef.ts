@@ -78,6 +78,7 @@ export default class BigItemModelRef {
     public verifyBigItem(
         verifyType: BigItemVerifyType,
         count: string,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyBigItemByUserId {
         return new VerifyBigItemByUserId(
@@ -86,6 +87,7 @@ export default class BigItemModelRef {
             this.itemName,
             verifyType,
             count,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

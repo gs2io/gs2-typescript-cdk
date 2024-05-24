@@ -7,7 +7,8 @@ export default class UnleashByUserId extends AcquireAction {
     private readonly targetItemSetId;
     private readonly materials;
     private readonly config;
-    constructor(namespaceName: string, rateName: string, targetItemSetId: string, materials: string[], config?: Config[] | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, rateName: string, targetItemSetId: string, materials: string[], config?: Config[] | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

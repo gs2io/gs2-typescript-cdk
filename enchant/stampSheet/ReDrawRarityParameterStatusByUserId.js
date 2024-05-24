@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ReDrawRarityParameterStatusByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, parameterName, propertyId, fixedParameterNames = null, userId = "#{userId}") {
+    constructor(namespaceName, parameterName, propertyId, fixedParameterNames = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.fixedParameterNames = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.parameterName = parameterName;
         this.propertyId = propertyId;
         this.fixedParameterNames = fixedParameterNames !== null && fixedParameterNames !== void 0 ? fixedParameterNames : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -42,6 +44,9 @@ class ReDrawRarityParameterStatusByUserId extends model_1.AcquireAction {
         }
         if (this.fixedParameterNames != null) {
             properties["fixedParameterNames"] = this.fixedParameterNames;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

@@ -4,7 +4,8 @@ export default class SetCapacityByUserId extends AcquireAction {
     private readonly inventoryName;
     private readonly userId;
     private readonly newCapacityValue;
-    constructor(namespaceName: string, inventoryName: string, newCapacityValue: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, newCapacityValue: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

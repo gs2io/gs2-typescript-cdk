@@ -21,12 +21,14 @@ export default class ApplyRankCapByUserId extends AcquireAction {
     private readonly userId: string;
     private readonly gradeName: string;
     private readonly propertyId: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         gradeName: string,
         propertyId: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class ApplyRankCapByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.gradeName = gradeName;
         this.propertyId = propertyId;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class ApplyRankCapByUserId extends AcquireAction {
         }
         if (this.propertyId != null) {
             properties["propertyId"] = this.propertyId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

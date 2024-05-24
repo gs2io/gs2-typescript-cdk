@@ -23,6 +23,8 @@ export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAc
     private readonly inventoryName: string;
     private readonly verifyType: InventoryVerifyType;
     private readonly currentInventoryMaxCapacity: number;
+    private readonly multiplyValueSpecifyingQuantity: boolean|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -30,6 +32,8 @@ export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAc
         inventoryName: string,
         verifyType: InventoryVerifyType,
         currentInventoryMaxCapacity: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -38,6 +42,8 @@ export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAc
         this.inventoryName = inventoryName;
         this.verifyType = verifyType;
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -59,6 +65,12 @@ export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAc
         }
         if (this.currentInventoryMaxCapacity != null) {
             properties["currentInventoryMaxCapacity"] = this.currentInventoryMaxCapacity;
+        }
+        if (this.multiplyValueSpecifyingQuantity != null) {
+            properties["multiplyValueSpecifyingQuantity"] = this.multiplyValueSpecifyingQuantity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

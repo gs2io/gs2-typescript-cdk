@@ -6,7 +6,8 @@ export default class AddReferenceOfByUserId extends AcquireAction {
     private readonly itemName;
     private readonly referenceOf;
     private readonly itemSetName;
-    constructor(namespaceName: string, inventoryName: string, itemName: string, referenceOf: string, itemSetName?: string | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, itemName: string, referenceOf: string, itemSetName?: string | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

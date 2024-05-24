@@ -11,6 +11,6 @@ export default class BigItemModelRef {
     acquireBigItem(acquireCount: string, userId?: string): AcquireBigItemByUserId;
     setBigItem(count: string, userId?: string): SetBigItemByUserId;
     consumeBigItem(consumeCount: string, userId?: string): ConsumeBigItemByUserId;
-    verifyBigItem(verifyType: BigItemVerifyType, count: string, userId?: string): VerifyBigItemByUserId;
+    verifyBigItem(verifyType: BigItemVerifyType, count: string, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyBigItemByUserId;
     grn(): string;
 }

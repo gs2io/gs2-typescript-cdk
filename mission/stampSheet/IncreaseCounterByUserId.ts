@@ -21,12 +21,14 @@ export default class IncreaseCounterByUserId extends AcquireAction {
     private readonly counterName: string;
     private readonly userId: string;
     private readonly value: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         counterName: string,
         value: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class IncreaseCounterByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.counterName = counterName;
         this.value = value;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class IncreaseCounterByUserId extends AcquireAction {
         }
         if (this.value != null) {
             properties["value"] = this.value;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

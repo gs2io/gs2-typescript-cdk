@@ -23,6 +23,7 @@ export default class GlobalMessage {
     private readonly readAcquireActions: AcquireAction[]|null = null;
     private readonly expiresTimeSpan: TimeSpan|null = null;
     private readonly expiresAt: number|null = null;
+    private readonly messageReceptionPeriodEventId: string|null = null;
 
     public constructor(
         name: string,
@@ -34,6 +35,7 @@ export default class GlobalMessage {
         this.readAcquireActions = options?.readAcquireActions ?? null;
         this.expiresTimeSpan = options?.expiresTimeSpan ?? null;
         this.expiresAt = options?.expiresAt ?? null;
+        this.messageReceptionPeriodEventId = options?.messageReceptionPeriodEventId ?? null;
     }
 
     public properties(
@@ -56,6 +58,9 @@ export default class GlobalMessage {
         }
         if (this.expiresAt != null) {
             properties["expiresAt"] = this.expiresAt;
+        }
+        if (this.messageReceptionPeriodEventId != null) {
+            properties["messageReceptionPeriodEventId"] = this.messageReceptionPeriodEventId;
         }
 
         return properties;

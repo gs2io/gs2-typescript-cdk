@@ -8,7 +8,8 @@ export default class AcquireItemSetByUserId extends AcquireAction {
     private readonly expiresAt;
     private readonly createNewItemSet;
     private readonly itemSetName;
-    constructor(namespaceName: string, inventoryName: string, itemName: string, acquireCount: number, expiresAt?: number | null, createNewItemSet?: boolean | null, itemSetName?: string | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, itemName: string, acquireCount: number, expiresAt?: number | null, createNewItemSet?: boolean | null, itemSetName?: string | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

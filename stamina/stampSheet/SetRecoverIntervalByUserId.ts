@@ -21,12 +21,14 @@ export default class SetRecoverIntervalByUserId extends AcquireAction {
     private readonly staminaName: string;
     private readonly userId: string;
     private readonly recoverIntervalMinutes: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         recoverIntervalMinutes: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class SetRecoverIntervalByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
         this.recoverIntervalMinutes = recoverIntervalMinutes;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class SetRecoverIntervalByUserId extends AcquireAction {
         }
         if (this.recoverIntervalMinutes != null) {
             properties["recoverIntervalMinutes"] = this.recoverIntervalMinutes;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

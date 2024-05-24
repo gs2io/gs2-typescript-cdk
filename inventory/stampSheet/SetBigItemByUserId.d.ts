@@ -5,7 +5,8 @@ export default class SetBigItemByUserId extends AcquireAction {
     private readonly userId;
     private readonly itemName;
     private readonly count;
-    constructor(namespaceName: string, inventoryName: string, itemName: string, count: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, itemName: string, count: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

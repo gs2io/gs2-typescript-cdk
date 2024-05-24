@@ -4,7 +4,8 @@ export default class IncreaseMaximumIdleMinutesByUserId extends AcquireAction {
     private readonly userId;
     private readonly categoryName;
     private readonly increaseMinutes;
-    constructor(namespaceName: string, categoryName: string, increaseMinutes?: number | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, categoryName: string, increaseMinutes?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

@@ -3,7 +3,8 @@ export default class ResetBoxByUserId extends AcquireAction {
     private readonly namespaceName;
     private readonly prizeTableName;
     private readonly userId;
-    constructor(namespaceName: string, prizeTableName: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, prizeTableName: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

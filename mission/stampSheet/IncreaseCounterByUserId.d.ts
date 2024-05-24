@@ -4,7 +4,8 @@ export default class IncreaseCounterByUserId extends AcquireAction {
     private readonly counterName;
     private readonly userId;
     private readonly value;
-    constructor(namespaceName: string, counterName: string, value: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, counterName: string, value: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

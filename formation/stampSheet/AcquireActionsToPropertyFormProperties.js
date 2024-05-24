@@ -17,14 +17,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireActionsToPropertyFormProperties extends model_1.AcquireAction {
-    constructor(namespaceName, propertyFormModelName, propertyId, acquireAction, config = null, userId = "#{userId}") {
+    constructor(namespaceName, propertyFormModelName, propertyId, acquireAction, config = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.config = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.propertyFormModelName = propertyFormModelName;
         this.propertyId = propertyId;
         this.acquireAction = acquireAction;
         this.config = config !== null && config !== void 0 ? config : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -47,6 +49,9 @@ class AcquireActionsToPropertyFormProperties extends model_1.AcquireAction {
         }
         if (this.config != null) {
             properties["config"] = this.config.map(v => v.properties());
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

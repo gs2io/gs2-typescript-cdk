@@ -4,7 +4,8 @@ export default class DecreaseMaximumIdleMinutesByUserId extends ConsumeAction {
     private readonly userId;
     private readonly categoryName;
     private readonly decreaseMinutes;
-    constructor(namespaceName: string, categoryName: string, decreaseMinutes?: number | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, categoryName: string, decreaseMinutes?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

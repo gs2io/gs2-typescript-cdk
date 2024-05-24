@@ -22,6 +22,7 @@ export default class ReDrawBalanceParameterStatusByUserId extends AcquireAction 
     private readonly parameterName: string;
     private readonly propertyId: string;
     private readonly fixedParameterNames: string[]|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class ReDrawBalanceParameterStatusByUserId extends AcquireAction 
         parameterName: string,
         propertyId: string,
         fixedParameterNames: string[]|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class ReDrawBalanceParameterStatusByUserId extends AcquireAction 
         this.parameterName = parameterName;
         this.propertyId = propertyId;
         this.fixedParameterNames = fixedParameterNames ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class ReDrawBalanceParameterStatusByUserId extends AcquireAction 
         }
         if (this.fixedParameterNames != null) {
             properties["fixedParameterNames"] = this.fixedParameterNames;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

@@ -14,6 +14,6 @@ export default class SimpleItemModelRef {
     acquireSimpleItems(acquireCounts: AcquireCount[], userId?: string): AcquireSimpleItemsByUserId;
     setSimpleItems(counts: HeldCount[], userId?: string): SetSimpleItemsByUserId;
     consumeSimpleItems(consumeCounts: ConsumeCount[], userId?: string): ConsumeSimpleItemsByUserId;
-    verifySimpleItem(verifyType: SimpleItemVerifyType, count: number, userId?: string): VerifySimpleItemByUserId;
+    verifySimpleItem(verifyType: SimpleItemVerifyType, count: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifySimpleItemByUserId;
     grn(): string;
 }

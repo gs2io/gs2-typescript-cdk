@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SubGradeByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, gradeName, propertyId, gradeValue = null, userId = "#{userId}") {
+    constructor(namespaceName, gradeName, propertyId, gradeValue = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.gradeValue = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.gradeName = gradeName;
         this.propertyId = propertyId;
         this.gradeValue = gradeValue !== null && gradeValue !== void 0 ? gradeValue : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -42,6 +44,9 @@ class SubGradeByUserId extends model_1.ConsumeAction {
         }
         if (this.gradeValue != null) {
             properties["gradeValue"] = this.gradeValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

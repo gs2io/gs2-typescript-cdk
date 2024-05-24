@@ -23,6 +23,7 @@ const ExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/Exchan
 const IncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncrementalExchangeByUserId"));
 const UnlockIncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UnlockIncrementalExchangeByUserId"));
 const CreateAwaitByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CreateAwaitByUserId"));
+const SkipByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SkipByUserId"));
 const DeleteAwaitByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteAwaitByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
@@ -45,6 +46,9 @@ class NamespaceRef {
     }
     createAwait(rateName, count = null, config = null, userId = "#{userId}") {
         return new CreateAwaitByUserId_1.default(this.namespaceName, rateName, count, config, userId);
+    }
+    skip(awaitName = null, skipType = null, minutes = null, rate = null, userId = "#{userId}") {
+        return new SkipByUserId_1.default(this.namespaceName, awaitName, skipType, minutes, rate, userId);
     }
     deleteAwait(awaitName = null, userId = "#{userId}") {
         return new DeleteAwaitByUserId_1.default(this.namespaceName, awaitName, userId);

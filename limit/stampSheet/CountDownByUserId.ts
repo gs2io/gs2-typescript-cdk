@@ -22,6 +22,7 @@ export default class CountDownByUserId extends AcquireAction {
     private readonly counterName: string;
     private readonly userId: string;
     private readonly countDownValue: number|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class CountDownByUserId extends AcquireAction {
         limitName: string,
         counterName: string,
         countDownValue: number|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class CountDownByUserId extends AcquireAction {
         this.limitName = limitName;
         this.counterName = counterName;
         this.countDownValue = countDownValue ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class CountDownByUserId extends AcquireAction {
         }
         if (this.countDownValue != null) {
             properties["countDownValue"] = this.countDownValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

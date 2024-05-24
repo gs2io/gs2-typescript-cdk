@@ -7,7 +7,8 @@ export default class SendMessageByUserId extends AcquireAction {
     private readonly readAcquireActions;
     private readonly expiresAt;
     private readonly expiresTimeSpan;
-    constructor(namespaceName: string, metadata: string, readAcquireActions?: AcquireAction[] | null, expiresAt?: number | null, expiresTimeSpan?: TimeSpan | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, metadata: string, readAcquireActions?: AcquireAction[] | null, expiresAt?: number | null, expiresTimeSpan?: TimeSpan | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

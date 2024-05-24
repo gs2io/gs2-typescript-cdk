@@ -7,7 +7,9 @@ export default class VerifyRankCapByUserId extends ConsumeAction {
     private readonly verifyType;
     private readonly propertyId;
     private readonly rankCapValue;
-    constructor(namespaceName: string, experienceName: string, verifyType: StatusVerifyType, propertyId: string, rankCapValue: number, userId?: string);
+    private readonly multiplyValueSpecifyingQuantity;
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, experienceName: string, verifyType: StatusVerifyType, propertyId: string, rankCapValue: number, multiplyValueSpecifyingQuantity?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

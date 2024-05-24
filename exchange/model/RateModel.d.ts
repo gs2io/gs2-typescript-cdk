@@ -8,12 +8,10 @@ export default class RateModel {
     private readonly metadata;
     private readonly consumeActions;
     private readonly lockTime;
-    private readonly enableSkip;
-    private readonly skipConsumeActions;
     private readonly acquireActions;
     constructor(name: string, timingType: RateModelTimingType, options?: RateModelOptions | null);
     static timingTypeIsImmediate(name: string, options?: RateModelTimingTypeIsImmediateOptions | null): RateModel;
-    static timingTypeIsAwait(name: string, lockTime: number, enableSkip: boolean, options?: RateModelTimingTypeIsAwaitOptions | null): RateModel;
+    static timingTypeIsAwait(name: string, lockTime: number, options?: RateModelTimingTypeIsAwaitOptions | null): RateModel;
     properties(): {
         [name: string]: any;
     };

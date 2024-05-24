@@ -17,13 +17,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AddExperienceByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
+    constructor(namespaceName, experienceName, propertyId, experienceValue = null, truncateExperienceWhenRankUp = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.experienceValue = null;
+        this.truncateExperienceWhenRankUp = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.experienceName = experienceName;
         this.propertyId = propertyId;
         this.experienceValue = experienceValue !== null && experienceValue !== void 0 ? experienceValue : null;
+        this.truncateExperienceWhenRankUp = truncateExperienceWhenRankUp !== null && truncateExperienceWhenRankUp !== void 0 ? truncateExperienceWhenRankUp : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -42,6 +46,12 @@ class AddExperienceByUserId extends model_1.AcquireAction {
         }
         if (this.experienceValue != null) {
             properties["experienceValue"] = this.experienceValue;
+        }
+        if (this.truncateExperienceWhenRankUp != null) {
+            properties["truncateExperienceWhenRankUp"] = this.truncateExperienceWhenRankUp;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

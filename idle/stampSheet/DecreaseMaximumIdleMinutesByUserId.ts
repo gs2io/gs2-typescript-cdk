@@ -21,12 +21,14 @@ export default class DecreaseMaximumIdleMinutesByUserId extends ConsumeAction {
     private readonly userId: string;
     private readonly categoryName: string;
     private readonly decreaseMinutes: number|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         categoryName: string,
         decreaseMinutes: number|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class DecreaseMaximumIdleMinutesByUserId extends ConsumeAction {
         this.namespaceName = namespaceName;
         this.categoryName = categoryName;
         this.decreaseMinutes = decreaseMinutes ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class DecreaseMaximumIdleMinutesByUserId extends ConsumeAction {
         }
         if (this.decreaseMinutes != null) {
             properties["decreaseMinutes"] = this.decreaseMinutes;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

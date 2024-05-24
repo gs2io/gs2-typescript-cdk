@@ -17,16 +17,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SendMessageByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, metadata, readAcquireActions = null, expiresAt = null, expiresTimeSpan = null, userId = "#{userId}") {
+    constructor(namespaceName, metadata, readAcquireActions = null, expiresAt = null, expiresTimeSpan = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.readAcquireActions = null;
         this.expiresAt = null;
         this.expiresTimeSpan = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.metadata = metadata;
         this.readAcquireActions = readAcquireActions !== null && readAcquireActions !== void 0 ? readAcquireActions : null;
         this.expiresAt = expiresAt !== null && expiresAt !== void 0 ? expiresAt : null;
         this.expiresTimeSpan = expiresTimeSpan !== null && expiresTimeSpan !== void 0 ? expiresTimeSpan : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -49,6 +51,9 @@ class SendMessageByUserId extends model_1.AcquireAction {
         }
         if (this.expiresTimeSpan != null) {
             properties["expiresTimeSpan"] = (_a = this.expiresTimeSpan) === null || _a === void 0 ? void 0 : _a.properties();
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

@@ -22,6 +22,7 @@ export default class AddGradeByUserId extends AcquireAction {
     private readonly gradeName: string;
     private readonly propertyId: string;
     private readonly gradeValue: number|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class AddGradeByUserId extends AcquireAction {
         gradeName: string,
         propertyId: string,
         gradeValue: number|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class AddGradeByUserId extends AcquireAction {
         this.gradeName = gradeName;
         this.propertyId = propertyId;
         this.gradeValue = gradeValue ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class AddGradeByUserId extends AcquireAction {
         }
         if (this.gradeValue != null) {
             properties["gradeValue"] = this.gradeValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

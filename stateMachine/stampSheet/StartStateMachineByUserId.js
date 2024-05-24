@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class StartStateMachineByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, args = null, ttl = null, userId = "#{userId}") {
+    constructor(namespaceName, args = null, ttl = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.args = null;
         this.ttl = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.args = args !== null && args !== void 0 ? args : null;
         this.ttl = ttl !== null && ttl !== void 0 ? ttl : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -39,6 +41,9 @@ class StartStateMachineByUserId extends model_1.AcquireAction {
         }
         if (this.ttl != null) {
             properties["ttl"] = this.ttl;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

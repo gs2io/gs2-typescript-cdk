@@ -21,12 +21,14 @@ export default class RecordReceipt extends ConsumeAction {
     private readonly userId: string;
     private readonly contentsId: string;
     private readonly receipt: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         contentsId: string,
         receipt: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class RecordReceipt extends ConsumeAction {
         this.namespaceName = namespaceName;
         this.contentsId = contentsId;
         this.receipt = receipt;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class RecordReceipt extends ConsumeAction {
         }
         if (this.receipt != null) {
             properties["receipt"] = this.receipt;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

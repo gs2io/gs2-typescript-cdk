@@ -90,6 +90,7 @@ export default class BigInventoryModelRef {
         itemName: string,
         verifyType: BigItemVerifyType,
         count: string,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifyBigItemByUserId {
         return new VerifyBigItemByUserId(
@@ -98,6 +99,7 @@ export default class BigInventoryModelRef {
             itemName,
             verifyType,
             count,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

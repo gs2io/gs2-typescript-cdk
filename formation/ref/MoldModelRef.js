@@ -21,6 +21,7 @@ const FormModelRef_1 = tslib_1.__importDefault(require("./FormModelRef"));
 const AddMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddMoldCapacityByUserId"));
 const SetMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMoldCapacityByUserId"));
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
+const SetFormByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetFormByUserId"));
 const SubMoldCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SubMoldCapacityByUserId"));
 class MoldModelRef {
     constructor(namespaceName, moldModelName) {
@@ -38,6 +39,9 @@ class MoldModelRef {
     }
     acquireActionsToFormProperties(index, acquireAction, config = null, userId = "#{userId}") {
         return new AcquireActionsToFormProperties_1.default(this.namespaceName, this.moldModelName, index, acquireAction, config, userId);
+    }
+    setForm(index, slots, userId = "#{userId}") {
+        return new SetFormByUserId_1.default(this.namespaceName, this.moldModelName, index, slots, userId);
     }
     subMoldCapacity(capacity, userId = "#{userId}") {
         return new SubMoldCapacityByUserId_1.default(this.namespaceName, this.moldModelName, capacity, userId);

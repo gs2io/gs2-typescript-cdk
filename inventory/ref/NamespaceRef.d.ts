@@ -43,13 +43,13 @@ export default class NamespaceRef {
     setSimpleItems(inventoryName: string, counts: HeldCount[], userId?: string): SetSimpleItemsByUserId;
     acquireBigItem(inventoryName: string, itemName: string, acquireCount: string, userId?: string): AcquireBigItemByUserId;
     setBigItem(inventoryName: string, itemName: string, count: string, userId?: string): SetBigItemByUserId;
-    verifyInventoryCurrentMaxCapacity(inventoryName: string, verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, userId?: string): VerifyInventoryCurrentMaxCapacityByUserId;
+    verifyInventoryCurrentMaxCapacity(inventoryName: string, verifyType: InventoryVerifyType, currentInventoryMaxCapacity: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyInventoryCurrentMaxCapacityByUserId;
     consumeItemSet(inventoryName: string, itemName: string, consumeCount: number, itemSetName?: string | null, userId?: string): ConsumeItemSetByUserId;
-    verifyItemSet(inventoryName: string, itemName: string, verifyType: ItemSetVerifyType, count: number, itemSetName?: string | null, userId?: string): VerifyItemSetByUserId;
+    verifyItemSet(inventoryName: string, itemName: string, verifyType: ItemSetVerifyType, count: number, itemSetName?: string | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyItemSetByUserId;
     verifyReferenceOf(inventoryName: string, itemName: string, referenceOf: string, verifyType: ReferenceOfVerifyType, itemSetName?: string | null, userId?: string): VerifyReferenceOfByUserId;
     consumeSimpleItems(inventoryName: string, consumeCounts: ConsumeCount[], userId?: string): ConsumeSimpleItemsByUserId;
-    verifySimpleItem(inventoryName: string, itemName: string, verifyType: SimpleItemVerifyType, count: number, userId?: string): VerifySimpleItemByUserId;
+    verifySimpleItem(inventoryName: string, itemName: string, verifyType: SimpleItemVerifyType, count: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifySimpleItemByUserId;
     consumeBigItem(inventoryName: string, itemName: string, consumeCount: string, userId?: string): ConsumeBigItemByUserId;
-    verifyBigItem(inventoryName: string, itemName: string, verifyType: BigItemVerifyType, count: string, userId?: string): VerifyBigItemByUserId;
+    verifyBigItem(inventoryName: string, itemName: string, verifyType: BigItemVerifyType, count: string, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyBigItemByUserId;
     grn(): string;
 }

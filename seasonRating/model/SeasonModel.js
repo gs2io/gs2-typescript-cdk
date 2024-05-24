@@ -2,12 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class SeasonModel {
     constructor(name, tiers, experienceModelId, options = null) {
-        var _a;
+        var _a, _b;
         this.metadata = null;
+        this.challengePeriodEventId = null;
         this.name = name;
         this.tiers = tiers;
         this.experienceModelId = experienceModelId;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
+        this.challengePeriodEventId = (_b = options === null || options === void 0 ? void 0 : options.challengePeriodEventId) !== null && _b !== void 0 ? _b : null;
     }
     properties() {
         let properties = {};
@@ -22,6 +24,9 @@ class SeasonModel {
         }
         if (this.experienceModelId != null) {
             properties["experienceModelId"] = this.experienceModelId;
+        }
+        if (this.challengePeriodEventId != null) {
+            properties["challengePeriodEventId"] = this.challengePeriodEventId;
         }
         return properties;
     }

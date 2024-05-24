@@ -25,6 +25,7 @@ export default class VerifyReferenceOfByUserId extends ConsumeAction {
     private readonly referenceOf: string;
     private readonly verifyType: ReferenceOfVerifyType;
     private readonly itemSetName: string|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -34,6 +35,7 @@ export default class VerifyReferenceOfByUserId extends ConsumeAction {
         referenceOf: string,
         verifyType: ReferenceOfVerifyType,
         itemSetName: string|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -44,6 +46,7 @@ export default class VerifyReferenceOfByUserId extends ConsumeAction {
         this.referenceOf = referenceOf;
         this.verifyType = verifyType;
         this.itemSetName = itemSetName ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -68,6 +71,9 @@ export default class VerifyReferenceOfByUserId extends ConsumeAction {
         }
         if (this.verifyType != null) {
             properties["verifyType"] = this.verifyType;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

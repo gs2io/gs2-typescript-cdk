@@ -17,13 +17,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyRankCapByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, experienceName, verifyType, propertyId, rankCapValue, userId = "#{userId}") {
+    constructor(namespaceName, experienceName, verifyType, propertyId, rankCapValue, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.experienceName = experienceName;
         this.verifyType = verifyType;
         this.propertyId = propertyId;
         this.rankCapValue = rankCapValue;
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity !== null && multiplyValueSpecifyingQuantity !== void 0 ? multiplyValueSpecifyingQuantity : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -45,6 +49,12 @@ class VerifyRankCapByUserId extends model_1.ConsumeAction {
         }
         if (this.rankCapValue != null) {
             properties["rankCapValue"] = this.rankCapValue;
+        }
+        if (this.multiplyValueSpecifyingQuantity != null) {
+            properties["multiplyValueSpecifyingQuantity"] = this.multiplyValueSpecifyingQuantity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

@@ -23,8 +23,10 @@ import LogSetting from "../../core/model/LogSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import RatingModel from "./RatingModel";
+import { NamespaceEnableDisconnectDetection } from "./enum/NamespaceEnableDisconnectDetection";
 import { NamespaceCreateGatheringTriggerType } from "./enum/NamespaceCreateGatheringTriggerType";
 import { NamespaceCompleteMatchmakingTriggerType } from "./enum/NamespaceCompleteMatchmakingTriggerType";
+import { NamespaceEnableCollaborateSeasonRating } from "./enum/NamespaceEnableCollaborateSeasonRating";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -35,10 +37,15 @@ export default class Namespace extends CdkResource {
     private readonly completeMatchmakingTriggerType: NamespaceCompleteMatchmakingTriggerType;
     private readonly description: string|null = null;
     private readonly enableRating: boolean|null = null;
+    private readonly enableDisconnectDetection: NamespaceEnableDisconnectDetection|null = null;
+    private readonly disconnectDetectionTimeoutSeconds: number|null = null;
     private readonly createGatheringTriggerRealtimeNamespaceId: string|null = null;
     private readonly createGatheringTriggerScriptId: string|null = null;
     private readonly completeMatchmakingTriggerRealtimeNamespaceId: string|null = null;
     private readonly completeMatchmakingTriggerScriptId: string|null = null;
+    private readonly enableCollaborateSeasonRating: NamespaceEnableCollaborateSeasonRating|null = null;
+    private readonly collaborateSeasonRatingNamespaceId: string|null = null;
+    private readonly collaborateSeasonRatingTtl: number|null = null;
     private readonly changeRatingScript: ScriptSetting|null = null;
     private readonly joinNotification: NotificationSetting|null = null;
     private readonly leaveNotification: NotificationSetting|null = null;
@@ -63,10 +70,15 @@ export default class Namespace extends CdkResource {
         this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         this.description = options?.description ?? null;
         this.enableRating = options?.enableRating ?? null;
+        this.enableDisconnectDetection = options?.enableDisconnectDetection ?? null;
+        this.disconnectDetectionTimeoutSeconds = options?.disconnectDetectionTimeoutSeconds ?? null;
         this.createGatheringTriggerRealtimeNamespaceId = options?.createGatheringTriggerRealtimeNamespaceId ?? null;
         this.createGatheringTriggerScriptId = options?.createGatheringTriggerScriptId ?? null;
         this.completeMatchmakingTriggerRealtimeNamespaceId = options?.completeMatchmakingTriggerRealtimeNamespaceId ?? null;
         this.completeMatchmakingTriggerScriptId = options?.completeMatchmakingTriggerScriptId ?? null;
+        this.enableCollaborateSeasonRating = options?.enableCollaborateSeasonRating ?? null;
+        this.collaborateSeasonRatingNamespaceId = options?.collaborateSeasonRatingNamespaceId ?? null;
+        this.collaborateSeasonRatingTtl = options?.collaborateSeasonRatingTtl ?? null;
         this.changeRatingScript = options?.changeRatingScript ?? null;
         this.joinNotification = options?.joinNotification ?? null;
         this.leaveNotification = options?.leaveNotification ?? null;
@@ -102,6 +114,12 @@ export default class Namespace extends CdkResource {
         if (this.enableRating != null) {
             properties["EnableRating"] = this.enableRating;
         }
+        if (this.enableDisconnectDetection != null) {
+            properties["EnableDisconnectDetection"] = this.enableDisconnectDetection;
+        }
+        if (this.disconnectDetectionTimeoutSeconds != null) {
+            properties["DisconnectDetectionTimeoutSeconds"] = this.disconnectDetectionTimeoutSeconds;
+        }
         if (this.createGatheringTriggerType != null) {
             properties["CreateGatheringTriggerType"] = this.createGatheringTriggerType;
         }
@@ -119,6 +137,15 @@ export default class Namespace extends CdkResource {
         }
         if (this.completeMatchmakingTriggerScriptId != null) {
             properties["CompleteMatchmakingTriggerScriptId"] = this.completeMatchmakingTriggerScriptId;
+        }
+        if (this.enableCollaborateSeasonRating != null) {
+            properties["EnableCollaborateSeasonRating"] = this.enableCollaborateSeasonRating;
+        }
+        if (this.collaborateSeasonRatingNamespaceId != null) {
+            properties["CollaborateSeasonRatingNamespaceId"] = this.collaborateSeasonRatingNamespaceId;
+        }
+        if (this.collaborateSeasonRatingTtl != null) {
+            properties["CollaborateSeasonRatingTtl"] = this.collaborateSeasonRatingTtl;
         }
         if (this.changeRatingScript != null) {
             properties["ChangeRatingScript"] = this.changeRatingScript?.properties(

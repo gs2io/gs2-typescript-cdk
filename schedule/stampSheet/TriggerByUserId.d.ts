@@ -6,7 +6,8 @@ export default class TriggerByUserId extends AcquireAction {
     private readonly userId;
     private readonly triggerStrategy;
     private readonly ttl;
-    constructor(namespaceName: string, triggerName: string, triggerStrategy: TriggerTriggerStrategy, ttl: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, triggerName: string, triggerStrategy: TriggerTriggerStrategy, ttl: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

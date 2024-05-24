@@ -44,7 +44,7 @@ export default class CampaignModelRef {
                 ),
                 "serialKey",
                 this.namespaceName,
-                "master",
+                "model",
                 "campaign",
                 this.campaignModelName,
             ],

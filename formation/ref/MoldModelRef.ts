@@ -21,6 +21,8 @@ import SetMoldCapacityByUserId from "../stampSheet/SetMoldCapacityByUserId";
 import AcquireActionsToFormProperties from "../stampSheet/AcquireActionsToFormProperties";
 import { AcquireAction } from "../../core/model";
 import { Config } from "../../core/model";
+import SetFormByUserId from "../stampSheet/SetFormByUserId";
+import Slot from "../model/Slot";
 import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
 
 export default class MoldModelRef {
@@ -79,6 +81,20 @@ export default class MoldModelRef {
             index,
             acquireAction,
             config,
+            userId,
+        );
+    }
+
+    public setForm(
+        index: number,
+        slots: Slot[],
+        userId: string = "#{userId}",
+    ): SetFormByUserId {
+        return new SetFormByUserId(
+            this.namespaceName,
+            this.moldModelName,
+            index,
+            slots,
             userId,
         );
     }

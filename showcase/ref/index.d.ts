@@ -1,2 +1,4 @@
 import NamespaceRef from "./NamespaceRef";
-export { NamespaceRef, };
+import SalesItemRef from "./SalesItemRef";
+import SalesItemGroupRef from "./SalesItemGroupRef";
+export { NamespaceRef, SalesItemRef, SalesItemGroupRef, };

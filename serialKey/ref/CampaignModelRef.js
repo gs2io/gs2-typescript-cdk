@@ -29,7 +29,7 @@ class CampaignModelRef {
             func_1.GetAttr.ownerId().str(),
             "serialKey",
             this.namespaceName,
-            "master",
+            "model",
             "campaign",
             this.campaignModelName,
         ]).str();

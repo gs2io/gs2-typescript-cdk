@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import RepeatSetting from "../RepeatSetting";
 import { EventScheduleType } from "../enum/EventScheduleType";
 import { EventRepeatType } from "../enum/EventRepeatType";
 import { EventRepeatBeginDayOfWeek } from "../enum/EventRepeatBeginDayOfWeek";
@@ -22,12 +23,12 @@ export interface EventOptions {
     metadata?: string|null;
     absoluteBegin?: number|null;
     absoluteEnd?: number|null;
+    relativeTriggerName?: string|null;
     repeatBeginDayOfMonth?: number|null;
     repeatEndDayOfMonth?: number|null;
     repeatBeginDayOfWeek?: EventRepeatBeginDayOfWeek|null;
     repeatEndDayOfWeek?: EventRepeatEndDayOfWeek|null;
     repeatBeginHour?: number|null;
     repeatEndHour?: number|null;
-    relativeTriggerName?: string|null;
 }
 

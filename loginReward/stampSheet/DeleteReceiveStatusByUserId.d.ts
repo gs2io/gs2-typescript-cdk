@@ -3,7 +3,8 @@ export default class DeleteReceiveStatusByUserId extends AcquireAction {
     private readonly namespaceName;
     private readonly bonusModelName;
     private readonly userId;
-    constructor(namespaceName: string, bonusModelName: string, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, bonusModelName: string, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

@@ -36,8 +36,8 @@ class SimpleItemModelRef {
     consumeSimpleItems(consumeCounts, userId = "#{userId}") {
         return new ConsumeSimpleItemsByUserId_1.default(this.namespaceName, this.inventoryName, consumeCounts, userId);
     }
-    verifySimpleItem(verifyType, count, userId = "#{userId}") {
-        return new VerifySimpleItemByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, verifyType, count, userId);
+    verifySimpleItem(verifyType, count, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifySimpleItemByUserId_1.default(this.namespaceName, this.inventoryName, this.itemName, verifyType, count, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

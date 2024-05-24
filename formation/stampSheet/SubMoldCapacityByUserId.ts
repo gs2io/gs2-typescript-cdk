@@ -21,12 +21,14 @@ export default class SubMoldCapacityByUserId extends ConsumeAction {
     private readonly userId: string;
     private readonly moldModelName: string;
     private readonly capacity: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         moldModelName: string,
         capacity: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class SubMoldCapacityByUserId extends ConsumeAction {
         this.namespaceName = namespaceName;
         this.moldModelName = moldModelName;
         this.capacity = capacity;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class SubMoldCapacityByUserId extends ConsumeAction {
         }
         if (this.capacity != null) {
             properties["capacity"] = this.capacity;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

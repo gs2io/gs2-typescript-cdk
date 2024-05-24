@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import RepeatSetting from "./RepeatSetting";
 import { EventOptions } from "./options/EventOptions";
 import { EventScheduleTypeIsAbsoluteOptions } from "./options/EventScheduleTypeIsAbsoluteOptions";
 import { EventScheduleTypeIsRelativeOptions } from "./options/EventScheduleTypeIsRelativeOptions";
@@ -28,60 +29,64 @@ import { EventRepeatEndDayOfWeek } from "./enum/EventRepeatEndDayOfWeek";
 export default class Event {
     private readonly name: string;
     private readonly scheduleType: EventScheduleType;
+    private readonly repeatSetting: RepeatSetting;
     private readonly repeatType: EventRepeatType;
     private readonly metadata: string|null = null;
     private readonly absoluteBegin: number|null = null;
     private readonly absoluteEnd: number|null = null;
+    private readonly relativeTriggerName: string|null = null;
     private readonly repeatBeginDayOfMonth: number|null = null;
     private readonly repeatEndDayOfMonth: number|null = null;
     private readonly repeatBeginDayOfWeek: EventRepeatBeginDayOfWeek|null = null;
     private readonly repeatEndDayOfWeek: EventRepeatEndDayOfWeek|null = null;
     private readonly repeatBeginHour: number|null = null;
     private readonly repeatEndHour: number|null = null;
-    private readonly relativeTriggerName: string|null = null;
 
     public constructor(
         name: string,
         scheduleType: EventScheduleType,
+        repeatSetting: RepeatSetting,
         repeatType: EventRepeatType,
         options: EventOptions|null = null,
     ) {
         this.name = name;
         this.scheduleType = scheduleType;
+        this.repeatSetting = repeatSetting;
         this.repeatType = repeatType;
         this.metadata = options?.metadata ?? null;
         this.absoluteBegin = options?.absoluteBegin ?? null;
         this.absoluteEnd = options?.absoluteEnd ?? null;
+        this.relativeTriggerName = options?.relativeTriggerName ?? null;
         this.repeatBeginDayOfMonth = options?.repeatBeginDayOfMonth ?? null;
         this.repeatEndDayOfMonth = options?.repeatEndDayOfMonth ?? null;
         this.repeatBeginDayOfWeek = options?.repeatBeginDayOfWeek ?? null;
         this.repeatEndDayOfWeek = options?.repeatEndDayOfWeek ?? null;
         this.repeatBeginHour = options?.repeatBeginHour ?? null;
         this.repeatEndHour = options?.repeatEndHour ?? null;
-        this.relativeTriggerName = options?.relativeTriggerName ?? null;
     }
 
     public static scheduleTypeIsAbsolute(
         name: string,
+        repeatSetting: RepeatSetting,
         repeatType: EventRepeatType,
-        absoluteBegin: number,
-        absoluteEnd: number,
         options: EventScheduleTypeIsAbsoluteOptions|null = null,
     ): Event {
         return new Event(
             name,
             EventScheduleType.ABSOLUTE,
+            repeatSetting,
             repeatType,
             {
-                absoluteBegin: absoluteBegin,
-                absoluteEnd: absoluteEnd,
                 metadata: options?.metadata,
+                absoluteBegin: options?.absoluteBegin,
+                absoluteEnd: options?.absoluteEnd,
             },
         );
     }
 
     public static scheduleTypeIsRelative(
         name: string,
+        repeatSetting: RepeatSetting,
         repeatType: EventRepeatType,
         relativeTriggerName: string,
         options: EventScheduleTypeIsRelativeOptions|null = null,
@@ -89,10 +94,13 @@ export default class Event {
         return new Event(
             name,
             EventScheduleType.RELATIVE,
+            repeatSetting,
             repeatType,
             {
                 relativeTriggerName: relativeTriggerName,
                 metadata: options?.metadata,
+                absoluteBegin: options?.absoluteBegin,
+                absoluteEnd: options?.absoluteEnd,
             },
         );
     }
@@ -100,14 +108,18 @@ export default class Event {
     public static repeatTypeIsAlways(
         name: string,
         scheduleType: EventScheduleType,
+        repeatSetting: RepeatSetting,
         options: EventRepeatTypeIsAlwaysOptions|null = null,
     ): Event {
         return new Event(
             name,
             scheduleType,
+            repeatSetting,
             EventRepeatType.ALWAYS,
             {
                 metadata: options?.metadata,
+                absoluteBegin: options?.absoluteBegin,
+                absoluteEnd: options?.absoluteEnd,
             },
         );
     }
@@ -115,6 +127,7 @@ export default class Event {
     public static repeatTypeIsDaily(
         name: string,
         scheduleType: EventScheduleType,
+        repeatSetting: RepeatSetting,
         repeatBeginHour: number,
         repeatEndHour: number,
         options: EventRepeatTypeIsDailyOptions|null = null,
@@ -122,11 +135,14 @@ export default class Event {
         return new Event(
             name,
             scheduleType,
+            repeatSetting,
             EventRepeatType.DAILY,
             {
                 repeatBeginHour: repeatBeginHour,
                 repeatEndHour: repeatEndHour,
                 metadata: options?.metadata,
+                absoluteBegin: options?.absoluteBegin,
+                absoluteEnd: options?.absoluteEnd,
             },
         );
     }
@@ -134,6 +150,7 @@ export default class Event {
     public static repeatTypeIsWeekly(
         name: string,
         scheduleType: EventScheduleType,
+        repeatSetting: RepeatSetting,
         repeatBeginDayOfWeek: EventRepeatBeginDayOfWeek,
         repeatEndDayOfWeek: EventRepeatEndDayOfWeek,
         repeatBeginHour: number,
@@ -143,6 +160,7 @@ export default class Event {
         return new Event(
             name,
             scheduleType,
+            repeatSetting,
             EventRepeatType.WEEKLY,
             {
                 repeatBeginDayOfWeek: repeatBeginDayOfWeek,
@@ -150,6 +168,8 @@ export default class Event {
                 repeatBeginHour: repeatBeginHour,
                 repeatEndHour: repeatEndHour,
                 metadata: options?.metadata,
+                absoluteBegin: options?.absoluteBegin,
+                absoluteEnd: options?.absoluteEnd,
             },
         );
     }
@@ -157,6 +177,7 @@ export default class Event {
     public static repeatTypeIsMonthly(
         name: string,
         scheduleType: EventScheduleType,
+        repeatSetting: RepeatSetting,
         repeatBeginDayOfMonth: number,
         repeatEndDayOfMonth: number,
         repeatBeginHour: number,
@@ -166,6 +187,7 @@ export default class Event {
         return new Event(
             name,
             scheduleType,
+            repeatSetting,
             EventRepeatType.MONTHLY,
             {
                 repeatBeginDayOfMonth: repeatBeginDayOfMonth,
@@ -173,6 +195,8 @@ export default class Event {
                 repeatBeginHour: repeatBeginHour,
                 repeatEndHour: repeatEndHour,
                 metadata: options?.metadata,
+                absoluteBegin: options?.absoluteBegin,
+                absoluteEnd: options?.absoluteEnd,
             },
         );
     }
@@ -190,14 +214,21 @@ export default class Event {
         if (this.scheduleType != null) {
             properties["scheduleType"] = this.scheduleType;
         }
-        if (this.repeatType != null) {
-            properties["repeatType"] = this.repeatType;
-        }
         if (this.absoluteBegin != null) {
             properties["absoluteBegin"] = this.absoluteBegin;
         }
         if (this.absoluteEnd != null) {
             properties["absoluteEnd"] = this.absoluteEnd;
+        }
+        if (this.relativeTriggerName != null) {
+            properties["relativeTriggerName"] = this.relativeTriggerName;
+        }
+        if (this.repeatSetting != null) {
+            properties["repeatSetting"] = this.repeatSetting?.properties(
+            );
+        }
+        if (this.repeatType != null) {
+            properties["repeatType"] = this.repeatType;
         }
         if (this.repeatBeginDayOfMonth != null) {
             properties["repeatBeginDayOfMonth"] = this.repeatBeginDayOfMonth;
@@ -216,9 +247,6 @@ export default class Event {
         }
         if (this.repeatEndHour != null) {
             properties["repeatEndHour"] = this.repeatEndHour;
-        }
-        if (this.relativeTriggerName != null) {
-            properties["relativeTriggerName"] = this.relativeTriggerName;
         }
 
         return properties;

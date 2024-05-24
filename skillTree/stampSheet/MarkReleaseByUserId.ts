@@ -21,12 +21,14 @@ export default class MarkReleaseByUserId extends AcquireAction {
     private readonly userId: string;
     private readonly propertyId: string;
     private readonly nodeModelNames: string[];
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         propertyId: string,
         nodeModelNames: string[],
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class MarkReleaseByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.propertyId = propertyId;
         this.nodeModelNames = nodeModelNames;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class MarkReleaseByUserId extends AcquireAction {
         }
         if (this.nodeModelNames != null) {
             properties["nodeModelNames"] = this.nodeModelNames;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

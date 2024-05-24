@@ -20,17 +20,20 @@ export default class AcquirePointByUserId extends AcquireAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly point: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         point: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
 
         this.namespaceName = namespaceName;
         this.point = point;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -46,6 +49,9 @@ export default class AcquirePointByUserId extends AcquireAction {
         }
         if (this.point != null) {
             properties["point"] = this.point;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

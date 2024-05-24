@@ -19,6 +19,6 @@ export default class NamespaceRef {
     reDrawRarityParameterStatus(parameterName: string, propertyId: string, fixedParameterNames?: string[] | null, userId?: string): ReDrawRarityParameterStatusByUserId;
     addRarityParameterStatus(parameterName: string, propertyId: string, count?: number | null, userId?: string): AddRarityParameterStatusByUserId;
     setRarityParameterStatus(parameterName: string, propertyId: string, parameterValues?: RarityParameterValue[] | null, userId?: string): SetRarityParameterStatusByUserId;
-    verifyRarityParameterStatus(parameterName: string, propertyId: string, verifyType: RarityParameterStatusVerifyType, parameterValueName?: string | null, parameterCount?: number | null, userId?: string): VerifyRarityParameterStatusByUserId;
+    verifyRarityParameterStatus(parameterName: string, propertyId: string, verifyType: RarityParameterStatusVerifyType, parameterValueName?: string | null, parameterCount?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyRarityParameterStatusByUserId;
     grn(): string;
 }

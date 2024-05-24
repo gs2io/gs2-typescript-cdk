@@ -6,7 +6,8 @@ export default class SetBalanceParameterStatusByUserId extends AcquireAction {
     private readonly parameterName;
     private readonly propertyId;
     private readonly parameterValues;
-    constructor(namespaceName: string, parameterName: string, propertyId: string, parameterValues: BalanceParameterValue[], userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, parameterName: string, propertyId: string, parameterValues: BalanceParameterValue[], timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

@@ -78,6 +78,7 @@ export default class SimpleItemModelRef {
     public verifySimpleItem(
         verifyType: SimpleItemVerifyType,
         count: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
     ): VerifySimpleItemByUserId {
         return new VerifySimpleItemByUserId(
@@ -86,6 +87,7 @@ export default class SimpleItemModelRef {
             this.itemName,
             verifyType,
             count,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

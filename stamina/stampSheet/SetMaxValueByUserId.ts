@@ -21,12 +21,14 @@ export default class SetMaxValueByUserId extends AcquireAction {
     private readonly staminaName: string;
     private readonly userId: string;
     private readonly maxValue: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         staminaName: string,
         maxValue: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class SetMaxValueByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
         this.maxValue = maxValue;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class SetMaxValueByUserId extends AcquireAction {
         }
         if (this.maxValue != null) {
             properties["maxValue"] = this.maxValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

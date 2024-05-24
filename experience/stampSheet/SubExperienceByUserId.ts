@@ -22,6 +22,7 @@ export default class SubExperienceByUserId extends ConsumeAction {
     private readonly experienceName: string;
     private readonly propertyId: string;
     private readonly experienceValue: number|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class SubExperienceByUserId extends ConsumeAction {
         experienceName: string,
         propertyId: string,
         experienceValue: number|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class SubExperienceByUserId extends ConsumeAction {
         this.experienceName = experienceName;
         this.propertyId = propertyId;
         this.experienceValue = experienceValue ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class SubExperienceByUserId extends ConsumeAction {
         }
         if (this.experienceValue != null) {
             properties["experienceValue"] = this.experienceValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

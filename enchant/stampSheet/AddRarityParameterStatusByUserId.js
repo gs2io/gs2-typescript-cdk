@@ -17,13 +17,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AddRarityParameterStatusByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, parameterName, propertyId, count = null, userId = "#{userId}") {
+    constructor(namespaceName, parameterName, propertyId, count = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.count = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.parameterName = parameterName;
         this.propertyId = propertyId;
         this.count = count !== null && count !== void 0 ? count : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -42,6 +44,9 @@ class AddRarityParameterStatusByUserId extends model_1.AcquireAction {
         }
         if (this.count != null) {
             properties["count"] = this.count;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NamespaceRef = void 0;
+exports.SalesItemGroupRef = exports.SalesItemRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,4 +19,8 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
+const SalesItemRef_1 = tslib_1.__importDefault(require("./SalesItemRef"));
+exports.SalesItemRef = SalesItemRef_1.default;
+const SalesItemGroupRef_1 = tslib_1.__importDefault(require("./SalesItemGroupRef"));
+exports.SalesItemGroupRef = SalesItemGroupRef_1.default;
 //# sourceMappingURL=index.js.map

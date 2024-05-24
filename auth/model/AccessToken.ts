@@ -18,20 +18,27 @@ import { AccessTokenOptions } from "./options/AccessTokenOptions";
 export default class AccessToken {
     private readonly ownerId: string;
     private readonly userId: string;
+    private readonly realUserId: string;
     private readonly expire: number;
     private readonly timeOffset: number;
+    private readonly federationFromUserId: string|null = null;
+    private readonly federationPolicyDocument: string|null = null;
 
     public constructor(
         ownerId: string,
         userId: string,
+        realUserId: string,
         expire: number,
         timeOffset: number,
         options: AccessTokenOptions|null = null,
     ) {
         this.ownerId = ownerId;
         this.userId = userId;
+        this.realUserId = realUserId;
         this.expire = expire;
         this.timeOffset = timeOffset;
+        this.federationFromUserId = options?.federationFromUserId ?? null;
+        this.federationPolicyDocument = options?.federationPolicyDocument ?? null;
     }
 
     public properties(
@@ -43,6 +50,15 @@ export default class AccessToken {
         }
         if (this.userId != null) {
             properties["userId"] = this.userId;
+        }
+        if (this.realUserId != null) {
+            properties["realUserId"] = this.realUserId;
+        }
+        if (this.federationFromUserId != null) {
+            properties["federationFromUserId"] = this.federationFromUserId;
+        }
+        if (this.federationPolicyDocument != null) {
+            properties["federationPolicyDocument"] = this.federationPolicyDocument;
         }
         if (this.expire != null) {
             properties["expire"] = this.expire;

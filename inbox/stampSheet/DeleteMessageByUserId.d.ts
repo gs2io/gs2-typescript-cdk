@@ -3,7 +3,8 @@ export default class DeleteMessageByUserId extends ConsumeAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly messageName;
-    constructor(namespaceName: string, messageName?: string | null, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, messageName?: string | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

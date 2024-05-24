@@ -21,12 +21,14 @@ export default class SetMaximumIdleMinutesByUserId extends AcquireAction {
     private readonly userId: string;
     private readonly categoryName: string;
     private readonly maximumIdleMinutes: number|null = null;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         categoryName: string,
         maximumIdleMinutes: number|null = null,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class SetMaximumIdleMinutesByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.categoryName = categoryName;
         this.maximumIdleMinutes = maximumIdleMinutes ?? null;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class SetMaximumIdleMinutesByUserId extends AcquireAction {
         }
         if (this.maximumIdleMinutes != null) {
             properties["maximumIdleMinutes"] = this.maximumIdleMinutes;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

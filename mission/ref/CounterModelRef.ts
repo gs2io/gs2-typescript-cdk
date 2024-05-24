@@ -16,7 +16,12 @@
 
 import {GetAttr, Join} from "../../core/func";
 import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
+import SetCounterByUserId from "../stampSheet/SetCounterByUserId";
+import ScopedValue from "../model/ScopedValue";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
+import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
+import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
+import { CounterResetType } from "../stampSheet/enum/CounterResetType";
 
 export default class CounterModelRef {
     private readonly namespaceName: string;
@@ -42,6 +47,18 @@ export default class CounterModelRef {
         );
     }
 
+    public setCounter(
+        values: ScopedValue[]|null = null,
+        userId: string = "#{userId}",
+    ): SetCounterByUserId {
+        return new SetCounterByUserId(
+            this.namespaceName,
+            this.counterName,
+            values,
+            userId,
+        );
+    }
+
     public decreaseCounter(
         value: number,
         userId: string = "#{userId}",
@@ -50,6 +67,24 @@ export default class CounterModelRef {
             this.namespaceName,
             this.counterName,
             value,
+            userId,
+        );
+    }
+
+    public verifyCounterValue(
+        verifyType: CounterVerifyType,
+        resetType: CounterResetType,
+        value: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyCounterValueByUserId {
+        return new VerifyCounterValueByUserId(
+            this.namespaceName,
+            this.counterName,
+            verifyType,
+            resetType,
+            value,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

@@ -21,12 +21,14 @@ export default class AddCapacityByUserId extends AcquireAction {
     private readonly inventoryName: string;
     private readonly userId: string;
     private readonly addCapacityValue: number;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         inventoryName: string,
         addCapacityValue: number,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -34,6 +36,7 @@ export default class AddCapacityByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.addCapacityValue = addCapacityValue;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -52,6 +55,9 @@ export default class AddCapacityByUserId extends AcquireAction {
         }
         if (this.addCapacityValue != null) {
             properties["addCapacityValue"] = this.addCapacityValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

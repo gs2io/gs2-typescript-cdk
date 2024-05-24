@@ -7,7 +7,10 @@ export default class Namespace extends CdkResource {
     private readonly name;
     private readonly admob;
     private readonly unityAd;
+    private readonly appLovinMaxes;
     private readonly description;
+    private readonly acquirePointScript;
+    private readonly consumePointScript;
     private readonly changePointNotification;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);

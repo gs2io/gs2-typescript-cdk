@@ -17,12 +17,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class SubRankCapByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, experienceName, propertyId, rankCapValue, userId = "#{userId}") {
+    constructor(namespaceName, experienceName, propertyId, rankCapValue, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.experienceName = experienceName;
         this.propertyId = propertyId;
         this.rankCapValue = rankCapValue;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -41,6 +43,9 @@ class SubRankCapByUserId extends model_1.ConsumeAction {
         }
         if (this.rankCapValue != null) {
             properties["rankCapValue"] = this.rankCapValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

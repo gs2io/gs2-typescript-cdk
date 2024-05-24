@@ -17,11 +17,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class AcquireItemSetByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, inventoryName, itemName, acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, userId = "#{userId}") {
+    constructor(namespaceName, inventoryName, itemName, acquireCount, expiresAt = null, createNewItemSet = null, itemSetName = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.expiresAt = null;
         this.createNewItemSet = null;
         this.itemSetName = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.itemName = itemName;
@@ -29,6 +30,7 @@ class AcquireItemSetByUserId extends model_1.AcquireAction {
         this.expiresAt = expiresAt !== null && expiresAt !== void 0 ? expiresAt : null;
         this.createNewItemSet = createNewItemSet !== null && createNewItemSet !== void 0 ? createNewItemSet : null;
         this.itemSetName = itemSetName !== null && itemSetName !== void 0 ? itemSetName : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -56,6 +58,9 @@ class AcquireItemSetByUserId extends model_1.AcquireAction {
         }
         if (this.itemSetName != null) {
             properties["itemSetName"] = this.itemSetName;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 
 export default class SalesItemGroupRef {
+
     private readonly namespaceName: string;
     private readonly displayItemId: string;
 

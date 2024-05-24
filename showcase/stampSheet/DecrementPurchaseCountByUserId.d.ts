@@ -5,7 +5,8 @@ export default class DecrementPurchaseCountByUserId extends AcquireAction {
     private readonly displayItemName;
     private readonly userId;
     private readonly count;
-    constructor(namespaceName: string, showcaseName: string, displayItemName: string, count: number, userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, showcaseName: string, displayItemName: string, count: number, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

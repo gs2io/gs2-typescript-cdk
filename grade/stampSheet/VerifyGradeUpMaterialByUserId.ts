@@ -24,6 +24,7 @@ export default class VerifyGradeUpMaterialByUserId extends ConsumeAction {
     private readonly verifyType: StatusVerifyType;
     private readonly propertyId: string;
     private readonly materialPropertyId: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -32,6 +33,7 @@ export default class VerifyGradeUpMaterialByUserId extends ConsumeAction {
         verifyType: StatusVerifyType,
         propertyId: string,
         materialPropertyId: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -41,6 +43,7 @@ export default class VerifyGradeUpMaterialByUserId extends ConsumeAction {
         this.verifyType = verifyType;
         this.propertyId = propertyId;
         this.materialPropertyId = materialPropertyId;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -65,6 +68,9 @@ export default class VerifyGradeUpMaterialByUserId extends ConsumeAction {
         }
         if (this.materialPropertyId != null) {
             properties["materialPropertyId"] = this.materialPropertyId;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

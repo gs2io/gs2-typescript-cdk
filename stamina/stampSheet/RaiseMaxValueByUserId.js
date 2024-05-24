@@ -17,11 +17,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class RaiseMaxValueByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, staminaName, raiseValue, userId = "#{userId}") {
+    constructor(namespaceName, staminaName, raiseValue, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.staminaName = staminaName;
         this.raiseValue = raiseValue;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -37,6 +39,9 @@ class RaiseMaxValueByUserId extends model_1.AcquireAction {
         }
         if (this.raiseValue != null) {
             properties["raiseValue"] = this.raiseValue;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

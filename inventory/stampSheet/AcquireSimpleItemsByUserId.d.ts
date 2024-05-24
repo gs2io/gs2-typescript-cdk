@@ -5,7 +5,8 @@ export default class AcquireSimpleItemsByUserId extends AcquireAction {
     private readonly inventoryName;
     private readonly userId;
     private readonly acquireCounts;
-    constructor(namespaceName: string, inventoryName: string, acquireCounts: AcquireCount[], userId?: string);
+    private readonly timeOffsetToken;
+    constructor(namespaceName: string, inventoryName: string, acquireCounts: AcquireCount[], timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

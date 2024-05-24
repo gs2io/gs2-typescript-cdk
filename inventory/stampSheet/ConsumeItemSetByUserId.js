@@ -17,14 +17,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class ConsumeItemSetByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, inventoryName, itemName, consumeCount, itemSetName = null, userId = "#{userId}") {
+    constructor(namespaceName, inventoryName, itemName, consumeCount, itemSetName = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.itemSetName = null;
+        this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.inventoryName = inventoryName;
         this.itemName = itemName;
         this.consumeCount = consumeCount;
         this.itemSetName = itemSetName !== null && itemSetName !== void 0 ? itemSetName : null;
+        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
     request() {
@@ -46,6 +48,9 @@ class ConsumeItemSetByUserId extends model_1.ConsumeAction {
         }
         if (this.itemSetName != null) {
             properties["itemSetName"] = this.itemSetName;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
         return properties;
     }

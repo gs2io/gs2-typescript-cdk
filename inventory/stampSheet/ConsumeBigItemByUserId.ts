@@ -22,6 +22,7 @@ export default class ConsumeBigItemByUserId extends ConsumeAction {
     private readonly userId: string;
     private readonly itemName: string;
     private readonly consumeCount: string;
+    private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
@@ -29,6 +30,7 @@ export default class ConsumeBigItemByUserId extends ConsumeAction {
         inventoryName: string,
         itemName: string,
         consumeCount: string,
+        timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
         super();
@@ -37,6 +39,7 @@ export default class ConsumeBigItemByUserId extends ConsumeAction {
         this.inventoryName = inventoryName;
         this.itemName = itemName;
         this.consumeCount = consumeCount;
+        this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
 
@@ -58,6 +61,9 @@ export default class ConsumeBigItemByUserId extends ConsumeAction {
         }
         if (this.consumeCount != null) {
             properties["consumeCount"] = this.consumeCount;
+        }
+        if (this.timeOffsetToken != null) {
+            properties["timeOffsetToken"] = this.timeOffsetToken;
         }
 
         return properties;

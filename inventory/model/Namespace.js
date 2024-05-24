@@ -22,7 +22,7 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         super("Inventory_Namespace_" + name);
         this.description = null;
         this.acquireScript = null;
@@ -30,6 +30,8 @@ class Namespace extends model_1.CdkResource {
         this.consumeScript = null;
         this.simpleItemAcquireScript = null;
         this.simpleItemConsumeScript = null;
+        this.bigItemAcquireScript = null;
+        this.bigItemConsumeScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -39,7 +41,9 @@ class Namespace extends model_1.CdkResource {
         this.consumeScript = (_d = options === null || options === void 0 ? void 0 : options.consumeScript) !== null && _d !== void 0 ? _d : null;
         this.simpleItemAcquireScript = (_e = options === null || options === void 0 ? void 0 : options.simpleItemAcquireScript) !== null && _e !== void 0 ? _e : null;
         this.simpleItemConsumeScript = (_f = options === null || options === void 0 ? void 0 : options.simpleItemConsumeScript) !== null && _f !== void 0 ? _f : null;
-        this.logSetting = (_g = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _g !== void 0 ? _g : null;
+        this.bigItemAcquireScript = (_g = options === null || options === void 0 ? void 0 : options.bigItemAcquireScript) !== null && _g !== void 0 ? _g : null;
+        this.bigItemConsumeScript = (_h = options === null || options === void 0 ? void 0 : options.bigItemConsumeScript) !== null && _h !== void 0 ? _h : null;
+        this.logSetting = (_j = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _j !== void 0 ? _j : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -49,7 +53,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Inventory::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -72,8 +76,14 @@ class Namespace extends model_1.CdkResource {
         if (this.simpleItemConsumeScript != null) {
             properties["SimpleItemConsumeScript"] = (_e = this.simpleItemConsumeScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
+        if (this.bigItemAcquireScript != null) {
+            properties["BigItemAcquireScript"] = (_f = this.bigItemAcquireScript) === null || _f === void 0 ? void 0 : _f.properties();
+        }
+        if (this.bigItemConsumeScript != null) {
+            properties["BigItemConsumeScript"] = (_g = this.bigItemConsumeScript) === null || _g === void 0 ? void 0 : _g.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["LogSetting"] = (_h = this.logSetting) === null || _h === void 0 ? void 0 : _h.properties();
         }
         return properties;
     }
