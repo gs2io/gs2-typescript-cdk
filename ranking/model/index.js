@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.CalculatedAt = exports.Scope = exports.CategoryModelScope = exports.CategoryModelOrderDirection = exports.CategoryModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.CalculatedAt = exports.FixedTiming = exports.GlobalRankingSetting = exports.Scope = exports.CategoryModelScope = exports.CategoryModelOrderDirection = exports.CategoryModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,10 @@ const CategoryModelScope_1 = require("./enum/CategoryModelScope");
 Object.defineProperty(exports, "CategoryModelScope", { enumerable: true, get: function () { return CategoryModelScope_1.CategoryModelScope; } });
 const Scope_1 = tslib_1.__importDefault(require("./Scope"));
 exports.Scope = Scope_1.default;
+const GlobalRankingSetting_1 = tslib_1.__importDefault(require("./GlobalRankingSetting"));
+exports.GlobalRankingSetting = GlobalRankingSetting_1.default;
+const FixedTiming_1 = tslib_1.__importDefault(require("./FixedTiming"));
+exports.FixedTiming = FixedTiming_1.default;
 const CalculatedAt_1 = tslib_1.__importDefault(require("./CalculatedAt"));
 exports.CalculatedAt = CalculatedAt_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));

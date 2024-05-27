@@ -15,21 +15,9 @@
  */
 import FixedTiming from "../FixedTiming";
 import Scope from "../Scope";
-import GlobalRankingSetting from "../GlobalRankingSetting";
-import { CategoryModelOrderDirection } from "../enum/CategoryModelOrderDirection";
-import { CategoryModelScope } from "../enum/CategoryModelScope";
 
-export interface CategoryModelOptions {
-    metadata?: string|null;
-    minimumValue?: number|null;
-    maximumValue?: number|null;
-    globalRankingSetting?: GlobalRankingSetting|null;
-    entryPeriodEventId?: string|null;
-    accessPeriodEventId?: string|null;
-    uniqueByUserId?: boolean|null;
-    calculateFixedTimingHour?: number|null;
-    calculateFixedTimingMinute?: number|null;
-    calculateIntervalMinutes?: number|null;
+export interface GlobalRankingSettingOptions {
+    calculateFixedTiming?: FixedTiming|null;
     additionalScopes?: Scope[]|null;
     ignoreUserIds?: string[]|null;
     generation?: string|null;
