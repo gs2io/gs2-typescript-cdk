@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.BuffEntryModelExpression = exports.BuffEntryModelTargetType = exports.BuffEntryModel = exports.BuffTargetGrn = exports.BuffTargetAction = exports.BuffTargetModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.OverrideBuffRate = exports.BuffEntryModelExpression = exports.BuffEntryModelTargetType = exports.BuffEntryModel = exports.BuffTargetGrn = exports.BuffTargetAction = exports.BuffTargetModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ const BuffEntryModelTargetType_1 = require("./enum/BuffEntryModelTargetType");
 Object.defineProperty(exports, "BuffEntryModelTargetType", { enumerable: true, get: function () { return BuffEntryModelTargetType_1.BuffEntryModelTargetType; } });
 const BuffEntryModelExpression_1 = require("./enum/BuffEntryModelExpression");
 Object.defineProperty(exports, "BuffEntryModelExpression", { enumerable: true, get: function () { return BuffEntryModelExpression_1.BuffEntryModelExpression; } });
+const OverrideBuffRate_1 = tslib_1.__importDefault(require("./OverrideBuffRate"));
+exports.OverrideBuffRate = OverrideBuffRate_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

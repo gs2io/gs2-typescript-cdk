@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,12 +14,5 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import ScriptSetting from "../../../core/model/ScriptSetting";
-import LogSetting from "../../../core/model/LogSetting";
-
-export interface NamespaceOptions {
-    description?: string|null;
-    applyBuffScript?: ScriptSetting|null;
-    logSetting?: LogSetting|null;
-}
-
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=OverrideBuffRateOptions.js.map

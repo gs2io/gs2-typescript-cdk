@@ -12,5 +12,7 @@ import { BuffEntryModelTargetType } from "./enum/BuffEntryModelTargetType";
 import { BuffEntryModelExpression } from "./enum/BuffEntryModelExpression";
 import { BuffEntryModelTargetTypeIsModelOptions } from "./options/BuffEntryModelTargetTypeIsModelOptions";
 import { BuffEntryModelTargetTypeIsActionOptions } from "./options/BuffEntryModelTargetTypeIsActionOptions";
+import OverrideBuffRate from "./OverrideBuffRate";
+import { OverrideBuffRateOptions } from "./options/OverrideBuffRateOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, BuffTargetModel, BuffTargetModelOptions, BuffTargetAction, BuffTargetActionOptions, BuffTargetGrn, BuffTargetGrnOptions, BuffEntryModel, BuffEntryModelOptions, BuffEntryModelTargetType, BuffEntryModelExpression, BuffEntryModelTargetTypeIsModelOptions, BuffEntryModelTargetTypeIsActionOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, BuffTargetModel, BuffTargetModelOptions, BuffTargetAction, BuffTargetActionOptions, BuffTargetGrn, BuffTargetGrnOptions, BuffEntryModel, BuffEntryModelOptions, BuffEntryModelTargetType, BuffEntryModelExpression, BuffEntryModelTargetTypeIsModelOptions, BuffEntryModelTargetTypeIsActionOptions, OverrideBuffRate, OverrideBuffRateOptions, CurrentMasterData, };
