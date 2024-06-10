@@ -21,6 +21,8 @@ const GuildModelRef_1 = tslib_1.__importDefault(require("./GuildModelRef"));
 const IncreaseMaximumCurrentMaximumMemberCountByGuildName_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseMaximumCurrentMaximumMemberCountByGuildName"));
 const SetMaximumCurrentMaximumMemberCountByGuildName_1 = tslib_1.__importDefault(require("../stampSheet/SetMaximumCurrentMaximumMemberCountByGuildName"));
 const DecreaseMaximumCurrentMaximumMemberCountByGuildName_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseMaximumCurrentMaximumMemberCountByGuildName"));
+const VerifyCurrentMaximumMemberCountByGuildName_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCurrentMaximumMemberCountByGuildName"));
+const VerifyIncludeMemberByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyIncludeMemberByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -36,6 +38,12 @@ class NamespaceRef {
     }
     decreaseMaximumCurrentMaximumMemberCountByGuildName(guildModelName, guildName, value = null) {
         return new DecreaseMaximumCurrentMaximumMemberCountByGuildName_1.default(this.namespaceName, guildModelName, guildName, value);
+    }
+    verifyCurrentMaximumMemberCountByGuildName(guildModelName, guildName, verifyType, value = null, multiplyValueSpecifyingQuantity = null) {
+        return new VerifyCurrentMaximumMemberCountByGuildName_1.default(this.namespaceName, guildModelName, guildName, verifyType, value, multiplyValueSpecifyingQuantity);
+    }
+    verifyIncludeMember(guildModelName, verifyType, guildName = null, userId = "#{userId}") {
+        return new VerifyIncludeMemberByUserId_1.default(this.namespaceName, guildModelName, verifyType, guildName, userId);
     }
     grn() {
         return new func_1.Join(":", [

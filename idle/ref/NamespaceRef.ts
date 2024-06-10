@@ -18,6 +18,8 @@ import {GetAttr, Join} from "../../core/func";
 import CategoryModelRef from "./CategoryModelRef";
 import IncreaseMaximumIdleMinutesByUserId from "../stampSheet/IncreaseMaximumIdleMinutesByUserId";
 import SetMaximumIdleMinutesByUserId from "../stampSheet/SetMaximumIdleMinutesByUserId";
+import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
+import { Config } from "../../core/model";
 import DecreaseMaximumIdleMinutesByUserId from "../stampSheet/DecreaseMaximumIdleMinutesByUserId";
 
 export default class NamespaceRef {
@@ -60,6 +62,19 @@ export default class NamespaceRef {
             this.namespaceName,
             categoryName,
             maximumIdleMinutes,
+            userId,
+        );
+    }
+
+    public receive(
+        categoryName: string,
+        config: Config[]|null = null,
+        userId: string = "#{userId}",
+    ): ReceiveByUserId {
+        return new ReceiveByUserId(
+            this.namespaceName,
+            categoryName,
+            config,
             userId,
         );
     }

@@ -16,9 +16,13 @@
 import IncreaseMaximumCurrentMaximumMemberCountByGuildName from "./IncreaseMaximumCurrentMaximumMemberCountByGuildName";
 import SetMaximumCurrentMaximumMemberCountByGuildName from "./SetMaximumCurrentMaximumMemberCountByGuildName";
 import DecreaseMaximumCurrentMaximumMemberCountByGuildName from "./DecreaseMaximumCurrentMaximumMemberCountByGuildName";
+import VerifyCurrentMaximumMemberCountByGuildName from "./VerifyCurrentMaximumMemberCountByGuildName";
+import VerifyIncludeMemberByUserId from "./VerifyIncludeMemberByUserId";
 
 export {
     IncreaseMaximumCurrentMaximumMemberCountByGuildName,
     SetMaximumCurrentMaximumMemberCountByGuildName,
     DecreaseMaximumCurrentMaximumMemberCountByGuildName,
+    VerifyCurrentMaximumMemberCountByGuildName,
+    VerifyIncludeMemberByUserId,
 }

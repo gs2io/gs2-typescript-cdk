@@ -1,6 +1,9 @@
 import IncreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/IncreaseMaximumCurrentMaximumMemberCountByGuildName";
 import SetMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/SetMaximumCurrentMaximumMemberCountByGuildName";
 import DecreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/DecreaseMaximumCurrentMaximumMemberCountByGuildName";
+import VerifyCurrentMaximumMemberCountByGuildName from "../stampSheet/VerifyCurrentMaximumMemberCountByGuildName";
+import { GuildVerifyType } from "../stampSheet/enum/GuildVerifyType";
+import VerifyIncludeMemberByUserId from "../stampSheet/VerifyIncludeMemberByUserId";
 export default class GuildRef {
     private readonly namespaceName;
     private readonly guildModelName;
@@ -9,5 +12,7 @@ export default class GuildRef {
     increaseMaximumCurrentMaximumMemberCountByGuildName(value?: number | null): IncreaseMaximumCurrentMaximumMemberCountByGuildName;
     setMaximumCurrentMaximumMemberCountByGuildName(value?: number | null): SetMaximumCurrentMaximumMemberCountByGuildName;
     decreaseMaximumCurrentMaximumMemberCountByGuildName(value?: number | null): DecreaseMaximumCurrentMaximumMemberCountByGuildName;
+    verifyCurrentMaximumMemberCountByGuildName(verifyType: GuildVerifyType, value?: number | null, multiplyValueSpecifyingQuantity?: boolean | null): VerifyCurrentMaximumMemberCountByGuildName;
+    verifyIncludeMember(verifyType: GuildVerifyType, guildName: string, userId?: string): VerifyIncludeMemberByUserId;
     grn(): string;
 }

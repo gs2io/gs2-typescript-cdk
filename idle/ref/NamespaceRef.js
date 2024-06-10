@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const CategoryModelRef_1 = tslib_1.__importDefault(require("./CategoryModelRef"));
 const IncreaseMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseMaximumIdleMinutesByUserId"));
 const SetMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetMaximumIdleMinutesByUserId"));
+const ReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ReceiveByUserId"));
 const DecreaseMaximumIdleMinutesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseMaximumIdleMinutesByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
@@ -33,6 +34,9 @@ class NamespaceRef {
     }
     setMaximumIdleMinutes(categoryName, maximumIdleMinutes = null, userId = "#{userId}") {
         return new SetMaximumIdleMinutesByUserId_1.default(this.namespaceName, categoryName, maximumIdleMinutes, userId);
+    }
+    receive(categoryName, config = null, userId = "#{userId}") {
+        return new ReceiveByUserId_1.default(this.namespaceName, categoryName, config, userId);
     }
     decreaseMaximumIdleMinutes(categoryName, decreaseMinutes = null, userId = "#{userId}") {
         return new DecreaseMaximumIdleMinutesByUserId_1.default(this.namespaceName, categoryName, decreaseMinutes, userId);

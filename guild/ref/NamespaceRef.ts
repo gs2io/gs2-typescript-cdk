@@ -20,6 +20,9 @@ import GuildRef from "./GuildRef";
 import IncreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/IncreaseMaximumCurrentMaximumMemberCountByGuildName";
 import SetMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/SetMaximumCurrentMaximumMemberCountByGuildName";
 import DecreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/DecreaseMaximumCurrentMaximumMemberCountByGuildName";
+import VerifyCurrentMaximumMemberCountByGuildName from "../stampSheet/VerifyCurrentMaximumMemberCountByGuildName";
+import { GuildVerifyType } from "../stampSheet/enum/GuildVerifyType";
+import VerifyIncludeMemberByUserId from "../stampSheet/VerifyIncludeMemberByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -75,6 +78,38 @@ export default class NamespaceRef {
             guildModelName,
             guildName,
             value,
+        );
+    }
+
+    public verifyCurrentMaximumMemberCountByGuildName(
+        guildModelName: string,
+        guildName: string,
+        verifyType: GuildVerifyType,
+        value: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+    ): VerifyCurrentMaximumMemberCountByGuildName {
+        return new VerifyCurrentMaximumMemberCountByGuildName(
+            this.namespaceName,
+            guildModelName,
+            guildName,
+            verifyType,
+            value,
+            multiplyValueSpecifyingQuantity,
+        );
+    }
+
+    public verifyIncludeMember(
+        guildModelName: string,
+        verifyType: GuildVerifyType,
+        guildName: string|null = null,
+        userId: string = "#{userId}",
+    ): VerifyIncludeMemberByUserId {
+        return new VerifyIncludeMemberByUserId(
+            this.namespaceName,
+            guildModelName,
+            verifyType,
+            guildName,
+            userId,
         );
     }
 

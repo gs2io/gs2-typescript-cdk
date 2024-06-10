@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DecreaseMaximumCurrentMaximumMemberCountByGuildName = exports.SetMaximumCurrentMaximumMemberCountByGuildName = exports.IncreaseMaximumCurrentMaximumMemberCountByGuildName = void 0;
+exports.VerifyIncludeMemberByUserId = exports.VerifyCurrentMaximumMemberCountByGuildName = exports.DecreaseMaximumCurrentMaximumMemberCountByGuildName = exports.SetMaximumCurrentMaximumMemberCountByGuildName = exports.IncreaseMaximumCurrentMaximumMemberCountByGuildName = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,4 +23,8 @@ const SetMaximumCurrentMaximumMemberCountByGuildName_1 = tslib_1.__importDefault
 exports.SetMaximumCurrentMaximumMemberCountByGuildName = SetMaximumCurrentMaximumMemberCountByGuildName_1.default;
 const DecreaseMaximumCurrentMaximumMemberCountByGuildName_1 = tslib_1.__importDefault(require("./DecreaseMaximumCurrentMaximumMemberCountByGuildName"));
 exports.DecreaseMaximumCurrentMaximumMemberCountByGuildName = DecreaseMaximumCurrentMaximumMemberCountByGuildName_1.default;
+const VerifyCurrentMaximumMemberCountByGuildName_1 = tslib_1.__importDefault(require("./VerifyCurrentMaximumMemberCountByGuildName"));
+exports.VerifyCurrentMaximumMemberCountByGuildName = VerifyCurrentMaximumMemberCountByGuildName_1.default;
+const VerifyIncludeMemberByUserId_1 = tslib_1.__importDefault(require("./VerifyIncludeMemberByUserId"));
+exports.VerifyIncludeMemberByUserId = VerifyIncludeMemberByUserId_1.default;
 //# sourceMappingURL=index.js.map

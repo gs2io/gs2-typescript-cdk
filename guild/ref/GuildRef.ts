@@ -12,6 +12,8 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 
 import {GetAttr, Join} from "../../core/func";
@@ -19,6 +21,9 @@ import InboxRef from "./InboxRef";
 import IncreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/IncreaseMaximumCurrentMaximumMemberCountByGuildName";
 import SetMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/SetMaximumCurrentMaximumMemberCountByGuildName";
 import DecreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/DecreaseMaximumCurrentMaximumMemberCountByGuildName";
+import VerifyCurrentMaximumMemberCountByGuildName from "../stampSheet/VerifyCurrentMaximumMemberCountByGuildName";
+import { GuildVerifyType } from "../stampSheet/enum/GuildVerifyType";
+import VerifyIncludeMemberByUserId from "../stampSheet/VerifyIncludeMemberByUserId";
 
 export default class GuildRef {
     private readonly namespaceName: string;
@@ -65,6 +70,35 @@ export default class GuildRef {
             this.guildModelName,
             this.guildName,
             value,
+        );
+    }
+
+    public verifyCurrentMaximumMemberCountByGuildName(
+        verifyType: GuildVerifyType,
+        value: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+    ): VerifyCurrentMaximumMemberCountByGuildName {
+        return new VerifyCurrentMaximumMemberCountByGuildName(
+            this.namespaceName,
+            this.guildModelName,
+            this.guildName,
+            verifyType,
+            value,
+            multiplyValueSpecifyingQuantity,
+        );
+    }
+
+    public verifyIncludeMember(
+        verifyType: GuildVerifyType,
+        guildName: string,
+        userId: string = "#{userId}",
+    ): VerifyIncludeMemberByUserId {
+        return new VerifyIncludeMemberByUserId(
+            this.namespaceName,
+            this.guildModelName,
+            verifyType,
+            guildName,
+            userId,
         );
     }
 
