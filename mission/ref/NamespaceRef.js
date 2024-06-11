@@ -23,6 +23,7 @@ const RevertReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/R
 const IncreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseCounterByUserId"));
 const SetCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetCounterByUserId"));
 const ReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ReceiveByUserId"));
+const VerifyCompleteByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCompleteByUserId"));
 const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseCounterByUserId"));
 const VerifyCounterValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCounterValueByUserId"));
 class NamespaceRef {
@@ -46,6 +47,9 @@ class NamespaceRef {
     }
     receive(missionGroupName, missionTaskName, userId = "#{userId}") {
         return new ReceiveByUserId_1.default(this.namespaceName, missionGroupName, missionTaskName, userId);
+    }
+    verifyComplete(missionGroupName, verifyType, missionTaskName, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyCompleteByUserId_1.default(this.namespaceName, missionGroupName, verifyType, missionTaskName, multiplyValueSpecifyingQuantity, userId);
     }
     decreaseCounter(counterName, value, userId = "#{userId}") {
         return new DecreaseCounterByUserId_1.default(this.namespaceName, counterName, value, userId);

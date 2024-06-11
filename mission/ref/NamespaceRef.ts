@@ -22,6 +22,8 @@ import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
 import SetCounterByUserId from "../stampSheet/SetCounterByUserId";
 import ScopedValue from "../model/ScopedValue";
 import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
+import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
+import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
 import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
@@ -102,6 +104,23 @@ export default class NamespaceRef {
             this.namespaceName,
             missionGroupName,
             missionTaskName,
+            userId,
+        );
+    }
+
+    public verifyComplete(
+        missionGroupName: string,
+        verifyType: CompleteVerifyType,
+        missionTaskName: string,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyCompleteByUserId {
+        return new VerifyCompleteByUserId(
+            this.namespaceName,
+            missionGroupName,
+            verifyType,
+            missionTaskName,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }
