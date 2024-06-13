@@ -23,6 +23,7 @@ import LogSetting from "../../core/model/LogSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import RatingModel from "./RatingModel";
+import SeasonModel from "./SeasonModel";
 import { NamespaceEnableDisconnectDetection } from "./enum/NamespaceEnableDisconnectDetection";
 import { NamespaceCreateGatheringTriggerType } from "./enum/NamespaceCreateGatheringTriggerType";
 import { NamespaceCompleteMatchmakingTriggerType } from "./enum/NamespaceCompleteMatchmakingTriggerType";
@@ -193,11 +194,13 @@ export default class Namespace extends CdkResource {
 
     public masterData(
         ratingModels: RatingModel[],
+        seasonModels: SeasonModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             ratingModels,
+            seasonModels,
         ).addDependsOn(
             this,
         );

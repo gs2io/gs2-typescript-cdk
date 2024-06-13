@@ -13,12 +13,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import RatingModelRef from "./RatingModelRef";
-import SeasonModelRef from "./SeasonModelRef";
 
-export {
-    NamespaceRef,
-    RatingModelRef,
-    SeasonModelRef,
+export interface SeasonModelOptions {
+    metadata?: string|null;
+    experienceModelId?: string|null;
 }
+

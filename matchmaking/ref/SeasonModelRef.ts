@@ -15,34 +15,17 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import RatingModelRef from "./RatingModelRef";
-import SeasonModelRef from "./SeasonModelRef";
 
-export default class NamespaceRef {
+export default class SeasonModelRef {
     private readonly namespaceName: string;
+    private readonly seasonName: string;
 
     public constructor(
         namespaceName: string,
+        seasonName: string,
     ) {
         this.namespaceName = namespaceName;
-    }
-
-    public ratingModel(
-        ratingName: string,
-    ): RatingModelRef {
-        return new RatingModelRef(
-            this.namespaceName,
-            ratingName,
-        );
-    }
-
-    public seasonModel(
-        seasonName: string,
-    ): SeasonModelRef {
-        return new SeasonModelRef(
-            this.namespaceName,
-            seasonName,
-        );
+        this.seasonName = seasonName;
     }
 
     public grn(
@@ -60,6 +43,8 @@ export default class NamespaceRef {
                 ),
                 "matchmaking",
                 this.namespaceName,
+                "model",
+                this.seasonName,
             ],
         ).str(
         );

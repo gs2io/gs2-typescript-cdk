@@ -15,19 +15,11 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const RatingModelRef_1 = tslib_1.__importDefault(require("./RatingModelRef"));
-const SeasonModelRef_1 = tslib_1.__importDefault(require("./SeasonModelRef"));
-class NamespaceRef {
-    constructor(namespaceName) {
+class SeasonModelRef {
+    constructor(namespaceName, seasonName) {
         this.namespaceName = namespaceName;
-    }
-    ratingModel(ratingName) {
-        return new RatingModelRef_1.default(this.namespaceName, ratingName);
-    }
-    seasonModel(seasonName) {
-        return new SeasonModelRef_1.default(this.namespaceName, seasonName);
+        this.seasonName = seasonName;
     }
     grn() {
         return new func_1.Join(":", [
@@ -37,8 +29,10 @@ class NamespaceRef {
             func_1.GetAttr.ownerId().str(),
             "matchmaking",
             this.namespaceName,
+            "model",
+            this.seasonName,
         ]).str();
     }
 }
-exports.default = NamespaceRef;
-//# sourceMappingURL=NamespaceRef.js.map
+exports.default = SeasonModelRef;
+//# sourceMappingURL=SeasonModelRef.js.map

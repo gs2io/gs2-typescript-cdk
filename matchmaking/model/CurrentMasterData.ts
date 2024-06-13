@@ -15,23 +15,27 @@
  */
 import {CdkResource, Stack} from "../../core/model";
 import RatingModel from "./RatingModel";
+import SeasonModel from "./SeasonModel";
 
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2020-06-24";
     private readonly namespaceName: string;
     private readonly ratingModels: RatingModel[];
+    private readonly seasonModels: SeasonModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
         ratingModels: RatingModel[],
+        seasonModels: SeasonModel[],
     ) {
         super(
-            "Matchmaking_CurrentRatingModelMaster_" + namespaceName
+            "Matchmaking_CurrentModelMaster_" + namespaceName
         );
 
         this.namespaceName = namespaceName;
         this.ratingModels = ratingModels;
+        this.seasonModels = seasonModels;
         stack.addResource(
             this,
         );
@@ -44,7 +48,7 @@ export default class CurrentMasterData extends CdkResource {
 
     public resourceType(
     ): string {
-        return "GS2::Matchmaking::CurrentRatingModelMaster";
+        return "GS2::Matchmaking::CurrentModelMaster";
     }
 
     public properties(
@@ -55,6 +59,10 @@ export default class CurrentMasterData extends CdkResource {
         settings["version"] = this.version
         if (this.ratingModels != null) {
             settings["ratingModels"] = this.ratingModels.map(v => v.properties(
+                ));
+        }
+        if (this.seasonModels != null) {
+            settings["seasonModels"] = this.seasonModels.map(v => v.properties(
                 ));
         }
 

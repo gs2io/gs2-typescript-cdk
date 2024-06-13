@@ -31,6 +31,8 @@ import { NamespaceEnableCollaborateSeasonRatingIsEnableOptions } from "./options
 import { NamespaceEnableCollaborateSeasonRatingIsDisableOptions } from "./options/NamespaceEnableCollaborateSeasonRatingIsDisableOptions"
 import RatingModel from "./RatingModel";
 import { RatingModelOptions } from "./options/RatingModelOptions";
+import SeasonModel from "./SeasonModel";
+import { SeasonModelOptions } from "./options/SeasonModelOptions";
 import AttributeRange from "./AttributeRange";
 import { AttributeRangeOptions } from "./options/AttributeRangeOptions";
 import CapacityOfRole from "./CapacityOfRole";
@@ -66,6 +68,8 @@ export {
     NamespaceEnableCollaborateSeasonRatingIsDisableOptions,
     RatingModel,
     RatingModelOptions,
+    SeasonModel,
+    SeasonModelOptions,
     AttributeRange,
     AttributeRangeOptions,
     CapacityOfRole,

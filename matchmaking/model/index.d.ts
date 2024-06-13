@@ -16,6 +16,8 @@ import { NamespaceEnableCollaborateSeasonRatingIsEnableOptions } from "./options
 import { NamespaceEnableCollaborateSeasonRatingIsDisableOptions } from "./options/NamespaceEnableCollaborateSeasonRatingIsDisableOptions";
 import RatingModel from "./RatingModel";
 import { RatingModelOptions } from "./options/RatingModelOptions";
+import SeasonModel from "./SeasonModel";
+import { SeasonModelOptions } from "./options/SeasonModelOptions";
 import AttributeRange from "./AttributeRange";
 import { AttributeRangeOptions } from "./options/AttributeRangeOptions";
 import CapacityOfRole from "./CapacityOfRole";
@@ -31,4 +33,4 @@ import { SignedBallotOptions } from "./options/SignedBallotOptions";
 import TimeSpan from "./TimeSpan";
 import { TimeSpanOptions } from "./options/TimeSpanOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, NamespaceEnableDisconnectDetection, NamespaceCreateGatheringTriggerType, NamespaceCompleteMatchmakingTriggerType, NamespaceEnableCollaborateSeasonRating, NamespaceEnableDisconnectDetectionIsDisableOptions, NamespaceEnableDisconnectDetectionIsEnableOptions, NamespaceCreateGatheringTriggerTypeIsNoneOptions, NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions, NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions, NamespaceCompleteMatchmakingTriggerTypeIsNoneOptions, NamespaceCompleteMatchmakingTriggerTypeIsGs2RealtimeOptions, NamespaceCompleteMatchmakingTriggerTypeIsGs2ScriptOptions, NamespaceEnableCollaborateSeasonRatingIsEnableOptions, NamespaceEnableCollaborateSeasonRatingIsDisableOptions, RatingModel, RatingModelOptions, AttributeRange, AttributeRangeOptions, CapacityOfRole, CapacityOfRoleOptions, Attribute, AttributeOptions, Player, PlayerOptions, GameResult, GameResultOptions, SignedBallot, SignedBallotOptions, TimeSpan, TimeSpanOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, NamespaceEnableDisconnectDetection, NamespaceCreateGatheringTriggerType, NamespaceCompleteMatchmakingTriggerType, NamespaceEnableCollaborateSeasonRating, NamespaceEnableDisconnectDetectionIsDisableOptions, NamespaceEnableDisconnectDetectionIsEnableOptions, NamespaceCreateGatheringTriggerTypeIsNoneOptions, NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions, NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions, NamespaceCompleteMatchmakingTriggerTypeIsNoneOptions, NamespaceCompleteMatchmakingTriggerTypeIsGs2RealtimeOptions, NamespaceCompleteMatchmakingTriggerTypeIsGs2ScriptOptions, NamespaceEnableCollaborateSeasonRatingIsEnableOptions, NamespaceEnableCollaborateSeasonRatingIsDisableOptions, RatingModel, RatingModelOptions, SeasonModel, SeasonModelOptions, AttributeRange, AttributeRangeOptions, CapacityOfRole, CapacityOfRoleOptions, Attribute, AttributeOptions, Player, PlayerOptions, GameResult, GameResultOptions, SignedBallot, SignedBallotOptions, TimeSpan, TimeSpanOptions, CurrentMasterData, };

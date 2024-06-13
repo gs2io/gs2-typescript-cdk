@@ -1,3 +1,4 @@
 import NamespaceRef from "./NamespaceRef";
 import RatingModelRef from "./RatingModelRef";
-export { NamespaceRef, RatingModelRef, };
+import SeasonModelRef from "./SeasonModelRef";
+export { NamespaceRef, RatingModelRef, SeasonModelRef, };

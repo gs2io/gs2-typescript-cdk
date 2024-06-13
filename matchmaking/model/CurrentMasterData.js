@@ -17,18 +17,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const model_1 = require("../../core/model");
 class CurrentMasterData extends model_1.CdkResource {
-    constructor(stack, namespaceName, ratingModels) {
-        super("Matchmaking_CurrentRatingModelMaster_" + namespaceName);
+    constructor(stack, namespaceName, ratingModels, seasonModels) {
+        super("Matchmaking_CurrentModelMaster_" + namespaceName);
         this.version = "2020-06-24";
         this.namespaceName = namespaceName;
         this.ratingModels = ratingModels;
+        this.seasonModels = seasonModels;
         stack.addResource(this);
     }
     alternateKeys() {
         return this.namespaceName;
     }
     resourceType() {
-        return "GS2::Matchmaking::CurrentRatingModelMaster";
+        return "GS2::Matchmaking::CurrentModelMaster";
     }
     properties() {
         let properties = {};
@@ -36,6 +37,9 @@ class CurrentMasterData extends model_1.CdkResource {
         settings["version"] = this.version;
         if (this.ratingModels != null) {
             settings["ratingModels"] = this.ratingModels.map(v => v.properties());
+        }
+        if (this.seasonModels != null) {
+            settings["seasonModels"] = this.seasonModels.map(v => v.properties());
         }
         if (this.namespaceName != null) {
             properties["NamespaceName"] = this.namespaceName;
