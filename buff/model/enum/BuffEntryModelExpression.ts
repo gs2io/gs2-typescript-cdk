@@ -17,7 +17,8 @@
 
 
 export const BuffEntryModelExpression = {
-    ADD: "add",
+    RATE_ADD: "rate_add",
     MUL: "mul",
+    VALUE_ADD: "value_add",
 } as const;
 export type BuffEntryModelExpression = typeof BuffEntryModelExpression[keyof typeof BuffEntryModelExpression];

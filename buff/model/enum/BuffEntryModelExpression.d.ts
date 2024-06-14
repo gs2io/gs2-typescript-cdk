@@ -1,5 +1,6 @@
 export declare const BuffEntryModelExpression: {
-    readonly ADD: "add";
+    readonly RATE_ADD: "rate_add";
     readonly MUL: "mul";
+    readonly VALUE_ADD: "value_add";
 };
 export type BuffEntryModelExpression = typeof BuffEntryModelExpression[keyof typeof BuffEntryModelExpression];

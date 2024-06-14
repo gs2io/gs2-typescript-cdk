@@ -17,7 +17,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BuffEntryModelExpression = void 0;
 exports.BuffEntryModelExpression = {
-    ADD: "add",
+    RATE_ADD: "rate_add",
     MUL: "mul",
+    VALUE_ADD: "value_add",
 };
 //# sourceMappingURL=BuffEntryModelExpression.js.map

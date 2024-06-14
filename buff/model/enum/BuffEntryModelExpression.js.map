@@ -1,1 +1,1 @@
-{"version":3,"file":"BuffEntryModelExpression.js","sourceRoot":"","sources":["BuffEntryModelExpression.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;;AAIU,QAAA,wBAAwB,GAAG;IACpC,GAAG,EAAE,KAAK;IACV,GAAG,EAAE,KAAK;CACJ,CAAC"}
+{"version":3,"file":"BuffEntryModelExpression.js","sourceRoot":"","sources":["BuffEntryModelExpression.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;;AAIU,QAAA,wBAAwB,GAAG;IACpC,QAAQ,EAAE,UAAU;IACpB,GAAG,EAAE,KAAK;IACV,SAAS,EAAE,WAAW;CAChB,CAAC"}
