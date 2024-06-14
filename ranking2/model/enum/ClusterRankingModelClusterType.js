@@ -19,5 +19,6 @@ exports.ClusterRankingModelClusterType = void 0;
 exports.ClusterRankingModelClusterType = {
     RAW: "Raw",
     GS2_GUILD__GUILD: "Gs2Guild::Guild",
+    GS2_MATCHMAKING__SEASON_GATHERING: "Gs2Matchmaking::SeasonGathering",
 };
 //# sourceMappingURL=ClusterRankingModelClusterType.js.map

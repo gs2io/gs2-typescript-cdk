@@ -15,11 +15,16 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const VerifyIncludeParticipantByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyIncludeParticipantByUserId"));
 class SeasonModelRef {
     constructor(namespaceName, seasonName) {
         this.namespaceName = namespaceName;
         this.seasonName = seasonName;
+    }
+    verifyIncludeParticipant(season, tier, verifyType, seasonGatheringName = null, userId = "#{userId}") {
+        return new VerifyIncludeParticipantByUserId_1.default(this.namespaceName, this.seasonName, season, tier, verifyType, seasonGatheringName, userId);
     }
     grn() {
         return new func_1.Join(":", [

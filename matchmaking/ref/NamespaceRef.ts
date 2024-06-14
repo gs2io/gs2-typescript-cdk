@@ -17,6 +17,8 @@
 import {GetAttr, Join} from "../../core/func";
 import RatingModelRef from "./RatingModelRef";
 import SeasonModelRef from "./SeasonModelRef";
+import VerifyIncludeParticipantByUserId from "../stampSheet/VerifyIncludeParticipantByUserId";
+import { SeasonGatheringVerifyType } from "../stampSheet/enum/SeasonGatheringVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -42,6 +44,25 @@ export default class NamespaceRef {
         return new SeasonModelRef(
             this.namespaceName,
             seasonName,
+        );
+    }
+
+    public verifyIncludeParticipant(
+        seasonName: string,
+        season: number,
+        tier: number,
+        verifyType: SeasonGatheringVerifyType,
+        seasonGatheringName: string|null = null,
+        userId: string = "#{userId}",
+    ): VerifyIncludeParticipantByUserId {
+        return new VerifyIncludeParticipantByUserId(
+            this.namespaceName,
+            seasonName,
+            season,
+            tier,
+            verifyType,
+            seasonGatheringName,
+            userId,
         );
     }
 

@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,12 +14,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-
-
-export const ClusterRankingModelClusterType = {
-    RAW: "Raw",
-    GS2_GUILD__GUILD: "Gs2Guild::Guild",
-    GS2_MATCHMAKING__SEASON_GATHERING: "Gs2Matchmaking::SeasonGathering",
-} as const;
-export type ClusterRankingModelClusterType = typeof ClusterRankingModelClusterType[keyof typeof ClusterRankingModelClusterType];
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SeasonGatheringVerifyType = void 0;
+exports.SeasonGatheringVerifyType = {
+    INCLUDE: "include",
+    NOT_INCLUDE: "notInclude",
+};
+//# sourceMappingURL=SeasonGatheringVerifyType.js.map

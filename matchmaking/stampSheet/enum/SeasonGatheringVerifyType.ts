@@ -16,9 +16,8 @@
 
 
 
-export const ClusterRankingModelClusterType = {
-    RAW: "Raw",
-    GS2_GUILD__GUILD: "Gs2Guild::Guild",
-    GS2_MATCHMAKING__SEASON_GATHERING: "Gs2Matchmaking::SeasonGathering",
+export const SeasonGatheringVerifyType = {
+    INCLUDE: "include",
+    NOT_INCLUDE: "notInclude",
 } as const;
-export type ClusterRankingModelClusterType = typeof ClusterRankingModelClusterType[keyof typeof ClusterRankingModelClusterType];
+export type SeasonGatheringVerifyType = typeof SeasonGatheringVerifyType[keyof typeof SeasonGatheringVerifyType];

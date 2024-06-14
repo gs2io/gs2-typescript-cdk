@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const RatingModelRef_1 = tslib_1.__importDefault(require("./RatingModelRef"));
 const SeasonModelRef_1 = tslib_1.__importDefault(require("./SeasonModelRef"));
+const VerifyIncludeParticipantByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyIncludeParticipantByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -28,6 +29,9 @@ class NamespaceRef {
     }
     seasonModel(seasonName) {
         return new SeasonModelRef_1.default(this.namespaceName, seasonName);
+    }
+    verifyIncludeParticipant(seasonName, season, tier, verifyType, seasonGatheringName = null, userId = "#{userId}") {
+        return new VerifyIncludeParticipantByUserId_1.default(this.namespaceName, seasonName, season, tier, verifyType, seasonGatheringName, userId);
     }
     grn() {
         return new func_1.Join(":", [
