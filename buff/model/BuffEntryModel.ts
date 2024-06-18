@@ -19,13 +19,13 @@ import BuffTargetAction from "./BuffTargetAction";
 import { BuffEntryModelOptions } from "./options/BuffEntryModelOptions";
 import { BuffEntryModelTargetTypeIsModelOptions } from "./options/BuffEntryModelTargetTypeIsModelOptions";
 import { BuffEntryModelTargetTypeIsActionOptions } from "./options/BuffEntryModelTargetTypeIsActionOptions";
-import { BuffEntryModelTargetType } from "./enum/BuffEntryModelTargetType";
 import { BuffEntryModelExpression } from "./enum/BuffEntryModelExpression";
+import { BuffEntryModelTargetType } from "./enum/BuffEntryModelTargetType";
 
 export default class BuffEntryModel {
     private readonly name: string;
-    private readonly targetType: BuffEntryModelTargetType;
     private readonly expression: BuffEntryModelExpression;
+    private readonly targetType: BuffEntryModelTargetType;
     private readonly priority: number;
     private readonly metadata: string|null = null;
     private readonly targetModel: BuffTargetModel|null = null;
@@ -34,14 +34,14 @@ export default class BuffEntryModel {
 
     public constructor(
         name: string,
-        targetType: BuffEntryModelTargetType,
         expression: BuffEntryModelExpression,
+        targetType: BuffEntryModelTargetType,
         priority: number,
         options: BuffEntryModelOptions|null = null,
     ) {
         this.name = name;
-        this.targetType = targetType;
         this.expression = expression;
+        this.targetType = targetType;
         this.priority = priority;
         this.metadata = options?.metadata ?? null;
         this.targetModel = options?.targetModel ?? null;
@@ -58,8 +58,8 @@ export default class BuffEntryModel {
     ): BuffEntryModel {
         return new BuffEntryModel(
             name,
-            BuffEntryModelTargetType.MODEL,
             expression,
+            BuffEntryModelTargetType.MODEL,
             priority,
             {
                 targetModel: targetModel,
@@ -78,8 +78,8 @@ export default class BuffEntryModel {
     ): BuffEntryModel {
         return new BuffEntryModel(
             name,
-            BuffEntryModelTargetType.ACTION,
             expression,
+            BuffEntryModelTargetType.ACTION,
             priority,
             {
                 targetAction: targetAction,
@@ -99,6 +99,9 @@ export default class BuffEntryModel {
         if (this.metadata != null) {
             properties["metadata"] = this.metadata;
         }
+        if (this.expression != null) {
+            properties["expression"] = this.expression;
+        }
         if (this.targetType != null) {
             properties["targetType"] = this.targetType;
         }
@@ -109,9 +112,6 @@ export default class BuffEntryModel {
         if (this.targetAction != null) {
             properties["targetAction"] = this.targetAction?.properties(
             );
-        }
-        if (this.expression != null) {
-            properties["expression"] = this.expression;
         }
         if (this.priority != null) {
             properties["priority"] = this.priority;

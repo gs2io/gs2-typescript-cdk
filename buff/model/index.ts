@@ -23,8 +23,8 @@ import BuffTargetGrn from "./BuffTargetGrn";
 import { BuffTargetGrnOptions } from "./options/BuffTargetGrnOptions";
 import BuffEntryModel from "./BuffEntryModel";
 import { BuffEntryModelOptions } from "./options/BuffEntryModelOptions";
-import { BuffEntryModelTargetType } from "./enum/BuffEntryModelTargetType";
 import { BuffEntryModelExpression } from "./enum/BuffEntryModelExpression";
+import { BuffEntryModelTargetType } from "./enum/BuffEntryModelTargetType";
 import { BuffEntryModelTargetTypeIsModelOptions } from "./options/BuffEntryModelTargetTypeIsModelOptions"
 import { BuffEntryModelTargetTypeIsActionOptions } from "./options/BuffEntryModelTargetTypeIsActionOptions"
 import OverrideBuffRate from "./OverrideBuffRate";
@@ -42,8 +42,8 @@ export {
     BuffTargetGrnOptions,
     BuffEntryModel,
     BuffEntryModelOptions,
-    BuffEntryModelTargetType,
     BuffEntryModelExpression,
+    BuffEntryModelTargetType,
     BuffEntryModelTargetTypeIsModelOptions,
     BuffEntryModelTargetTypeIsActionOptions,
     OverrideBuffRate,
