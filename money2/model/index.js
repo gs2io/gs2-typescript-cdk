@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEventEnvironment = exports.AppleAppStoreVerifyReceiptEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEventPlatform = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSettingAcceptFakeReceipt = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.ReceiptStore = exports.Receipt = exports.StoreContentModel = exports.NamespaceCurrencyUsagePriority = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.UnusedBalance = exports.DailyTransactionHistory = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEventEnvironment = exports.AppleAppStoreVerifyReceiptEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEventPlatform = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSettingAcceptFakeReceipt = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.ReceiptStore = exports.Receipt = exports.StoreContentModel = exports.NamespaceCurrencyUsagePriority = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -59,6 +59,10 @@ const AppleAppStoreContent_1 = tslib_1.__importDefault(require("./AppleAppStoreC
 exports.AppleAppStoreContent = AppleAppStoreContent_1.default;
 const GooglePlayContent_1 = tslib_1.__importDefault(require("./GooglePlayContent"));
 exports.GooglePlayContent = GooglePlayContent_1.default;
+const DailyTransactionHistory_1 = tslib_1.__importDefault(require("./DailyTransactionHistory"));
+exports.DailyTransactionHistory = DailyTransactionHistory_1.default;
+const UnusedBalance_1 = tslib_1.__importDefault(require("./UnusedBalance"));
+exports.UnusedBalance = UnusedBalance_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

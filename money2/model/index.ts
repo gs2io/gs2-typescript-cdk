@@ -50,6 +50,10 @@ import AppleAppStoreContent from "./AppleAppStoreContent";
 import { AppleAppStoreContentOptions } from "./options/AppleAppStoreContentOptions";
 import GooglePlayContent from "./GooglePlayContent";
 import { GooglePlayContentOptions } from "./options/GooglePlayContentOptions";
+import DailyTransactionHistory from "./DailyTransactionHistory";
+import { DailyTransactionHistoryOptions } from "./options/DailyTransactionHistoryOptions";
+import UnusedBalance from "./UnusedBalance";
+import { UnusedBalanceOptions } from "./options/UnusedBalanceOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -90,5 +94,9 @@ export {
     AppleAppStoreContentOptions,
     GooglePlayContent,
     GooglePlayContentOptions,
+    DailyTransactionHistory,
+    DailyTransactionHistoryOptions,
+    UnusedBalance,
+    UnusedBalanceOptions,
     CurrentMasterData,
 }

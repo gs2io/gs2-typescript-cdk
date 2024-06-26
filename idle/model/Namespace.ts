@@ -32,6 +32,7 @@ export default class Namespace extends CdkResource {
     private readonly description: string|null = null;
     private readonly transactionSetting: TransactionSetting|null = null;
     private readonly receiveScript: ScriptSetting|null = null;
+    private readonly overrideAcquireActionsScriptId: string|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -48,6 +49,7 @@ export default class Namespace extends CdkResource {
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
         this.receiveScript = options?.receiveScript ?? null;
+        this.overrideAcquireActionsScriptId = options?.overrideAcquireActionsScriptId ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -82,6 +84,9 @@ export default class Namespace extends CdkResource {
         if (this.receiveScript != null) {
             properties["ReceiveScript"] = this.receiveScript?.properties(
             );
+        }
+        if (this.overrideAcquireActionsScriptId != null) {
+            properties["OverrideAcquireActionsScriptId"] = this.overrideAcquireActionsScriptId;
         }
         if (this.logSetting != null) {
             properties["LogSetting"] = this.logSetting?.properties(

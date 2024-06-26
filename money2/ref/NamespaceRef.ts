@@ -15,7 +15,9 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import DailyTransactionHistoryRef from "./DailyTransactionHistoryRef";
 import StoreContentModelRef from "./StoreContentModelRef";
+import UnusedBalanceRef from "./UnusedBalanceRef";
 import DepositByUserId from "../stampSheet/DepositByUserId";
 import DepositTransaction from "../model/DepositTransaction";
 import WithdrawByUserId from "../stampSheet/WithdrawByUserId";

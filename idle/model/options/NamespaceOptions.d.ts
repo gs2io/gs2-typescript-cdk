@@ -5,5 +5,6 @@ export interface NamespaceOptions {
     description?: string | null;
     transactionSetting?: TransactionSetting | null;
     receiveScript?: ScriptSetting | null;
+    overrideAcquireActionsScriptId?: string | null;
     logSetting?: LogSetting | null;
 }
