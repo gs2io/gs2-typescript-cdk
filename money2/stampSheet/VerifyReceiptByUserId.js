@@ -13,11 +13,13 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyReceiptByUserId extends model_1.ConsumeAction {
-    constructor(namespaceName, contentName, receipt, timeOffsetToken = null, userId = "#{userId}") {
+    constructor(namespaceName, contentName, receipt = "#{receipt}", timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
@@ -27,7 +29,6 @@ class VerifyReceiptByUserId extends model_1.ConsumeAction {
         this.userId = userId;
     }
     request() {
-        var _a;
         let properties = {};
         if (this.namespaceName != null) {
             properties["namespaceName"] = this.namespaceName;
@@ -39,7 +40,7 @@ class VerifyReceiptByUserId extends model_1.ConsumeAction {
             properties["contentName"] = this.contentName;
         }
         if (this.receipt != null) {
-            properties["receipt"] = (_a = this.receipt) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["receipt"] = this.receipt;
         }
         if (this.timeOffsetToken != null) {
             properties["timeOffsetToken"] = this.timeOffsetToken;

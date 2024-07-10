@@ -13,6 +13,8 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
@@ -34,7 +36,7 @@ class NamespaceRef {
     withdraw(slot, withdrawCount, paidOnly = null, userId = "#{userId}") {
         return new WithdrawByUserId_1.default(this.namespaceName, slot, withdrawCount, paidOnly, userId);
     }
-    verifyReceipt(contentName, receipt, userId = "#{userId}") {
+    verifyReceipt(contentName, receipt = "#{receipt}", userId = "#{userId}") {
         return new VerifyReceiptByUserId_1.default(this.namespaceName, contentName, receipt, userId);
     }
     grn() {

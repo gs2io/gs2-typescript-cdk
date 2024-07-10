@@ -12,6 +12,8 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 
 import {AcquireAction, ConsumeAction} from "../../core/model";
@@ -21,14 +23,14 @@ export default class VerifyReceiptByUserId extends ConsumeAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly contentName: string;
-    private readonly receipt: Receipt;
+    private readonly receipt: string;
     private readonly timeOffsetToken: string|null = null;
 
 
     public constructor(
         namespaceName: string,
         contentName: string,
-        receipt: Receipt,
+        receipt: string = "#{receipt}",
         timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
@@ -55,8 +57,7 @@ export default class VerifyReceiptByUserId extends ConsumeAction {
             properties["contentName"] = this.contentName;
         }
         if (this.receipt != null) {
-            properties["receipt"] = this.receipt?.properties(
-            );
+            properties["receipt"] = this.receipt;
         }
         if (this.timeOffsetToken != null) {
             properties["timeOffsetToken"] = this.timeOffsetToken;

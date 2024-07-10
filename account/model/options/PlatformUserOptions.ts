@@ -1,7 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BanStatus = exports.PlatformUser = exports.Namespace = void 0;
-const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -17,10 +13,7 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
-exports.Namespace = Namespace_1.default;
-const PlatformUser_1 = tslib_1.__importDefault(require("./PlatformUser"));
-exports.PlatformUser = PlatformUser_1.default;
-const BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
-exports.BanStatus = BanStatus_1.default;
-//# sourceMappingURL=index.js.map
+
+export interface PlatformUserOptions {
+}
+
