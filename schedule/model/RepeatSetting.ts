@@ -18,6 +18,7 @@ import { RepeatSettingRepeatTypeIsAlwaysOptions } from "./options/RepeatSettingR
 import { RepeatSettingRepeatTypeIsDailyOptions } from "./options/RepeatSettingRepeatTypeIsDailyOptions";
 import { RepeatSettingRepeatTypeIsWeeklyOptions } from "./options/RepeatSettingRepeatTypeIsWeeklyOptions";
 import { RepeatSettingRepeatTypeIsMonthlyOptions } from "./options/RepeatSettingRepeatTypeIsMonthlyOptions";
+import { RepeatSettingRepeatTypeIsCustomOptions } from "./options/RepeatSettingRepeatTypeIsCustomOptions";
 import { RepeatSettingRepeatType } from "./enum/RepeatSettingRepeatType";
 import { RepeatSettingBeginDayOfWeek } from "./enum/RepeatSettingBeginDayOfWeek";
 import { RepeatSettingEndDayOfWeek } from "./enum/RepeatSettingEndDayOfWeek";
@@ -30,6 +31,9 @@ export default class RepeatSetting {
     private readonly endDayOfWeek: RepeatSettingEndDayOfWeek|null = null;
     private readonly beginHour: number|null = null;
     private readonly endHour: number|null = null;
+    private readonly anchorTimestamp: number|null = null;
+    private readonly activeDays: number|null = null;
+    private readonly inactiveDays: number|null = null;
 
     public constructor(
         repeatType: RepeatSettingRepeatType,
@@ -42,6 +46,9 @@ export default class RepeatSetting {
         this.endDayOfWeek = options?.endDayOfWeek ?? null;
         this.beginHour = options?.beginHour ?? null;
         this.endHour = options?.endHour ?? null;
+        this.anchorTimestamp = options?.anchorTimestamp ?? null;
+        this.activeDays = options?.activeDays ?? null;
+        this.inactiveDays = options?.inactiveDays ?? null;
     }
 
     public static repeatTypeIsAlways(
@@ -104,6 +111,22 @@ export default class RepeatSetting {
         );
     }
 
+    public static repeatTypeIsCustom(
+        anchorTimestamp: number,
+        activeDays: number,
+        inactiveDays: number,
+        options: RepeatSettingRepeatTypeIsCustomOptions|null = null,
+    ): RepeatSetting {
+        return new RepeatSetting(
+            RepeatSettingRepeatType.CUSTOM,
+            {
+                anchorTimestamp: anchorTimestamp,
+                activeDays: activeDays,
+                inactiveDays: inactiveDays,
+            },
+        );
+    }
+
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
@@ -128,6 +151,15 @@ export default class RepeatSetting {
         }
         if (this.endHour != null) {
             properties["endHour"] = this.endHour;
+        }
+        if (this.anchorTimestamp != null) {
+            properties["anchorTimestamp"] = this.anchorTimestamp;
+        }
+        if (this.activeDays != null) {
+            properties["activeDays"] = this.activeDays;
+        }
+        if (this.inactiveDays != null) {
+            properties["inactiveDays"] = this.inactiveDays;
         }
 
         return properties;

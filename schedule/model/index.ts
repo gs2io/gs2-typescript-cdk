@@ -36,6 +36,7 @@ import { RepeatSettingRepeatTypeIsAlwaysOptions } from "./options/RepeatSettingR
 import { RepeatSettingRepeatTypeIsDailyOptions } from "./options/RepeatSettingRepeatTypeIsDailyOptions"
 import { RepeatSettingRepeatTypeIsWeeklyOptions } from "./options/RepeatSettingRepeatTypeIsWeeklyOptions"
 import { RepeatSettingRepeatTypeIsMonthlyOptions } from "./options/RepeatSettingRepeatTypeIsMonthlyOptions"
+import { RepeatSettingRepeatTypeIsCustomOptions } from "./options/RepeatSettingRepeatTypeIsCustomOptions"
 import RepeatSchedule from "./RepeatSchedule";
 import { RepeatScheduleOptions } from "./options/RepeatScheduleOptions";
 import CurrentMasterData from "./CurrentMasterData";
@@ -64,6 +65,7 @@ export {
     RepeatSettingRepeatTypeIsDailyOptions,
     RepeatSettingRepeatTypeIsWeeklyOptions,
     RepeatSettingRepeatTypeIsMonthlyOptions,
+    RepeatSettingRepeatTypeIsCustomOptions,
     RepeatSchedule,
     RepeatScheduleOptions,
     CurrentMasterData,

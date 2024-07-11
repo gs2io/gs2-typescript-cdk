@@ -21,5 +21,6 @@ exports.RepeatSettingRepeatType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    CUSTOM: "custom",
 };
 //# sourceMappingURL=RepeatSettingRepeatType.js.map

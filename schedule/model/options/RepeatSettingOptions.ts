@@ -24,5 +24,8 @@ export interface RepeatSettingOptions {
     endDayOfWeek?: RepeatSettingEndDayOfWeek|null;
     beginHour?: number|null;
     endHour?: number|null;
+    anchorTimestamp?: number|null;
+    activeDays?: number|null;
+    inactiveDays?: number|null;
 }
 

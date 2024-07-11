@@ -13,14 +13,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { RepeatSettingRepeatType } from "../enum/RepeatSettingRepeatType";
+import { RepeatSettingBeginDayOfWeek } from "../enum/RepeatSettingBeginDayOfWeek";
+import { RepeatSettingEndDayOfWeek } from "../enum/RepeatSettingEndDayOfWeek";
 
-
-
-export const RepeatSettingRepeatType = {
-    ALWAYS: "always",
-    DAILY: "daily",
-    WEEKLY: "weekly",
-    MONTHLY: "monthly",
-    CUSTOM: "custom",
-} as const;
-export type RepeatSettingRepeatType = typeof RepeatSettingRepeatType[keyof typeof RepeatSettingRepeatType];
+export interface RepeatSettingRepeatTypeIsCustomOptions {
+}
