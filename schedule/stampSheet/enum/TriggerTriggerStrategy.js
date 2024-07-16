@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TriggerTriggerStrategy = void 0;
 exports.TriggerTriggerStrategy = {
     RENEW: "renew",
+    EXTEND: "extend",
     DROP: "drop",
 };
 //# sourceMappingURL=TriggerTriggerStrategy.js.map

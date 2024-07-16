@@ -18,6 +18,7 @@
 
 export const TriggerTriggerStrategy = {
     RENEW: "renew",
+    EXTEND: "extend",
     DROP: "drop",
 } as const;
 export type TriggerTriggerStrategy = typeof TriggerTriggerStrategy[keyof typeof TriggerTriggerStrategy];
