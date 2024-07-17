@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProjectToken = exports.AttachSecurityPolicy = exports.Password = exports.Identifier = exports.SecurityPolicy = exports.User = void 0;
+exports.TwoFactorAuthenticationSettingStatus = exports.TwoFactorAuthenticationSetting = exports.ProjectToken = exports.AttachSecurityPolicy = exports.PasswordEnableTwoFactorAuthentication = exports.Password = exports.Identifier = exports.SecurityPolicy = exports.User = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,8 +25,14 @@ const Identifier_1 = tslib_1.__importDefault(require("./Identifier"));
 exports.Identifier = Identifier_1.default;
 const Password_1 = tslib_1.__importDefault(require("./Password"));
 exports.Password = Password_1.default;
+const PasswordEnableTwoFactorAuthentication_1 = require("./enum/PasswordEnableTwoFactorAuthentication");
+Object.defineProperty(exports, "PasswordEnableTwoFactorAuthentication", { enumerable: true, get: function () { return PasswordEnableTwoFactorAuthentication_1.PasswordEnableTwoFactorAuthentication; } });
 const AttachSecurityPolicy_1 = tslib_1.__importDefault(require("./AttachSecurityPolicy"));
 exports.AttachSecurityPolicy = AttachSecurityPolicy_1.default;
 const ProjectToken_1 = tslib_1.__importDefault(require("./ProjectToken"));
 exports.ProjectToken = ProjectToken_1.default;
+const TwoFactorAuthenticationSetting_1 = tslib_1.__importDefault(require("./TwoFactorAuthenticationSetting"));
+exports.TwoFactorAuthenticationSetting = TwoFactorAuthenticationSetting_1.default;
+const TwoFactorAuthenticationSettingStatus_1 = require("./enum/TwoFactorAuthenticationSettingStatus");
+Object.defineProperty(exports, "TwoFactorAuthenticationSettingStatus", { enumerable: true, get: function () { return TwoFactorAuthenticationSettingStatus_1.TwoFactorAuthenticationSettingStatus; } });
 //# sourceMappingURL=index.js.map
