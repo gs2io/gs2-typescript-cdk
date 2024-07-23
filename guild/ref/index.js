@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RoleModelRef = exports.GuildRef = exports.InboxRef = exports.GuildModelRef = exports.NamespaceRef = void 0;
+exports.IgnoreUserRef = exports.RoleModelRef = exports.IgnoreUsersRef = exports.GuildRef = exports.InboxRef = exports.GuildModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,10 @@ const InboxRef_1 = tslib_1.__importDefault(require("./InboxRef"));
 exports.InboxRef = InboxRef_1.default;
 const GuildRef_1 = tslib_1.__importDefault(require("./GuildRef"));
 exports.GuildRef = GuildRef_1.default;
+const IgnoreUsersRef_1 = tslib_1.__importDefault(require("./IgnoreUsersRef"));
+exports.IgnoreUsersRef = IgnoreUsersRef_1.default;
 const RoleModelRef_1 = tslib_1.__importDefault(require("./RoleModelRef"));
 exports.RoleModelRef = RoleModelRef_1.default;
+const IgnoreUserRef_1 = tslib_1.__importDefault(require("./IgnoreUserRef"));
+exports.IgnoreUserRef = IgnoreUserRef_1.default;
 //# sourceMappingURL=index.js.map
