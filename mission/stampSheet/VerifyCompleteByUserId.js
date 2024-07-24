@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyCompleteByUserId extends model_1.ConsumeAction {
+class VerifyCompleteByUserId extends model_1.VerifyAction {
     constructor(namespaceName, missionGroupName, verifyType, missionTaskName, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.multiplyValueSpecifyingQuantity = null;

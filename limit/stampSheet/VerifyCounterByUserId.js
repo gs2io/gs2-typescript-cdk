@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyCounterByUserId extends model_1.ConsumeAction {
+class VerifyCounterByUserId extends model_1.VerifyAction {
     constructor(namespaceName, limitName, counterName, verifyType, count = null, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.count = null;

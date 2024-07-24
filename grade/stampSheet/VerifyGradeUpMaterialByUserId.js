@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyGradeUpMaterialByUserId extends model_1.ConsumeAction {
+class VerifyGradeUpMaterialByUserId extends model_1.VerifyAction {
     constructor(namespaceName, gradeName, verifyType, propertyId, materialPropertyId, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.timeOffsetToken = null;

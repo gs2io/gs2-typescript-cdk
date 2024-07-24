@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { GuildVerifyType } from "./enum/GuildVerifyType";
-export default class VerifyCurrentMaximumMemberCountByGuildName extends ConsumeAction {
+export default class VerifyCurrentMaximumMemberCountByGuildName extends VerifyAction {
     private readonly namespaceName;
     private readonly guildModelName;
     private readonly guildName;

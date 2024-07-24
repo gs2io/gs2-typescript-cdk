@@ -22,9 +22,9 @@ import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
 import SetCounterByUserId from "../stampSheet/SetCounterByUserId";
 import ScopedValue from "../model/ScopedValue";
 import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
+import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
 import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
-import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
 import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
 import { CounterResetType } from "../stampSheet/enum/CounterResetType";
@@ -108,6 +108,19 @@ export default class NamespaceRef {
         );
     }
 
+    public decreaseCounter(
+        counterName: string,
+        value: number,
+        userId: string = "#{userId}",
+    ): DecreaseCounterByUserId {
+        return new DecreaseCounterByUserId(
+            this.namespaceName,
+            counterName,
+            value,
+            userId,
+        );
+    }
+
     public verifyComplete(
         missionGroupName: string,
         verifyType: CompleteVerifyType,
@@ -121,19 +134,6 @@ export default class NamespaceRef {
             verifyType,
             missionTaskName,
             multiplyValueSpecifyingQuantity,
-            userId,
-        );
-    }
-
-    public decreaseCounter(
-        counterName: string,
-        value: number,
-        userId: string = "#{userId}",
-    ): DecreaseCounterByUserId {
-        return new DecreaseCounterByUserId(
-            this.namespaceName,
-            counterName,
-            value,
             userId,
         );
     }

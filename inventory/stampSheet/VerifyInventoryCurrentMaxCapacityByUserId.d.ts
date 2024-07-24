@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { InventoryVerifyType } from "./enum/InventoryVerifyType";
-export default class VerifyInventoryCurrentMaxCapacityByUserId extends ConsumeAction {
+export default class VerifyInventoryCurrentMaxCapacityByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly inventoryName;

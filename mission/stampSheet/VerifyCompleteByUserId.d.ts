@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { CompleteVerifyType } from "./enum/CompleteVerifyType";
-export default class VerifyCompleteByUserId extends ConsumeAction {
+export default class VerifyCompleteByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly missionGroupName;
     private readonly userId;

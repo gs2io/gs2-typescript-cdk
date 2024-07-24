@@ -30,13 +30,13 @@ const AcquireSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSh
 const SetSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetSimpleItemsByUserId"));
 const AcquireBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireBigItemByUserId"));
 const SetBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetBigItemByUserId"));
-const VerifyInventoryCurrentMaxCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId"));
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeItemSetByUserId"));
+const ConsumeSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeSimpleItemsByUserId"));
+const ConsumeBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeBigItemByUserId"));
+const VerifyInventoryCurrentMaxCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId"));
 const VerifyItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyItemSetByUserId"));
 const VerifyReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyReferenceOfByUserId"));
-const ConsumeSimpleItemsByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeSimpleItemsByUserId"));
 const VerifySimpleItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifySimpleItemByUserId"));
-const ConsumeBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeBigItemByUserId"));
 const VerifyBigItemByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyBigItemByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
@@ -81,11 +81,17 @@ class NamespaceRef {
     setBigItem(inventoryName, itemName, count, userId = "#{userId}") {
         return new SetBigItemByUserId_1.default(this.namespaceName, inventoryName, itemName, count, userId);
     }
-    verifyInventoryCurrentMaxCapacity(inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
-        return new VerifyInventoryCurrentMaxCapacityByUserId_1.default(this.namespaceName, inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity, userId);
-    }
     consumeItemSet(inventoryName, itemName, consumeCount, itemSetName = null, userId = "#{userId}") {
         return new ConsumeItemSetByUserId_1.default(this.namespaceName, inventoryName, itemName, consumeCount, itemSetName, userId);
+    }
+    consumeSimpleItems(inventoryName, consumeCounts, userId = "#{userId}") {
+        return new ConsumeSimpleItemsByUserId_1.default(this.namespaceName, inventoryName, consumeCounts, userId);
+    }
+    consumeBigItem(inventoryName, itemName, consumeCount, userId = "#{userId}") {
+        return new ConsumeBigItemByUserId_1.default(this.namespaceName, inventoryName, itemName, consumeCount, userId);
+    }
+    verifyInventoryCurrentMaxCapacity(inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyInventoryCurrentMaxCapacityByUserId_1.default(this.namespaceName, inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity, userId);
     }
     verifyItemSet(inventoryName, itemName, verifyType, count, itemSetName = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifyItemSetByUserId_1.default(this.namespaceName, inventoryName, itemName, verifyType, count, itemSetName, multiplyValueSpecifyingQuantity, userId);
@@ -93,14 +99,8 @@ class NamespaceRef {
     verifyReferenceOf(inventoryName, itemName, referenceOf, verifyType, itemSetName = null, userId = "#{userId}") {
         return new VerifyReferenceOfByUserId_1.default(this.namespaceName, inventoryName, itemName, referenceOf, verifyType, itemSetName, userId);
     }
-    consumeSimpleItems(inventoryName, consumeCounts, userId = "#{userId}") {
-        return new ConsumeSimpleItemsByUserId_1.default(this.namespaceName, inventoryName, consumeCounts, userId);
-    }
     verifySimpleItem(inventoryName, itemName, verifyType, count, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifySimpleItemByUserId_1.default(this.namespaceName, inventoryName, itemName, verifyType, count, multiplyValueSpecifyingQuantity, userId);
-    }
-    consumeBigItem(inventoryName, itemName, consumeCount, userId = "#{userId}") {
-        return new ConsumeBigItemByUserId_1.default(this.namespaceName, inventoryName, itemName, consumeCount, userId);
     }
     verifyBigItem(inventoryName, itemName, verifyType, count, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifyBigItemByUserId_1.default(this.namespaceName, inventoryName, itemName, verifyType, count, multiplyValueSpecifyingQuantity, userId);

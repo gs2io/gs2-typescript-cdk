@@ -14,10 +14,10 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { CompleteVerifyType } from "./enum/CompleteVerifyType";
 
-export default class VerifyCompleteByUserId extends ConsumeAction {
+export default class VerifyCompleteByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly missionGroupName: string;
     private readonly userId: string;

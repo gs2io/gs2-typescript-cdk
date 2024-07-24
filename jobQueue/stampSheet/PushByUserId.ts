@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import JobEntry from "../model/JobEntry";
 
 export default class PushByUserId extends AcquireAction {

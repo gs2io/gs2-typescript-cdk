@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyInventoryCurrentMaxCapacityByUserId extends model_1.ConsumeAction {
+class VerifyInventoryCurrentMaxCapacityByUserId extends model_1.VerifyAction {
     constructor(namespaceName, inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.multiplyValueSpecifyingQuantity = null;

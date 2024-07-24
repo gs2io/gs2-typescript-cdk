@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { RarityParameterStatusVerifyType } from "./enum/RarityParameterStatusVerifyType";
-export default class VerifyRarityParameterStatusByUserId extends ConsumeAction {
+export default class VerifyRarityParameterStatusByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly parameterName;
     private readonly userId;

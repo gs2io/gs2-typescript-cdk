@@ -14,10 +14,10 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { ReferenceOfVerifyType } from "./enum/ReferenceOfVerifyType";
 
-export default class VerifyReferenceOfByUserId extends ConsumeAction {
+export default class VerifyReferenceOfByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly inventoryName: string;
     private readonly userId: string;

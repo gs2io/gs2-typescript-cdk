@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { BigItemVerifyType } from "./enum/BigItemVerifyType";
-export default class VerifyBigItemByUserId extends ConsumeAction {
+export default class VerifyBigItemByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly inventoryName;

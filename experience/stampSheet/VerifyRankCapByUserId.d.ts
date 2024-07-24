@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { StatusVerifyType } from "./enum/StatusVerifyType";
-export default class VerifyRankCapByUserId extends ConsumeAction {
+export default class VerifyRankCapByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly experienceName;

@@ -22,9 +22,9 @@ import AcquireItemSetByUserId from "../stampSheet/AcquireItemSetByUserId";
 import AcquireItemSetWithGradeByUserId from "../stampSheet/AcquireItemSetWithGradeByUserId";
 import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
+import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
 import VerifyInventoryCurrentMaxCapacityByUserId from "../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId";
 import { InventoryVerifyType } from "../stampSheet/enum/InventoryVerifyType";
-import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
 import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
 import { ItemSetVerifyType } from "../stampSheet/enum/ItemSetVerifyType";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
@@ -144,22 +144,6 @@ export default class InventoryModelRef {
         );
     }
 
-    public verifyInventoryCurrentMaxCapacity(
-        verifyType: InventoryVerifyType,
-        currentInventoryMaxCapacity: number,
-        multiplyValueSpecifyingQuantity: boolean|null = null,
-        userId: string = "#{userId}",
-    ): VerifyInventoryCurrentMaxCapacityByUserId {
-        return new VerifyInventoryCurrentMaxCapacityByUserId(
-            this.namespaceName,
-            this.inventoryName,
-            verifyType,
-            currentInventoryMaxCapacity,
-            multiplyValueSpecifyingQuantity,
-            userId,
-        );
-    }
-
     public consumeItemSet(
         itemName: string,
         consumeCount: number,
@@ -172,6 +156,22 @@ export default class InventoryModelRef {
             itemName,
             consumeCount,
             itemSetName,
+            userId,
+        );
+    }
+
+    public verifyInventoryCurrentMaxCapacity(
+        verifyType: InventoryVerifyType,
+        currentInventoryMaxCapacity: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyInventoryCurrentMaxCapacityByUserId {
+        return new VerifyInventoryCurrentMaxCapacityByUserId(
+            this.namespaceName,
+            this.inventoryName,
+            verifyType,
+            currentInventoryMaxCapacity,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

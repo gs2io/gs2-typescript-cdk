@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { ReferenceOfVerifyType } from "./enum/ReferenceOfVerifyType";
-export default class VerifyReferenceOfByUserId extends ConsumeAction {
+export default class VerifyReferenceOfByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly inventoryName;
     private readonly userId;

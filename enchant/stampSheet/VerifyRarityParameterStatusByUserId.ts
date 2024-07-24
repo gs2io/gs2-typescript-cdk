@@ -14,10 +14,10 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { RarityParameterStatusVerifyType } from "./enum/RarityParameterStatusVerifyType";
 
-export default class VerifyRarityParameterStatusByUserId extends ConsumeAction {
+export default class VerifyRarityParameterStatusByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly parameterName: string;
     private readonly userId: string;

@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyIncludeParticipantByUserId extends model_1.ConsumeAction {
+class VerifyIncludeParticipantByUserId extends model_1.VerifyAction {
     constructor(namespaceName, seasonName, season, tier, verifyType, seasonGatheringName = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.seasonGatheringName = null;

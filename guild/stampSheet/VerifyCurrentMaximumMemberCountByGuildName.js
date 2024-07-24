@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyCurrentMaximumMemberCountByGuildName extends model_1.ConsumeAction {
+class VerifyCurrentMaximumMemberCountByGuildName extends model_1.VerifyAction {
     constructor(namespaceName, guildModelName, guildName, verifyType, value = null, multiplyValueSpecifyingQuantity = null) {
         super();
         this.value = null;

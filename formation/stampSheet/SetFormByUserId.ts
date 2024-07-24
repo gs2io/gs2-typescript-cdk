@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import Slot from "../model/Slot";
 
 export default class SetFormByUserId extends AcquireAction {

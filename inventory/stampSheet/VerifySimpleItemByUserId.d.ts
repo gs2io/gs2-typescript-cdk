@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { SimpleItemVerifyType } from "./enum/SimpleItemVerifyType";
-export default class VerifySimpleItemByUserId extends ConsumeAction {
+export default class VerifySimpleItemByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly inventoryName;

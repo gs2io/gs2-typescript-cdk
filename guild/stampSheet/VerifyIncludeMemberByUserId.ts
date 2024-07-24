@@ -14,10 +14,10 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { GuildVerifyType } from "./enum/GuildVerifyType";
 
-export default class VerifyIncludeMemberByUserId extends ConsumeAction {
+export default class VerifyIncludeMemberByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly guildModelName: string;
     private readonly userId: string;

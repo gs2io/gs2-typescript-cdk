@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyRarityParameterStatusByUserId extends model_1.ConsumeAction {
+class VerifyRarityParameterStatusByUserId extends model_1.VerifyAction {
     constructor(namespaceName, parameterName, propertyId, verifyType, parameterValueName = null, parameterCount = null, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.parameterValueName = null;

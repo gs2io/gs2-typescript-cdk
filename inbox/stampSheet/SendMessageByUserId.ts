@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import TimeSpan from "../model/TimeSpan";
 
 export default class SendMessageByUserId extends AcquireAction {

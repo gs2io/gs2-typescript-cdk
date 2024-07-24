@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { EntryVerifyType } from "./enum/EntryVerifyType";
-export default class VerifyEntryByUserId extends ConsumeAction {
+export default class VerifyEntryByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly entryModelName;

@@ -24,8 +24,8 @@ const AcquireItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/
 const AcquireItemSetWithGradeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireItemSetWithGradeByUserId"));
 const AddReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddReferenceOfByUserId"));
 const DeleteReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteReferenceOfByUserId"));
-const VerifyInventoryCurrentMaxCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId"));
 const ConsumeItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeItemSetByUserId"));
+const VerifyInventoryCurrentMaxCapacityByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId"));
 const VerifyItemSetByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyItemSetByUserId"));
 const VerifyReferenceOfByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyReferenceOfByUserId"));
 class InventoryModelRef {
@@ -54,11 +54,11 @@ class InventoryModelRef {
     deleteReferenceOf(itemName, referenceOf, itemSetName = null, userId = "#{userId}") {
         return new DeleteReferenceOfByUserId_1.default(this.namespaceName, this.inventoryName, itemName, referenceOf, itemSetName, userId);
     }
-    verifyInventoryCurrentMaxCapacity(verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
-        return new VerifyInventoryCurrentMaxCapacityByUserId_1.default(this.namespaceName, this.inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity, userId);
-    }
     consumeItemSet(itemName, consumeCount, itemSetName = null, userId = "#{userId}") {
         return new ConsumeItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, consumeCount, itemSetName, userId);
+    }
+    verifyInventoryCurrentMaxCapacity(verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyInventoryCurrentMaxCapacityByUserId_1.default(this.namespaceName, this.inventoryName, verifyType, currentInventoryMaxCapacity, multiplyValueSpecifyingQuantity, userId);
     }
     verifyItemSet(itemName, verifyType, count, itemSetName = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifyItemSetByUserId_1.default(this.namespaceName, this.inventoryName, itemName, verifyType, count, itemSetName, multiplyValueSpecifyingQuantity, userId);

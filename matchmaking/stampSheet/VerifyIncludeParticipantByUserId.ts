@@ -14,10 +14,10 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { SeasonGatheringVerifyType } from "./enum/SeasonGatheringVerifyType";
 
-export default class VerifyIncludeParticipantByUserId extends ConsumeAction {
+export default class VerifyIncludeParticipantByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly seasonName: string;
     private readonly season: number;

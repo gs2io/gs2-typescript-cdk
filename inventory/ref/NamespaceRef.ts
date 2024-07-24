@@ -30,18 +30,18 @@ import SetSimpleItemsByUserId from "../stampSheet/SetSimpleItemsByUserId";
 import HeldCount from "../model/HeldCount";
 import AcquireBigItemByUserId from "../stampSheet/AcquireBigItemByUserId";
 import SetBigItemByUserId from "../stampSheet/SetBigItemByUserId";
+import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
+import ConsumeSimpleItemsByUserId from "../stampSheet/ConsumeSimpleItemsByUserId";
+import ConsumeCount from "../model/ConsumeCount";
+import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
 import VerifyInventoryCurrentMaxCapacityByUserId from "../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId";
 import { InventoryVerifyType } from "../stampSheet/enum/InventoryVerifyType";
-import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
 import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
 import { ItemSetVerifyType } from "../stampSheet/enum/ItemSetVerifyType";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
 import { ReferenceOfVerifyType } from "../stampSheet/enum/ReferenceOfVerifyType";
-import ConsumeSimpleItemsByUserId from "../stampSheet/ConsumeSimpleItemsByUserId";
-import ConsumeCount from "../model/ConsumeCount";
 import VerifySimpleItemByUserId from "../stampSheet/VerifySimpleItemByUserId";
 import { SimpleItemVerifyType } from "../stampSheet/enum/SimpleItemVerifyType";
-import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
 import VerifyBigItemByUserId from "../stampSheet/VerifyBigItemByUserId";
 import { BigItemVerifyType } from "../stampSheet/enum/BigItemVerifyType";
 
@@ -235,23 +235,6 @@ export default class NamespaceRef {
         );
     }
 
-    public verifyInventoryCurrentMaxCapacity(
-        inventoryName: string,
-        verifyType: InventoryVerifyType,
-        currentInventoryMaxCapacity: number,
-        multiplyValueSpecifyingQuantity: boolean|null = null,
-        userId: string = "#{userId}",
-    ): VerifyInventoryCurrentMaxCapacityByUserId {
-        return new VerifyInventoryCurrentMaxCapacityByUserId(
-            this.namespaceName,
-            inventoryName,
-            verifyType,
-            currentInventoryMaxCapacity,
-            multiplyValueSpecifyingQuantity,
-            userId,
-        );
-    }
-
     public consumeItemSet(
         inventoryName: string,
         itemName: string,
@@ -265,6 +248,51 @@ export default class NamespaceRef {
             itemName,
             consumeCount,
             itemSetName,
+            userId,
+        );
+    }
+
+    public consumeSimpleItems(
+        inventoryName: string,
+        consumeCounts: ConsumeCount[],
+        userId: string = "#{userId}",
+    ): ConsumeSimpleItemsByUserId {
+        return new ConsumeSimpleItemsByUserId(
+            this.namespaceName,
+            inventoryName,
+            consumeCounts,
+            userId,
+        );
+    }
+
+    public consumeBigItem(
+        inventoryName: string,
+        itemName: string,
+        consumeCount: string,
+        userId: string = "#{userId}",
+    ): ConsumeBigItemByUserId {
+        return new ConsumeBigItemByUserId(
+            this.namespaceName,
+            inventoryName,
+            itemName,
+            consumeCount,
+            userId,
+        );
+    }
+
+    public verifyInventoryCurrentMaxCapacity(
+        inventoryName: string,
+        verifyType: InventoryVerifyType,
+        currentInventoryMaxCapacity: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyInventoryCurrentMaxCapacityByUserId {
+        return new VerifyInventoryCurrentMaxCapacityByUserId(
+            this.namespaceName,
+            inventoryName,
+            verifyType,
+            currentInventoryMaxCapacity,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }
@@ -309,19 +337,6 @@ export default class NamespaceRef {
         );
     }
 
-    public consumeSimpleItems(
-        inventoryName: string,
-        consumeCounts: ConsumeCount[],
-        userId: string = "#{userId}",
-    ): ConsumeSimpleItemsByUserId {
-        return new ConsumeSimpleItemsByUserId(
-            this.namespaceName,
-            inventoryName,
-            consumeCounts,
-            userId,
-        );
-    }
-
     public verifySimpleItem(
         inventoryName: string,
         itemName: string,
@@ -337,21 +352,6 @@ export default class NamespaceRef {
             verifyType,
             count,
             multiplyValueSpecifyingQuantity,
-            userId,
-        );
-    }
-
-    public consumeBigItem(
-        inventoryName: string,
-        itemName: string,
-        consumeCount: string,
-        userId: string = "#{userId}",
-    ): ConsumeBigItemByUserId {
-        return new ConsumeBigItemByUserId(
-            this.namespaceName,
-            inventoryName,
-            itemName,
-            consumeCount,
             userId,
         );
     }

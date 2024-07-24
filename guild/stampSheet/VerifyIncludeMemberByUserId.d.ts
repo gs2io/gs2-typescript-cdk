@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { GuildVerifyType } from "./enum/GuildVerifyType";
-export default class VerifyIncludeMemberByUserId extends ConsumeAction {
+export default class VerifyIncludeMemberByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly guildModelName;
     private readonly userId;

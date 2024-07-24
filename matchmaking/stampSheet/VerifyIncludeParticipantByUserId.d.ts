@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { SeasonGatheringVerifyType } from "./enum/SeasonGatheringVerifyType";
-export default class VerifyIncludeParticipantByUserId extends ConsumeAction {
+export default class VerifyIncludeParticipantByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly seasonName;
     private readonly season;

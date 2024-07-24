@@ -14,11 +14,11 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { CounterVerifyType } from "./enum/CounterVerifyType";
 import { CounterResetType } from "./enum/CounterResetType";
 
-export default class VerifyCounterValueByUserId extends ConsumeAction {
+export default class VerifyCounterValueByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly counterName: string;

@@ -18,6 +18,7 @@ import AcquireAction from "./AcquireAction";
 import CdkResource from "./CdkResource";
 import Config from "./Config";
 import ConsumeAction from "./ConsumeAction";
+import VerifyAction from "./VerifyAction";
 import LogSetting from "./LogSetting";
 import NotificationSetting from "./NotificationSetting";
 import ScriptSetting from "./ScriptSetting";
@@ -29,6 +30,7 @@ export {
     CdkResource,
     Config,
     ConsumeAction,
+    VerifyAction,
     LogSetting,
     NotificationSetting,
     ScriptSetting,

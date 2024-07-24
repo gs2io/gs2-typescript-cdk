@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyEventByUserId extends model_1.ConsumeAction {
+class VerifyEventByUserId extends model_1.VerifyAction {
     constructor(namespaceName, eventName, verifyType, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.timeOffsetToken = null;

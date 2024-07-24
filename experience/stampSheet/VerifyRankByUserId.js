@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyRankByUserId extends model_1.ConsumeAction {
+class VerifyRankByUserId extends model_1.VerifyAction {
     constructor(namespaceName, experienceName, verifyType, propertyId, rankValue = null, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.rankValue = null;

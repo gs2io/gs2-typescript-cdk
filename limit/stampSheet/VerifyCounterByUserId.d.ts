@@ -1,6 +1,6 @@
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { CounterVerifyType } from "./enum/CounterVerifyType";
-export default class VerifyCounterByUserId extends ConsumeAction {
+export default class VerifyCounterByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;
     private readonly limitName;

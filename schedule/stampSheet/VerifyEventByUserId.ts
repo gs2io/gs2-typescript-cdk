@@ -14,10 +14,10 @@
  * permissions and limitations under the License.
  */
 
-import {AcquireAction, ConsumeAction} from "../../core/model";
+import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { EventVerifyType } from "./enum/EventVerifyType";
 
-export default class VerifyEventByUserId extends ConsumeAction {
+export default class VerifyEventByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly eventName: string;
