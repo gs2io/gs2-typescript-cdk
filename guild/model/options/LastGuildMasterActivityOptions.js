@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,22 +14,5 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import GuildModelRef from "./GuildModelRef";
-import InboxRef from "./InboxRef";
-import GuildRef from "./GuildRef";
-import IgnoreUsersRef from "./IgnoreUsersRef";
-import LastGuildMasterActivityRef from "./LastGuildMasterActivityRef";
-import RoleModelRef from "./RoleModelRef";
-import IgnoreUserRef from "./IgnoreUserRef";
-
-export {
-    NamespaceRef,
-    GuildModelRef,
-    InboxRef,
-    GuildRef,
-    IgnoreUsersRef,
-    LastGuildMasterActivityRef,
-    RoleModelRef,
-    IgnoreUserRef,
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=LastGuildMasterActivityOptions.js.map

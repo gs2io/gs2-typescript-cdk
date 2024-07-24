@@ -22,7 +22,7 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         super("Guild_Namespace_" + name);
         this.description = null;
         this.joinNotification = null;
@@ -30,6 +30,10 @@ class Namespace extends model_1.CdkResource {
         this.changeMemberNotification = null;
         this.receiveRequestNotification = null;
         this.removeRequestNotification = null;
+        this.createGuildScript = null;
+        this.joinGuildScript = null;
+        this.leaveGuildScript = null;
+        this.changeRoleScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -39,7 +43,11 @@ class Namespace extends model_1.CdkResource {
         this.changeMemberNotification = (_d = options === null || options === void 0 ? void 0 : options.changeMemberNotification) !== null && _d !== void 0 ? _d : null;
         this.receiveRequestNotification = (_e = options === null || options === void 0 ? void 0 : options.receiveRequestNotification) !== null && _e !== void 0 ? _e : null;
         this.removeRequestNotification = (_f = options === null || options === void 0 ? void 0 : options.removeRequestNotification) !== null && _f !== void 0 ? _f : null;
-        this.logSetting = (_g = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _g !== void 0 ? _g : null;
+        this.createGuildScript = (_g = options === null || options === void 0 ? void 0 : options.createGuildScript) !== null && _g !== void 0 ? _g : null;
+        this.joinGuildScript = (_h = options === null || options === void 0 ? void 0 : options.joinGuildScript) !== null && _h !== void 0 ? _h : null;
+        this.leaveGuildScript = (_j = options === null || options === void 0 ? void 0 : options.leaveGuildScript) !== null && _j !== void 0 ? _j : null;
+        this.changeRoleScript = (_k = options === null || options === void 0 ? void 0 : options.changeRoleScript) !== null && _k !== void 0 ? _k : null;
+        this.logSetting = (_l = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _l !== void 0 ? _l : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -49,7 +57,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Guild::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -72,8 +80,20 @@ class Namespace extends model_1.CdkResource {
         if (this.removeRequestNotification != null) {
             properties["RemoveRequestNotification"] = (_e = this.removeRequestNotification) === null || _e === void 0 ? void 0 : _e.properties();
         }
+        if (this.createGuildScript != null) {
+            properties["CreateGuildScript"] = (_f = this.createGuildScript) === null || _f === void 0 ? void 0 : _f.properties();
+        }
+        if (this.joinGuildScript != null) {
+            properties["JoinGuildScript"] = (_g = this.joinGuildScript) === null || _g === void 0 ? void 0 : _g.properties();
+        }
+        if (this.leaveGuildScript != null) {
+            properties["LeaveGuildScript"] = (_h = this.leaveGuildScript) === null || _h === void 0 ? void 0 : _h.properties();
+        }
+        if (this.changeRoleScript != null) {
+            properties["ChangeRoleScript"] = (_j = this.changeRoleScript) === null || _j === void 0 ? void 0 : _j.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["LogSetting"] = (_k = this.logSetting) === null || _k === void 0 ? void 0 : _k.properties();
         }
         return properties;
     }

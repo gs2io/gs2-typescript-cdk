@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class GuildModel {
-    constructor(name, defaultMaximumMemberCount, maximumMemberCount, roles, guildMasterRole, guildMemberDefaultRole, rejoinCoolTimeMinutes, options = null) {
+    constructor(name, defaultMaximumMemberCount, maximumMemberCount, inactivityPeriodDays, roles, guildMasterRole, guildMemberDefaultRole, rejoinCoolTimeMinutes, options = null) {
         var _a;
         this.metadata = null;
         this.name = name;
         this.defaultMaximumMemberCount = defaultMaximumMemberCount;
         this.maximumMemberCount = maximumMemberCount;
+        this.inactivityPeriodDays = inactivityPeriodDays;
         this.roles = roles;
         this.guildMasterRole = guildMasterRole;
         this.guildMemberDefaultRole = guildMemberDefaultRole;
@@ -26,6 +27,9 @@ class GuildModel {
         }
         if (this.maximumMemberCount != null) {
             properties["maximumMemberCount"] = this.maximumMemberCount;
+        }
+        if (this.inactivityPeriodDays != null) {
+            properties["inactivityPeriodDays"] = this.inactivityPeriodDays;
         }
         if (this.roles != null) {
             properties["roles"] = this.roles.map(v => v.properties());

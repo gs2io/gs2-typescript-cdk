@@ -20,6 +20,7 @@ export default class GuildModel {
     private readonly name: string;
     private readonly defaultMaximumMemberCount: number;
     private readonly maximumMemberCount: number;
+    private readonly inactivityPeriodDays: number;
     private readonly roles: RoleModel[];
     private readonly guildMasterRole: string;
     private readonly guildMemberDefaultRole: string;
@@ -30,6 +31,7 @@ export default class GuildModel {
         name: string,
         defaultMaximumMemberCount: number,
         maximumMemberCount: number,
+        inactivityPeriodDays: number,
         roles: RoleModel[],
         guildMasterRole: string,
         guildMemberDefaultRole: string,
@@ -39,6 +41,7 @@ export default class GuildModel {
         this.name = name;
         this.defaultMaximumMemberCount = defaultMaximumMemberCount;
         this.maximumMemberCount = maximumMemberCount;
+        this.inactivityPeriodDays = inactivityPeriodDays;
         this.roles = roles;
         this.guildMasterRole = guildMasterRole;
         this.guildMemberDefaultRole = guildMemberDefaultRole;
@@ -61,6 +64,9 @@ export default class GuildModel {
         }
         if (this.maximumMemberCount != null) {
             properties["maximumMemberCount"] = this.maximumMemberCount;
+        }
+        if (this.inactivityPeriodDays != null) {
+            properties["inactivityPeriodDays"] = this.inactivityPeriodDays;
         }
         if (this.roles != null) {
             properties["roles"] = this.roles.map(v => v.properties(

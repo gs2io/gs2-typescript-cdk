@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import NotificationSetting from "../../core/model/NotificationSetting";
+import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
@@ -34,6 +35,10 @@ export default class Namespace extends CdkResource {
     private readonly changeMemberNotification: NotificationSetting|null = null;
     private readonly receiveRequestNotification: NotificationSetting|null = null;
     private readonly removeRequestNotification: NotificationSetting|null = null;
+    private readonly createGuildScript: ScriptSetting|null = null;
+    private readonly joinGuildScript: ScriptSetting|null = null;
+    private readonly leaveGuildScript: ScriptSetting|null = null;
+    private readonly changeRoleScript: ScriptSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -53,6 +58,10 @@ export default class Namespace extends CdkResource {
         this.changeMemberNotification = options?.changeMemberNotification ?? null;
         this.receiveRequestNotification = options?.receiveRequestNotification ?? null;
         this.removeRequestNotification = options?.removeRequestNotification ?? null;
+        this.createGuildScript = options?.createGuildScript ?? null;
+        this.joinGuildScript = options?.joinGuildScript ?? null;
+        this.leaveGuildScript = options?.leaveGuildScript ?? null;
+        this.changeRoleScript = options?.changeRoleScript ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -98,6 +107,22 @@ export default class Namespace extends CdkResource {
         }
         if (this.removeRequestNotification != null) {
             properties["RemoveRequestNotification"] = this.removeRequestNotification?.properties(
+            );
+        }
+        if (this.createGuildScript != null) {
+            properties["CreateGuildScript"] = this.createGuildScript?.properties(
+            );
+        }
+        if (this.joinGuildScript != null) {
+            properties["JoinGuildScript"] = this.joinGuildScript?.properties(
+            );
+        }
+        if (this.leaveGuildScript != null) {
+            properties["LeaveGuildScript"] = this.leaveGuildScript?.properties(
+            );
+        }
+        if (this.changeRoleScript != null) {
+            properties["ChangeRoleScript"] = this.changeRoleScript?.properties(
             );
         }
         if (this.logSetting != null) {

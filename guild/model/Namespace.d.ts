@@ -12,6 +12,10 @@ export default class Namespace extends CdkResource {
     private readonly changeMemberNotification;
     private readonly receiveRequestNotification;
     private readonly removeRequestNotification;
+    private readonly createGuildScript;
+    private readonly joinGuildScript;
+    private readonly leaveGuildScript;
+    private readonly changeRoleScript;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;

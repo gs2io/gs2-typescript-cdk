@@ -13,22 +13,26 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import GuildModelRef from "./GuildModelRef";
-import InboxRef from "./InboxRef";
-import GuildRef from "./GuildRef";
-import IgnoreUsersRef from "./IgnoreUsersRef";
-import LastGuildMasterActivityRef from "./LastGuildMasterActivityRef";
-import RoleModelRef from "./RoleModelRef";
-import IgnoreUserRef from "./IgnoreUserRef";
+import { LastGuildMasterActivityOptions } from "./options/LastGuildMasterActivityOptions";
 
-export {
-    NamespaceRef,
-    GuildModelRef,
-    InboxRef,
-    GuildRef,
-    IgnoreUsersRef,
-    LastGuildMasterActivityRef,
-    RoleModelRef,
-    IgnoreUserRef,
+export default class LastGuildMasterActivity {
+    private readonly userId: string;
+
+    public constructor(
+        userId: string,
+        options: LastGuildMasterActivityOptions|null = null,
+    ) {
+        this.userId = userId;
+    }
+
+    public properties(
+    ): {[name: string]: any} {
+        let properties: {[name: string]: any} = {};
+
+        if (this.userId != null) {
+            properties["userId"] = this.userId;
+        }
+
+        return properties;
+    }
 }
