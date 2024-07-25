@@ -14,14 +14,14 @@
  * permissions and limitations under the License.
  */
 import TargetCounterModel from "../TargetCounterModel";
-import { ConsumeAction } from "../../../core/model";
+import { VerifyAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 import { MissionTaskModelVerifyCompleteType } from "../enum/MissionTaskModelVerifyCompleteType";
 import { MissionTaskModelTargetResetType } from "../enum/MissionTaskModelTargetResetType";
 
 export interface MissionTaskModelVerifyCompleteTypeIsCounterOptions {
     metadata?: string|null;
-    verifyCompleteConsumeActions?: ConsumeAction[]|null;
+    verifyCompleteConsumeActions?: VerifyAction[]|null;
     completeAcquireActions?: AcquireAction[]|null;
     challengePeriodEventId?: string|null;
     premiseMissionTaskName?: string|null;

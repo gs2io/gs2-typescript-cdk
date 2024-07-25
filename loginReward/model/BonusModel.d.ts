@@ -15,6 +15,7 @@ export default class BonusModel {
     private readonly resetHour;
     private readonly repeat;
     private readonly rewards;
+    private readonly missedReceiveReliefVerifyActions;
     private readonly missedReceiveReliefConsumeActions;
     constructor(name: string, mode: BonusModelMode, missedReceiveRelief: BonusModelMissedReceiveRelief, options?: BonusModelOptions | null);
     static modeIsSchedule(name: string, missedReceiveRelief: BonusModelMissedReceiveRelief, options?: BonusModelModeIsScheduleOptions | null): BonusModel;

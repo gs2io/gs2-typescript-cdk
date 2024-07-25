@@ -18,6 +18,6 @@
 
 export const MissionTaskModelVerifyCompleteType = {
     COUNTER: "counter",
-    CONSUME_ACTIONS: "consumeActions",
+    VERIFY_ACTIONS: "verifyActions",
 } as const;
 export type MissionTaskModelVerifyCompleteType = typeof MissionTaskModelVerifyCompleteType[keyof typeof MissionTaskModelVerifyCompleteType];

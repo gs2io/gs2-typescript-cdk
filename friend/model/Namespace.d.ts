@@ -16,7 +16,10 @@ export default class Namespace extends CdkResource {
     private readonly updateProfileScript;
     private readonly followNotification;
     private readonly receiveRequestNotification;
+    private readonly cancelRequestNotification;
     private readonly acceptRequestNotification;
+    private readonly rejectRequestNotification;
+    private readonly deleteFriendNotification;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;

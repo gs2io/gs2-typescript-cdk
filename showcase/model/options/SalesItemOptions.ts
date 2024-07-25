@@ -13,11 +13,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { VerifyAction } from "../../../core/model";
 import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 
 export interface SalesItemOptions {
     metadata?: string|null;
+    verifyActions?: VerifyAction[]|null;
     consumeActions?: ConsumeAction[]|null;
 }
 

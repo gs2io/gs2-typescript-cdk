@@ -16,16 +16,14 @@
 import TargetCounterModel from "../TargetCounterModel";
 import { VerifyAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
-import MissionTaskModel from "../MissionTaskModel";
-import { MissionGroupModelResetType } from "../enum/MissionGroupModelResetType";
-import { MissionGroupModelResetDayOfWeek } from "../enum/MissionGroupModelResetDayOfWeek";
+import { MissionTaskModelVerifyCompleteType } from "../enum/MissionTaskModelVerifyCompleteType";
+import { MissionTaskModelTargetResetType } from "../enum/MissionTaskModelTargetResetType";
 
-export interface MissionGroupModelOptions {
+export interface MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions {
     metadata?: string|null;
-    tasks?: MissionTaskModel[]|null;
-    resetDayOfMonth?: number|null;
-    resetDayOfWeek?: MissionGroupModelResetDayOfWeek|null;
-    resetHour?: number|null;
-    completeNotificationNamespaceId?: string|null;
+    verifyCompleteConsumeActions?: VerifyAction[]|null;
+    completeAcquireActions?: AcquireAction[]|null;
+    challengePeriodEventId?: string|null;
+    premiseMissionTaskName?: string|null;
+    targetResetType?: MissionTaskModelTargetResetType|null;
 }
-

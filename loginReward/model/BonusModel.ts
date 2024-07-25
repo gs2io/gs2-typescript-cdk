@@ -15,6 +15,7 @@
  */
 import { AcquireAction } from "../../core/model";
 import Reward from "./Reward";
+import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import { BonusModelOptions } from "./options/BonusModelOptions";
 import { BonusModelModeIsScheduleOptions } from "./options/BonusModelModeIsScheduleOptions";
@@ -34,6 +35,7 @@ export default class BonusModel {
     private readonly resetHour: number|null = null;
     private readonly repeat: BonusModelRepeat|null = null;
     private readonly rewards: Reward[]|null = null;
+    private readonly missedReceiveReliefVerifyActions: VerifyAction[]|null = null;
     private readonly missedReceiveReliefConsumeActions: ConsumeAction[]|null = null;
 
     public constructor(
@@ -50,6 +52,7 @@ export default class BonusModel {
         this.resetHour = options?.resetHour ?? null;
         this.repeat = options?.repeat ?? null;
         this.rewards = options?.rewards ?? null;
+        this.missedReceiveReliefVerifyActions = options?.missedReceiveReliefVerifyActions ?? null;
         this.missedReceiveReliefConsumeActions = options?.missedReceiveReliefConsumeActions ?? null;
     }
 
@@ -66,6 +69,7 @@ export default class BonusModel {
                 metadata: options?.metadata,
                 periodEventId: options?.periodEventId,
                 rewards: options?.rewards,
+                missedReceiveReliefVerifyActions: options?.missedReceiveReliefVerifyActions,
                 missedReceiveReliefConsumeActions: options?.missedReceiveReliefConsumeActions,
             },
         );
@@ -86,6 +90,7 @@ export default class BonusModel {
                 metadata: options?.metadata,
                 periodEventId: options?.periodEventId,
                 rewards: options?.rewards,
+                missedReceiveReliefVerifyActions: options?.missedReceiveReliefVerifyActions,
                 missedReceiveReliefConsumeActions: options?.missedReceiveReliefConsumeActions,
             },
         );
@@ -104,6 +109,7 @@ export default class BonusModel {
                 metadata: options?.metadata,
                 periodEventId: options?.periodEventId,
                 rewards: options?.rewards,
+                missedReceiveReliefVerifyActions: options?.missedReceiveReliefVerifyActions,
                 missedReceiveReliefConsumeActions: options?.missedReceiveReliefConsumeActions,
             },
         );
@@ -122,6 +128,7 @@ export default class BonusModel {
                 metadata: options?.metadata,
                 periodEventId: options?.periodEventId,
                 rewards: options?.rewards,
+                missedReceiveReliefVerifyActions: options?.missedReceiveReliefVerifyActions,
                 missedReceiveReliefConsumeActions: options?.missedReceiveReliefConsumeActions,
             },
         );
@@ -155,6 +162,10 @@ export default class BonusModel {
         }
         if (this.missedReceiveRelief != null) {
             properties["missedReceiveRelief"] = this.missedReceiveRelief;
+        }
+        if (this.missedReceiveReliefVerifyActions != null) {
+            properties["missedReceiveReliefVerifyActions"] = this.missedReceiveReliefVerifyActions.map(v => v.properties(
+                ));
         }
         if (this.missedReceiveReliefConsumeActions != null) {
             properties["missedReceiveReliefConsumeActions"] = this.missedReceiveReliefConsumeActions.map(v => v.properties(

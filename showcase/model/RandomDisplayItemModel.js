@@ -2,15 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class RandomDisplayItemModel {
     constructor(name, acquireActions, stock, weight, options = null) {
-        var _a, _b;
+        var _a, _b, _c;
         this.metadata = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.name = name;
         this.acquireActions = acquireActions;
         this.stock = stock;
         this.weight = weight;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
-        this.consumeActions = (_b = options === null || options === void 0 ? void 0 : options.consumeActions) !== null && _b !== void 0 ? _b : null;
+        this.verifyActions = (_b = options === null || options === void 0 ? void 0 : options.verifyActions) !== null && _b !== void 0 ? _b : null;
+        this.consumeActions = (_c = options === null || options === void 0 ? void 0 : options.consumeActions) !== null && _c !== void 0 ? _c : null;
     }
     properties() {
         let properties = {};
@@ -19,6 +21,9 @@ class RandomDisplayItemModel {
         }
         if (this.metadata != null) {
             properties["metadata"] = this.metadata;
+        }
+        if (this.verifyActions != null) {
+            properties["verifyActions"] = this.verifyActions.map(v => v.properties());
         }
         if (this.consumeActions != null) {
             properties["consumeActions"] = this.consumeActions.map(v => v.properties());

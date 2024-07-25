@@ -14,11 +14,11 @@
  * permissions and limitations under the License.
  */
 import TargetCounterModel from "./TargetCounterModel";
-import { ConsumeAction } from "../../core/model";
+import { VerifyAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
 import { MissionTaskModelOptions } from "./options/MissionTaskModelOptions";
 import { MissionTaskModelVerifyCompleteTypeIsCounterOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsCounterOptions";
-import { MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions";
+import { MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions";
 import { MissionTaskModelVerifyCompleteType } from "./enum/MissionTaskModelVerifyCompleteType";
 import { MissionTaskModelTargetResetType } from "./enum/MissionTaskModelTargetResetType";
 
@@ -29,7 +29,7 @@ export default class MissionTaskModel {
     private readonly targetValue: number;
     private readonly metadata: string|null = null;
     private readonly targetCounter: TargetCounterModel|null = null;
-    private readonly verifyCompleteConsumeActions: ConsumeAction[]|null = null;
+    private readonly verifyCompleteConsumeActions: VerifyAction[]|null = null;
     private readonly completeAcquireActions: AcquireAction[]|null = null;
     private readonly challengePeriodEventId: string|null = null;
     private readonly premiseMissionTaskName: string|null = null;
@@ -79,15 +79,15 @@ export default class MissionTaskModel {
         );
     }
 
-    public static verifyCompleteTypeIsConsumeActions(
+    public static verifyCompleteTypeIsVerifyActions(
         name: string,
         counterName: string,
         targetValue: number,
-        options: MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions|null = null,
+        options: MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions|null = null,
     ): MissionTaskModel {
         return new MissionTaskModel(
             name,
-            MissionTaskModelVerifyCompleteType.CONSUME_ACTIONS,
+            MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS,
             counterName,
             targetValue,
             {

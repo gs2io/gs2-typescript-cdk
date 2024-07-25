@@ -29,7 +29,10 @@ export interface NamespaceOptions {
     updateProfileScript?: ScriptSetting|null;
     followNotification?: NotificationSetting|null;
     receiveRequestNotification?: NotificationSetting|null;
+    cancelRequestNotification?: NotificationSetting|null;
     acceptRequestNotification?: NotificationSetting|null;
+    rejectRequestNotification?: NotificationSetting|null;
+    deleteFriendNotification?: NotificationSetting|null;
     logSetting?: LogSetting|null;
 }
 

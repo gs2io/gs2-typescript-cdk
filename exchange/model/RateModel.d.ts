@@ -6,6 +6,7 @@ export default class RateModel {
     private readonly name;
     private readonly timingType;
     private readonly metadata;
+    private readonly verifyActions;
     private readonly consumeActions;
     private readonly lockTime;
     private readonly acquireActions;

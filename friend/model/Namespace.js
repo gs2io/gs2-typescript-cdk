@@ -21,7 +21,7 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         super("Friend_Namespace_" + name);
         this.description = null;
         this.followScript = null;
@@ -34,7 +34,10 @@ class Namespace extends model_1.CdkResource {
         this.updateProfileScript = null;
         this.followNotification = null;
         this.receiveRequestNotification = null;
+        this.cancelRequestNotification = null;
         this.acceptRequestNotification = null;
+        this.rejectRequestNotification = null;
+        this.deleteFriendNotification = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -49,8 +52,11 @@ class Namespace extends model_1.CdkResource {
         this.updateProfileScript = (_j = options === null || options === void 0 ? void 0 : options.updateProfileScript) !== null && _j !== void 0 ? _j : null;
         this.followNotification = (_k = options === null || options === void 0 ? void 0 : options.followNotification) !== null && _k !== void 0 ? _k : null;
         this.receiveRequestNotification = (_l = options === null || options === void 0 ? void 0 : options.receiveRequestNotification) !== null && _l !== void 0 ? _l : null;
-        this.acceptRequestNotification = (_m = options === null || options === void 0 ? void 0 : options.acceptRequestNotification) !== null && _m !== void 0 ? _m : null;
-        this.logSetting = (_o = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _o !== void 0 ? _o : null;
+        this.cancelRequestNotification = (_m = options === null || options === void 0 ? void 0 : options.cancelRequestNotification) !== null && _m !== void 0 ? _m : null;
+        this.acceptRequestNotification = (_o = options === null || options === void 0 ? void 0 : options.acceptRequestNotification) !== null && _o !== void 0 ? _o : null;
+        this.rejectRequestNotification = (_p = options === null || options === void 0 ? void 0 : options.rejectRequestNotification) !== null && _p !== void 0 ? _p : null;
+        this.deleteFriendNotification = (_q = options === null || options === void 0 ? void 0 : options.deleteFriendNotification) !== null && _q !== void 0 ? _q : null;
+        this.logSetting = (_r = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _r !== void 0 ? _r : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -60,7 +66,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Friend::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -98,11 +104,20 @@ class Namespace extends model_1.CdkResource {
         if (this.receiveRequestNotification != null) {
             properties["ReceiveRequestNotification"] = (_k = this.receiveRequestNotification) === null || _k === void 0 ? void 0 : _k.properties();
         }
+        if (this.cancelRequestNotification != null) {
+            properties["CancelRequestNotification"] = (_l = this.cancelRequestNotification) === null || _l === void 0 ? void 0 : _l.properties();
+        }
         if (this.acceptRequestNotification != null) {
-            properties["AcceptRequestNotification"] = (_l = this.acceptRequestNotification) === null || _l === void 0 ? void 0 : _l.properties();
+            properties["AcceptRequestNotification"] = (_m = this.acceptRequestNotification) === null || _m === void 0 ? void 0 : _m.properties();
+        }
+        if (this.rejectRequestNotification != null) {
+            properties["RejectRequestNotification"] = (_o = this.rejectRequestNotification) === null || _o === void 0 ? void 0 : _o.properties();
+        }
+        if (this.deleteFriendNotification != null) {
+            properties["DeleteFriendNotification"] = (_p = this.deleteFriendNotification) === null || _p === void 0 ? void 0 : _p.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_m = this.logSetting) === null || _m === void 0 ? void 0 : _m.properties();
+            properties["LogSetting"] = (_q = this.logSetting) === null || _q === void 0 ? void 0 : _q.properties();
         }
         return properties;
     }

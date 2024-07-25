@@ -13,12 +13,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { VerifyAction } from "../../../core/model";
 import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 import { RateModelTimingType } from "../enum/RateModelTimingType";
 
 export interface RateModelOptions {
     metadata?: string|null;
+    verifyActions?: VerifyAction[]|null;
     consumeActions?: ConsumeAction[]|null;
     lockTime?: number|null;
     acquireActions?: AcquireAction[]|null;

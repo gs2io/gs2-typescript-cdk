@@ -34,8 +34,8 @@ class MissionTaskModel {
             targetResetType: options === null || options === void 0 ? void 0 : options.targetResetType,
         });
     }
-    static verifyCompleteTypeIsConsumeActions(name, counterName, targetValue, options = null) {
-        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.CONSUME_ACTIONS, counterName, targetValue, {
+    static verifyCompleteTypeIsVerifyActions(name, counterName, targetValue, options = null) {
+        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS, counterName, targetValue, {
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             verifyCompleteConsumeActions: options === null || options === void 0 ? void 0 : options.verifyCompleteConsumeActions,
             completeAcquireActions: options === null || options === void 0 ? void 0 : options.completeAcquireActions,

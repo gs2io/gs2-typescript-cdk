@@ -13,11 +13,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { VerifyAction } from "../../../core/model";
 import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 
 export interface NodeModelOptions {
     metadata?: string|null;
+    releaseVerifyActions?: VerifyAction[]|null;
     returnAcquireActions?: AcquireAction[]|null;
     premiseNodeNames?: string[]|null;
 }

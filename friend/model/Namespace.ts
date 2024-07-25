@@ -38,7 +38,10 @@ export default class Namespace extends CdkResource {
     private readonly updateProfileScript: ScriptSetting|null = null;
     private readonly followNotification: NotificationSetting|null = null;
     private readonly receiveRequestNotification: NotificationSetting|null = null;
+    private readonly cancelRequestNotification: NotificationSetting|null = null;
     private readonly acceptRequestNotification: NotificationSetting|null = null;
+    private readonly rejectRequestNotification: NotificationSetting|null = null;
+    private readonly deleteFriendNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -63,7 +66,10 @@ export default class Namespace extends CdkResource {
         this.updateProfileScript = options?.updateProfileScript ?? null;
         this.followNotification = options?.followNotification ?? null;
         this.receiveRequestNotification = options?.receiveRequestNotification ?? null;
+        this.cancelRequestNotification = options?.cancelRequestNotification ?? null;
         this.acceptRequestNotification = options?.acceptRequestNotification ?? null;
+        this.rejectRequestNotification = options?.rejectRequestNotification ?? null;
+        this.deleteFriendNotification = options?.deleteFriendNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -131,8 +137,20 @@ export default class Namespace extends CdkResource {
             properties["ReceiveRequestNotification"] = this.receiveRequestNotification?.properties(
             );
         }
+        if (this.cancelRequestNotification != null) {
+            properties["CancelRequestNotification"] = this.cancelRequestNotification?.properties(
+            );
+        }
         if (this.acceptRequestNotification != null) {
             properties["AcceptRequestNotification"] = this.acceptRequestNotification?.properties(
+            );
+        }
+        if (this.rejectRequestNotification != null) {
+            properties["RejectRequestNotification"] = this.rejectRequestNotification?.properties(
+            );
+        }
+        if (this.deleteFriendNotification != null) {
+            properties["DeleteFriendNotification"] = this.deleteFriendNotification?.properties(
             );
         }
         if (this.logSetting != null) {

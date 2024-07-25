@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
 import { RateModelOptions } from "./options/RateModelOptions";
@@ -24,6 +25,7 @@ export default class RateModel {
     private readonly name: string;
     private readonly timingType: RateModelTimingType;
     private readonly metadata: string|null = null;
+    private readonly verifyActions: VerifyAction[]|null = null;
     private readonly consumeActions: ConsumeAction[]|null = null;
     private readonly lockTime: number|null = null;
     private readonly acquireActions: AcquireAction[]|null = null;
@@ -36,6 +38,7 @@ export default class RateModel {
         this.name = name;
         this.timingType = timingType;
         this.metadata = options?.metadata ?? null;
+        this.verifyActions = options?.verifyActions ?? null;
         this.consumeActions = options?.consumeActions ?? null;
         this.lockTime = options?.lockTime ?? null;
         this.acquireActions = options?.acquireActions ?? null;
@@ -50,6 +53,7 @@ export default class RateModel {
             RateModelTimingType.IMMEDIATE,
             {
                 metadata: options?.metadata,
+                verifyActions: options?.verifyActions,
                 consumeActions: options?.consumeActions,
                 acquireActions: options?.acquireActions,
             },
@@ -67,6 +71,7 @@ export default class RateModel {
             {
                 lockTime: lockTime,
                 metadata: options?.metadata,
+                verifyActions: options?.verifyActions,
                 consumeActions: options?.consumeActions,
                 acquireActions: options?.acquireActions,
             },
@@ -82,6 +87,10 @@ export default class RateModel {
         }
         if (this.metadata != null) {
             properties["metadata"] = this.metadata;
+        }
+        if (this.verifyActions != null) {
+            properties["verifyActions"] = this.verifyActions.map(v => v.properties(
+                ));
         }
         if (this.consumeActions != null) {
             properties["consumeActions"] = this.consumeActions.map(v => v.properties(

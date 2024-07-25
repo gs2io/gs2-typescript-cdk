@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
 import { NodeModelOptions } from "./options/NodeModelOptions";
@@ -22,6 +23,7 @@ export default class NodeModel {
     private readonly releaseConsumeActions: ConsumeAction[];
     private readonly restrainReturnRate: number;
     private readonly metadata: string|null = null;
+    private readonly releaseVerifyActions: VerifyAction[]|null = null;
     private readonly returnAcquireActions: AcquireAction[]|null = null;
     private readonly premiseNodeNames: string[]|null = null;
 
@@ -35,6 +37,7 @@ export default class NodeModel {
         this.releaseConsumeActions = releaseConsumeActions;
         this.restrainReturnRate = restrainReturnRate;
         this.metadata = options?.metadata ?? null;
+        this.releaseVerifyActions = options?.releaseVerifyActions ?? null;
         this.returnAcquireActions = options?.returnAcquireActions ?? null;
         this.premiseNodeNames = options?.premiseNodeNames ?? null;
     }
@@ -48,6 +51,10 @@ export default class NodeModel {
         }
         if (this.metadata != null) {
             properties["metadata"] = this.metadata;
+        }
+        if (this.releaseVerifyActions != null) {
+            properties["releaseVerifyActions"] = this.releaseVerifyActions.map(v => v.properties(
+                ));
         }
         if (this.releaseConsumeActions != null) {
             properties["releaseConsumeActions"] = this.releaseConsumeActions.map(v => v.properties(

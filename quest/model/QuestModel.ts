@@ -15,6 +15,7 @@
  */
 import { AcquireAction } from "../../core/model";
 import Contents from "./Contents";
+import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import { QuestModelOptions } from "./options/QuestModelOptions";
 
@@ -24,6 +25,7 @@ export default class QuestModel {
     private readonly metadata: string|null = null;
     private readonly challengePeriodEventId: string|null = null;
     private readonly firstCompleteAcquireActions: AcquireAction[]|null = null;
+    private readonly verifyActions: VerifyAction[]|null = null;
     private readonly consumeActions: ConsumeAction[]|null = null;
     private readonly failedAcquireActions: AcquireAction[]|null = null;
     private readonly premiseQuestNames: string[]|null = null;
@@ -38,6 +40,7 @@ export default class QuestModel {
         this.metadata = options?.metadata ?? null;
         this.challengePeriodEventId = options?.challengePeriodEventId ?? null;
         this.firstCompleteAcquireActions = options?.firstCompleteAcquireActions ?? null;
+        this.verifyActions = options?.verifyActions ?? null;
         this.consumeActions = options?.consumeActions ?? null;
         this.failedAcquireActions = options?.failedAcquireActions ?? null;
         this.premiseQuestNames = options?.premiseQuestNames ?? null;
@@ -62,6 +65,10 @@ export default class QuestModel {
         }
         if (this.firstCompleteAcquireActions != null) {
             properties["firstCompleteAcquireActions"] = this.firstCompleteAcquireActions.map(v => v.properties(
+                ));
+        }
+        if (this.verifyActions != null) {
+            properties["verifyActions"] = this.verifyActions.map(v => v.properties(
                 ));
         }
         if (this.consumeActions != null) {

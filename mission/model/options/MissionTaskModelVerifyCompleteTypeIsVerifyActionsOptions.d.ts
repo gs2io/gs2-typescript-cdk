@@ -1,7 +1,7 @@
 import { VerifyAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 import { MissionTaskModelTargetResetType } from "../enum/MissionTaskModelTargetResetType";
-export interface MissionTaskModelVerifyCompleteTypeIsCounterOptions {
+export interface MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions {
     metadata?: string | null;
     verifyCompleteConsumeActions?: VerifyAction[] | null;
     completeAcquireActions?: AcquireAction[] | null;

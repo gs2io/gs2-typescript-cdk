@@ -38,7 +38,7 @@ import { MissionTaskModelOptions } from "./options/MissionTaskModelOptions";
 import { MissionTaskModelVerifyCompleteType } from "./enum/MissionTaskModelVerifyCompleteType";
 import { MissionTaskModelTargetResetType } from "./enum/MissionTaskModelTargetResetType";
 import { MissionTaskModelVerifyCompleteTypeIsCounterOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsCounterOptions"
-import { MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions"
+import { MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions"
 import ScopedValue from "./ScopedValue";
 import { ScopedValueOptions } from "./options/ScopedValueOptions";
 import { ScopedValueResetType } from "./enum/ScopedValueResetType";
@@ -73,7 +73,7 @@ export {
     MissionTaskModelVerifyCompleteType,
     MissionTaskModelTargetResetType,
     MissionTaskModelVerifyCompleteTypeIsCounterOptions,
-    MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions,
+    MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions,
     ScopedValue,
     ScopedValueOptions,
     ScopedValueResetType,

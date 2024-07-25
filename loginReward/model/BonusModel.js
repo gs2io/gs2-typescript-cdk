@@ -4,12 +4,13 @@ const BonusModelMode_1 = require("./enum/BonusModelMode");
 const BonusModelMissedReceiveRelief_1 = require("./enum/BonusModelMissedReceiveRelief");
 class BonusModel {
     constructor(name, mode, missedReceiveRelief, options = null) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         this.metadata = null;
         this.periodEventId = null;
         this.resetHour = null;
         this.repeat = null;
         this.rewards = null;
+        this.missedReceiveReliefVerifyActions = null;
         this.missedReceiveReliefConsumeActions = null;
         this.name = name;
         this.mode = mode;
@@ -19,13 +20,15 @@ class BonusModel {
         this.resetHour = (_c = options === null || options === void 0 ? void 0 : options.resetHour) !== null && _c !== void 0 ? _c : null;
         this.repeat = (_d = options === null || options === void 0 ? void 0 : options.repeat) !== null && _d !== void 0 ? _d : null;
         this.rewards = (_e = options === null || options === void 0 ? void 0 : options.rewards) !== null && _e !== void 0 ? _e : null;
-        this.missedReceiveReliefConsumeActions = (_f = options === null || options === void 0 ? void 0 : options.missedReceiveReliefConsumeActions) !== null && _f !== void 0 ? _f : null;
+        this.missedReceiveReliefVerifyActions = (_f = options === null || options === void 0 ? void 0 : options.missedReceiveReliefVerifyActions) !== null && _f !== void 0 ? _f : null;
+        this.missedReceiveReliefConsumeActions = (_g = options === null || options === void 0 ? void 0 : options.missedReceiveReliefConsumeActions) !== null && _g !== void 0 ? _g : null;
     }
     static modeIsSchedule(name, missedReceiveRelief, options = null) {
         return new BonusModel(name, BonusModelMode_1.BonusModelMode.SCHEDULE, missedReceiveRelief, {
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             periodEventId: options === null || options === void 0 ? void 0 : options.periodEventId,
             rewards: options === null || options === void 0 ? void 0 : options.rewards,
+            missedReceiveReliefVerifyActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefVerifyActions,
             missedReceiveReliefConsumeActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefConsumeActions,
         });
     }
@@ -35,6 +38,7 @@ class BonusModel {
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             periodEventId: options === null || options === void 0 ? void 0 : options.periodEventId,
             rewards: options === null || options === void 0 ? void 0 : options.rewards,
+            missedReceiveReliefVerifyActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefVerifyActions,
             missedReceiveReliefConsumeActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefConsumeActions,
         });
     }
@@ -43,6 +47,7 @@ class BonusModel {
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             periodEventId: options === null || options === void 0 ? void 0 : options.periodEventId,
             rewards: options === null || options === void 0 ? void 0 : options.rewards,
+            missedReceiveReliefVerifyActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefVerifyActions,
             missedReceiveReliefConsumeActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefConsumeActions,
         });
     }
@@ -51,6 +56,7 @@ class BonusModel {
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             periodEventId: options === null || options === void 0 ? void 0 : options.periodEventId,
             rewards: options === null || options === void 0 ? void 0 : options.rewards,
+            missedReceiveReliefVerifyActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefVerifyActions,
             missedReceiveReliefConsumeActions: options === null || options === void 0 ? void 0 : options.missedReceiveReliefConsumeActions,
         });
     }
@@ -79,6 +85,9 @@ class BonusModel {
         }
         if (this.missedReceiveRelief != null) {
             properties["missedReceiveRelief"] = this.missedReceiveRelief;
+        }
+        if (this.missedReceiveReliefVerifyActions != null) {
+            properties["missedReceiveReliefVerifyActions"] = this.missedReceiveReliefVerifyActions.map(v => v.properties());
         }
         if (this.missedReceiveReliefConsumeActions != null) {
             properties["missedReceiveReliefConsumeActions"] = this.missedReceiveReliefConsumeActions.map(v => v.properties());

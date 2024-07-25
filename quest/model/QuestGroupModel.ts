@@ -15,6 +15,7 @@
  */
 import { AcquireAction } from "../../core/model";
 import Contents from "./Contents";
+import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import QuestModel from "./QuestModel";
 import { QuestGroupModelOptions } from "./options/QuestGroupModelOptions";

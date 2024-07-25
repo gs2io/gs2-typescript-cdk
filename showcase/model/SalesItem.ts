@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
 import { SalesItemOptions } from "./options/SalesItemOptions";
@@ -21,6 +22,7 @@ export default class SalesItem {
     private readonly name: string;
     private readonly acquireActions: AcquireAction[];
     private readonly metadata: string|null = null;
+    private readonly verifyActions: VerifyAction[]|null = null;
     private readonly consumeActions: ConsumeAction[]|null = null;
 
     public constructor(
@@ -31,6 +33,7 @@ export default class SalesItem {
         this.name = name;
         this.acquireActions = acquireActions;
         this.metadata = options?.metadata ?? null;
+        this.verifyActions = options?.verifyActions ?? null;
         this.consumeActions = options?.consumeActions ?? null;
     }
 
@@ -43,6 +46,10 @@ export default class SalesItem {
         }
         if (this.metadata != null) {
             properties["metadata"] = this.metadata;
+        }
+        if (this.verifyActions != null) {
+            properties["verifyActions"] = this.verifyActions.map(v => v.properties(
+                ));
         }
         if (this.consumeActions != null) {
             properties["consumeActions"] = this.consumeActions.map(v => v.properties(

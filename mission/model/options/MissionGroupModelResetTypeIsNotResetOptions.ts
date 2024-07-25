@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import TargetCounterModel from "../TargetCounterModel";
-import { ConsumeAction } from "../../../core/model";
+import { VerifyAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 import MissionTaskModel from "../MissionTaskModel";
 import { MissionGroupModelResetType } from "../enum/MissionGroupModelResetType";

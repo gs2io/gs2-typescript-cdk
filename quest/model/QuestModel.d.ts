@@ -6,6 +6,7 @@ export default class QuestModel {
     private readonly metadata;
     private readonly challengePeriodEventId;
     private readonly firstCompleteAcquireActions;
+    private readonly verifyActions;
     private readonly consumeActions;
     private readonly failedAcquireActions;
     private readonly premiseQuestNames;

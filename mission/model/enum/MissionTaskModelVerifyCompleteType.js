@@ -18,6 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MissionTaskModelVerifyCompleteType = void 0;
 exports.MissionTaskModelVerifyCompleteType = {
     COUNTER: "counter",
-    CONSUME_ACTIONS: "consumeActions",
+    VERIFY_ACTIONS: "verifyActions",
 };
 //# sourceMappingURL=MissionTaskModelVerifyCompleteType.js.map

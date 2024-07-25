@@ -1,5 +1,5 @@
 export declare const MissionTaskModelVerifyCompleteType: {
     readonly COUNTER: "counter";
-    readonly CONSUME_ACTIONS: "consumeActions";
+    readonly VERIFY_ACTIONS: "verifyActions";
 };
 export type MissionTaskModelVerifyCompleteType = typeof MissionTaskModelVerifyCompleteType[keyof typeof MissionTaskModelVerifyCompleteType];
