@@ -21,7 +21,6 @@ const RateModelRef_1 = tslib_1.__importDefault(require("./RateModelRef"));
 const IncrementalRateModelRef_1 = tslib_1.__importDefault(require("./IncrementalRateModelRef"));
 const ExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ExchangeByUserId"));
 const IncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncrementalExchangeByUserId"));
-const UnlockIncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UnlockIncrementalExchangeByUserId"));
 const CreateAwaitByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CreateAwaitByUserId"));
 const SkipByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SkipByUserId"));
 const DeleteAwaitByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteAwaitByUserId"));
@@ -40,9 +39,6 @@ class NamespaceRef {
     }
     incrementalExchange(rateName, count, config = null, userId = "#{userId}") {
         return new IncrementalExchangeByUserId_1.default(this.namespaceName, rateName, count, config, userId);
-    }
-    unlockIncrementalExchange(rateName, lockTransactionId, userId = "#{userId}") {
-        return new UnlockIncrementalExchangeByUserId_1.default(this.namespaceName, rateName, lockTransactionId, userId);
     }
     createAwait(rateName, count = null, config = null, userId = "#{userId}") {
         return new CreateAwaitByUserId_1.default(this.namespaceName, rateName, count, config, userId);

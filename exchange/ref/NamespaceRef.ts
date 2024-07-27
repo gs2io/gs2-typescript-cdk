@@ -20,7 +20,6 @@ import IncrementalRateModelRef from "./IncrementalRateModelRef";
 import ExchangeByUserId from "../stampSheet/ExchangeByUserId";
 import { Config } from "../../core/model";
 import IncrementalExchangeByUserId from "../stampSheet/IncrementalExchangeByUserId";
-import UnlockIncrementalExchangeByUserId from "../stampSheet/UnlockIncrementalExchangeByUserId";
 import CreateAwaitByUserId from "../stampSheet/CreateAwaitByUserId";
 import SkipByUserId from "../stampSheet/SkipByUserId";
 import { AwaitSkipType } from "../stampSheet/enum/AwaitSkipType";
@@ -79,19 +78,6 @@ export default class NamespaceRef {
             rateName,
             count,
             config,
-            userId,
-        );
-    }
-
-    public unlockIncrementalExchange(
-        rateName: string,
-        lockTransactionId: string,
-        userId: string = "#{userId}",
-    ): UnlockIncrementalExchangeByUserId {
-        return new UnlockIncrementalExchangeByUserId(
-            this.namespaceName,
-            rateName,
-            lockTransactionId,
             userId,
         );
     }

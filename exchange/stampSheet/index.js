@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAwaitByUserId = exports.SkipByUserId = exports.CreateAwaitByUserId = exports.UnlockIncrementalExchangeByUserId = exports.IncrementalExchangeByUserId = exports.ExchangeByUserId = void 0;
+exports.DeleteAwaitByUserId = exports.SkipByUserId = exports.CreateAwaitByUserId = exports.IncrementalExchangeByUserId = exports.ExchangeByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,8 +21,6 @@ const ExchangeByUserId_1 = tslib_1.__importDefault(require("./ExchangeByUserId")
 exports.ExchangeByUserId = ExchangeByUserId_1.default;
 const IncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("./IncrementalExchangeByUserId"));
 exports.IncrementalExchangeByUserId = IncrementalExchangeByUserId_1.default;
-const UnlockIncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("./UnlockIncrementalExchangeByUserId"));
-exports.UnlockIncrementalExchangeByUserId = UnlockIncrementalExchangeByUserId_1.default;
 const CreateAwaitByUserId_1 = tslib_1.__importDefault(require("./CreateAwaitByUserId"));
 exports.CreateAwaitByUserId = CreateAwaitByUserId_1.default;
 const SkipByUserId_1 = tslib_1.__importDefault(require("./SkipByUserId"));

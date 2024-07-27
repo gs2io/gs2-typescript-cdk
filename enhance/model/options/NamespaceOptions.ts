@@ -19,10 +19,10 @@ import LogSetting from "../../../core/model/LogSetting";
 
 export interface NamespaceOptions {
     description?: string|null;
-    enableDirectEnhance?: boolean|null;
     transactionSetting?: TransactionSetting|null;
     enhanceScript?: ScriptSetting|null;
     logSetting?: LogSetting|null;
+    enableDirectEnhance?: boolean|null;
     queueNamespaceId?: string|null;
     keyId?: string|null;
 }
