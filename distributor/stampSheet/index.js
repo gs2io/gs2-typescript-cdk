@@ -1,4 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OrExpressionByUserId = exports.AndExpressionByUserId = exports.IfExpressionByUserId = void 0;
+const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -14,5 +17,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+const IfExpressionByUserId_1 = tslib_1.__importDefault(require("./IfExpressionByUserId"));
+exports.IfExpressionByUserId = IfExpressionByUserId_1.default;
+const AndExpressionByUserId_1 = tslib_1.__importDefault(require("./AndExpressionByUserId"));
+exports.AndExpressionByUserId = AndExpressionByUserId_1.default;
+const OrExpressionByUserId_1 = tslib_1.__importDefault(require("./OrExpressionByUserId"));
+exports.OrExpressionByUserId = OrExpressionByUserId_1.default;
 //# sourceMappingURL=index.js.map
