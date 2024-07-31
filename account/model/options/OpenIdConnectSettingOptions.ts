@@ -13,10 +13,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import TakeOverTypeModelRef from "./TakeOverTypeModelRef";
 
-export {
-    NamespaceRef,
-    TakeOverTypeModelRef,
+export interface OpenIdConnectSettingOptions {
+    clientSecret?: string|null;
+    appleTeamId?: string|null;
+    appleKeyId?: string|null;
+    applePrivateKeyPem?: string|null;
 }
+

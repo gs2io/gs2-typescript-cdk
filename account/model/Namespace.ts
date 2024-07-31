@@ -20,6 +20,8 @@ import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
+import CurrentMasterData from "./CurrentMasterData";
+import TakeOverTypeModel from "./TakeOverTypeModel";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -124,5 +126,18 @@ export default class Namespace extends CdkResource {
             "Item.NamespaceId",
             null,
         );
+    }
+
+    public masterData(
+        takeOverTypeModels: TakeOverTypeModel[],
+    ): Namespace {
+        new CurrentMasterData(
+            this.stack,
+            this.name,
+            takeOverTypeModels,
+        ).addDependsOn(
+            this,
+        );
+        return this;
     }
 }

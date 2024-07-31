@@ -13,17 +13,15 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const TakeOverTypeModelRef_1 = tslib_1.__importDefault(require("./TakeOverTypeModelRef"));
-class NamespaceRef {
-    constructor(namespaceName) {
+class TakeOverTypeModelRef {
+    constructor(namespaceName, type) {
         this.namespaceName = namespaceName;
-    }
-    takeOverTypeModel(type) {
-        return new TakeOverTypeModelRef_1.default(this.namespaceName, type);
+        this.type = type;
     }
     grn() {
         return new func_1.Join(":", [
@@ -33,8 +31,11 @@ class NamespaceRef {
             func_1.GetAttr.ownerId().str(),
             "account",
             this.namespaceName,
+            "model",
+            "takeOver",
+            this.type.toString(),
         ]).str();
     }
 }
-exports.default = NamespaceRef;
-//# sourceMappingURL=NamespaceRef.js.map
+exports.default = TakeOverTypeModelRef;
+//# sourceMappingURL=TakeOverTypeModelRef.js.map

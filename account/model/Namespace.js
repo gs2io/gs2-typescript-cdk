@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const model_1 = require("../../core/model");
 const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
+const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
@@ -86,6 +87,10 @@ class Namespace extends model_1.CdkResource {
     }
     getAttrNamespaceId() {
         return new func_1.GetAttr(this, "Item.NamespaceId", null);
+    }
+    masterData(takeOverTypeModels) {
+        new CurrentMasterData_1.default(this.stack, this.name, takeOverTypeModels).addDependsOn(this);
+        return this;
     }
 }
 exports.default = Namespace;

@@ -15,16 +15,26 @@
  */
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
+import TakeOverTypeModel from "./TakeOverTypeModel";
+import { TakeOverTypeModelOptions } from "./options/TakeOverTypeModelOptions";
+import OpenIdConnectSetting from "./OpenIdConnectSetting";
+import { OpenIdConnectSettingOptions } from "./options/OpenIdConnectSettingOptions";
 import PlatformUser from "./PlatformUser";
 import { PlatformUserOptions } from "./options/PlatformUserOptions";
 import BanStatus from "./BanStatus";
 import { BanStatusOptions } from "./options/BanStatusOptions";
+import CurrentMasterData from "./CurrentMasterData";
 
 export {
     Namespace,
     NamespaceOptions,
+    TakeOverTypeModel,
+    TakeOverTypeModelOptions,
+    OpenIdConnectSetting,
+    OpenIdConnectSettingOptions,
     PlatformUser,
     PlatformUserOptions,
     BanStatus,
     BanStatusOptions,
+    CurrentMasterData,
 }

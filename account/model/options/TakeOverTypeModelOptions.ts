@@ -13,10 +13,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import TakeOverTypeModelRef from "./TakeOverTypeModelRef";
+import OpenIdConnectSetting from "../OpenIdConnectSetting";
 
-export {
-    NamespaceRef,
-    TakeOverTypeModelRef,
+export interface TakeOverTypeModelOptions {
+    metadata?: string|null;
 }
+

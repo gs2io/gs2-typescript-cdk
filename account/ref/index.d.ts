@@ -1,2 +1,3 @@
 import NamespaceRef from "./NamespaceRef";
-export { NamespaceRef, };
+import TakeOverTypeModelRef from "./TakeOverTypeModelRef";
+export { NamespaceRef, TakeOverTypeModelRef, };

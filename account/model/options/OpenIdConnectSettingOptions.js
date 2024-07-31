@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,10 +14,5 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import TakeOverTypeModelRef from "./TakeOverTypeModelRef";
-
-export {
-    NamespaceRef,
-    TakeOverTypeModelRef,
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=OpenIdConnectSettingOptions.js.map

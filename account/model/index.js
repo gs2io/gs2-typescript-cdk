@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BanStatus = exports.PlatformUser = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.BanStatus = exports.PlatformUser = exports.OpenIdConnectSetting = exports.TakeOverTypeModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,8 +19,14 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
+const TakeOverTypeModel_1 = tslib_1.__importDefault(require("./TakeOverTypeModel"));
+exports.TakeOverTypeModel = TakeOverTypeModel_1.default;
+const OpenIdConnectSetting_1 = tslib_1.__importDefault(require("./OpenIdConnectSetting"));
+exports.OpenIdConnectSetting = OpenIdConnectSetting_1.default;
 const PlatformUser_1 = tslib_1.__importDefault(require("./PlatformUser"));
 exports.PlatformUser = PlatformUser_1.default;
 const BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
 exports.BanStatus = BanStatus_1.default;
+const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
+exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map
