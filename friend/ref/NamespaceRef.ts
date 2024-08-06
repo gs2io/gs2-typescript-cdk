@@ -15,6 +15,7 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import UpdateProfileByUserId from "../stampSheet/UpdateProfileByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -23,6 +24,21 @@ export default class NamespaceRef {
         namespaceName: string,
     ) {
         this.namespaceName = namespaceName;
+    }
+
+    public updateProfile(
+        publicProfile: string|null = null,
+        followerProfile: string|null = null,
+        friendProfile: string|null = null,
+        userId: string = "#{userId}",
+    ): UpdateProfileByUserId {
+        return new UpdateProfileByUserId(
+            this.namespaceName,
+            publicProfile,
+            followerProfile,
+            friendProfile,
+            userId,
+        );
     }
 
     public grn(

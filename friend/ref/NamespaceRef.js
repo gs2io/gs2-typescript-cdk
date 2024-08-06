@@ -15,10 +15,15 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const UpdateProfileByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UpdateProfileByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
+    }
+    updateProfile(publicProfile = null, followerProfile = null, friendProfile = null, userId = "#{userId}") {
+        return new UpdateProfileByUserId_1.default(this.namespaceName, publicProfile, followerProfile, friendProfile, userId);
     }
     grn() {
         return new func_1.Join(":", [

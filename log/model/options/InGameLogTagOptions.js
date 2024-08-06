@@ -1,7 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateProfileByUserId = void 0;
-const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -17,6 +14,5 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-const UpdateProfileByUserId_1 = tslib_1.__importDefault(require("./UpdateProfileByUserId"));
-exports.UpdateProfileByUserId = UpdateProfileByUserId_1.default;
-//# sourceMappingURL=index.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=InGameLogTagOptions.js.map

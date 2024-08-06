@@ -38,6 +38,8 @@ import { ExecuteStampTaskLogCountOptions } from "./options/ExecuteStampTaskLogCo
 import AccessLogWithTelemetry from "./AccessLogWithTelemetry";
 import { AccessLogWithTelemetryOptions } from "./options/AccessLogWithTelemetryOptions";
 import { AccessLogWithTelemetryStatus } from "./enum/AccessLogWithTelemetryStatus";
+import InGameLogTag from "./InGameLogTag";
+import { InGameLogTagOptions } from "./options/InGameLogTagOptions";
 
 export {
     Namespace,
@@ -65,4 +67,6 @@ export {
     AccessLogWithTelemetry,
     AccessLogWithTelemetryOptions,
     AccessLogWithTelemetryStatus,
+    InGameLogTag,
+    InGameLogTagOptions,
 }

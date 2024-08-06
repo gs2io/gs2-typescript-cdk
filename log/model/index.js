@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccessLogWithTelemetryStatus = exports.AccessLogWithTelemetry = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.NamespaceType = exports.Namespace = void 0;
+exports.InGameLogTag = exports.AccessLogWithTelemetryStatus = exports.AccessLogWithTelemetry = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.NamespaceType = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -41,4 +41,6 @@ const AccessLogWithTelemetry_1 = tslib_1.__importDefault(require("./AccessLogWit
 exports.AccessLogWithTelemetry = AccessLogWithTelemetry_1.default;
 const AccessLogWithTelemetryStatus_1 = require("./enum/AccessLogWithTelemetryStatus");
 Object.defineProperty(exports, "AccessLogWithTelemetryStatus", { enumerable: true, get: function () { return AccessLogWithTelemetryStatus_1.AccessLogWithTelemetryStatus; } });
+const InGameLogTag_1 = tslib_1.__importDefault(require("./InGameLogTag"));
+exports.InGameLogTag = InGameLogTag_1.default;
 //# sourceMappingURL=index.js.map
