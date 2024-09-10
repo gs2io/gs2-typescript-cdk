@@ -12,7 +12,8 @@ export default class Namespace extends CdkResource {
     private readonly sharedFreeCurrency;
     private readonly platformSetting;
     private readonly description;
-    private readonly changeBalanceScript;
+    private readonly depositBalanceScript;
+    private readonly withdrawBalanceScript;
     private readonly logSetting;
     constructor(stack: Stack, name: string, currencyUsagePriority: NamespaceCurrencyUsagePriority, sharedFreeCurrency: boolean, platformSetting: PlatformSetting, options?: NamespaceOptions | null);
     alternateKeys(): string;

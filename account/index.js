@@ -20,13 +20,18 @@ const model = tslib_1.__importStar(require("./model"));
 const ref = tslib_1.__importStar(require("./ref"));
 const stampSheet = tslib_1.__importStar(require("./stampSheet"));
 const ref_1 = require("./ref");
+const ref_2 = require("./ref");
 function namespace(namespaceName) {
     return new ref_1.NamespaceRef(namespaceName);
+}
+function banStatus(name) {
+    return new ref_2.BanStatusRef(name);
 }
 exports.default = {
     model,
     ref,
     stampSheet,
     namespace,
+    banStatus,
 };
 //# sourceMappingURL=index.js.map

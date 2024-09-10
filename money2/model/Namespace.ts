@@ -34,7 +34,8 @@ export default class Namespace extends CdkResource {
     private readonly sharedFreeCurrency: boolean;
     private readonly platformSetting: PlatformSetting;
     private readonly description: string|null = null;
-    private readonly changeBalanceScript: ScriptSetting|null = null;
+    private readonly depositBalanceScript: ScriptSetting|null = null;
+    private readonly withdrawBalanceScript: ScriptSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -55,7 +56,8 @@ export default class Namespace extends CdkResource {
         this.sharedFreeCurrency = sharedFreeCurrency;
         this.platformSetting = platformSetting;
         this.description = options?.description ?? null;
-        this.changeBalanceScript = options?.changeBalanceScript ?? null;
+        this.depositBalanceScript = options?.depositBalanceScript ?? null;
+        this.withdrawBalanceScript = options?.withdrawBalanceScript ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -93,8 +95,12 @@ export default class Namespace extends CdkResource {
             properties["PlatformSetting"] = this.platformSetting?.properties(
             );
         }
-        if (this.changeBalanceScript != null) {
-            properties["ChangeBalanceScript"] = this.changeBalanceScript?.properties(
+        if (this.depositBalanceScript != null) {
+            properties["DepositBalanceScript"] = this.depositBalanceScript?.properties(
+            );
+        }
+        if (this.withdrawBalanceScript != null) {
+            properties["WithdrawBalanceScript"] = this.withdrawBalanceScript?.properties(
             );
         }
         if (this.logSetting != null) {

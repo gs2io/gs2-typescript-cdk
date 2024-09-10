@@ -13,15 +13,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import PlatformSetting from "../PlatformSetting";
-import ScriptSetting from "../../../core/model/ScriptSetting";
-import LogSetting from "../../../core/model/LogSetting";
-import { NamespaceCurrencyUsagePriority } from "../enum/NamespaceCurrencyUsagePriority";
+import InGameLogTag from "../InGameLogTag";
 
-export interface NamespaceOptions {
-    description?: string|null;
-    depositBalanceScript?: ScriptSetting|null;
-    withdrawBalanceScript?: ScriptSetting|null;
-    logSetting?: LogSetting|null;
+export interface InGameLogOptions {
+    userId?: string|null;
+    tags?: InGameLogTag[]|null;
 }
 

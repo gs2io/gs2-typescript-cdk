@@ -22,10 +22,11 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, currencyUsagePriority, sharedFreeCurrency, platformSetting, options = null) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         super("Money2_Namespace_" + name);
         this.description = null;
-        this.changeBalanceScript = null;
+        this.depositBalanceScript = null;
+        this.withdrawBalanceScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -33,8 +34,9 @@ class Namespace extends model_1.CdkResource {
         this.sharedFreeCurrency = sharedFreeCurrency;
         this.platformSetting = platformSetting;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.changeBalanceScript = (_b = options === null || options === void 0 ? void 0 : options.changeBalanceScript) !== null && _b !== void 0 ? _b : null;
-        this.logSetting = (_c = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _c !== void 0 ? _c : null;
+        this.depositBalanceScript = (_b = options === null || options === void 0 ? void 0 : options.depositBalanceScript) !== null && _b !== void 0 ? _b : null;
+        this.withdrawBalanceScript = (_c = options === null || options === void 0 ? void 0 : options.withdrawBalanceScript) !== null && _c !== void 0 ? _c : null;
+        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -44,7 +46,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Money2::Namespace";
     }
     properties() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -61,11 +63,14 @@ class Namespace extends model_1.CdkResource {
         if (this.platformSetting != null) {
             properties["PlatformSetting"] = (_a = this.platformSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
-        if (this.changeBalanceScript != null) {
-            properties["ChangeBalanceScript"] = (_b = this.changeBalanceScript) === null || _b === void 0 ? void 0 : _b.properties();
+        if (this.depositBalanceScript != null) {
+            properties["DepositBalanceScript"] = (_b = this.depositBalanceScript) === null || _b === void 0 ? void 0 : _b.properties();
+        }
+        if (this.withdrawBalanceScript != null) {
+            properties["WithdrawBalanceScript"] = (_c = this.withdrawBalanceScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
         }
         return properties;
     }

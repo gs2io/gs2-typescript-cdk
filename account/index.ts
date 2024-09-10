@@ -18,6 +18,7 @@ import * as model from "./model";
 import * as ref from "./ref";
 import * as stampSheet from "./stampSheet";
 import { NamespaceRef } from "./ref";
+import { BanStatusRef } from "./ref";
 
 
 function namespace(
@@ -28,9 +29,19 @@ function namespace(
     );
 }
 
+
+function banStatus(
+    name: string,
+): BanStatusRef {
+    return new BanStatusRef(
+        name,
+    );
+}
+
 export default {
     model,
     ref,
     stampSheet,
     namespace,
+    banStatus,
 };
