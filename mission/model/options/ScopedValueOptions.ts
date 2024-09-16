@@ -13,9 +13,12 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { ScopedValueScopeType } from "../enum/ScopedValueScopeType";
 import { ScopedValueResetType } from "../enum/ScopedValueResetType";
 
 export interface ScopedValueOptions {
+    resetType?: ScopedValueResetType|null;
+    conditionName?: string|null;
     nextResetAt?: number|null;
 }
 

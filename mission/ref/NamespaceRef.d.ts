@@ -10,6 +10,7 @@ import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
 import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
 import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
+import { CounterScopeType } from "../stampSheet/enum/CounterScopeType";
 import { CounterResetType } from "../stampSheet/enum/CounterResetType";
 export default class NamespaceRef {
     private readonly namespaceName;
@@ -22,6 +23,6 @@ export default class NamespaceRef {
     receive(missionGroupName: string, missionTaskName: string, userId?: string): ReceiveByUserId;
     decreaseCounter(counterName: string, value: number, userId?: string): DecreaseCounterByUserId;
     verifyComplete(missionGroupName: string, verifyType: CompleteVerifyType, missionTaskName: string, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCompleteByUserId;
-    verifyCounterValue(counterName: string, verifyType: CounterVerifyType, resetType: CounterResetType, value?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCounterValueByUserId;
+    verifyCounterValue(counterName: string, verifyType: CounterVerifyType, scopeType?: CounterScopeType | null, resetType?: CounterResetType | null, conditionName?: string | null, value?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCounterValueByUserId;
     grn(): string;
 }

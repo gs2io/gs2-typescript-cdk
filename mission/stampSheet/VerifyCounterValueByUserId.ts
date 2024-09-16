@@ -16,6 +16,7 @@
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 import { CounterVerifyType } from "./enum/CounterVerifyType";
+import { CounterScopeType } from "./enum/CounterScopeType";
 import { CounterResetType } from "./enum/CounterResetType";
 
 export default class VerifyCounterValueByUserId extends VerifyAction {
@@ -23,7 +24,9 @@ export default class VerifyCounterValueByUserId extends VerifyAction {
     private readonly userId: string;
     private readonly counterName: string;
     private readonly verifyType: CounterVerifyType;
-    private readonly resetType: CounterResetType;
+    private readonly scopeType: CounterScopeType|null = null;
+    private readonly resetType: CounterResetType|null = null;
+    private readonly conditionName: string|null = null;
     private readonly value: number|null = null;
     private readonly multiplyValueSpecifyingQuantity: boolean|null = null;
     private readonly timeOffsetToken: string|null = null;
@@ -33,7 +36,9 @@ export default class VerifyCounterValueByUserId extends VerifyAction {
         namespaceName: string,
         counterName: string,
         verifyType: CounterVerifyType,
-        resetType: CounterResetType,
+        scopeType: CounterScopeType|null = null,
+        resetType: CounterResetType|null = null,
+        conditionName: string|null = null,
         value: number|null = null,
         multiplyValueSpecifyingQuantity: boolean|null = null,
         timeOffsetToken: string|null = null,
@@ -44,7 +49,9 @@ export default class VerifyCounterValueByUserId extends VerifyAction {
         this.namespaceName = namespaceName;
         this.counterName = counterName;
         this.verifyType = verifyType;
-        this.resetType = resetType;
+        this.scopeType = scopeType ?? null;
+        this.resetType = resetType ?? null;
+        this.conditionName = conditionName ?? null;
         this.value = value ?? null;
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity ?? null;
         this.timeOffsetToken = timeOffsetToken ?? null;
@@ -67,8 +74,14 @@ export default class VerifyCounterValueByUserId extends VerifyAction {
         if (this.verifyType != null) {
             properties["verifyType"] = this.verifyType;
         }
+        if (this.scopeType != null) {
+            properties["scopeType"] = this.scopeType;
+        }
         if (this.resetType != null) {
             properties["resetType"] = this.resetType;
+        }
+        if (this.conditionName != null) {
+            properties["conditionName"] = this.conditionName;
         }
         if (this.value != null) {
             properties["value"] = this.value;

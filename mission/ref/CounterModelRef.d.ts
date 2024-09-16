@@ -4,6 +4,7 @@ import ScopedValue from "../model/ScopedValue";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
 import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
+import { CounterScopeType } from "../stampSheet/enum/CounterScopeType";
 import { CounterResetType } from "../stampSheet/enum/CounterResetType";
 export default class CounterModelRef {
     private readonly namespaceName;
@@ -12,6 +13,6 @@ export default class CounterModelRef {
     increaseCounter(value: number, userId?: string): IncreaseCounterByUserId;
     setCounter(values?: ScopedValue[] | null, userId?: string): SetCounterByUserId;
     decreaseCounter(value: number, userId?: string): DecreaseCounterByUserId;
-    verifyCounterValue(verifyType: CounterVerifyType, resetType: CounterResetType, value?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCounterValueByUserId;
+    verifyCounterValue(verifyType: CounterVerifyType, scopeType?: CounterScopeType | null, resetType?: CounterResetType | null, conditionName?: string | null, value?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCounterValueByUserId;
     grn(): string;
 }

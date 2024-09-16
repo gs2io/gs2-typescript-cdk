@@ -35,8 +35,8 @@ class CounterModelRef {
     decreaseCounter(value, userId = "#{userId}") {
         return new DecreaseCounterByUserId_1.default(this.namespaceName, this.counterName, value, userId);
     }
-    verifyCounterValue(verifyType, resetType, value = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
-        return new VerifyCounterValueByUserId_1.default(this.namespaceName, this.counterName, verifyType, resetType, value, multiplyValueSpecifyingQuantity, userId);
+    verifyCounterValue(verifyType, scopeType = null, resetType = null, conditionName = null, value = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyCounterValueByUserId_1.default(this.namespaceName, this.counterName, verifyType, scopeType, resetType, conditionName, value, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

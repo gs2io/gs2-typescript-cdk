@@ -13,46 +13,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { VerifyAction } from "../../core/model";
 import { CounterScopeModelOptions } from "./options/CounterScopeModelOptions";
+import { CounterScopeModelScopeTypeIsResetTimingOptions } from "./options/CounterScopeModelScopeTypeIsResetTimingOptions";
+import { CounterScopeModelScopeTypeIsVerifyActionOptions } from "./options/CounterScopeModelScopeTypeIsVerifyActionOptions";
 import { CounterScopeModelResetTypeIsNotResetOptions } from "./options/CounterScopeModelResetTypeIsNotResetOptions";
 import { CounterScopeModelResetTypeIsDailyOptions } from "./options/CounterScopeModelResetTypeIsDailyOptions";
 import { CounterScopeModelResetTypeIsWeeklyOptions } from "./options/CounterScopeModelResetTypeIsWeeklyOptions";
 import { CounterScopeModelResetTypeIsMonthlyOptions } from "./options/CounterScopeModelResetTypeIsMonthlyOptions";
+import { CounterScopeModelScopeType } from "./enum/CounterScopeModelScopeType";
 import { CounterScopeModelResetType } from "./enum/CounterScopeModelResetType";
 import { CounterScopeModelResetDayOfWeek } from "./enum/CounterScopeModelResetDayOfWeek";
 
 export default class CounterScopeModel {
-    private readonly resetType: CounterScopeModelResetType;
+    private readonly scopeType: CounterScopeModelScopeType;
+    private readonly resetType: CounterScopeModelResetType|null = null;
     private readonly resetDayOfMonth: number|null = null;
     private readonly resetDayOfWeek: CounterScopeModelResetDayOfWeek|null = null;
     private readonly resetHour: number|null = null;
+    private readonly conditionName: string|null = null;
+    private readonly condition: VerifyAction|null = null;
 
     public constructor(
-        resetType: CounterScopeModelResetType,
+        scopeType: CounterScopeModelScopeType,
         options: CounterScopeModelOptions|null = null,
     ) {
-        this.resetType = resetType;
+        this.scopeType = scopeType;
+        this.resetType = options?.resetType ?? null;
         this.resetDayOfMonth = options?.resetDayOfMonth ?? null;
         this.resetDayOfWeek = options?.resetDayOfWeek ?? null;
         this.resetHour = options?.resetHour ?? null;
+        this.conditionName = options?.conditionName ?? null;
+        this.condition = options?.condition ?? null;
+    }
+
+    public static scopeTypeIsResetTiming(
+        resetType: CounterScopeModelResetType,
+        options: CounterScopeModelScopeTypeIsResetTimingOptions|null = null,
+    ): CounterScopeModel {
+        return new CounterScopeModel(
+            CounterScopeModelScopeType.RESET_TIMING,
+            {
+                resetType: resetType,
+            },
+        );
+    }
+
+    public static scopeTypeIsVerifyAction(
+        conditionName: string,
+        condition: VerifyAction,
+        options: CounterScopeModelScopeTypeIsVerifyActionOptions|null = null,
+    ): CounterScopeModel {
+        return new CounterScopeModel(
+            CounterScopeModelScopeType.VERIFY_ACTION,
+            {
+                conditionName: conditionName,
+                condition: condition,
+            },
+        );
     }
 
     public static resetTypeIsNotReset(
+        scopeType: CounterScopeModelScopeType,
         options: CounterScopeModelResetTypeIsNotResetOptions|null = null,
     ): CounterScopeModel {
         return new CounterScopeModel(
-            CounterScopeModelResetType.NOT_RESET,
+            scopeType,
             {
             },
         );
     }
 
     public static resetTypeIsDaily(
+        scopeType: CounterScopeModelScopeType,
         resetHour: number,
         options: CounterScopeModelResetTypeIsDailyOptions|null = null,
     ): CounterScopeModel {
         return new CounterScopeModel(
-            CounterScopeModelResetType.DAILY,
+            scopeType,
             {
                 resetHour: resetHour,
             },
@@ -60,12 +98,13 @@ export default class CounterScopeModel {
     }
 
     public static resetTypeIsWeekly(
+        scopeType: CounterScopeModelScopeType,
         resetDayOfWeek: CounterScopeModelResetDayOfWeek,
         resetHour: number,
         options: CounterScopeModelResetTypeIsWeeklyOptions|null = null,
     ): CounterScopeModel {
         return new CounterScopeModel(
-            CounterScopeModelResetType.WEEKLY,
+            scopeType,
             {
                 resetDayOfWeek: resetDayOfWeek,
                 resetHour: resetHour,
@@ -74,12 +113,13 @@ export default class CounterScopeModel {
     }
 
     public static resetTypeIsMonthly(
+        scopeType: CounterScopeModelScopeType,
         resetDayOfMonth: number,
         resetHour: number,
         options: CounterScopeModelResetTypeIsMonthlyOptions|null = null,
     ): CounterScopeModel {
         return new CounterScopeModel(
-            CounterScopeModelResetType.MONTHLY,
+            scopeType,
             {
                 resetDayOfMonth: resetDayOfMonth,
                 resetHour: resetHour,
@@ -91,6 +131,9 @@ export default class CounterScopeModel {
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
+        if (this.scopeType != null) {
+            properties["scopeType"] = this.scopeType;
+        }
         if (this.resetType != null) {
             properties["resetType"] = this.resetType;
         }
@@ -102,6 +145,13 @@ export default class CounterScopeModel {
         }
         if (this.resetHour != null) {
             properties["resetHour"] = this.resetHour;
+        }
+        if (this.conditionName != null) {
+            properties["conditionName"] = this.conditionName;
+        }
+        if (this.condition != null) {
+            properties["condition"] = this.condition?.properties(
+            );
         }
 
         return properties;

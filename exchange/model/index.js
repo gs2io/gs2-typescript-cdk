@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.IncrementalRateModelCalculateType = exports.IncrementalRateModel = exports.RateModelTimingType = exports.RateModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.LogCost = exports.IncrementalRateModelCalculateType = exports.IncrementalRateModel = exports.RateModelTimingType = exports.RateModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,8 @@ const IncrementalRateModel_1 = tslib_1.__importDefault(require("./IncrementalRat
 exports.IncrementalRateModel = IncrementalRateModel_1.default;
 const IncrementalRateModelCalculateType_1 = require("./enum/IncrementalRateModelCalculateType");
 Object.defineProperty(exports, "IncrementalRateModelCalculateType", { enumerable: true, get: function () { return IncrementalRateModelCalculateType_1.IncrementalRateModelCalculateType; } });
+const LogCost_1 = tslib_1.__importDefault(require("./LogCost"));
+exports.LogCost = LogCost_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

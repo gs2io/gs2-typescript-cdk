@@ -21,6 +21,7 @@ import ScopedValue from "../model/ScopedValue";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
 import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
+import { CounterScopeType } from "../stampSheet/enum/CounterScopeType";
 import { CounterResetType } from "../stampSheet/enum/CounterResetType";
 
 export default class CounterModelRef {
@@ -73,7 +74,9 @@ export default class CounterModelRef {
 
     public verifyCounterValue(
         verifyType: CounterVerifyType,
-        resetType: CounterResetType,
+        scopeType: CounterScopeType|null = null,
+        resetType: CounterResetType|null = null,
+        conditionName: string|null = null,
         value: number|null = null,
         multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
@@ -82,7 +85,9 @@ export default class CounterModelRef {
             this.namespaceName,
             this.counterName,
             verifyType,
+            scopeType,
             resetType,
+            conditionName,
             value,
             multiplyValueSpecifyingQuantity,
             userId,

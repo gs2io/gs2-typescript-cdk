@@ -12,31 +12,75 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 import { ScopedValueOptions } from "./options/ScopedValueOptions";
+import { ScopedValueScopeTypeIsResetTimingOptions } from "./options/ScopedValueScopeTypeIsResetTimingOptions";
+import { ScopedValueScopeTypeIsVerifyActionOptions } from "./options/ScopedValueScopeTypeIsVerifyActionOptions";
+import { ScopedValueScopeType } from "./enum/ScopedValueScopeType";
 import { ScopedValueResetType } from "./enum/ScopedValueResetType";
 
 export default class ScopedValue {
-    private readonly resetType: ScopedValueResetType;
+    private readonly scopeType: ScopedValueScopeType;
     private readonly value: number;
+    private readonly resetType: ScopedValueResetType|null = null;
+    private readonly conditionName: string|null = null;
     private readonly nextResetAt: number|null = null;
 
     public constructor(
-        resetType: ScopedValueResetType,
+        scopeType: ScopedValueScopeType,
         value: number,
         options: ScopedValueOptions|null = null,
     ) {
-        this.resetType = resetType;
+        this.scopeType = scopeType;
         this.value = value;
+        this.resetType = options?.resetType ?? null;
+        this.conditionName = options?.conditionName ?? null;
         this.nextResetAt = options?.nextResetAt ?? null;
+    }
+
+    public static scopeTypeIsResetTiming(
+        value: number,
+        resetType: ScopedValueResetType,
+        options: ScopedValueScopeTypeIsResetTimingOptions|null = null,
+    ): ScopedValue {
+        return new ScopedValue(
+            ScopedValueScopeType.RESET_TIMING,
+            value,
+            {
+                resetType: resetType,
+                nextResetAt: options?.nextResetAt,
+            },
+        );
+    }
+
+    public static scopeTypeIsVerifyAction(
+        value: number,
+        conditionName: string,
+        options: ScopedValueScopeTypeIsVerifyActionOptions|null = null,
+    ): ScopedValue {
+        return new ScopedValue(
+            ScopedValueScopeType.VERIFY_ACTION,
+            value,
+            {
+                conditionName: conditionName,
+            },
+        );
     }
 
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
 
+        if (this.scopeType != null) {
+            properties["scopeType"] = this.scopeType;
+        }
         if (this.resetType != null) {
             properties["resetType"] = this.resetType;
+        }
+        if (this.conditionName != null) {
+            properties["conditionName"] = this.conditionName;
         }
         if (this.value != null) {
             properties["value"] = this.value;

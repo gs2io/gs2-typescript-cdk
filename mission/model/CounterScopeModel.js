@@ -1,39 +1,60 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CounterScopeModelResetType_1 = require("./enum/CounterScopeModelResetType");
+const CounterScopeModelScopeType_1 = require("./enum/CounterScopeModelScopeType");
 class CounterScopeModel {
-    constructor(resetType, options = null) {
-        var _a, _b, _c;
+    constructor(scopeType, options = null) {
+        var _a, _b, _c, _d, _e, _f;
+        this.resetType = null;
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
-        this.resetType = resetType;
-        this.resetDayOfMonth = (_a = options === null || options === void 0 ? void 0 : options.resetDayOfMonth) !== null && _a !== void 0 ? _a : null;
-        this.resetDayOfWeek = (_b = options === null || options === void 0 ? void 0 : options.resetDayOfWeek) !== null && _b !== void 0 ? _b : null;
-        this.resetHour = (_c = options === null || options === void 0 ? void 0 : options.resetHour) !== null && _c !== void 0 ? _c : null;
+        this.conditionName = null;
+        this.condition = null;
+        this.scopeType = scopeType;
+        this.resetType = (_a = options === null || options === void 0 ? void 0 : options.resetType) !== null && _a !== void 0 ? _a : null;
+        this.resetDayOfMonth = (_b = options === null || options === void 0 ? void 0 : options.resetDayOfMonth) !== null && _b !== void 0 ? _b : null;
+        this.resetDayOfWeek = (_c = options === null || options === void 0 ? void 0 : options.resetDayOfWeek) !== null && _c !== void 0 ? _c : null;
+        this.resetHour = (_d = options === null || options === void 0 ? void 0 : options.resetHour) !== null && _d !== void 0 ? _d : null;
+        this.conditionName = (_e = options === null || options === void 0 ? void 0 : options.conditionName) !== null && _e !== void 0 ? _e : null;
+        this.condition = (_f = options === null || options === void 0 ? void 0 : options.condition) !== null && _f !== void 0 ? _f : null;
     }
-    static resetTypeIsNotReset(options = null) {
-        return new CounterScopeModel(CounterScopeModelResetType_1.CounterScopeModelResetType.NOT_RESET, {});
+    static scopeTypeIsResetTiming(resetType, options = null) {
+        return new CounterScopeModel(CounterScopeModelScopeType_1.CounterScopeModelScopeType.RESET_TIMING, {
+            resetType: resetType,
+        });
     }
-    static resetTypeIsDaily(resetHour, options = null) {
-        return new CounterScopeModel(CounterScopeModelResetType_1.CounterScopeModelResetType.DAILY, {
+    static scopeTypeIsVerifyAction(conditionName, condition, options = null) {
+        return new CounterScopeModel(CounterScopeModelScopeType_1.CounterScopeModelScopeType.VERIFY_ACTION, {
+            conditionName: conditionName,
+            condition: condition,
+        });
+    }
+    static resetTypeIsNotReset(scopeType, options = null) {
+        return new CounterScopeModel(scopeType, {});
+    }
+    static resetTypeIsDaily(scopeType, resetHour, options = null) {
+        return new CounterScopeModel(scopeType, {
             resetHour: resetHour,
         });
     }
-    static resetTypeIsWeekly(resetDayOfWeek, resetHour, options = null) {
-        return new CounterScopeModel(CounterScopeModelResetType_1.CounterScopeModelResetType.WEEKLY, {
+    static resetTypeIsWeekly(scopeType, resetDayOfWeek, resetHour, options = null) {
+        return new CounterScopeModel(scopeType, {
             resetDayOfWeek: resetDayOfWeek,
             resetHour: resetHour,
         });
     }
-    static resetTypeIsMonthly(resetDayOfMonth, resetHour, options = null) {
-        return new CounterScopeModel(CounterScopeModelResetType_1.CounterScopeModelResetType.MONTHLY, {
+    static resetTypeIsMonthly(scopeType, resetDayOfMonth, resetHour, options = null) {
+        return new CounterScopeModel(scopeType, {
             resetDayOfMonth: resetDayOfMonth,
             resetHour: resetHour,
         });
     }
     properties() {
+        var _a;
         let properties = {};
+        if (this.scopeType != null) {
+            properties["scopeType"] = this.scopeType;
+        }
         if (this.resetType != null) {
             properties["resetType"] = this.resetType;
         }
@@ -45,6 +66,12 @@ class CounterScopeModel {
         }
         if (this.resetHour != null) {
             properties["resetHour"] = this.resetHour;
+        }
+        if (this.conditionName != null) {
+            properties["conditionName"] = this.conditionName;
+        }
+        if (this.condition != null) {
+            properties["condition"] = (_a = this.condition) === null || _a === void 0 ? void 0 : _a.properties();
         }
         return properties;
     }

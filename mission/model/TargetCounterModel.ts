@@ -14,21 +14,61 @@
  * permissions and limitations under the License.
  */
 import { TargetCounterModelOptions } from "./options/TargetCounterModelOptions";
+import { TargetCounterModelScopeTypeIsResetTimingOptions } from "./options/TargetCounterModelScopeTypeIsResetTimingOptions";
+import { TargetCounterModelScopeTypeIsVerifyActionOptions } from "./options/TargetCounterModelScopeTypeIsVerifyActionOptions";
+import { TargetCounterModelScopeType } from "./enum/TargetCounterModelScopeType";
 import { TargetCounterModelResetType } from "./enum/TargetCounterModelResetType";
 
 export default class TargetCounterModel {
     private readonly counterName: string;
+    private readonly scopeType: TargetCounterModelScopeType;
     private readonly value: number;
     private readonly resetType: TargetCounterModelResetType|null = null;
+    private readonly conditionName: string|null = null;
 
     public constructor(
         counterName: string,
+        scopeType: TargetCounterModelScopeType,
         value: number,
         options: TargetCounterModelOptions|null = null,
     ) {
         this.counterName = counterName;
+        this.scopeType = scopeType;
         this.value = value;
         this.resetType = options?.resetType ?? null;
+        this.conditionName = options?.conditionName ?? null;
+    }
+
+    public static scopeTypeIsResetTiming(
+        counterName: string,
+        value: number,
+        options: TargetCounterModelScopeTypeIsResetTimingOptions|null = null,
+    ): TargetCounterModel {
+        return new TargetCounterModel(
+            counterName,
+            TargetCounterModelScopeType.RESET_TIMING,
+            value,
+            {
+                resetType: options?.resetType,
+            },
+        );
+    }
+
+    public static scopeTypeIsVerifyAction(
+        counterName: string,
+        value: number,
+        conditionName: string,
+        options: TargetCounterModelScopeTypeIsVerifyActionOptions|null = null,
+    ): TargetCounterModel {
+        return new TargetCounterModel(
+            counterName,
+            TargetCounterModelScopeType.VERIFY_ACTION,
+            value,
+            {
+                conditionName: conditionName,
+                resetType: options?.resetType,
+            },
+        );
     }
 
     public properties(
@@ -38,8 +78,14 @@ export default class TargetCounterModel {
         if (this.counterName != null) {
             properties["counterName"] = this.counterName;
         }
+        if (this.scopeType != null) {
+            properties["scopeType"] = this.scopeType;
+        }
         if (this.resetType != null) {
             properties["resetType"] = this.resetType;
+        }
+        if (this.conditionName != null) {
+            properties["conditionName"] = this.conditionName;
         }
         if (this.value != null) {
             properties["value"] = this.value;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TargetCounterModelResetType = exports.TargetCounterModel = exports.ScopedValueResetType = exports.ScopedValue = exports.MissionTaskModelTargetResetType = exports.MissionTaskModelVerifyCompleteType = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModel = void 0;
+exports.CurrentMasterData = exports.TargetCounterModelResetType = exports.TargetCounterModelScopeType = exports.TargetCounterModel = exports.ScopedValueResetType = exports.ScopedValueScopeType = exports.ScopedValue = exports.MissionTaskModelTargetResetType = exports.MissionTaskModelVerifyCompleteType = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModelScopeType = exports.CounterScopeModel = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const CounterScopeModel_1 = tslib_1.__importDefault(require("./CounterScopeModel"));
 exports.CounterScopeModel = CounterScopeModel_1.default;
+const CounterScopeModelScopeType_1 = require("./enum/CounterScopeModelScopeType");
+Object.defineProperty(exports, "CounterScopeModelScopeType", { enumerable: true, get: function () { return CounterScopeModelScopeType_1.CounterScopeModelScopeType; } });
 const CounterScopeModelResetType_1 = require("./enum/CounterScopeModelResetType");
 Object.defineProperty(exports, "CounterScopeModelResetType", { enumerable: true, get: function () { return CounterScopeModelResetType_1.CounterScopeModelResetType; } });
 const CounterScopeModelResetDayOfWeek_1 = require("./enum/CounterScopeModelResetDayOfWeek");
@@ -41,10 +43,14 @@ const MissionTaskModelTargetResetType_1 = require("./enum/MissionTaskModelTarget
 Object.defineProperty(exports, "MissionTaskModelTargetResetType", { enumerable: true, get: function () { return MissionTaskModelTargetResetType_1.MissionTaskModelTargetResetType; } });
 const ScopedValue_1 = tslib_1.__importDefault(require("./ScopedValue"));
 exports.ScopedValue = ScopedValue_1.default;
+const ScopedValueScopeType_1 = require("./enum/ScopedValueScopeType");
+Object.defineProperty(exports, "ScopedValueScopeType", { enumerable: true, get: function () { return ScopedValueScopeType_1.ScopedValueScopeType; } });
 const ScopedValueResetType_1 = require("./enum/ScopedValueResetType");
 Object.defineProperty(exports, "ScopedValueResetType", { enumerable: true, get: function () { return ScopedValueResetType_1.ScopedValueResetType; } });
 const TargetCounterModel_1 = tslib_1.__importDefault(require("./TargetCounterModel"));
 exports.TargetCounterModel = TargetCounterModel_1.default;
+const TargetCounterModelScopeType_1 = require("./enum/TargetCounterModelScopeType");
+Object.defineProperty(exports, "TargetCounterModelScopeType", { enumerable: true, get: function () { return TargetCounterModelScopeType_1.TargetCounterModelScopeType; } });
 const TargetCounterModelResetType_1 = require("./enum/TargetCounterModelResetType");
 Object.defineProperty(exports, "TargetCounterModelResetType", { enumerable: true, get: function () { return TargetCounterModelResetType_1.TargetCounterModelResetType; } });
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));

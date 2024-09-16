@@ -54,8 +54,8 @@ class NamespaceRef {
     verifyComplete(missionGroupName, verifyType, missionTaskName, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifyCompleteByUserId_1.default(this.namespaceName, missionGroupName, verifyType, missionTaskName, multiplyValueSpecifyingQuantity, userId);
     }
-    verifyCounterValue(counterName, verifyType, resetType, value = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
-        return new VerifyCounterValueByUserId_1.default(this.namespaceName, counterName, verifyType, resetType, value, multiplyValueSpecifyingQuantity, userId);
+    verifyCounterValue(counterName, verifyType, scopeType = null, resetType = null, conditionName = null, value = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyCounterValueByUserId_1.default(this.namespaceName, counterName, verifyType, scopeType, resetType, conditionName, value, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

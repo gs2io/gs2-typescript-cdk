@@ -17,15 +17,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class VerifyCounterValueByUserId extends model_1.VerifyAction {
-    constructor(namespaceName, counterName, verifyType, resetType, value = null, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
+    constructor(namespaceName, counterName, verifyType, scopeType = null, resetType = null, conditionName = null, value = null, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.scopeType = null;
+        this.resetType = null;
+        this.conditionName = null;
         this.value = null;
         this.multiplyValueSpecifyingQuantity = null;
         this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.counterName = counterName;
         this.verifyType = verifyType;
-        this.resetType = resetType;
+        this.scopeType = scopeType !== null && scopeType !== void 0 ? scopeType : null;
+        this.resetType = resetType !== null && resetType !== void 0 ? resetType : null;
+        this.conditionName = conditionName !== null && conditionName !== void 0 ? conditionName : null;
         this.value = value !== null && value !== void 0 ? value : null;
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity !== null && multiplyValueSpecifyingQuantity !== void 0 ? multiplyValueSpecifyingQuantity : null;
         this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
@@ -45,8 +50,14 @@ class VerifyCounterValueByUserId extends model_1.VerifyAction {
         if (this.verifyType != null) {
             properties["verifyType"] = this.verifyType;
         }
+        if (this.scopeType != null) {
+            properties["scopeType"] = this.scopeType;
+        }
         if (this.resetType != null) {
             properties["resetType"] = this.resetType;
+        }
+        if (this.conditionName != null) {
+            properties["conditionName"] = this.conditionName;
         }
         if (this.value != null) {
             properties["value"] = this.value;

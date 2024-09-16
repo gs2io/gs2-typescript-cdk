@@ -26,6 +26,8 @@ import { IncrementalRateModelCalculateType } from "./enum/IncrementalRateModelCa
 import { IncrementalRateModelCalculateTypeIsLinearOptions } from "./options/IncrementalRateModelCalculateTypeIsLinearOptions"
 import { IncrementalRateModelCalculateTypeIsPowerOptions } from "./options/IncrementalRateModelCalculateTypeIsPowerOptions"
 import { IncrementalRateModelCalculateTypeIsGs2ScriptOptions } from "./options/IncrementalRateModelCalculateTypeIsGs2ScriptOptions"
+import LogCost from "./LogCost";
+import { LogCostOptions } from "./options/LogCostOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -42,5 +44,7 @@ export {
     IncrementalRateModelCalculateTypeIsLinearOptions,
     IncrementalRateModelCalculateTypeIsPowerOptions,
     IncrementalRateModelCalculateTypeIsGs2ScriptOptions,
+    LogCost,
+    LogCostOptions,
     CurrentMasterData,
 }

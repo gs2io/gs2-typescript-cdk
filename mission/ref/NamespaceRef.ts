@@ -27,6 +27,7 @@ import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
 import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
 import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
+import { CounterScopeType } from "../stampSheet/enum/CounterScopeType";
 import { CounterResetType } from "../stampSheet/enum/CounterResetType";
 
 export default class NamespaceRef {
@@ -141,7 +142,9 @@ export default class NamespaceRef {
     public verifyCounterValue(
         counterName: string,
         verifyType: CounterVerifyType,
-        resetType: CounterResetType,
+        scopeType: CounterScopeType|null = null,
+        resetType: CounterResetType|null = null,
+        conditionName: string|null = null,
         value: number|null = null,
         multiplyValueSpecifyingQuantity: boolean|null = null,
         userId: string = "#{userId}",
@@ -150,7 +153,9 @@ export default class NamespaceRef {
             this.namespaceName,
             counterName,
             verifyType,
+            scopeType,
             resetType,
+            conditionName,
             value,
             multiplyValueSpecifyingQuantity,
             userId,
