@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,14 +14,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import TriggerByUserId from "./TriggerByUserId";
-import DeleteTriggerByUserId from "./DeleteTriggerByUserId";
-import VerifyTriggerByUserId from "./VerifyTriggerByUserId";
-import VerifyEventByUserId from "./VerifyEventByUserId";
-
-export {
-    TriggerByUserId,
-    DeleteTriggerByUserId,
-    VerifyTriggerByUserId,
-    VerifyEventByUserId,
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TriggerVerifyType = void 0;
+exports.TriggerVerifyType = {
+    NOT_TRIGGERD: "notTriggerd",
+    ELAPSED: "elapsed",
+    NOT_ELAPSED: "notElapsed",
+};
+//# sourceMappingURL=TriggerVerifyType.js.map

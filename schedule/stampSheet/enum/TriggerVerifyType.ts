@@ -13,14 +13,12 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import TriggerByUserId from "./TriggerByUserId";
-import DeleteTriggerByUserId from "./DeleteTriggerByUserId";
-import VerifyTriggerByUserId from "./VerifyTriggerByUserId";
-import VerifyEventByUserId from "./VerifyEventByUserId";
 
-export {
-    TriggerByUserId,
-    DeleteTriggerByUserId,
-    VerifyTriggerByUserId,
-    VerifyEventByUserId,
-}
+
+
+export const TriggerVerifyType = {
+    NOT_TRIGGERD: "notTriggerd",
+    ELAPSED: "elapsed",
+    NOT_ELAPSED: "notElapsed",
+} as const;
+export type TriggerVerifyType = typeof TriggerVerifyType[keyof typeof TriggerVerifyType];

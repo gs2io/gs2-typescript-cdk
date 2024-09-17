@@ -18,6 +18,8 @@ import {GetAttr, Join} from "../../core/func";
 import TriggerByUserId from "../stampSheet/TriggerByUserId";
 import { TriggerTriggerStrategy } from "../stampSheet/enum/TriggerTriggerStrategy";
 import DeleteTriggerByUserId from "../stampSheet/DeleteTriggerByUserId";
+import VerifyTriggerByUserId from "../stampSheet/VerifyTriggerByUserId";
+import { TriggerVerifyType } from "../stampSheet/enum/TriggerVerifyType";
 import VerifyEventByUserId from "../stampSheet/VerifyEventByUserId";
 import { EventVerifyType } from "../stampSheet/enum/EventVerifyType";
 
@@ -52,6 +54,21 @@ export default class NamespaceRef {
         return new DeleteTriggerByUserId(
             this.namespaceName,
             triggerName,
+            userId,
+        );
+    }
+
+    public verifyTrigger(
+        triggerName: string,
+        verifyType: TriggerVerifyType,
+        elapsedMinutes: number|null = null,
+        userId: string = "#{userId}",
+    ): VerifyTriggerByUserId {
+        return new VerifyTriggerByUserId(
+            this.namespaceName,
+            triggerName,
+            verifyType,
+            elapsedMinutes,
             userId,
         );
     }
