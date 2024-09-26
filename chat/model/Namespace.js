@@ -21,10 +21,11 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         super("Chat_Namespace_" + name);
         this.description = null;
         this.allowCreateRoom = null;
+        this.messageLifeTimeDays = null;
         this.postMessageScript = null;
         this.createRoomScript = null;
         this.deleteRoomScript = null;
@@ -36,13 +37,14 @@ class Namespace extends model_1.CdkResource {
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.allowCreateRoom = (_b = options === null || options === void 0 ? void 0 : options.allowCreateRoom) !== null && _b !== void 0 ? _b : null;
-        this.postMessageScript = (_c = options === null || options === void 0 ? void 0 : options.postMessageScript) !== null && _c !== void 0 ? _c : null;
-        this.createRoomScript = (_d = options === null || options === void 0 ? void 0 : options.createRoomScript) !== null && _d !== void 0 ? _d : null;
-        this.deleteRoomScript = (_e = options === null || options === void 0 ? void 0 : options.deleteRoomScript) !== null && _e !== void 0 ? _e : null;
-        this.subscribeRoomScript = (_f = options === null || options === void 0 ? void 0 : options.subscribeRoomScript) !== null && _f !== void 0 ? _f : null;
-        this.unsubscribeRoomScript = (_g = options === null || options === void 0 ? void 0 : options.unsubscribeRoomScript) !== null && _g !== void 0 ? _g : null;
-        this.postNotification = (_h = options === null || options === void 0 ? void 0 : options.postNotification) !== null && _h !== void 0 ? _h : null;
-        this.logSetting = (_j = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _j !== void 0 ? _j : null;
+        this.messageLifeTimeDays = (_c = options === null || options === void 0 ? void 0 : options.messageLifeTimeDays) !== null && _c !== void 0 ? _c : null;
+        this.postMessageScript = (_d = options === null || options === void 0 ? void 0 : options.postMessageScript) !== null && _d !== void 0 ? _d : null;
+        this.createRoomScript = (_e = options === null || options === void 0 ? void 0 : options.createRoomScript) !== null && _e !== void 0 ? _e : null;
+        this.deleteRoomScript = (_f = options === null || options === void 0 ? void 0 : options.deleteRoomScript) !== null && _f !== void 0 ? _f : null;
+        this.subscribeRoomScript = (_g = options === null || options === void 0 ? void 0 : options.subscribeRoomScript) !== null && _g !== void 0 ? _g : null;
+        this.unsubscribeRoomScript = (_h = options === null || options === void 0 ? void 0 : options.unsubscribeRoomScript) !== null && _h !== void 0 ? _h : null;
+        this.postNotification = (_j = options === null || options === void 0 ? void 0 : options.postNotification) !== null && _j !== void 0 ? _j : null;
+        this.logSetting = (_k = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _k !== void 0 ? _k : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -62,6 +64,9 @@ class Namespace extends model_1.CdkResource {
         }
         if (this.allowCreateRoom != null) {
             properties["AllowCreateRoom"] = this.allowCreateRoom;
+        }
+        if (this.messageLifeTimeDays != null) {
+            properties["MessageLifeTimeDays"] = this.messageLifeTimeDays;
         }
         if (this.postMessageScript != null) {
             properties["PostMessageScript"] = (_a = this.postMessageScript) === null || _a === void 0 ? void 0 : _a.properties();

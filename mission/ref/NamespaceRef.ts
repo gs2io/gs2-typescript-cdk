@@ -22,6 +22,7 @@ import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
 import SetCounterByUserId from "../stampSheet/SetCounterByUserId";
 import ScopedValue from "../model/ScopedValue";
 import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
+import BatchReceiveByUserId from "../stampSheet/BatchReceiveByUserId";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
 import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
@@ -105,6 +106,19 @@ export default class NamespaceRef {
             this.namespaceName,
             missionGroupName,
             missionTaskName,
+            userId,
+        );
+    }
+
+    public batchReceive(
+        missionGroupName: string,
+        missionTaskNames: string[],
+        userId: string = "#{userId}",
+    ): BatchReceiveByUserId {
+        return new BatchReceiveByUserId(
+            this.namespaceName,
+            missionGroupName,
+            missionTaskNames,
             userId,
         );
     }

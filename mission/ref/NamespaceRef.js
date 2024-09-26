@@ -23,6 +23,7 @@ const RevertReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/R
 const IncreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseCounterByUserId"));
 const SetCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetCounterByUserId"));
 const ReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ReceiveByUserId"));
+const BatchReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/BatchReceiveByUserId"));
 const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseCounterByUserId"));
 const VerifyCompleteByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCompleteByUserId"));
 const VerifyCounterValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCounterValueByUserId"));
@@ -47,6 +48,9 @@ class NamespaceRef {
     }
     receive(missionGroupName, missionTaskName, userId = "#{userId}") {
         return new ReceiveByUserId_1.default(this.namespaceName, missionGroupName, missionTaskName, userId);
+    }
+    batchReceive(missionGroupName, missionTaskNames, userId = "#{userId}") {
+        return new BatchReceiveByUserId_1.default(this.namespaceName, missionGroupName, missionTaskNames, userId);
     }
     decreaseCounter(counterName, value, userId = "#{userId}") {
         return new DecreaseCounterByUserId_1.default(this.namespaceName, counterName, value, userId);

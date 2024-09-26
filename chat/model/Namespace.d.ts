@@ -7,6 +7,7 @@ export default class Namespace extends CdkResource {
     private readonly name;
     private readonly description;
     private readonly allowCreateRoom;
+    private readonly messageLifeTimeDays;
     private readonly postMessageScript;
     private readonly createRoomScript;
     private readonly deleteRoomScript;

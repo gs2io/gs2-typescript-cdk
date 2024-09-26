@@ -21,14 +21,16 @@ const func_1 = require("../../core/func");
 const ScriptRef_1 = tslib_1.__importDefault(require("../ref/ScriptRef"));
 class Script extends model_1.CdkResource {
     constructor(stack, namespaceName, name, script, options = null) {
-        var _a;
+        var _a, _b;
         super("Script_Script_" + name);
         this.description = null;
+        this.disableStringNumberToNumber = null;
         this.stack = stack;
         this.namespaceName = namespaceName;
         this.name = name;
         this.script = script;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
+        this.disableStringNumberToNumber = (_b = options === null || options === void 0 ? void 0 : options.disableStringNumberToNumber) !== null && _b !== void 0 ? _b : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -50,6 +52,9 @@ class Script extends model_1.CdkResource {
         }
         if (this.script != null) {
             properties["Script"] = this.script;
+        }
+        if (this.disableStringNumberToNumber != null) {
+            properties["DisableStringNumberToNumber"] = this.disableStringNumberToNumber;
         }
         return properties;
     }

@@ -8,6 +8,7 @@ export default class Script extends CdkResource {
     private readonly name;
     private readonly script;
     private readonly description;
+    private readonly disableStringNumberToNumber;
     constructor(stack: Stack, namespaceName: string, name: string, script: string, options?: ScriptOptions | null);
     alternateKeys(): string;
     resourceType(): string;

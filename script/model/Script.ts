@@ -27,6 +27,7 @@ export default class Script extends CdkResource {
     private readonly name: string;
     private readonly script: string;
     private readonly description: string|null = null;
+    private readonly disableStringNumberToNumber: boolean|null = null;
 
     public constructor(
         stack: Stack,
@@ -44,6 +45,7 @@ export default class Script extends CdkResource {
         this.name = name;
         this.script = script;
         this.description = options?.description ?? null;
+        this.disableStringNumberToNumber = options?.disableStringNumberToNumber ?? null;
         stack.addResource(
             this,
         );
@@ -75,6 +77,9 @@ export default class Script extends CdkResource {
         }
         if (this.script != null) {
             properties["Script"] = this.script;
+        }
+        if (this.disableStringNumberToNumber != null) {
+            properties["DisableStringNumberToNumber"] = this.disableStringNumberToNumber;
         }
 
         return properties;

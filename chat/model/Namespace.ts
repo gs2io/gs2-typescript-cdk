@@ -29,6 +29,7 @@ export default class Namespace extends CdkResource {
     private readonly name: string;
     private readonly description: string|null = null;
     private readonly allowCreateRoom: boolean|null = null;
+    private readonly messageLifeTimeDays: number|null = null;
     private readonly postMessageScript: ScriptSetting|null = null;
     private readonly createRoomScript: ScriptSetting|null = null;
     private readonly deleteRoomScript: ScriptSetting|null = null;
@@ -50,6 +51,7 @@ export default class Namespace extends CdkResource {
         this.name = name;
         this.description = options?.description ?? null;
         this.allowCreateRoom = options?.allowCreateRoom ?? null;
+        this.messageLifeTimeDays = options?.messageLifeTimeDays ?? null;
         this.postMessageScript = options?.postMessageScript ?? null;
         this.createRoomScript = options?.createRoomScript ?? null;
         this.deleteRoomScript = options?.deleteRoomScript ?? null;
@@ -85,6 +87,9 @@ export default class Namespace extends CdkResource {
         }
         if (this.allowCreateRoom != null) {
             properties["AllowCreateRoom"] = this.allowCreateRoom;
+        }
+        if (this.messageLifeTimeDays != null) {
+            properties["MessageLifeTimeDays"] = this.messageLifeTimeDays;
         }
         if (this.postMessageScript != null) {
             properties["PostMessageScript"] = this.postMessageScript?.properties(

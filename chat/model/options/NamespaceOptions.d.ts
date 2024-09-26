@@ -4,6 +4,7 @@ import LogSetting from "../../../core/model/LogSetting";
 export interface NamespaceOptions {
     description?: string | null;
     allowCreateRoom?: boolean | null;
+    messageLifeTimeDays?: number | null;
     postMessageScript?: ScriptSetting | null;
     createRoomScript?: ScriptSetting | null;
     deleteRoomScript?: ScriptSetting | null;
