@@ -6,7 +6,7 @@ import { EntryVerifyType } from "../stampSheet/enum/EntryVerifyType";
 export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
-    entryModel(entryName: string): EntryModelRef;
+    entryModel(entryModelName: string): EntryModelRef;
     addEntries(entryModelNames?: string[] | null, userId?: string): AddEntriesByUserId;
     deleteEntries(entryModelNames?: string[] | null, userId?: string): DeleteEntriesByUserId;
     verifyEntry(entryModelName: string, verifyType: EntryVerifyType, userId?: string): VerifyEntryByUserId;

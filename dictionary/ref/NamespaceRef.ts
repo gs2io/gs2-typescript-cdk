@@ -31,11 +31,11 @@ export default class NamespaceRef {
     }
 
     public entryModel(
-        entryName: string,
+        entryModelName: string,
     ): EntryModelRef {
         return new EntryModelRef(
             this.namespaceName,
-            entryName,
+            entryModelName,
         );
     }
 

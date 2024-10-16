@@ -19,19 +19,19 @@ import QuestGroupModel from "./QuestGroupModel";
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2019-05-14";
     private readonly namespaceName: string;
-    private readonly questGroupModels: QuestGroupModel[];
+    private readonly groups: QuestGroupModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
-        questGroupModels: QuestGroupModel[],
+        groups: QuestGroupModel[],
     ) {
         super(
             "Quest_CurrentQuestMaster_" + namespaceName
         );
 
         this.namespaceName = namespaceName;
-        this.questGroupModels = questGroupModels;
+        this.groups = groups;
         stack.addResource(
             this,
         );
@@ -53,8 +53,8 @@ export default class CurrentMasterData extends CdkResource {
         let settings: {[name: string]: any} = {};
 
         settings["version"] = this.version
-        if (this.questGroupModels != null) {
-            settings["questGroupModels"] = this.questGroupModels.map(v => v.properties(
+        if (this.groups != null) {
+            settings["groups"] = this.groups.map(v => v.properties(
                 ));
         }
 

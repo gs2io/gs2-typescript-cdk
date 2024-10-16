@@ -17,11 +17,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const model_1 = require("../../core/model");
 class CurrentMasterData extends model_1.CdkResource {
-    constructor(stack, namespaceName, categoryModels) {
+    constructor(stack, namespaceName, categories) {
         super("Ranking_CurrentRankingMaster_" + namespaceName);
         this.version = "2019-09-17";
         this.namespaceName = namespaceName;
-        this.categoryModels = categoryModels;
+        this.categories = categories;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -34,8 +34,8 @@ class CurrentMasterData extends model_1.CdkResource {
         let properties = {};
         let settings = {};
         settings["version"] = this.version;
-        if (this.categoryModels != null) {
-            settings["categoryModels"] = this.categoryModels.map(v => v.properties());
+        if (this.categories != null) {
+            settings["categories"] = this.categories.map(v => v.properties());
         }
         if (this.namespaceName != null) {
             properties["NamespaceName"] = this.namespaceName;

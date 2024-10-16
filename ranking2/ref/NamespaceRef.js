@@ -22,6 +22,9 @@ const SubscribeRankingModelRef_1 = tslib_1.__importDefault(require("./SubscribeR
 const ClusterRankingModelRef_1 = tslib_1.__importDefault(require("./ClusterRankingModelRef"));
 const CreateGlobalRankingReceivedRewardByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CreateGlobalRankingReceivedRewardByUserId"));
 const CreateClusterRankingReceivedRewardByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CreateClusterRankingReceivedRewardByUserId"));
+const VerifyGlobalRankingScoreByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyGlobalRankingScoreByUserId"));
+const VerifyClusterRankingScoreByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyClusterRankingScoreByUserId"));
+const VerifySubscribeRankingScoreByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifySubscribeRankingScoreByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -40,6 +43,15 @@ class NamespaceRef {
     }
     createClusterRankingReceivedReward(rankingName, clusterName, season = null, userId = "#{userId}") {
         return new CreateClusterRankingReceivedRewardByUserId_1.default(this.namespaceName, rankingName, clusterName, season, userId);
+    }
+    verifyGlobalRankingScore(rankingName, verifyType, score, season = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyGlobalRankingScoreByUserId_1.default(this.namespaceName, rankingName, verifyType, score, season, multiplyValueSpecifyingQuantity, userId);
+    }
+    verifyClusterRankingScore(rankingName, clusterName, verifyType, score, season = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyClusterRankingScoreByUserId_1.default(this.namespaceName, rankingName, clusterName, verifyType, score, season, multiplyValueSpecifyingQuantity, userId);
+    }
+    verifySubscribeRankingScore(rankingName, verifyType, score, season = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifySubscribeRankingScoreByUserId_1.default(this.namespaceName, rankingName, verifyType, score, season, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

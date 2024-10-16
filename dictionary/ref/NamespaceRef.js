@@ -25,8 +25,8 @@ class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
-    entryModel(entryName) {
-        return new EntryModelRef_1.default(this.namespaceName, entryName);
+    entryModel(entryModelName) {
+        return new EntryModelRef_1.default(this.namespaceName, entryModelName);
     }
     addEntries(entryModelNames = null, userId = "#{userId}") {
         return new AddEntriesByUserId_1.default(this.namespaceName, entryModelNames, userId);

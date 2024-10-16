@@ -15,10 +15,15 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const InvokeScript_1 = tslib_1.__importDefault(require("../stampSheet/InvokeScript"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
+    }
+    invokeScript(scriptId, args = null, randomStatus = null, userId = "#{userId}") {
+        return new InvokeScript_1.default(scriptId, args, randomStatus, userId);
     }
     grn() {
         return new func_1.Join(":", [

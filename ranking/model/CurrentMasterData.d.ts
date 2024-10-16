@@ -3,8 +3,8 @@ import CategoryModel from "./CategoryModel";
 export default class CurrentMasterData extends CdkResource {
     private readonly version;
     private readonly namespaceName;
-    private readonly categoryModels;
-    constructor(stack: Stack, namespaceName: string, categoryModels: CategoryModel[]);
+    private readonly categories;
+    constructor(stack: Stack, namespaceName: string, categories: CategoryModel[]);
     alternateKeys(): string;
     resourceType(): string;
     properties(): {

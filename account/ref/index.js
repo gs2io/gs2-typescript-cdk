@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BanStatusRef = exports.TakeOverTypeModelRef = exports.NamespaceRef = void 0;
+exports.BanStatusRef = exports.MasterDataVersionRef = exports.TakeOverTypeModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
 const TakeOverTypeModelRef_1 = tslib_1.__importDefault(require("./TakeOverTypeModelRef"));
 exports.TakeOverTypeModelRef = TakeOverTypeModelRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 const BanStatusRef_1 = tslib_1.__importDefault(require("./BanStatusRef"));
 exports.BanStatusRef = BanStatusRef_1.default;
 //# sourceMappingURL=index.js.map

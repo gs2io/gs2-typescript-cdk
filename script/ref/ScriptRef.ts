@@ -15,6 +15,8 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import InvokeScript from "../stampSheet/InvokeScript";
+import RandomStatus from "../model/RandomStatus";
 
 export default class ScriptRef {
     private readonly namespaceName: string;
@@ -26,6 +28,20 @@ export default class ScriptRef {
     ) {
         this.namespaceName = namespaceName;
         this.scriptName = scriptName;
+    }
+
+    public invokeScript(
+        scriptId: string,
+        args: string|null = null,
+        randomStatus: RandomStatus|null = null,
+        userId: string = "#{userId}",
+    ): InvokeScript {
+        return new InvokeScript(
+            scriptId,
+            args,
+            randomStatus,
+            userId,
+        );
     }
 
     public grn(

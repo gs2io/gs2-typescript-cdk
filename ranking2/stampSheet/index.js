@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateClusterRankingReceivedRewardByUserId = exports.CreateGlobalRankingReceivedRewardByUserId = void 0;
+exports.VerifySubscribeRankingScoreByUserId = exports.VerifyClusterRankingScoreByUserId = exports.VerifyGlobalRankingScoreByUserId = exports.CreateClusterRankingReceivedRewardByUserId = exports.CreateGlobalRankingReceivedRewardByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,10 @@ const CreateGlobalRankingReceivedRewardByUserId_1 = tslib_1.__importDefault(requ
 exports.CreateGlobalRankingReceivedRewardByUserId = CreateGlobalRankingReceivedRewardByUserId_1.default;
 const CreateClusterRankingReceivedRewardByUserId_1 = tslib_1.__importDefault(require("./CreateClusterRankingReceivedRewardByUserId"));
 exports.CreateClusterRankingReceivedRewardByUserId = CreateClusterRankingReceivedRewardByUserId_1.default;
+const VerifyGlobalRankingScoreByUserId_1 = tslib_1.__importDefault(require("./VerifyGlobalRankingScoreByUserId"));
+exports.VerifyGlobalRankingScoreByUserId = VerifyGlobalRankingScoreByUserId_1.default;
+const VerifyClusterRankingScoreByUserId_1 = tslib_1.__importDefault(require("./VerifyClusterRankingScoreByUserId"));
+exports.VerifyClusterRankingScoreByUserId = VerifyClusterRankingScoreByUserId_1.default;
+const VerifySubscribeRankingScoreByUserId_1 = tslib_1.__importDefault(require("./VerifySubscribeRankingScoreByUserId"));
+exports.VerifySubscribeRankingScoreByUserId = VerifySubscribeRankingScoreByUserId_1.default;
 //# sourceMappingURL=index.js.map

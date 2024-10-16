@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const CampaignModelRef_1 = tslib_1.__importDefault(require("./CampaignModelRef"));
 const RevertUseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/RevertUseByUserId"));
 const UseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UseByUserId"));
+const VerifyCodeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCodeByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -32,6 +33,9 @@ class NamespaceRef {
     }
     use(code, userId = "#{userId}") {
         return new UseByUserId_1.default(this.namespaceName, code, userId);
+    }
+    verifyCode(code, verifyType, userId = "#{userId}") {
+        return new VerifyCodeByUserId_1.default(this.namespaceName, code, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [

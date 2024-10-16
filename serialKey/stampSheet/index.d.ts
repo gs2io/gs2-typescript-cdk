@@ -1,3 +1,4 @@
 import RevertUseByUserId from "./RevertUseByUserId";
 import UseByUserId from "./UseByUserId";
-export { RevertUseByUserId, UseByUserId, };
+import VerifyCodeByUserId from "./VerifyCodeByUserId";
+export { RevertUseByUserId, UseByUserId, VerifyCodeByUserId, };

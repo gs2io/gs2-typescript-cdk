@@ -16,5 +16,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(categoryModels: CategoryModel[]): Namespace;
+    masterData(categories: CategoryModel[]): Namespace;
 }

@@ -22,14 +22,14 @@ import { EntryVerifyType } from "../stampSheet/enum/EntryVerifyType";
 
 export default class EntryModelRef {
     private readonly namespaceName: string;
-    private readonly entryName: string;
+    private readonly entryModelName: string;
 
     public constructor(
         namespaceName: string,
-        entryName: string,
+        entryModelName: string,
     ) {
         this.namespaceName = namespaceName;
-        this.entryName = entryName;
+        this.entryModelName = entryModelName;
     }
 
     public addEntries(
@@ -55,13 +55,12 @@ export default class EntryModelRef {
     }
 
     public verifyEntry(
-        entryModelName: string,
         verifyType: EntryVerifyType,
         userId: string = "#{userId}",
     ): VerifyEntryByUserId {
         return new VerifyEntryByUserId(
             this.namespaceName,
-            entryModelName,
+            this.entryModelName,
             verifyType,
             userId,
         );
@@ -83,7 +82,7 @@ export default class EntryModelRef {
                 "dictionary",
                 this.namespaceName,
                 "model",
-                this.entryName,
+                this.entryModelName,
             ],
         ).str(
         );

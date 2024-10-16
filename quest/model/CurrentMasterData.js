@@ -17,11 +17,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const model_1 = require("../../core/model");
 class CurrentMasterData extends model_1.CdkResource {
-    constructor(stack, namespaceName, questGroupModels) {
+    constructor(stack, namespaceName, groups) {
         super("Quest_CurrentQuestMaster_" + namespaceName);
         this.version = "2019-05-14";
         this.namespaceName = namespaceName;
-        this.questGroupModels = questGroupModels;
+        this.groups = groups;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -34,8 +34,8 @@ class CurrentMasterData extends model_1.CdkResource {
         let properties = {};
         let settings = {};
         settings["version"] = this.version;
-        if (this.questGroupModels != null) {
-            settings["questGroupModels"] = this.questGroupModels.map(v => v.properties());
+        if (this.groups != null) {
+            settings["groups"] = this.groups.map(v => v.properties());
         }
         if (this.namespaceName != null) {
             properties["NamespaceName"] = this.namespaceName;

@@ -94,12 +94,12 @@ export default class Namespace extends CdkResource {
     }
 
     public masterData(
-        categoryModels: CategoryModel[],
+        categories: CategoryModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
-            categoryModels,
+            categories,
         ).addDependsOn(
             this,
         );

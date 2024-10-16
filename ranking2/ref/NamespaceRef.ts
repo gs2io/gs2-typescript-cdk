@@ -20,6 +20,12 @@ import SubscribeRankingModelRef from "./SubscribeRankingModelRef";
 import ClusterRankingModelRef from "./ClusterRankingModelRef";
 import CreateGlobalRankingReceivedRewardByUserId from "../stampSheet/CreateGlobalRankingReceivedRewardByUserId";
 import CreateClusterRankingReceivedRewardByUserId from "../stampSheet/CreateClusterRankingReceivedRewardByUserId";
+import VerifyGlobalRankingScoreByUserId from "../stampSheet/VerifyGlobalRankingScoreByUserId";
+import { GlobalRankingScoreVerifyType } from "../stampSheet/enum/GlobalRankingScoreVerifyType";
+import VerifyClusterRankingScoreByUserId from "../stampSheet/VerifyClusterRankingScoreByUserId";
+import { ClusterRankingScoreVerifyType } from "../stampSheet/enum/ClusterRankingScoreVerifyType";
+import VerifySubscribeRankingScoreByUserId from "../stampSheet/VerifySubscribeRankingScoreByUserId";
+import { SubscribeRankingScoreVerifyType } from "../stampSheet/enum/SubscribeRankingScoreVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -81,6 +87,65 @@ export default class NamespaceRef {
             rankingName,
             clusterName,
             season,
+            userId,
+        );
+    }
+
+    public verifyGlobalRankingScore(
+        rankingName: string,
+        verifyType: GlobalRankingScoreVerifyType,
+        score: number,
+        season: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyGlobalRankingScoreByUserId {
+        return new VerifyGlobalRankingScoreByUserId(
+            this.namespaceName,
+            rankingName,
+            verifyType,
+            score,
+            season,
+            multiplyValueSpecifyingQuantity,
+            userId,
+        );
+    }
+
+    public verifyClusterRankingScore(
+        rankingName: string,
+        clusterName: string,
+        verifyType: ClusterRankingScoreVerifyType,
+        score: number,
+        season: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyClusterRankingScoreByUserId {
+        return new VerifyClusterRankingScoreByUserId(
+            this.namespaceName,
+            rankingName,
+            clusterName,
+            verifyType,
+            score,
+            season,
+            multiplyValueSpecifyingQuantity,
+            userId,
+        );
+    }
+
+    public verifySubscribeRankingScore(
+        rankingName: string,
+        verifyType: SubscribeRankingScoreVerifyType,
+        score: number,
+        season: number|null = null,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifySubscribeRankingScoreByUserId {
+        return new VerifySubscribeRankingScoreByUserId(
+            this.namespaceName,
+            rankingName,
+            verifyType,
+            score,
+            season,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

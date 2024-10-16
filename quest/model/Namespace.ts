@@ -120,12 +120,12 @@ export default class Namespace extends CdkResource {
     }
 
     public masterData(
-        questGroupModels: QuestGroupModel[],
+        groups: QuestGroupModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
-            questGroupModels,
+            groups,
         ).addDependsOn(
             this,
         );

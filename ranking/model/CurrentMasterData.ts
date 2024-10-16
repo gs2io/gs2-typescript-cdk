@@ -19,19 +19,19 @@ import CategoryModel from "./CategoryModel";
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2019-09-17";
     private readonly namespaceName: string;
-    private readonly categoryModels: CategoryModel[];
+    private readonly categories: CategoryModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
-        categoryModels: CategoryModel[],
+        categories: CategoryModel[],
     ) {
         super(
             "Ranking_CurrentRankingMaster_" + namespaceName
         );
 
         this.namespaceName = namespaceName;
-        this.categoryModels = categoryModels;
+        this.categories = categories;
         stack.addResource(
             this,
         );
@@ -53,8 +53,8 @@ export default class CurrentMasterData extends CdkResource {
         let settings: {[name: string]: any} = {};
 
         settings["version"] = this.version
-        if (this.categoryModels != null) {
-            settings["categoryModels"] = this.categoryModels.map(v => v.properties(
+        if (this.categories != null) {
+            settings["categories"] = this.categories.map(v => v.properties(
                 ));
         }
 

@@ -21,9 +21,9 @@ const AddEntriesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddE
 const DeleteEntriesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteEntriesByUserId"));
 const VerifyEntryByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyEntryByUserId"));
 class EntryModelRef {
-    constructor(namespaceName, entryName) {
+    constructor(namespaceName, entryModelName) {
         this.namespaceName = namespaceName;
-        this.entryName = entryName;
+        this.entryModelName = entryModelName;
     }
     addEntries(entryModelNames = null, userId = "#{userId}") {
         return new AddEntriesByUserId_1.default(this.namespaceName, entryModelNames, userId);
@@ -31,8 +31,8 @@ class EntryModelRef {
     deleteEntries(entryModelNames = null, userId = "#{userId}") {
         return new DeleteEntriesByUserId_1.default(this.namespaceName, entryModelNames, userId);
     }
-    verifyEntry(entryModelName, verifyType, userId = "#{userId}") {
-        return new VerifyEntryByUserId_1.default(this.namespaceName, entryModelName, verifyType, userId);
+    verifyEntry(verifyType, userId = "#{userId}") {
+        return new VerifyEntryByUserId_1.default(this.namespaceName, this.entryModelName, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [
@@ -43,7 +43,7 @@ class EntryModelRef {
             "dictionary",
             this.namespaceName,
             "model",
-            this.entryName,
+            this.entryModelName,
         ]).str();
     }
 }

@@ -78,8 +78,8 @@ class Namespace extends model_1.CdkResource {
     getAttrNamespaceId() {
         return new func_1.GetAttr(this, "Item.NamespaceId", null);
     }
-    masterData(questGroupModels) {
-        new CurrentMasterData_1.default(this.stack, this.name, questGroupModels).addDependsOn(this);
+    masterData(groups) {
+        new CurrentMasterData_1.default(this.stack, this.name, groups).addDependsOn(this);
         return this;
     }
 }

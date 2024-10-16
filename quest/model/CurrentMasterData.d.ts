@@ -3,8 +3,8 @@ import QuestGroupModel from "./QuestGroupModel";
 export default class CurrentMasterData extends CdkResource {
     private readonly version;
     private readonly namespaceName;
-    private readonly questGroupModels;
-    constructor(stack: Stack, namespaceName: string, questGroupModels: QuestGroupModel[]);
+    private readonly groups;
+    constructor(stack: Stack, namespaceName: string, groups: QuestGroupModel[]);
     alternateKeys(): string;
     resourceType(): string;
     properties(): {

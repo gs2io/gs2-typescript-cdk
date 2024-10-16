@@ -18,6 +18,8 @@ import {GetAttr, Join} from "../../core/func";
 import CampaignModelRef from "./CampaignModelRef";
 import RevertUseByUserId from "../stampSheet/RevertUseByUserId";
 import UseByUserId from "../stampSheet/UseByUserId";
+import VerifyCodeByUserId from "../stampSheet/VerifyCodeByUserId";
+import { SerialKeyVerifyType } from "../stampSheet/enum/SerialKeyVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -55,6 +57,19 @@ export default class NamespaceRef {
         return new UseByUserId(
             this.namespaceName,
             code,
+            userId,
+        );
+    }
+
+    public verifyCode(
+        code: string,
+        verifyType: SerialKeyVerifyType,
+        userId: string = "#{userId}",
+    ): VerifyCodeByUserId {
+        return new VerifyCodeByUserId(
+            this.namespaceName,
+            code,
+            verifyType,
             userId,
         );
     }

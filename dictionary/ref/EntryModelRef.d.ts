@@ -4,10 +4,10 @@ import VerifyEntryByUserId from "../stampSheet/VerifyEntryByUserId";
 import { EntryVerifyType } from "../stampSheet/enum/EntryVerifyType";
 export default class EntryModelRef {
     private readonly namespaceName;
-    private readonly entryName;
-    constructor(namespaceName: string, entryName: string);
+    private readonly entryModelName;
+    constructor(namespaceName: string, entryModelName: string);
     addEntries(entryModelNames?: string[] | null, userId?: string): AddEntriesByUserId;
     deleteEntries(entryModelNames?: string[] | null, userId?: string): DeleteEntriesByUserId;
-    verifyEntry(entryModelName: string, verifyType: EntryVerifyType, userId?: string): VerifyEntryByUserId;
+    verifyEntry(verifyType: EntryVerifyType, userId?: string): VerifyEntryByUserId;
     grn(): string;
 }

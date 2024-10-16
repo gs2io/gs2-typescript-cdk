@@ -20,5 +20,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(questGroupModels: QuestGroupModel[]): Namespace;
+    masterData(groups: QuestGroupModel[]): Namespace;
 }
