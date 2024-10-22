@@ -15,7 +15,6 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import ClusterRankingSeasonRef from "./ClusterRankingSeasonRef";
 
 export default class ClusterRankingModelRef {
     private readonly namespaceName: string;

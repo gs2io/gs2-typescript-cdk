@@ -16,7 +16,6 @@
 
 import {GetAttr, Join} from "../../core/func";
 import TakeOverTypeModelRef from "./TakeOverTypeModelRef";
-import MasterDataVersionRef from "./MasterDataVersionRef";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;

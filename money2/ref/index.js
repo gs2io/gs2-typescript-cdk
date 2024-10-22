@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnusedBalanceRef = exports.DailyTransactionHistoryRef = exports.StoreContentModelRef = exports.NamespaceRef = void 0;
+exports.UnusedBalanceRef = exports.DailyTransactionHistoryRef = exports.MasterDataVersionRef = exports.StoreContentModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
 const StoreContentModelRef_1 = tslib_1.__importDefault(require("./StoreContentModelRef"));
 exports.StoreContentModelRef = StoreContentModelRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 const DailyTransactionHistoryRef_1 = tslib_1.__importDefault(require("./DailyTransactionHistoryRef"));
 exports.DailyTransactionHistoryRef = DailyTransactionHistoryRef_1.default;
 const UnusedBalanceRef_1 = tslib_1.__importDefault(require("./UnusedBalanceRef"));

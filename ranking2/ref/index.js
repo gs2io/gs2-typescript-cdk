@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SubscribeRankingModelRef = exports.ClusterRankingBorderRef = exports.ClusterRankingSeasonRef = exports.ClusterRankingModelRef = exports.GlobalRankingBorderRef = exports.GlobalRankingSeasonRef = exports.GlobalRankingModelRef = exports.NamespaceRef = void 0;
+exports.MasterDataVersionRef = exports.SubscribeRankingModelRef = exports.ClusterRankingBorderRef = exports.ClusterRankingSeasonRef = exports.ClusterRankingModelRef = exports.GlobalRankingBorderRef = exports.GlobalRankingSeasonRef = exports.GlobalRankingModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -33,4 +33,6 @@ const ClusterRankingBorderRef_1 = tslib_1.__importDefault(require("./ClusterRank
 exports.ClusterRankingBorderRef = ClusterRankingBorderRef_1.default;
 const SubscribeRankingModelRef_1 = tslib_1.__importDefault(require("./SubscribeRankingModelRef"));
 exports.SubscribeRankingModelRef = SubscribeRankingModelRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 //# sourceMappingURL=index.js.map

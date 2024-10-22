@@ -20,6 +20,7 @@ import SimpleInventoryModelRef from "./SimpleInventoryModelRef";
 import SimpleItemModelRef from "./SimpleItemModelRef";
 import BigInventoryModelRef from "./BigInventoryModelRef";
 import BigItemModelRef from "./BigItemModelRef";
+import MasterDataVersionRef from "./MasterDataVersionRef";
 
 export {
     NamespaceRef,
@@ -29,4 +30,5 @@ export {
     SimpleItemModelRef,
     BigInventoryModelRef,
     BigItemModelRef,
+    MasterDataVersionRef,
 }

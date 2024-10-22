@@ -1,3 +1,4 @@
 import NamespaceRef from "./NamespaceRef";
 import CategoryModelRef from "./CategoryModelRef";
-export { NamespaceRef, CategoryModelRef, };
+import MasterDataVersionRef from "./MasterDataVersionRef";
+export { NamespaceRef, CategoryModelRef, MasterDataVersionRef, };

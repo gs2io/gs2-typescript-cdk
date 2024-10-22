@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecoverValueTableRef = exports.RecoverIntervalTableRef = exports.MaxStaminaTableRef = exports.StaminaModelRef = exports.NamespaceRef = void 0;
+exports.RecoverValueTableRef = exports.RecoverIntervalTableRef = exports.MaxStaminaTableRef = exports.StaminaModelRef = exports.MasterDataVersionRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 const StaminaModelRef_1 = tslib_1.__importDefault(require("./StaminaModelRef"));
 exports.StaminaModelRef = StaminaModelRef_1.default;
 const MaxStaminaTableRef_1 = tslib_1.__importDefault(require("./MaxStaminaTableRef"));

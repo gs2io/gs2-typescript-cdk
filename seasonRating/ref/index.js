@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VoteRef = exports.SeasonModelRef = exports.MatchSessionRef = exports.NamespaceRef = void 0;
+exports.VoteRef = exports.MasterDataVersionRef = exports.SeasonModelRef = exports.MatchSessionRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,8 @@ const MatchSessionRef_1 = tslib_1.__importDefault(require("./MatchSessionRef"));
 exports.MatchSessionRef = MatchSessionRef_1.default;
 const SeasonModelRef_1 = tslib_1.__importDefault(require("./SeasonModelRef"));
 exports.SeasonModelRef = SeasonModelRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 const VoteRef_1 = tslib_1.__importDefault(require("./VoteRef"));
 exports.VoteRef = VoteRef_1.default;
 //# sourceMappingURL=index.js.map

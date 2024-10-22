@@ -16,7 +16,6 @@
 
 import {GetAttr, Join} from "../../core/func";
 import AreaModelRef from "./AreaModelRef";
-import NodeRef from "./NodeRef";
 import LayerRef from "./LayerRef";
 
 export default class NamespaceRef {

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RarityParameterModelRef = exports.BalanceParameterModelRef = exports.NamespaceRef = void 0;
+exports.MasterDataVersionRef = exports.RarityParameterModelRef = exports.BalanceParameterModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,4 +23,6 @@ const BalanceParameterModelRef_1 = tslib_1.__importDefault(require("./BalancePar
 exports.BalanceParameterModelRef = BalanceParameterModelRef_1.default;
 const RarityParameterModelRef_1 = tslib_1.__importDefault(require("./RarityParameterModelRef"));
 exports.RarityParameterModelRef = RarityParameterModelRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 //# sourceMappingURL=index.js.map

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LayerRef = exports.NodeRef = exports.LayerModelRef = exports.AreaModelRef = exports.NamespaceRef = void 0;
+exports.LayerRef = exports.NodeRef = exports.MasterDataVersionRef = exports.LayerModelRef = exports.AreaModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,8 @@ const AreaModelRef_1 = tslib_1.__importDefault(require("./AreaModelRef"));
 exports.AreaModelRef = AreaModelRef_1.default;
 const LayerModelRef_1 = tslib_1.__importDefault(require("./LayerModelRef"));
 exports.LayerModelRef = LayerModelRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 const NodeRef_1 = tslib_1.__importDefault(require("./NodeRef"));
 exports.NodeRef = NodeRef_1.default;
 const LayerRef_1 = tslib_1.__importDefault(require("./LayerRef"));

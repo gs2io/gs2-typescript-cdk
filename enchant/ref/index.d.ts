@@ -1,4 +1,5 @@
 import NamespaceRef from "./NamespaceRef";
 import BalanceParameterModelRef from "./BalanceParameterModelRef";
 import RarityParameterModelRef from "./RarityParameterModelRef";
-export { NamespaceRef, BalanceParameterModelRef, RarityParameterModelRef, };
+import MasterDataVersionRef from "./MasterDataVersionRef";
+export { NamespaceRef, BalanceParameterModelRef, RarityParameterModelRef, MasterDataVersionRef, };

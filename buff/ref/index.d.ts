@@ -1,3 +1,4 @@
 import NamespaceRef from "./NamespaceRef";
 import BuffEntryModelRef from "./BuffEntryModelRef";
-export { NamespaceRef, BuffEntryModelRef, };
+import MasterDataVersionRef from "./MasterDataVersionRef";
+export { NamespaceRef, BuffEntryModelRef, MasterDataVersionRef, };

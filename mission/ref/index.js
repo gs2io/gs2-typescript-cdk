@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MissionTaskModelRef = exports.MissionGroupModelRef = exports.CounterModelRef = exports.NamespaceRef = void 0;
+exports.MissionTaskModelRef = exports.MissionGroupModelRef = exports.CounterModelRef = exports.MasterDataVersionRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 const CounterModelRef_1 = tslib_1.__importDefault(require("./CounterModelRef"));
 exports.CounterModelRef = CounterModelRef_1.default;
 const MissionGroupModelRef_1 = tslib_1.__importDefault(require("./MissionGroupModelRef"));

@@ -1,4 +1,5 @@
 import NamespaceRef from "./NamespaceRef";
 import RateModelRef from "./RateModelRef";
 import IncrementalRateModelRef from "./IncrementalRateModelRef";
-export { NamespaceRef, RateModelRef, IncrementalRateModelRef, };
+import MasterDataVersionRef from "./MasterDataVersionRef";
+export { NamespaceRef, RateModelRef, IncrementalRateModelRef, MasterDataVersionRef, };

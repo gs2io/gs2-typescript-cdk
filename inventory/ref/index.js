@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BigItemModelRef = exports.BigInventoryModelRef = exports.SimpleItemModelRef = exports.SimpleInventoryModelRef = exports.ItemModelRef = exports.InventoryModelRef = exports.NamespaceRef = void 0;
+exports.MasterDataVersionRef = exports.BigItemModelRef = exports.BigInventoryModelRef = exports.SimpleItemModelRef = exports.SimpleInventoryModelRef = exports.ItemModelRef = exports.InventoryModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -31,4 +31,6 @@ const BigInventoryModelRef_1 = tslib_1.__importDefault(require("./BigInventoryMo
 exports.BigInventoryModelRef = BigInventoryModelRef_1.default;
 const BigItemModelRef_1 = tslib_1.__importDefault(require("./BigItemModelRef"));
 exports.BigItemModelRef = BigItemModelRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 //# sourceMappingURL=index.js.map

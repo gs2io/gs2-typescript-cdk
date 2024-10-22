@@ -15,7 +15,6 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
-import GlobalRankingSeasonRef from "./GlobalRankingSeasonRef";
 
 export default class GlobalRankingModelRef {
     private readonly namespaceName: string;

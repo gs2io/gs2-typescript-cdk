@@ -1,2 +1,3 @@
 import NamespaceRef from "./NamespaceRef";
-export { NamespaceRef, };
+import MasterDataVersionRef from "./MasterDataVersionRef";
+export { NamespaceRef, MasterDataVersionRef, };

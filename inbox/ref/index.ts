@@ -14,9 +14,11 @@
  * permissions and limitations under the License.
  */
 import NamespaceRef from "./NamespaceRef";
+import MasterDataVersionRef from "./MasterDataVersionRef";
 import GlobalMessageRef from "./GlobalMessageRef";
 
 export {
     NamespaceRef,
+    MasterDataVersionRef,
     GlobalMessageRef,
 }

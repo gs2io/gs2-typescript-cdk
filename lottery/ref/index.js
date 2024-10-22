@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PrizeLimitRef = exports.PrizeTableRef = exports.LotteryModelRef = exports.NamespaceRef = void 0;
+exports.PrizeLimitRef = exports.MasterDataVersionRef = exports.PrizeTableRef = exports.LotteryModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,8 @@ const LotteryModelRef_1 = tslib_1.__importDefault(require("./LotteryModelRef"));
 exports.LotteryModelRef = LotteryModelRef_1.default;
 const PrizeTableRef_1 = tslib_1.__importDefault(require("./PrizeTableRef"));
 exports.PrizeTableRef = PrizeTableRef_1.default;
+const MasterDataVersionRef_1 = tslib_1.__importDefault(require("./MasterDataVersionRef"));
+exports.MasterDataVersionRef = MasterDataVersionRef_1.default;
 const PrizeLimitRef_1 = tslib_1.__importDefault(require("./PrizeLimitRef"));
 exports.PrizeLimitRef = PrizeLimitRef_1.default;
 //# sourceMappingURL=index.js.map
