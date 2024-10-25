@@ -7,12 +7,14 @@ export default class Namespace extends CdkResource {
     private readonly stack;
     private readonly name;
     private readonly description;
+    private readonly changeNotification;
     private readonly joinNotification;
     private readonly leaveNotification;
     private readonly changeMemberNotification;
     private readonly receiveRequestNotification;
     private readonly removeRequestNotification;
     private readonly createGuildScript;
+    private readonly updateGuildScript;
     private readonly joinGuildScript;
     private readonly leaveGuildScript;
     private readonly changeRoleScript;

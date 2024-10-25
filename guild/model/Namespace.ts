@@ -30,12 +30,14 @@ export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
     private readonly description: string|null = null;
+    private readonly changeNotification: NotificationSetting|null = null;
     private readonly joinNotification: NotificationSetting|null = null;
     private readonly leaveNotification: NotificationSetting|null = null;
     private readonly changeMemberNotification: NotificationSetting|null = null;
     private readonly receiveRequestNotification: NotificationSetting|null = null;
     private readonly removeRequestNotification: NotificationSetting|null = null;
     private readonly createGuildScript: ScriptSetting|null = null;
+    private readonly updateGuildScript: ScriptSetting|null = null;
     private readonly joinGuildScript: ScriptSetting|null = null;
     private readonly leaveGuildScript: ScriptSetting|null = null;
     private readonly changeRoleScript: ScriptSetting|null = null;
@@ -53,12 +55,14 @@ export default class Namespace extends CdkResource {
         this.stack = stack;
         this.name = name;
         this.description = options?.description ?? null;
+        this.changeNotification = options?.changeNotification ?? null;
         this.joinNotification = options?.joinNotification ?? null;
         this.leaveNotification = options?.leaveNotification ?? null;
         this.changeMemberNotification = options?.changeMemberNotification ?? null;
         this.receiveRequestNotification = options?.receiveRequestNotification ?? null;
         this.removeRequestNotification = options?.removeRequestNotification ?? null;
         this.createGuildScript = options?.createGuildScript ?? null;
+        this.updateGuildScript = options?.updateGuildScript ?? null;
         this.joinGuildScript = options?.joinGuildScript ?? null;
         this.leaveGuildScript = options?.leaveGuildScript ?? null;
         this.changeRoleScript = options?.changeRoleScript ?? null;
@@ -89,6 +93,10 @@ export default class Namespace extends CdkResource {
         if (this.description != null) {
             properties["Description"] = this.description;
         }
+        if (this.changeNotification != null) {
+            properties["ChangeNotification"] = this.changeNotification?.properties(
+            );
+        }
         if (this.joinNotification != null) {
             properties["JoinNotification"] = this.joinNotification?.properties(
             );
@@ -111,6 +119,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.createGuildScript != null) {
             properties["CreateGuildScript"] = this.createGuildScript?.properties(
+            );
+        }
+        if (this.updateGuildScript != null) {
+            properties["UpdateGuildScript"] = this.updateGuildScript?.properties(
             );
         }
         if (this.joinGuildScript != null) {

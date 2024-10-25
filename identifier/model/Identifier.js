@@ -13,12 +13,15 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const model_1 = require("../../core/model");
 const func_1 = require("../../core/func");
 const IdentifierRef_1 = tslib_1.__importDefault(require("../ref/IdentifierRef"));
+const AttachSecurityPolicy_1 = tslib_1.__importDefault(require("./AttachSecurityPolicy"));
 class Identifier extends model_1.CdkResource {
     constructor(stack, userName, options = null) {
         super("Identifier_Identifier_" + userName);
@@ -41,6 +44,14 @@ class Identifier extends model_1.CdkResource {
     }
     ref(clientId) {
         return new IdentifierRef_1.default(this.userName, clientId);
+    }
+    attach(guardNamespace) {
+        new AttachSecurityPolicy_1.default(this.stack, this.userName, this.getAttrClientId().str(), guardNamespace.getAttrNamespaceId().str()).addDependsOn(this).addDependsOn(guardNamespace);
+        return this;
+    }
+    attachGrn(guardNamespaceGrn) {
+        new AttachSecurityPolicy_1.default(this.stack, this.userName, this.getAttrClientId().str(), guardNamespaceGrn).addDependsOn(this);
+        return this;
     }
     getAttrClientId() {
         return new func_1.GetAttr(this, "Item.ClientId", null);
