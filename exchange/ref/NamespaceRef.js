@@ -22,6 +22,7 @@ const IncrementalRateModelRef_1 = tslib_1.__importDefault(require("./Incremental
 const ExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ExchangeByUserId"));
 const IncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncrementalExchangeByUserId"));
 const CreateAwaitByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CreateAwaitByUserId"));
+const AcquireForceByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquireForceByUserId"));
 const SkipByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SkipByUserId"));
 const DeleteAwaitByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteAwaitByUserId"));
 class NamespaceRef {
@@ -42,6 +43,9 @@ class NamespaceRef {
     }
     createAwait(rateName, count = null, config = null, userId = "#{userId}") {
         return new CreateAwaitByUserId_1.default(this.namespaceName, rateName, count, config, userId);
+    }
+    acquireForce(awaitName = null, config = null, userId = "#{userId}") {
+        return new AcquireForceByUserId_1.default(this.namespaceName, awaitName, config, userId);
     }
     skip(awaitName = null, skipType = null, minutes = null, rate = null, userId = "#{userId}") {
         return new SkipByUserId_1.default(this.namespaceName, awaitName, skipType, minutes, rate, userId);

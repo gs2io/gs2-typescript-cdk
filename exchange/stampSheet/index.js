@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAwaitByUserId = exports.SkipByUserId = exports.CreateAwaitByUserId = exports.IncrementalExchangeByUserId = exports.ExchangeByUserId = void 0;
+exports.DeleteAwaitByUserId = exports.SkipByUserId = exports.AcquireForceByUserId = exports.CreateAwaitByUserId = exports.IncrementalExchangeByUserId = exports.ExchangeByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,8 @@ const IncrementalExchangeByUserId_1 = tslib_1.__importDefault(require("./Increme
 exports.IncrementalExchangeByUserId = IncrementalExchangeByUserId_1.default;
 const CreateAwaitByUserId_1 = tslib_1.__importDefault(require("./CreateAwaitByUserId"));
 exports.CreateAwaitByUserId = CreateAwaitByUserId_1.default;
+const AcquireForceByUserId_1 = tslib_1.__importDefault(require("./AcquireForceByUserId"));
+exports.AcquireForceByUserId = AcquireForceByUserId_1.default;
 const SkipByUserId_1 = tslib_1.__importDefault(require("./SkipByUserId"));
 exports.SkipByUserId = SkipByUserId_1.default;
 const DeleteAwaitByUserId_1 = tslib_1.__importDefault(require("./DeleteAwaitByUserId"));

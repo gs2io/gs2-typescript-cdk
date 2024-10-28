@@ -21,6 +21,7 @@ import ExchangeByUserId from "../stampSheet/ExchangeByUserId";
 import { Config } from "../../core/model";
 import IncrementalExchangeByUserId from "../stampSheet/IncrementalExchangeByUserId";
 import CreateAwaitByUserId from "../stampSheet/CreateAwaitByUserId";
+import AcquireForceByUserId from "../stampSheet/AcquireForceByUserId";
 import SkipByUserId from "../stampSheet/SkipByUserId";
 import { AwaitSkipType } from "../stampSheet/enum/AwaitSkipType";
 import DeleteAwaitByUserId from "../stampSheet/DeleteAwaitByUserId";
@@ -92,6 +93,19 @@ export default class NamespaceRef {
             this.namespaceName,
             rateName,
             count,
+            config,
+            userId,
+        );
+    }
+
+    public acquireForce(
+        awaitName: string|null = null,
+        config: Config[]|null = null,
+        userId: string = "#{userId}",
+    ): AcquireForceByUserId {
+        return new AcquireForceByUserId(
+            this.namespaceName,
+            awaitName,
             config,
             userId,
         );
