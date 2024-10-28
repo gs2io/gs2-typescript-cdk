@@ -22,6 +22,7 @@ export default class OpenIdConnectSetting {
     private readonly appleTeamId: string|null = null;
     private readonly appleKeyId: string|null = null;
     private readonly applePrivateKeyPem: string|null = null;
+    private readonly doneEndpointUrl: string|null = null;
 
     public constructor(
         configurationPath: string,
@@ -34,6 +35,7 @@ export default class OpenIdConnectSetting {
         this.appleTeamId = options?.appleTeamId ?? null;
         this.appleKeyId = options?.appleKeyId ?? null;
         this.applePrivateKeyPem = options?.applePrivateKeyPem ?? null;
+        this.doneEndpointUrl = options?.doneEndpointUrl ?? null;
     }
 
     public properties(
@@ -57,6 +59,9 @@ export default class OpenIdConnectSetting {
         }
         if (this.applePrivateKeyPem != null) {
             properties["applePrivateKeyPem"] = this.applePrivateKeyPem;
+        }
+        if (this.doneEndpointUrl != null) {
+            properties["doneEndpointUrl"] = this.doneEndpointUrl;
         }
 
         return properties;

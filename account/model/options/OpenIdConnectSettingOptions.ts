@@ -19,5 +19,6 @@ export interface OpenIdConnectSettingOptions {
     appleTeamId?: string|null;
     appleKeyId?: string|null;
     applePrivateKeyPem?: string|null;
+    doneEndpointUrl?: string|null;
 }
 
