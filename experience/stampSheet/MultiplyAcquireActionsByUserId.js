@@ -17,15 +17,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class MultiplyAcquireActionsByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, experienceName, propertyId, rateName, acquireActions = null, timeOffsetToken = null, userId = "#{userId}") {
+    constructor(namespaceName, experienceName, propertyId, rateName, acquireActions = null, baseRate = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.acquireActions = null;
+        this.baseRate = null;
         this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.experienceName = experienceName;
         this.propertyId = propertyId;
         this.rateName = rateName;
         this.acquireActions = acquireActions !== null && acquireActions !== void 0 ? acquireActions : null;
+        this.baseRate = baseRate !== null && baseRate !== void 0 ? baseRate : null;
         this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
@@ -48,6 +50,9 @@ class MultiplyAcquireActionsByUserId extends model_1.AcquireAction {
         }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties());
+        }
+        if (this.baseRate != null) {
+            properties["baseRate"] = this.baseRate;
         }
         if (this.timeOffsetToken != null) {
             properties["timeOffsetToken"] = this.timeOffsetToken;

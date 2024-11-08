@@ -18,7 +18,7 @@ export default class NamespaceRef {
     setExperience(experienceName: string, propertyId: string, experienceValue?: number | null, userId?: string): SetExperienceByUserId;
     addRankCap(experienceName: string, propertyId: string, rankCapValue: number, userId?: string): AddRankCapByUserId;
     setRankCap(experienceName: string, propertyId: string, rankCapValue: number, userId?: string): SetRankCapByUserId;
-    multiplyAcquireActions(experienceName: string, propertyId: string, rateName: string, acquireActions?: AcquireAction[] | null, userId?: string): MultiplyAcquireActionsByUserId;
+    multiplyAcquireActions(experienceName: string, propertyId: string, rateName: string, acquireActions?: AcquireAction[] | null, baseRate?: number | null, userId?: string): MultiplyAcquireActionsByUserId;
     subExperience(experienceName: string, propertyId: string, experienceValue?: number | null, userId?: string): SubExperienceByUserId;
     subRankCap(experienceName: string, propertyId: string, rankCapValue: number, userId?: string): SubRankCapByUserId;
     verifyRank(experienceName: string, verifyType: StatusVerifyType, propertyId: string, rankValue?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyRankByUserId;

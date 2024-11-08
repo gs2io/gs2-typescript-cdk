@@ -46,8 +46,8 @@ class NamespaceRef {
     setRankCap(experienceName, propertyId, rankCapValue, userId = "#{userId}") {
         return new SetRankCapByUserId_1.default(this.namespaceName, experienceName, propertyId, rankCapValue, userId);
     }
-    multiplyAcquireActions(experienceName, propertyId, rateName, acquireActions = null, userId = "#{userId}") {
-        return new MultiplyAcquireActionsByUserId_1.default(this.namespaceName, experienceName, propertyId, rateName, acquireActions, userId);
+    multiplyAcquireActions(experienceName, propertyId, rateName, acquireActions = null, baseRate = null, userId = "#{userId}") {
+        return new MultiplyAcquireActionsByUserId_1.default(this.namespaceName, experienceName, propertyId, rateName, acquireActions, baseRate, userId);
     }
     subExperience(experienceName, propertyId, experienceValue = null, userId = "#{userId}") {
         return new SubExperienceByUserId_1.default(this.namespaceName, experienceName, propertyId, experienceValue, userId);

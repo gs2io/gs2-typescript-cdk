@@ -113,6 +113,7 @@ export default class NamespaceRef {
         propertyId: string,
         rateName: string,
         acquireActions: AcquireAction[]|null = null,
+        baseRate: number|null = null,
         userId: string = "#{userId}",
     ): MultiplyAcquireActionsByUserId {
         return new MultiplyAcquireActionsByUserId(
@@ -121,6 +122,7 @@ export default class NamespaceRef {
             propertyId,
             rateName,
             acquireActions,
+            baseRate,
             userId,
         );
     }

@@ -6,8 +6,9 @@ export default class MultiplyAcquireActionsByUserId extends AcquireAction {
     private readonly propertyId;
     private readonly rateName;
     private readonly acquireActions;
+    private readonly baseRate;
     private readonly timeOffsetToken;
-    constructor(namespaceName: string, experienceName: string, propertyId: string, rateName: string, acquireActions?: AcquireAction[] | null, timeOffsetToken?: string | null, userId?: string);
+    constructor(namespaceName: string, experienceName: string, propertyId: string, rateName: string, acquireActions?: AcquireAction[] | null, baseRate?: number | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };
