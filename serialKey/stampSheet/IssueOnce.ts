@@ -15,33 +15,23 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { SerialKeyVerifyType } from "./enum/SerialKeyVerifyType";
 
-export default class VerifyCodeByUserId extends VerifyAction {
+export default class IssueOnce extends AcquireAction {
     private readonly namespaceName: string;
-    private readonly userId: string;
-    private readonly code: string;
-    private readonly verifyType: SerialKeyVerifyType;
-    private readonly campaignModelName: string|null = null;
-    private readonly timeOffsetToken: string|null = null;
+    private readonly campaignModelName: string;
+    private readonly metadata: string|null = null;
 
 
     public constructor(
         namespaceName: string,
-        code: string,
-        verifyType: SerialKeyVerifyType,
-        campaignModelName: string|null = null,
-        timeOffsetToken: string|null = null,
-        userId: string = "#{userId}",
+        campaignModelName: string,
+        metadata: string|null = null,
     ) {
         super();
 
         this.namespaceName = namespaceName;
-        this.code = code;
-        this.verifyType = verifyType;
-        this.campaignModelName = campaignModelName ?? null;
-        this.timeOffsetToken = timeOffsetToken ?? null;
-        this.userId = userId;
+        this.campaignModelName = campaignModelName;
+        this.metadata = metadata ?? null;
     }
 
     public request(
@@ -51,26 +41,17 @@ export default class VerifyCodeByUserId extends VerifyAction {
         if (this.namespaceName != null) {
             properties["namespaceName"] = this.namespaceName;
         }
-        if (this.userId != null) {
-            properties["userId"] = this.userId;
-        }
-        if (this.code != null) {
-            properties["code"] = this.code;
-        }
         if (this.campaignModelName != null) {
             properties["campaignModelName"] = this.campaignModelName;
         }
-        if (this.verifyType != null) {
-            properties["verifyType"] = this.verifyType;
-        }
-        if (this.timeOffsetToken != null) {
-            properties["timeOffsetToken"] = this.timeOffsetToken;
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
         }
 
         return properties;
     }
 
     public action(): string {
-        return "Gs2SerialKey:VerifyCodeByUserId";
+        return "Gs2SerialKey:IssueOnce";
     }
 }

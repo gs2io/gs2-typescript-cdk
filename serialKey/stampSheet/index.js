@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyCodeByUserId = exports.UseByUserId = exports.RevertUseByUserId = void 0;
+exports.VerifyCodeByUserId = exports.UseByUserId = exports.IssueOnce = exports.RevertUseByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const RevertUseByUserId_1 = tslib_1.__importDefault(require("./RevertUseByUserId"));
 exports.RevertUseByUserId = RevertUseByUserId_1.default;
+const IssueOnce_1 = tslib_1.__importDefault(require("./IssueOnce"));
+exports.IssueOnce = IssueOnce_1.default;
 const UseByUserId_1 = tslib_1.__importDefault(require("./UseByUserId"));
 exports.UseByUserId = UseByUserId_1.default;
 const VerifyCodeByUserId_1 = tslib_1.__importDefault(require("./VerifyCodeByUserId"));

@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const CampaignModelRef_1 = tslib_1.__importDefault(require("./CampaignModelRef"));
 const RevertUseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/RevertUseByUserId"));
+const IssueOnce_1 = tslib_1.__importDefault(require("../stampSheet/IssueOnce"));
 const UseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UseByUserId"));
 const VerifyCodeByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCodeByUserId"));
 class NamespaceRef {
@@ -31,11 +32,14 @@ class NamespaceRef {
     revertUse(code, userId = "#{userId}") {
         return new RevertUseByUserId_1.default(this.namespaceName, code, userId);
     }
+    issueOnce(campaignModelName, metadata = null) {
+        return new IssueOnce_1.default(this.namespaceName, campaignModelName, metadata);
+    }
     use(code, userId = "#{userId}") {
         return new UseByUserId_1.default(this.namespaceName, code, userId);
     }
-    verifyCode(code, verifyType, userId = "#{userId}") {
-        return new VerifyCodeByUserId_1.default(this.namespaceName, code, verifyType, userId);
+    verifyCode(code, verifyType, campaignModelName = null, userId = "#{userId}") {
+        return new VerifyCodeByUserId_1.default(this.namespaceName, code, verifyType, campaignModelName, userId);
     }
     grn() {
         return new func_1.Join(":", [

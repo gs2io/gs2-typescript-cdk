@@ -16,43 +16,30 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class VerifyCodeByUserId extends model_1.VerifyAction {
-    constructor(namespaceName, code, verifyType, campaignModelName = null, timeOffsetToken = null, userId = "#{userId}") {
+class IssueOnce extends model_1.AcquireAction {
+    constructor(namespaceName, campaignModelName, metadata = null) {
         super();
-        this.campaignModelName = null;
-        this.timeOffsetToken = null;
+        this.metadata = null;
         this.namespaceName = namespaceName;
-        this.code = code;
-        this.verifyType = verifyType;
-        this.campaignModelName = campaignModelName !== null && campaignModelName !== void 0 ? campaignModelName : null;
-        this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
-        this.userId = userId;
+        this.campaignModelName = campaignModelName;
+        this.metadata = metadata !== null && metadata !== void 0 ? metadata : null;
     }
     request() {
         let properties = {};
         if (this.namespaceName != null) {
             properties["namespaceName"] = this.namespaceName;
         }
-        if (this.userId != null) {
-            properties["userId"] = this.userId;
-        }
-        if (this.code != null) {
-            properties["code"] = this.code;
-        }
         if (this.campaignModelName != null) {
             properties["campaignModelName"] = this.campaignModelName;
         }
-        if (this.verifyType != null) {
-            properties["verifyType"] = this.verifyType;
-        }
-        if (this.timeOffsetToken != null) {
-            properties["timeOffsetToken"] = this.timeOffsetToken;
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
         }
         return properties;
     }
     action() {
-        return "Gs2SerialKey:VerifyCodeByUserId";
+        return "Gs2SerialKey:IssueOnce";
     }
 }
-exports.default = VerifyCodeByUserId;
-//# sourceMappingURL=VerifyCodeByUserId.js.map
+exports.default = IssueOnce;
+//# sourceMappingURL=IssueOnce.js.map
