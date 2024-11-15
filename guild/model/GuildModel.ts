@@ -26,6 +26,8 @@ export default class GuildModel {
     private readonly guildMemberDefaultRole: string;
     private readonly rejoinCoolTimeMinutes: number;
     private readonly metadata: string|null = null;
+    private readonly maxConcurrentJoinGuilds: number|null = null;
+    private readonly maxConcurrentGuildMasterCount: number|null = null;
 
     public constructor(
         name: string,
@@ -47,6 +49,8 @@ export default class GuildModel {
         this.guildMemberDefaultRole = guildMemberDefaultRole;
         this.rejoinCoolTimeMinutes = rejoinCoolTimeMinutes;
         this.metadata = options?.metadata ?? null;
+        this.maxConcurrentJoinGuilds = options?.maxConcurrentJoinGuilds ?? null;
+        this.maxConcurrentGuildMasterCount = options?.maxConcurrentGuildMasterCount ?? null;
     }
 
     public properties(
@@ -80,6 +84,12 @@ export default class GuildModel {
         }
         if (this.rejoinCoolTimeMinutes != null) {
             properties["rejoinCoolTimeMinutes"] = this.rejoinCoolTimeMinutes;
+        }
+        if (this.maxConcurrentJoinGuilds != null) {
+            properties["maxConcurrentJoinGuilds"] = this.maxConcurrentJoinGuilds;
+        }
+        if (this.maxConcurrentGuildMasterCount != null) {
+            properties["maxConcurrentGuildMasterCount"] = this.maxConcurrentGuildMasterCount;
         }
 
         return properties;
