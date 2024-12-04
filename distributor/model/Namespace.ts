@@ -31,6 +31,7 @@ export default class Namespace extends CdkResource {
     private readonly description: string|null = null;
     private readonly assumeUserId: string|null = null;
     private readonly autoRunStampSheetNotification: NotificationSetting|null = null;
+    private readonly autoRunTransactionNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -47,6 +48,7 @@ export default class Namespace extends CdkResource {
         this.description = options?.description ?? null;
         this.assumeUserId = options?.assumeUserId ?? null;
         this.autoRunStampSheetNotification = options?.autoRunStampSheetNotification ?? null;
+        this.autoRunTransactionNotification = options?.autoRunTransactionNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -79,6 +81,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.autoRunStampSheetNotification != null) {
             properties["AutoRunStampSheetNotification"] = this.autoRunStampSheetNotification?.properties(
+            );
+        }
+        if (this.autoRunTransactionNotification != null) {
+            properties["AutoRunTransactionNotification"] = this.autoRunTransactionNotification?.properties(
             );
         }
         if (this.logSetting != null) {

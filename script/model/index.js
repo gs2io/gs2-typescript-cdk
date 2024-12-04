@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Transaction = exports.RandomUsed = exports.RandomStatus = exports.Script = exports.Namespace = void 0;
+exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.Transaction = exports.RandomUsed = exports.RandomStatus = exports.Script = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -27,4 +27,12 @@ const RandomUsed_1 = tslib_1.__importDefault(require("./RandomUsed"));
 exports.RandomUsed = RandomUsed_1.default;
 const Transaction_1 = tslib_1.__importDefault(require("./Transaction"));
 exports.Transaction = Transaction_1.default;
+const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
+exports.VerifyActionResult = VerifyActionResult_1.default;
+const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));
+exports.ConsumeActionResult = ConsumeActionResult_1.default;
+const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
+exports.AcquireActionResult = AcquireActionResult_1.default;
+const TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
+exports.TransactionResult = TransactionResult_1.default;
 //# sourceMappingURL=index.js.map

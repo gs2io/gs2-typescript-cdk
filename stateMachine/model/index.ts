@@ -37,6 +37,14 @@ import RandomStatus from "./RandomStatus";
 import { RandomStatusOptions } from "./options/RandomStatusOptions";
 import RandomUsed from "./RandomUsed";
 import { RandomUsedOptions } from "./options/RandomUsedOptions";
+import VerifyActionResult from "./VerifyActionResult";
+import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
+import ConsumeActionResult from "./ConsumeActionResult";
+import { ConsumeActionResultOptions } from "./options/ConsumeActionResultOptions";
+import AcquireActionResult from "./AcquireActionResult";
+import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
+import TransactionResult from "./TransactionResult";
+import { TransactionResultOptions } from "./options/TransactionResultOptions";
 
 export {
     Namespace,
@@ -63,4 +71,12 @@ export {
     RandomStatusOptions,
     RandomUsed,
     RandomUsedOptions,
+    VerifyActionResult,
+    VerifyActionResultOptions,
+    ConsumeActionResult,
+    ConsumeActionResultOptions,
+    AcquireActionResult,
+    AcquireActionResultOptions,
+    TransactionResult,
+    TransactionResultOptions,
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TargetCounterModelResetType = exports.TargetCounterModelScopeType = exports.TargetCounterModel = exports.ScopedValueResetType = exports.ScopedValueScopeType = exports.ScopedValue = exports.MissionTaskModelTargetResetType = exports.MissionTaskModelVerifyCompleteType = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModelScopeType = exports.CounterScopeModel = void 0;
+exports.CurrentMasterData = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.TargetCounterModelResetType = exports.TargetCounterModelScopeType = exports.TargetCounterModel = exports.ScopedValueResetType = exports.ScopedValueScopeType = exports.ScopedValue = exports.MissionTaskModelTargetResetType = exports.MissionTaskModelVerifyCompleteType = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModelScopeType = exports.CounterScopeModel = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,14 @@ const TargetCounterModelScopeType_1 = require("./enum/TargetCounterModelScopeTyp
 Object.defineProperty(exports, "TargetCounterModelScopeType", { enumerable: true, get: function () { return TargetCounterModelScopeType_1.TargetCounterModelScopeType; } });
 const TargetCounterModelResetType_1 = require("./enum/TargetCounterModelResetType");
 Object.defineProperty(exports, "TargetCounterModelResetType", { enumerable: true, get: function () { return TargetCounterModelResetType_1.TargetCounterModelResetType; } });
+const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
+exports.VerifyActionResult = VerifyActionResult_1.default;
+const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));
+exports.ConsumeActionResult = ConsumeActionResult_1.default;
+const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
+exports.AcquireActionResult = AcquireActionResult_1.default;
+const TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
+exports.TransactionResult = TransactionResult_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

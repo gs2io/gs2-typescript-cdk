@@ -30,6 +30,14 @@ import BalanceParameterValue from "./BalanceParameterValue";
 import { BalanceParameterValueOptions } from "./options/BalanceParameterValueOptions";
 import RarityParameterValue from "./RarityParameterValue";
 import { RarityParameterValueOptions } from "./options/RarityParameterValueOptions";
+import VerifyActionResult from "./VerifyActionResult";
+import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
+import ConsumeActionResult from "./ConsumeActionResult";
+import { ConsumeActionResultOptions } from "./options/ConsumeActionResultOptions";
+import AcquireActionResult from "./AcquireActionResult";
+import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
+import TransactionResult from "./TransactionResult";
+import { TransactionResultOptions } from "./options/TransactionResultOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -50,5 +58,13 @@ export {
     BalanceParameterValueOptions,
     RarityParameterValue,
     RarityParameterValueOptions,
+    VerifyActionResult,
+    VerifyActionResultOptions,
+    ConsumeActionResult,
+    ConsumeActionResultOptions,
+    AcquireActionResult,
+    AcquireActionResultOptions,
+    TransactionResult,
+    TransactionResultOptions,
     CurrentMasterData,
 }

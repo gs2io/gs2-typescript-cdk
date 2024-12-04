@@ -11,5 +11,13 @@ import { BonusModelMissedReceiveReliefIsEnabledOptions } from "./options/BonusMo
 import { BonusModelMissedReceiveReliefIsDisabledOptions } from "./options/BonusModelMissedReceiveReliefIsDisabledOptions";
 import Reward from "./Reward";
 import { RewardOptions } from "./options/RewardOptions";
+import VerifyActionResult from "./VerifyActionResult";
+import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
+import ConsumeActionResult from "./ConsumeActionResult";
+import { ConsumeActionResultOptions } from "./options/ConsumeActionResultOptions";
+import AcquireActionResult from "./AcquireActionResult";
+import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
+import TransactionResult from "./TransactionResult";
+import { TransactionResultOptions } from "./options/TransactionResultOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, BonusModel, BonusModelOptions, BonusModelMode, BonusModelRepeat, BonusModelMissedReceiveRelief, BonusModelModeIsScheduleOptions, BonusModelModeIsStreamingOptions, BonusModelMissedReceiveReliefIsEnabledOptions, BonusModelMissedReceiveReliefIsDisabledOptions, Reward, RewardOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, BonusModel, BonusModelOptions, BonusModelMode, BonusModelRepeat, BonusModelMissedReceiveRelief, BonusModelModeIsScheduleOptions, BonusModelModeIsStreamingOptions, BonusModelMissedReceiveReliefIsEnabledOptions, BonusModelMissedReceiveReliefIsDisabledOptions, Reward, RewardOptions, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, CurrentMasterData, };

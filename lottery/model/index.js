@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.BoxItem = exports.DrawnPrize = exports.PrizeLimit = exports.PrizeType = exports.Prize = exports.PrizeTable = exports.LotteryModelMethod = exports.LotteryModelMode = exports.LotteryModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.BoxItem = exports.DrawnPrize = exports.PrizeLimit = exports.PrizeType = exports.Prize = exports.PrizeTable = exports.LotteryModelMethod = exports.LotteryModelMode = exports.LotteryModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,14 @@ const DrawnPrize_1 = tslib_1.__importDefault(require("./DrawnPrize"));
 exports.DrawnPrize = DrawnPrize_1.default;
 const BoxItem_1 = tslib_1.__importDefault(require("./BoxItem"));
 exports.BoxItem = BoxItem_1.default;
+const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
+exports.VerifyActionResult = VerifyActionResult_1.default;
+const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));
+exports.ConsumeActionResult = ConsumeActionResult_1.default;
+const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
+exports.AcquireActionResult = AcquireActionResult_1.default;
+const TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
+exports.TransactionResult = TransactionResult_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

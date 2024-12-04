@@ -22,18 +22,20 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         super("Distributor_Namespace_" + name);
         this.description = null;
         this.assumeUserId = null;
         this.autoRunStampSheetNotification = null;
+        this.autoRunTransactionNotification = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.assumeUserId = (_b = options === null || options === void 0 ? void 0 : options.assumeUserId) !== null && _b !== void 0 ? _b : null;
         this.autoRunStampSheetNotification = (_c = options === null || options === void 0 ? void 0 : options.autoRunStampSheetNotification) !== null && _c !== void 0 ? _c : null;
-        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
+        this.autoRunTransactionNotification = (_d = options === null || options === void 0 ? void 0 : options.autoRunTransactionNotification) !== null && _d !== void 0 ? _d : null;
+        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -43,7 +45,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Distributor::Namespace";
     }
     properties() {
-        var _a, _b;
+        var _a, _b, _c;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -57,8 +59,11 @@ class Namespace extends model_1.CdkResource {
         if (this.autoRunStampSheetNotification != null) {
             properties["AutoRunStampSheetNotification"] = (_a = this.autoRunStampSheetNotification) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.autoRunTransactionNotification != null) {
+            properties["AutoRunTransactionNotification"] = (_b = this.autoRunTransactionNotification) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_b = this.logSetting) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
         }
         return properties;
     }

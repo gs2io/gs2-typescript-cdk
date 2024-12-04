@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.SlotWithSignaturePropertyType = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.PropertyFormModel = exports.MoldModel = exports.FormModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.SlotWithSignaturePropertyType = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.PropertyFormModel = exports.MoldModel = exports.FormModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,14 @@ const SlotWithSignature_1 = tslib_1.__importDefault(require("./SlotWithSignature
 exports.SlotWithSignature = SlotWithSignature_1.default;
 const SlotWithSignaturePropertyType_1 = require("./enum/SlotWithSignaturePropertyType");
 Object.defineProperty(exports, "SlotWithSignaturePropertyType", { enumerable: true, get: function () { return SlotWithSignaturePropertyType_1.SlotWithSignaturePropertyType; } });
+const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
+exports.VerifyActionResult = VerifyActionResult_1.default;
+const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));
+exports.ConsumeActionResult = ConsumeActionResult_1.default;
+const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
+exports.AcquireActionResult = AcquireActionResult_1.default;
+const TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
+exports.TransactionResult = TransactionResult_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

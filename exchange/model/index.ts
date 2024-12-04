@@ -28,6 +28,16 @@ import { IncrementalRateModelCalculateTypeIsPowerOptions } from "./options/Incre
 import { IncrementalRateModelCalculateTypeIsGs2ScriptOptions } from "./options/IncrementalRateModelCalculateTypeIsGs2ScriptOptions"
 import LogCost from "./LogCost";
 import { LogCostOptions } from "./options/LogCostOptions";
+import LogRate from "./LogRate";
+import { LogRateOptions } from "./options/LogRateOptions";
+import VerifyActionResult from "./VerifyActionResult";
+import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
+import ConsumeActionResult from "./ConsumeActionResult";
+import { ConsumeActionResultOptions } from "./options/ConsumeActionResultOptions";
+import AcquireActionResult from "./AcquireActionResult";
+import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
+import TransactionResult from "./TransactionResult";
+import { TransactionResultOptions } from "./options/TransactionResultOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -46,5 +56,15 @@ export {
     IncrementalRateModelCalculateTypeIsGs2ScriptOptions,
     LogCost,
     LogCostOptions,
+    LogRate,
+    LogRateOptions,
+    VerifyActionResult,
+    VerifyActionResultOptions,
+    ConsumeActionResult,
+    ConsumeActionResultOptions,
+    AcquireActionResult,
+    AcquireActionResultOptions,
+    TransactionResult,
+    TransactionResultOptions,
     CurrentMasterData,
 }

@@ -4,5 +4,6 @@ export interface NamespaceOptions {
     description?: string | null;
     assumeUserId?: string | null;
     autoRunStampSheetNotification?: NotificationSetting | null;
+    autoRunTransactionNotification?: NotificationSetting | null;
     logSetting?: LogSetting | null;
 }

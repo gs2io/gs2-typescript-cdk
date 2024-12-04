@@ -28,6 +28,14 @@ import { SlotModelOptions } from "./options/SlotModelOptions";
 import SlotWithSignature from "./SlotWithSignature";
 import { SlotWithSignatureOptions } from "./options/SlotWithSignatureOptions";
 import { SlotWithSignaturePropertyType } from "./enum/SlotWithSignaturePropertyType";
+import VerifyActionResult from "./VerifyActionResult";
+import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
+import ConsumeActionResult from "./ConsumeActionResult";
+import { ConsumeActionResultOptions } from "./options/ConsumeActionResultOptions";
+import AcquireActionResult from "./AcquireActionResult";
+import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
+import TransactionResult from "./TransactionResult";
+import { TransactionResultOptions } from "./options/TransactionResultOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -46,5 +54,13 @@ export {
     SlotWithSignature,
     SlotWithSignatureOptions,
     SlotWithSignaturePropertyType,
+    VerifyActionResult,
+    VerifyActionResultOptions,
+    ConsumeActionResult,
+    ConsumeActionResultOptions,
+    AcquireActionResult,
+    AcquireActionResultOptions,
+    TransactionResult,
+    TransactionResultOptions,
     CurrentMasterData,
 }

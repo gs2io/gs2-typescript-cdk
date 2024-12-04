@@ -25,6 +25,14 @@ import Material from "./Material";
 import { MaterialOptions } from "./options/MaterialOptions";
 import UnleashRateEntryModel from "./UnleashRateEntryModel";
 import { UnleashRateEntryModelOptions } from "./options/UnleashRateEntryModelOptions";
+import VerifyActionResult from "./VerifyActionResult";
+import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
+import ConsumeActionResult from "./ConsumeActionResult";
+import { ConsumeActionResultOptions } from "./options/ConsumeActionResultOptions";
+import AcquireActionResult from "./AcquireActionResult";
+import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
+import TransactionResult from "./TransactionResult";
+import { TransactionResultOptions } from "./options/TransactionResultOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -40,5 +48,13 @@ export {
     MaterialOptions,
     UnleashRateEntryModel,
     UnleashRateEntryModelOptions,
+    VerifyActionResult,
+    VerifyActionResultOptions,
+    ConsumeActionResult,
+    ConsumeActionResultOptions,
+    AcquireActionResult,
+    AcquireActionResultOptions,
+    TransactionResult,
+    TransactionResultOptions,
     CurrentMasterData,
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.RarityParameterValue = exports.BalanceParameterValue = exports.RarityParameterValueModel = exports.RarityParameterCountModel = exports.BalanceParameterValueModel = exports.RarityParameterModel = exports.BalanceParameterModelInitialValueStrategy = exports.BalanceParameterModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RarityParameterValue = exports.BalanceParameterValue = exports.RarityParameterValueModel = exports.RarityParameterCountModel = exports.BalanceParameterValueModel = exports.RarityParameterModel = exports.BalanceParameterModelInitialValueStrategy = exports.BalanceParameterModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,14 @@ const BalanceParameterValue_1 = tslib_1.__importDefault(require("./BalanceParame
 exports.BalanceParameterValue = BalanceParameterValue_1.default;
 const RarityParameterValue_1 = tslib_1.__importDefault(require("./RarityParameterValue"));
 exports.RarityParameterValue = RarityParameterValue_1.default;
+const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
+exports.VerifyActionResult = VerifyActionResult_1.default;
+const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));
+exports.ConsumeActionResult = ConsumeActionResult_1.default;
+const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
+exports.AcquireActionResult = AcquireActionResult_1.default;
+const TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
+exports.TransactionResult = TransactionResult_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

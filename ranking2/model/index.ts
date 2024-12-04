@@ -27,6 +27,14 @@ import { SubscribeRankingModelOptions } from "./options/SubscribeRankingModelOpt
 import { SubscribeRankingModelOrderDirection } from "./enum/SubscribeRankingModelOrderDirection";
 import RankingReward from "./RankingReward";
 import { RankingRewardOptions } from "./options/RankingRewardOptions";
+import VerifyActionResult from "./VerifyActionResult";
+import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
+import ConsumeActionResult from "./ConsumeActionResult";
+import { ConsumeActionResultOptions } from "./options/ConsumeActionResultOptions";
+import AcquireActionResult from "./AcquireActionResult";
+import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
+import TransactionResult from "./TransactionResult";
+import { TransactionResultOptions } from "./options/TransactionResultOptions";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -44,5 +52,13 @@ export {
     SubscribeRankingModelOrderDirection,
     RankingReward,
     RankingRewardOptions,
+    VerifyActionResult,
+    VerifyActionResultOptions,
+    ConsumeActionResult,
+    ConsumeActionResultOptions,
+    AcquireActionResult,
+    AcquireActionResultOptions,
+    TransactionResult,
+    TransactionResultOptions,
     CurrentMasterData,
 }
