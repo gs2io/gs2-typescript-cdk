@@ -17,6 +17,7 @@ import Version from "../Version";
 import ScheduleVersion from "../ScheduleVersion";
 import { VersionModelScope } from "../enum/VersionModelScope";
 import { VersionModelType } from "../enum/VersionModelType";
+import { VersionModelApproveRequirement } from "../enum/VersionModelApproveRequirement";
 
 export interface VersionModelScopeIsPassiveOptions {
     metadata?: string|null;

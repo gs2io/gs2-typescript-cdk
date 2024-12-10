@@ -16,7 +16,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
-class IfExpressionByUserId extends model_1.ConsumeAction {
+class IfExpressionByUserId extends model_1.VerifyAction {
     constructor(namespaceName, condition, trueActions = null, falseActions = null, multiplyValueSpecifyingQuantity = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.trueActions = null;

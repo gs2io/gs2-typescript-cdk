@@ -17,6 +17,7 @@ import Version from "../Version";
 import ScheduleVersion from "../ScheduleVersion";
 import { VersionModelScope } from "../enum/VersionModelScope";
 import { VersionModelType } from "../enum/VersionModelType";
+import { VersionModelApproveRequirement } from "../enum/VersionModelApproveRequirement";
 
 export interface VersionModelOptions {
     metadata?: string|null;
@@ -26,5 +27,6 @@ export interface VersionModelOptions {
     scheduleVersions?: ScheduleVersion[]|null;
     needSignature?: boolean|null;
     signatureKeyId?: string|null;
+    approveRequirement?: VersionModelApproveRequirement|null;
 }
 

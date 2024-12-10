@@ -13,13 +13,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import Version from "../Version";
-import ScheduleVersion from "../ScheduleVersion";
-import { VersionModelScope } from "../enum/VersionModelScope";
-import { VersionModelType } from "../enum/VersionModelType";
-import { VersionModelApproveRequirement } from "../enum/VersionModelApproveRequirement";
 
-export interface VersionModelScopeIsActiveOptions {
-    metadata?: string|null;
-    scheduleVersions?: ScheduleVersion[]|null;
-}
+
+
+export const VersionModelApproveRequirement = {
+    REQUIRED: "required",
+    OPTIONAL: "optional",
+} as const;
+export type VersionModelApproveRequirement = typeof VersionModelApproveRequirement[keyof typeof VersionModelApproveRequirement];

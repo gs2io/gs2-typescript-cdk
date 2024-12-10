@@ -16,7 +16,7 @@
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
 
-export default class IfExpressionByUserId extends ConsumeAction {
+export default class IfExpressionByUserId extends VerifyAction {
     private readonly namespaceName: string;
     private readonly userId: string;
     private readonly condition: VerifyAction;

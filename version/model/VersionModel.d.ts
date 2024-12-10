@@ -6,6 +6,7 @@ import { VersionModelScopeIsPassiveOptions } from "./options/VersionModelScopeIs
 import { VersionModelScopeIsActiveOptions } from "./options/VersionModelScopeIsActiveOptions";
 import { VersionModelScope } from "./enum/VersionModelScope";
 import { VersionModelType } from "./enum/VersionModelType";
+import { VersionModelApproveRequirement } from "./enum/VersionModelApproveRequirement";
 export default class VersionModel {
     private readonly name;
     private readonly scope;
@@ -17,11 +18,12 @@ export default class VersionModel {
     private readonly scheduleVersions;
     private readonly needSignature;
     private readonly signatureKeyId;
+    private readonly approveRequirement;
     constructor(name: string, scope: VersionModelScope, type: VersionModelType, options?: VersionModelOptions | null);
     static typeIsSimple(name: string, scope: VersionModelScope, warningVersion: Version, errorVersion: Version, options?: VersionModelTypeIsSimpleOptions | null): VersionModel;
     static typeIsSchedule(name: string, scope: VersionModelScope, options?: VersionModelTypeIsScheduleOptions | null): VersionModel;
     static scopeIsPassive(name: string, type: VersionModelType, needSignature: boolean, options?: VersionModelScopeIsPassiveOptions | null): VersionModel;
-    static scopeIsActive(name: string, type: VersionModelType, options?: VersionModelScopeIsActiveOptions | null): VersionModel;
+    static scopeIsActive(name: string, type: VersionModelType, approveRequirement: VersionModelApproveRequirement, options?: VersionModelScopeIsActiveOptions | null): VersionModel;
     properties(): {
         [name: string]: any;
     };

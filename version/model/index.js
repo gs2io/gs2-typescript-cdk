@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.ScheduleVersion = exports.Version = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.VersionModelType = exports.VersionModelScope = exports.VersionModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.ScheduleVersion = exports.Version = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.VersionModelApproveRequirement = exports.VersionModelType = exports.VersionModelScope = exports.VersionModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,8 @@ const VersionModelScope_1 = require("./enum/VersionModelScope");
 Object.defineProperty(exports, "VersionModelScope", { enumerable: true, get: function () { return VersionModelScope_1.VersionModelScope; } });
 const VersionModelType_1 = require("./enum/VersionModelType");
 Object.defineProperty(exports, "VersionModelType", { enumerable: true, get: function () { return VersionModelType_1.VersionModelType; } });
+const VersionModelApproveRequirement_1 = require("./enum/VersionModelApproveRequirement");
+Object.defineProperty(exports, "VersionModelApproveRequirement", { enumerable: true, get: function () { return VersionModelApproveRequirement_1.VersionModelApproveRequirement; } });
 const Status_1 = tslib_1.__importDefault(require("./Status"));
 exports.Status = Status_1.default;
 const TargetVersion_1 = tslib_1.__importDefault(require("./TargetVersion"));

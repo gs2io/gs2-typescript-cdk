@@ -22,6 +22,7 @@ import { VersionModelScopeIsPassiveOptions } from "./options/VersionModelScopeIs
 import { VersionModelScopeIsActiveOptions } from "./options/VersionModelScopeIsActiveOptions";
 import { VersionModelScope } from "./enum/VersionModelScope";
 import { VersionModelType } from "./enum/VersionModelType";
+import { VersionModelApproveRequirement } from "./enum/VersionModelApproveRequirement";
 
 export default class VersionModel {
     private readonly name: string;
@@ -34,6 +35,7 @@ export default class VersionModel {
     private readonly scheduleVersions: ScheduleVersion[]|null = null;
     private readonly needSignature: boolean|null = null;
     private readonly signatureKeyId: string|null = null;
+    private readonly approveRequirement: VersionModelApproveRequirement|null = null;
 
     public constructor(
         name: string,
@@ -51,6 +53,7 @@ export default class VersionModel {
         this.scheduleVersions = options?.scheduleVersions ?? null;
         this.needSignature = options?.needSignature ?? null;
         this.signatureKeyId = options?.signatureKeyId ?? null;
+        this.approveRequirement = options?.approveRequirement ?? null;
     }
 
     public static typeIsSimple(
@@ -110,6 +113,7 @@ export default class VersionModel {
     public static scopeIsActive(
         name: string,
         type: VersionModelType,
+        approveRequirement: VersionModelApproveRequirement,
         options: VersionModelScopeIsActiveOptions|null = null,
     ): VersionModel {
         return new VersionModel(
@@ -117,6 +121,7 @@ export default class VersionModel {
             VersionModelScope.ACTIVE,
             type,
             {
+                approveRequirement: approveRequirement,
                 metadata: options?.metadata,
                 scheduleVersions: options?.scheduleVersions,
             },
@@ -160,6 +165,9 @@ export default class VersionModel {
         }
         if (this.signatureKeyId != null) {
             properties["signatureKeyId"] = this.signatureKeyId;
+        }
+        if (this.approveRequirement != null) {
+            properties["approveRequirement"] = this.approveRequirement;
         }
 
         return properties;

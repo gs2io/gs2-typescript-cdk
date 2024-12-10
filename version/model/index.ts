@@ -19,6 +19,7 @@ import VersionModel from "./VersionModel";
 import { VersionModelOptions } from "./options/VersionModelOptions";
 import { VersionModelScope } from "./enum/VersionModelScope";
 import { VersionModelType } from "./enum/VersionModelType";
+import { VersionModelApproveRequirement } from "./enum/VersionModelApproveRequirement";
 import { VersionModelTypeIsSimpleOptions } from "./options/VersionModelTypeIsSimpleOptions"
 import { VersionModelTypeIsScheduleOptions } from "./options/VersionModelTypeIsScheduleOptions"
 import { VersionModelScopeIsPassiveOptions } from "./options/VersionModelScopeIsPassiveOptions"
@@ -42,6 +43,7 @@ export {
     VersionModelOptions,
     VersionModelScope,
     VersionModelType,
+    VersionModelApproveRequirement,
     VersionModelTypeIsSimpleOptions,
     VersionModelTypeIsScheduleOptions,
     VersionModelScopeIsPassiveOptions,

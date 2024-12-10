@@ -4,7 +4,7 @@ const VersionModelScope_1 = require("./enum/VersionModelScope");
 const VersionModelType_1 = require("./enum/VersionModelType");
 class VersionModel {
     constructor(name, scope, type, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         this.metadata = null;
         this.currentVersion = null;
         this.warningVersion = null;
@@ -12,6 +12,7 @@ class VersionModel {
         this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
+        this.approveRequirement = null;
         this.name = name;
         this.scope = scope;
         this.type = type;
@@ -22,6 +23,7 @@ class VersionModel {
         this.scheduleVersions = (_e = options === null || options === void 0 ? void 0 : options.scheduleVersions) !== null && _e !== void 0 ? _e : null;
         this.needSignature = (_f = options === null || options === void 0 ? void 0 : options.needSignature) !== null && _f !== void 0 ? _f : null;
         this.signatureKeyId = (_g = options === null || options === void 0 ? void 0 : options.signatureKeyId) !== null && _g !== void 0 ? _g : null;
+        this.approveRequirement = (_h = options === null || options === void 0 ? void 0 : options.approveRequirement) !== null && _h !== void 0 ? _h : null;
     }
     static typeIsSimple(name, scope, warningVersion, errorVersion, options = null) {
         return new VersionModel(name, scope, VersionModelType_1.VersionModelType.SIMPLE, {
@@ -44,8 +46,9 @@ class VersionModel {
             scheduleVersions: options === null || options === void 0 ? void 0 : options.scheduleVersions,
         });
     }
-    static scopeIsActive(name, type, options = null) {
+    static scopeIsActive(name, type, approveRequirement, options = null) {
         return new VersionModel(name, VersionModelScope_1.VersionModelScope.ACTIVE, type, {
+            approveRequirement: approveRequirement,
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             scheduleVersions: options === null || options === void 0 ? void 0 : options.scheduleVersions,
         });
@@ -82,6 +85,9 @@ class VersionModel {
         }
         if (this.signatureKeyId != null) {
             properties["signatureKeyId"] = this.signatureKeyId;
+        }
+        if (this.approveRequirement != null) {
+            properties["approveRequirement"] = this.approveRequirement;
         }
         return properties;
     }
