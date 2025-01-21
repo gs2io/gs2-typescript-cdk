@@ -18,6 +18,7 @@ import { ReceiveMemberRequestOptions } from "./options/ReceiveMemberRequestOptio
 export default class ReceiveMemberRequest {
     private readonly userId: string;
     private readonly targetGuildName: string;
+    private readonly metadata: string|null = null;
 
     public constructor(
         userId: string,
@@ -26,6 +27,7 @@ export default class ReceiveMemberRequest {
     ) {
         this.userId = userId;
         this.targetGuildName = targetGuildName;
+        this.metadata = options?.metadata ?? null;
     }
 
     public properties(
@@ -37,6 +39,9 @@ export default class ReceiveMemberRequest {
         }
         if (this.targetGuildName != null) {
             properties["targetGuildName"] = this.targetGuildName;
+        }
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
         }
 
         return properties;

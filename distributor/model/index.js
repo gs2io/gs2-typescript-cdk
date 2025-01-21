@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.DistributeResource = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.DistributorModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.DistributeResource = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.BatchResultPayload = exports.BatchRequestPayloadService = exports.BatchRequestPayload = exports.DistributorModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,12 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const DistributorModel_1 = tslib_1.__importDefault(require("./DistributorModel"));
 exports.DistributorModel = DistributorModel_1.default;
+const BatchRequestPayload_1 = tslib_1.__importDefault(require("./BatchRequestPayload"));
+exports.BatchRequestPayload = BatchRequestPayload_1.default;
+const BatchRequestPayloadService_1 = require("./enum/BatchRequestPayloadService");
+Object.defineProperty(exports, "BatchRequestPayloadService", { enumerable: true, get: function () { return BatchRequestPayloadService_1.BatchRequestPayloadService; } });
+const BatchResultPayload_1 = tslib_1.__importDefault(require("./BatchResultPayload"));
+exports.BatchResultPayload = BatchResultPayload_1.default;
 const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
 exports.AcquireActionResult = AcquireActionResult_1.default;
 const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));

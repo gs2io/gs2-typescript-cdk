@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ClusterRankingModel {
-    constructor(name, clusterType, sum, orderDirection, options = null) {
+    constructor(name, clusterType, sum, orderDirection, rewardCalculationIndex, options = null) {
         var _a, _b, _c, _d, _e, _f;
         this.metadata = null;
         this.minimumValue = null;
@@ -13,6 +13,7 @@ class ClusterRankingModel {
         this.clusterType = clusterType;
         this.sum = sum;
         this.orderDirection = orderDirection;
+        this.rewardCalculationIndex = rewardCalculationIndex;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
         this.minimumValue = (_b = options === null || options === void 0 ? void 0 : options.minimumValue) !== null && _b !== void 0 ? _b : null;
         this.maximumValue = (_c = options === null || options === void 0 ? void 0 : options.maximumValue) !== null && _c !== void 0 ? _c : null;
@@ -51,6 +52,9 @@ class ClusterRankingModel {
         }
         if (this.accessPeriodEventId != null) {
             properties["accessPeriodEventId"] = this.accessPeriodEventId;
+        }
+        if (this.rewardCalculationIndex != null) {
+            properties["rewardCalculationIndex"] = this.rewardCalculationIndex;
         }
         return properties;
     }

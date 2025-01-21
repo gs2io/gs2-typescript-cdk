@@ -13,11 +13,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import ReceiveMemberRequest from "./ReceiveMemberRequest";
 import { InboxOptions } from "./options/InboxOptions";
 
 export default class Inbox {
     private readonly guildName: string;
     private readonly fromUserIds: string[]|null = null;
+    private readonly receiveMemberRequests: ReceiveMemberRequest[]|null = null;
     private readonly revision: number|null = null;
 
     public constructor(
@@ -26,6 +28,7 @@ export default class Inbox {
     ) {
         this.guildName = guildName;
         this.fromUserIds = options?.fromUserIds ?? null;
+        this.receiveMemberRequests = options?.receiveMemberRequests ?? null;
         this.revision = options?.revision ?? null;
     }
 
@@ -38,6 +41,10 @@ export default class Inbox {
         }
         if (this.fromUserIds != null) {
             properties["fromUserIds"] = this.fromUserIds;
+        }
+        if (this.receiveMemberRequests != null) {
+            properties["receiveMemberRequests"] = this.receiveMemberRequests.map(v => v.properties(
+                ));
         }
 
         return properties;

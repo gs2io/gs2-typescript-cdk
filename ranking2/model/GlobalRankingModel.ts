@@ -17,11 +17,13 @@ import { AcquireAction } from "../../core/model";
 import RankingReward from "./RankingReward";
 import { GlobalRankingModelOptions } from "./options/GlobalRankingModelOptions";
 import { GlobalRankingModelOrderDirection } from "./enum/GlobalRankingModelOrderDirection";
+import { GlobalRankingModelRewardCalculationIndex } from "./enum/GlobalRankingModelRewardCalculationIndex";
 
 export default class GlobalRankingModel {
     private readonly name: string;
     private readonly sum: boolean;
     private readonly orderDirection: GlobalRankingModelOrderDirection;
+    private readonly rewardCalculationIndex: GlobalRankingModelRewardCalculationIndex;
     private readonly metadata: string|null = null;
     private readonly minimumValue: number|null = null;
     private readonly maximumValue: number|null = null;
@@ -33,11 +35,13 @@ export default class GlobalRankingModel {
         name: string,
         sum: boolean,
         orderDirection: GlobalRankingModelOrderDirection,
+        rewardCalculationIndex: GlobalRankingModelRewardCalculationIndex,
         options: GlobalRankingModelOptions|null = null,
     ) {
         this.name = name;
         this.sum = sum;
         this.orderDirection = orderDirection;
+        this.rewardCalculationIndex = rewardCalculationIndex;
         this.metadata = options?.metadata ?? null;
         this.minimumValue = options?.minimumValue ?? null;
         this.maximumValue = options?.maximumValue ?? null;
@@ -77,6 +81,9 @@ export default class GlobalRankingModel {
         }
         if (this.accessPeriodEventId != null) {
             properties["accessPeriodEventId"] = this.accessPeriodEventId;
+        }
+        if (this.rewardCalculationIndex != null) {
+            properties["rewardCalculationIndex"] = this.rewardCalculationIndex;
         }
 
         return properties;

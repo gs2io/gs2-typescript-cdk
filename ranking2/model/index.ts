@@ -18,10 +18,12 @@ import { NamespaceOptions } from "./options/NamespaceOptions";
 import GlobalRankingModel from "./GlobalRankingModel";
 import { GlobalRankingModelOptions } from "./options/GlobalRankingModelOptions";
 import { GlobalRankingModelOrderDirection } from "./enum/GlobalRankingModelOrderDirection";
+import { GlobalRankingModelRewardCalculationIndex } from "./enum/GlobalRankingModelRewardCalculationIndex";
 import ClusterRankingModel from "./ClusterRankingModel";
 import { ClusterRankingModelOptions } from "./options/ClusterRankingModelOptions";
 import { ClusterRankingModelClusterType } from "./enum/ClusterRankingModelClusterType";
 import { ClusterRankingModelOrderDirection } from "./enum/ClusterRankingModelOrderDirection";
+import { ClusterRankingModelRewardCalculationIndex } from "./enum/ClusterRankingModelRewardCalculationIndex";
 import SubscribeRankingModel from "./SubscribeRankingModel";
 import { SubscribeRankingModelOptions } from "./options/SubscribeRankingModelOptions";
 import { SubscribeRankingModelOrderDirection } from "./enum/SubscribeRankingModelOrderDirection";
@@ -43,10 +45,12 @@ export {
     GlobalRankingModel,
     GlobalRankingModelOptions,
     GlobalRankingModelOrderDirection,
+    GlobalRankingModelRewardCalculationIndex,
     ClusterRankingModel,
     ClusterRankingModelOptions,
     ClusterRankingModelClusterType,
     ClusterRankingModelOrderDirection,
+    ClusterRankingModelRewardCalculationIndex,
     SubscribeRankingModel,
     SubscribeRankingModelOptions,
     SubscribeRankingModelOrderDirection,

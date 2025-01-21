@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RankingReward = exports.SubscribeRankingModelOrderDirection = exports.SubscribeRankingModel = exports.ClusterRankingModelOrderDirection = exports.ClusterRankingModelClusterType = exports.ClusterRankingModel = exports.GlobalRankingModelOrderDirection = exports.GlobalRankingModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RankingReward = exports.SubscribeRankingModelOrderDirection = exports.SubscribeRankingModel = exports.ClusterRankingModelRewardCalculationIndex = exports.ClusterRankingModelOrderDirection = exports.ClusterRankingModelClusterType = exports.ClusterRankingModel = exports.GlobalRankingModelRewardCalculationIndex = exports.GlobalRankingModelOrderDirection = exports.GlobalRankingModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,12 +23,16 @@ const GlobalRankingModel_1 = tslib_1.__importDefault(require("./GlobalRankingMod
 exports.GlobalRankingModel = GlobalRankingModel_1.default;
 const GlobalRankingModelOrderDirection_1 = require("./enum/GlobalRankingModelOrderDirection");
 Object.defineProperty(exports, "GlobalRankingModelOrderDirection", { enumerable: true, get: function () { return GlobalRankingModelOrderDirection_1.GlobalRankingModelOrderDirection; } });
+const GlobalRankingModelRewardCalculationIndex_1 = require("./enum/GlobalRankingModelRewardCalculationIndex");
+Object.defineProperty(exports, "GlobalRankingModelRewardCalculationIndex", { enumerable: true, get: function () { return GlobalRankingModelRewardCalculationIndex_1.GlobalRankingModelRewardCalculationIndex; } });
 const ClusterRankingModel_1 = tslib_1.__importDefault(require("./ClusterRankingModel"));
 exports.ClusterRankingModel = ClusterRankingModel_1.default;
 const ClusterRankingModelClusterType_1 = require("./enum/ClusterRankingModelClusterType");
 Object.defineProperty(exports, "ClusterRankingModelClusterType", { enumerable: true, get: function () { return ClusterRankingModelClusterType_1.ClusterRankingModelClusterType; } });
 const ClusterRankingModelOrderDirection_1 = require("./enum/ClusterRankingModelOrderDirection");
 Object.defineProperty(exports, "ClusterRankingModelOrderDirection", { enumerable: true, get: function () { return ClusterRankingModelOrderDirection_1.ClusterRankingModelOrderDirection; } });
+const ClusterRankingModelRewardCalculationIndex_1 = require("./enum/ClusterRankingModelRewardCalculationIndex");
+Object.defineProperty(exports, "ClusterRankingModelRewardCalculationIndex", { enumerable: true, get: function () { return ClusterRankingModelRewardCalculationIndex_1.ClusterRankingModelRewardCalculationIndex; } });
 const SubscribeRankingModel_1 = tslib_1.__importDefault(require("./SubscribeRankingModel"));
 exports.SubscribeRankingModel = SubscribeRankingModel_1.default;
 const SubscribeRankingModelOrderDirection_1 = require("./enum/SubscribeRankingModelOrderDirection");

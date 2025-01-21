@@ -1,0 +1,2 @@
+export interface BatchResultPayloadOptions {
+}

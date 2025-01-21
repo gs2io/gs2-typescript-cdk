@@ -18,6 +18,7 @@ import { MemberOptions } from "./options/MemberOptions";
 export default class Member {
     private readonly userId: string;
     private readonly roleName: string;
+    private readonly metadata: string|null = null;
 
     public constructor(
         userId: string,
@@ -26,6 +27,7 @@ export default class Member {
     ) {
         this.userId = userId;
         this.roleName = roleName;
+        this.metadata = options?.metadata ?? null;
     }
 
     public properties(
@@ -37,6 +39,9 @@ export default class Member {
         }
         if (this.roleName != null) {
             properties["roleName"] = this.roleName;
+        }
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
         }
 
         return properties;

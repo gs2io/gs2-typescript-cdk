@@ -5,6 +5,8 @@ export interface GuildOptions {
     attribute3?: number | null;
     attribute4?: number | null;
     attribute5?: number | null;
+    metadata?: string | null;
+    memberMetadata?: string | null;
     customRoles?: RoleModel[] | null;
     guildMemberDefaultRole?: string | null;
     timeOffsetToken?: string | null;

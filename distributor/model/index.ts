@@ -17,6 +17,11 @@ import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import DistributorModel from "./DistributorModel";
 import { DistributorModelOptions } from "./options/DistributorModelOptions";
+import BatchRequestPayload from "./BatchRequestPayload";
+import { BatchRequestPayloadOptions } from "./options/BatchRequestPayloadOptions";
+import { BatchRequestPayloadService } from "./enum/BatchRequestPayloadService";
+import BatchResultPayload from "./BatchResultPayload";
+import { BatchResultPayloadOptions } from "./options/BatchResultPayloadOptions";
 import AcquireActionResult from "./AcquireActionResult";
 import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
 import ConsumeActionResult from "./ConsumeActionResult";
@@ -32,6 +37,11 @@ export {
     NamespaceOptions,
     DistributorModel,
     DistributorModelOptions,
+    BatchRequestPayload,
+    BatchRequestPayloadOptions,
+    BatchRequestPayloadService,
+    BatchResultPayload,
+    BatchResultPayloadOptions,
     AcquireActionResult,
     AcquireActionResultOptions,
     ConsumeActionResult,

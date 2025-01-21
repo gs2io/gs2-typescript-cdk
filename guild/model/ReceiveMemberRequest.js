@@ -2,8 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class ReceiveMemberRequest {
     constructor(userId, targetGuildName, options = null) {
+        var _a;
+        this.metadata = null;
         this.userId = userId;
         this.targetGuildName = targetGuildName;
+        this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
     }
     properties() {
         let properties = {};
@@ -12,6 +15,9 @@ class ReceiveMemberRequest {
         }
         if (this.targetGuildName != null) {
             properties["targetGuildName"] = this.targetGuildName;
+        }
+        if (this.metadata != null) {
+            properties["metadata"] = this.metadata;
         }
         return properties;
     }

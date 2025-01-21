@@ -18,12 +18,14 @@ import RankingReward from "./RankingReward";
 import { ClusterRankingModelOptions } from "./options/ClusterRankingModelOptions";
 import { ClusterRankingModelClusterType } from "./enum/ClusterRankingModelClusterType";
 import { ClusterRankingModelOrderDirection } from "./enum/ClusterRankingModelOrderDirection";
+import { ClusterRankingModelRewardCalculationIndex } from "./enum/ClusterRankingModelRewardCalculationIndex";
 
 export default class ClusterRankingModel {
     private readonly name: string;
     private readonly clusterType: ClusterRankingModelClusterType;
     private readonly sum: boolean;
     private readonly orderDirection: ClusterRankingModelOrderDirection;
+    private readonly rewardCalculationIndex: ClusterRankingModelRewardCalculationIndex;
     private readonly metadata: string|null = null;
     private readonly minimumValue: number|null = null;
     private readonly maximumValue: number|null = null;
@@ -36,12 +38,14 @@ export default class ClusterRankingModel {
         clusterType: ClusterRankingModelClusterType,
         sum: boolean,
         orderDirection: ClusterRankingModelOrderDirection,
+        rewardCalculationIndex: ClusterRankingModelRewardCalculationIndex,
         options: ClusterRankingModelOptions|null = null,
     ) {
         this.name = name;
         this.clusterType = clusterType;
         this.sum = sum;
         this.orderDirection = orderDirection;
+        this.rewardCalculationIndex = rewardCalculationIndex;
         this.metadata = options?.metadata ?? null;
         this.minimumValue = options?.minimumValue ?? null;
         this.maximumValue = options?.maximumValue ?? null;
@@ -84,6 +88,9 @@ export default class ClusterRankingModel {
         }
         if (this.accessPeriodEventId != null) {
             properties["accessPeriodEventId"] = this.accessPeriodEventId;
+        }
+        if (this.rewardCalculationIndex != null) {
+            properties["rewardCalculationIndex"] = this.rewardCalculationIndex;
         }
 
         return properties;
