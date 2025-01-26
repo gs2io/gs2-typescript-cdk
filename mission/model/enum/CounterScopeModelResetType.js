@@ -21,5 +21,6 @@ exports.CounterScopeModelResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 };
 //# sourceMappingURL=CounterScopeModelResetType.js.map

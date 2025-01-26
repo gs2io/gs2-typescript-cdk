@@ -21,5 +21,6 @@ export const MissionTaskModelTargetResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 } as const;
 export type MissionTaskModelTargetResetType = typeof MissionTaskModelTargetResetType[keyof typeof MissionTaskModelTargetResetType];

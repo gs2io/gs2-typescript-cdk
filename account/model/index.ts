@@ -19,6 +19,8 @@ import TakeOverTypeModel from "./TakeOverTypeModel";
 import { TakeOverTypeModelOptions } from "./options/TakeOverTypeModelOptions";
 import OpenIdConnectSetting from "./OpenIdConnectSetting";
 import { OpenIdConnectSettingOptions } from "./options/OpenIdConnectSettingOptions";
+import ScopeValue from "./ScopeValue";
+import { ScopeValueOptions } from "./options/ScopeValueOptions";
 import PlatformUser from "./PlatformUser";
 import { PlatformUserOptions } from "./options/PlatformUserOptions";
 import BanStatus from "./BanStatus";
@@ -32,6 +34,8 @@ export {
     TakeOverTypeModelOptions,
     OpenIdConnectSetting,
     OpenIdConnectSettingOptions,
+    ScopeValue,
+    ScopeValueOptions,
     PlatformUser,
     PlatformUserOptions,
     BanStatus,

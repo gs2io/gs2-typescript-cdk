@@ -7,4 +7,6 @@ export interface MissionGroupModelOptions {
     resetDayOfWeek?: MissionGroupModelResetDayOfWeek | null;
     resetHour?: number | null;
     completeNotificationNamespaceId?: string | null;
+    anchorTimestamp?: number | null;
+    days?: number | null;
 }

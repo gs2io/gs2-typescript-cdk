@@ -21,5 +21,6 @@ exports.TargetCounterModelResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 };
 //# sourceMappingURL=TargetCounterModelResetType.js.map

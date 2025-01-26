@@ -21,5 +21,6 @@ export const CounterScopeModelResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 } as const;
 export type CounterScopeModelResetType = typeof CounterScopeModelResetType[keyof typeof CounterScopeModelResetType];

@@ -21,5 +21,6 @@ export const TargetCounterModelResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 } as const;
 export type TargetCounterModelResetType = typeof TargetCounterModelResetType[keyof typeof TargetCounterModelResetType];

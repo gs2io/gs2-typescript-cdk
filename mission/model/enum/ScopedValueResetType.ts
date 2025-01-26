@@ -21,5 +21,6 @@ export const ScopedValueResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 } as const;
 export type ScopedValueResetType = typeof ScopedValueResetType[keyof typeof ScopedValueResetType];

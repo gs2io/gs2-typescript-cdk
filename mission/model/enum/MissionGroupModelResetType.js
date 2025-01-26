@@ -21,5 +21,6 @@ exports.MissionGroupModelResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 };
 //# sourceMappingURL=MissionGroupModelResetType.js.map

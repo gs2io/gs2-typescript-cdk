@@ -1,4 +1,3 @@
-"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -14,13 +13,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScopedValueResetType = void 0;
-exports.ScopedValueResetType = {
-    NOT_RESET: "notReset",
-    DAILY: "daily",
-    WEEKLY: "weekly",
-    MONTHLY: "monthly",
-    DAYS: "days",
-};
-//# sourceMappingURL=ScopedValueResetType.js.map
+
+export interface ScopeValueOptions {
+    value?: string|null;
+}
+

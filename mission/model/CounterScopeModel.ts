@@ -21,6 +21,7 @@ import { CounterScopeModelResetTypeIsNotResetOptions } from "./options/CounterSc
 import { CounterScopeModelResetTypeIsDailyOptions } from "./options/CounterScopeModelResetTypeIsDailyOptions";
 import { CounterScopeModelResetTypeIsWeeklyOptions } from "./options/CounterScopeModelResetTypeIsWeeklyOptions";
 import { CounterScopeModelResetTypeIsMonthlyOptions } from "./options/CounterScopeModelResetTypeIsMonthlyOptions";
+import { CounterScopeModelResetTypeIsDaysOptions } from "./options/CounterScopeModelResetTypeIsDaysOptions";
 import { CounterScopeModelScopeType } from "./enum/CounterScopeModelScopeType";
 import { CounterScopeModelResetType } from "./enum/CounterScopeModelResetType";
 import { CounterScopeModelResetDayOfWeek } from "./enum/CounterScopeModelResetDayOfWeek";
@@ -33,6 +34,8 @@ export default class CounterScopeModel {
     private readonly resetHour: number|null = null;
     private readonly conditionName: string|null = null;
     private readonly condition: VerifyAction|null = null;
+    private readonly anchorTimestamp: number|null = null;
+    private readonly days: number|null = null;
 
     public constructor(
         scopeType: CounterScopeModelScopeType,
@@ -45,6 +48,8 @@ export default class CounterScopeModel {
         this.resetHour = options?.resetHour ?? null;
         this.conditionName = options?.conditionName ?? null;
         this.condition = options?.condition ?? null;
+        this.anchorTimestamp = options?.anchorTimestamp ?? null;
+        this.days = options?.days ?? null;
     }
 
     public static scopeTypeIsResetTiming(
@@ -127,6 +132,21 @@ export default class CounterScopeModel {
         );
     }
 
+    public static resetTypeIsDays(
+        scopeType: CounterScopeModelScopeType,
+        anchorTimestamp: number,
+        days: number,
+        options: CounterScopeModelResetTypeIsDaysOptions|null = null,
+    ): CounterScopeModel {
+        return new CounterScopeModel(
+            scopeType,
+            {
+                anchorTimestamp: anchorTimestamp,
+                days: days,
+            },
+        );
+    }
+
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
@@ -152,6 +172,12 @@ export default class CounterScopeModel {
         if (this.condition != null) {
             properties["condition"] = this.condition?.properties(
             );
+        }
+        if (this.anchorTimestamp != null) {
+            properties["anchorTimestamp"] = this.anchorTimestamp;
+        }
+        if (this.days != null) {
+            properties["days"] = this.days;
         }
 
         return properties;

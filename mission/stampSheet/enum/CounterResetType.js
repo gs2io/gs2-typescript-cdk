@@ -21,5 +21,6 @@ exports.CounterResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 };
 //# sourceMappingURL=CounterResetType.js.map

@@ -21,5 +21,6 @@ export const CounterResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 } as const;
 export type CounterResetType = typeof CounterResetType[keyof typeof CounterResetType];

@@ -25,5 +25,7 @@ export interface CounterScopeModelOptions {
     resetHour?: number|null;
     conditionName?: string|null;
     condition?: VerifyAction|null;
+    anchorTimestamp?: number|null;
+    days?: number|null;
 }
 

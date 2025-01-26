@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import ScopeValue from "./ScopeValue";
 import { OpenIdConnectSettingOptions } from "./options/OpenIdConnectSettingOptions";
 
 export default class OpenIdConnectSetting {
@@ -23,6 +24,8 @@ export default class OpenIdConnectSetting {
     private readonly appleKeyId: string|null = null;
     private readonly applePrivateKeyPem: string|null = null;
     private readonly doneEndpointUrl: string|null = null;
+    private readonly additionalScopeValues: ScopeValue[]|null = null;
+    private readonly additionalReturnValues: string[]|null = null;
 
     public constructor(
         configurationPath: string,
@@ -36,6 +39,8 @@ export default class OpenIdConnectSetting {
         this.appleKeyId = options?.appleKeyId ?? null;
         this.applePrivateKeyPem = options?.applePrivateKeyPem ?? null;
         this.doneEndpointUrl = options?.doneEndpointUrl ?? null;
+        this.additionalScopeValues = options?.additionalScopeValues ?? null;
+        this.additionalReturnValues = options?.additionalReturnValues ?? null;
     }
 
     public properties(
@@ -62,6 +67,13 @@ export default class OpenIdConnectSetting {
         }
         if (this.doneEndpointUrl != null) {
             properties["doneEndpointUrl"] = this.doneEndpointUrl;
+        }
+        if (this.additionalScopeValues != null) {
+            properties["additionalScopeValues"] = this.additionalScopeValues.map(v => v.properties(
+                ));
+        }
+        if (this.additionalReturnValues != null) {
+            properties["additionalReturnValues"] = this.additionalReturnValues;
         }
 
         return properties;

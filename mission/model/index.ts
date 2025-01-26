@@ -24,6 +24,7 @@ import { CounterScopeModelResetTypeIsNotResetOptions } from "./options/CounterSc
 import { CounterScopeModelResetTypeIsDailyOptions } from "./options/CounterScopeModelResetTypeIsDailyOptions"
 import { CounterScopeModelResetTypeIsWeeklyOptions } from "./options/CounterScopeModelResetTypeIsWeeklyOptions"
 import { CounterScopeModelResetTypeIsMonthlyOptions } from "./options/CounterScopeModelResetTypeIsMonthlyOptions"
+import { CounterScopeModelResetTypeIsDaysOptions } from "./options/CounterScopeModelResetTypeIsDaysOptions"
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import CounterModel from "./CounterModel";
@@ -36,6 +37,7 @@ import { MissionGroupModelResetTypeIsNotResetOptions } from "./options/MissionGr
 import { MissionGroupModelResetTypeIsDailyOptions } from "./options/MissionGroupModelResetTypeIsDailyOptions"
 import { MissionGroupModelResetTypeIsWeeklyOptions } from "./options/MissionGroupModelResetTypeIsWeeklyOptions"
 import { MissionGroupModelResetTypeIsMonthlyOptions } from "./options/MissionGroupModelResetTypeIsMonthlyOptions"
+import { MissionGroupModelResetTypeIsDaysOptions } from "./options/MissionGroupModelResetTypeIsDaysOptions"
 import MissionTaskModel from "./MissionTaskModel";
 import { MissionTaskModelOptions } from "./options/MissionTaskModelOptions";
 import { MissionTaskModelVerifyCompleteType } from "./enum/MissionTaskModelVerifyCompleteType";
@@ -76,6 +78,7 @@ export {
     CounterScopeModelResetTypeIsDailyOptions,
     CounterScopeModelResetTypeIsWeeklyOptions,
     CounterScopeModelResetTypeIsMonthlyOptions,
+    CounterScopeModelResetTypeIsDaysOptions,
     Namespace,
     NamespaceOptions,
     CounterModel,
@@ -88,6 +91,7 @@ export {
     MissionGroupModelResetTypeIsDailyOptions,
     MissionGroupModelResetTypeIsWeeklyOptions,
     MissionGroupModelResetTypeIsMonthlyOptions,
+    MissionGroupModelResetTypeIsDaysOptions,
     MissionTaskModel,
     MissionTaskModelOptions,
     MissionTaskModelVerifyCompleteType,

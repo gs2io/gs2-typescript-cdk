@@ -7,6 +7,8 @@ export default class OpenIdConnectSetting {
     private readonly appleKeyId;
     private readonly applePrivateKeyPem;
     private readonly doneEndpointUrl;
+    private readonly additionalScopeValues;
+    private readonly additionalReturnValues;
     constructor(configurationPath: string, clientId: string, options?: OpenIdConnectSettingOptions | null);
     properties(): {
         [name: string]: any;

@@ -22,6 +22,7 @@ import { MissionGroupModelResetTypeIsNotResetOptions } from "./options/MissionGr
 import { MissionGroupModelResetTypeIsDailyOptions } from "./options/MissionGroupModelResetTypeIsDailyOptions";
 import { MissionGroupModelResetTypeIsWeeklyOptions } from "./options/MissionGroupModelResetTypeIsWeeklyOptions";
 import { MissionGroupModelResetTypeIsMonthlyOptions } from "./options/MissionGroupModelResetTypeIsMonthlyOptions";
+import { MissionGroupModelResetTypeIsDaysOptions } from "./options/MissionGroupModelResetTypeIsDaysOptions";
 import { MissionGroupModelResetType } from "./enum/MissionGroupModelResetType";
 import { MissionGroupModelResetDayOfWeek } from "./enum/MissionGroupModelResetDayOfWeek";
 
@@ -34,6 +35,8 @@ export default class MissionGroupModel {
     private readonly resetDayOfWeek: MissionGroupModelResetDayOfWeek|null = null;
     private readonly resetHour: number|null = null;
     private readonly completeNotificationNamespaceId: string|null = null;
+    private readonly anchorTimestamp: number|null = null;
+    private readonly days: number|null = null;
 
     public constructor(
         name: string,
@@ -48,6 +51,8 @@ export default class MissionGroupModel {
         this.resetDayOfWeek = options?.resetDayOfWeek ?? null;
         this.resetHour = options?.resetHour ?? null;
         this.completeNotificationNamespaceId = options?.completeNotificationNamespaceId ?? null;
+        this.anchorTimestamp = options?.anchorTimestamp ?? null;
+        this.days = options?.days ?? null;
     }
 
     public static resetTypeIsNotReset(
@@ -120,6 +125,25 @@ export default class MissionGroupModel {
         );
     }
 
+    public static resetTypeIsDays(
+        name: string,
+        anchorTimestamp: number,
+        days: number,
+        options: MissionGroupModelResetTypeIsDaysOptions|null = null,
+    ): MissionGroupModel {
+        return new MissionGroupModel(
+            name,
+            MissionGroupModelResetType.DAYS,
+            {
+                anchorTimestamp: anchorTimestamp,
+                days: days,
+                metadata: options?.metadata,
+                tasks: options?.tasks,
+                completeNotificationNamespaceId: options?.completeNotificationNamespaceId,
+            },
+        );
+    }
+
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
@@ -148,6 +172,12 @@ export default class MissionGroupModel {
         }
         if (this.completeNotificationNamespaceId != null) {
             properties["completeNotificationNamespaceId"] = this.completeNotificationNamespaceId;
+        }
+        if (this.anchorTimestamp != null) {
+            properties["anchorTimestamp"] = this.anchorTimestamp;
+        }
+        if (this.days != null) {
+            properties["days"] = this.days;
         }
 
         return properties;

@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import ScopeValue from "../ScopeValue";
 
 export interface OpenIdConnectSettingOptions {
     clientSecret?: string|null;
@@ -20,5 +21,7 @@ export interface OpenIdConnectSettingOptions {
     appleKeyId?: string|null;
     applePrivateKeyPem?: string|null;
     doneEndpointUrl?: string|null;
+    additionalScopeValues?: ScopeValue[]|null;
+    additionalReturnValues?: string[]|null;
 }
 

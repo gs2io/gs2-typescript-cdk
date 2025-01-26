@@ -3,13 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const MissionGroupModelResetType_1 = require("./enum/MissionGroupModelResetType");
 class MissionGroupModel {
     constructor(name, resetType, options = null) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         this.metadata = null;
         this.tasks = null;
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
         this.completeNotificationNamespaceId = null;
+        this.anchorTimestamp = null;
+        this.days = null;
         this.name = name;
         this.resetType = resetType;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
@@ -18,6 +20,8 @@ class MissionGroupModel {
         this.resetDayOfWeek = (_d = options === null || options === void 0 ? void 0 : options.resetDayOfWeek) !== null && _d !== void 0 ? _d : null;
         this.resetHour = (_e = options === null || options === void 0 ? void 0 : options.resetHour) !== null && _e !== void 0 ? _e : null;
         this.completeNotificationNamespaceId = (_f = options === null || options === void 0 ? void 0 : options.completeNotificationNamespaceId) !== null && _f !== void 0 ? _f : null;
+        this.anchorTimestamp = (_g = options === null || options === void 0 ? void 0 : options.anchorTimestamp) !== null && _g !== void 0 ? _g : null;
+        this.days = (_h = options === null || options === void 0 ? void 0 : options.days) !== null && _h !== void 0 ? _h : null;
     }
     static resetTypeIsNotReset(name, options = null) {
         return new MissionGroupModel(name, MissionGroupModelResetType_1.MissionGroupModelResetType.NOT_RESET, {
@@ -52,6 +56,15 @@ class MissionGroupModel {
             completeNotificationNamespaceId: options === null || options === void 0 ? void 0 : options.completeNotificationNamespaceId,
         });
     }
+    static resetTypeIsDays(name, anchorTimestamp, days, options = null) {
+        return new MissionGroupModel(name, MissionGroupModelResetType_1.MissionGroupModelResetType.DAYS, {
+            anchorTimestamp: anchorTimestamp,
+            days: days,
+            metadata: options === null || options === void 0 ? void 0 : options.metadata,
+            tasks: options === null || options === void 0 ? void 0 : options.tasks,
+            completeNotificationNamespaceId: options === null || options === void 0 ? void 0 : options.completeNotificationNamespaceId,
+        });
+    }
     properties() {
         let properties = {};
         if (this.name != null) {
@@ -77,6 +90,12 @@ class MissionGroupModel {
         }
         if (this.completeNotificationNamespaceId != null) {
             properties["completeNotificationNamespaceId"] = this.completeNotificationNamespaceId;
+        }
+        if (this.anchorTimestamp != null) {
+            properties["anchorTimestamp"] = this.anchorTimestamp;
+        }
+        if (this.days != null) {
+            properties["days"] = this.days;
         }
         return properties;
     }

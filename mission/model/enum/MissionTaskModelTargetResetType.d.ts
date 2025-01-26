@@ -3,5 +3,6 @@ export declare const MissionTaskModelTargetResetType: {
     readonly DAILY: "daily";
     readonly WEEKLY: "weekly";
     readonly MONTHLY: "monthly";
+    readonly DAYS: "days";
 };
 export type MissionTaskModelTargetResetType = typeof MissionTaskModelTargetResetType[keyof typeof MissionTaskModelTargetResetType];
