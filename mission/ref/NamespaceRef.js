@@ -25,6 +25,7 @@ const SetCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetC
 const ReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ReceiveByUserId"));
 const BatchReceiveByUserId_1 = tslib_1.__importDefault(require("../stampSheet/BatchReceiveByUserId"));
 const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseCounterByUserId"));
+const ResetCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ResetCounterByUserId"));
 const VerifyCompleteByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCompleteByUserId"));
 const VerifyCounterValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCounterValueByUserId"));
 class NamespaceRef {
@@ -54,6 +55,9 @@ class NamespaceRef {
     }
     decreaseCounter(counterName, value, userId = "#{userId}") {
         return new DecreaseCounterByUserId_1.default(this.namespaceName, counterName, value, userId);
+    }
+    resetCounter(counterName, scopes, userId = "#{userId}") {
+        return new ResetCounterByUserId_1.default(this.namespaceName, counterName, scopes, userId);
     }
     verifyComplete(missionGroupName, verifyType, missionTaskName, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifyCompleteByUserId_1.default(this.namespaceName, missionGroupName, verifyType, missionTaskName, multiplyValueSpecifyingQuantity, userId);

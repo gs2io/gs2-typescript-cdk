@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const IncreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/IncreaseCounterByUserId"));
 const SetCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetCounterByUserId"));
 const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseCounterByUserId"));
+const ResetCounterByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ResetCounterByUserId"));
 const VerifyCounterValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCounterValueByUserId"));
 class CounterModelRef {
     constructor(namespaceName, counterName) {
@@ -34,6 +35,9 @@ class CounterModelRef {
     }
     decreaseCounter(value, userId = "#{userId}") {
         return new DecreaseCounterByUserId_1.default(this.namespaceName, this.counterName, value, userId);
+    }
+    resetCounter(scopes, userId = "#{userId}") {
+        return new ResetCounterByUserId_1.default(this.namespaceName, this.counterName, scopes, userId);
     }
     verifyCounterValue(verifyType, scopeType = null, resetType = null, conditionName = null, value = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifyCounterValueByUserId_1.default(this.namespaceName, this.counterName, verifyType, scopeType, resetType, conditionName, value, multiplyValueSpecifyingQuantity, userId);

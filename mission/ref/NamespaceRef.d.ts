@@ -7,6 +7,7 @@ import ScopedValue from "../model/ScopedValue";
 import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
 import BatchReceiveByUserId from "../stampSheet/BatchReceiveByUserId";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
+import ResetCounterByUserId from "../stampSheet/ResetCounterByUserId";
 import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
 import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
@@ -24,6 +25,7 @@ export default class NamespaceRef {
     receive(missionGroupName: string, missionTaskName: string, userId?: string): ReceiveByUserId;
     batchReceive(missionGroupName: string, missionTaskNames: string[], userId?: string): BatchReceiveByUserId;
     decreaseCounter(counterName: string, value: number, userId?: string): DecreaseCounterByUserId;
+    resetCounter(counterName: string, scopes: ScopedValue[], userId?: string): ResetCounterByUserId;
     verifyComplete(missionGroupName: string, verifyType: CompleteVerifyType, missionTaskName: string, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCompleteByUserId;
     verifyCounterValue(counterName: string, verifyType: CounterVerifyType, scopeType?: CounterScopeType | null, resetType?: CounterResetType | null, conditionName?: string | null, value?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyCounterValueByUserId;
     grn(): string;

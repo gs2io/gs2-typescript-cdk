@@ -21,5 +21,7 @@ export interface LimitModelOptions {
     resetDayOfMonth?: number|null;
     resetDayOfWeek?: LimitModelResetDayOfWeek|null;
     resetHour?: number|null;
+    anchorTimestamp?: number|null;
+    days?: number|null;
 }
 

@@ -21,5 +21,6 @@ exports.LimitModelResetType = {
     DAILY: "daily",
     WEEKLY: "weekly",
     MONTHLY: "monthly",
+    DAYS: "days",
 };
 //# sourceMappingURL=LimitModelResetType.js.map

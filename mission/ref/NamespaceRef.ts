@@ -24,6 +24,7 @@ import ScopedValue from "../model/ScopedValue";
 import ReceiveByUserId from "../stampSheet/ReceiveByUserId";
 import BatchReceiveByUserId from "../stampSheet/BatchReceiveByUserId";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
+import ResetCounterByUserId from "../stampSheet/ResetCounterByUserId";
 import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
 import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
@@ -132,6 +133,19 @@ export default class NamespaceRef {
             this.namespaceName,
             counterName,
             value,
+            userId,
+        );
+    }
+
+    public resetCounter(
+        counterName: string,
+        scopes: ScopedValue[],
+        userId: string = "#{userId}",
+    ): ResetCounterByUserId {
+        return new ResetCounterByUserId(
+            this.namespaceName,
+            counterName,
+            scopes,
             userId,
         );
     }

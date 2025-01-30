@@ -19,6 +19,7 @@ import IncreaseCounterByUserId from "../stampSheet/IncreaseCounterByUserId";
 import SetCounterByUserId from "../stampSheet/SetCounterByUserId";
 import ScopedValue from "../model/ScopedValue";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
+import ResetCounterByUserId from "../stampSheet/ResetCounterByUserId";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
 import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
 import { CounterScopeType } from "../stampSheet/enum/CounterScopeType";
@@ -68,6 +69,18 @@ export default class CounterModelRef {
             this.namespaceName,
             this.counterName,
             value,
+            userId,
+        );
+    }
+
+    public resetCounter(
+        scopes: ScopedValue[],
+        userId: string = "#{userId}",
+    ): ResetCounterByUserId {
+        return new ResetCounterByUserId(
+            this.namespaceName,
+            this.counterName,
+            scopes,
             userId,
         );
     }

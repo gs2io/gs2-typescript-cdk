@@ -13,14 +13,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import { LimitModelResetType } from "../enum/LimitModelResetType";
+import { LimitModelResetDayOfWeek } from "../enum/LimitModelResetDayOfWeek";
 
-
-
-export const LimitModelResetType = {
-    NOT_RESET: "notReset",
-    DAILY: "daily",
-    WEEKLY: "weekly",
-    MONTHLY: "monthly",
-    DAYS: "days",
-} as const;
-export type LimitModelResetType = typeof LimitModelResetType[keyof typeof LimitModelResetType];
+export interface LimitModelResetTypeIsDaysOptions {
+    metadata?: string|null;
+}

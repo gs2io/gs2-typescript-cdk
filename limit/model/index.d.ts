@@ -8,5 +8,6 @@ import { LimitModelResetTypeIsNotResetOptions } from "./options/LimitModelResetT
 import { LimitModelResetTypeIsDailyOptions } from "./options/LimitModelResetTypeIsDailyOptions";
 import { LimitModelResetTypeIsWeeklyOptions } from "./options/LimitModelResetTypeIsWeeklyOptions";
 import { LimitModelResetTypeIsMonthlyOptions } from "./options/LimitModelResetTypeIsMonthlyOptions";
+import { LimitModelResetTypeIsDaysOptions } from "./options/LimitModelResetTypeIsDaysOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, LimitModel, LimitModelOptions, LimitModelResetType, LimitModelResetDayOfWeek, LimitModelResetTypeIsNotResetOptions, LimitModelResetTypeIsDailyOptions, LimitModelResetTypeIsWeeklyOptions, LimitModelResetTypeIsMonthlyOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, LimitModel, LimitModelOptions, LimitModelResetType, LimitModelResetDayOfWeek, LimitModelResetTypeIsNotResetOptions, LimitModelResetTypeIsDailyOptions, LimitModelResetTypeIsWeeklyOptions, LimitModelResetTypeIsMonthlyOptions, LimitModelResetTypeIsDaysOptions, CurrentMasterData, };

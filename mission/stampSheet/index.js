@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyCounterValueByUserId = exports.VerifyCompleteByUserId = exports.DecreaseCounterByUserId = exports.BatchReceiveByUserId = exports.ReceiveByUserId = exports.SetCounterByUserId = exports.IncreaseCounterByUserId = exports.RevertReceiveByUserId = void 0;
+exports.VerifyCounterValueByUserId = exports.VerifyCompleteByUserId = exports.ResetCounterByUserId = exports.DecreaseCounterByUserId = exports.BatchReceiveByUserId = exports.ReceiveByUserId = exports.SetCounterByUserId = exports.IncreaseCounterByUserId = exports.RevertReceiveByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ const BatchReceiveByUserId_1 = tslib_1.__importDefault(require("./BatchReceiveBy
 exports.BatchReceiveByUserId = BatchReceiveByUserId_1.default;
 const DecreaseCounterByUserId_1 = tslib_1.__importDefault(require("./DecreaseCounterByUserId"));
 exports.DecreaseCounterByUserId = DecreaseCounterByUserId_1.default;
+const ResetCounterByUserId_1 = tslib_1.__importDefault(require("./ResetCounterByUserId"));
+exports.ResetCounterByUserId = ResetCounterByUserId_1.default;
 const VerifyCompleteByUserId_1 = tslib_1.__importDefault(require("./VerifyCompleteByUserId"));
 exports.VerifyCompleteByUserId = VerifyCompleteByUserId_1.default;
 const VerifyCounterValueByUserId_1 = tslib_1.__importDefault(require("./VerifyCounterValueByUserId"));

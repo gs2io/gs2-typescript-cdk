@@ -19,6 +19,7 @@ import SetCounterByUserId from "./SetCounterByUserId";
 import ReceiveByUserId from "./ReceiveByUserId";
 import BatchReceiveByUserId from "./BatchReceiveByUserId";
 import DecreaseCounterByUserId from "./DecreaseCounterByUserId";
+import ResetCounterByUserId from "./ResetCounterByUserId";
 import VerifyCompleteByUserId from "./VerifyCompleteByUserId";
 import VerifyCounterValueByUserId from "./VerifyCounterValueByUserId";
 
@@ -29,6 +30,7 @@ export {
     ReceiveByUserId,
     BatchReceiveByUserId,
     DecreaseCounterByUserId,
+    ResetCounterByUserId,
     VerifyCompleteByUserId,
     VerifyCounterValueByUserId,
 }

@@ -18,6 +18,7 @@ import { LimitModelResetTypeIsNotResetOptions } from "./options/LimitModelResetT
 import { LimitModelResetTypeIsDailyOptions } from "./options/LimitModelResetTypeIsDailyOptions";
 import { LimitModelResetTypeIsWeeklyOptions } from "./options/LimitModelResetTypeIsWeeklyOptions";
 import { LimitModelResetTypeIsMonthlyOptions } from "./options/LimitModelResetTypeIsMonthlyOptions";
+import { LimitModelResetTypeIsDaysOptions } from "./options/LimitModelResetTypeIsDaysOptions";
 import { LimitModelResetType } from "./enum/LimitModelResetType";
 import { LimitModelResetDayOfWeek } from "./enum/LimitModelResetDayOfWeek";
 
@@ -28,6 +29,8 @@ export default class LimitModel {
     private readonly resetDayOfMonth: number|null = null;
     private readonly resetDayOfWeek: LimitModelResetDayOfWeek|null = null;
     private readonly resetHour: number|null = null;
+    private readonly anchorTimestamp: number|null = null;
+    private readonly days: number|null = null;
 
     public constructor(
         name: string,
@@ -40,6 +43,8 @@ export default class LimitModel {
         this.resetDayOfMonth = options?.resetDayOfMonth ?? null;
         this.resetDayOfWeek = options?.resetDayOfWeek ?? null;
         this.resetHour = options?.resetHour ?? null;
+        this.anchorTimestamp = options?.anchorTimestamp ?? null;
+        this.days = options?.days ?? null;
     }
 
     public static resetTypeIsNotReset(
@@ -104,6 +109,23 @@ export default class LimitModel {
         );
     }
 
+    public static resetTypeIsDays(
+        name: string,
+        anchorTimestamp: number,
+        days: number,
+        options: LimitModelResetTypeIsDaysOptions|null = null,
+    ): LimitModel {
+        return new LimitModel(
+            name,
+            LimitModelResetType.DAYS,
+            {
+                anchorTimestamp: anchorTimestamp,
+                days: days,
+                metadata: options?.metadata,
+            },
+        );
+    }
+
     public properties(
     ): {[name: string]: any} {
         let properties: {[name: string]: any} = {};
@@ -125,6 +147,12 @@ export default class LimitModel {
         }
         if (this.resetHour != null) {
             properties["resetHour"] = this.resetHour;
+        }
+        if (this.anchorTimestamp != null) {
+            properties["anchorTimestamp"] = this.anchorTimestamp;
+        }
+        if (this.days != null) {
+            properties["days"] = this.days;
         }
 
         return properties;
