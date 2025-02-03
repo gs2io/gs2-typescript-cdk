@@ -1,1 +1,1 @@
-{"version":3,"file":"TriggerTriggerStrategy.js","sourceRoot":"","sources":["TriggerTriggerStrategy.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;;AAIU,QAAA,sBAAsB,GAAG;IAClC,KAAK,EAAE,OAAO;IACd,MAAM,EAAE,QAAQ;IAChB,IAAI,EAAE,MAAM;CACN,CAAC"}
+{"version":3,"file":"TriggerTriggerStrategy.js","sourceRoot":"","sources":["TriggerTriggerStrategy.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;;AAIU,QAAA,sBAAsB,GAAG;IAClC,KAAK,EAAE,OAAO;IACd,MAAM,EAAE,QAAQ;IAChB,IAAI,EAAE,MAAM;IACZ,gBAAgB,EAAE,gBAAgB;IAClC,uBAAuB,EAAE,sBAAsB;IAC/C,YAAY,EAAE,aAAa;CACrB,CAAC"}

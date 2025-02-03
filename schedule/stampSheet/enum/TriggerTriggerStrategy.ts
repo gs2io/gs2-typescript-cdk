@@ -20,5 +20,8 @@ export const TriggerTriggerStrategy = {
     RENEW: "renew",
     EXTEND: "extend",
     DROP: "drop",
+    REPEAT_CYCLE_END: "repeatCycleEnd",
+    REPEAT_CYCLE_NEXT_START: "repeatCycleNextStart",
+    ABSOLUTE_END: "absoluteEnd",
 } as const;
 export type TriggerTriggerStrategy = typeof TriggerTriggerStrategy[keyof typeof TriggerTriggerStrategy];

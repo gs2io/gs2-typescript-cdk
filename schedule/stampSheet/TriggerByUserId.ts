@@ -22,7 +22,8 @@ export default class TriggerByUserId extends AcquireAction {
     private readonly triggerName: string;
     private readonly userId: string;
     private readonly triggerStrategy: TriggerTriggerStrategy;
-    private readonly ttl: number;
+    private readonly ttl: number|null = null;
+    private readonly eventId: string|null = null;
     private readonly timeOffsetToken: string|null = null;
 
 
@@ -30,7 +31,8 @@ export default class TriggerByUserId extends AcquireAction {
         namespaceName: string,
         triggerName: string,
         triggerStrategy: TriggerTriggerStrategy,
-        ttl: number,
+        ttl: number|null = null,
+        eventId: string|null = null,
         timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
@@ -39,7 +41,8 @@ export default class TriggerByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.triggerName = triggerName;
         this.triggerStrategy = triggerStrategy;
-        this.ttl = ttl;
+        this.ttl = ttl ?? null;
+        this.eventId = eventId ?? null;
         this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
@@ -62,6 +65,9 @@ export default class TriggerByUserId extends AcquireAction {
         }
         if (this.ttl != null) {
             properties["ttl"] = this.ttl;
+        }
+        if (this.eventId != null) {
+            properties["eventId"] = this.eventId;
         }
         if (this.timeOffsetToken != null) {
             properties["timeOffsetToken"] = this.timeOffsetToken;

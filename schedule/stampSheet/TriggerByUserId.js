@@ -17,13 +17,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class TriggerByUserId extends model_1.AcquireAction {
-    constructor(namespaceName, triggerName, triggerStrategy, ttl, timeOffsetToken = null, userId = "#{userId}") {
+    constructor(namespaceName, triggerName, triggerStrategy, ttl = null, eventId = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
+        this.ttl = null;
+        this.eventId = null;
         this.timeOffsetToken = null;
         this.namespaceName = namespaceName;
         this.triggerName = triggerName;
         this.triggerStrategy = triggerStrategy;
-        this.ttl = ttl;
+        this.ttl = ttl !== null && ttl !== void 0 ? ttl : null;
+        this.eventId = eventId !== null && eventId !== void 0 ? eventId : null;
         this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
@@ -43,6 +46,9 @@ class TriggerByUserId extends model_1.AcquireAction {
         }
         if (this.ttl != null) {
             properties["ttl"] = this.ttl;
+        }
+        if (this.eventId != null) {
+            properties["eventId"] = this.eventId;
         }
         if (this.timeOffsetToken != null) {
             properties["timeOffsetToken"] = this.timeOffsetToken;

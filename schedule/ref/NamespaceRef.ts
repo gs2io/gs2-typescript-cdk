@@ -35,7 +35,8 @@ export default class NamespaceRef {
     public trigger(
         triggerName: string,
         triggerStrategy: TriggerTriggerStrategy,
-        ttl: number,
+        ttl: number|null = null,
+        eventId: string|null = null,
         userId: string = "#{userId}",
     ): TriggerByUserId {
         return new TriggerByUserId(
@@ -43,6 +44,7 @@ export default class NamespaceRef {
             triggerName,
             triggerStrategy,
             ttl,
+            eventId,
             userId,
         );
     }

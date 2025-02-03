@@ -20,5 +20,8 @@ exports.TriggerTriggerStrategy = {
     RENEW: "renew",
     EXTEND: "extend",
     DROP: "drop",
+    REPEAT_CYCLE_END: "repeatCycleEnd",
+    REPEAT_CYCLE_NEXT_START: "repeatCycleNextStart",
+    ABSOLUTE_END: "absoluteEnd",
 };
 //# sourceMappingURL=TriggerTriggerStrategy.js.map

@@ -25,8 +25,8 @@ class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
-    trigger(triggerName, triggerStrategy, ttl, userId = "#{userId}") {
-        return new TriggerByUserId_1.default(this.namespaceName, triggerName, triggerStrategy, ttl, userId);
+    trigger(triggerName, triggerStrategy, ttl = null, eventId = null, userId = "#{userId}") {
+        return new TriggerByUserId_1.default(this.namespaceName, triggerName, triggerStrategy, ttl, eventId, userId);
     }
     deleteTrigger(triggerName, userId = "#{userId}") {
         return new DeleteTriggerByUserId_1.default(this.namespaceName, triggerName, userId);
