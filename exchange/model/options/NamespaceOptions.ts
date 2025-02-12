@@ -24,6 +24,7 @@ export interface NamespaceOptions {
     transactionSetting?: TransactionSetting|null;
     exchangeScript?: ScriptSetting|null;
     incrementalExchangeScript?: ScriptSetting|null;
+    acquireAwaitScript?: ScriptSetting|null;
     logSetting?: LogSetting|null;
     queueNamespaceId?: string|null;
     keyId?: string|null;

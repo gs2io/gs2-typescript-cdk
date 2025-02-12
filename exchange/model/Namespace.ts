@@ -36,6 +36,7 @@ export default class Namespace extends CdkResource {
     private readonly transactionSetting: TransactionSetting|null = null;
     private readonly exchangeScript: ScriptSetting|null = null;
     private readonly incrementalExchangeScript: ScriptSetting|null = null;
+    private readonly acquireAwaitScript: ScriptSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -55,6 +56,7 @@ export default class Namespace extends CdkResource {
         this.transactionSetting = options?.transactionSetting ?? null;
         this.exchangeScript = options?.exchangeScript ?? null;
         this.incrementalExchangeScript = options?.incrementalExchangeScript ?? null;
+        this.acquireAwaitScript = options?.acquireAwaitScript ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -98,6 +100,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.incrementalExchangeScript != null) {
             properties["IncrementalExchangeScript"] = this.incrementalExchangeScript?.properties(
+            );
+        }
+        if (this.acquireAwaitScript != null) {
+            properties["AcquireAwaitScript"] = this.acquireAwaitScript?.properties(
             );
         }
         if (this.logSetting != null) {

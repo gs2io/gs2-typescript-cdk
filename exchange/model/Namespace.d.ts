@@ -13,6 +13,7 @@ export default class Namespace extends CdkResource {
     private readonly transactionSetting;
     private readonly exchangeScript;
     private readonly incrementalExchangeScript;
+    private readonly acquireAwaitScript;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;

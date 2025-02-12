@@ -22,7 +22,7 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         super("Exchange_Namespace_" + name);
         this.description = null;
         this.enableAwaitExchange = null;
@@ -30,6 +30,7 @@ class Namespace extends model_1.CdkResource {
         this.transactionSetting = null;
         this.exchangeScript = null;
         this.incrementalExchangeScript = null;
+        this.acquireAwaitScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -39,7 +40,8 @@ class Namespace extends model_1.CdkResource {
         this.transactionSetting = (_d = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _d !== void 0 ? _d : null;
         this.exchangeScript = (_e = options === null || options === void 0 ? void 0 : options.exchangeScript) !== null && _e !== void 0 ? _e : null;
         this.incrementalExchangeScript = (_f = options === null || options === void 0 ? void 0 : options.incrementalExchangeScript) !== null && _f !== void 0 ? _f : null;
-        this.logSetting = (_g = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _g !== void 0 ? _g : null;
+        this.acquireAwaitScript = (_g = options === null || options === void 0 ? void 0 : options.acquireAwaitScript) !== null && _g !== void 0 ? _g : null;
+        this.logSetting = (_h = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _h !== void 0 ? _h : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -49,7 +51,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Exchange::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -72,8 +74,11 @@ class Namespace extends model_1.CdkResource {
         if (this.incrementalExchangeScript != null) {
             properties["IncrementalExchangeScript"] = (_c = this.incrementalExchangeScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
+        if (this.acquireAwaitScript != null) {
+            properties["AcquireAwaitScript"] = (_d = this.acquireAwaitScript) === null || _d === void 0 ? void 0 : _d.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["LogSetting"] = (_e = this.logSetting) === null || _e === void 0 ? void 0 : _e.properties();
         }
         return properties;
     }
