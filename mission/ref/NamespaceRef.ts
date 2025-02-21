@@ -26,11 +26,11 @@ import BatchReceiveByUserId from "../stampSheet/BatchReceiveByUserId";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import ResetCounterByUserId from "../stampSheet/ResetCounterByUserId";
 import VerifyCompleteByUserId from "../stampSheet/VerifyCompleteByUserId";
-import { CompleteVerifyType } from "../stampSheet/enum/CompleteVerifyType";
+import { CompleteVerifyType } from "../stampSheet/enums/CompleteVerifyType";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
-import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
-import { CounterScopeType } from "../stampSheet/enum/CounterScopeType";
-import { CounterResetType } from "../stampSheet/enum/CounterResetType";
+import { CounterVerifyType } from "../stampSheet/enums/CounterVerifyType";
+import { CounterScopeType } from "../stampSheet/enums/CounterScopeType";
+import { CounterResetType } from "../stampSheet/enums/CounterResetType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;

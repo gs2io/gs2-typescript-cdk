@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { RarityParameterStatusVerifyType } from "./enum/RarityParameterStatusVerifyType";
+import { RarityParameterStatusVerifyType } from "./enums/RarityParameterStatusVerifyType";
 export default class VerifyRarityParameterStatusByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly parameterName;

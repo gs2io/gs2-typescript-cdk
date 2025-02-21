@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const VersionModelScope_1 = require("./enum/VersionModelScope");
-const VersionModelType_1 = require("./enum/VersionModelType");
+const VersionModelScope_1 = require("./enums/VersionModelScope");
+const VersionModelType_1 = require("./enums/VersionModelType");
 class VersionModel {
     constructor(name, scope, type, options = null) {
         var _a, _b, _c, _d, _e, _f, _g, _h;

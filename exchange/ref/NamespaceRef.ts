@@ -23,7 +23,7 @@ import IncrementalExchangeByUserId from "../stampSheet/IncrementalExchangeByUser
 import CreateAwaitByUserId from "../stampSheet/CreateAwaitByUserId";
 import AcquireForceByUserId from "../stampSheet/AcquireForceByUserId";
 import SkipByUserId from "../stampSheet/SkipByUserId";
-import { AwaitSkipType } from "../stampSheet/enum/AwaitSkipType";
+import { AwaitSkipType } from "../stampSheet/enums/AwaitSkipType";
 import DeleteAwaitByUserId from "../stampSheet/DeleteAwaitByUserId";
 
 export default class NamespaceRef {

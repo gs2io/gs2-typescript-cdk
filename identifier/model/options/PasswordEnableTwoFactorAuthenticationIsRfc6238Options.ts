@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import TwoFactorAuthenticationSetting from "../TwoFactorAuthenticationSetting";
-import { PasswordEnableTwoFactorAuthentication } from "../enum/PasswordEnableTwoFactorAuthentication";
+import { PasswordEnableTwoFactorAuthentication } from "../enums/PasswordEnableTwoFactorAuthentication";
 
 export interface PasswordEnableTwoFactorAuthenticationIsRfc6238Options {
     twoFactorAuthenticationSetting?: TwoFactorAuthenticationSetting|null;

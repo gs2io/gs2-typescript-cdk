@@ -1,5 +1,5 @@
 import { SubscribeRankingModelOptions } from "./options/SubscribeRankingModelOptions";
-import { SubscribeRankingModelOrderDirection } from "./enum/SubscribeRankingModelOrderDirection";
+import { SubscribeRankingModelOrderDirection } from "./enums/SubscribeRankingModelOrderDirection";
 export default class SubscribeRankingModel {
     private readonly name;
     private readonly sum;

@@ -12,6 +12,8 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ * 
+ * deny overwrite
  */
 import RepeatSetting from "./RepeatSetting";
 import { EventOptions } from "./options/EventOptions";
@@ -21,16 +23,16 @@ import { EventRepeatTypeIsAlwaysOptions } from "./options/EventRepeatTypeIsAlway
 import { EventRepeatTypeIsDailyOptions } from "./options/EventRepeatTypeIsDailyOptions";
 import { EventRepeatTypeIsWeeklyOptions } from "./options/EventRepeatTypeIsWeeklyOptions";
 import { EventRepeatTypeIsMonthlyOptions } from "./options/EventRepeatTypeIsMonthlyOptions";
-import { EventScheduleType } from "./enum/EventScheduleType";
-import { EventRepeatType } from "./enum/EventRepeatType";
-import { EventRepeatBeginDayOfWeek } from "./enum/EventRepeatBeginDayOfWeek";
-import { EventRepeatEndDayOfWeek } from "./enum/EventRepeatEndDayOfWeek";
+import { EventScheduleType } from "./enums/EventScheduleType";
+import { EventRepeatType } from "./enums/EventRepeatType";
+import { EventRepeatBeginDayOfWeek } from "./enums/EventRepeatBeginDayOfWeek";
+import { EventRepeatEndDayOfWeek } from "./enums/EventRepeatEndDayOfWeek";
 
 export default class Event {
     private readonly name: string;
     private readonly scheduleType: EventScheduleType;
     private readonly repeatSetting: RepeatSetting;
-    private readonly repeatType: EventRepeatType;
+    private readonly repeatType: EventRepeatType|null = null;
     private readonly metadata: string|null = null;
     private readonly absoluteBegin: number|null = null;
     private readonly absoluteEnd: number|null = null;
@@ -46,13 +48,12 @@ export default class Event {
         name: string,
         scheduleType: EventScheduleType,
         repeatSetting: RepeatSetting,
-        repeatType: EventRepeatType,
         options: EventOptions|null = null,
     ) {
         this.name = name;
         this.scheduleType = scheduleType;
         this.repeatSetting = repeatSetting;
-        this.repeatType = repeatType;
+        this.repeatType = options?.repeatType ?? null;
         this.metadata = options?.metadata ?? null;
         this.absoluteBegin = options?.absoluteBegin ?? null;
         this.absoluteEnd = options?.absoluteEnd ?? null;
@@ -68,14 +69,12 @@ export default class Event {
     public static scheduleTypeIsAbsolute(
         name: string,
         repeatSetting: RepeatSetting,
-        repeatType: EventRepeatType,
         options: EventScheduleTypeIsAbsoluteOptions|null = null,
     ): Event {
         return new Event(
             name,
             EventScheduleType.ABSOLUTE,
             repeatSetting,
-            repeatType,
             {
                 metadata: options?.metadata,
                 absoluteBegin: options?.absoluteBegin,
@@ -87,7 +86,6 @@ export default class Event {
     public static scheduleTypeIsRelative(
         name: string,
         repeatSetting: RepeatSetting,
-        repeatType: EventRepeatType,
         relativeTriggerName: string,
         options: EventScheduleTypeIsRelativeOptions|null = null,
     ): Event {
@@ -95,7 +93,6 @@ export default class Event {
             name,
             EventScheduleType.RELATIVE,
             repeatSetting,
-            repeatType,
             {
                 relativeTriggerName: relativeTriggerName,
                 metadata: options?.metadata,
@@ -115,8 +112,8 @@ export default class Event {
             name,
             scheduleType,
             repeatSetting,
-            EventRepeatType.ALWAYS,
             {
+                repeatType: EventRepeatType.ALWAYS,
                 metadata: options?.metadata,
                 absoluteBegin: options?.absoluteBegin,
                 absoluteEnd: options?.absoluteEnd,
@@ -136,8 +133,8 @@ export default class Event {
             name,
             scheduleType,
             repeatSetting,
-            EventRepeatType.DAILY,
             {
+                repeatType: EventRepeatType.DAILY,
                 repeatBeginHour: repeatBeginHour,
                 repeatEndHour: repeatEndHour,
                 metadata: options?.metadata,
@@ -161,8 +158,8 @@ export default class Event {
             name,
             scheduleType,
             repeatSetting,
-            EventRepeatType.WEEKLY,
             {
+                repeatType: EventRepeatType.WEEKLY,
                 repeatBeginDayOfWeek: repeatBeginDayOfWeek,
                 repeatEndDayOfWeek: repeatEndDayOfWeek,
                 repeatBeginHour: repeatBeginHour,
@@ -188,8 +185,8 @@ export default class Event {
             name,
             scheduleType,
             repeatSetting,
-            EventRepeatType.MONTHLY,
             {
+                repeatType: EventRepeatType.MONTHLY,
                 repeatBeginDayOfMonth: repeatBeginDayOfMonth,
                 repeatEndDayOfMonth: repeatEndDayOfMonth,
                 repeatBeginHour: repeatBeginHour,

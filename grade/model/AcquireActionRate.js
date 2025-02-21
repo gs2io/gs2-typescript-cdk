@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const AcquireActionRateMode_1 = require("./enum/AcquireActionRateMode");
+const AcquireActionRateMode_1 = require("./enums/AcquireActionRateMode");
 class AcquireActionRate {
     constructor(name, mode, options = null) {
         var _a, _b;

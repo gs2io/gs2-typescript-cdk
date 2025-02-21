@@ -14,9 +14,9 @@
  * permissions and limitations under the License.
  */
 import { VerifyAction } from "../../../core/model";
-import { CounterScopeModelScopeType } from "../enum/CounterScopeModelScopeType";
-import { CounterScopeModelResetType } from "../enum/CounterScopeModelResetType";
-import { CounterScopeModelResetDayOfWeek } from "../enum/CounterScopeModelResetDayOfWeek";
+import { CounterScopeModelScopeType } from "../enums/CounterScopeModelScopeType";
+import { CounterScopeModelResetType } from "../enums/CounterScopeModelResetType";
+import { CounterScopeModelResetDayOfWeek } from "../enums/CounterScopeModelResetDayOfWeek";
 
 export interface CounterScopeModelOptions {
     resetType?: CounterScopeModelResetType|null;

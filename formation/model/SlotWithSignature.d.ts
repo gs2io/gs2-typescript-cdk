@@ -1,5 +1,5 @@
 import { SlotWithSignatureOptions } from "./options/SlotWithSignatureOptions";
-import { SlotWithSignaturePropertyType } from "./enum/SlotWithSignaturePropertyType";
+import { SlotWithSignaturePropertyType } from "./enums/SlotWithSignaturePropertyType";
 export default class SlotWithSignature {
     private readonly name;
     private readonly propertyType;

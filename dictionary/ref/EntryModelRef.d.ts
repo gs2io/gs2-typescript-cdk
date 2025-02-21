@@ -1,7 +1,7 @@
 import AddEntriesByUserId from "../stampSheet/AddEntriesByUserId";
 import DeleteEntriesByUserId from "../stampSheet/DeleteEntriesByUserId";
 import VerifyEntryByUserId from "../stampSheet/VerifyEntryByUserId";
-import { EntryVerifyType } from "../stampSheet/enum/EntryVerifyType";
+import { EntryVerifyType } from "../stampSheet/enums/EntryVerifyType";
 export default class EntryModelRef {
     private readonly namespaceName;
     private readonly entryModelName;

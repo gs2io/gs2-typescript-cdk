@@ -25,7 +25,7 @@ import AddRarityParameterStatusByUserId from "../stampSheet/AddRarityParameterSt
 import SetRarityParameterStatusByUserId from "../stampSheet/SetRarityParameterStatusByUserId";
 import RarityParameterValue from "../model/RarityParameterValue";
 import VerifyRarityParameterStatusByUserId from "../stampSheet/VerifyRarityParameterStatusByUserId";
-import { RarityParameterStatusVerifyType } from "../stampSheet/enum/RarityParameterStatusVerifyType";
+import { RarityParameterStatusVerifyType } from "../stampSheet/enums/RarityParameterStatusVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;

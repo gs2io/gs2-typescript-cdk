@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { GlobalRankingScoreVerifyType } from "./enum/GlobalRankingScoreVerifyType";
+import { GlobalRankingScoreVerifyType } from "./enums/GlobalRankingScoreVerifyType";
 export default class VerifyGlobalRankingScoreByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;

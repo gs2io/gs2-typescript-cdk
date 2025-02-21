@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { SeasonGatheringVerifyType } from "./enum/SeasonGatheringVerifyType";
+import { SeasonGatheringVerifyType } from "./enums/SeasonGatheringVerifyType";
 export default class VerifyIncludeParticipantByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly seasonName;

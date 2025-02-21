@@ -18,8 +18,8 @@
 import { ScopedValueOptions } from "./options/ScopedValueOptions";
 import { ScopedValueScopeTypeIsResetTimingOptions } from "./options/ScopedValueScopeTypeIsResetTimingOptions";
 import { ScopedValueScopeTypeIsVerifyActionOptions } from "./options/ScopedValueScopeTypeIsVerifyActionOptions";
-import { ScopedValueScopeType } from "./enum/ScopedValueScopeType";
-import { ScopedValueResetType } from "./enum/ScopedValueResetType";
+import { ScopedValueScopeType } from "./enums/ScopedValueScopeType";
+import { ScopedValueResetType } from "./enums/ScopedValueResetType";
 
 export default class ScopedValue {
     private readonly scopeType: ScopedValueScopeType;

@@ -13,8 +13,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { LimitModelResetType } from "../enum/LimitModelResetType";
-import { LimitModelResetDayOfWeek } from "../enum/LimitModelResetDayOfWeek";
+import { LimitModelResetType } from "../enums/LimitModelResetType";
+import { LimitModelResetDayOfWeek } from "../enums/LimitModelResetDayOfWeek";
 
 export interface LimitModelResetTypeIsNotResetOptions {
     metadata?: string|null;

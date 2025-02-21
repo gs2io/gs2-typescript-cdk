@@ -12,14 +12,17 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ * 
+ * deny overwrite
  */
 import RepeatSetting from "../RepeatSetting";
-import { EventScheduleType } from "../enum/EventScheduleType";
-import { EventRepeatType } from "../enum/EventRepeatType";
-import { EventRepeatBeginDayOfWeek } from "../enum/EventRepeatBeginDayOfWeek";
-import { EventRepeatEndDayOfWeek } from "../enum/EventRepeatEndDayOfWeek";
+import { EventScheduleType } from "../enums/EventScheduleType";
+import { EventRepeatType } from "../enums/EventRepeatType";
+import { EventRepeatBeginDayOfWeek } from "../enums/EventRepeatBeginDayOfWeek";
+import { EventRepeatEndDayOfWeek } from "../enums/EventRepeatEndDayOfWeek";
 
 export interface EventOptions {
+    repeatType?: EventRepeatType|null;
     metadata?: string|null;
     absoluteBegin?: number|null;
     absoluteEnd?: number|null;

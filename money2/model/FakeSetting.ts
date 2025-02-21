@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import { FakeSettingOptions } from "./options/FakeSettingOptions";
-import { FakeSettingAcceptFakeReceipt } from "./enum/FakeSettingAcceptFakeReceipt";
+import { FakeSettingAcceptFakeReceipt } from "./enums/FakeSettingAcceptFakeReceipt";
 
 export default class FakeSetting {
     private readonly acceptFakeReceipt: FakeSettingAcceptFakeReceipt;

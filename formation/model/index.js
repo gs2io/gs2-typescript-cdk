@@ -31,7 +31,7 @@ const SlotModel_1 = tslib_1.__importDefault(require("./SlotModel"));
 exports.SlotModel = SlotModel_1.default;
 const SlotWithSignature_1 = tslib_1.__importDefault(require("./SlotWithSignature"));
 exports.SlotWithSignature = SlotWithSignature_1.default;
-const SlotWithSignaturePropertyType_1 = require("./enum/SlotWithSignaturePropertyType");
+const SlotWithSignaturePropertyType_1 = require("./enums/SlotWithSignaturePropertyType");
 Object.defineProperty(exports, "SlotWithSignaturePropertyType", { enumerable: true, get: function () { return SlotWithSignaturePropertyType_1.SlotWithSignaturePropertyType; } });
 const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
 exports.VerifyActionResult = VerifyActionResult_1.default;

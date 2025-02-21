@@ -15,8 +15,8 @@
  */
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import LogSetting from "../../../core/model/LogSetting";
-import { NamespacePriority } from "../enum/NamespacePriority";
-import { NamespaceCurrency } from "../enum/NamespaceCurrency";
+import { NamespacePriority } from "../enums/NamespacePriority";
+import { NamespaceCurrency } from "../enums/NamespaceCurrency";
 
 export interface NamespaceOptions {
     description?: string|null;

@@ -20,7 +20,7 @@ import AcquireBigItemByUserId from "../stampSheet/AcquireBigItemByUserId";
 import SetBigItemByUserId from "../stampSheet/SetBigItemByUserId";
 import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
 import VerifyBigItemByUserId from "../stampSheet/VerifyBigItemByUserId";
-import { BigItemVerifyType } from "../stampSheet/enum/BigItemVerifyType";
+import { BigItemVerifyType } from "../stampSheet/enums/BigItemVerifyType";
 
 export default class BigInventoryModelRef {
     private readonly namespaceName: string;

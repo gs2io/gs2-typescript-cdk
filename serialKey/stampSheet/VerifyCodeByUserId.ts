@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { SerialKeyVerifyType } from "./enum/SerialKeyVerifyType";
+import { SerialKeyVerifyType } from "./enums/SerialKeyVerifyType";
 
 export default class VerifyCodeByUserId extends VerifyAction {
     private readonly namespaceName: string;

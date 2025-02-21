@@ -4,9 +4,9 @@ import AddReferenceOfByUserId from "../stampSheet/AddReferenceOfByUserId";
 import DeleteReferenceOfByUserId from "../stampSheet/DeleteReferenceOfByUserId";
 import ConsumeItemSetByUserId from "../stampSheet/ConsumeItemSetByUserId";
 import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
-import { ItemSetVerifyType } from "../stampSheet/enum/ItemSetVerifyType";
+import { ItemSetVerifyType } from "../stampSheet/enums/ItemSetVerifyType";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
-import { ReferenceOfVerifyType } from "../stampSheet/enum/ReferenceOfVerifyType";
+import { ReferenceOfVerifyType } from "../stampSheet/enums/ReferenceOfVerifyType";
 export default class ItemModelRef {
     private readonly namespaceName;
     private readonly inventoryName;

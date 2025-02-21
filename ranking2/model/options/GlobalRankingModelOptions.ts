@@ -15,8 +15,8 @@
  */
 import { AcquireAction } from "../../../core/model";
 import RankingReward from "../RankingReward";
-import { GlobalRankingModelOrderDirection } from "../enum/GlobalRankingModelOrderDirection";
-import { GlobalRankingModelRewardCalculationIndex } from "../enum/GlobalRankingModelRewardCalculationIndex";
+import { GlobalRankingModelOrderDirection } from "../enums/GlobalRankingModelOrderDirection";
+import { GlobalRankingModelRewardCalculationIndex } from "../enums/GlobalRankingModelRewardCalculationIndex";
 
 export interface GlobalRankingModelOptions {
     metadata?: string|null;

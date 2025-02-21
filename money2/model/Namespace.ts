@@ -23,7 +23,7 @@ import LogSetting from "../../core/model/LogSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import StoreContentModel from "./StoreContentModel";
-import { NamespaceCurrencyUsagePriority } from "./enum/NamespaceCurrencyUsagePriority";
+import { NamespaceCurrencyUsagePriority } from "./enums/NamespaceCurrencyUsagePriority";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 

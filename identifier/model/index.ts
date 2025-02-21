@@ -21,7 +21,7 @@ import Identifier from "./Identifier";
 import { IdentifierOptions } from "./options/IdentifierOptions";
 import Password from "./Password";
 import { PasswordOptions } from "./options/PasswordOptions";
-import { PasswordEnableTwoFactorAuthentication } from "./enum/PasswordEnableTwoFactorAuthentication";
+import { PasswordEnableTwoFactorAuthentication } from "./enums/PasswordEnableTwoFactorAuthentication";
 import { PasswordEnableTwoFactorAuthenticationIsRfc6238Options } from "./options/PasswordEnableTwoFactorAuthenticationIsRfc6238Options"
 import { PasswordEnableTwoFactorAuthenticationIsDisableOptions } from "./options/PasswordEnableTwoFactorAuthenticationIsDisableOptions"
 import AttachSecurityPolicy from "./AttachSecurityPolicy";
@@ -30,7 +30,7 @@ import ProjectToken from "./ProjectToken";
 import { ProjectTokenOptions } from "./options/ProjectTokenOptions";
 import TwoFactorAuthenticationSetting from "./TwoFactorAuthenticationSetting";
 import { TwoFactorAuthenticationSettingOptions } from "./options/TwoFactorAuthenticationSettingOptions";
-import { TwoFactorAuthenticationSettingStatus } from "./enum/TwoFactorAuthenticationSettingStatus";
+import { TwoFactorAuthenticationSettingStatus } from "./enums/TwoFactorAuthenticationSettingStatus";
 
 export {
     User,

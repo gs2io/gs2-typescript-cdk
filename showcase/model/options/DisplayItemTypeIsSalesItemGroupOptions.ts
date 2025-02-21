@@ -18,7 +18,7 @@ import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 import SalesItem from "../SalesItem";
 import SalesItemGroup from "../SalesItemGroup";
-import { DisplayItemType } from "../enum/DisplayItemType";
+import { DisplayItemType } from "../enums/DisplayItemType";
 
 export interface DisplayItemTypeIsSalesItemGroupOptions {
     salesPeriodEventId?: string|null;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const EventEventType_1 = require("./enum/EventEventType");
+const EventEventType_1 = require("./enums/EventEventType");
 class Event {
     constructor(eventType, options = null) {
         var _a, _b;

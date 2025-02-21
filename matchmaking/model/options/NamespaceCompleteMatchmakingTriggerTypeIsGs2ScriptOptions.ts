@@ -16,10 +16,10 @@
 import { ScriptSetting } from "../../../core/model";
 import { NotificationSetting } from "../../../core/model";
 import { LogSetting } from "../../../core/model";
-import { NamespaceEnableDisconnectDetection } from "../enum/NamespaceEnableDisconnectDetection";
-import { NamespaceCreateGatheringTriggerType } from "../enum/NamespaceCreateGatheringTriggerType";
-import { NamespaceCompleteMatchmakingTriggerType } from "../enum/NamespaceCompleteMatchmakingTriggerType";
-import { NamespaceEnableCollaborateSeasonRating } from "../enum/NamespaceEnableCollaborateSeasonRating";
+import { NamespaceEnableDisconnectDetection } from "../enums/NamespaceEnableDisconnectDetection";
+import { NamespaceCreateGatheringTriggerType } from "../enums/NamespaceCreateGatheringTriggerType";
+import { NamespaceCompleteMatchmakingTriggerType } from "../enums/NamespaceCompleteMatchmakingTriggerType";
+import { NamespaceEnableCollaborateSeasonRating } from "../enums/NamespaceEnableCollaborateSeasonRating";
 
 export interface NamespaceCompleteMatchmakingTriggerTypeIsGs2ScriptOptions {
     description?: string|null;

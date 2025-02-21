@@ -3,8 +3,8 @@ import { GetAttr } from "../../core/func";
 import NamespaceRef from "../ref/NamespaceRef";
 import RatingModel from "./RatingModel";
 import SeasonModel from "./SeasonModel";
-import { NamespaceCreateGatheringTriggerType } from "./enum/NamespaceCreateGatheringTriggerType";
-import { NamespaceCompleteMatchmakingTriggerType } from "./enum/NamespaceCompleteMatchmakingTriggerType";
+import { NamespaceCreateGatheringTriggerType } from "./enums/NamespaceCreateGatheringTriggerType";
+import { NamespaceCompleteMatchmakingTriggerType } from "./enums/NamespaceCompleteMatchmakingTriggerType";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;

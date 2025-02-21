@@ -15,8 +15,8 @@
  */
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
-import { NamespaceServerType } from "../enum/NamespaceServerType";
-import { NamespaceServerSpec } from "../enum/NamespaceServerSpec";
+import { NamespaceServerType } from "../enums/NamespaceServerType";
+import { NamespaceServerSpec } from "../enums/NamespaceServerSpec";
 
 export interface NamespaceOptions {
     description?: string|null;

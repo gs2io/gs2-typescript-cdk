@@ -19,7 +19,7 @@ import { AcquireAction } from "../../core/model";
 import { RateModelOptions } from "./options/RateModelOptions";
 import { RateModelTimingTypeIsImmediateOptions } from "./options/RateModelTimingTypeIsImmediateOptions";
 import { RateModelTimingTypeIsAwaitOptions } from "./options/RateModelTimingTypeIsAwaitOptions";
-import { RateModelTimingType } from "./enum/RateModelTimingType";
+import { RateModelTimingType } from "./enums/RateModelTimingType";
 
 export default class RateModel {
     private readonly name: string;

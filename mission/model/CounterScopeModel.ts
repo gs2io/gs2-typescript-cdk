@@ -22,9 +22,9 @@ import { CounterScopeModelResetTypeIsDailyOptions } from "./options/CounterScope
 import { CounterScopeModelResetTypeIsWeeklyOptions } from "./options/CounterScopeModelResetTypeIsWeeklyOptions";
 import { CounterScopeModelResetTypeIsMonthlyOptions } from "./options/CounterScopeModelResetTypeIsMonthlyOptions";
 import { CounterScopeModelResetTypeIsDaysOptions } from "./options/CounterScopeModelResetTypeIsDaysOptions";
-import { CounterScopeModelScopeType } from "./enum/CounterScopeModelScopeType";
-import { CounterScopeModelResetType } from "./enum/CounterScopeModelResetType";
-import { CounterScopeModelResetDayOfWeek } from "./enum/CounterScopeModelResetDayOfWeek";
+import { CounterScopeModelScopeType } from "./enums/CounterScopeModelScopeType";
+import { CounterScopeModelResetType } from "./enums/CounterScopeModelResetType";
+import { CounterScopeModelResetDayOfWeek } from "./enums/CounterScopeModelResetDayOfWeek";
 
 export default class CounterScopeModel {
     private readonly scopeType: CounterScopeModelScopeType;

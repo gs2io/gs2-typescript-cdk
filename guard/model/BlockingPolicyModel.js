@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const BlockingPolicyModelLocationDetection_1 = require("./enum/BlockingPolicyModelLocationDetection");
-const BlockingPolicyModelAnonymousIpDetection_1 = require("./enum/BlockingPolicyModelAnonymousIpDetection");
-const BlockingPolicyModelHostingProviderIpDetection_1 = require("./enum/BlockingPolicyModelHostingProviderIpDetection");
-const BlockingPolicyModelReputationIpDetection_1 = require("./enum/BlockingPolicyModelReputationIpDetection");
-const BlockingPolicyModelIpAddressesDetection_1 = require("./enum/BlockingPolicyModelIpAddressesDetection");
+const BlockingPolicyModelLocationDetection_1 = require("./enums/BlockingPolicyModelLocationDetection");
+const BlockingPolicyModelAnonymousIpDetection_1 = require("./enums/BlockingPolicyModelAnonymousIpDetection");
+const BlockingPolicyModelHostingProviderIpDetection_1 = require("./enums/BlockingPolicyModelHostingProviderIpDetection");
+const BlockingPolicyModelReputationIpDetection_1 = require("./enums/BlockingPolicyModelReputationIpDetection");
+const BlockingPolicyModelIpAddressesDetection_1 = require("./enums/BlockingPolicyModelIpAddressesDetection");
 class BlockingPolicyModel {
     constructor(passServices, defaultRestriction, locationDetection, anonymousIpDetection, hostingProviderIpDetection, reputationIpDetection, ipAddressesDetection, options = null) {
         var _a, _b, _c, _d, _e, _f, _g;

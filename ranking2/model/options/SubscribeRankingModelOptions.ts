@@ -13,7 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { SubscribeRankingModelOrderDirection } from "../enum/SubscribeRankingModelOrderDirection";
+import { SubscribeRankingModelOrderDirection } from "../enums/SubscribeRankingModelOrderDirection";
 
 export interface SubscribeRankingModelOptions {
     metadata?: string|null;

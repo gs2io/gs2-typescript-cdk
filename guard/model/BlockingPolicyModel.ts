@@ -24,17 +24,17 @@ import { BlockingPolicyModelReputationIpDetectionIsEnableOptions } from "./optio
 import { BlockingPolicyModelReputationIpDetectionIsDisableOptions } from "./options/BlockingPolicyModelReputationIpDetectionIsDisableOptions";
 import { BlockingPolicyModelIpAddressesDetectionIsEnableOptions } from "./options/BlockingPolicyModelIpAddressesDetectionIsEnableOptions";
 import { BlockingPolicyModelIpAddressesDetectionIsDisableOptions } from "./options/BlockingPolicyModelIpAddressesDetectionIsDisableOptions";
-import { BlockingPolicyModelDefaultRestriction } from "./enum/BlockingPolicyModelDefaultRestriction";
-import { BlockingPolicyModelLocationDetection } from "./enum/BlockingPolicyModelLocationDetection";
-import { BlockingPolicyModelLocationRestriction } from "./enum/BlockingPolicyModelLocationRestriction";
-import { BlockingPolicyModelAnonymousIpDetection } from "./enum/BlockingPolicyModelAnonymousIpDetection";
-import { BlockingPolicyModelAnonymousIpRestriction } from "./enum/BlockingPolicyModelAnonymousIpRestriction";
-import { BlockingPolicyModelHostingProviderIpDetection } from "./enum/BlockingPolicyModelHostingProviderIpDetection";
-import { BlockingPolicyModelHostingProviderIpRestriction } from "./enum/BlockingPolicyModelHostingProviderIpRestriction";
-import { BlockingPolicyModelReputationIpDetection } from "./enum/BlockingPolicyModelReputationIpDetection";
-import { BlockingPolicyModelReputationIpRestriction } from "./enum/BlockingPolicyModelReputationIpRestriction";
-import { BlockingPolicyModelIpAddressesDetection } from "./enum/BlockingPolicyModelIpAddressesDetection";
-import { BlockingPolicyModelIpAddressRestriction } from "./enum/BlockingPolicyModelIpAddressRestriction";
+import { BlockingPolicyModelDefaultRestriction } from "./enums/BlockingPolicyModelDefaultRestriction";
+import { BlockingPolicyModelLocationDetection } from "./enums/BlockingPolicyModelLocationDetection";
+import { BlockingPolicyModelLocationRestriction } from "./enums/BlockingPolicyModelLocationRestriction";
+import { BlockingPolicyModelAnonymousIpDetection } from "./enums/BlockingPolicyModelAnonymousIpDetection";
+import { BlockingPolicyModelAnonymousIpRestriction } from "./enums/BlockingPolicyModelAnonymousIpRestriction";
+import { BlockingPolicyModelHostingProviderIpDetection } from "./enums/BlockingPolicyModelHostingProviderIpDetection";
+import { BlockingPolicyModelHostingProviderIpRestriction } from "./enums/BlockingPolicyModelHostingProviderIpRestriction";
+import { BlockingPolicyModelReputationIpDetection } from "./enums/BlockingPolicyModelReputationIpDetection";
+import { BlockingPolicyModelReputationIpRestriction } from "./enums/BlockingPolicyModelReputationIpRestriction";
+import { BlockingPolicyModelIpAddressesDetection } from "./enums/BlockingPolicyModelIpAddressesDetection";
+import { BlockingPolicyModelIpAddressRestriction } from "./enums/BlockingPolicyModelIpAddressRestriction";
 
 export default class BlockingPolicyModel {
     private readonly passServices: string[];

@@ -3,7 +3,7 @@ import IncreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/I
 import SetMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/SetMaximumCurrentMaximumMemberCountByGuildName";
 import DecreaseMaximumCurrentMaximumMemberCountByGuildName from "../stampSheet/DecreaseMaximumCurrentMaximumMemberCountByGuildName";
 import VerifyCurrentMaximumMemberCountByGuildName from "../stampSheet/VerifyCurrentMaximumMemberCountByGuildName";
-import { GuildVerifyType } from "../stampSheet/enum/GuildVerifyType";
+import { GuildVerifyType } from "../stampSheet/enums/GuildVerifyType";
 import VerifyIncludeMemberByUserId from "../stampSheet/VerifyIncludeMemberByUserId";
 export default class NamespaceRef {
     private readonly namespaceName;

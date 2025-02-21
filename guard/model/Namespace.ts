@@ -19,7 +19,7 @@ import {GetAttr} from "../../core/func";
 import BlockingPolicyModel from "./BlockingPolicyModel";
 
 import NamespaceRef from "../ref/NamespaceRef";
-import { NamespaceStatus } from "./enum/NamespaceStatus";
+import { NamespaceStatus } from "./enums/NamespaceStatus";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 

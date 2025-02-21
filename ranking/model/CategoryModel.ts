@@ -19,8 +19,8 @@ import GlobalRankingSetting from "./GlobalRankingSetting";
 import { CategoryModelOptions } from "./options/CategoryModelOptions";
 import { CategoryModelScopeIsGlobalOptions } from "./options/CategoryModelScopeIsGlobalOptions";
 import { CategoryModelScopeIsScopedOptions } from "./options/CategoryModelScopeIsScopedOptions";
-import { CategoryModelOrderDirection } from "./enum/CategoryModelOrderDirection";
-import { CategoryModelScope } from "./enum/CategoryModelScope";
+import { CategoryModelOrderDirection } from "./enums/CategoryModelOrderDirection";
+import { CategoryModelScope } from "./enums/CategoryModelScope";
 
 export default class CategoryModel {
     private readonly name: string;

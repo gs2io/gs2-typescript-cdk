@@ -21,7 +21,7 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const BalanceParameterModel_1 = tslib_1.__importDefault(require("./BalanceParameterModel"));
 exports.BalanceParameterModel = BalanceParameterModel_1.default;
-const BalanceParameterModelInitialValueStrategy_1 = require("./enum/BalanceParameterModelInitialValueStrategy");
+const BalanceParameterModelInitialValueStrategy_1 = require("./enums/BalanceParameterModelInitialValueStrategy");
 Object.defineProperty(exports, "BalanceParameterModelInitialValueStrategy", { enumerable: true, get: function () { return BalanceParameterModelInitialValueStrategy_1.BalanceParameterModelInitialValueStrategy; } });
 const RarityParameterModel_1 = tslib_1.__importDefault(require("./RarityParameterModel"));
 exports.RarityParameterModel = RarityParameterModel_1.default;

@@ -15,9 +15,9 @@
  */
 import Version from "../Version";
 import ScheduleVersion from "../ScheduleVersion";
-import { VersionModelScope } from "../enum/VersionModelScope";
-import { VersionModelType } from "../enum/VersionModelType";
-import { VersionModelApproveRequirement } from "../enum/VersionModelApproveRequirement";
+import { VersionModelScope } from "../enums/VersionModelScope";
+import { VersionModelType } from "../enums/VersionModelType";
+import { VersionModelApproveRequirement } from "../enums/VersionModelApproveRequirement";
 
 export interface VersionModelOptions {
     metadata?: string|null;

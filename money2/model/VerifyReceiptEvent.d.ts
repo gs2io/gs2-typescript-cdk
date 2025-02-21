@@ -1,5 +1,5 @@
 import { VerifyReceiptEventOptions } from "./options/VerifyReceiptEventOptions";
-import { VerifyReceiptEventPlatform } from "./enum/VerifyReceiptEventPlatform";
+import { VerifyReceiptEventPlatform } from "./enums/VerifyReceiptEventPlatform";
 export default class VerifyReceiptEvent {
     private readonly contentName;
     private readonly platform;

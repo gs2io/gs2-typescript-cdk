@@ -20,8 +20,8 @@ import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
-import { NamespaceServerType } from "./enum/NamespaceServerType";
-import { NamespaceServerSpec } from "./enum/NamespaceServerSpec";
+import { NamespaceServerType } from "./enums/NamespaceServerType";
+import { NamespaceServerSpec } from "./enums/NamespaceServerSpec";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 

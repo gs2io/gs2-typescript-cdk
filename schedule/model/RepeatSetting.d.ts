@@ -4,9 +4,9 @@ import { RepeatSettingRepeatTypeIsDailyOptions } from "./options/RepeatSettingRe
 import { RepeatSettingRepeatTypeIsWeeklyOptions } from "./options/RepeatSettingRepeatTypeIsWeeklyOptions";
 import { RepeatSettingRepeatTypeIsMonthlyOptions } from "./options/RepeatSettingRepeatTypeIsMonthlyOptions";
 import { RepeatSettingRepeatTypeIsCustomOptions } from "./options/RepeatSettingRepeatTypeIsCustomOptions";
-import { RepeatSettingRepeatType } from "./enum/RepeatSettingRepeatType";
-import { RepeatSettingBeginDayOfWeek } from "./enum/RepeatSettingBeginDayOfWeek";
-import { RepeatSettingEndDayOfWeek } from "./enum/RepeatSettingEndDayOfWeek";
+import { RepeatSettingRepeatType } from "./enums/RepeatSettingRepeatType";
+import { RepeatSettingBeginDayOfWeek } from "./enums/RepeatSettingBeginDayOfWeek";
+import { RepeatSettingEndDayOfWeek } from "./enums/RepeatSettingEndDayOfWeek";
 export default class RepeatSetting {
     private readonly repeatType;
     private readonly beginDayOfMonth;

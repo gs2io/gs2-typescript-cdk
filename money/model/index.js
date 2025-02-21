@@ -19,9 +19,9 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-const NamespacePriority_1 = require("./enum/NamespacePriority");
+const NamespacePriority_1 = require("./enums/NamespacePriority");
 Object.defineProperty(exports, "NamespacePriority", { enumerable: true, get: function () { return NamespacePriority_1.NamespacePriority; } });
-const NamespaceCurrency_1 = require("./enum/NamespaceCurrency");
+const NamespaceCurrency_1 = require("./enums/NamespaceCurrency");
 Object.defineProperty(exports, "NamespaceCurrency", { enumerable: true, get: function () { return NamespaceCurrency_1.NamespaceCurrency; } });
 const WalletDetail_1 = tslib_1.__importDefault(require("./WalletDetail"));
 exports.WalletDetail = WalletDetail_1.default;

@@ -20,7 +20,7 @@ import RevertUseByUserId from "../stampSheet/RevertUseByUserId";
 import IssueOnce from "../stampSheet/IssueOnce";
 import UseByUserId from "../stampSheet/UseByUserId";
 import VerifyCodeByUserId from "../stampSheet/VerifyCodeByUserId";
-import { SerialKeyVerifyType } from "../stampSheet/enum/SerialKeyVerifyType";
+import { SerialKeyVerifyType } from "../stampSheet/enums/SerialKeyVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;

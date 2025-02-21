@@ -15,7 +15,7 @@
  */
 import ChangeStateEvent from "../ChangeStateEvent";
 import EmitEvent from "../EmitEvent";
-import { EventEventType } from "../enum/EventEventType";
+import { EventEventType } from "../enums/EventEventType";
 
 export interface EventEventTypeIsEmitOptions {
 }

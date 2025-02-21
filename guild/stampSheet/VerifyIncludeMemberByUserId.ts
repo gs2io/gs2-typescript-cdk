@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { GuildVerifyType } from "./enum/GuildVerifyType";
+import { GuildVerifyType } from "./enums/GuildVerifyType";
 
 export default class VerifyIncludeMemberByUserId extends VerifyAction {
     private readonly namespaceName: string;

@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import { ReceiptOptions } from "./options/ReceiptOptions";
-import { ReceiptStore } from "./enum/ReceiptStore";
+import { ReceiptStore } from "./enums/ReceiptStore";
 
 export default class Receipt {
     private readonly store: ReceiptStore;

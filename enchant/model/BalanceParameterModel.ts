@@ -15,7 +15,7 @@
  */
 import BalanceParameterValueModel from "./BalanceParameterValueModel";
 import { BalanceParameterModelOptions } from "./options/BalanceParameterModelOptions";
-import { BalanceParameterModelInitialValueStrategy } from "./enum/BalanceParameterModelInitialValueStrategy";
+import { BalanceParameterModelInitialValueStrategy } from "./enums/BalanceParameterModelInitialValueStrategy";
 
 export default class BalanceParameterModel {
     private readonly name: string;

@@ -3,7 +3,7 @@ import { GetAttr } from "../../core/func";
 import PlatformSetting from "./PlatformSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import StoreContentModel from "./StoreContentModel";
-import { NamespaceCurrencyUsagePriority } from "./enum/NamespaceCurrencyUsagePriority";
+import { NamespaceCurrencyUsagePriority } from "./enums/NamespaceCurrencyUsagePriority";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;

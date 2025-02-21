@@ -16,7 +16,7 @@
 import PlatformSetting from "../PlatformSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import LogSetting from "../../../core/model/LogSetting";
-import { NamespaceCurrencyUsagePriority } from "../enum/NamespaceCurrencyUsagePriority";
+import { NamespaceCurrencyUsagePriority } from "../enums/NamespaceCurrencyUsagePriority";
 
 export interface NamespaceOptions {
     description?: string|null;

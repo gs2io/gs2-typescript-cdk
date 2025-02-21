@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const RepeatSettingRepeatType_1 = require("./enum/RepeatSettingRepeatType");
+const RepeatSettingRepeatType_1 = require("./enums/RepeatSettingRepeatType");
 class RepeatSetting {
     constructor(repeatType, options = null) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;

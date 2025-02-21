@@ -19,7 +19,7 @@ import DistributorModel from "./DistributorModel";
 import { DistributorModelOptions } from "./options/DistributorModelOptions";
 import BatchRequestPayload from "./BatchRequestPayload";
 import { BatchRequestPayloadOptions } from "./options/BatchRequestPayloadOptions";
-import { BatchRequestPayloadService } from "./enum/BatchRequestPayloadService";
+import { BatchRequestPayloadService } from "./enums/BatchRequestPayloadService";
 import BatchResultPayload from "./BatchResultPayload";
 import { BatchResultPayloadOptions } from "./options/BatchResultPayloadOptions";
 import AcquireActionResult from "./AcquireActionResult";

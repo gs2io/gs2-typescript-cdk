@@ -23,7 +23,7 @@ const DistributorModel_1 = tslib_1.__importDefault(require("./DistributorModel")
 exports.DistributorModel = DistributorModel_1.default;
 const BatchRequestPayload_1 = tslib_1.__importDefault(require("./BatchRequestPayload"));
 exports.BatchRequestPayload = BatchRequestPayload_1.default;
-const BatchRequestPayloadService_1 = require("./enum/BatchRequestPayloadService");
+const BatchRequestPayloadService_1 = require("./enums/BatchRequestPayloadService");
 Object.defineProperty(exports, "BatchRequestPayloadService", { enumerable: true, get: function () { return BatchRequestPayloadService_1.BatchRequestPayloadService; } });
 const BatchResultPayload_1 = tslib_1.__importDefault(require("./BatchResultPayload"));
 exports.BatchResultPayload = BatchResultPayload_1.default;

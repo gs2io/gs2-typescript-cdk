@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const RateModelTimingType_1 = require("./enum/RateModelTimingType");
+const RateModelTimingType_1 = require("./enums/RateModelTimingType");
 class RateModel {
     constructor(name, timingType, options = null) {
         var _a, _b, _c, _d, _e;

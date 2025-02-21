@@ -1,5 +1,5 @@
 import { BatchRequestPayloadOptions } from "./options/BatchRequestPayloadOptions";
-import { BatchRequestPayloadService } from "./enum/BatchRequestPayloadService";
+import { BatchRequestPayloadService } from "./enums/BatchRequestPayloadService";
 export default class BatchRequestPayload {
     private readonly requestId;
     private readonly service;

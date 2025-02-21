@@ -8,7 +8,7 @@ import Showcase from "./Showcase";
 import { ShowcaseOptions } from "./options/ShowcaseOptions";
 import DisplayItem from "./DisplayItem";
 import { DisplayItemOptions } from "./options/DisplayItemOptions";
-import { DisplayItemType } from "./enum/DisplayItemType";
+import { DisplayItemType } from "./enums/DisplayItemType";
 import { DisplayItemTypeIsSalesItemOptions } from "./options/DisplayItemTypeIsSalesItemOptions";
 import { DisplayItemTypeIsSalesItemGroupOptions } from "./options/DisplayItemTypeIsSalesItemGroupOptions";
 import RandomShowcase from "./RandomShowcase";

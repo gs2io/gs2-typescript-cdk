@@ -1,4 +1,4 @@
-import { TargetCounterModelResetType } from "../enum/TargetCounterModelResetType";
+import { TargetCounterModelResetType } from "../enums/TargetCounterModelResetType";
 export interface TargetCounterModelScopeTypeIsVerifyActionOptions {
     resetType?: TargetCounterModelResetType | null;
 }

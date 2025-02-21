@@ -2,7 +2,7 @@ import { AcquireAction } from "../../core/model";
 import { PrizeOptions } from "./options/PrizeOptions";
 import { PrizeTypeIsActionOptions } from "./options/PrizeTypeIsActionOptions";
 import { PrizeTypeIsPrizeTableOptions } from "./options/PrizeTypeIsPrizeTableOptions";
-import { PrizeType } from "./enum/PrizeType";
+import { PrizeType } from "./enums/PrizeType";
 export default class Prize {
     private readonly prizeId;
     private readonly type;

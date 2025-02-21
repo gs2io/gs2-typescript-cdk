@@ -18,8 +18,8 @@
 import { LotteryModelOptions } from "./options/LotteryModelOptions";
 import { LotteryModelMethodIsPrizeTableOptions } from "./options/LotteryModelMethodIsPrizeTableOptions";
 import { LotteryModelMethodIsScriptOptions } from "./options/LotteryModelMethodIsScriptOptions";
-import { LotteryModelMode } from "./enum/LotteryModelMode";
-import { LotteryModelMethod } from "./enum/LotteryModelMethod";
+import { LotteryModelMode } from "./enums/LotteryModelMode";
+import { LotteryModelMethod } from "./enums/LotteryModelMethod";
 
 export default class LotteryModel {
     private readonly name: string;

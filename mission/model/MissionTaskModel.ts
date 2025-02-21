@@ -12,6 +12,8 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ * 
+ * deny overwrite
  */
 import TargetCounterModel from "./TargetCounterModel";
 import { VerifyAction } from "../../core/model";
@@ -19,14 +21,12 @@ import { AcquireAction } from "../../core/model";
 import { MissionTaskModelOptions } from "./options/MissionTaskModelOptions";
 import { MissionTaskModelVerifyCompleteTypeIsCounterOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsCounterOptions";
 import { MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions } from "./options/MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions";
-import { MissionTaskModelVerifyCompleteType } from "./enum/MissionTaskModelVerifyCompleteType";
-import { MissionTaskModelTargetResetType } from "./enum/MissionTaskModelTargetResetType";
+import { MissionTaskModelVerifyCompleteType } from "./enums/MissionTaskModelVerifyCompleteType";
+import { MissionTaskModelTargetResetType } from "./enums/MissionTaskModelTargetResetType";
 
 export default class MissionTaskModel {
     private readonly name: string;
     private readonly verifyCompleteType: MissionTaskModelVerifyCompleteType;
-    private readonly counterName: string;
-    private readonly targetValue: number;
     private readonly metadata: string|null = null;
     private readonly targetCounter: TargetCounterModel|null = null;
     private readonly verifyCompleteConsumeActions: VerifyAction[]|null = null;
@@ -38,14 +38,10 @@ export default class MissionTaskModel {
     public constructor(
         name: string,
         verifyCompleteType: MissionTaskModelVerifyCompleteType,
-        counterName: string,
-        targetValue: number,
         options: MissionTaskModelOptions|null = null,
     ) {
         this.name = name;
         this.verifyCompleteType = verifyCompleteType;
-        this.counterName = counterName;
-        this.targetValue = targetValue;
         this.metadata = options?.metadata ?? null;
         this.targetCounter = options?.targetCounter ?? null;
         this.verifyCompleteConsumeActions = options?.verifyCompleteConsumeActions ?? null;
@@ -65,8 +61,6 @@ export default class MissionTaskModel {
         return new MissionTaskModel(
             name,
             MissionTaskModelVerifyCompleteType.COUNTER,
-            counterName,
-            targetValue,
             {
                 targetCounter: targetCounter,
                 metadata: options?.metadata,
@@ -88,8 +82,6 @@ export default class MissionTaskModel {
         return new MissionTaskModel(
             name,
             MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS,
-            counterName,
-            targetValue,
             {
                 metadata: options?.metadata,
                 verifyCompleteConsumeActions: options?.verifyCompleteConsumeActions,
@@ -132,14 +124,8 @@ export default class MissionTaskModel {
         if (this.premiseMissionTaskName != null) {
             properties["premiseMissionTaskName"] = this.premiseMissionTaskName;
         }
-        if (this.counterName != null) {
-            properties["counterName"] = this.counterName;
-        }
         if (this.targetResetType != null) {
             properties["targetResetType"] = this.targetResetType;
-        }
-        if (this.targetValue != null) {
-            properties["targetValue"] = this.targetValue;
         }
 
         return properties;

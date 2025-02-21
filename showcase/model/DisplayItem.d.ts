@@ -3,7 +3,7 @@ import SalesItemGroup from "./SalesItemGroup";
 import { DisplayItemOptions } from "./options/DisplayItemOptions";
 import { DisplayItemTypeIsSalesItemOptions } from "./options/DisplayItemTypeIsSalesItemOptions";
 import { DisplayItemTypeIsSalesItemGroupOptions } from "./options/DisplayItemTypeIsSalesItemGroupOptions";
-import { DisplayItemType } from "./enum/DisplayItemType";
+import { DisplayItemType } from "./enums/DisplayItemType";
 export default class DisplayItem {
     private readonly displayItemId;
     private readonly type;

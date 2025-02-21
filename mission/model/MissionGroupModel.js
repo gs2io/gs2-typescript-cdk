@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const MissionGroupModelResetType_1 = require("./enum/MissionGroupModelResetType");
+const MissionGroupModelResetType_1 = require("./enums/MissionGroupModelResetType");
 class MissionGroupModel {
     constructor(name, resetType, options = null) {
         var _a, _b, _c, _d, _e, _f, _g, _h;

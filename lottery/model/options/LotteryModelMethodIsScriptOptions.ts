@@ -15,8 +15,8 @@
  *
  * deny overwrite
  */
-import { LotteryModelMode } from "../enum/LotteryModelMode";
-import { LotteryModelMethod } from "../enum/LotteryModelMethod";
+import { LotteryModelMode } from "../enums/LotteryModelMode";
+import { LotteryModelMethod } from "../enums/LotteryModelMethod";
 
 export interface LotteryModelMethodIsScriptOptions {
     metadata?: string|null;

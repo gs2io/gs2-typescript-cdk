@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.OverrideBuffRate = exports.BuffEntryModelTargetType = exports.BuffEntryModelExpression = exports.BuffEntryModel = exports.BuffTargetGrn = exports.BuffTargetAction = exports.BuffTargetModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.BuffTargetModelTargetModelName = exports.BuffTargetActionTargetActionName = exports.OverrideBuffRate = exports.BuffEntryModelTargetType = exports.BuffEntryModelExpression = exports.BuffEntryModel = exports.BuffTargetGrn = exports.BuffTargetAction = exports.BuffTargetModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -27,12 +27,16 @@ const BuffTargetGrn_1 = tslib_1.__importDefault(require("./BuffTargetGrn"));
 exports.BuffTargetGrn = BuffTargetGrn_1.default;
 const BuffEntryModel_1 = tslib_1.__importDefault(require("./BuffEntryModel"));
 exports.BuffEntryModel = BuffEntryModel_1.default;
-const BuffEntryModelExpression_1 = require("./enum/BuffEntryModelExpression");
+const BuffEntryModelExpression_1 = require("./enums/BuffEntryModelExpression");
 Object.defineProperty(exports, "BuffEntryModelExpression", { enumerable: true, get: function () { return BuffEntryModelExpression_1.BuffEntryModelExpression; } });
-const BuffEntryModelTargetType_1 = require("./enum/BuffEntryModelTargetType");
+const BuffEntryModelTargetType_1 = require("./enums/BuffEntryModelTargetType");
 Object.defineProperty(exports, "BuffEntryModelTargetType", { enumerable: true, get: function () { return BuffEntryModelTargetType_1.BuffEntryModelTargetType; } });
 const OverrideBuffRate_1 = tslib_1.__importDefault(require("./OverrideBuffRate"));
 exports.OverrideBuffRate = OverrideBuffRate_1.default;
+const BuffTargetActionTargetActionName_1 = require("./enums/BuffTargetActionTargetActionName");
+Object.defineProperty(exports, "BuffTargetActionTargetActionName", { enumerable: true, get: function () { return BuffTargetActionTargetActionName_1.BuffTargetActionTargetActionName; } });
+const BuffTargetModelTargetModelName_1 = require("./enums/BuffTargetModelTargetModelName");
+Object.defineProperty(exports, "BuffTargetModelTargetModelName", { enumerable: true, get: function () { return BuffTargetModelTargetModelName_1.BuffTargetModelTargetModelName; } });
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

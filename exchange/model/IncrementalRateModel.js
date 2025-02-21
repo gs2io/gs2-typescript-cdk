@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const IncrementalRateModelCalculateType_1 = require("./enum/IncrementalRateModelCalculateType");
+const IncrementalRateModelCalculateType_1 = require("./enums/IncrementalRateModelCalculateType");
 class IncrementalRateModel {
     constructor(name, consumeAction, calculateType, exchangeCountId, maximumExchangeCount, options = null) {
         var _a, _b, _c, _d, _e;

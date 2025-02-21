@@ -19,7 +19,7 @@ import { IncrementalRateModelOptions } from "./options/IncrementalRateModelOptio
 import { IncrementalRateModelCalculateTypeIsLinearOptions } from "./options/IncrementalRateModelCalculateTypeIsLinearOptions";
 import { IncrementalRateModelCalculateTypeIsPowerOptions } from "./options/IncrementalRateModelCalculateTypeIsPowerOptions";
 import { IncrementalRateModelCalculateTypeIsGs2ScriptOptions } from "./options/IncrementalRateModelCalculateTypeIsGs2ScriptOptions";
-import { IncrementalRateModelCalculateType } from "./enum/IncrementalRateModelCalculateType";
+import { IncrementalRateModelCalculateType } from "./enums/IncrementalRateModelCalculateType";
 
 export default class IncrementalRateModel {
     private readonly name: string;

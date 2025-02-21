@@ -25,7 +25,7 @@ const Threshold_1 = tslib_1.__importDefault(require("./Threshold"));
 exports.Threshold = Threshold_1.default;
 const AcquireActionRate_1 = tslib_1.__importDefault(require("./AcquireActionRate"));
 exports.AcquireActionRate = AcquireActionRate_1.default;
-const AcquireActionRateMode_1 = require("./enum/AcquireActionRateMode");
+const AcquireActionRateMode_1 = require("./enums/AcquireActionRateMode");
 Object.defineProperty(exports, "AcquireActionRateMode", { enumerable: true, get: function () { return AcquireActionRateMode_1.AcquireActionRateMode; } });
 const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
 exports.VerifyActionResult = VerifyActionResult_1.default;

@@ -19,7 +19,7 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-const NamespaceSupportSpeculativeExecution_1 = require("./enum/NamespaceSupportSpeculativeExecution");
+const NamespaceSupportSpeculativeExecution_1 = require("./enums/NamespaceSupportSpeculativeExecution");
 Object.defineProperty(exports, "NamespaceSupportSpeculativeExecution", { enumerable: true, get: function () { return NamespaceSupportSpeculativeExecution_1.NamespaceSupportSpeculativeExecution; } });
 const StateMachineMaster_1 = tslib_1.__importDefault(require("./StateMachineMaster"));
 exports.StateMachineMaster = StateMachineMaster_1.default;
@@ -29,7 +29,7 @@ const Variable_1 = tslib_1.__importDefault(require("./Variable"));
 exports.Variable = Variable_1.default;
 const Event_1 = tslib_1.__importDefault(require("./Event"));
 exports.Event = Event_1.default;
-const EventEventType_1 = require("./enum/EventEventType");
+const EventEventType_1 = require("./enums/EventEventType");
 Object.defineProperty(exports, "EventEventType", { enumerable: true, get: function () { return EventEventType_1.EventEventType; } });
 const ChangeStateEvent_1 = tslib_1.__importDefault(require("./ChangeStateEvent"));
 exports.ChangeStateEvent = ChangeStateEvent_1.default;

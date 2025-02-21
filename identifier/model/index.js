@@ -25,7 +25,7 @@ const Identifier_1 = tslib_1.__importDefault(require("./Identifier"));
 exports.Identifier = Identifier_1.default;
 const Password_1 = tslib_1.__importDefault(require("./Password"));
 exports.Password = Password_1.default;
-const PasswordEnableTwoFactorAuthentication_1 = require("./enum/PasswordEnableTwoFactorAuthentication");
+const PasswordEnableTwoFactorAuthentication_1 = require("./enums/PasswordEnableTwoFactorAuthentication");
 Object.defineProperty(exports, "PasswordEnableTwoFactorAuthentication", { enumerable: true, get: function () { return PasswordEnableTwoFactorAuthentication_1.PasswordEnableTwoFactorAuthentication; } });
 const AttachSecurityPolicy_1 = tslib_1.__importDefault(require("./AttachSecurityPolicy"));
 exports.AttachSecurityPolicy = AttachSecurityPolicy_1.default;
@@ -33,6 +33,6 @@ const ProjectToken_1 = tslib_1.__importDefault(require("./ProjectToken"));
 exports.ProjectToken = ProjectToken_1.default;
 const TwoFactorAuthenticationSetting_1 = tslib_1.__importDefault(require("./TwoFactorAuthenticationSetting"));
 exports.TwoFactorAuthenticationSetting = TwoFactorAuthenticationSetting_1.default;
-const TwoFactorAuthenticationSettingStatus_1 = require("./enum/TwoFactorAuthenticationSettingStatus");
+const TwoFactorAuthenticationSettingStatus_1 = require("./enums/TwoFactorAuthenticationSettingStatus");
 Object.defineProperty(exports, "TwoFactorAuthenticationSettingStatus", { enumerable: true, get: function () { return TwoFactorAuthenticationSettingStatus_1.TwoFactorAuthenticationSettingStatus; } });
 //# sourceMappingURL=index.js.map

@@ -16,7 +16,7 @@
 import { AcquireActionRateOptions } from "./options/AcquireActionRateOptions";
 import { AcquireActionRateModeIsDoubleOptions } from "./options/AcquireActionRateModeIsDoubleOptions";
 import { AcquireActionRateModeIsBigOptions } from "./options/AcquireActionRateModeIsBigOptions";
-import { AcquireActionRateMode } from "./enum/AcquireActionRateMode";
+import { AcquireActionRateMode } from "./enums/AcquireActionRateMode";
 
 export default class AcquireActionRate {
     private readonly name: string;

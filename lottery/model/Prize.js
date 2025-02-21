@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const PrizeType_1 = require("./enum/PrizeType");
+const PrizeType_1 = require("./enums/PrizeType");
 class Prize {
     constructor(prizeId, type, weight, options = null) {
         var _a, _b, _c, _d;

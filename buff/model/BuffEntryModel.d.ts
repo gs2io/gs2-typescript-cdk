@@ -3,8 +3,8 @@ import BuffTargetAction from "./BuffTargetAction";
 import { BuffEntryModelOptions } from "./options/BuffEntryModelOptions";
 import { BuffEntryModelTargetTypeIsModelOptions } from "./options/BuffEntryModelTargetTypeIsModelOptions";
 import { BuffEntryModelTargetTypeIsActionOptions } from "./options/BuffEntryModelTargetTypeIsActionOptions";
-import { BuffEntryModelExpression } from "./enum/BuffEntryModelExpression";
-import { BuffEntryModelTargetType } from "./enum/BuffEntryModelTargetType";
+import { BuffEntryModelExpression } from "./enums/BuffEntryModelExpression";
+import { BuffEntryModelTargetType } from "./enums/BuffEntryModelTargetType";
 export default class BuffEntryModel {
     private readonly name;
     private readonly expression;

@@ -1,6 +1,6 @@
 import { GlobalRankingModelOptions } from "./options/GlobalRankingModelOptions";
-import { GlobalRankingModelOrderDirection } from "./enum/GlobalRankingModelOrderDirection";
-import { GlobalRankingModelRewardCalculationIndex } from "./enum/GlobalRankingModelRewardCalculationIndex";
+import { GlobalRankingModelOrderDirection } from "./enums/GlobalRankingModelOrderDirection";
+import { GlobalRankingModelRewardCalculationIndex } from "./enums/GlobalRankingModelRewardCalculationIndex";
 export default class GlobalRankingModel {
     private readonly name;
     private readonly sum;

@@ -19,7 +19,7 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-const NamespaceType_1 = require("./enum/NamespaceType");
+const NamespaceType_1 = require("./enums/NamespaceType");
 Object.defineProperty(exports, "NamespaceType", { enumerable: true, get: function () { return NamespaceType_1.NamespaceType; } });
 const AccessLog_1 = tslib_1.__importDefault(require("./AccessLog"));
 exports.AccessLog = AccessLog_1.default;
@@ -39,7 +39,7 @@ const ExecuteStampTaskLogCount_1 = tslib_1.__importDefault(require("./ExecuteSta
 exports.ExecuteStampTaskLogCount = ExecuteStampTaskLogCount_1.default;
 const AccessLogWithTelemetry_1 = tslib_1.__importDefault(require("./AccessLogWithTelemetry"));
 exports.AccessLogWithTelemetry = AccessLogWithTelemetry_1.default;
-const AccessLogWithTelemetryStatus_1 = require("./enum/AccessLogWithTelemetryStatus");
+const AccessLogWithTelemetryStatus_1 = require("./enums/AccessLogWithTelemetryStatus");
 Object.defineProperty(exports, "AccessLogWithTelemetryStatus", { enumerable: true, get: function () { return AccessLogWithTelemetryStatus_1.AccessLogWithTelemetryStatus; } });
 const InGameLogTag_1 = tslib_1.__importDefault(require("./InGameLogTag"));
 exports.InGameLogTag = InGameLogTag_1.default;

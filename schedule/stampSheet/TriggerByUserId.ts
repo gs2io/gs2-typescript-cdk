@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { TriggerTriggerStrategy } from "./enum/TriggerTriggerStrategy";
+import { TriggerTriggerStrategy } from "./enums/TriggerTriggerStrategy";
 
 export default class TriggerByUserId extends AcquireAction {
     private readonly namespaceName: string;

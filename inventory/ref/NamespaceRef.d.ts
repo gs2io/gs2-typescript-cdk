@@ -18,15 +18,15 @@ import ConsumeSimpleItemsByUserId from "../stampSheet/ConsumeSimpleItemsByUserId
 import ConsumeCount from "../model/ConsumeCount";
 import ConsumeBigItemByUserId from "../stampSheet/ConsumeBigItemByUserId";
 import VerifyInventoryCurrentMaxCapacityByUserId from "../stampSheet/VerifyInventoryCurrentMaxCapacityByUserId";
-import { InventoryVerifyType } from "../stampSheet/enum/InventoryVerifyType";
+import { InventoryVerifyType } from "../stampSheet/enums/InventoryVerifyType";
 import VerifyItemSetByUserId from "../stampSheet/VerifyItemSetByUserId";
-import { ItemSetVerifyType } from "../stampSheet/enum/ItemSetVerifyType";
+import { ItemSetVerifyType } from "../stampSheet/enums/ItemSetVerifyType";
 import VerifyReferenceOfByUserId from "../stampSheet/VerifyReferenceOfByUserId";
-import { ReferenceOfVerifyType } from "../stampSheet/enum/ReferenceOfVerifyType";
+import { ReferenceOfVerifyType } from "../stampSheet/enums/ReferenceOfVerifyType";
 import VerifySimpleItemByUserId from "../stampSheet/VerifySimpleItemByUserId";
-import { SimpleItemVerifyType } from "../stampSheet/enum/SimpleItemVerifyType";
+import { SimpleItemVerifyType } from "../stampSheet/enums/SimpleItemVerifyType";
 import VerifyBigItemByUserId from "../stampSheet/VerifyBigItemByUserId";
-import { BigItemVerifyType } from "../stampSheet/enum/BigItemVerifyType";
+import { BigItemVerifyType } from "../stampSheet/enums/BigItemVerifyType";
 export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);

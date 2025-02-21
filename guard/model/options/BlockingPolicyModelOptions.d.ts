@@ -1,8 +1,8 @@
-import { BlockingPolicyModelLocationRestriction } from "../enum/BlockingPolicyModelLocationRestriction";
-import { BlockingPolicyModelAnonymousIpRestriction } from "../enum/BlockingPolicyModelAnonymousIpRestriction";
-import { BlockingPolicyModelHostingProviderIpRestriction } from "../enum/BlockingPolicyModelHostingProviderIpRestriction";
-import { BlockingPolicyModelReputationIpRestriction } from "../enum/BlockingPolicyModelReputationIpRestriction";
-import { BlockingPolicyModelIpAddressRestriction } from "../enum/BlockingPolicyModelIpAddressRestriction";
+import { BlockingPolicyModelLocationRestriction } from "../enums/BlockingPolicyModelLocationRestriction";
+import { BlockingPolicyModelAnonymousIpRestriction } from "../enums/BlockingPolicyModelAnonymousIpRestriction";
+import { BlockingPolicyModelHostingProviderIpRestriction } from "../enums/BlockingPolicyModelHostingProviderIpRestriction";
+import { BlockingPolicyModelReputationIpRestriction } from "../enums/BlockingPolicyModelReputationIpRestriction";
+import { BlockingPolicyModelIpAddressRestriction } from "../enums/BlockingPolicyModelIpAddressRestriction";
 export interface BlockingPolicyModelOptions {
     locations?: string[] | null;
     locationRestriction?: BlockingPolicyModelLocationRestriction | null;

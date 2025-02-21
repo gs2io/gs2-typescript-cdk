@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ScopedValueScopeType_1 = require("./enum/ScopedValueScopeType");
+const ScopedValueScopeType_1 = require("./enums/ScopedValueScopeType");
 class ScopedValue {
     constructor(scopeType, value, options = null) {
         var _a, _b, _c;

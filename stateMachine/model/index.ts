@@ -15,7 +15,7 @@
  */
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
-import { NamespaceSupportSpeculativeExecution } from "./enum/NamespaceSupportSpeculativeExecution";
+import { NamespaceSupportSpeculativeExecution } from "./enums/NamespaceSupportSpeculativeExecution";
 import { NamespaceSupportSpeculativeExecutionIsEnableOptions } from "./options/NamespaceSupportSpeculativeExecutionIsEnableOptions"
 import { NamespaceSupportSpeculativeExecutionIsDisableOptions } from "./options/NamespaceSupportSpeculativeExecutionIsDisableOptions"
 import StateMachineMaster from "./StateMachineMaster";
@@ -26,7 +26,7 @@ import Variable from "./Variable";
 import { VariableOptions } from "./options/VariableOptions";
 import Event from "./Event";
 import { EventOptions } from "./options/EventOptions";
-import { EventEventType } from "./enum/EventEventType";
+import { EventEventType } from "./enums/EventEventType";
 import { EventEventTypeIsChangeStateOptions } from "./options/EventEventTypeIsChangeStateOptions"
 import { EventEventTypeIsEmitOptions } from "./options/EventEventTypeIsEmitOptions"
 import ChangeStateEvent from "./ChangeStateEvent";

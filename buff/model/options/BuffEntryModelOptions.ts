@@ -16,8 +16,8 @@
 import BuffTargetGrn from "../BuffTargetGrn";
 import BuffTargetModel from "../BuffTargetModel";
 import BuffTargetAction from "../BuffTargetAction";
-import { BuffEntryModelExpression } from "../enum/BuffEntryModelExpression";
-import { BuffEntryModelTargetType } from "../enum/BuffEntryModelTargetType";
+import { BuffEntryModelExpression } from "../enums/BuffEntryModelExpression";
+import { BuffEntryModelTargetType } from "../enums/BuffEntryModelTargetType";
 
 export interface BuffEntryModelOptions {
     metadata?: string|null;

@@ -15,7 +15,7 @@
  */
 import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
-import { IncrementalRateModelCalculateType } from "../enum/IncrementalRateModelCalculateType";
+import { IncrementalRateModelCalculateType } from "../enums/IncrementalRateModelCalculateType";
 
 export interface IncrementalRateModelCalculateTypeIsLinearOptions {
     metadata?: string|null;

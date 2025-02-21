@@ -13,9 +13,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { RepeatSettingRepeatType } from "../enum/RepeatSettingRepeatType";
-import { RepeatSettingBeginDayOfWeek } from "../enum/RepeatSettingBeginDayOfWeek";
-import { RepeatSettingEndDayOfWeek } from "../enum/RepeatSettingEndDayOfWeek";
+import { RepeatSettingRepeatType } from "../enums/RepeatSettingRepeatType";
+import { RepeatSettingBeginDayOfWeek } from "../enums/RepeatSettingBeginDayOfWeek";
+import { RepeatSettingEndDayOfWeek } from "../enums/RepeatSettingEndDayOfWeek";
 
 export interface RepeatSettingRepeatTypeIsCustomOptions {
 }

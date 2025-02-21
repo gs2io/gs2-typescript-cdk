@@ -1,4 +1,4 @@
-import { ScopedValueResetType } from "../enum/ScopedValueResetType";
+import { ScopedValueResetType } from "../enums/ScopedValueResetType";
 export interface ScopedValueOptions {
     resetType?: ScopedValueResetType | null;
     conditionName?: string | null;

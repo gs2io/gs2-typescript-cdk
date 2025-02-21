@@ -1,5 +1,5 @@
-import { RepeatSettingBeginDayOfWeek } from "../enum/RepeatSettingBeginDayOfWeek";
-import { RepeatSettingEndDayOfWeek } from "../enum/RepeatSettingEndDayOfWeek";
+import { RepeatSettingBeginDayOfWeek } from "../enums/RepeatSettingBeginDayOfWeek";
+import { RepeatSettingEndDayOfWeek } from "../enums/RepeatSettingEndDayOfWeek";
 export interface RepeatSettingOptions {
     beginDayOfMonth?: number | null;
     endDayOfMonth?: number | null;

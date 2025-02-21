@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { SubscribeRankingScoreVerifyType } from "./enum/SubscribeRankingScoreVerifyType";
+import { SubscribeRankingScoreVerifyType } from "./enums/SubscribeRankingScoreVerifyType";
 
 export default class VerifySubscribeRankingScoreByUserId extends VerifyAction {
     private readonly namespaceName: string;

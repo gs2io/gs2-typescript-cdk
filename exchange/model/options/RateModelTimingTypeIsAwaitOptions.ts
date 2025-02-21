@@ -16,7 +16,7 @@
 import { VerifyAction } from "../../../core/model";
 import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
-import { RateModelTimingType } from "../enum/RateModelTimingType";
+import { RateModelTimingType } from "../enums/RateModelTimingType";
 
 export interface RateModelTimingTypeIsAwaitOptions {
     metadata?: string|null;

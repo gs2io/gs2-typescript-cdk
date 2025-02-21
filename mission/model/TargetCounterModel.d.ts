@@ -1,7 +1,7 @@
 import { TargetCounterModelOptions } from "./options/TargetCounterModelOptions";
 import { TargetCounterModelScopeTypeIsResetTimingOptions } from "./options/TargetCounterModelScopeTypeIsResetTimingOptions";
 import { TargetCounterModelScopeTypeIsVerifyActionOptions } from "./options/TargetCounterModelScopeTypeIsVerifyActionOptions";
-import { TargetCounterModelScopeType } from "./enum/TargetCounterModelScopeType";
+import { TargetCounterModelScopeType } from "./enums/TargetCounterModelScopeType";
 export default class TargetCounterModel {
     private readonly counterName;
     private readonly scopeType;

@@ -1,0 +1,26 @@
+export declare const BuffTargetActionTargetActionName: {
+    readonly GS2_EXPERIENCE_ADD_EXPERIENCE_BY_USER_ID: "Gs2Experience:AddExperienceByUserId";
+    readonly GS2_EXPERIENCE_SUB_EXPERIENCE: "Gs2Experience:SubExperience";
+    readonly GS2_EXPERIENCE_SUB_EXPERIENCE_BY_USER_ID: "Gs2Experience:SubExperienceByUserId";
+    readonly GS2_INVENTORY_ACQUIRE_BIG_ITEM_BY_USER_ID: "Gs2Inventory:AcquireBigItemByUserId";
+    readonly GS2_INVENTORY_ACQUIRE_ITEM_SET_BY_USER_ID: "Gs2Inventory:AcquireItemSetByUserId";
+    readonly GS2_INVENTORY_ACQUIRE_SIMPLE_ITEMS_BY_USER_ID: "Gs2Inventory:AcquireSimpleItemsByUserId";
+    readonly GS2_INVENTORY_CONSUME_BIG_ITEM: "Gs2Inventory:ConsumeBigItem";
+    readonly GS2_INVENTORY_CONSUME_BIG_ITEM_BY_USER_ID: "Gs2Inventory:ConsumeBigItemByUserId";
+    readonly GS2_INVENTORY_CONSUME_ITEM_SET: "Gs2Inventory:ConsumeItemSet";
+    readonly GS2_INVENTORY_CONSUME_ITEM_SET_BY_USER_ID: "Gs2Inventory:ConsumeItemSetByUserId";
+    readonly GS2_INVENTORY_CONSUME_SIMPLE_ITEMS: "Gs2Inventory:ConsumeSimpleItems";
+    readonly GS2_INVENTORY_CONSUME_SIMPLE_ITEMS_BY_USER_ID: "Gs2Inventory:ConsumeSimpleItemsByUserId";
+    readonly GS2_LIMIT_COUNT_UP: "Gs2Limit:CountUp";
+    readonly GS2_LIMIT_COUNT_UP_BY_USER_ID: "Gs2Limit:CountUpByUserId";
+    readonly GS2_MONEY2_DEPOSIT_BY_USER_ID: "Gs2Money2:DepositByUserId";
+    readonly GS2_MONEY2_WITHDRAW: "Gs2Money2:Withdraw";
+    readonly GS2_MONEY2_WITHDRAW_BY_USER_ID: "Gs2Money2:WithdrawByUserId";
+    readonly GS2_MONEY_DEPOSIT_BY_USER_ID: "Gs2Money:DepositByUserId";
+    readonly GS2_MONEY_WITHDRAW: "Gs2Money:Withdraw";
+    readonly GS2_MONEY_WITHDRAW_BY_USER_ID: "Gs2Money:WithdrawByUserId";
+    readonly GS2_STAMINA_CONSUME_STAMINA: "Gs2Stamina:ConsumeStamina";
+    readonly GS2_STAMINA_CONSUME_STAMINA_BY_USER_ID: "Gs2Stamina:ConsumeStaminaByUserId";
+    readonly GS2_STAMINA_RECOVER_STAMINA_BY_USER_ID: "Gs2Stamina:RecoverStaminaByUserId";
+};
+export type BuffTargetActionTargetActionName = typeof BuffTargetActionTargetActionName[keyof typeof BuffTargetActionTargetActionName];

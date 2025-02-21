@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { GuildVerifyType } from "./enum/GuildVerifyType";
+import { GuildVerifyType } from "./enums/GuildVerifyType";
 export default class VerifyCurrentMaximumMemberCountByGuildName extends VerifyAction {
     private readonly namespaceName;
     private readonly guildModelName;

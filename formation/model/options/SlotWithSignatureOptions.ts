@@ -13,7 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { SlotWithSignaturePropertyType } from "../enum/SlotWithSignaturePropertyType";
+import { SlotWithSignaturePropertyType } from "../enums/SlotWithSignaturePropertyType";
 
 export interface SlotWithSignatureOptions {
     body?: string|null;

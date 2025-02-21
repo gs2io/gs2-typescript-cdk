@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import { AppleAppStoreVerifyReceiptEventOptions } from "./options/AppleAppStoreVerifyReceiptEventOptions";
-import { AppleAppStoreVerifyReceiptEventEnvironment } from "./enum/AppleAppStoreVerifyReceiptEventEnvironment";
+import { AppleAppStoreVerifyReceiptEventEnvironment } from "./enums/AppleAppStoreVerifyReceiptEventEnvironment";
 
 export default class AppleAppStoreVerifyReceiptEvent {
     private readonly environment: AppleAppStoreVerifyReceiptEventEnvironment;

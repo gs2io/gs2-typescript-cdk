@@ -13,8 +13,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { LotteryModelMode } from "../enum/LotteryModelMode";
-import { LotteryModelMethod } from "../enum/LotteryModelMethod";
+import { LotteryModelMode } from "../enums/LotteryModelMode";
+import { LotteryModelMethod } from "../enums/LotteryModelMethod";
 
 export interface LotteryModelOptions {
     metadata?: string|null;

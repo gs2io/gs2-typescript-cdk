@@ -1,6 +1,8 @@
-import { EventRepeatBeginDayOfWeek } from "../enum/EventRepeatBeginDayOfWeek";
-import { EventRepeatEndDayOfWeek } from "../enum/EventRepeatEndDayOfWeek";
+import { EventRepeatType } from "../enums/EventRepeatType";
+import { EventRepeatBeginDayOfWeek } from "../enums/EventRepeatBeginDayOfWeek";
+import { EventRepeatEndDayOfWeek } from "../enums/EventRepeatEndDayOfWeek";
 export interface EventOptions {
+    repeatType?: EventRepeatType | null;
     metadata?: string | null;
     absoluteBegin?: number | null;
     absoluteEnd?: number | null;

@@ -1,4 +1,4 @@
-import { LimitModelResetDayOfWeek } from "../enum/LimitModelResetDayOfWeek";
+import { LimitModelResetDayOfWeek } from "../enums/LimitModelResetDayOfWeek";
 export interface LimitModelOptions {
     metadata?: string | null;
     resetDayOfMonth?: number | null;

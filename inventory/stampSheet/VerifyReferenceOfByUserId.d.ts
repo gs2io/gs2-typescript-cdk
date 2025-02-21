@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { ReferenceOfVerifyType } from "./enum/ReferenceOfVerifyType";
+import { ReferenceOfVerifyType } from "./enums/ReferenceOfVerifyType";
 export default class VerifyReferenceOfByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly inventoryName;

@@ -1,9 +1,9 @@
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
-import { NamespaceEnableDisconnectDetection } from "./enum/NamespaceEnableDisconnectDetection";
-import { NamespaceCreateGatheringTriggerType } from "./enum/NamespaceCreateGatheringTriggerType";
-import { NamespaceCompleteMatchmakingTriggerType } from "./enum/NamespaceCompleteMatchmakingTriggerType";
-import { NamespaceEnableCollaborateSeasonRating } from "./enum/NamespaceEnableCollaborateSeasonRating";
+import { NamespaceEnableDisconnectDetection } from "./enums/NamespaceEnableDisconnectDetection";
+import { NamespaceCreateGatheringTriggerType } from "./enums/NamespaceCreateGatheringTriggerType";
+import { NamespaceCompleteMatchmakingTriggerType } from "./enums/NamespaceCompleteMatchmakingTriggerType";
+import { NamespaceEnableCollaborateSeasonRating } from "./enums/NamespaceEnableCollaborateSeasonRating";
 import { NamespaceEnableDisconnectDetectionIsDisableOptions } from "./options/NamespaceEnableDisconnectDetectionIsDisableOptions";
 import { NamespaceEnableDisconnectDetectionIsEnableOptions } from "./options/NamespaceEnableDisconnectDetectionIsEnableOptions";
 import { NamespaceCreateGatheringTriggerTypeIsNoneOptions } from "./options/NamespaceCreateGatheringTriggerTypeIsNoneOptions";

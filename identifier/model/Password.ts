@@ -18,7 +18,7 @@ import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 
 import PasswordRef from "../ref/PasswordRef";
-import { PasswordEnableTwoFactorAuthentication } from "./enum/PasswordEnableTwoFactorAuthentication";
+import { PasswordEnableTwoFactorAuthentication } from "./enums/PasswordEnableTwoFactorAuthentication";
 
 import { PasswordOptions } from "./options/PasswordOptions";
 

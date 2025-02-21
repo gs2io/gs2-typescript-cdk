@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { AwaitSkipType } from "./enum/AwaitSkipType";
+import { AwaitSkipType } from "./enums/AwaitSkipType";
 
 export default class SkipByUserId extends AcquireAction {
     private readonly namespaceName: string;

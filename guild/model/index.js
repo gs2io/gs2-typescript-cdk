@@ -25,7 +25,7 @@ const GuildModel_1 = tslib_1.__importDefault(require("./GuildModel"));
 exports.GuildModel = GuildModel_1.default;
 const Inbox_1 = tslib_1.__importDefault(require("./Inbox"));
 exports.Inbox = Inbox_1.default;
-const GuildJoinPolicy_1 = require("./enum/GuildJoinPolicy");
+const GuildJoinPolicy_1 = require("./enums/GuildJoinPolicy");
 Object.defineProperty(exports, "GuildJoinPolicy", { enumerable: true, get: function () { return GuildJoinPolicy_1.GuildJoinPolicy; } });
 const RoleModel_1 = tslib_1.__importDefault(require("./RoleModel"));
 exports.RoleModel = RoleModel_1.default;

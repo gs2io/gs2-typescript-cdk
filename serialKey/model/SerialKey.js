@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const SerialKeyStatus_1 = require("./enum/SerialKeyStatus");
+const SerialKeyStatus_1 = require("./enums/SerialKeyStatus");
 class SerialKey {
     constructor(campaignModelName, code, status, createdAt, updatedAt, options = null) {
         var _a, _b, _c;

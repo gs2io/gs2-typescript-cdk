@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const BuffEntryModelTargetType_1 = require("./enum/BuffEntryModelTargetType");
+const BuffEntryModelTargetType_1 = require("./enums/BuffEntryModelTargetType");
 class BuffEntryModel {
     constructor(name, expression, targetType, priority, options = null) {
         var _a, _b, _c, _d;

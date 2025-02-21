@@ -16,12 +16,12 @@
 
 import {GetAttr, Join} from "../../core/func";
 import TriggerByUserId from "../stampSheet/TriggerByUserId";
-import { TriggerTriggerStrategy } from "../stampSheet/enum/TriggerTriggerStrategy";
+import { TriggerTriggerStrategy } from "../stampSheet/enums/TriggerTriggerStrategy";
 import DeleteTriggerByUserId from "../stampSheet/DeleteTriggerByUserId";
 import VerifyTriggerByUserId from "../stampSheet/VerifyTriggerByUserId";
-import { TriggerVerifyType } from "../stampSheet/enum/TriggerVerifyType";
+import { TriggerVerifyType } from "../stampSheet/enums/TriggerVerifyType";
 import VerifyEventByUserId from "../stampSheet/VerifyEventByUserId";
-import { EventVerifyType } from "../stampSheet/enum/EventVerifyType";
+import { EventVerifyType } from "../stampSheet/enums/EventVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;

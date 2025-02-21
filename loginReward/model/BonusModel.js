@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const BonusModelMode_1 = require("./enum/BonusModelMode");
-const BonusModelMissedReceiveRelief_1 = require("./enum/BonusModelMissedReceiveRelief");
+const BonusModelMode_1 = require("./enums/BonusModelMode");
+const BonusModelMissedReceiveRelief_1 = require("./enums/BonusModelMissedReceiveRelief");
 class BonusModel {
     constructor(name, mode, missedReceiveRelief, options = null) {
         var _a, _b, _c, _d, _e, _f, _g;

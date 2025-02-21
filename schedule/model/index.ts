@@ -17,10 +17,10 @@ import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import Event from "./Event";
 import { EventOptions } from "./options/EventOptions";
-import { EventScheduleType } from "./enum/EventScheduleType";
-import { EventRepeatType } from "./enum/EventRepeatType";
-import { EventRepeatBeginDayOfWeek } from "./enum/EventRepeatBeginDayOfWeek";
-import { EventRepeatEndDayOfWeek } from "./enum/EventRepeatEndDayOfWeek";
+import { EventScheduleType } from "./enums/EventScheduleType";
+import { EventRepeatType } from "./enums/EventRepeatType";
+import { EventRepeatBeginDayOfWeek } from "./enums/EventRepeatBeginDayOfWeek";
+import { EventRepeatEndDayOfWeek } from "./enums/EventRepeatEndDayOfWeek";
 import { EventScheduleTypeIsAbsoluteOptions } from "./options/EventScheduleTypeIsAbsoluteOptions"
 import { EventScheduleTypeIsRelativeOptions } from "./options/EventScheduleTypeIsRelativeOptions"
 import { EventRepeatTypeIsAlwaysOptions } from "./options/EventRepeatTypeIsAlwaysOptions"
@@ -29,9 +29,9 @@ import { EventRepeatTypeIsWeeklyOptions } from "./options/EventRepeatTypeIsWeekl
 import { EventRepeatTypeIsMonthlyOptions } from "./options/EventRepeatTypeIsMonthlyOptions"
 import RepeatSetting from "./RepeatSetting";
 import { RepeatSettingOptions } from "./options/RepeatSettingOptions";
-import { RepeatSettingRepeatType } from "./enum/RepeatSettingRepeatType";
-import { RepeatSettingBeginDayOfWeek } from "./enum/RepeatSettingBeginDayOfWeek";
-import { RepeatSettingEndDayOfWeek } from "./enum/RepeatSettingEndDayOfWeek";
+import { RepeatSettingRepeatType } from "./enums/RepeatSettingRepeatType";
+import { RepeatSettingBeginDayOfWeek } from "./enums/RepeatSettingBeginDayOfWeek";
+import { RepeatSettingEndDayOfWeek } from "./enums/RepeatSettingEndDayOfWeek";
 import { RepeatSettingRepeatTypeIsAlwaysOptions } from "./options/RepeatSettingRepeatTypeIsAlwaysOptions"
 import { RepeatSettingRepeatTypeIsDailyOptions } from "./options/RepeatSettingRepeatTypeIsDailyOptions"
 import { RepeatSettingRepeatTypeIsWeeklyOptions } from "./options/RepeatSettingRepeatTypeIsWeeklyOptions"

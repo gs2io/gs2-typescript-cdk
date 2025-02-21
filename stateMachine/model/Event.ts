@@ -18,7 +18,7 @@ import EmitEvent from "./EmitEvent";
 import { EventOptions } from "./options/EventOptions";
 import { EventEventTypeIsChangeStateOptions } from "./options/EventEventTypeIsChangeStateOptions";
 import { EventEventTypeIsEmitOptions } from "./options/EventEventTypeIsEmitOptions";
-import { EventEventType } from "./enum/EventEventType";
+import { EventEventType } from "./enums/EventEventType";
 
 export default class Event {
     private readonly eventType: EventEventType;

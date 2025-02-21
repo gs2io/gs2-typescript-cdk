@@ -1,7 +1,7 @@
 import TargetCounterModel from "../TargetCounterModel";
 import { VerifyAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
-import { MissionTaskModelTargetResetType } from "../enum/MissionTaskModelTargetResetType";
+import { MissionTaskModelTargetResetType } from "../enums/MissionTaskModelTargetResetType";
 export interface MissionTaskModelOptions {
     metadata?: string | null;
     targetCounter?: TargetCounterModel | null;

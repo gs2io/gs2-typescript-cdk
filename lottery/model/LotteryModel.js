@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const LotteryModelMethod_1 = require("./enum/LotteryModelMethod");
+const LotteryModelMethod_1 = require("./enums/LotteryModelMethod");
 class LotteryModel {
     constructor(name, mode, method, options = null) {
         var _a, _b, _c;

@@ -3,9 +3,9 @@ import { BonusModelModeIsScheduleOptions } from "./options/BonusModelModeIsSched
 import { BonusModelModeIsStreamingOptions } from "./options/BonusModelModeIsStreamingOptions";
 import { BonusModelMissedReceiveReliefIsEnabledOptions } from "./options/BonusModelMissedReceiveReliefIsEnabledOptions";
 import { BonusModelMissedReceiveReliefIsDisabledOptions } from "./options/BonusModelMissedReceiveReliefIsDisabledOptions";
-import { BonusModelMode } from "./enum/BonusModelMode";
-import { BonusModelRepeat } from "./enum/BonusModelRepeat";
-import { BonusModelMissedReceiveRelief } from "./enum/BonusModelMissedReceiveRelief";
+import { BonusModelMode } from "./enums/BonusModelMode";
+import { BonusModelRepeat } from "./enums/BonusModelRepeat";
+import { BonusModelMissedReceiveRelief } from "./enums/BonusModelMissedReceiveRelief";
 export default class BonusModel {
     private readonly name;
     private readonly mode;

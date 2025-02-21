@@ -16,8 +16,8 @@
 import TargetCounterModel from "../TargetCounterModel";
 import { ConsumeAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
-import { MissionTaskModelVerifyCompleteType } from "../enum/MissionTaskModelVerifyCompleteType";
-import { MissionTaskModelTargetResetType } from "../enum/MissionTaskModelTargetResetType";
+import { MissionTaskModelVerifyCompleteType } from "../enums/MissionTaskModelVerifyCompleteType";
+import { MissionTaskModelTargetResetType } from "../enums/MissionTaskModelTargetResetType";
 
 export interface MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions {
     metadata?: string|null;

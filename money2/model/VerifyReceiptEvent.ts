@@ -16,7 +16,7 @@
 import AppleAppStoreVerifyReceiptEvent from "./AppleAppStoreVerifyReceiptEvent";
 import GooglePlayVerifyReceiptEvent from "./GooglePlayVerifyReceiptEvent";
 import { VerifyReceiptEventOptions } from "./options/VerifyReceiptEventOptions";
-import { VerifyReceiptEventPlatform } from "./enum/VerifyReceiptEventPlatform";
+import { VerifyReceiptEventPlatform } from "./enums/VerifyReceiptEventPlatform";
 
 export default class VerifyReceiptEvent {
     private readonly contentName: string;

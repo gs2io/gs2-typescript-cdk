@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { BigItemVerifyType } from "./enum/BigItemVerifyType";
+import { BigItemVerifyType } from "./enums/BigItemVerifyType";
 
 export default class VerifyBigItemByUserId extends VerifyAction {
     private readonly namespaceName: string;

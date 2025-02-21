@@ -16,8 +16,8 @@
 import FixedTiming from "../FixedTiming";
 import Scope from "../Scope";
 import GlobalRankingSetting from "../GlobalRankingSetting";
-import { CategoryModelOrderDirection } from "../enum/CategoryModelOrderDirection";
-import { CategoryModelScope } from "../enum/CategoryModelScope";
+import { CategoryModelOrderDirection } from "../enums/CategoryModelOrderDirection";
+import { CategoryModelScope } from "../enums/CategoryModelScope";
 
 export interface CategoryModelScopeIsGlobalOptions {
     metadata?: string|null;

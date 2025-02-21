@@ -1,4 +1,4 @@
-import { NamespaceType } from "../enum/NamespaceType";
+import { NamespaceType } from "../enums/NamespaceType";
 export interface NamespaceOptions {
     description?: string | null;
     type?: NamespaceType | null;

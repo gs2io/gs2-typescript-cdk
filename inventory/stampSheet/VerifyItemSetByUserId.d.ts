@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { ItemSetVerifyType } from "./enum/ItemSetVerifyType";
+import { ItemSetVerifyType } from "./enums/ItemSetVerifyType";
 export default class VerifyItemSetByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;

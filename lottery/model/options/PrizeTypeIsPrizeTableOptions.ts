@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import { AcquireAction } from "../../../core/model";
-import { PrizeType } from "../enum/PrizeType";
+import { PrizeType } from "../enums/PrizeType";
 
 export interface PrizeTypeIsPrizeTableOptions {
     drawnLimit?: number|null;

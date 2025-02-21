@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import { BatchRequestPayloadOptions } from "./options/BatchRequestPayloadOptions";
-import { BatchRequestPayloadService } from "./enum/BatchRequestPayloadService";
+import { BatchRequestPayloadService } from "./enums/BatchRequestPayloadService";
 
 export default class BatchRequestPayload {
     private readonly requestId: string;

@@ -13,8 +13,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { TargetCounterModelScopeType } from "../enum/TargetCounterModelScopeType";
-import { TargetCounterModelResetType } from "../enum/TargetCounterModelResetType";
+import { TargetCounterModelScopeType } from "../enums/TargetCounterModelScopeType";
+import { TargetCounterModelResetType } from "../enums/TargetCounterModelResetType";
 
 export interface TargetCounterModelScopeTypeIsVerifyActionOptions {
     resetType?: TargetCounterModelResetType|null;

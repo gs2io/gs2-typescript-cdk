@@ -22,7 +22,7 @@ import MultiplyAcquireActionsByUserId from "../stampSheet/MultiplyAcquireActions
 import { AcquireAction } from "../../core/model";
 import SubGradeByUserId from "../stampSheet/SubGradeByUserId";
 import VerifyGradeByUserId from "../stampSheet/VerifyGradeByUserId";
-import { StatusVerifyType } from "../stampSheet/enum/StatusVerifyType";
+import { StatusVerifyType } from "../stampSheet/enums/StatusVerifyType";
 import VerifyGradeUpMaterialByUserId from "../stampSheet/VerifyGradeUpMaterialByUserId";
 
 export default class NamespaceRef {

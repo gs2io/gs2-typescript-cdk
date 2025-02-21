@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { CounterVerifyType } from "./enum/CounterVerifyType";
+import { CounterVerifyType } from "./enums/CounterVerifyType";
 
 export default class VerifyCounterByUserId extends VerifyAction {
     private readonly namespaceName: string;

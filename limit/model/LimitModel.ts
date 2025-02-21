@@ -19,8 +19,8 @@ import { LimitModelResetTypeIsDailyOptions } from "./options/LimitModelResetType
 import { LimitModelResetTypeIsWeeklyOptions } from "./options/LimitModelResetTypeIsWeeklyOptions";
 import { LimitModelResetTypeIsMonthlyOptions } from "./options/LimitModelResetTypeIsMonthlyOptions";
 import { LimitModelResetTypeIsDaysOptions } from "./options/LimitModelResetTypeIsDaysOptions";
-import { LimitModelResetType } from "./enum/LimitModelResetType";
-import { LimitModelResetDayOfWeek } from "./enum/LimitModelResetDayOfWeek";
+import { LimitModelResetType } from "./enums/LimitModelResetType";
+import { LimitModelResetDayOfWeek } from "./enums/LimitModelResetDayOfWeek";
 
 export default class LimitModel {
     private readonly name: string;

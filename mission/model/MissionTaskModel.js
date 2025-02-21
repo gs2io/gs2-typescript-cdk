@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const MissionTaskModelVerifyCompleteType_1 = require("./enum/MissionTaskModelVerifyCompleteType");
+const MissionTaskModelVerifyCompleteType_1 = require("./enums/MissionTaskModelVerifyCompleteType");
 class MissionTaskModel {
-    constructor(name, verifyCompleteType, counterName, targetValue, options = null) {
+    constructor(name, verifyCompleteType, options = null) {
         var _a, _b, _c, _d, _e, _f, _g;
         this.metadata = null;
         this.targetCounter = null;
@@ -13,8 +13,6 @@ class MissionTaskModel {
         this.targetResetType = null;
         this.name = name;
         this.verifyCompleteType = verifyCompleteType;
-        this.counterName = counterName;
-        this.targetValue = targetValue;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
         this.targetCounter = (_b = options === null || options === void 0 ? void 0 : options.targetCounter) !== null && _b !== void 0 ? _b : null;
         this.verifyCompleteConsumeActions = (_c = options === null || options === void 0 ? void 0 : options.verifyCompleteConsumeActions) !== null && _c !== void 0 ? _c : null;
@@ -24,7 +22,7 @@ class MissionTaskModel {
         this.targetResetType = (_g = options === null || options === void 0 ? void 0 : options.targetResetType) !== null && _g !== void 0 ? _g : null;
     }
     static verifyCompleteTypeIsCounter(name, counterName, targetValue, targetCounter, options = null) {
-        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.COUNTER, counterName, targetValue, {
+        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.COUNTER, {
             targetCounter: targetCounter,
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             verifyCompleteConsumeActions: options === null || options === void 0 ? void 0 : options.verifyCompleteConsumeActions,
@@ -35,7 +33,7 @@ class MissionTaskModel {
         });
     }
     static verifyCompleteTypeIsVerifyActions(name, counterName, targetValue, options = null) {
-        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS, counterName, targetValue, {
+        return new MissionTaskModel(name, MissionTaskModelVerifyCompleteType_1.MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS, {
             metadata: options === null || options === void 0 ? void 0 : options.metadata,
             verifyCompleteConsumeActions: options === null || options === void 0 ? void 0 : options.verifyCompleteConsumeActions,
             completeAcquireActions: options === null || options === void 0 ? void 0 : options.completeAcquireActions,
@@ -71,14 +69,8 @@ class MissionTaskModel {
         if (this.premiseMissionTaskName != null) {
             properties["premiseMissionTaskName"] = this.premiseMissionTaskName;
         }
-        if (this.counterName != null) {
-            properties["counterName"] = this.counterName;
-        }
         if (this.targetResetType != null) {
             properties["targetResetType"] = this.targetResetType;
-        }
-        if (this.targetValue != null) {
-            properties["targetValue"] = this.targetValue;
         }
         return properties;
     }

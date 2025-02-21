@@ -15,7 +15,7 @@
  */
 import AppleAppStoreVerifyReceiptEvent from "../AppleAppStoreVerifyReceiptEvent";
 import GooglePlayVerifyReceiptEvent from "../GooglePlayVerifyReceiptEvent";
-import { VerifyReceiptEventPlatform } from "../enum/VerifyReceiptEventPlatform";
+import { VerifyReceiptEventPlatform } from "../enums/VerifyReceiptEventPlatform";
 
 export interface VerifyReceiptEventOptions {
     appleAppStoreVerifyReceiptEvent?: AppleAppStoreVerifyReceiptEvent|null;

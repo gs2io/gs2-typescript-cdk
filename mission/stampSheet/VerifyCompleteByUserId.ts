@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { CompleteVerifyType } from "./enum/CompleteVerifyType";
+import { CompleteVerifyType } from "./enums/CompleteVerifyType";
 
 export default class VerifyCompleteByUserId extends VerifyAction {
     private readonly namespaceName: string;

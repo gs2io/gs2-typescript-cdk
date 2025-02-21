@@ -21,8 +21,8 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-const NamespaceServerType_1 = require("./enum/NamespaceServerType");
+const NamespaceServerType_1 = require("./enums/NamespaceServerType");
 Object.defineProperty(exports, "NamespaceServerType", { enumerable: true, get: function () { return NamespaceServerType_1.NamespaceServerType; } });
-const NamespaceServerSpec_1 = require("./enum/NamespaceServerSpec");
+const NamespaceServerSpec_1 = require("./enums/NamespaceServerSpec");
 Object.defineProperty(exports, "NamespaceServerSpec", { enumerable: true, get: function () { return NamespaceServerSpec_1.NamespaceServerSpec; } });
 //# sourceMappingURL=index.js.map

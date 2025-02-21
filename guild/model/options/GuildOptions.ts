@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import RoleModel from "../RoleModel";
-import { GuildJoinPolicy } from "../enum/GuildJoinPolicy";
+import { GuildJoinPolicy } from "../enums/GuildJoinPolicy";
 
 export interface GuildOptions {
     attribute1?: number|null;

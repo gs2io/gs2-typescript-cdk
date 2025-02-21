@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import { IssueJobOptions } from "./options/IssueJobOptions";
-import { IssueJobStatus } from "./enum/IssueJobStatus";
+import { IssueJobStatus } from "./enums/IssueJobStatus";
 
 export default class IssueJob {
     private readonly name: string;

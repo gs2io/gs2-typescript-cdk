@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import BalanceParameterValueModel from "../BalanceParameterValueModel";
-import { BalanceParameterModelInitialValueStrategy } from "../enum/BalanceParameterModelInitialValueStrategy";
+import { BalanceParameterModelInitialValueStrategy } from "../enums/BalanceParameterModelInitialValueStrategy";
 
 export interface BalanceParameterModelOptions {
     metadata?: string|null;

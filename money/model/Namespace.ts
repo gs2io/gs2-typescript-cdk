@@ -20,8 +20,8 @@ import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
-import { NamespacePriority } from "./enum/NamespacePriority";
-import { NamespaceCurrency } from "./enum/NamespaceCurrency";
+import { NamespacePriority } from "./enums/NamespacePriority";
+import { NamespaceCurrency } from "./enums/NamespaceCurrency";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 

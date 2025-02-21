@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { SimpleItemVerifyType } from "./enum/SimpleItemVerifyType";
+import { SimpleItemVerifyType } from "./enums/SimpleItemVerifyType";
 export default class VerifySimpleItemByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;

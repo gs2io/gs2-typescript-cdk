@@ -21,7 +21,7 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const IssueJob_1 = tslib_1.__importDefault(require("./IssueJob"));
 exports.IssueJob = IssueJob_1.default;
-const IssueJobStatus_1 = require("./enum/IssueJobStatus");
+const IssueJobStatus_1 = require("./enums/IssueJobStatus");
 Object.defineProperty(exports, "IssueJobStatus", { enumerable: true, get: function () { return IssueJobStatus_1.IssueJobStatus; } });
 const CampaignModel_1 = tslib_1.__importDefault(require("./CampaignModel"));
 exports.CampaignModel = CampaignModel_1.default;

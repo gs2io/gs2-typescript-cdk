@@ -1,8 +1,8 @@
 import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
 import NamespaceRef from "../ref/NamespaceRef";
-import { NamespaceServerType } from "./enum/NamespaceServerType";
-import { NamespaceServerSpec } from "./enum/NamespaceServerSpec";
+import { NamespaceServerType } from "./enums/NamespaceServerType";
+import { NamespaceServerSpec } from "./enums/NamespaceServerSpec";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;

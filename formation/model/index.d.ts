@@ -12,7 +12,7 @@ import SlotModel from "./SlotModel";
 import { SlotModelOptions } from "./options/SlotModelOptions";
 import SlotWithSignature from "./SlotWithSignature";
 import { SlotWithSignatureOptions } from "./options/SlotWithSignatureOptions";
-import { SlotWithSignaturePropertyType } from "./enum/SlotWithSignaturePropertyType";
+import { SlotWithSignaturePropertyType } from "./enums/SlotWithSignaturePropertyType";
 import VerifyActionResult from "./VerifyActionResult";
 import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
 import ConsumeActionResult from "./ConsumeActionResult";

@@ -5,7 +5,7 @@ import HeldCount from "../model/HeldCount";
 import ConsumeSimpleItemsByUserId from "../stampSheet/ConsumeSimpleItemsByUserId";
 import ConsumeCount from "../model/ConsumeCount";
 import VerifySimpleItemByUserId from "../stampSheet/VerifySimpleItemByUserId";
-import { SimpleItemVerifyType } from "../stampSheet/enum/SimpleItemVerifyType";
+import { SimpleItemVerifyType } from "../stampSheet/enums/SimpleItemVerifyType";
 export default class SimpleItemModelRef {
     private readonly namespaceName;
     private readonly inventoryName;

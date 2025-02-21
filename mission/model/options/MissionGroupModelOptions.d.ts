@@ -1,5 +1,5 @@
 import MissionTaskModel from "../MissionTaskModel";
-import { MissionGroupModelResetDayOfWeek } from "../enum/MissionGroupModelResetDayOfWeek";
+import { MissionGroupModelResetDayOfWeek } from "../enums/MissionGroupModelResetDayOfWeek";
 export interface MissionGroupModelOptions {
     metadata?: string | null;
     tasks?: MissionTaskModel[] | null;

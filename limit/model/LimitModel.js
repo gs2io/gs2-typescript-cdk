@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const LimitModelResetType_1 = require("./enum/LimitModelResetType");
+const LimitModelResetType_1 = require("./enums/LimitModelResetType");
 class LimitModel {
     constructor(name, resetType, options = null) {
         var _a, _b, _c, _d, _e, _f;

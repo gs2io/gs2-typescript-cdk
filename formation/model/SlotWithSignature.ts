@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 import { SlotWithSignatureOptions } from "./options/SlotWithSignatureOptions";
-import { SlotWithSignaturePropertyType } from "./enum/SlotWithSignaturePropertyType";
+import { SlotWithSignaturePropertyType } from "./enums/SlotWithSignaturePropertyType";
 
 export default class SlotWithSignature {
     private readonly name: string;

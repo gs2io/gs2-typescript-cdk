@@ -13,7 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { IssueJobStatus } from "../enum/IssueJobStatus";
+import { IssueJobStatus } from "../enums/IssueJobStatus";
 
 export interface IssueJobOptions {
     metadata?: string|null;

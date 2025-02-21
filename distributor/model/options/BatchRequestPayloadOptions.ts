@@ -13,7 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { BatchRequestPayloadService } from "../enum/BatchRequestPayloadService";
+import { BatchRequestPayloadService } from "../enums/BatchRequestPayloadService";
 
 export interface BatchRequestPayloadOptions {
 }

@@ -1,5 +1,5 @@
 import { AccessLogWithTelemetryOptions } from "./options/AccessLogWithTelemetryOptions";
-import { AccessLogWithTelemetryStatus } from "./enum/AccessLogWithTelemetryStatus";
+import { AccessLogWithTelemetryStatus } from "./enums/AccessLogWithTelemetryStatus";
 export default class AccessLogWithTelemetry {
     private readonly timestamp;
     private readonly sourceRequestId;

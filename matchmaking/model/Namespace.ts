@@ -24,10 +24,10 @@ import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import RatingModel from "./RatingModel";
 import SeasonModel from "./SeasonModel";
-import { NamespaceEnableDisconnectDetection } from "./enum/NamespaceEnableDisconnectDetection";
-import { NamespaceCreateGatheringTriggerType } from "./enum/NamespaceCreateGatheringTriggerType";
-import { NamespaceCompleteMatchmakingTriggerType } from "./enum/NamespaceCompleteMatchmakingTriggerType";
-import { NamespaceEnableCollaborateSeasonRating } from "./enum/NamespaceEnableCollaborateSeasonRating";
+import { NamespaceEnableDisconnectDetection } from "./enums/NamespaceEnableDisconnectDetection";
+import { NamespaceCreateGatheringTriggerType } from "./enums/NamespaceCreateGatheringTriggerType";
+import { NamespaceCompleteMatchmakingTriggerType } from "./enums/NamespaceCompleteMatchmakingTriggerType";
+import { NamespaceEnableCollaborateSeasonRating } from "./enums/NamespaceEnableCollaborateSeasonRating";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 

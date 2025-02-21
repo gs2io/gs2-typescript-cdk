@@ -18,7 +18,7 @@ import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 
 import NamespaceRef from "../ref/NamespaceRef";
-import { NamespaceType } from "./enum/NamespaceType";
+import { NamespaceType } from "./enums/NamespaceType";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 

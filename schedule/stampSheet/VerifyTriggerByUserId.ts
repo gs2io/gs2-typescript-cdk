@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { TriggerVerifyType } from "./enum/TriggerVerifyType";
+import { TriggerVerifyType } from "./enums/TriggerVerifyType";
 
 export default class VerifyTriggerByUserId extends VerifyAction {
     private readonly namespaceName: string;

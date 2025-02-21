@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const DisplayItemType_1 = require("./enum/DisplayItemType");
+const DisplayItemType_1 = require("./enums/DisplayItemType");
 class DisplayItem {
     constructor(displayItemId, type, options = null) {
         var _a, _b, _c;

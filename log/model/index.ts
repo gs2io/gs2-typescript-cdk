@@ -15,7 +15,7 @@
  */
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
-import { NamespaceType } from "./enum/NamespaceType";
+import { NamespaceType } from "./enums/NamespaceType";
 import { NamespaceTypeIsGs2Options } from "./options/NamespaceTypeIsGs2Options"
 import { NamespaceTypeIsBigqueryOptions } from "./options/NamespaceTypeIsBigqueryOptions"
 import { NamespaceTypeIsFirehoseOptions } from "./options/NamespaceTypeIsFirehoseOptions"
@@ -37,7 +37,7 @@ import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount";
 import { ExecuteStampTaskLogCountOptions } from "./options/ExecuteStampTaskLogCountOptions";
 import AccessLogWithTelemetry from "./AccessLogWithTelemetry";
 import { AccessLogWithTelemetryOptions } from "./options/AccessLogWithTelemetryOptions";
-import { AccessLogWithTelemetryStatus } from "./enum/AccessLogWithTelemetryStatus";
+import { AccessLogWithTelemetryStatus } from "./enums/AccessLogWithTelemetryStatus";
 import InGameLogTag from "./InGameLogTag";
 import { InGameLogTagOptions } from "./options/InGameLogTagOptions";
 

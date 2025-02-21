@@ -27,7 +27,7 @@ const Showcase_1 = tslib_1.__importDefault(require("./Showcase"));
 exports.Showcase = Showcase_1.default;
 const DisplayItem_1 = tslib_1.__importDefault(require("./DisplayItem"));
 exports.DisplayItem = DisplayItem_1.default;
-const DisplayItemType_1 = require("./enum/DisplayItemType");
+const DisplayItemType_1 = require("./enums/DisplayItemType");
 Object.defineProperty(exports, "DisplayItemType", { enumerable: true, get: function () { return DisplayItemType_1.DisplayItemType; } });
 const RandomShowcase_1 = tslib_1.__importDefault(require("./RandomShowcase"));
 exports.RandomShowcase = RandomShowcase_1.default;

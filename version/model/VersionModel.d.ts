@@ -4,9 +4,9 @@ import { VersionModelTypeIsSimpleOptions } from "./options/VersionModelTypeIsSim
 import { VersionModelTypeIsScheduleOptions } from "./options/VersionModelTypeIsScheduleOptions";
 import { VersionModelScopeIsPassiveOptions } from "./options/VersionModelScopeIsPassiveOptions";
 import { VersionModelScopeIsActiveOptions } from "./options/VersionModelScopeIsActiveOptions";
-import { VersionModelScope } from "./enum/VersionModelScope";
-import { VersionModelType } from "./enum/VersionModelType";
-import { VersionModelApproveRequirement } from "./enum/VersionModelApproveRequirement";
+import { VersionModelScope } from "./enums/VersionModelScope";
+import { VersionModelType } from "./enums/VersionModelType";
+import { VersionModelApproveRequirement } from "./enums/VersionModelApproveRequirement";
 export default class VersionModel {
     private readonly name;
     private readonly scope;

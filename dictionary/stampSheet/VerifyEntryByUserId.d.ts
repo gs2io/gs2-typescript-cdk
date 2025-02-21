@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { EntryVerifyType } from "./enum/EntryVerifyType";
+import { EntryVerifyType } from "./enums/EntryVerifyType";
 export default class VerifyEntryByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;

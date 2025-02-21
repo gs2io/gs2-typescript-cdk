@@ -15,7 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
-import { EventVerifyType } from "./enum/EventVerifyType";
+import { EventVerifyType } from "./enums/EventVerifyType";
 
 export default class VerifyEventByUserId extends VerifyAction {
     private readonly namespaceName: string;

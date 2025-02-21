@@ -21,9 +21,9 @@ import ScopedValue from "../model/ScopedValue";
 import DecreaseCounterByUserId from "../stampSheet/DecreaseCounterByUserId";
 import ResetCounterByUserId from "../stampSheet/ResetCounterByUserId";
 import VerifyCounterValueByUserId from "../stampSheet/VerifyCounterValueByUserId";
-import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
-import { CounterScopeType } from "../stampSheet/enum/CounterScopeType";
-import { CounterResetType } from "../stampSheet/enum/CounterResetType";
+import { CounterVerifyType } from "../stampSheet/enums/CounterVerifyType";
+import { CounterScopeType } from "../stampSheet/enums/CounterScopeType";
+import { CounterResetType } from "../stampSheet/enums/CounterResetType";
 
 export default class CounterModelRef {
     private readonly namespaceName: string;

@@ -15,9 +15,9 @@
  */
 import { AcquireAction } from "../../../core/model";
 import RankingReward from "../RankingReward";
-import { ClusterRankingModelClusterType } from "../enum/ClusterRankingModelClusterType";
-import { ClusterRankingModelOrderDirection } from "../enum/ClusterRankingModelOrderDirection";
-import { ClusterRankingModelRewardCalculationIndex } from "../enum/ClusterRankingModelRewardCalculationIndex";
+import { ClusterRankingModelClusterType } from "../enums/ClusterRankingModelClusterType";
+import { ClusterRankingModelOrderDirection } from "../enums/ClusterRankingModelOrderDirection";
+import { ClusterRankingModelRewardCalculationIndex } from "../enums/ClusterRankingModelRewardCalculationIndex";
 
 export interface ClusterRankingModelOptions {
     metadata?: string|null;

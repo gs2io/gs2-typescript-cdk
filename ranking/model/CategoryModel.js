@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CategoryModelScope_1 = require("./enum/CategoryModelScope");
+const CategoryModelScope_1 = require("./enums/CategoryModelScope");
 class CategoryModel {
     constructor(name, sum, orderDirection, scope, options = null) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;

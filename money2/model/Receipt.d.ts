@@ -1,5 +1,5 @@
 import { ReceiptOptions } from "./options/ReceiptOptions";
-import { ReceiptStore } from "./enum/ReceiptStore";
+import { ReceiptStore } from "./enums/ReceiptStore";
 export default class Receipt {
     private readonly store;
     private readonly transactionID;

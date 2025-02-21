@@ -20,7 +20,7 @@ import CountDownByUserId from "../stampSheet/CountDownByUserId";
 import DeleteCounterByUserId from "../stampSheet/DeleteCounterByUserId";
 import CountUpByUserId from "../stampSheet/CountUpByUserId";
 import VerifyCounterByUserId from "../stampSheet/VerifyCounterByUserId";
-import { CounterVerifyType } from "../stampSheet/enum/CounterVerifyType";
+import { CounterVerifyType } from "../stampSheet/enums/CounterVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;

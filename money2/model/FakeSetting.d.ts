@@ -1,5 +1,5 @@
 import { FakeSettingOptions } from "./options/FakeSettingOptions";
-import { FakeSettingAcceptFakeReceipt } from "./enum/FakeSettingAcceptFakeReceipt";
+import { FakeSettingAcceptFakeReceipt } from "./enums/FakeSettingAcceptFakeReceipt";
 export default class FakeSetting {
     private readonly acceptFakeReceipt;
     constructor(acceptFakeReceipt: FakeSettingAcceptFakeReceipt, options?: FakeSettingOptions | null);

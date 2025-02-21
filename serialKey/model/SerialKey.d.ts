@@ -2,7 +2,7 @@ import { SerialKeyOptions } from "./options/SerialKeyOptions";
 import { SerialKeyStatusIsActiveOptions } from "./options/SerialKeyStatusIsActiveOptions";
 import { SerialKeyStatusIsUsedOptions } from "./options/SerialKeyStatusIsUsedOptions";
 import { SerialKeyStatusIsInactiveOptions } from "./options/SerialKeyStatusIsInactiveOptions";
-import { SerialKeyStatus } from "./enum/SerialKeyStatus";
+import { SerialKeyStatus } from "./enums/SerialKeyStatus";
 export default class SerialKey {
     private readonly campaignModelName;
     private readonly code;

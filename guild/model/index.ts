@@ -21,7 +21,7 @@ import GuildModel from "./GuildModel";
 import { GuildModelOptions } from "./options/GuildModelOptions";
 import Inbox from "./Inbox";
 import { InboxOptions } from "./options/InboxOptions";
-import { GuildJoinPolicy } from "./enum/GuildJoinPolicy";
+import { GuildJoinPolicy } from "./enums/GuildJoinPolicy";
 import RoleModel from "./RoleModel";
 import { RoleModelOptions } from "./options/RoleModelOptions";
 import Member from "./Member";

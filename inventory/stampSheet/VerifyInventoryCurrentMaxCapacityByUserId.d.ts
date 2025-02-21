@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { InventoryVerifyType } from "./enum/InventoryVerifyType";
+import { InventoryVerifyType } from "./enums/InventoryVerifyType";
 export default class VerifyInventoryCurrentMaxCapacityByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;

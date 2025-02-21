@@ -1,5 +1,5 @@
 import { TwoFactorAuthenticationSettingOptions } from "./options/TwoFactorAuthenticationSettingOptions";
-import { TwoFactorAuthenticationSettingStatus } from "./enum/TwoFactorAuthenticationSettingStatus";
+import { TwoFactorAuthenticationSettingStatus } from "./enums/TwoFactorAuthenticationSettingStatus";
 export default class TwoFactorAuthenticationSetting {
     private readonly authenticationKey;
     private readonly status;

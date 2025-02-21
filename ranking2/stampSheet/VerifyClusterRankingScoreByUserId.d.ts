@@ -1,5 +1,5 @@
 import { VerifyAction } from "../../core/model";
-import { ClusterRankingScoreVerifyType } from "./enum/ClusterRankingScoreVerifyType";
+import { ClusterRankingScoreVerifyType } from "./enums/ClusterRankingScoreVerifyType";
 export default class VerifyClusterRankingScoreByUserId extends VerifyAction {
     private readonly namespaceName;
     private readonly userId;

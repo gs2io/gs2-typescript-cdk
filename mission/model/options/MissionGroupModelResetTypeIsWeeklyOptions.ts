@@ -17,8 +17,8 @@ import TargetCounterModel from "../TargetCounterModel";
 import { VerifyAction } from "../../../core/model";
 import { AcquireAction } from "../../../core/model";
 import MissionTaskModel from "../MissionTaskModel";
-import { MissionGroupModelResetType } from "../enum/MissionGroupModelResetType";
-import { MissionGroupModelResetDayOfWeek } from "../enum/MissionGroupModelResetDayOfWeek";
+import { MissionGroupModelResetType } from "../enums/MissionGroupModelResetType";
+import { MissionGroupModelResetDayOfWeek } from "../enums/MissionGroupModelResetDayOfWeek";
 
 export interface MissionGroupModelResetTypeIsWeeklyOptions {
     metadata?: string|null;

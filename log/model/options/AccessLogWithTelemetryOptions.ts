@@ -13,7 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { AccessLogWithTelemetryStatus } from "../enum/AccessLogWithTelemetryStatus";
+import { AccessLogWithTelemetryStatus } from "../enums/AccessLogWithTelemetryStatus";
 
 export interface AccessLogWithTelemetryOptions {
     userId?: string|null;

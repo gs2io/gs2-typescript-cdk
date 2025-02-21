@@ -17,7 +17,7 @@ import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import BalanceParameterModel from "./BalanceParameterModel";
 import { BalanceParameterModelOptions } from "./options/BalanceParameterModelOptions";
-import { BalanceParameterModelInitialValueStrategy } from "./enum/BalanceParameterModelInitialValueStrategy";
+import { BalanceParameterModelInitialValueStrategy } from "./enums/BalanceParameterModelInitialValueStrategy";
 import RarityParameterModel from "./RarityParameterModel";
 import { RarityParameterModelOptions } from "./options/RarityParameterModelOptions";
 import BalanceParameterValueModel from "./BalanceParameterValueModel";

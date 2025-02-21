@@ -1,5 +1,5 @@
 import VerifyIncludeParticipantByUserId from "../stampSheet/VerifyIncludeParticipantByUserId";
-import { SeasonGatheringVerifyType } from "../stampSheet/enum/SeasonGatheringVerifyType";
+import { SeasonGatheringVerifyType } from "../stampSheet/enums/SeasonGatheringVerifyType";
 export default class SeasonModelRef {
     private readonly namespaceName;
     private readonly seasonName;

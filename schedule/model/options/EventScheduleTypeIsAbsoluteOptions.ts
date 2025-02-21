@@ -14,10 +14,10 @@
  * permissions and limitations under the License.
  */
 import RepeatSetting from "../RepeatSetting";
-import { EventScheduleType } from "../enum/EventScheduleType";
-import { EventRepeatType } from "../enum/EventRepeatType";
-import { EventRepeatBeginDayOfWeek } from "../enum/EventRepeatBeginDayOfWeek";
-import { EventRepeatEndDayOfWeek } from "../enum/EventRepeatEndDayOfWeek";
+import { EventScheduleType } from "../enums/EventScheduleType";
+import { EventRepeatType } from "../enums/EventRepeatType";
+import { EventRepeatBeginDayOfWeek } from "../enums/EventRepeatBeginDayOfWeek";
+import { EventRepeatEndDayOfWeek } from "../enums/EventRepeatEndDayOfWeek";
 
 export interface EventScheduleTypeIsAbsoluteOptions {
     metadata?: string|null;

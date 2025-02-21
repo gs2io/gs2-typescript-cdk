@@ -23,8 +23,8 @@ import { MissionGroupModelResetTypeIsDailyOptions } from "./options/MissionGroup
 import { MissionGroupModelResetTypeIsWeeklyOptions } from "./options/MissionGroupModelResetTypeIsWeeklyOptions";
 import { MissionGroupModelResetTypeIsMonthlyOptions } from "./options/MissionGroupModelResetTypeIsMonthlyOptions";
 import { MissionGroupModelResetTypeIsDaysOptions } from "./options/MissionGroupModelResetTypeIsDaysOptions";
-import { MissionGroupModelResetType } from "./enum/MissionGroupModelResetType";
-import { MissionGroupModelResetDayOfWeek } from "./enum/MissionGroupModelResetDayOfWeek";
+import { MissionGroupModelResetType } from "./enums/MissionGroupModelResetType";
+import { MissionGroupModelResetDayOfWeek } from "./enums/MissionGroupModelResetDayOfWeek";
 
 export default class MissionGroupModel {
     private readonly name: string;

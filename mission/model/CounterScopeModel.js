@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CounterScopeModelScopeType_1 = require("./enum/CounterScopeModelScopeType");
+const CounterScopeModelScopeType_1 = require("./enums/CounterScopeModelScopeType");
 class CounterScopeModel {
     constructor(scopeType, options = null) {
         var _a, _b, _c, _d, _e, _f, _g, _h;

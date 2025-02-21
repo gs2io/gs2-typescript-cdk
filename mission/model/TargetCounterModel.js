@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const TargetCounterModelScopeType_1 = require("./enum/TargetCounterModelScopeType");
+const TargetCounterModelScopeType_1 = require("./enums/TargetCounterModelScopeType");
 class TargetCounterModel {
     constructor(counterName, scopeType, value, options = null) {
         var _a, _b;

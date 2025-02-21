@@ -1,8 +1,8 @@
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
-import { NamespaceEnableDisconnectDetection } from "../enum/NamespaceEnableDisconnectDetection";
-import { NamespaceEnableCollaborateSeasonRating } from "../enum/NamespaceEnableCollaborateSeasonRating";
+import { NamespaceEnableDisconnectDetection } from "../enums/NamespaceEnableDisconnectDetection";
+import { NamespaceEnableCollaborateSeasonRating } from "../enums/NamespaceEnableCollaborateSeasonRating";
 export interface NamespaceOptions {
     description?: string | null;
     enableRating?: boolean | null;

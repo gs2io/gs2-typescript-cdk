@@ -16,7 +16,7 @@
 import { TransactionSetting } from "../../../core/model";
 import { ScriptSetting } from "../../../core/model";
 import { LogSetting } from "../../../core/model";
-import { NamespaceSupportSpeculativeExecution } from "../enum/NamespaceSupportSpeculativeExecution";
+import { NamespaceSupportSpeculativeExecution } from "../enums/NamespaceSupportSpeculativeExecution";
 
 export interface NamespaceSupportSpeculativeExecutionIsDisableOptions {
     description?: string|null;

@@ -13,7 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { SerialKeyStatus } from "../enum/SerialKeyStatus";
+import { SerialKeyStatus } from "../enums/SerialKeyStatus";
 
 export interface SerialKeyStatusIsActiveOptions {
     metadata?: string|null;

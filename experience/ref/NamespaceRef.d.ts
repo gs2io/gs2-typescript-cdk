@@ -8,7 +8,7 @@ import { AcquireAction } from "../../core/model";
 import SubExperienceByUserId from "../stampSheet/SubExperienceByUserId";
 import SubRankCapByUserId from "../stampSheet/SubRankCapByUserId";
 import VerifyRankByUserId from "../stampSheet/VerifyRankByUserId";
-import { StatusVerifyType } from "../stampSheet/enum/StatusVerifyType";
+import { StatusVerifyType } from "../stampSheet/enums/StatusVerifyType";
 import VerifyRankCapByUserId from "../stampSheet/VerifyRankCapByUserId";
 export default class NamespaceRef {
     private readonly namespaceName;
