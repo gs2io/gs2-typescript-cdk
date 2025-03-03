@@ -8,5 +8,6 @@ export interface NamespaceOptions {
     authenticationScript?: ScriptSetting | null;
     createTakeOverScript?: ScriptSetting | null;
     doTakeOverScript?: ScriptSetting | null;
+    banScript?: ScriptSetting | null;
     logSetting?: LogSetting | null;
 }

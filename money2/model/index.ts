@@ -16,8 +16,14 @@
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import { NamespaceCurrencyUsagePriority } from "./enums/NamespaceCurrencyUsagePriority";
+import SubscribeTransaction from "./SubscribeTransaction";
+import { SubscribeTransactionOptions } from "./options/SubscribeTransactionOptions";
+import { SubscribeTransactionStore } from "./enums/SubscribeTransactionStore";
+import { SubscribeTransactionStatusDetail } from "./enums/SubscribeTransactionStatusDetail";
 import StoreContentModel from "./StoreContentModel";
 import { StoreContentModelOptions } from "./options/StoreContentModelOptions";
+import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel";
+import { StoreSubscriptionContentModelOptions } from "./options/StoreSubscriptionContentModelOptions";
 import Receipt from "./Receipt";
 import { ReceiptOptions } from "./options/ReceiptOptions";
 import { ReceiptStore } from "./enums/ReceiptStore";
@@ -41,6 +47,9 @@ import DepositEvent from "./DepositEvent";
 import { DepositEventOptions } from "./options/DepositEventOptions";
 import WithdrawEvent from "./WithdrawEvent";
 import { WithdrawEventOptions } from "./options/WithdrawEventOptions";
+import RefundEvent from "./RefundEvent";
+import { RefundEventOptions } from "./options/RefundEventOptions";
+import { RefundEventPlatform } from "./enums/RefundEventPlatform";
 import AppleAppStoreVerifyReceiptEvent from "./AppleAppStoreVerifyReceiptEvent";
 import { AppleAppStoreVerifyReceiptEventOptions } from "./options/AppleAppStoreVerifyReceiptEventOptions";
 import { AppleAppStoreVerifyReceiptEventEnvironment } from "./enums/AppleAppStoreVerifyReceiptEventEnvironment";
@@ -50,6 +59,12 @@ import AppleAppStoreContent from "./AppleAppStoreContent";
 import { AppleAppStoreContentOptions } from "./options/AppleAppStoreContentOptions";
 import GooglePlayContent from "./GooglePlayContent";
 import { GooglePlayContentOptions } from "./options/GooglePlayContentOptions";
+import AppleAppStoreSubscriptionContent from "./AppleAppStoreSubscriptionContent";
+import { AppleAppStoreSubscriptionContentOptions } from "./options/AppleAppStoreSubscriptionContentOptions";
+import GooglePlaySubscriptionContent from "./GooglePlaySubscriptionContent";
+import { GooglePlaySubscriptionContentOptions } from "./options/GooglePlaySubscriptionContentOptions";
+import GooglePlayRealtimeNotificationMessage from "./GooglePlayRealtimeNotificationMessage";
+import { GooglePlayRealtimeNotificationMessageOptions } from "./options/GooglePlayRealtimeNotificationMessageOptions";
 import DailyTransactionHistory from "./DailyTransactionHistory";
 import { DailyTransactionHistoryOptions } from "./options/DailyTransactionHistoryOptions";
 import UnusedBalance from "./UnusedBalance";
@@ -60,8 +75,14 @@ export {
     Namespace,
     NamespaceOptions,
     NamespaceCurrencyUsagePriority,
+    SubscribeTransaction,
+    SubscribeTransactionOptions,
+    SubscribeTransactionStore,
+    SubscribeTransactionStatusDetail,
     StoreContentModel,
     StoreContentModelOptions,
+    StoreSubscriptionContentModel,
+    StoreSubscriptionContentModelOptions,
     Receipt,
     ReceiptOptions,
     ReceiptStore,
@@ -85,6 +106,9 @@ export {
     DepositEventOptions,
     WithdrawEvent,
     WithdrawEventOptions,
+    RefundEvent,
+    RefundEventOptions,
+    RefundEventPlatform,
     AppleAppStoreVerifyReceiptEvent,
     AppleAppStoreVerifyReceiptEventOptions,
     AppleAppStoreVerifyReceiptEventEnvironment,
@@ -94,6 +118,12 @@ export {
     AppleAppStoreContentOptions,
     GooglePlayContent,
     GooglePlayContentOptions,
+    AppleAppStoreSubscriptionContent,
+    AppleAppStoreSubscriptionContentOptions,
+    GooglePlaySubscriptionContent,
+    GooglePlaySubscriptionContentOptions,
+    GooglePlayRealtimeNotificationMessage,
+    GooglePlayRealtimeNotificationMessageOptions,
     DailyTransactionHistory,
     DailyTransactionHistoryOptions,
     UnusedBalance,

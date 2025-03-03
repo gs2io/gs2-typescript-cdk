@@ -17,11 +17,17 @@ import { AppleAppStoreSettingOptions } from "./options/AppleAppStoreSettingOptio
 
 export default class AppleAppStoreSetting {
     private readonly bundleId: string|null = null;
+    private readonly issuerId: string|null = null;
+    private readonly keyId: string|null = null;
+    private readonly privateKeyPem: string|null = null;
 
     public constructor(
         options: AppleAppStoreSettingOptions|null = null,
     ) {
         this.bundleId = options?.bundleId ?? null;
+        this.issuerId = options?.issuerId ?? null;
+        this.keyId = options?.keyId ?? null;
+        this.privateKeyPem = options?.privateKeyPem ?? null;
     }
 
     public properties(
@@ -30,6 +36,15 @@ export default class AppleAppStoreSetting {
 
         if (this.bundleId != null) {
             properties["bundleId"] = this.bundleId;
+        }
+        if (this.issuerId != null) {
+            properties["issuerId"] = this.issuerId;
+        }
+        if (this.keyId != null) {
+            properties["keyId"] = this.keyId;
+        }
+        if (this.privateKeyPem != null) {
+            properties["privateKeyPem"] = this.privateKeyPem;
         }
 
         return properties;

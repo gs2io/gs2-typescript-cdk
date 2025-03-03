@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.UnusedBalance = exports.DailyTransactionHistory = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEventEnvironment = exports.AppleAppStoreVerifyReceiptEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEventPlatform = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSettingAcceptFakeReceipt = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.ReceiptStore = exports.Receipt = exports.StoreContentModel = exports.NamespaceCurrencyUsagePriority = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.UnusedBalance = exports.DailyTransactionHistory = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEventEnvironment = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEventPlatform = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEventPlatform = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSettingAcceptFakeReceipt = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.ReceiptStore = exports.Receipt = exports.StoreSubscriptionContentModel = exports.StoreContentModel = exports.SubscribeTransactionStatusDetail = exports.SubscribeTransactionStore = exports.SubscribeTransaction = exports.NamespaceCurrencyUsagePriority = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,8 +21,16 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const NamespaceCurrencyUsagePriority_1 = require("./enums/NamespaceCurrencyUsagePriority");
 Object.defineProperty(exports, "NamespaceCurrencyUsagePriority", { enumerable: true, get: function () { return NamespaceCurrencyUsagePriority_1.NamespaceCurrencyUsagePriority; } });
+const SubscribeTransaction_1 = tslib_1.__importDefault(require("./SubscribeTransaction"));
+exports.SubscribeTransaction = SubscribeTransaction_1.default;
+const SubscribeTransactionStore_1 = require("./enums/SubscribeTransactionStore");
+Object.defineProperty(exports, "SubscribeTransactionStore", { enumerable: true, get: function () { return SubscribeTransactionStore_1.SubscribeTransactionStore; } });
+const SubscribeTransactionStatusDetail_1 = require("./enums/SubscribeTransactionStatusDetail");
+Object.defineProperty(exports, "SubscribeTransactionStatusDetail", { enumerable: true, get: function () { return SubscribeTransactionStatusDetail_1.SubscribeTransactionStatusDetail; } });
 const StoreContentModel_1 = tslib_1.__importDefault(require("./StoreContentModel"));
 exports.StoreContentModel = StoreContentModel_1.default;
+const StoreSubscriptionContentModel_1 = tslib_1.__importDefault(require("./StoreSubscriptionContentModel"));
+exports.StoreSubscriptionContentModel = StoreSubscriptionContentModel_1.default;
 const Receipt_1 = tslib_1.__importDefault(require("./Receipt"));
 exports.Receipt = Receipt_1.default;
 const ReceiptStore_1 = require("./enums/ReceiptStore");
@@ -49,6 +57,10 @@ const DepositEvent_1 = tslib_1.__importDefault(require("./DepositEvent"));
 exports.DepositEvent = DepositEvent_1.default;
 const WithdrawEvent_1 = tslib_1.__importDefault(require("./WithdrawEvent"));
 exports.WithdrawEvent = WithdrawEvent_1.default;
+const RefundEvent_1 = tslib_1.__importDefault(require("./RefundEvent"));
+exports.RefundEvent = RefundEvent_1.default;
+const RefundEventPlatform_1 = require("./enums/RefundEventPlatform");
+Object.defineProperty(exports, "RefundEventPlatform", { enumerable: true, get: function () { return RefundEventPlatform_1.RefundEventPlatform; } });
 const AppleAppStoreVerifyReceiptEvent_1 = tslib_1.__importDefault(require("./AppleAppStoreVerifyReceiptEvent"));
 exports.AppleAppStoreVerifyReceiptEvent = AppleAppStoreVerifyReceiptEvent_1.default;
 const AppleAppStoreVerifyReceiptEventEnvironment_1 = require("./enums/AppleAppStoreVerifyReceiptEventEnvironment");
@@ -59,6 +71,12 @@ const AppleAppStoreContent_1 = tslib_1.__importDefault(require("./AppleAppStoreC
 exports.AppleAppStoreContent = AppleAppStoreContent_1.default;
 const GooglePlayContent_1 = tslib_1.__importDefault(require("./GooglePlayContent"));
 exports.GooglePlayContent = GooglePlayContent_1.default;
+const AppleAppStoreSubscriptionContent_1 = tslib_1.__importDefault(require("./AppleAppStoreSubscriptionContent"));
+exports.AppleAppStoreSubscriptionContent = AppleAppStoreSubscriptionContent_1.default;
+const GooglePlaySubscriptionContent_1 = tslib_1.__importDefault(require("./GooglePlaySubscriptionContent"));
+exports.GooglePlaySubscriptionContent = GooglePlaySubscriptionContent_1.default;
+const GooglePlayRealtimeNotificationMessage_1 = tslib_1.__importDefault(require("./GooglePlayRealtimeNotificationMessage"));
+exports.GooglePlayRealtimeNotificationMessage = GooglePlayRealtimeNotificationMessage_1.default;
 const DailyTransactionHistory_1 = tslib_1.__importDefault(require("./DailyTransactionHistory"));
 exports.DailyTransactionHistory = DailyTransactionHistory_1.default;
 const UnusedBalance_1 = tslib_1.__importDefault(require("./UnusedBalance"));

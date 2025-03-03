@@ -35,6 +35,7 @@ export default class Namespace extends CdkResource {
     private readonly authenticationScript: ScriptSetting|null = null;
     private readonly createTakeOverScript: ScriptSetting|null = null;
     private readonly doTakeOverScript: ScriptSetting|null = null;
+    private readonly banScript: ScriptSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -55,6 +56,7 @@ export default class Namespace extends CdkResource {
         this.authenticationScript = options?.authenticationScript ?? null;
         this.createTakeOverScript = options?.createTakeOverScript ?? null;
         this.doTakeOverScript = options?.doTakeOverScript ?? null;
+        this.banScript = options?.banScript ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -102,6 +104,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.doTakeOverScript != null) {
             properties["DoTakeOverScript"] = this.doTakeOverScript?.properties(
+            );
+        }
+        if (this.banScript != null) {
+            properties["BanScript"] = this.banScript?.properties(
             );
         }
         if (this.logSetting != null) {

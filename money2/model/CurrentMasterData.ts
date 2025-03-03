@@ -15,16 +15,19 @@
  */
 import {CdkResource, Stack} from "../../core/model";
 import StoreContentModel from "./StoreContentModel";
+import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel";
 
 export default class CurrentMasterData extends CdkResource {
     private readonly version: string= "2024-06-20";
     private readonly namespaceName: string;
     private readonly storeContentModels: StoreContentModel[];
+    private readonly storeSubscriptionContentModels: StoreSubscriptionContentModel[];
 
     public constructor(
         stack: Stack,
         namespaceName: string,
         storeContentModels: StoreContentModel[],
+        storeSubscriptionContentModels: StoreSubscriptionContentModel[],
     ) {
         super(
             "Money2_CurrentModelMaster_" + namespaceName
@@ -32,6 +35,7 @@ export default class CurrentMasterData extends CdkResource {
 
         this.namespaceName = namespaceName;
         this.storeContentModels = storeContentModels;
+        this.storeSubscriptionContentModels = storeSubscriptionContentModels;
         stack.addResource(
             this,
         );
@@ -55,6 +59,10 @@ export default class CurrentMasterData extends CdkResource {
         settings["version"] = this.version
         if (this.storeContentModels != null) {
             settings["storeContentModels"] = this.storeContentModels.map(v => v.properties(
+                ));
+        }
+        if (this.storeSubscriptionContentModels != null) {
+            settings["storeSubscriptionContentModels"] = this.storeSubscriptionContentModels.map(v => v.properties(
                 ));
         }
 

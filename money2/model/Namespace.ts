@@ -18,11 +18,13 @@ import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import PlatformSetting from "./PlatformSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
+import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
 import CurrentMasterData from "./CurrentMasterData";
 import StoreContentModel from "./StoreContentModel";
+import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel";
 import { NamespaceCurrencyUsagePriority } from "./enums/NamespaceCurrencyUsagePriority";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
@@ -36,6 +38,11 @@ export default class Namespace extends CdkResource {
     private readonly description: string|null = null;
     private readonly depositBalanceScript: ScriptSetting|null = null;
     private readonly withdrawBalanceScript: ScriptSetting|null = null;
+    private readonly subscribeScript: string|null = null;
+    private readonly renewScript: string|null = null;
+    private readonly unsubscribeScript: string|null = null;
+    private readonly takeOverScript: ScriptSetting|null = null;
+    private readonly changeSubscriptionStatusNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -58,6 +65,11 @@ export default class Namespace extends CdkResource {
         this.description = options?.description ?? null;
         this.depositBalanceScript = options?.depositBalanceScript ?? null;
         this.withdrawBalanceScript = options?.withdrawBalanceScript ?? null;
+        this.subscribeScript = options?.subscribeScript ?? null;
+        this.renewScript = options?.renewScript ?? null;
+        this.unsubscribeScript = options?.unsubscribeScript ?? null;
+        this.takeOverScript = options?.takeOverScript ?? null;
+        this.changeSubscriptionStatusNotification = options?.changeSubscriptionStatusNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -103,6 +115,23 @@ export default class Namespace extends CdkResource {
             properties["WithdrawBalanceScript"] = this.withdrawBalanceScript?.properties(
             );
         }
+        if (this.subscribeScript != null) {
+            properties["SubscribeScript"] = this.subscribeScript;
+        }
+        if (this.renewScript != null) {
+            properties["RenewScript"] = this.renewScript;
+        }
+        if (this.unsubscribeScript != null) {
+            properties["UnsubscribeScript"] = this.unsubscribeScript;
+        }
+        if (this.takeOverScript != null) {
+            properties["TakeOverScript"] = this.takeOverScript?.properties(
+            );
+        }
+        if (this.changeSubscriptionStatusNotification != null) {
+            properties["ChangeSubscriptionStatusNotification"] = this.changeSubscriptionStatusNotification?.properties(
+            );
+        }
         if (this.logSetting != null) {
             properties["LogSetting"] = this.logSetting?.properties(
             );
@@ -129,11 +158,13 @@ export default class Namespace extends CdkResource {
 
     public masterData(
         storeContentModels: StoreContentModel[],
+        storeSubscriptionContentModels: StoreSubscriptionContentModel[],
     ): Namespace {
         new CurrentMasterData(
             this.stack,
             this.name,
             storeContentModels,
+            storeSubscriptionContentModels,
         ).addDependsOn(
             this,
         );

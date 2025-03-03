@@ -3,6 +3,7 @@ import { GetAttr } from "../../core/func";
 import PlatformSetting from "./PlatformSetting";
 import NamespaceRef from "../ref/NamespaceRef";
 import StoreContentModel from "./StoreContentModel";
+import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel";
 import { NamespaceCurrencyUsagePriority } from "./enums/NamespaceCurrencyUsagePriority";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
@@ -14,6 +15,11 @@ export default class Namespace extends CdkResource {
     private readonly description;
     private readonly depositBalanceScript;
     private readonly withdrawBalanceScript;
+    private readonly subscribeScript;
+    private readonly renewScript;
+    private readonly unsubscribeScript;
+    private readonly takeOverScript;
+    private readonly changeSubscriptionStatusNotification;
     private readonly logSetting;
     constructor(stack: Stack, name: string, currencyUsagePriority: NamespaceCurrencyUsagePriority, sharedFreeCurrency: boolean, platformSetting: PlatformSetting, options?: NamespaceOptions | null);
     alternateKeys(): string;
@@ -23,5 +29,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
-    masterData(storeContentModels: StoreContentModel[]): Namespace;
+    masterData(storeContentModels: StoreContentModel[], storeSubscriptionContentModels: StoreSubscriptionContentModel[]): Namespace;
 }

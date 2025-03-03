@@ -22,7 +22,7 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         super("Account_Namespace_" + name);
         this.description = null;
         this.changePasswordIfTakeOver = null;
@@ -31,6 +31,7 @@ class Namespace extends model_1.CdkResource {
         this.authenticationScript = null;
         this.createTakeOverScript = null;
         this.doTakeOverScript = null;
+        this.banScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -41,7 +42,8 @@ class Namespace extends model_1.CdkResource {
         this.authenticationScript = (_e = options === null || options === void 0 ? void 0 : options.authenticationScript) !== null && _e !== void 0 ? _e : null;
         this.createTakeOverScript = (_f = options === null || options === void 0 ? void 0 : options.createTakeOverScript) !== null && _f !== void 0 ? _f : null;
         this.doTakeOverScript = (_g = options === null || options === void 0 ? void 0 : options.doTakeOverScript) !== null && _g !== void 0 ? _g : null;
-        this.logSetting = (_h = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _h !== void 0 ? _h : null;
+        this.banScript = (_h = options === null || options === void 0 ? void 0 : options.banScript) !== null && _h !== void 0 ? _h : null;
+        this.logSetting = (_j = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _j !== void 0 ? _j : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -51,7 +53,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Account::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -77,8 +79,11 @@ class Namespace extends model_1.CdkResource {
         if (this.doTakeOverScript != null) {
             properties["DoTakeOverScript"] = (_d = this.doTakeOverScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
+        if (this.banScript != null) {
+            properties["BanScript"] = (_e = this.banScript) === null || _e === void 0 ? void 0 : _e.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_e = this.logSetting) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
         }
         return properties;
     }
