@@ -14,23 +14,39 @@
  * permissions and limitations under the License.
  */
 
+import { TransactionSettingOptions } from "./TransactionSettingOptions";
+
 export default class TransactionSetting {
 
+    enableAtomicCommit?: boolean|null;
+    transactionUseDistributor?: boolean|null;
+    acquireActionUseJobQueue?: boolean|null;
     distributorNamespaceId: string | null;
     queueNamespaceId: string | null;
 
     public constructor(
-        distributorNamespaceId: string | null = null,
-        queueNamespaceId: string | null = null,
+        options: TransactionSettingOptions|null = null,
     ) {
-        this.distributorNamespaceId = distributorNamespaceId;
-        this.queueNamespaceId = queueNamespaceId;
+        this.enableAtomicCommit = options?.enableAtomicCommit ?? false;
+        this.transactionUseDistributor = options?.transactionUseDistributor ?? false;
+        this.acquireActionUseJobQueue = options?.acquireActionUseJobQueue ?? false;
+        this.distributorNamespaceId = options?.distributorNamespaceId ?? null;
+        this.queueNamespaceId = options?.queueNamespaceId ?? null;
     }
 
     public properties(): { [name: string]: any } {
         let properties: {[name: string]: any} = {};
 
         properties["EnableAutoRun"] = true;
+        if (this.enableAtomicCommit != null) {
+            properties["EnableAtomicCommit"] = this.enableAtomicCommit;
+        }
+        if (this.transactionUseDistributor != null) {
+            properties["TransactionUseDistributor"] = this.transactionUseDistributor;
+        }
+        if (this.acquireActionUseJobQueue != null) {
+            properties["AcquireActionUseJobQueue"] = this.acquireActionUseJobQueue;
+        }
         if (this.distributorNamespaceId != null) {
             properties["DistributorNamespaceId"] = this.distributorNamespaceId;
         }

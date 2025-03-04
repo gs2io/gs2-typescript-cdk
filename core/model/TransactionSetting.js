@@ -16,13 +16,26 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 class TransactionSetting {
-    constructor(distributorNamespaceId = null, queueNamespaceId = null) {
-        this.distributorNamespaceId = distributorNamespaceId;
-        this.queueNamespaceId = queueNamespaceId;
+    constructor(options = null) {
+        var _a, _b, _c, _d, _e;
+        this.enableAtomicCommit = (_a = options === null || options === void 0 ? void 0 : options.enableAtomicCommit) !== null && _a !== void 0 ? _a : false;
+        this.transactionUseDistributor = (_b = options === null || options === void 0 ? void 0 : options.transactionUseDistributor) !== null && _b !== void 0 ? _b : false;
+        this.acquireActionUseJobQueue = (_c = options === null || options === void 0 ? void 0 : options.acquireActionUseJobQueue) !== null && _c !== void 0 ? _c : false;
+        this.distributorNamespaceId = (_d = options === null || options === void 0 ? void 0 : options.distributorNamespaceId) !== null && _d !== void 0 ? _d : null;
+        this.queueNamespaceId = (_e = options === null || options === void 0 ? void 0 : options.queueNamespaceId) !== null && _e !== void 0 ? _e : null;
     }
     properties() {
         let properties = {};
         properties["EnableAutoRun"] = true;
+        if (this.enableAtomicCommit != null) {
+            properties["EnableAtomicCommit"] = this.enableAtomicCommit;
+        }
+        if (this.transactionUseDistributor != null) {
+            properties["TransactionUseDistributor"] = this.transactionUseDistributor;
+        }
+        if (this.acquireActionUseJobQueue != null) {
+            properties["AcquireActionUseJobQueue"] = this.acquireActionUseJobQueue;
+        }
         if (this.distributorNamespaceId != null) {
             properties["DistributorNamespaceId"] = this.distributorNamespaceId;
         }

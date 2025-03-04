@@ -14,6 +14,8 @@
  * permissions and limitations under the License.
  */
 
+import { NotificationSettingOptions } from "./NotificationSettingOptions";
+
 export default class NotificationSetting {
 
     gatewayNamespaceId: string | null;
@@ -21,13 +23,11 @@ export default class NotificationSetting {
     sound: string | null;
 
     public constructor(
-        gatewayNamespaceId: string | null = null,
-        enableTransferMobileNotification: boolean | null = null,
-        sound: string | null = null,
+        options: NotificationSettingOptions|null = null,
     ) {
-        this.gatewayNamespaceId = gatewayNamespaceId;
-        this.enableTransferMobileNotification = enableTransferMobileNotification;
-        this.sound = sound;
+        this.gatewayNamespaceId = options?.gatewayNamespaceId ?? null;
+        this.enableTransferMobileNotification = options?.enableTransferMobileNotification ?? false;
+        this.sound = options?.sound ?? null;
     }
 
     public properties(): { [name: string]: any } {

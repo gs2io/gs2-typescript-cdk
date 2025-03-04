@@ -16,10 +16,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 class NotificationSetting {
-    constructor(gatewayNamespaceId = null, enableTransferMobileNotification = null, sound = null) {
-        this.gatewayNamespaceId = gatewayNamespaceId;
-        this.enableTransferMobileNotification = enableTransferMobileNotification;
-        this.sound = sound;
+    constructor(options = null) {
+        var _a, _b, _c;
+        this.gatewayNamespaceId = (_a = options === null || options === void 0 ? void 0 : options.gatewayNamespaceId) !== null && _a !== void 0 ? _a : null;
+        this.enableTransferMobileNotification = (_b = options === null || options === void 0 ? void 0 : options.enableTransferMobileNotification) !== null && _b !== void 0 ? _b : false;
+        this.sound = (_c = options === null || options === void 0 ? void 0 : options.sound) !== null && _c !== void 0 ? _c : null;
     }
     properties() {
         let properties = {};
