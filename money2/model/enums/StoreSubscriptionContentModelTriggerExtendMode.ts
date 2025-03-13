@@ -13,14 +13,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import AppleAppStoreSubscriptionContent from "../AppleAppStoreSubscriptionContent";
-import GooglePlaySubscriptionContent from "../GooglePlaySubscriptionContent";
-import { StoreSubscriptionContentModelTriggerExtendMode } from "../enums/StoreSubscriptionContentModelTriggerExtendMode";
 
-export interface StoreSubscriptionContentModelOptions {
-    metadata?: string|null;
-    rollupHour?: number|null;
-    appleAppStore?: AppleAppStoreSubscriptionContent|null;
-    googlePlay?: GooglePlaySubscriptionContent|null;
-}
 
+
+export const StoreSubscriptionContentModelTriggerExtendMode = {
+    JUST: "just",
+    ROLLUP_HOUR: "rollupHour",
+} as const;
+export type StoreSubscriptionContentModelTriggerExtendMode = typeof StoreSubscriptionContentModelTriggerExtendMode[keyof typeof StoreSubscriptionContentModelTriggerExtendMode];

@@ -5,8 +5,9 @@ export default class InvokeScript extends AcquireAction {
     private readonly userId;
     private readonly args;
     private readonly randomStatus;
+    private readonly forceUseDistributor;
     private readonly timeOffsetToken;
-    constructor(scriptId?: string | null, args?: string | null, randomStatus?: RandomStatus | null, timeOffsetToken?: string | null, userId?: string);
+    constructor(scriptId?: string | null, args?: string | null, randomStatus?: RandomStatus | null, forceUseDistributor?: boolean | null, timeOffsetToken?: string | null, userId?: string);
     request(): {
         [name: string]: any;
     };

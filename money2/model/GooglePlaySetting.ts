@@ -18,14 +18,12 @@ import { GooglePlaySettingOptions } from "./options/GooglePlaySettingOptions";
 export default class GooglePlaySetting {
     private readonly packageName: string|null = null;
     private readonly publicKey: string|null = null;
-    private readonly credentialsJSON: string|null = null;
 
     public constructor(
         options: GooglePlaySettingOptions|null = null,
     ) {
         this.packageName = options?.packageName ?? null;
         this.publicKey = options?.publicKey ?? null;
-        this.credentialsJSON = options?.credentialsJSON ?? null;
     }
 
     public properties(
@@ -37,9 +35,6 @@ export default class GooglePlaySetting {
         }
         if (this.publicKey != null) {
             properties["publicKey"] = this.publicKey;
-        }
-        if (this.credentialsJSON != null) {
-            properties["credentialsJSON"] = this.credentialsJSON;
         }
 
         return properties;

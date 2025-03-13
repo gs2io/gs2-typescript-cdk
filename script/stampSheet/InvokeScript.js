@@ -19,16 +19,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = require("../../core/model");
 class InvokeScript extends model_1.AcquireAction {
-    constructor(scriptId = null, args = null, randomStatus = null, timeOffsetToken = null, userId = "#{userId}") {
+    constructor(scriptId = null, args = null, randomStatus = null, forceUseDistributor = null, timeOffsetToken = null, userId = "#{userId}") {
         super();
         this.scriptId = null;
         this.userId = null;
         this.args = null;
         this.randomStatus = null;
+        this.forceUseDistributor = null;
         this.timeOffsetToken = null;
         this.scriptId = scriptId !== null && scriptId !== void 0 ? scriptId : null;
         this.args = args !== null && args !== void 0 ? args : null;
         this.randomStatus = randomStatus !== null && randomStatus !== void 0 ? randomStatus : null;
+        this.forceUseDistributor = forceUseDistributor !== null && forceUseDistributor !== void 0 ? forceUseDistributor : null;
         this.timeOffsetToken = timeOffsetToken !== null && timeOffsetToken !== void 0 ? timeOffsetToken : null;
         this.userId = userId;
     }
@@ -46,6 +48,9 @@ class InvokeScript extends model_1.AcquireAction {
         }
         if (this.randomStatus != null) {
             properties["randomStatus"] = (_a = this.randomStatus) === null || _a === void 0 ? void 0 : _a.properties();
+        }
+        if (this.forceUseDistributor != null) {
+            properties["forceUseDistributor"] = this.forceUseDistributor;
         }
         if (this.timeOffsetToken != null) {
             properties["timeOffsetToken"] = this.timeOffsetToken;

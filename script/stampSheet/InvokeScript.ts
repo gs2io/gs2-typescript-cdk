@@ -24,6 +24,7 @@ export default class InvokeScript extends AcquireAction {
     private readonly userId: string|null = null;
     private readonly args: string|null = null;
     private readonly randomStatus: RandomStatus|null = null;
+    private readonly forceUseDistributor: boolean|null = null;
     private readonly timeOffsetToken: string|null = null;
 
 
@@ -31,6 +32,7 @@ export default class InvokeScript extends AcquireAction {
         scriptId: string|null = null,
         args: string|null = null,
         randomStatus: RandomStatus|null = null,
+        forceUseDistributor: boolean|null = null,
         timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
     ) {
@@ -39,6 +41,7 @@ export default class InvokeScript extends AcquireAction {
         this.scriptId = scriptId ?? null;
         this.args = args ?? null;
         this.randomStatus = randomStatus ?? null;
+        this.forceUseDistributor = forceUseDistributor ?? null;
         this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
     }
@@ -59,6 +62,9 @@ export default class InvokeScript extends AcquireAction {
         if (this.randomStatus != null) {
             properties["randomStatus"] = this.randomStatus?.properties(
             );
+        }
+        if (this.forceUseDistributor != null) {
+            properties["forceUseDistributor"] = this.forceUseDistributor;
         }
         if (this.timeOffsetToken != null) {
             properties["timeOffsetToken"] = this.timeOffsetToken;

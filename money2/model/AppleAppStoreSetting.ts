@@ -17,6 +17,7 @@ import { AppleAppStoreSettingOptions } from "./options/AppleAppStoreSettingOptio
 
 export default class AppleAppStoreSetting {
     private readonly bundleId: string|null = null;
+    private readonly sharedSecretKey: string|null = null;
     private readonly issuerId: string|null = null;
     private readonly keyId: string|null = null;
     private readonly privateKeyPem: string|null = null;
@@ -25,6 +26,7 @@ export default class AppleAppStoreSetting {
         options: AppleAppStoreSettingOptions|null = null,
     ) {
         this.bundleId = options?.bundleId ?? null;
+        this.sharedSecretKey = options?.sharedSecretKey ?? null;
         this.issuerId = options?.issuerId ?? null;
         this.keyId = options?.keyId ?? null;
         this.privateKeyPem = options?.privateKeyPem ?? null;
@@ -36,6 +38,9 @@ export default class AppleAppStoreSetting {
 
         if (this.bundleId != null) {
             properties["bundleId"] = this.bundleId;
+        }
+        if (this.sharedSecretKey != null) {
+            properties["sharedSecretKey"] = this.sharedSecretKey;
         }
         if (this.issuerId != null) {
             properties["issuerId"] = this.issuerId;

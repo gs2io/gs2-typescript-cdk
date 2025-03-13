@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.UnusedBalance = exports.DailyTransactionHistory = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEventEnvironment = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEventPlatform = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEventPlatform = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSettingAcceptFakeReceipt = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.ReceiptStore = exports.Receipt = exports.StoreSubscriptionContentModel = exports.StoreContentModel = exports.SubscribeTransactionStatusDetail = exports.SubscribeTransactionStore = exports.SubscribeTransaction = exports.NamespaceCurrencyUsagePriority = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.UnusedBalance = exports.DailyTransactionHistory = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEventEnvironment = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEventPlatform = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEventPlatform = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSettingAcceptFakeReceipt = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.ReceiptStore = exports.Receipt = exports.StoreSubscriptionContentModelTriggerExtendMode = exports.StoreSubscriptionContentModel = exports.StoreContentModel = exports.SubscribeTransactionStatusDetail = exports.SubscribeTransactionStore = exports.SubscribeTransaction = exports.NamespaceCurrencyUsagePriority = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ const StoreContentModel_1 = tslib_1.__importDefault(require("./StoreContentModel
 exports.StoreContentModel = StoreContentModel_1.default;
 const StoreSubscriptionContentModel_1 = tslib_1.__importDefault(require("./StoreSubscriptionContentModel"));
 exports.StoreSubscriptionContentModel = StoreSubscriptionContentModel_1.default;
+const StoreSubscriptionContentModelTriggerExtendMode_1 = require("./enums/StoreSubscriptionContentModelTriggerExtendMode");
+Object.defineProperty(exports, "StoreSubscriptionContentModelTriggerExtendMode", { enumerable: true, get: function () { return StoreSubscriptionContentModelTriggerExtendMode_1.StoreSubscriptionContentModelTriggerExtendMode; } });
 const Receipt_1 = tslib_1.__importDefault(require("./Receipt"));
 exports.Receipt = Receipt_1.default;
 const ReceiptStore_1 = require("./enums/ReceiptStore");

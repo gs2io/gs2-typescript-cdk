@@ -17,10 +17,8 @@ import AppleAppStoreSubscriptionContent from "../AppleAppStoreSubscriptionConten
 import GooglePlaySubscriptionContent from "../GooglePlaySubscriptionContent";
 import { StoreSubscriptionContentModelTriggerExtendMode } from "../enums/StoreSubscriptionContentModelTriggerExtendMode";
 
-export interface StoreSubscriptionContentModelOptions {
+export interface StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions {
     metadata?: string|null;
-    rollupHour?: number|null;
     appleAppStore?: AppleAppStoreSubscriptionContent|null;
     googlePlay?: GooglePlaySubscriptionContent|null;
 }
-

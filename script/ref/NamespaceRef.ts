@@ -32,12 +32,14 @@ export default class NamespaceRef {
         scriptId: string,
         args: string|null = null,
         randomStatus: RandomStatus|null = null,
+        forceUseDistributor: boolean|null = null,
         userId: string = "#{userId}",
     ): InvokeScript {
         return new InvokeScript(
             scriptId,
             args,
             randomStatus,
+            forceUseDistributor,
             userId,
         );
     }

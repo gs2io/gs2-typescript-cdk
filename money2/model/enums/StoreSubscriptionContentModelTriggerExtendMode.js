@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,14 +14,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import AppleAppStoreSubscriptionContent from "../AppleAppStoreSubscriptionContent";
-import GooglePlaySubscriptionContent from "../GooglePlaySubscriptionContent";
-import { StoreSubscriptionContentModelTriggerExtendMode } from "../enums/StoreSubscriptionContentModelTriggerExtendMode";
-
-export interface StoreSubscriptionContentModelOptions {
-    metadata?: string|null;
-    rollupHour?: number|null;
-    appleAppStore?: AppleAppStoreSubscriptionContent|null;
-    googlePlay?: GooglePlaySubscriptionContent|null;
-}
-
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StoreSubscriptionContentModelTriggerExtendMode = void 0;
+exports.StoreSubscriptionContentModelTriggerExtendMode = {
+    JUST: "just",
+    ROLLUP_HOUR: "rollupHour",
+};
+//# sourceMappingURL=StoreSubscriptionContentModelTriggerExtendMode.js.map

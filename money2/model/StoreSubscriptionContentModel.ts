@@ -16,13 +16,18 @@
 import AppleAppStoreSubscriptionContent from "./AppleAppStoreSubscriptionContent";
 import GooglePlaySubscriptionContent from "./GooglePlaySubscriptionContent";
 import { StoreSubscriptionContentModelOptions } from "./options/StoreSubscriptionContentModelOptions";
+import { StoreSubscriptionContentModelTriggerExtendModeIsJustOptions } from "./options/StoreSubscriptionContentModelTriggerExtendModeIsJustOptions";
+import { StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions } from "./options/StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions";
+import { StoreSubscriptionContentModelTriggerExtendMode } from "./enums/StoreSubscriptionContentModelTriggerExtendMode";
 
 export default class StoreSubscriptionContentModel {
     private readonly name: string;
     private readonly scheduleNamespaceId: string;
     private readonly triggerName: string;
+    private readonly triggerExtendMode: StoreSubscriptionContentModelTriggerExtendMode;
     private readonly reallocateSpanDays: number;
     private readonly metadata: string|null = null;
+    private readonly rollupHour: number|null = null;
     private readonly appleAppStore: AppleAppStoreSubscriptionContent|null = null;
     private readonly googlePlay: GooglePlaySubscriptionContent|null = null;
 
@@ -30,16 +35,63 @@ export default class StoreSubscriptionContentModel {
         name: string,
         scheduleNamespaceId: string,
         triggerName: string,
+        triggerExtendMode: StoreSubscriptionContentModelTriggerExtendMode,
         reallocateSpanDays: number,
         options: StoreSubscriptionContentModelOptions|null = null,
     ) {
         this.name = name;
         this.scheduleNamespaceId = scheduleNamespaceId;
         this.triggerName = triggerName;
+        this.triggerExtendMode = triggerExtendMode;
         this.reallocateSpanDays = reallocateSpanDays;
         this.metadata = options?.metadata ?? null;
+        this.rollupHour = options?.rollupHour ?? null;
         this.appleAppStore = options?.appleAppStore ?? null;
         this.googlePlay = options?.googlePlay ?? null;
+    }
+
+    public static triggerExtendModeIsJust(
+        name: string,
+        scheduleNamespaceId: string,
+        triggerName: string,
+        reallocateSpanDays: number,
+        options: StoreSubscriptionContentModelTriggerExtendModeIsJustOptions|null = null,
+    ): StoreSubscriptionContentModel {
+        return new StoreSubscriptionContentModel(
+            name,
+            scheduleNamespaceId,
+            triggerName,
+            StoreSubscriptionContentModelTriggerExtendMode.JUST,
+            reallocateSpanDays,
+            {
+                metadata: options?.metadata,
+                appleAppStore: options?.appleAppStore,
+                googlePlay: options?.googlePlay,
+            },
+        );
+    }
+
+    public static triggerExtendModeIsRollupHour(
+        name: string,
+        scheduleNamespaceId: string,
+        triggerName: string,
+        reallocateSpanDays: number,
+        rollupHour: number,
+        options: StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions|null = null,
+    ): StoreSubscriptionContentModel {
+        return new StoreSubscriptionContentModel(
+            name,
+            scheduleNamespaceId,
+            triggerName,
+            StoreSubscriptionContentModelTriggerExtendMode.ROLLUP_HOUR,
+            reallocateSpanDays,
+            {
+                rollupHour: rollupHour,
+                metadata: options?.metadata,
+                appleAppStore: options?.appleAppStore,
+                googlePlay: options?.googlePlay,
+            },
+        );
     }
 
     public properties(
@@ -57,6 +109,12 @@ export default class StoreSubscriptionContentModel {
         }
         if (this.triggerName != null) {
             properties["triggerName"] = this.triggerName;
+        }
+        if (this.triggerExtendMode != null) {
+            properties["triggerExtendMode"] = this.triggerExtendMode;
+        }
+        if (this.rollupHour != null) {
+            properties["rollupHour"] = this.rollupHour;
         }
         if (this.reallocateSpanDays != null) {
             properties["reallocateSpanDays"] = this.reallocateSpanDays;

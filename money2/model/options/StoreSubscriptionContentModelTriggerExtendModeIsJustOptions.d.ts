@@ -1,8 +1,7 @@
 import AppleAppStoreSubscriptionContent from "../AppleAppStoreSubscriptionContent";
 import GooglePlaySubscriptionContent from "../GooglePlaySubscriptionContent";
-export interface StoreSubscriptionContentModelOptions {
+export interface StoreSubscriptionContentModelTriggerExtendModeIsJustOptions {
     metadata?: string | null;
-    rollupHour?: number | null;
     appleAppStore?: AppleAppStoreSubscriptionContent | null;
     googlePlay?: GooglePlaySubscriptionContent | null;
 }

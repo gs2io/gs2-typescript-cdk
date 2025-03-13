@@ -24,6 +24,9 @@ import StoreContentModel from "./StoreContentModel";
 import { StoreContentModelOptions } from "./options/StoreContentModelOptions";
 import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel";
 import { StoreSubscriptionContentModelOptions } from "./options/StoreSubscriptionContentModelOptions";
+import { StoreSubscriptionContentModelTriggerExtendMode } from "./enums/StoreSubscriptionContentModelTriggerExtendMode";
+import { StoreSubscriptionContentModelTriggerExtendModeIsJustOptions } from "./options/StoreSubscriptionContentModelTriggerExtendModeIsJustOptions"
+import { StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions } from "./options/StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions"
 import Receipt from "./Receipt";
 import { ReceiptOptions } from "./options/ReceiptOptions";
 import { ReceiptStore } from "./enums/ReceiptStore";
@@ -83,6 +86,9 @@ export {
     StoreContentModelOptions,
     StoreSubscriptionContentModel,
     StoreSubscriptionContentModelOptions,
+    StoreSubscriptionContentModelTriggerExtendMode,
+    StoreSubscriptionContentModelTriggerExtendModeIsJustOptions,
+    StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions,
     Receipt,
     ReceiptOptions,
     ReceiptStore,
