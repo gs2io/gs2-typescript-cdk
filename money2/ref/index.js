@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnusedBalanceRef = exports.DailyTransactionHistoryRef = exports.MasterDataVersionRef = exports.StoreSubscriptionContentModelRef = exports.StoreContentModelRef = exports.SubscribeTransactionRef = exports.NamespaceRef = void 0;
+exports.UnusedBalanceRef = exports.DailyTransactionHistoryRef = exports.MasterDataVersionRef = exports.StoreSubscriptionContentModelRef = exports.StoreContentModelRef = exports.RefundHistoryRef = exports.SubscribeTransactionRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
 const SubscribeTransactionRef_1 = tslib_1.__importDefault(require("./SubscribeTransactionRef"));
 exports.SubscribeTransactionRef = SubscribeTransactionRef_1.default;
+const RefundHistoryRef_1 = tslib_1.__importDefault(require("./RefundHistoryRef"));
+exports.RefundHistoryRef = RefundHistoryRef_1.default;
 const StoreContentModelRef_1 = tslib_1.__importDefault(require("./StoreContentModelRef"));
 exports.StoreContentModelRef = StoreContentModelRef_1.default;
 const StoreSubscriptionContentModelRef_1 = tslib_1.__importDefault(require("./StoreSubscriptionContentModelRef"));

@@ -20,6 +20,8 @@ import SubscribeTransaction from "./SubscribeTransaction";
 import { SubscribeTransactionOptions } from "./options/SubscribeTransactionOptions";
 import { SubscribeTransactionStore } from "./enums/SubscribeTransactionStore";
 import { SubscribeTransactionStatusDetail } from "./enums/SubscribeTransactionStatusDetail";
+import RefundHistory from "./RefundHistory";
+import { RefundHistoryOptions } from "./options/RefundHistoryOptions";
 import StoreContentModel from "./StoreContentModel";
 import { StoreContentModelOptions } from "./options/StoreContentModelOptions";
 import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel";
@@ -82,6 +84,8 @@ export {
     SubscribeTransactionOptions,
     SubscribeTransactionStore,
     SubscribeTransactionStatusDetail,
+    RefundHistory,
+    RefundHistoryOptions,
     StoreContentModel,
     StoreContentModelOptions,
     StoreSubscriptionContentModel,
