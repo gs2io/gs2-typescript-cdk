@@ -4,6 +4,6 @@ export default class ScriptRef {
     private readonly namespaceName;
     private readonly scriptName;
     constructor(namespaceName: string, scriptName: string);
-    invokeScript(scriptId: string, args?: string | null, randomStatus?: RandomStatus | null, forceUseDistributor?: boolean | null, userId?: string): InvokeScript;
+    invokeScript(scriptId: string, args?: string | null, randomStatus?: RandomStatus | null, userId?: string): InvokeScript;
     grn(): string;
 }

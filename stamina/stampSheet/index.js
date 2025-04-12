@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumeStaminaByUserId = exports.DecreaseMaxValueByUserId = exports.SetRecoverValueByUserId = exports.SetRecoverIntervalByUserId = exports.SetMaxValueByUserId = exports.RaiseMaxValueByUserId = exports.RecoverStaminaByUserId = void 0;
+exports.VerifyStaminaOverflowValueByUserId = exports.VerifyStaminaRecoverValueByUserId = exports.VerifyStaminaRecoverIntervalMinutesByUserId = exports.VerifyStaminaMaxValueByUserId = exports.VerifyStaminaValueByUserId = exports.ConsumeStaminaByUserId = exports.DecreaseMaxValueByUserId = exports.SetRecoverValueByUserId = exports.SetRecoverIntervalByUserId = exports.SetMaxValueByUserId = exports.RaiseMaxValueByUserId = exports.RecoverStaminaByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -31,4 +31,14 @@ const DecreaseMaxValueByUserId_1 = tslib_1.__importDefault(require("./DecreaseMa
 exports.DecreaseMaxValueByUserId = DecreaseMaxValueByUserId_1.default;
 const ConsumeStaminaByUserId_1 = tslib_1.__importDefault(require("./ConsumeStaminaByUserId"));
 exports.ConsumeStaminaByUserId = ConsumeStaminaByUserId_1.default;
+const VerifyStaminaValueByUserId_1 = tslib_1.__importDefault(require("./VerifyStaminaValueByUserId"));
+exports.VerifyStaminaValueByUserId = VerifyStaminaValueByUserId_1.default;
+const VerifyStaminaMaxValueByUserId_1 = tslib_1.__importDefault(require("./VerifyStaminaMaxValueByUserId"));
+exports.VerifyStaminaMaxValueByUserId = VerifyStaminaMaxValueByUserId_1.default;
+const VerifyStaminaRecoverIntervalMinutesByUserId_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverIntervalMinutesByUserId"));
+exports.VerifyStaminaRecoverIntervalMinutesByUserId = VerifyStaminaRecoverIntervalMinutesByUserId_1.default;
+const VerifyStaminaRecoverValueByUserId_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverValueByUserId"));
+exports.VerifyStaminaRecoverValueByUserId = VerifyStaminaRecoverValueByUserId_1.default;
+const VerifyStaminaOverflowValueByUserId_1 = tslib_1.__importDefault(require("./VerifyStaminaOverflowValueByUserId"));
+exports.VerifyStaminaOverflowValueByUserId = VerifyStaminaOverflowValueByUserId_1.default;
 //# sourceMappingURL=index.js.map

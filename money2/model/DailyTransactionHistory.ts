@@ -22,6 +22,8 @@ export default class DailyTransactionHistory {
     private readonly currency: string;
     private readonly depositAmount: number;
     private readonly withdrawAmount: number;
+    private readonly issueCount: number;
+    private readonly consumeCount: number;
     private readonly revision: number|null = null;
 
     public constructor(
@@ -31,6 +33,8 @@ export default class DailyTransactionHistory {
         currency: string,
         depositAmount: number,
         withdrawAmount: number,
+        issueCount: number,
+        consumeCount: number,
         options: DailyTransactionHistoryOptions|null = null,
     ) {
         this.year = year;
@@ -39,6 +43,8 @@ export default class DailyTransactionHistory {
         this.currency = currency;
         this.depositAmount = depositAmount;
         this.withdrawAmount = withdrawAmount;
+        this.issueCount = issueCount;
+        this.consumeCount = consumeCount;
         this.revision = options?.revision ?? null;
     }
 
@@ -63,6 +69,12 @@ export default class DailyTransactionHistory {
         }
         if (this.withdrawAmount != null) {
             properties["withdrawAmount"] = this.withdrawAmount;
+        }
+        if (this.issueCount != null) {
+            properties["issueCount"] = this.issueCount;
+        }
+        if (this.consumeCount != null) {
+            properties["consumeCount"] = this.consumeCount;
         }
 
         return properties;

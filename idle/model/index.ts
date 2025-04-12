@@ -17,6 +17,7 @@ import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import CategoryModel from "./CategoryModel";
 import { CategoryModelOptions } from "./options/CategoryModelOptions";
+import { CategoryModelRewardResetMode } from "./enums/CategoryModelRewardResetMode";
 import VerifyActionResult from "./VerifyActionResult";
 import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
 import ConsumeActionResult from "./ConsumeActionResult";
@@ -34,6 +35,7 @@ export {
     NamespaceOptions,
     CategoryModel,
     CategoryModelOptions,
+    CategoryModelRewardResetMode,
     VerifyActionResult,
     VerifyActionResultOptions,
     ConsumeActionResult,

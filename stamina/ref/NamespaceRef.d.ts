@@ -6,6 +6,12 @@ import SetRecoverIntervalByUserId from "../stampSheet/SetRecoverIntervalByUserId
 import SetRecoverValueByUserId from "../stampSheet/SetRecoverValueByUserId";
 import DecreaseMaxValueByUserId from "../stampSheet/DecreaseMaxValueByUserId";
 import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
+import VerifyStaminaValueByUserId from "../stampSheet/VerifyStaminaValueByUserId";
+import { StaminaVerifyType } from "../stampSheet/enums/StaminaVerifyType";
+import VerifyStaminaMaxValueByUserId from "../stampSheet/VerifyStaminaMaxValueByUserId";
+import VerifyStaminaRecoverIntervalMinutesByUserId from "../stampSheet/VerifyStaminaRecoverIntervalMinutesByUserId";
+import VerifyStaminaRecoverValueByUserId from "../stampSheet/VerifyStaminaRecoverValueByUserId";
+import VerifyStaminaOverflowValueByUserId from "../stampSheet/VerifyStaminaOverflowValueByUserId";
 export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
@@ -17,5 +23,10 @@ export default class NamespaceRef {
     setRecoverValue(staminaName: string, recoverValue: number, userId?: string): SetRecoverValueByUserId;
     decreaseMaxValue(staminaName: string, decreaseValue: number, userId?: string): DecreaseMaxValueByUserId;
     consumeStamina(staminaName: string, consumeValue: number, userId?: string): ConsumeStaminaByUserId;
+    verifyStaminaValue(staminaName: string, verifyType: StaminaVerifyType, value: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyStaminaValueByUserId;
+    verifyStaminaMaxValue(staminaName: string, verifyType: StaminaVerifyType, value: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyStaminaMaxValueByUserId;
+    verifyStaminaRecoverIntervalMinutes(staminaName: string, verifyType: StaminaVerifyType, value: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyStaminaRecoverIntervalMinutesByUserId;
+    verifyStaminaRecoverValue(staminaName: string, verifyType: StaminaVerifyType, value: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyStaminaRecoverValueByUserId;
+    verifyStaminaOverflowValue(staminaName: string, verifyType: StaminaVerifyType, value: number, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyStaminaOverflowValueByUserId;
     grn(): string;
 }

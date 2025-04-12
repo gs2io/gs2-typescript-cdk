@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.AcquireActionList = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.CategoryModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.AcquireActionList = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.CategoryModelRewardResetMode = exports.CategoryModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const CategoryModel_1 = tslib_1.__importDefault(require("./CategoryModel"));
 exports.CategoryModel = CategoryModel_1.default;
+const CategoryModelRewardResetMode_1 = require("./enums/CategoryModelRewardResetMode");
+Object.defineProperty(exports, "CategoryModelRewardResetMode", { enumerable: true, get: function () { return CategoryModelRewardResetMode_1.CategoryModelRewardResetMode; } });
 const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
 exports.VerifyActionResult = VerifyActionResult_1.default;
 const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));

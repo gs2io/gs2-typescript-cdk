@@ -23,6 +23,12 @@ import SetRecoverIntervalByUserId from "../stampSheet/SetRecoverIntervalByUserId
 import SetRecoverValueByUserId from "../stampSheet/SetRecoverValueByUserId";
 import DecreaseMaxValueByUserId from "../stampSheet/DecreaseMaxValueByUserId";
 import ConsumeStaminaByUserId from "../stampSheet/ConsumeStaminaByUserId";
+import VerifyStaminaValueByUserId from "../stampSheet/VerifyStaminaValueByUserId";
+import { StaminaVerifyType } from "../stampSheet/enums/StaminaVerifyType";
+import VerifyStaminaMaxValueByUserId from "../stampSheet/VerifyStaminaMaxValueByUserId";
+import VerifyStaminaRecoverIntervalMinutesByUserId from "../stampSheet/VerifyStaminaRecoverIntervalMinutesByUserId";
+import VerifyStaminaRecoverValueByUserId from "../stampSheet/VerifyStaminaRecoverValueByUserId";
+import VerifyStaminaOverflowValueByUserId from "../stampSheet/VerifyStaminaOverflowValueByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -129,6 +135,91 @@ export default class NamespaceRef {
             this.namespaceName,
             staminaName,
             consumeValue,
+            userId,
+        );
+    }
+
+    public verifyStaminaValue(
+        staminaName: string,
+        verifyType: StaminaVerifyType,
+        value: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyStaminaValueByUserId {
+        return new VerifyStaminaValueByUserId(
+            this.namespaceName,
+            staminaName,
+            verifyType,
+            value,
+            multiplyValueSpecifyingQuantity,
+            userId,
+        );
+    }
+
+    public verifyStaminaMaxValue(
+        staminaName: string,
+        verifyType: StaminaVerifyType,
+        value: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyStaminaMaxValueByUserId {
+        return new VerifyStaminaMaxValueByUserId(
+            this.namespaceName,
+            staminaName,
+            verifyType,
+            value,
+            multiplyValueSpecifyingQuantity,
+            userId,
+        );
+    }
+
+    public verifyStaminaRecoverIntervalMinutes(
+        staminaName: string,
+        verifyType: StaminaVerifyType,
+        value: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyStaminaRecoverIntervalMinutesByUserId {
+        return new VerifyStaminaRecoverIntervalMinutesByUserId(
+            this.namespaceName,
+            staminaName,
+            verifyType,
+            value,
+            multiplyValueSpecifyingQuantity,
+            userId,
+        );
+    }
+
+    public verifyStaminaRecoverValue(
+        staminaName: string,
+        verifyType: StaminaVerifyType,
+        value: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyStaminaRecoverValueByUserId {
+        return new VerifyStaminaRecoverValueByUserId(
+            this.namespaceName,
+            staminaName,
+            verifyType,
+            value,
+            multiplyValueSpecifyingQuantity,
+            userId,
+        );
+    }
+
+    public verifyStaminaOverflowValue(
+        staminaName: string,
+        verifyType: StaminaVerifyType,
+        value: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyStaminaOverflowValueByUserId {
+        return new VerifyStaminaOverflowValueByUserId(
+            this.namespaceName,
+            staminaName,
+            verifyType,
+            value,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

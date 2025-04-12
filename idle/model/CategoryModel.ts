@@ -16,11 +16,13 @@
 import { AcquireAction } from "../../core/model";
 import AcquireActionList from "./AcquireActionList";
 import { CategoryModelOptions } from "./options/CategoryModelOptions";
+import { CategoryModelRewardResetMode } from "./enums/CategoryModelRewardResetMode";
 
 export default class CategoryModel {
     private readonly name: string;
     private readonly rewardIntervalMinutes: number;
     private readonly defaultMaximumIdleMinutes: number;
+    private readonly rewardResetMode: CategoryModelRewardResetMode;
     private readonly acquireActions: AcquireActionList[];
     private readonly metadata: string|null = null;
     private readonly idlePeriodScheduleId: string|null = null;
@@ -30,12 +32,14 @@ export default class CategoryModel {
         name: string,
         rewardIntervalMinutes: number,
         defaultMaximumIdleMinutes: number,
+        rewardResetMode: CategoryModelRewardResetMode,
         acquireActions: AcquireActionList[],
         options: CategoryModelOptions|null = null,
     ) {
         this.name = name;
         this.rewardIntervalMinutes = rewardIntervalMinutes;
         this.defaultMaximumIdleMinutes = defaultMaximumIdleMinutes;
+        this.rewardResetMode = rewardResetMode;
         this.acquireActions = acquireActions;
         this.metadata = options?.metadata ?? null;
         this.idlePeriodScheduleId = options?.idlePeriodScheduleId ?? null;
@@ -57,6 +61,9 @@ export default class CategoryModel {
         }
         if (this.defaultMaximumIdleMinutes != null) {
             properties["defaultMaximumIdleMinutes"] = this.defaultMaximumIdleMinutes;
+        }
+        if (this.rewardResetMode != null) {
+            properties["rewardResetMode"] = this.rewardResetMode;
         }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties(

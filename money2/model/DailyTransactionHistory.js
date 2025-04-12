@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class DailyTransactionHistory {
-    constructor(year, month, day, currency, depositAmount, withdrawAmount, options = null) {
+    constructor(year, month, day, currency, depositAmount, withdrawAmount, issueCount, consumeCount, options = null) {
         var _a;
         this.revision = null;
         this.year = year;
@@ -10,6 +10,8 @@ class DailyTransactionHistory {
         this.currency = currency;
         this.depositAmount = depositAmount;
         this.withdrawAmount = withdrawAmount;
+        this.issueCount = issueCount;
+        this.consumeCount = consumeCount;
         this.revision = (_a = options === null || options === void 0 ? void 0 : options.revision) !== null && _a !== void 0 ? _a : null;
     }
     properties() {
@@ -31,6 +33,12 @@ class DailyTransactionHistory {
         }
         if (this.withdrawAmount != null) {
             properties["withdrawAmount"] = this.withdrawAmount;
+        }
+        if (this.issueCount != null) {
+            properties["issueCount"] = this.issueCount;
+        }
+        if (this.consumeCount != null) {
+            properties["consumeCount"] = this.consumeCount;
         }
         return properties;
     }

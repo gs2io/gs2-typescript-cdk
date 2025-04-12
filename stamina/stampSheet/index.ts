@@ -20,6 +20,11 @@ import SetRecoverIntervalByUserId from "./SetRecoverIntervalByUserId";
 import SetRecoverValueByUserId from "./SetRecoverValueByUserId";
 import DecreaseMaxValueByUserId from "./DecreaseMaxValueByUserId";
 import ConsumeStaminaByUserId from "./ConsumeStaminaByUserId";
+import VerifyStaminaValueByUserId from "./VerifyStaminaValueByUserId";
+import VerifyStaminaMaxValueByUserId from "./VerifyStaminaMaxValueByUserId";
+import VerifyStaminaRecoverIntervalMinutesByUserId from "./VerifyStaminaRecoverIntervalMinutesByUserId";
+import VerifyStaminaRecoverValueByUserId from "./VerifyStaminaRecoverValueByUserId";
+import VerifyStaminaOverflowValueByUserId from "./VerifyStaminaOverflowValueByUserId";
 
 export {
     RecoverStaminaByUserId,
@@ -29,4 +34,9 @@ export {
     SetRecoverValueByUserId,
     DecreaseMaxValueByUserId,
     ConsumeStaminaByUserId,
+    VerifyStaminaValueByUserId,
+    VerifyStaminaMaxValueByUserId,
+    VerifyStaminaRecoverIntervalMinutesByUserId,
+    VerifyStaminaRecoverValueByUserId,
+    VerifyStaminaOverflowValueByUserId,
 }

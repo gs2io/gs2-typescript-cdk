@@ -24,6 +24,11 @@ const SetRecoverIntervalByUserId_1 = tslib_1.__importDefault(require("../stampSh
 const SetRecoverValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetRecoverValueByUserId"));
 const DecreaseMaxValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DecreaseMaxValueByUserId"));
 const ConsumeStaminaByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumeStaminaByUserId"));
+const VerifyStaminaValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyStaminaValueByUserId"));
+const VerifyStaminaMaxValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyStaminaMaxValueByUserId"));
+const VerifyStaminaRecoverIntervalMinutesByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyStaminaRecoverIntervalMinutesByUserId"));
+const VerifyStaminaRecoverValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyStaminaRecoverValueByUserId"));
+const VerifyStaminaOverflowValueByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyStaminaOverflowValueByUserId"));
 class StaminaModelRef {
     constructor(namespaceName, staminaName) {
         this.namespaceName = namespaceName;
@@ -49,6 +54,21 @@ class StaminaModelRef {
     }
     consumeStamina(consumeValue, userId = "#{userId}") {
         return new ConsumeStaminaByUserId_1.default(this.namespaceName, this.staminaName, consumeValue, userId);
+    }
+    verifyStaminaValue(verifyType, value, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyStaminaValueByUserId_1.default(this.namespaceName, this.staminaName, verifyType, value, multiplyValueSpecifyingQuantity, userId);
+    }
+    verifyStaminaMaxValue(verifyType, value, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyStaminaMaxValueByUserId_1.default(this.namespaceName, this.staminaName, verifyType, value, multiplyValueSpecifyingQuantity, userId);
+    }
+    verifyStaminaRecoverIntervalMinutes(verifyType, value, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyStaminaRecoverIntervalMinutesByUserId_1.default(this.namespaceName, this.staminaName, verifyType, value, multiplyValueSpecifyingQuantity, userId);
+    }
+    verifyStaminaRecoverValue(verifyType, value, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyStaminaRecoverValueByUserId_1.default(this.namespaceName, this.staminaName, verifyType, value, multiplyValueSpecifyingQuantity, userId);
+    }
+    verifyStaminaOverflowValue(verifyType, value, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyStaminaOverflowValueByUserId_1.default(this.namespaceName, this.staminaName, verifyType, value, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

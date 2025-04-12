@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class CategoryModel {
-    constructor(name, rewardIntervalMinutes, defaultMaximumIdleMinutes, acquireActions, options = null) {
+    constructor(name, rewardIntervalMinutes, defaultMaximumIdleMinutes, rewardResetMode, acquireActions, options = null) {
         var _a, _b, _c;
         this.metadata = null;
         this.idlePeriodScheduleId = null;
@@ -9,6 +9,7 @@ class CategoryModel {
         this.name = name;
         this.rewardIntervalMinutes = rewardIntervalMinutes;
         this.defaultMaximumIdleMinutes = defaultMaximumIdleMinutes;
+        this.rewardResetMode = rewardResetMode;
         this.acquireActions = acquireActions;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
         this.idlePeriodScheduleId = (_b = options === null || options === void 0 ? void 0 : options.idlePeriodScheduleId) !== null && _b !== void 0 ? _b : null;
@@ -27,6 +28,9 @@ class CategoryModel {
         }
         if (this.defaultMaximumIdleMinutes != null) {
             properties["defaultMaximumIdleMinutes"] = this.defaultMaximumIdleMinutes;
+        }
+        if (this.rewardResetMode != null) {
+            properties["rewardResetMode"] = this.rewardResetMode;
         }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties());

@@ -15,6 +15,7 @@
  */
 import { AcquireAction } from "../../../core/model";
 import AcquireActionList from "../AcquireActionList";
+import { CategoryModelRewardResetMode } from "../enums/CategoryModelRewardResetMode";
 
 export interface CategoryModelOptions {
     metadata?: string|null;

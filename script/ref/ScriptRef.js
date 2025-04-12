@@ -23,8 +23,8 @@ class ScriptRef {
         this.namespaceName = namespaceName;
         this.scriptName = scriptName;
     }
-    invokeScript(scriptId, args = null, randomStatus = null, forceUseDistributor = null, userId = "#{userId}") {
-        return new InvokeScript_1.default(scriptId, args, randomStatus, forceUseDistributor, userId);
+    invokeScript(scriptId, args = null, randomStatus = null, userId = "#{userId}") {
+        return new InvokeScript_1.default(scriptId, args, randomStatus, userId);
     }
     grn() {
         return new func_1.Join(":", [
