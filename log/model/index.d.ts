@@ -1,6 +1,7 @@
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import { NamespaceType } from "./enums/NamespaceType";
+import { NamespaceFirehoseCompressData } from "./enums/NamespaceFirehoseCompressData";
 import { NamespaceTypeIsGs2Options } from "./options/NamespaceTypeIsGs2Options";
 import { NamespaceTypeIsBigqueryOptions } from "./options/NamespaceTypeIsBigqueryOptions";
 import { NamespaceTypeIsFirehoseOptions } from "./options/NamespaceTypeIsFirehoseOptions";
@@ -25,4 +26,4 @@ import { AccessLogWithTelemetryOptions } from "./options/AccessLogWithTelemetryO
 import { AccessLogWithTelemetryStatus } from "./enums/AccessLogWithTelemetryStatus";
 import InGameLogTag from "./InGameLogTag";
 import { InGameLogTagOptions } from "./options/InGameLogTagOptions";
-export { Namespace, NamespaceOptions, NamespaceType, NamespaceTypeIsGs2Options, NamespaceTypeIsBigqueryOptions, NamespaceTypeIsFirehoseOptions, AccessLog, AccessLogOptions, AccessLogCount, AccessLogCountOptions, IssueStampSheetLog, IssueStampSheetLogOptions, IssueStampSheetLogCount, IssueStampSheetLogCountOptions, ExecuteStampSheetLog, ExecuteStampSheetLogOptions, ExecuteStampSheetLogCount, ExecuteStampSheetLogCountOptions, ExecuteStampTaskLog, ExecuteStampTaskLogOptions, ExecuteStampTaskLogCount, ExecuteStampTaskLogCountOptions, AccessLogWithTelemetry, AccessLogWithTelemetryOptions, AccessLogWithTelemetryStatus, InGameLogTag, InGameLogTagOptions, };
+export { Namespace, NamespaceOptions, NamespaceType, NamespaceFirehoseCompressData, NamespaceTypeIsGs2Options, NamespaceTypeIsBigqueryOptions, NamespaceTypeIsFirehoseOptions, AccessLog, AccessLogOptions, AccessLogCount, AccessLogCountOptions, IssueStampSheetLog, IssueStampSheetLogOptions, IssueStampSheetLogCount, IssueStampSheetLogCountOptions, ExecuteStampSheetLog, ExecuteStampSheetLogOptions, ExecuteStampSheetLogCount, ExecuteStampSheetLogCountOptions, ExecuteStampTaskLog, ExecuteStampTaskLogOptions, ExecuteStampTaskLogCount, ExecuteStampTaskLogCountOptions, AccessLogWithTelemetry, AccessLogWithTelemetryOptions, AccessLogWithTelemetryStatus, InGameLogTag, InGameLogTagOptions, };

@@ -21,7 +21,7 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         super("Log_Namespace_" + name);
         this.description = null;
         this.type = null;
@@ -32,6 +32,7 @@ class Namespace extends model_1.CdkResource {
         this.awsAccessKeyId = null;
         this.awsSecretAccessKey = null;
         this.firehoseStreamName = null;
+        this.firehoseCompressData = null;
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
@@ -43,6 +44,7 @@ class Namespace extends model_1.CdkResource {
         this.awsAccessKeyId = (_g = options === null || options === void 0 ? void 0 : options.awsAccessKeyId) !== null && _g !== void 0 ? _g : null;
         this.awsSecretAccessKey = (_h = options === null || options === void 0 ? void 0 : options.awsSecretAccessKey) !== null && _h !== void 0 ? _h : null;
         this.firehoseStreamName = (_j = options === null || options === void 0 ? void 0 : options.firehoseStreamName) !== null && _j !== void 0 ? _j : null;
+        this.firehoseCompressData = (_k = options === null || options === void 0 ? void 0 : options.firehoseCompressData) !== null && _k !== void 0 ? _k : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -82,6 +84,9 @@ class Namespace extends model_1.CdkResource {
         }
         if (this.firehoseStreamName != null) {
             properties["FirehoseStreamName"] = this.firehoseStreamName;
+        }
+        if (this.firehoseCompressData != null) {
+            properties["FirehoseCompressData"] = this.firehoseCompressData;
         }
         return properties;
     }

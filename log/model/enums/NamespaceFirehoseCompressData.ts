@@ -13,11 +13,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { NamespaceType } from "../enums/NamespaceType";
-import { NamespaceFirehoseCompressData } from "../enums/NamespaceFirehoseCompressData";
 
-export interface NamespaceTypeIsBigqueryOptions {
-    description?: string|null;
-    status?: string|null;
-    revision?: number|null;
-}
+
+
+export const NamespaceFirehoseCompressData = {
+    NONE: "none",
+    GZIP: "gzip",
+} as const;
+export type NamespaceFirehoseCompressData = typeof NamespaceFirehoseCompressData[keyof typeof NamespaceFirehoseCompressData];

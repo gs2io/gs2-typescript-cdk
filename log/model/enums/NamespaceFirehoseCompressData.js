@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,11 +14,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import { NamespaceType } from "../enums/NamespaceType";
-import { NamespaceFirehoseCompressData } from "../enums/NamespaceFirehoseCompressData";
-
-export interface NamespaceTypeIsBigqueryOptions {
-    description?: string|null;
-    status?: string|null;
-    revision?: number|null;
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NamespaceFirehoseCompressData = void 0;
+exports.NamespaceFirehoseCompressData = {
+    NONE: "none",
+    GZIP: "gzip",
+};
+//# sourceMappingURL=NamespaceFirehoseCompressData.js.map

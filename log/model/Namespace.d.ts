@@ -14,6 +14,7 @@ export default class Namespace extends CdkResource {
     private readonly awsAccessKeyId;
     private readonly awsSecretAccessKey;
     private readonly firehoseStreamName;
+    private readonly firehoseCompressData;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;
     resourceType(): string;

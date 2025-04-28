@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InGameLogTag = exports.AccessLogWithTelemetryStatus = exports.AccessLogWithTelemetry = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.NamespaceType = exports.Namespace = void 0;
+exports.InGameLogTag = exports.AccessLogWithTelemetryStatus = exports.AccessLogWithTelemetry = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.NamespaceFirehoseCompressData = exports.NamespaceType = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const NamespaceType_1 = require("./enums/NamespaceType");
 Object.defineProperty(exports, "NamespaceType", { enumerable: true, get: function () { return NamespaceType_1.NamespaceType; } });
+const NamespaceFirehoseCompressData_1 = require("./enums/NamespaceFirehoseCompressData");
+Object.defineProperty(exports, "NamespaceFirehoseCompressData", { enumerable: true, get: function () { return NamespaceFirehoseCompressData_1.NamespaceFirehoseCompressData; } });
 const AccessLog_1 = tslib_1.__importDefault(require("./AccessLog"));
 exports.AccessLog = AccessLog_1.default;
 const AccessLogCount_1 = tslib_1.__importDefault(require("./AccessLogCount"));

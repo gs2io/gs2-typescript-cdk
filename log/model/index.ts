@@ -16,6 +16,7 @@
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import { NamespaceType } from "./enums/NamespaceType";
+import { NamespaceFirehoseCompressData } from "./enums/NamespaceFirehoseCompressData";
 import { NamespaceTypeIsGs2Options } from "./options/NamespaceTypeIsGs2Options"
 import { NamespaceTypeIsBigqueryOptions } from "./options/NamespaceTypeIsBigqueryOptions"
 import { NamespaceTypeIsFirehoseOptions } from "./options/NamespaceTypeIsFirehoseOptions"
@@ -45,6 +46,7 @@ export {
     Namespace,
     NamespaceOptions,
     NamespaceType,
+    NamespaceFirehoseCompressData,
     NamespaceTypeIsGs2Options,
     NamespaceTypeIsBigqueryOptions,
     NamespaceTypeIsFirehoseOptions,

@@ -1,4 +1,5 @@
 import { NamespaceType } from "../enums/NamespaceType";
+import { NamespaceFirehoseCompressData } from "../enums/NamespaceFirehoseCompressData";
 export interface NamespaceOptions {
     description?: string | null;
     type?: NamespaceType | null;
@@ -9,4 +10,5 @@ export interface NamespaceOptions {
     awsAccessKeyId?: string | null;
     awsSecretAccessKey?: string | null;
     firehoseStreamName?: string | null;
+    firehoseCompressData?: NamespaceFirehoseCompressData | null;
 }

@@ -19,6 +19,7 @@ import {GetAttr} from "../../core/func";
 
 import NamespaceRef from "../ref/NamespaceRef";
 import { NamespaceType } from "./enums/NamespaceType";
+import { NamespaceFirehoseCompressData } from "./enums/NamespaceFirehoseCompressData";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -34,6 +35,7 @@ export default class Namespace extends CdkResource {
     private readonly awsAccessKeyId: string|null = null;
     private readonly awsSecretAccessKey: string|null = null;
     private readonly firehoseStreamName: string|null = null;
+    private readonly firehoseCompressData: NamespaceFirehoseCompressData|null = null;
 
     public constructor(
         stack: Stack,
@@ -55,6 +57,7 @@ export default class Namespace extends CdkResource {
         this.awsAccessKeyId = options?.awsAccessKeyId ?? null;
         this.awsSecretAccessKey = options?.awsSecretAccessKey ?? null;
         this.firehoseStreamName = options?.firehoseStreamName ?? null;
+        this.firehoseCompressData = options?.firehoseCompressData ?? null;
         stack.addResource(
             this,
         );
@@ -104,6 +107,9 @@ export default class Namespace extends CdkResource {
         }
         if (this.firehoseStreamName != null) {
             properties["FirehoseStreamName"] = this.firehoseStreamName;
+        }
+        if (this.firehoseCompressData != null) {
+            properties["FirehoseCompressData"] = this.firehoseCompressData;
         }
 
         return properties;

@@ -14,6 +14,7 @@
  * permissions and limitations under the License.
  */
 import { NamespaceType } from "../enums/NamespaceType";
+import { NamespaceFirehoseCompressData } from "../enums/NamespaceFirehoseCompressData";
 
 export interface NamespaceTypeIsGs2Options {
     description?: string|null;
