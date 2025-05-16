@@ -18,13 +18,13 @@ import { CounterScopeModelOptions } from "./options/CounterScopeModelOptions";
 import { CounterScopeModelScopeType } from "./enums/CounterScopeModelScopeType";
 import { CounterScopeModelResetType } from "./enums/CounterScopeModelResetType";
 import { CounterScopeModelResetDayOfWeek } from "./enums/CounterScopeModelResetDayOfWeek";
-import { CounterScopeModelScopeTypeIsResetTimingOptions } from "./options/CounterScopeModelScopeTypeIsResetTimingOptions"
-import { CounterScopeModelScopeTypeIsVerifyActionOptions } from "./options/CounterScopeModelScopeTypeIsVerifyActionOptions"
 import { CounterScopeModelResetTypeIsNotResetOptions } from "./options/CounterScopeModelResetTypeIsNotResetOptions"
 import { CounterScopeModelResetTypeIsDailyOptions } from "./options/CounterScopeModelResetTypeIsDailyOptions"
 import { CounterScopeModelResetTypeIsWeeklyOptions } from "./options/CounterScopeModelResetTypeIsWeeklyOptions"
 import { CounterScopeModelResetTypeIsMonthlyOptions } from "./options/CounterScopeModelResetTypeIsMonthlyOptions"
 import { CounterScopeModelResetTypeIsDaysOptions } from "./options/CounterScopeModelResetTypeIsDaysOptions"
+import { CounterScopeModelScopeTypeIsResetTimingOptions } from "./options/CounterScopeModelScopeTypeIsResetTimingOptions"
+import { CounterScopeModelScopeTypeIsVerifyActionOptions } from "./options/CounterScopeModelScopeTypeIsVerifyActionOptions"
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import CounterModel from "./CounterModel";
@@ -72,13 +72,13 @@ export {
     CounterScopeModelScopeType,
     CounterScopeModelResetType,
     CounterScopeModelResetDayOfWeek,
-    CounterScopeModelScopeTypeIsResetTimingOptions,
-    CounterScopeModelScopeTypeIsVerifyActionOptions,
     CounterScopeModelResetTypeIsNotResetOptions,
     CounterScopeModelResetTypeIsDailyOptions,
     CounterScopeModelResetTypeIsWeeklyOptions,
     CounterScopeModelResetTypeIsMonthlyOptions,
     CounterScopeModelResetTypeIsDaysOptions,
+    CounterScopeModelScopeTypeIsResetTimingOptions,
+    CounterScopeModelScopeTypeIsVerifyActionOptions,
     Namespace,
     NamespaceOptions,
     CounterModel,
