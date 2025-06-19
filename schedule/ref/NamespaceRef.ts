@@ -17,6 +17,7 @@
 import {GetAttr, Join} from "../../core/func";
 import TriggerByUserId from "../stampSheet/TriggerByUserId";
 import { TriggerTriggerStrategy } from "../stampSheet/enums/TriggerTriggerStrategy";
+import ExtendTriggerByUserId from "../stampSheet/ExtendTriggerByUserId";
 import DeleteTriggerByUserId from "../stampSheet/DeleteTriggerByUserId";
 import VerifyTriggerByUserId from "../stampSheet/VerifyTriggerByUserId";
 import { TriggerVerifyType } from "../stampSheet/enums/TriggerVerifyType";
@@ -45,6 +46,19 @@ export default class NamespaceRef {
             triggerStrategy,
             ttl,
             eventId,
+            userId,
+        );
+    }
+
+    public extendTrigger(
+        triggerName: string,
+        extendSeconds: number,
+        userId: string = "#{userId}",
+    ): ExtendTriggerByUserId {
+        return new ExtendTriggerByUserId(
+            this.namespaceName,
+            triggerName,
+            extendSeconds,
             userId,
         );
     }

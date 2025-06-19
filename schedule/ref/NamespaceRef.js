@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const TriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/TriggerByUserId"));
+const ExtendTriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ExtendTriggerByUserId"));
 const DeleteTriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteTriggerByUserId"));
 const VerifyTriggerByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyTriggerByUserId"));
 const VerifyEventByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyEventByUserId"));
@@ -27,6 +28,9 @@ class NamespaceRef {
     }
     trigger(triggerName, triggerStrategy, ttl = null, eventId = null, userId = "#{userId}") {
         return new TriggerByUserId_1.default(this.namespaceName, triggerName, triggerStrategy, ttl, eventId, userId);
+    }
+    extendTrigger(triggerName, extendSeconds, userId = "#{userId}") {
+        return new ExtendTriggerByUserId_1.default(this.namespaceName, triggerName, extendSeconds, userId);
     }
     deleteTrigger(triggerName, userId = "#{userId}") {
         return new DeleteTriggerByUserId_1.default(this.namespaceName, triggerName, userId);

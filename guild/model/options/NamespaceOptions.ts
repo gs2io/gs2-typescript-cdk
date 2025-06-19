@@ -30,6 +30,7 @@ export interface NamespaceOptions {
     joinGuildScript?: ScriptSetting|null;
     leaveGuildScript?: ScriptSetting|null;
     changeRoleScript?: ScriptSetting|null;
+    deleteGuildScript?: ScriptSetting|null;
     logSetting?: LogSetting|null;
 }
 

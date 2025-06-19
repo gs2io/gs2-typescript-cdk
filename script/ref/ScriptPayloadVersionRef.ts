@@ -13,12 +13,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import ScriptRef from "./ScriptRef";
-import ScriptPayloadVersionRef from "./ScriptPayloadVersionRef";
 
-export {
-    NamespaceRef,
-    ScriptRef,
-    ScriptPayloadVersionRef,
+import {GetAttr, Join} from "../../core/func";
+
+export default class ScriptPayloadVersionRef {
+    private readonly namespaceName: string;
+    private readonly objectKey: string;
+    private readonly versionId: string;
+
+    public constructor(
+        namespaceName: string,
+        objectKey: string,
+        versionId: string,
+    ) {
+        this.namespaceName = namespaceName;
+        this.objectKey = objectKey;
+        this.versionId = versionId;
+    }
 }

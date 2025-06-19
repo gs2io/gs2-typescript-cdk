@@ -22,7 +22,7 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         super("Guild_Namespace_" + name);
         this.description = null;
         this.changeNotification = null;
@@ -36,6 +36,7 @@ class Namespace extends model_1.CdkResource {
         this.joinGuildScript = null;
         this.leaveGuildScript = null;
         this.changeRoleScript = null;
+        this.deleteGuildScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -51,7 +52,8 @@ class Namespace extends model_1.CdkResource {
         this.joinGuildScript = (_k = options === null || options === void 0 ? void 0 : options.joinGuildScript) !== null && _k !== void 0 ? _k : null;
         this.leaveGuildScript = (_l = options === null || options === void 0 ? void 0 : options.leaveGuildScript) !== null && _l !== void 0 ? _l : null;
         this.changeRoleScript = (_m = options === null || options === void 0 ? void 0 : options.changeRoleScript) !== null && _m !== void 0 ? _m : null;
-        this.logSetting = (_o = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _o !== void 0 ? _o : null;
+        this.deleteGuildScript = (_o = options === null || options === void 0 ? void 0 : options.deleteGuildScript) !== null && _o !== void 0 ? _o : null;
+        this.logSetting = (_p = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _p !== void 0 ? _p : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -61,7 +63,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Guild::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -102,8 +104,11 @@ class Namespace extends model_1.CdkResource {
         if (this.changeRoleScript != null) {
             properties["ChangeRoleScript"] = (_l = this.changeRoleScript) === null || _l === void 0 ? void 0 : _l.properties();
         }
+        if (this.deleteGuildScript != null) {
+            properties["DeleteGuildScript"] = (_m = this.deleteGuildScript) === null || _m === void 0 ? void 0 : _m.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_m = this.logSetting) === null || _m === void 0 ? void 0 : _m.properties();
+            properties["LogSetting"] = (_o = this.logSetting) === null || _o === void 0 ? void 0 : _o.properties();
         }
         return properties;
     }

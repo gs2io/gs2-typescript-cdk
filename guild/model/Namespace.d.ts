@@ -18,6 +18,7 @@ export default class Namespace extends CdkResource {
     private readonly joinGuildScript;
     private readonly leaveGuildScript;
     private readonly changeRoleScript;
+    private readonly deleteGuildScript;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;

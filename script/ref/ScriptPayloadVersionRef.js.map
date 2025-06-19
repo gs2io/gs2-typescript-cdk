@@ -1,0 +1,1 @@
+{"version":3,"file":"ScriptPayloadVersionRef.js","sourceRoot":"","sources":["ScriptPayloadVersionRef.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;AAIH,MAAqB,uBAAuB;IAKxC,YACI,aAAqB,EACrB,SAAiB,EACjB,SAAiB;QAEjB,IAAI,CAAC,aAAa,GAAG,aAAa,CAAC;QACnC,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;QAC3B,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;IAC/B,CAAC;CACJ;AAdD,0CAcC"}
