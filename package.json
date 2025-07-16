@@ -1,6 +1,6 @@
 {
   "name": "gs2-cdk",
-  "version": "1.0.116",
+  "version": "1.0.117",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"

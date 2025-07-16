@@ -12,6 +12,7 @@ export interface NamespaceOptions {
     createGuildScript?: ScriptSetting | null;
     updateGuildScript?: ScriptSetting | null;
     joinGuildScript?: ScriptSetting | null;
+    receiveJoinRequestScript?: ScriptSetting | null;
     leaveGuildScript?: ScriptSetting | null;
     changeRoleScript?: ScriptSetting | null;
     deleteGuildScript?: ScriptSetting | null;
