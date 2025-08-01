@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,14 +14,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import CategoryModelRef from "./CategoryModelRef";
-import MasterDataObjectRef from "./MasterDataObjectRef";
-import MasterDataVersionRef from "./MasterDataVersionRef";
-
-export {
-    NamespaceRef,
-    CategoryModelRef,
-    MasterDataObjectRef,
-    MasterDataVersionRef,
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CategoryModelRejectAccessTokenPost = void 0;
+exports.CategoryModelRejectAccessTokenPost = {
+    ENABLED: "Enabled",
+    DISABLED: "Disabled",
+};
+//# sourceMappingURL=CategoryModelRejectAccessTokenPost.js.map

@@ -21,6 +21,8 @@ import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
+import CurrentMasterData from "./CurrentMasterData";
+import CategoryModel from "./CategoryModel";
 
 import { NamespaceOptions } from "./options/NamespaceOptions";
 
@@ -137,5 +139,18 @@ export default class Namespace extends CdkResource {
             "Item.NamespaceId",
             null,
         );
+    }
+
+    public masterData(
+        categoryModels: CategoryModel[],
+    ): Namespace {
+        new CurrentMasterData(
+            this.stack,
+            this.name,
+            categoryModels,
+        ).addDependsOn(
+            this,
+        );
+        return this;
     }
 }

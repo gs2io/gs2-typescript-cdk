@@ -12,27 +12,22 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 
 import {GetAttr, Join} from "../../core/func";
-import CategoryModelRef from "./CategoryModelRef";
 
-export default class NamespaceRef {
+export default class CategoryModelRef {
     private readonly namespaceName: string;
+    private readonly category: number;
 
     public constructor(
         namespaceName: string,
+        category: number,
     ) {
         this.namespaceName = namespaceName;
-    }
-
-    public categoryModel(
-        category: number,
-    ): CategoryModelRef {
-        return new CategoryModelRef(
-            this.namespaceName,
-            category,
-        );
+        this.category = category;
     }
 
     public grn(
@@ -50,6 +45,8 @@ export default class NamespaceRef {
                 ),
                 "chat",
                 this.namespaceName,
+                "model",
+                this.category.toString(),
             ],
         ).str(
         );

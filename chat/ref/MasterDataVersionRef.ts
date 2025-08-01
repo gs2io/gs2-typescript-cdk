@@ -13,14 +13,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import CategoryModelRef from "./CategoryModelRef";
-import MasterDataObjectRef from "./MasterDataObjectRef";
-import MasterDataVersionRef from "./MasterDataVersionRef";
 
-export {
-    NamespaceRef,
-    CategoryModelRef,
-    MasterDataObjectRef,
-    MasterDataVersionRef,
+import {GetAttr, Join} from "../../core/func";
+
+export default class MasterDataVersionRef {
+    private readonly namespaceName: string;
+    private readonly objectKey: string;
+    private readonly versionId: string;
+
+    public constructor(
+        namespaceName: string,
+        objectKey: string,
+        versionId: string,
+    ) {
+        this.namespaceName = namespaceName;
+        this.objectKey = objectKey;
+        this.versionId = versionId;
+    }
 }

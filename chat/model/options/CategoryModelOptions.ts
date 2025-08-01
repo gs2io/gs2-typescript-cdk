@@ -13,14 +13,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-import NamespaceRef from "./NamespaceRef";
-import CategoryModelRef from "./CategoryModelRef";
-import MasterDataObjectRef from "./MasterDataObjectRef";
-import MasterDataVersionRef from "./MasterDataVersionRef";
+import { CategoryModelRejectAccessTokenPost } from "../enums/CategoryModelRejectAccessTokenPost";
 
-export {
-    NamespaceRef,
-    CategoryModelRef,
-    MasterDataObjectRef,
-    MasterDataVersionRef,
+export interface CategoryModelOptions {
+    rejectAccessTokenPost?: CategoryModelRejectAccessTokenPost|null;
 }
+

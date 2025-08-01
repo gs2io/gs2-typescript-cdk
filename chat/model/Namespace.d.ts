@@ -1,6 +1,7 @@
 import { CdkResource, Stack } from "../../core/model";
 import { GetAttr } from "../../core/func";
 import NamespaceRef from "../ref/NamespaceRef";
+import CategoryModel from "./CategoryModel";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
@@ -23,4 +24,5 @@ export default class Namespace extends CdkResource {
     };
     ref(): NamespaceRef;
     getAttrNamespaceId(): GetAttr;
+    masterData(categoryModels: CategoryModel[]): Namespace;
 }

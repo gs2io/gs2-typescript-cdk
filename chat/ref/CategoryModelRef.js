@@ -13,17 +13,15 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
-const CategoryModelRef_1 = tslib_1.__importDefault(require("./CategoryModelRef"));
-class NamespaceRef {
-    constructor(namespaceName) {
+class CategoryModelRef {
+    constructor(namespaceName, category) {
         this.namespaceName = namespaceName;
-    }
-    categoryModel(category) {
-        return new CategoryModelRef_1.default(this.namespaceName, category);
+        this.category = category;
     }
     grn() {
         return new func_1.Join(":", [
@@ -33,8 +31,10 @@ class NamespaceRef {
             func_1.GetAttr.ownerId().str(),
             "chat",
             this.namespaceName,
+            "model",
+            this.category.toString(),
         ]).str();
     }
 }
-exports.default = NamespaceRef;
-//# sourceMappingURL=NamespaceRef.js.map
+exports.default = CategoryModelRef;
+//# sourceMappingURL=CategoryModelRef.js.map
