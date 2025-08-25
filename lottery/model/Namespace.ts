@@ -32,7 +32,6 @@ export default class Namespace extends CdkResource {
     private readonly description: string|null = null;
     private readonly transactionSetting: TransactionSetting|null = null;
     private readonly lotteryTriggerScriptId: string|null = null;
-    private readonly choicePrizeTableScriptId: string|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -49,7 +48,6 @@ export default class Namespace extends CdkResource {
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
         this.lotteryTriggerScriptId = options?.lotteryTriggerScriptId ?? null;
-        this.choicePrizeTableScriptId = options?.choicePrizeTableScriptId ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -83,9 +81,6 @@ export default class Namespace extends CdkResource {
         }
         if (this.lotteryTriggerScriptId != null) {
             properties["LotteryTriggerScriptId"] = this.lotteryTriggerScriptId;
-        }
-        if (this.choicePrizeTableScriptId != null) {
-            properties["ChoicePrizeTableScriptId"] = this.choicePrizeTableScriptId;
         }
         if (this.logSetting != null) {
             properties["LogSetting"] = this.logSetting?.properties(
