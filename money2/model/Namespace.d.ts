@@ -15,6 +15,7 @@ export default class Namespace extends CdkResource {
     private readonly description;
     private readonly depositBalanceScript;
     private readonly withdrawBalanceScript;
+    private readonly verifyReceiptScript;
     private readonly subscribeScript;
     private readonly renewScript;
     private readonly unsubscribeScript;

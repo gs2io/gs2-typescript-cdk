@@ -5,6 +5,7 @@ export interface NamespaceOptions {
     description?: string | null;
     depositBalanceScript?: ScriptSetting | null;
     withdrawBalanceScript?: ScriptSetting | null;
+    verifyReceiptScript?: ScriptSetting | null;
     subscribeScript?: string | null;
     renewScript?: string | null;
     unsubscribeScript?: string | null;

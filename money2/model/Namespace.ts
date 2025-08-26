@@ -38,6 +38,7 @@ export default class Namespace extends CdkResource {
     private readonly description: string|null = null;
     private readonly depositBalanceScript: ScriptSetting|null = null;
     private readonly withdrawBalanceScript: ScriptSetting|null = null;
+    private readonly verifyReceiptScript: ScriptSetting|null = null;
     private readonly subscribeScript: string|null = null;
     private readonly renewScript: string|null = null;
     private readonly unsubscribeScript: string|null = null;
@@ -65,6 +66,7 @@ export default class Namespace extends CdkResource {
         this.description = options?.description ?? null;
         this.depositBalanceScript = options?.depositBalanceScript ?? null;
         this.withdrawBalanceScript = options?.withdrawBalanceScript ?? null;
+        this.verifyReceiptScript = options?.verifyReceiptScript ?? null;
         this.subscribeScript = options?.subscribeScript ?? null;
         this.renewScript = options?.renewScript ?? null;
         this.unsubscribeScript = options?.unsubscribeScript ?? null;
@@ -113,6 +115,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.withdrawBalanceScript != null) {
             properties["WithdrawBalanceScript"] = this.withdrawBalanceScript?.properties(
+            );
+        }
+        if (this.verifyReceiptScript != null) {
+            properties["VerifyReceiptScript"] = this.verifyReceiptScript?.properties(
             );
         }
         if (this.subscribeScript != null) {
