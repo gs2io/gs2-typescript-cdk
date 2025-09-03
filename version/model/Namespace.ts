@@ -16,6 +16,7 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
+import TransactionSetting from "../../core/model/TransactionSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
@@ -30,6 +31,7 @@ export default class Namespace extends CdkResource {
     private readonly name: string;
     private readonly assumeUserId: string;
     private readonly description: string|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
     private readonly acceptVersionScript: ScriptSetting|null = null;
     private readonly checkVersionTriggerScriptId: string|null = null;
     private readonly logSetting: LogSetting|null = null;
@@ -48,6 +50,7 @@ export default class Namespace extends CdkResource {
         this.name = name;
         this.assumeUserId = assumeUserId;
         this.description = options?.description ?? null;
+        this.transactionSetting = options?.transactionSetting ?? null;
         this.acceptVersionScript = options?.acceptVersionScript ?? null;
         this.checkVersionTriggerScriptId = options?.checkVersionTriggerScriptId ?? null;
         this.logSetting = options?.logSetting ?? null;
@@ -76,6 +79,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
         }
         if (this.assumeUserId != null) {
             properties["AssumeUserId"] = this.assumeUserId;

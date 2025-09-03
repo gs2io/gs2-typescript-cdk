@@ -1,8 +1,10 @@
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
 export interface NamespaceOptions {
     description?: string | null;
+    transactionSetting?: TransactionSetting | null;
     depositBalanceScript?: ScriptSetting | null;
     withdrawBalanceScript?: ScriptSetting | null;
     verifyReceiptScript?: ScriptSetting | null;

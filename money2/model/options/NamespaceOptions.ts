@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import PlatformSetting from "../PlatformSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
@@ -21,6 +22,7 @@ import { NamespaceCurrencyUsagePriority } from "../enums/NamespaceCurrencyUsageP
 
 export interface NamespaceOptions {
     description?: string|null;
+    transactionSetting?: TransactionSetting|null;
     depositBalanceScript?: ScriptSetting|null;
     withdrawBalanceScript?: ScriptSetting|null;
     verifyReceiptScript?: ScriptSetting|null;

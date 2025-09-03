@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
@@ -23,6 +24,7 @@ import { NamespaceEnableCollaborateSeasonRating } from "../enums/NamespaceEnable
 
 export interface NamespaceOptions {
     description?: string|null;
+    transactionSetting?: TransactionSetting|null;
     enableRating?: boolean|null;
     enableDisconnectDetection?: NamespaceEnableDisconnectDetection|null;
     disconnectDetectionTimeoutSeconds?: number|null;

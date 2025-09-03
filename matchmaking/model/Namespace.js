@@ -22,9 +22,10 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, createGatheringTriggerType, completeMatchmakingTriggerType, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         super("Matchmaking_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.enableRating = null;
         this.enableDisconnectDetection = null;
         this.disconnectDetectionTimeoutSeconds = null;
@@ -46,22 +47,23 @@ class Namespace extends model_1.CdkResource {
         this.createGatheringTriggerType = createGatheringTriggerType;
         this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.enableRating = (_b = options === null || options === void 0 ? void 0 : options.enableRating) !== null && _b !== void 0 ? _b : null;
-        this.enableDisconnectDetection = (_c = options === null || options === void 0 ? void 0 : options.enableDisconnectDetection) !== null && _c !== void 0 ? _c : null;
-        this.disconnectDetectionTimeoutSeconds = (_d = options === null || options === void 0 ? void 0 : options.disconnectDetectionTimeoutSeconds) !== null && _d !== void 0 ? _d : null;
-        this.createGatheringTriggerRealtimeNamespaceId = (_e = options === null || options === void 0 ? void 0 : options.createGatheringTriggerRealtimeNamespaceId) !== null && _e !== void 0 ? _e : null;
-        this.createGatheringTriggerScriptId = (_f = options === null || options === void 0 ? void 0 : options.createGatheringTriggerScriptId) !== null && _f !== void 0 ? _f : null;
-        this.completeMatchmakingTriggerRealtimeNamespaceId = (_g = options === null || options === void 0 ? void 0 : options.completeMatchmakingTriggerRealtimeNamespaceId) !== null && _g !== void 0 ? _g : null;
-        this.completeMatchmakingTriggerScriptId = (_h = options === null || options === void 0 ? void 0 : options.completeMatchmakingTriggerScriptId) !== null && _h !== void 0 ? _h : null;
-        this.enableCollaborateSeasonRating = (_j = options === null || options === void 0 ? void 0 : options.enableCollaborateSeasonRating) !== null && _j !== void 0 ? _j : null;
-        this.collaborateSeasonRatingNamespaceId = (_k = options === null || options === void 0 ? void 0 : options.collaborateSeasonRatingNamespaceId) !== null && _k !== void 0 ? _k : null;
-        this.collaborateSeasonRatingTtl = (_l = options === null || options === void 0 ? void 0 : options.collaborateSeasonRatingTtl) !== null && _l !== void 0 ? _l : null;
-        this.changeRatingScript = (_m = options === null || options === void 0 ? void 0 : options.changeRatingScript) !== null && _m !== void 0 ? _m : null;
-        this.joinNotification = (_o = options === null || options === void 0 ? void 0 : options.joinNotification) !== null && _o !== void 0 ? _o : null;
-        this.leaveNotification = (_p = options === null || options === void 0 ? void 0 : options.leaveNotification) !== null && _p !== void 0 ? _p : null;
-        this.completeNotification = (_q = options === null || options === void 0 ? void 0 : options.completeNotification) !== null && _q !== void 0 ? _q : null;
-        this.changeRatingNotification = (_r = options === null || options === void 0 ? void 0 : options.changeRatingNotification) !== null && _r !== void 0 ? _r : null;
-        this.logSetting = (_s = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _s !== void 0 ? _s : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.enableRating = (_c = options === null || options === void 0 ? void 0 : options.enableRating) !== null && _c !== void 0 ? _c : null;
+        this.enableDisconnectDetection = (_d = options === null || options === void 0 ? void 0 : options.enableDisconnectDetection) !== null && _d !== void 0 ? _d : null;
+        this.disconnectDetectionTimeoutSeconds = (_e = options === null || options === void 0 ? void 0 : options.disconnectDetectionTimeoutSeconds) !== null && _e !== void 0 ? _e : null;
+        this.createGatheringTriggerRealtimeNamespaceId = (_f = options === null || options === void 0 ? void 0 : options.createGatheringTriggerRealtimeNamespaceId) !== null && _f !== void 0 ? _f : null;
+        this.createGatheringTriggerScriptId = (_g = options === null || options === void 0 ? void 0 : options.createGatheringTriggerScriptId) !== null && _g !== void 0 ? _g : null;
+        this.completeMatchmakingTriggerRealtimeNamespaceId = (_h = options === null || options === void 0 ? void 0 : options.completeMatchmakingTriggerRealtimeNamespaceId) !== null && _h !== void 0 ? _h : null;
+        this.completeMatchmakingTriggerScriptId = (_j = options === null || options === void 0 ? void 0 : options.completeMatchmakingTriggerScriptId) !== null && _j !== void 0 ? _j : null;
+        this.enableCollaborateSeasonRating = (_k = options === null || options === void 0 ? void 0 : options.enableCollaborateSeasonRating) !== null && _k !== void 0 ? _k : null;
+        this.collaborateSeasonRatingNamespaceId = (_l = options === null || options === void 0 ? void 0 : options.collaborateSeasonRatingNamespaceId) !== null && _l !== void 0 ? _l : null;
+        this.collaborateSeasonRatingTtl = (_m = options === null || options === void 0 ? void 0 : options.collaborateSeasonRatingTtl) !== null && _m !== void 0 ? _m : null;
+        this.changeRatingScript = (_o = options === null || options === void 0 ? void 0 : options.changeRatingScript) !== null && _o !== void 0 ? _o : null;
+        this.joinNotification = (_p = options === null || options === void 0 ? void 0 : options.joinNotification) !== null && _p !== void 0 ? _p : null;
+        this.leaveNotification = (_q = options === null || options === void 0 ? void 0 : options.leaveNotification) !== null && _q !== void 0 ? _q : null;
+        this.completeNotification = (_r = options === null || options === void 0 ? void 0 : options.completeNotification) !== null && _r !== void 0 ? _r : null;
+        this.changeRatingNotification = (_s = options === null || options === void 0 ? void 0 : options.changeRatingNotification) !== null && _s !== void 0 ? _s : null;
+        this.logSetting = (_t = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _t !== void 0 ? _t : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -71,13 +73,16 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Matchmaking::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
         }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.enableRating != null) {
             properties["EnableRating"] = this.enableRating;
@@ -116,22 +121,22 @@ class Namespace extends model_1.CdkResource {
             properties["CollaborateSeasonRatingTtl"] = this.collaborateSeasonRatingTtl;
         }
         if (this.changeRatingScript != null) {
-            properties["ChangeRatingScript"] = (_a = this.changeRatingScript) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["ChangeRatingScript"] = (_b = this.changeRatingScript) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.joinNotification != null) {
-            properties["JoinNotification"] = (_b = this.joinNotification) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["JoinNotification"] = (_c = this.joinNotification) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.leaveNotification != null) {
-            properties["LeaveNotification"] = (_c = this.leaveNotification) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LeaveNotification"] = (_d = this.leaveNotification) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.completeNotification != null) {
-            properties["CompleteNotification"] = (_d = this.completeNotification) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["CompleteNotification"] = (_e = this.completeNotification) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.changeRatingNotification != null) {
-            properties["ChangeRatingNotification"] = (_e = this.changeRatingNotification) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["ChangeRatingNotification"] = (_f = this.changeRatingNotification) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["LogSetting"] = (_g = this.logSetting) === null || _g === void 0 ? void 0 : _g.properties();
         }
         return properties;
     }

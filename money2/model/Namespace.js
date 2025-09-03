@@ -22,9 +22,10 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, currencyUsagePriority, sharedFreeCurrency, platformSetting, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         super("Money2_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.depositBalanceScript = null;
         this.withdrawBalanceScript = null;
         this.verifyReceiptScript = null;
@@ -40,15 +41,16 @@ class Namespace extends model_1.CdkResource {
         this.sharedFreeCurrency = sharedFreeCurrency;
         this.platformSetting = platformSetting;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.depositBalanceScript = (_b = options === null || options === void 0 ? void 0 : options.depositBalanceScript) !== null && _b !== void 0 ? _b : null;
-        this.withdrawBalanceScript = (_c = options === null || options === void 0 ? void 0 : options.withdrawBalanceScript) !== null && _c !== void 0 ? _c : null;
-        this.verifyReceiptScript = (_d = options === null || options === void 0 ? void 0 : options.verifyReceiptScript) !== null && _d !== void 0 ? _d : null;
-        this.subscribeScript = (_e = options === null || options === void 0 ? void 0 : options.subscribeScript) !== null && _e !== void 0 ? _e : null;
-        this.renewScript = (_f = options === null || options === void 0 ? void 0 : options.renewScript) !== null && _f !== void 0 ? _f : null;
-        this.unsubscribeScript = (_g = options === null || options === void 0 ? void 0 : options.unsubscribeScript) !== null && _g !== void 0 ? _g : null;
-        this.takeOverScript = (_h = options === null || options === void 0 ? void 0 : options.takeOverScript) !== null && _h !== void 0 ? _h : null;
-        this.changeSubscriptionStatusNotification = (_j = options === null || options === void 0 ? void 0 : options.changeSubscriptionStatusNotification) !== null && _j !== void 0 ? _j : null;
-        this.logSetting = (_k = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _k !== void 0 ? _k : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.depositBalanceScript = (_c = options === null || options === void 0 ? void 0 : options.depositBalanceScript) !== null && _c !== void 0 ? _c : null;
+        this.withdrawBalanceScript = (_d = options === null || options === void 0 ? void 0 : options.withdrawBalanceScript) !== null && _d !== void 0 ? _d : null;
+        this.verifyReceiptScript = (_e = options === null || options === void 0 ? void 0 : options.verifyReceiptScript) !== null && _e !== void 0 ? _e : null;
+        this.subscribeScript = (_f = options === null || options === void 0 ? void 0 : options.subscribeScript) !== null && _f !== void 0 ? _f : null;
+        this.renewScript = (_g = options === null || options === void 0 ? void 0 : options.renewScript) !== null && _g !== void 0 ? _g : null;
+        this.unsubscribeScript = (_h = options === null || options === void 0 ? void 0 : options.unsubscribeScript) !== null && _h !== void 0 ? _h : null;
+        this.takeOverScript = (_j = options === null || options === void 0 ? void 0 : options.takeOverScript) !== null && _j !== void 0 ? _j : null;
+        this.changeSubscriptionStatusNotification = (_k = options === null || options === void 0 ? void 0 : options.changeSubscriptionStatusNotification) !== null && _k !== void 0 ? _k : null;
+        this.logSetting = (_l = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _l !== void 0 ? _l : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -58,7 +60,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Money2::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -69,20 +71,23 @@ class Namespace extends model_1.CdkResource {
         if (this.description != null) {
             properties["Description"] = this.description;
         }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
+        }
         if (this.sharedFreeCurrency != null) {
             properties["SharedFreeCurrency"] = this.sharedFreeCurrency;
         }
         if (this.platformSetting != null) {
-            properties["PlatformSetting"] = (_a = this.platformSetting) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["PlatformSetting"] = (_b = this.platformSetting) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.depositBalanceScript != null) {
-            properties["DepositBalanceScript"] = (_b = this.depositBalanceScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["DepositBalanceScript"] = (_c = this.depositBalanceScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.withdrawBalanceScript != null) {
-            properties["WithdrawBalanceScript"] = (_c = this.withdrawBalanceScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["WithdrawBalanceScript"] = (_d = this.withdrawBalanceScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.verifyReceiptScript != null) {
-            properties["VerifyReceiptScript"] = (_d = this.verifyReceiptScript) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["VerifyReceiptScript"] = (_e = this.verifyReceiptScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.subscribeScript != null) {
             properties["SubscribeScript"] = this.subscribeScript;
@@ -94,13 +99,13 @@ class Namespace extends model_1.CdkResource {
             properties["UnsubscribeScript"] = this.unsubscribeScript;
         }
         if (this.takeOverScript != null) {
-            properties["TakeOverScript"] = (_e = this.takeOverScript) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["TakeOverScript"] = (_f = this.takeOverScript) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.changeSubscriptionStatusNotification != null) {
-            properties["ChangeSubscriptionStatusNotification"] = (_f = this.changeSubscriptionStatusNotification) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["ChangeSubscriptionStatusNotification"] = (_g = this.changeSubscriptionStatusNotification) === null || _g === void 0 ? void 0 : _g.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_g = this.logSetting) === null || _g === void 0 ? void 0 : _g.properties();
+            properties["LogSetting"] = (_h = this.logSetting) === null || _h === void 0 ? void 0 : _h.properties();
         }
         return properties;
     }

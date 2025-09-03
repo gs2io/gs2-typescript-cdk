@@ -12,6 +12,7 @@ export default class Namespace extends CdkResource {
     private readonly createGatheringTriggerType;
     private readonly completeMatchmakingTriggerType;
     private readonly description;
+    private readonly transactionSetting;
     private readonly enableRating;
     private readonly enableDisconnectDetection;
     private readonly disconnectDetectionTimeoutSeconds;

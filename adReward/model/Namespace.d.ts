@@ -5,10 +5,11 @@ import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
     private readonly name;
+    private readonly description;
+    private readonly transactionSetting;
     private readonly admob;
     private readonly unityAd;
     private readonly appLovinMaxes;
-    private readonly description;
     private readonly acquirePointScript;
     private readonly consumePointScript;
     private readonly changePointNotification;

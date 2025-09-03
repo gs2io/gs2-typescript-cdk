@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import LogSetting from "../../../core/model/LogSetting";
 import { NamespacePriority } from "../enums/NamespacePriority";
@@ -20,6 +21,7 @@ import { NamespaceCurrency } from "../enums/NamespaceCurrency";
 
 export interface NamespaceOptions {
     description?: string|null;
+    transactionSetting?: TransactionSetting|null;
     appleKey?: string|null;
     googleKey?: string|null;
     enableFakeReceipt?: boolean|null;

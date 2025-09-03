@@ -16,6 +16,7 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
+import TransactionSetting from "../../core/model/TransactionSetting";
 import PlatformSetting from "./PlatformSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
@@ -36,6 +37,7 @@ export default class Namespace extends CdkResource {
     private readonly sharedFreeCurrency: boolean;
     private readonly platformSetting: PlatformSetting;
     private readonly description: string|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
     private readonly depositBalanceScript: ScriptSetting|null = null;
     private readonly withdrawBalanceScript: ScriptSetting|null = null;
     private readonly verifyReceiptScript: ScriptSetting|null = null;
@@ -64,6 +66,7 @@ export default class Namespace extends CdkResource {
         this.sharedFreeCurrency = sharedFreeCurrency;
         this.platformSetting = platformSetting;
         this.description = options?.description ?? null;
+        this.transactionSetting = options?.transactionSetting ?? null;
         this.depositBalanceScript = options?.depositBalanceScript ?? null;
         this.withdrawBalanceScript = options?.withdrawBalanceScript ?? null;
         this.verifyReceiptScript = options?.verifyReceiptScript ?? null;
@@ -101,6 +104,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
         }
         if (this.sharedFreeCurrency != null) {
             properties["SharedFreeCurrency"] = this.sharedFreeCurrency;

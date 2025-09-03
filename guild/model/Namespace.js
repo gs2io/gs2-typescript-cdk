@@ -22,9 +22,10 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         super("Guild_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.changeNotification = null;
         this.joinNotification = null;
         this.leaveNotification = null;
@@ -42,20 +43,21 @@ class Namespace extends model_1.CdkResource {
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.changeNotification = (_b = options === null || options === void 0 ? void 0 : options.changeNotification) !== null && _b !== void 0 ? _b : null;
-        this.joinNotification = (_c = options === null || options === void 0 ? void 0 : options.joinNotification) !== null && _c !== void 0 ? _c : null;
-        this.leaveNotification = (_d = options === null || options === void 0 ? void 0 : options.leaveNotification) !== null && _d !== void 0 ? _d : null;
-        this.changeMemberNotification = (_e = options === null || options === void 0 ? void 0 : options.changeMemberNotification) !== null && _e !== void 0 ? _e : null;
-        this.receiveRequestNotification = (_f = options === null || options === void 0 ? void 0 : options.receiveRequestNotification) !== null && _f !== void 0 ? _f : null;
-        this.removeRequestNotification = (_g = options === null || options === void 0 ? void 0 : options.removeRequestNotification) !== null && _g !== void 0 ? _g : null;
-        this.createGuildScript = (_h = options === null || options === void 0 ? void 0 : options.createGuildScript) !== null && _h !== void 0 ? _h : null;
-        this.updateGuildScript = (_j = options === null || options === void 0 ? void 0 : options.updateGuildScript) !== null && _j !== void 0 ? _j : null;
-        this.joinGuildScript = (_k = options === null || options === void 0 ? void 0 : options.joinGuildScript) !== null && _k !== void 0 ? _k : null;
-        this.receiveJoinRequestScript = (_l = options === null || options === void 0 ? void 0 : options.receiveJoinRequestScript) !== null && _l !== void 0 ? _l : null;
-        this.leaveGuildScript = (_m = options === null || options === void 0 ? void 0 : options.leaveGuildScript) !== null && _m !== void 0 ? _m : null;
-        this.changeRoleScript = (_o = options === null || options === void 0 ? void 0 : options.changeRoleScript) !== null && _o !== void 0 ? _o : null;
-        this.deleteGuildScript = (_p = options === null || options === void 0 ? void 0 : options.deleteGuildScript) !== null && _p !== void 0 ? _p : null;
-        this.logSetting = (_q = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _q !== void 0 ? _q : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.changeNotification = (_c = options === null || options === void 0 ? void 0 : options.changeNotification) !== null && _c !== void 0 ? _c : null;
+        this.joinNotification = (_d = options === null || options === void 0 ? void 0 : options.joinNotification) !== null && _d !== void 0 ? _d : null;
+        this.leaveNotification = (_e = options === null || options === void 0 ? void 0 : options.leaveNotification) !== null && _e !== void 0 ? _e : null;
+        this.changeMemberNotification = (_f = options === null || options === void 0 ? void 0 : options.changeMemberNotification) !== null && _f !== void 0 ? _f : null;
+        this.receiveRequestNotification = (_g = options === null || options === void 0 ? void 0 : options.receiveRequestNotification) !== null && _g !== void 0 ? _g : null;
+        this.removeRequestNotification = (_h = options === null || options === void 0 ? void 0 : options.removeRequestNotification) !== null && _h !== void 0 ? _h : null;
+        this.createGuildScript = (_j = options === null || options === void 0 ? void 0 : options.createGuildScript) !== null && _j !== void 0 ? _j : null;
+        this.updateGuildScript = (_k = options === null || options === void 0 ? void 0 : options.updateGuildScript) !== null && _k !== void 0 ? _k : null;
+        this.joinGuildScript = (_l = options === null || options === void 0 ? void 0 : options.joinGuildScript) !== null && _l !== void 0 ? _l : null;
+        this.receiveJoinRequestScript = (_m = options === null || options === void 0 ? void 0 : options.receiveJoinRequestScript) !== null && _m !== void 0 ? _m : null;
+        this.leaveGuildScript = (_o = options === null || options === void 0 ? void 0 : options.leaveGuildScript) !== null && _o !== void 0 ? _o : null;
+        this.changeRoleScript = (_p = options === null || options === void 0 ? void 0 : options.changeRoleScript) !== null && _p !== void 0 ? _p : null;
+        this.deleteGuildScript = (_q = options === null || options === void 0 ? void 0 : options.deleteGuildScript) !== null && _q !== void 0 ? _q : null;
+        this.logSetting = (_r = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _r !== void 0 ? _r : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -65,7 +67,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Guild::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -73,47 +75,50 @@ class Namespace extends model_1.CdkResource {
         if (this.description != null) {
             properties["Description"] = this.description;
         }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
+        }
         if (this.changeNotification != null) {
-            properties["ChangeNotification"] = (_a = this.changeNotification) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["ChangeNotification"] = (_b = this.changeNotification) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.joinNotification != null) {
-            properties["JoinNotification"] = (_b = this.joinNotification) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["JoinNotification"] = (_c = this.joinNotification) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.leaveNotification != null) {
-            properties["LeaveNotification"] = (_c = this.leaveNotification) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LeaveNotification"] = (_d = this.leaveNotification) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.changeMemberNotification != null) {
-            properties["ChangeMemberNotification"] = (_d = this.changeMemberNotification) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["ChangeMemberNotification"] = (_e = this.changeMemberNotification) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.receiveRequestNotification != null) {
-            properties["ReceiveRequestNotification"] = (_e = this.receiveRequestNotification) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["ReceiveRequestNotification"] = (_f = this.receiveRequestNotification) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.removeRequestNotification != null) {
-            properties["RemoveRequestNotification"] = (_f = this.removeRequestNotification) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["RemoveRequestNotification"] = (_g = this.removeRequestNotification) === null || _g === void 0 ? void 0 : _g.properties();
         }
         if (this.createGuildScript != null) {
-            properties["CreateGuildScript"] = (_g = this.createGuildScript) === null || _g === void 0 ? void 0 : _g.properties();
+            properties["CreateGuildScript"] = (_h = this.createGuildScript) === null || _h === void 0 ? void 0 : _h.properties();
         }
         if (this.updateGuildScript != null) {
-            properties["UpdateGuildScript"] = (_h = this.updateGuildScript) === null || _h === void 0 ? void 0 : _h.properties();
+            properties["UpdateGuildScript"] = (_j = this.updateGuildScript) === null || _j === void 0 ? void 0 : _j.properties();
         }
         if (this.joinGuildScript != null) {
-            properties["JoinGuildScript"] = (_j = this.joinGuildScript) === null || _j === void 0 ? void 0 : _j.properties();
+            properties["JoinGuildScript"] = (_k = this.joinGuildScript) === null || _k === void 0 ? void 0 : _k.properties();
         }
         if (this.receiveJoinRequestScript != null) {
-            properties["ReceiveJoinRequestScript"] = (_k = this.receiveJoinRequestScript) === null || _k === void 0 ? void 0 : _k.properties();
+            properties["ReceiveJoinRequestScript"] = (_l = this.receiveJoinRequestScript) === null || _l === void 0 ? void 0 : _l.properties();
         }
         if (this.leaveGuildScript != null) {
-            properties["LeaveGuildScript"] = (_l = this.leaveGuildScript) === null || _l === void 0 ? void 0 : _l.properties();
+            properties["LeaveGuildScript"] = (_m = this.leaveGuildScript) === null || _m === void 0 ? void 0 : _m.properties();
         }
         if (this.changeRoleScript != null) {
-            properties["ChangeRoleScript"] = (_m = this.changeRoleScript) === null || _m === void 0 ? void 0 : _m.properties();
+            properties["ChangeRoleScript"] = (_o = this.changeRoleScript) === null || _o === void 0 ? void 0 : _o.properties();
         }
         if (this.deleteGuildScript != null) {
-            properties["DeleteGuildScript"] = (_o = this.deleteGuildScript) === null || _o === void 0 ? void 0 : _o.properties();
+            properties["DeleteGuildScript"] = (_p = this.deleteGuildScript) === null || _p === void 0 ? void 0 : _p.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_p = this.logSetting) === null || _p === void 0 ? void 0 : _p.properties();
+            properties["LogSetting"] = (_q = this.logSetting) === null || _q === void 0 ? void 0 : _q.properties();
         }
         return properties;
     }

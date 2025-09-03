@@ -10,6 +10,7 @@ export default class Namespace extends CdkResource {
     private readonly serverType;
     private readonly serverSpec;
     private readonly description;
+    private readonly transactionSetting;
     private readonly createNotification;
     private readonly logSetting;
     constructor(stack: Stack, name: string, serverType: NamespaceServerType, serverSpec: NamespaceServerSpec, options?: NamespaceOptions | null);

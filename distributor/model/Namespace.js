@@ -22,9 +22,10 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         super("Distributor_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.assumeUserId = null;
         this.autoRunStampSheetNotification = null;
         this.autoRunTransactionNotification = null;
@@ -32,10 +33,11 @@ class Namespace extends model_1.CdkResource {
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.assumeUserId = (_b = options === null || options === void 0 ? void 0 : options.assumeUserId) !== null && _b !== void 0 ? _b : null;
-        this.autoRunStampSheetNotification = (_c = options === null || options === void 0 ? void 0 : options.autoRunStampSheetNotification) !== null && _c !== void 0 ? _c : null;
-        this.autoRunTransactionNotification = (_d = options === null || options === void 0 ? void 0 : options.autoRunTransactionNotification) !== null && _d !== void 0 ? _d : null;
-        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.assumeUserId = (_c = options === null || options === void 0 ? void 0 : options.assumeUserId) !== null && _c !== void 0 ? _c : null;
+        this.autoRunStampSheetNotification = (_d = options === null || options === void 0 ? void 0 : options.autoRunStampSheetNotification) !== null && _d !== void 0 ? _d : null;
+        this.autoRunTransactionNotification = (_e = options === null || options === void 0 ? void 0 : options.autoRunTransactionNotification) !== null && _e !== void 0 ? _e : null;
+        this.logSetting = (_f = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _f !== void 0 ? _f : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -45,7 +47,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Distributor::Namespace";
     }
     properties() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -53,17 +55,20 @@ class Namespace extends model_1.CdkResource {
         if (this.description != null) {
             properties["Description"] = this.description;
         }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
+        }
         if (this.assumeUserId != null) {
             properties["AssumeUserId"] = this.assumeUserId;
         }
         if (this.autoRunStampSheetNotification != null) {
-            properties["AutoRunStampSheetNotification"] = (_a = this.autoRunStampSheetNotification) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["AutoRunStampSheetNotification"] = (_b = this.autoRunStampSheetNotification) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.autoRunTransactionNotification != null) {
-            properties["AutoRunTransactionNotification"] = (_b = this.autoRunTransactionNotification) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["AutoRunTransactionNotification"] = (_c = this.autoRunTransactionNotification) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
         }
         return properties;
     }

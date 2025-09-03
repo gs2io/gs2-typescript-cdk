@@ -16,6 +16,7 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
+import TransactionSetting from "../../core/model/TransactionSetting";
 import AdMob from "./AdMob";
 import UnityAd from "./UnityAd";
 import AppLovinMax from "./AppLovinMax";
@@ -30,10 +31,11 @@ import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
+    private readonly description: string|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
     private readonly admob: AdMob|null = null;
     private readonly unityAd: UnityAd|null = null;
     private readonly appLovinMaxes: AppLovinMax[]|null = null;
-    private readonly description: string|null = null;
     private readonly acquirePointScript: ScriptSetting|null = null;
     private readonly consumePointScript: ScriptSetting|null = null;
     private readonly changePointNotification: NotificationSetting|null = null;
@@ -50,10 +52,11 @@ export default class Namespace extends CdkResource {
 
         this.stack = stack;
         this.name = name;
+        this.description = options?.description ?? null;
+        this.transactionSetting = options?.transactionSetting ?? null;
         this.admob = options?.admob ?? null;
         this.unityAd = options?.unityAd ?? null;
         this.appLovinMaxes = options?.appLovinMaxes ?? null;
-        this.description = options?.description ?? null;
         this.acquirePointScript = options?.acquirePointScript ?? null;
         this.consumePointScript = options?.consumePointScript ?? null;
         this.changePointNotification = options?.changePointNotification ?? null;
@@ -81,6 +84,13 @@ export default class Namespace extends CdkResource {
         if (this.name != null) {
             properties["Name"] = this.name;
         }
+        if (this.description != null) {
+            properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
+        }
         if (this.admob != null) {
             properties["Admob"] = this.admob?.properties(
             );
@@ -92,9 +102,6 @@ export default class Namespace extends CdkResource {
         if (this.appLovinMaxes != null) {
             properties["AppLovinMaxes"] = this.appLovinMaxes.map(v => v.properties(
                 ));
-        }
-        if (this.description != null) {
-            properties["Description"] = this.description;
         }
         if (this.acquirePointScript != null) {
             properties["AcquirePointScript"] = this.acquirePointScript?.properties(

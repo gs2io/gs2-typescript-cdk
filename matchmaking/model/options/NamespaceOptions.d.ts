@@ -1,3 +1,4 @@
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
@@ -5,6 +6,7 @@ import { NamespaceEnableDisconnectDetection } from "../enums/NamespaceEnableDisc
 import { NamespaceEnableCollaborateSeasonRating } from "../enums/NamespaceEnableCollaborateSeasonRating";
 export interface NamespaceOptions {
     description?: string | null;
+    transactionSetting?: TransactionSetting | null;
     enableRating?: boolean | null;
     enableDisconnectDetection?: NamespaceEnableDisconnectDetection | null;
     disconnectDetectionTimeoutSeconds?: number | null;

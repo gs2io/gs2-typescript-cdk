@@ -1,8 +1,10 @@
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import LogSetting from "../../../core/model/LogSetting";
 export interface NamespaceOptions {
     description?: string | null;
+    transactionSetting?: TransactionSetting | null;
     changeNotification?: NotificationSetting | null;
     joinNotification?: NotificationSetting | null;
     leaveNotification?: NotificationSetting | null;

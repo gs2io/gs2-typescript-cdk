@@ -16,6 +16,7 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
+import TransactionSetting from "../../core/model/TransactionSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
@@ -37,6 +38,7 @@ export default class Namespace extends CdkResource {
     private readonly createGatheringTriggerType: NamespaceCreateGatheringTriggerType;
     private readonly completeMatchmakingTriggerType: NamespaceCompleteMatchmakingTriggerType;
     private readonly description: string|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
     private readonly enableRating: boolean|null = null;
     private readonly enableDisconnectDetection: NamespaceEnableDisconnectDetection|null = null;
     private readonly disconnectDetectionTimeoutSeconds: number|null = null;
@@ -70,6 +72,7 @@ export default class Namespace extends CdkResource {
         this.createGatheringTriggerType = createGatheringTriggerType;
         this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         this.description = options?.description ?? null;
+        this.transactionSetting = options?.transactionSetting ?? null;
         this.enableRating = options?.enableRating ?? null;
         this.enableDisconnectDetection = options?.enableDisconnectDetection ?? null;
         this.disconnectDetectionTimeoutSeconds = options?.disconnectDetectionTimeoutSeconds ?? null;
@@ -111,6 +114,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
         }
         if (this.enableRating != null) {
             properties["EnableRating"] = this.enableRating;

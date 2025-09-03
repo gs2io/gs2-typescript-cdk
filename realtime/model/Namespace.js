@@ -21,9 +21,10 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, serverType, serverSpec, options = null) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         super("Realtime_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.createNotification = null;
         this.logSetting = null;
         this.stack = stack;
@@ -31,8 +32,9 @@ class Namespace extends model_1.CdkResource {
         this.serverType = serverType;
         this.serverSpec = serverSpec;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.createNotification = (_b = options === null || options === void 0 ? void 0 : options.createNotification) !== null && _b !== void 0 ? _b : null;
-        this.logSetting = (_c = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _c !== void 0 ? _c : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.createNotification = (_c = options === null || options === void 0 ? void 0 : options.createNotification) !== null && _c !== void 0 ? _c : null;
+        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -42,13 +44,16 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Realtime::Namespace";
     }
     properties() {
-        var _a, _b;
+        var _a, _b, _c;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
         }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
         if (this.serverType != null) {
             properties["ServerType"] = this.serverType;
@@ -57,10 +62,10 @@ class Namespace extends model_1.CdkResource {
             properties["ServerSpec"] = this.serverSpec;
         }
         if (this.createNotification != null) {
-            properties["CreateNotification"] = (_a = this.createNotification) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["CreateNotification"] = (_b = this.createNotification) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_b = this.logSetting) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
         }
         return properties;
     }

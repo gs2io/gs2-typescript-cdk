@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import AdMob from "../AdMob";
 import UnityAd from "../UnityAd";
 import AppLovinMax from "../AppLovinMax";
@@ -21,10 +22,11 @@ import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
 
 export interface NamespaceOptions {
+    description?: string|null;
+    transactionSetting?: TransactionSetting|null;
     admob?: AdMob|null;
     unityAd?: UnityAd|null;
     appLovinMaxes?: AppLovinMax[]|null;
-    description?: string|null;
     acquirePointScript?: ScriptSetting|null;
     consumePointScript?: ScriptSetting|null;
     changePointNotification?: NotificationSetting|null;

@@ -13,11 +13,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import TransactionSetting from "../../../core/model/TransactionSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import LogSetting from "../../../core/model/LogSetting";
 
 export interface NamespaceOptions {
     description?: string|null;
+    transactionSetting?: TransactionSetting|null;
     changePasswordIfTakeOver?: boolean|null;
     differentUserIdForLoginAndDataRetention?: boolean|null;
     createAccountScript?: ScriptSetting|null;

@@ -22,9 +22,10 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         super("Inventory_Namespace_" + name);
         this.description = null;
+        this.transactionSetting = null;
         this.acquireScript = null;
         this.overflowScript = null;
         this.consumeScript = null;
@@ -36,14 +37,15 @@ class Namespace extends model_1.CdkResource {
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
-        this.acquireScript = (_b = options === null || options === void 0 ? void 0 : options.acquireScript) !== null && _b !== void 0 ? _b : null;
-        this.overflowScript = (_c = options === null || options === void 0 ? void 0 : options.overflowScript) !== null && _c !== void 0 ? _c : null;
-        this.consumeScript = (_d = options === null || options === void 0 ? void 0 : options.consumeScript) !== null && _d !== void 0 ? _d : null;
-        this.simpleItemAcquireScript = (_e = options === null || options === void 0 ? void 0 : options.simpleItemAcquireScript) !== null && _e !== void 0 ? _e : null;
-        this.simpleItemConsumeScript = (_f = options === null || options === void 0 ? void 0 : options.simpleItemConsumeScript) !== null && _f !== void 0 ? _f : null;
-        this.bigItemAcquireScript = (_g = options === null || options === void 0 ? void 0 : options.bigItemAcquireScript) !== null && _g !== void 0 ? _g : null;
-        this.bigItemConsumeScript = (_h = options === null || options === void 0 ? void 0 : options.bigItemConsumeScript) !== null && _h !== void 0 ? _h : null;
-        this.logSetting = (_j = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _j !== void 0 ? _j : null;
+        this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
+        this.acquireScript = (_c = options === null || options === void 0 ? void 0 : options.acquireScript) !== null && _c !== void 0 ? _c : null;
+        this.overflowScript = (_d = options === null || options === void 0 ? void 0 : options.overflowScript) !== null && _d !== void 0 ? _d : null;
+        this.consumeScript = (_e = options === null || options === void 0 ? void 0 : options.consumeScript) !== null && _e !== void 0 ? _e : null;
+        this.simpleItemAcquireScript = (_f = options === null || options === void 0 ? void 0 : options.simpleItemAcquireScript) !== null && _f !== void 0 ? _f : null;
+        this.simpleItemConsumeScript = (_g = options === null || options === void 0 ? void 0 : options.simpleItemConsumeScript) !== null && _g !== void 0 ? _g : null;
+        this.bigItemAcquireScript = (_h = options === null || options === void 0 ? void 0 : options.bigItemAcquireScript) !== null && _h !== void 0 ? _h : null;
+        this.bigItemConsumeScript = (_j = options === null || options === void 0 ? void 0 : options.bigItemConsumeScript) !== null && _j !== void 0 ? _j : null;
+        this.logSetting = (_k = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _k !== void 0 ? _k : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -53,7 +55,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Inventory::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -61,29 +63,32 @@ class Namespace extends model_1.CdkResource {
         if (this.description != null) {
             properties["Description"] = this.description;
         }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
+        }
         if (this.acquireScript != null) {
-            properties["AcquireScript"] = (_a = this.acquireScript) === null || _a === void 0 ? void 0 : _a.properties();
+            properties["AcquireScript"] = (_b = this.acquireScript) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.overflowScript != null) {
-            properties["OverflowScript"] = (_b = this.overflowScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["OverflowScript"] = (_c = this.overflowScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.consumeScript != null) {
-            properties["ConsumeScript"] = (_c = this.consumeScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["ConsumeScript"] = (_d = this.consumeScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.simpleItemAcquireScript != null) {
-            properties["SimpleItemAcquireScript"] = (_d = this.simpleItemAcquireScript) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["SimpleItemAcquireScript"] = (_e = this.simpleItemAcquireScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.simpleItemConsumeScript != null) {
-            properties["SimpleItemConsumeScript"] = (_e = this.simpleItemConsumeScript) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["SimpleItemConsumeScript"] = (_f = this.simpleItemConsumeScript) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.bigItemAcquireScript != null) {
-            properties["BigItemAcquireScript"] = (_f = this.bigItemAcquireScript) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["BigItemAcquireScript"] = (_g = this.bigItemAcquireScript) === null || _g === void 0 ? void 0 : _g.properties();
         }
         if (this.bigItemConsumeScript != null) {
-            properties["BigItemConsumeScript"] = (_g = this.bigItemConsumeScript) === null || _g === void 0 ? void 0 : _g.properties();
+            properties["BigItemConsumeScript"] = (_h = this.bigItemConsumeScript) === null || _h === void 0 ? void 0 : _h.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_h = this.logSetting) === null || _h === void 0 ? void 0 : _h.properties();
+            properties["LogSetting"] = (_j = this.logSetting) === null || _j === void 0 ? void 0 : _j.properties();
         }
         return properties;
     }

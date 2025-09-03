@@ -11,6 +11,7 @@ export default class Namespace extends CdkResource {
     private readonly shareFree;
     private readonly currency;
     private readonly description;
+    private readonly transactionSetting;
     private readonly appleKey;
     private readonly googleKey;
     private readonly enableFakeReceipt;

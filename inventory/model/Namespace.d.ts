@@ -9,6 +9,7 @@ export default class Namespace extends CdkResource {
     private readonly stack;
     private readonly name;
     private readonly description;
+    private readonly transactionSetting;
     private readonly acquireScript;
     private readonly overflowScript;
     private readonly consumeScript;

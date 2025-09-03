@@ -16,6 +16,7 @@
 
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
+import TransactionSetting from "../../core/model/TransactionSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
 
@@ -31,6 +32,7 @@ export default class Namespace extends CdkResource {
     private readonly serverType: NamespaceServerType;
     private readonly serverSpec: NamespaceServerSpec;
     private readonly description: string|null = null;
+    private readonly transactionSetting: TransactionSetting|null = null;
     private readonly createNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
@@ -50,6 +52,7 @@ export default class Namespace extends CdkResource {
         this.serverType = serverType;
         this.serverSpec = serverSpec;
         this.description = options?.description ?? null;
+        this.transactionSetting = options?.transactionSetting ?? null;
         this.createNotification = options?.createNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
@@ -77,6 +80,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.description != null) {
             properties["Description"] = this.description;
+        }
+        if (this.transactionSetting != null) {
+            properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
         }
         if (this.serverType != null) {
             properties["ServerType"] = this.serverType;
