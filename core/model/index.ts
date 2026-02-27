@@ -21,9 +21,12 @@ import ConsumeAction from "./ConsumeAction";
 import VerifyAction from "./VerifyAction";
 import LogSetting from "./LogSetting";
 import NotificationSetting from "./NotificationSetting";
+import { NotificationSettingEnable } from "./nums/NotificationSettingEnable";
 import ScriptSetting from "./ScriptSetting";
+import { ScriptSettingDoneTriggerTargetType } from "./nums/ScriptSettingDoneTriggerTargetType";
 import Stack from "./Stack";
 import TransactionSetting from "./TransactionSetting";
+import { TransactionSettingOptions } from "./TransactionSettingOptions";
 
 export {
     AcquireAction,
@@ -33,7 +36,10 @@ export {
     VerifyAction,
     LogSetting,
     NotificationSetting,
+    NotificationSettingEnable,
     ScriptSetting,
+    ScriptSettingDoneTriggerTargetType,
     Stack,
     TransactionSetting,
+    TransactionSettingOptions
 }

@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
+import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
@@ -30,6 +31,7 @@ export default class Namespace extends CdkResource {
     private readonly name: string;
     private readonly description: string|null = null;
     private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly countUpScript: ScriptSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -45,6 +47,7 @@ export default class Namespace extends CdkResource {
         this.name = name;
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
+        this.countUpScript = options?.countUpScript ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -74,6 +77,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
+        }
+        if (this.countUpScript != null) {
+            properties["CountUpScript"] = this.countUpScript?.properties(
             );
         }
         if (this.logSetting != null) {

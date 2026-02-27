@@ -9,6 +9,7 @@ export interface NamespaceOptions {
     joinNotification?: NotificationSetting | null;
     leaveNotification?: NotificationSetting | null;
     changeMemberNotification?: NotificationSetting | null;
+    changeMemberNotificationIgnoreChangeMetadata?: boolean | null;
     receiveRequestNotification?: NotificationSetting | null;
     removeRequestNotification?: NotificationSetting | null;
     createGuildScript?: ScriptSetting | null;

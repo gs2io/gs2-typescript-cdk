@@ -1,7 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendNotificationEntry = exports.Namespace = void 0;
-const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -17,8 +14,5 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
-exports.Namespace = Namespace_1.default;
-const SendNotificationEntry_1 = tslib_1.__importDefault(require("./SendNotificationEntry"));
-exports.SendNotificationEntry = SendNotificationEntry_1.default;
-//# sourceMappingURL=index.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=SendNotificationEntryOptions.js.map

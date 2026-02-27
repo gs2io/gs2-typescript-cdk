@@ -28,8 +28,10 @@ export interface NamespaceOptions {
     enableRating?: boolean|null;
     enableDisconnectDetection?: NamespaceEnableDisconnectDetection|null;
     disconnectDetectionTimeoutSeconds?: number|null;
+    createGatheringTriggerType?: NamespaceCreateGatheringTriggerType|null;
     createGatheringTriggerRealtimeNamespaceId?: string|null;
     createGatheringTriggerScriptId?: string|null;
+    completeMatchmakingTriggerType?: NamespaceCompleteMatchmakingTriggerType|null;
     completeMatchmakingTriggerRealtimeNamespaceId?: string|null;
     completeMatchmakingTriggerScriptId?: string|null;
     enableCollaborateSeasonRating?: NamespaceEnableCollaborateSeasonRating|null;

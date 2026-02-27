@@ -8,6 +8,7 @@ export default class Namespace extends CdkResource {
     private readonly name;
     private readonly description;
     private readonly transactionSetting;
+    private readonly countUpScript;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;

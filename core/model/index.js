@@ -15,7 +15,7 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.Stack = exports.ScriptSetting = exports.NotificationSetting = exports.LogSetting = exports.VerifyAction = exports.ConsumeAction = exports.Config = exports.CdkResource = exports.AcquireAction = void 0;
+exports.TransactionSetting = exports.Stack = exports.ScriptSettingDoneTriggerTargetType = exports.ScriptSetting = exports.NotificationSettingEnable = exports.NotificationSetting = exports.LogSetting = exports.VerifyAction = exports.ConsumeAction = exports.Config = exports.CdkResource = exports.AcquireAction = void 0;
 const tslib_1 = require("tslib");
 const AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
@@ -31,8 +31,12 @@ const LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 const NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 exports.NotificationSetting = NotificationSetting_1.default;
+const NotificationSettingEnable_1 = require("./nums/NotificationSettingEnable");
+Object.defineProperty(exports, "NotificationSettingEnable", { enumerable: true, get: function () { return NotificationSettingEnable_1.NotificationSettingEnable; } });
 const ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
+const ScriptSettingDoneTriggerTargetType_1 = require("./nums/ScriptSettingDoneTriggerTargetType");
+Object.defineProperty(exports, "ScriptSettingDoneTriggerTargetType", { enumerable: true, get: function () { return ScriptSettingDoneTriggerTargetType_1.ScriptSettingDoneTriggerTargetType; } });
 const Stack_1 = tslib_1.__importDefault(require("./Stack"));
 exports.Stack = Stack_1.default;
 const TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));

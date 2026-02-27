@@ -1,3 +1,5 @@
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
-export { Namespace, NamespaceOptions, };
+import SendNotificationEntry from "./SendNotificationEntry";
+import { SendNotificationEntryOptions } from "./options/SendNotificationEntryOptions";
+export { Namespace, NamespaceOptions, SendNotificationEntry, SendNotificationEntryOptions, };

@@ -35,15 +35,15 @@ import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
-    private readonly createGatheringTriggerType: NamespaceCreateGatheringTriggerType;
-    private readonly completeMatchmakingTriggerType: NamespaceCompleteMatchmakingTriggerType;
     private readonly description: string|null = null;
     private readonly transactionSetting: TransactionSetting|null = null;
     private readonly enableRating: boolean|null = null;
     private readonly enableDisconnectDetection: NamespaceEnableDisconnectDetection|null = null;
     private readonly disconnectDetectionTimeoutSeconds: number|null = null;
+    private readonly createGatheringTriggerType: NamespaceCreateGatheringTriggerType|null = null;
     private readonly createGatheringTriggerRealtimeNamespaceId: string|null = null;
     private readonly createGatheringTriggerScriptId: string|null = null;
+    private readonly completeMatchmakingTriggerType: NamespaceCompleteMatchmakingTriggerType|null = null;
     private readonly completeMatchmakingTriggerRealtimeNamespaceId: string|null = null;
     private readonly completeMatchmakingTriggerScriptId: string|null = null;
     private readonly enableCollaborateSeasonRating: NamespaceEnableCollaborateSeasonRating|null = null;
@@ -59,8 +59,6 @@ export default class Namespace extends CdkResource {
     public constructor(
         stack: Stack,
         name: string,
-        createGatheringTriggerType: NamespaceCreateGatheringTriggerType,
-        completeMatchmakingTriggerType: NamespaceCompleteMatchmakingTriggerType,
         options: NamespaceOptions|null = null,
     ) {
         super(
@@ -69,15 +67,15 @@ export default class Namespace extends CdkResource {
 
         this.stack = stack;
         this.name = name;
-        this.createGatheringTriggerType = createGatheringTriggerType;
-        this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
         this.enableRating = options?.enableRating ?? null;
         this.enableDisconnectDetection = options?.enableDisconnectDetection ?? null;
         this.disconnectDetectionTimeoutSeconds = options?.disconnectDetectionTimeoutSeconds ?? null;
+        this.createGatheringTriggerType = options?.createGatheringTriggerType ?? null;
         this.createGatheringTriggerRealtimeNamespaceId = options?.createGatheringTriggerRealtimeNamespaceId ?? null;
         this.createGatheringTriggerScriptId = options?.createGatheringTriggerScriptId ?? null;
+        this.completeMatchmakingTriggerType = options?.completeMatchmakingTriggerType ?? null;
         this.completeMatchmakingTriggerRealtimeNamespaceId = options?.completeMatchmakingTriggerRealtimeNamespaceId ?? null;
         this.completeMatchmakingTriggerScriptId = options?.completeMatchmakingTriggerScriptId ?? null;
         this.enableCollaborateSeasonRating = options?.enableCollaborateSeasonRating ?? null;

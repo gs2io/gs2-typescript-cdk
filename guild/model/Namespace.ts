@@ -36,6 +36,7 @@ export default class Namespace extends CdkResource {
     private readonly joinNotification: NotificationSetting|null = null;
     private readonly leaveNotification: NotificationSetting|null = null;
     private readonly changeMemberNotification: NotificationSetting|null = null;
+    private readonly changeMemberNotificationIgnoreChangeMetadata: boolean|null = null;
     private readonly receiveRequestNotification: NotificationSetting|null = null;
     private readonly removeRequestNotification: NotificationSetting|null = null;
     private readonly createGuildScript: ScriptSetting|null = null;
@@ -64,6 +65,7 @@ export default class Namespace extends CdkResource {
         this.joinNotification = options?.joinNotification ?? null;
         this.leaveNotification = options?.leaveNotification ?? null;
         this.changeMemberNotification = options?.changeMemberNotification ?? null;
+        this.changeMemberNotificationIgnoreChangeMetadata = options?.changeMemberNotificationIgnoreChangeMetadata ?? null;
         this.receiveRequestNotification = options?.receiveRequestNotification ?? null;
         this.removeRequestNotification = options?.removeRequestNotification ?? null;
         this.createGuildScript = options?.createGuildScript ?? null;
@@ -119,6 +121,9 @@ export default class Namespace extends CdkResource {
         if (this.changeMemberNotification != null) {
             properties["ChangeMemberNotification"] = this.changeMemberNotification?.properties(
             );
+        }
+        if (this.changeMemberNotificationIgnoreChangeMetadata != null) {
+            properties["ChangeMemberNotificationIgnoreChangeMetadata"] = this.changeMemberNotificationIgnoreChangeMetadata;
         }
         if (this.receiveRequestNotification != null) {
             properties["ReceiveRequestNotification"] = this.receiveRequestNotification?.properties(

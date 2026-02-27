@@ -3,21 +3,19 @@ import { GetAttr } from "../../core/func";
 import NamespaceRef from "../ref/NamespaceRef";
 import RatingModel from "./RatingModel";
 import SeasonModel from "./SeasonModel";
-import { NamespaceCreateGatheringTriggerType } from "./enums/NamespaceCreateGatheringTriggerType";
-import { NamespaceCompleteMatchmakingTriggerType } from "./enums/NamespaceCompleteMatchmakingTriggerType";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 export default class Namespace extends CdkResource {
     private readonly stack;
     private readonly name;
-    private readonly createGatheringTriggerType;
-    private readonly completeMatchmakingTriggerType;
     private readonly description;
     private readonly transactionSetting;
     private readonly enableRating;
     private readonly enableDisconnectDetection;
     private readonly disconnectDetectionTimeoutSeconds;
+    private readonly createGatheringTriggerType;
     private readonly createGatheringTriggerRealtimeNamespaceId;
     private readonly createGatheringTriggerScriptId;
+    private readonly completeMatchmakingTriggerType;
     private readonly completeMatchmakingTriggerRealtimeNamespaceId;
     private readonly completeMatchmakingTriggerScriptId;
     private readonly enableCollaborateSeasonRating;
@@ -29,7 +27,7 @@ export default class Namespace extends CdkResource {
     private readonly completeNotification;
     private readonly changeRatingNotification;
     private readonly logSetting;
-    constructor(stack: Stack, name: string, createGatheringTriggerType: NamespaceCreateGatheringTriggerType, completeMatchmakingTriggerType: NamespaceCompleteMatchmakingTriggerType, options?: NamespaceOptions | null);
+    constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;
     resourceType(): string;
     properties(): {

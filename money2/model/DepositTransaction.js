@@ -21,9 +21,6 @@ class DepositTransaction {
         if (this.count != null) {
             properties["count"] = this.count;
         }
-        if (this.depositedAt != null) {
-            properties["depositedAt"] = this.depositedAt;
-        }
         return properties;
     }
 }
