@@ -31,6 +31,8 @@ import { ProjectTokenOptions } from "./options/ProjectTokenOptions";
 import TwoFactorAuthenticationSetting from "./TwoFactorAuthenticationSetting";
 import { TwoFactorAuthenticationSettingOptions } from "./options/TwoFactorAuthenticationSettingOptions";
 import { TwoFactorAuthenticationSettingStatus } from "./enums/TwoFactorAuthenticationSettingStatus";
+import Policy from "./Policy";
+import Statement from "./Statement";
 
 export {
     User,
@@ -51,4 +53,6 @@ export {
     TwoFactorAuthenticationSetting,
     TwoFactorAuthenticationSettingOptions,
     TwoFactorAuthenticationSettingStatus,
+    Policy,
+    Statement,
 }

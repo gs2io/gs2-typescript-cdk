@@ -14,10 +14,14 @@
  * permissions and limitations under the License.
  */
 
+import {
+    ScriptSettingDoneTriggerTargetType
+} from "./nums/ScriptSettingDoneTriggerTargetType";
 
+export interface ScriptSettingOptions {
+    triggerScriptId?: string|null;
+    doneTriggerTargetType?: ScriptSettingDoneTriggerTargetType;
+    doneTriggerScriptId?: string|null;
+    doneTriggerQueueNamespaceId?: string|null;
+}
 
-export const NotificationSettingEnable = {
-    ENABLED: "Enabled",
-    DISABLED: "Disabled",
-} as const;
-export type NotificationSettingEnable = typeof NotificationSettingEnable[keyof typeof NotificationSettingEnable];

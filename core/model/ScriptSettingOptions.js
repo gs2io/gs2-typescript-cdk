@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
  * Reserved.
@@ -13,11 +14,5 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-
-
-export const NotificationSettingEnable = {
-    ENABLED: "Enabled",
-    DISABLED: "Disabled",
-} as const;
-export type NotificationSettingEnable = typeof NotificationSettingEnable[keyof typeof NotificationSettingEnable];
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=ScriptSettingOptions.js.map

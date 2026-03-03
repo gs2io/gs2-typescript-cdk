@@ -14,22 +14,26 @@
  * permissions and limitations under the License.
  */
 
+import {
+    ScriptSettingDoneTriggerTargetType
+} from "./nums/ScriptSettingDoneTriggerTargetType";
+
 export default class ScriptSetting {
 
     triggerScriptId: string | null;
-    doneTriggerTargetType: string;
+    doneTriggerTargetType: ScriptSettingDoneTriggerTargetType= ScriptSettingDoneTriggerTargetType.NONE;
     doneTriggerScriptId: string | null;
     doneTriggerQueueNamespaceId: string | null;
 
 
     public constructor(
-        doneTriggerTargetType: string,
+        doneTriggerTargetType: ScriptSettingDoneTriggerTargetType,
         triggerScriptId: string | null = null,
         doneTriggerScriptId: string | null = null,
         doneTriggerQueueNamespaceId: string | null = null,
     ) {
         this.triggerScriptId = triggerScriptId;
-        this.doneTriggerTargetType = doneTriggerTargetType;
+        this.doneTriggerTargetType = doneTriggerTargetType ?? ScriptSettingDoneTriggerTargetType.NONE;
         this.doneTriggerScriptId = doneTriggerScriptId;
         this.doneTriggerQueueNamespaceId = doneTriggerQueueNamespaceId;
     }

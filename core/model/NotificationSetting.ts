@@ -15,12 +15,14 @@
  */
 
 import { NotificationSettingOptions } from "./NotificationSettingOptions";
+import { NotificationSettingEnable } from "./nums/NotificationSettingEnable";
 
 export default class NotificationSetting {
 
     gatewayNamespaceId: string | null;
     enableTransferMobileNotification: boolean | null;
     sound: string | null;
+    enable: NotificationSettingEnable | null;
 
     public constructor(
         options: NotificationSettingOptions|null = null,
@@ -28,6 +30,7 @@ export default class NotificationSetting {
         this.gatewayNamespaceId = options?.gatewayNamespaceId ?? null;
         this.enableTransferMobileNotification = options?.enableTransferMobileNotification ?? false;
         this.sound = options?.sound ?? null;
+        this.enable = options?.enable ?? NotificationSettingEnable.ENABLED;
     }
 
     public properties(): { [name: string]: any } {

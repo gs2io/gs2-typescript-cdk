@@ -1,5 +1,5 @@
 export declare const NotificationSettingEnable: {
-    readonly Enabled: "Enabled";
-    readonly Disabled: "Disabled";
+    readonly ENABLED: "Enabled";
+    readonly DISABLED: "Disabled";
 };
 export type NotificationSettingEnable = typeof NotificationSettingEnable[keyof typeof NotificationSettingEnable];

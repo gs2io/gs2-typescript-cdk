@@ -16,4 +16,6 @@ import { ProjectTokenOptions } from "./options/ProjectTokenOptions";
 import TwoFactorAuthenticationSetting from "./TwoFactorAuthenticationSetting";
 import { TwoFactorAuthenticationSettingOptions } from "./options/TwoFactorAuthenticationSettingOptions";
 import { TwoFactorAuthenticationSettingStatus } from "./enums/TwoFactorAuthenticationSettingStatus";
-export { User, UserOptions, SecurityPolicy, SecurityPolicyOptions, Identifier, IdentifierOptions, Password, PasswordOptions, PasswordEnableTwoFactorAuthentication, PasswordEnableTwoFactorAuthenticationIsRfc6238Options, PasswordEnableTwoFactorAuthenticationIsDisableOptions, AttachSecurityPolicy, AttachSecurityPolicyOptions, ProjectToken, ProjectTokenOptions, TwoFactorAuthenticationSetting, TwoFactorAuthenticationSettingOptions, TwoFactorAuthenticationSettingStatus, };
+import Policy from "./Policy";
+import Statement from "./Statement";
+export { User, UserOptions, SecurityPolicy, SecurityPolicyOptions, Identifier, IdentifierOptions, Password, PasswordOptions, PasswordEnableTwoFactorAuthentication, PasswordEnableTwoFactorAuthenticationIsRfc6238Options, PasswordEnableTwoFactorAuthenticationIsDisableOptions, AttachSecurityPolicy, AttachSecurityPolicyOptions, ProjectToken, ProjectTokenOptions, TwoFactorAuthenticationSetting, TwoFactorAuthenticationSettingOptions, TwoFactorAuthenticationSettingStatus, Policy, Statement, };

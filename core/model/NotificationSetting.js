@@ -15,12 +15,14 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const NotificationSettingEnable_1 = require("./nums/NotificationSettingEnable");
 class NotificationSetting {
     constructor(options = null) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         this.gatewayNamespaceId = (_a = options === null || options === void 0 ? void 0 : options.gatewayNamespaceId) !== null && _a !== void 0 ? _a : null;
         this.enableTransferMobileNotification = (_b = options === null || options === void 0 ? void 0 : options.enableTransferMobileNotification) !== null && _b !== void 0 ? _b : false;
         this.sound = (_c = options === null || options === void 0 ? void 0 : options.sound) !== null && _c !== void 0 ? _c : null;
+        this.enable = (_d = options === null || options === void 0 ? void 0 : options.enable) !== null && _d !== void 0 ? _d : NotificationSettingEnable_1.NotificationSettingEnable.ENABLED;
     }
     properties() {
         let properties = {};

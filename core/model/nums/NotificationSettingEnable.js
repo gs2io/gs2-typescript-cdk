@@ -17,7 +17,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationSettingEnable = void 0;
 exports.NotificationSettingEnable = {
-    Enabled: "Enabled",
-    Disabled: "Disabled",
+    ENABLED: "Enabled",
+    DISABLED: "Disabled",
 };
 //# sourceMappingURL=NotificationSettingEnable.js.map

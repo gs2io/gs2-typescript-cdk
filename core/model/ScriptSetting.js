@@ -15,10 +15,12 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const ScriptSettingDoneTriggerTargetType_1 = require("./nums/ScriptSettingDoneTriggerTargetType");
 class ScriptSetting {
     constructor(doneTriggerTargetType, triggerScriptId = null, doneTriggerScriptId = null, doneTriggerQueueNamespaceId = null) {
+        this.doneTriggerTargetType = ScriptSettingDoneTriggerTargetType_1.ScriptSettingDoneTriggerTargetType.NONE;
         this.triggerScriptId = triggerScriptId;
-        this.doneTriggerTargetType = doneTriggerTargetType;
+        this.doneTriggerTargetType = doneTriggerTargetType !== null && doneTriggerTargetType !== void 0 ? doneTriggerTargetType : ScriptSettingDoneTriggerTargetType_1.ScriptSettingDoneTriggerTargetType.NONE;
         this.doneTriggerScriptId = doneTriggerScriptId;
         this.doneTriggerQueueNamespaceId = doneTriggerQueueNamespaceId;
     }
