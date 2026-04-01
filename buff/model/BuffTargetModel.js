@@ -10,7 +10,7 @@ class BuffTargetModel {
     properties() {
         let properties = {};
         if (this.targetModelName != null) {
-            properties["targetModelName"] = this.targetModelName;
+            properties["targetModelName"] = this.targetModelName.toString();
         }
         if (this.targetFieldName != null) {
             properties["targetFieldName"] = this.targetFieldName;

@@ -17,15 +17,16 @@
  */
 import BuffTargetGrn from "./BuffTargetGrn";
 import { BuffTargetActionOptions } from "./options/BuffTargetActionOptions";
+import { BuffTargetActionTargetActionName } from "./enums/BuffTargetActionTargetActionName";
 
 export default class BuffTargetAction {
-    private readonly targetActionName: string;
+    private readonly targetActionName: BuffTargetActionTargetActionName;
     private readonly targetFieldName: string;
     private readonly conditionGrns: BuffTargetGrn[];
     private readonly rate: number;
 
     public constructor(
-        targetActionName: string,
+        targetActionName: BuffTargetActionTargetActionName,
         targetFieldName: string,
         conditionGrns: BuffTargetGrn[],
         rate: number,
@@ -42,7 +43,7 @@ export default class BuffTargetAction {
         let properties: {[name: string]: any} = {};
 
         if (this.targetActionName != null) {
-            properties["targetActionName"] = this.targetActionName;
+            properties["targetActionName"] = this.targetActionName.toString();
         }
         if (this.targetFieldName != null) {
             properties["targetFieldName"] = this.targetFieldName;

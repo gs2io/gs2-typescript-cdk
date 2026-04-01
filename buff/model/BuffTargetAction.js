@@ -10,7 +10,7 @@ class BuffTargetAction {
     properties() {
         let properties = {};
         if (this.targetActionName != null) {
-            properties["targetActionName"] = this.targetActionName;
+            properties["targetActionName"] = this.targetActionName.toString();
         }
         if (this.targetFieldName != null) {
             properties["targetFieldName"] = this.targetFieldName;

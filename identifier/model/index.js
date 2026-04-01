@@ -16,6 +16,8 @@ const tslib_1 = require("tslib");
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
+ * deny overwrite
  */
 const User_1 = tslib_1.__importDefault(require("./User"));
 exports.User = User_1.default;
