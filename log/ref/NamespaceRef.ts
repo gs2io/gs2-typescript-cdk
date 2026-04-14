@@ -15,6 +15,9 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import FacetModelRef from "./FacetModelRef";
+import DashboardRef from "./DashboardRef";
+import MetricModelRef from "./MetricModelRef";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;

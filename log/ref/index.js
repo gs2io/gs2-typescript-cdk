@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NamespaceRef = void 0;
+exports.MetricModelRef = exports.DashboardRef = exports.FacetModelRef = exports.NamespaceRef = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,4 +19,10 @@ const tslib_1 = require("tslib");
  */
 const NamespaceRef_1 = tslib_1.__importDefault(require("./NamespaceRef"));
 exports.NamespaceRef = NamespaceRef_1.default;
+const FacetModelRef_1 = tslib_1.__importDefault(require("./FacetModelRef"));
+exports.FacetModelRef = FacetModelRef_1.default;
+const DashboardRef_1 = tslib_1.__importDefault(require("./DashboardRef"));
+exports.DashboardRef = DashboardRef_1.default;
+const MetricModelRef_1 = tslib_1.__importDefault(require("./MetricModelRef"));
+exports.MetricModelRef = MetricModelRef_1.default;
 //# sourceMappingURL=index.js.map
