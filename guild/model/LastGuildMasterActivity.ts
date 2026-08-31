@@ -17,12 +17,14 @@ import { LastGuildMasterActivityOptions } from "./options/LastGuildMasterActivit
 
 export default class LastGuildMasterActivity {
     private readonly userId: string;
+    private readonly revision: number|null = null;
 
     public constructor(
         userId: string,
         options: LastGuildMasterActivityOptions|null = null,
     ) {
         this.userId = userId;
+        this.revision = options?.revision ?? null;
     }
 
     public properties(
