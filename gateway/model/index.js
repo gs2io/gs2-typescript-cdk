@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.SendNotificationEntry = exports.Namespace = void 0;
+exports.TransactionSettingV2 = exports.MobileNotificationMessage = exports.SendNotificationEntry = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const SendNotificationEntry_1 = tslib_1.__importDefault(require("./SendNotificationEntry"));
 exports.SendNotificationEntry = SendNotificationEntry_1.default;
+const MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
 exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 //# sourceMappingURL=index.js.map

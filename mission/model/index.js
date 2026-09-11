@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TransactionSettingV2 = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.TargetCounterModelResetType = exports.TargetCounterModelScopeType = exports.TargetCounterModel = exports.ScopedValueResetType = exports.ScopedValueScopeType = exports.ScopedValue = exports.MissionTaskModelTargetResetType = exports.MissionTaskModelVerifyCompleteType = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModelScopeType = exports.CounterScopeModel = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.TargetCounterModelResetType = exports.TargetCounterModelScopeType = exports.TargetCounterModel = exports.ScopedValueResetType = exports.ScopedValueScopeType = exports.ScopedValue = exports.MissionTaskModelTargetResetType = exports.MissionTaskModelVerifyCompleteType = exports.MissionTaskModel = exports.MissionGroupModelResetDayOfWeek = exports.MissionGroupModelResetType = exports.MissionGroupModel = exports.CounterModel = exports.Namespace = exports.CounterScopeModelResetDayOfWeek = exports.CounterScopeModelResetType = exports.CounterScopeModelScopeType = exports.CounterScopeModel = exports.MobileNotificationMessage = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -17,6 +17,8 @@ const tslib_1 = require("tslib");
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+const MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 const CounterScopeModel_1 = tslib_1.__importDefault(require("./CounterScopeModel"));
 exports.CounterScopeModel = CounterScopeModel_1.default;
 const CounterScopeModelScopeType_1 = require("./enums/CounterScopeModelScopeType");

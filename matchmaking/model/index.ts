@@ -33,6 +33,8 @@ import RatingModel from "./RatingModel";
 import { RatingModelOptions } from "./options/RatingModelOptions";
 import SeasonModel from "./SeasonModel";
 import { SeasonModelOptions } from "./options/SeasonModelOptions";
+import MobileNotificationMessage from "./MobileNotificationMessage";
+import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import AttributeRange from "./AttributeRange";
@@ -72,6 +74,8 @@ export {
     RatingModelOptions,
     SeasonModel,
     SeasonModelOptions,
+    MobileNotificationMessage,
+    MobileNotificationMessageOptions,
     TransactionSettingV2,
     TransactionSettingV2Options,
     AttributeRange,

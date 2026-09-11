@@ -13,6 +13,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import MobileNotificationMessage from "./MobileNotificationMessage";
 import { SendNotificationEntryOptions } from "./options/SendNotificationEntryOptions";
 
 export default class SendNotificationEntry {
@@ -22,6 +23,7 @@ export default class SendNotificationEntry {
     private readonly payload: string;
     private readonly enableTransferMobileNotification: boolean;
     private readonly sound: string|null = null;
+    private readonly mobileNotificationMessages: MobileNotificationMessage[]|null = null;
 
     public constructor(
         userId: string,
@@ -37,6 +39,7 @@ export default class SendNotificationEntry {
         this.payload = payload;
         this.enableTransferMobileNotification = enableTransferMobileNotification;
         this.sound = options?.sound ?? null;
+        this.mobileNotificationMessages = options?.mobileNotificationMessages ?? null;
     }
 
     public properties(
@@ -60,6 +63,10 @@ export default class SendNotificationEntry {
         }
         if (this.sound != null) {
             properties["sound"] = this.sound;
+        }
+        if (this.mobileNotificationMessages != null) {
+            properties["mobileNotificationMessages"] = this.mobileNotificationMessages.map(v => v.properties(
+                ));
         }
 
         return properties;

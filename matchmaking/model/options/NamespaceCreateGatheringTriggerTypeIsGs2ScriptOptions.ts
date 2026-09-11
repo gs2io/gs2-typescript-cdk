@@ -16,6 +16,7 @@
 import { TransactionSetting } from "../../../core/model";
 import TransactionSettingV2 from "../TransactionSettingV2";
 import { ScriptSetting } from "../../../core/model";
+import MobileNotificationMessage from "../MobileNotificationMessage";
 import { NotificationSetting } from "../../../core/model";
 import { LogSetting } from "../../../core/model";
 import { NamespaceEnableDisconnectDetection } from "../enums/NamespaceEnableDisconnectDetection";

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JobResultBody = exports.JobEntry = exports.TransactionSettingV2 = exports.Namespace = void 0;
+exports.JobResultBody = exports.JobEntry = exports.TransactionSettingV2 = exports.MobileNotificationMessage = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
+const MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
 exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const JobEntry_1 = tslib_1.__importDefault(require("./JobEntry"));

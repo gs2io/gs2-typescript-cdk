@@ -21,6 +21,8 @@ import UnityAd from "./UnityAd";
 import { UnityAdOptions } from "./options/UnityAdOptions";
 import AppLovinMax from "./AppLovinMax";
 import { AppLovinMaxOptions } from "./options/AppLovinMaxOptions";
+import MobileNotificationMessage from "./MobileNotificationMessage";
+import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 
@@ -33,6 +35,8 @@ export {
     UnityAdOptions,
     AppLovinMax,
     AppLovinMaxOptions,
+    MobileNotificationMessage,
+    MobileNotificationMessageOptions,
     TransactionSettingV2,
     TransactionSettingV2Options,
 }

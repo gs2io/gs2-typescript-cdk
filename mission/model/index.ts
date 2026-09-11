@@ -13,6 +13,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import MobileNotificationMessage from "./MobileNotificationMessage";
+import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import CounterScopeModel from "./CounterScopeModel";
 import { CounterScopeModelOptions } from "./options/CounterScopeModelOptions";
 import { CounterScopeModelScopeType } from "./enums/CounterScopeModelScopeType";
@@ -69,6 +71,8 @@ import { TransactionSettingV2Options } from "./options/TransactionSettingV2Optio
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
+    MobileNotificationMessage,
+    MobileNotificationMessageOptions,
     CounterScopeModel,
     CounterScopeModelOptions,
     CounterScopeModelScopeType,

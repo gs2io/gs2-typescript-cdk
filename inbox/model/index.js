@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TransactionSettingV2 = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.TimeSpan = exports.GlobalMessage = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.MobileNotificationMessage = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.TimeSpan = exports.GlobalMessage = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionRe
 exports.AcquireActionResult = AcquireActionResult_1.default;
 const TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
 exports.TransactionResult = TransactionResult_1.default;
+const MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
 exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));

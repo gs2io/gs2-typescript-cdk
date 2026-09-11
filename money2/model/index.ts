@@ -70,6 +70,8 @@ import GooglePlaySubscriptionContent from "./GooglePlaySubscriptionContent";
 import { GooglePlaySubscriptionContentOptions } from "./options/GooglePlaySubscriptionContentOptions";
 import GooglePlayRealtimeNotificationMessage from "./GooglePlayRealtimeNotificationMessage";
 import { GooglePlayRealtimeNotificationMessageOptions } from "./options/GooglePlayRealtimeNotificationMessageOptions";
+import MobileNotificationMessage from "./MobileNotificationMessage";
+import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import DailyTransactionHistory from "./DailyTransactionHistory";
@@ -136,6 +138,8 @@ export {
     GooglePlaySubscriptionContentOptions,
     GooglePlayRealtimeNotificationMessage,
     GooglePlayRealtimeNotificationMessageOptions,
+    MobileNotificationMessage,
+    MobileNotificationMessageOptions,
     TransactionSettingV2,
     TransactionSettingV2Options,
     DailyTransactionHistory,

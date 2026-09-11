@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TimeSpan = exports.SignedBallot = exports.GameResult = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.TransactionSettingV2 = exports.SeasonModel = exports.RatingModel = exports.NamespaceEnableCollaborateSeasonRating = exports.NamespaceCompleteMatchmakingTriggerType = exports.NamespaceCreateGatheringTriggerType = exports.NamespaceEnableDisconnectDetection = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TimeSpan = exports.SignedBallot = exports.GameResult = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.TransactionSettingV2 = exports.MobileNotificationMessage = exports.SeasonModel = exports.RatingModel = exports.NamespaceEnableCollaborateSeasonRating = exports.NamespaceCompleteMatchmakingTriggerType = exports.NamespaceCreateGatheringTriggerType = exports.NamespaceEnableDisconnectDetection = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ const RatingModel_1 = tslib_1.__importDefault(require("./RatingModel"));
 exports.RatingModel = RatingModel_1.default;
 const SeasonModel_1 = tslib_1.__importDefault(require("./SeasonModel"));
 exports.SeasonModel = SeasonModel_1.default;
+const MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
 exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const AttributeRange_1 = tslib_1.__importDefault(require("./AttributeRange"));

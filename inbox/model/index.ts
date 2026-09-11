@@ -27,6 +27,8 @@ import AcquireActionResult from "./AcquireActionResult";
 import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
 import TransactionResult from "./TransactionResult";
 import { TransactionResultOptions } from "./options/TransactionResultOptions";
+import MobileNotificationMessage from "./MobileNotificationMessage";
+import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
@@ -46,6 +48,8 @@ export {
     AcquireActionResultOptions,
     TransactionResult,
     TransactionResultOptions,
+    MobileNotificationMessage,
+    MobileNotificationMessageOptions,
     TransactionSettingV2,
     TransactionSettingV2Options,
     CurrentMasterData,
