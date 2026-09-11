@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.LimitModelResetDayOfWeek = exports.LimitModelResetType = exports.LimitModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.LimitModelResetDayOfWeek = exports.LimitModelResetType = exports.LimitModel = exports.TransactionSettingV2 = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ const tslib_1 = require("tslib");
  */
 const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const LimitModel_1 = tslib_1.__importDefault(require("./LimitModel"));
 exports.LimitModel = LimitModel_1.default;
 const LimitModelResetType_1 = require("./enums/LimitModelResetType");

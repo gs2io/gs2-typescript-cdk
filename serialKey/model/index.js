@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.CampaignModel = exports.IssueJobStatus = exports.IssueJob = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.CampaignModel = exports.IssueJobStatus = exports.IssueJob = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,8 @@ const IssueJobStatus_1 = require("./enums/IssueJobStatus");
 Object.defineProperty(exports, "IssueJobStatus", { enumerable: true, get: function () { return IssueJobStatus_1.IssueJobStatus; } });
 const CampaignModel_1 = tslib_1.__importDefault(require("./CampaignModel"));
 exports.CampaignModel = CampaignModel_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

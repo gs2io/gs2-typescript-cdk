@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.BuffTargetModelTargetModelName = exports.BuffTargetActionTargetActionName = exports.OverrideBuffRate = exports.BuffEntryModelTargetType = exports.BuffEntryModelExpression = exports.BuffEntryModel = exports.BuffTargetGrn = exports.BuffTargetAction = exports.BuffTargetModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.BuffTargetModelTargetModelName = exports.BuffTargetActionTargetActionName = exports.TransactionSettingV2 = exports.OverrideBuffRate = exports.BuffEntryModelTargetType = exports.BuffEntryModelExpression = exports.BuffEntryModel = exports.BuffTargetGrn = exports.BuffTargetAction = exports.BuffTargetModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,8 @@ const BuffEntryModelTargetType_1 = require("./enums/BuffEntryModelTargetType");
 Object.defineProperty(exports, "BuffEntryModelTargetType", { enumerable: true, get: function () { return BuffEntryModelTargetType_1.BuffEntryModelTargetType; } });
 const OverrideBuffRate_1 = tslib_1.__importDefault(require("./OverrideBuffRate"));
 exports.OverrideBuffRate = OverrideBuffRate_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const BuffTargetActionTargetActionName_1 = require("./enums/BuffTargetActionTargetActionName");
 Object.defineProperty(exports, "BuffTargetActionTargetActionName", { enumerable: true, get: function () { return BuffTargetActionTargetActionName_1.BuffTargetActionTargetActionName; } });
 const BuffTargetModelTargetModelName_1 = require("./enums/BuffTargetModelTargetModelName");

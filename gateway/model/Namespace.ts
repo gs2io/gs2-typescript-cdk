@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
@@ -27,8 +28,12 @@ export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
     private readonly description: string|null = null;
+    /** @deprecated */
     private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly transactionSettingV2: TransactionSettingV2|null = null;
+    /** @deprecated */
     private readonly firebaseSecret: string|null = null;
+    private readonly firebaseProjectId: string|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -44,7 +49,9 @@ export default class Namespace extends CdkResource {
         this.name = name;
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
+        this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
         this.firebaseSecret = options?.firebaseSecret ?? null;
+        this.firebaseProjectId = options?.firebaseProjectId ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -76,8 +83,15 @@ export default class Namespace extends CdkResource {
             properties["TransactionSetting"] = this.transactionSetting?.properties(
             );
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = this.transactionSettingV2?.properties(
+            );
+        }
         if (this.firebaseSecret != null) {
             properties["FirebaseSecret"] = this.firebaseSecret;
+        }
+        if (this.firebaseProjectId != null) {
+            properties["FirebaseProjectId"] = this.firebaseProjectId;
         }
         if (this.logSetting != null) {
             properties["LogSetting"] = this.logSetting?.properties(

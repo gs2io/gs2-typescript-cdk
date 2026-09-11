@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
@@ -33,7 +34,9 @@ export default class Namespace extends CdkResource {
     private readonly description: string|null = null;
     private readonly enableAwaitExchange: boolean|null = null;
     private readonly enableDirectExchange: boolean|null = null;
+    /** @deprecated */
     private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly transactionSettingV2: TransactionSettingV2|null = null;
     private readonly exchangeScript: ScriptSetting|null = null;
     private readonly incrementalExchangeScript: ScriptSetting|null = null;
     private readonly acquireAwaitScript: ScriptSetting|null = null;
@@ -54,6 +57,7 @@ export default class Namespace extends CdkResource {
         this.enableAwaitExchange = options?.enableAwaitExchange ?? null;
         this.enableDirectExchange = options?.enableDirectExchange ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
+        this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
         this.exchangeScript = options?.exchangeScript ?? null;
         this.incrementalExchangeScript = options?.incrementalExchangeScript ?? null;
         this.acquireAwaitScript = options?.acquireAwaitScript ?? null;
@@ -92,6 +96,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
+        }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = this.transactionSettingV2?.properties(
             );
         }
         if (this.exchangeScript != null) {

@@ -14,6 +14,7 @@
  * permissions and limitations under the License.
  */
 import TransactionSetting from "../../../core/model/TransactionSetting";
+import TransactionSettingV2 from "../TransactionSettingV2";
 import PlatformSetting from "../PlatformSetting";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
@@ -22,7 +23,9 @@ import { NamespaceCurrencyUsagePriority } from "../enums/NamespaceCurrencyUsageP
 
 export interface NamespaceOptions {
     description?: string|null;
+    /** @deprecated */
     transactionSetting?: TransactionSetting|null;
+    transactionSettingV2?: TransactionSettingV2|null;
     depositBalanceScript?: ScriptSetting|null;
     withdrawBalanceScript?: ScriptSetting|null;
     verifyReceiptScript?: ScriptSetting|null;

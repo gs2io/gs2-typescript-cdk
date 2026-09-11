@@ -27,5 +27,7 @@ import AcquireActionResult from "./AcquireActionResult";
 import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
 import TransactionResult from "./TransactionResult";
 import { TransactionResultOptions } from "./options/TransactionResultOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, LotteryModel, LotteryModelOptions, LotteryModelMode, LotteryModelMethod, LotteryModelMethodIsPrizeTableOptions, LotteryModelMethodIsScriptOptions, PrizeTable, PrizeTableOptions, Prize, PrizeOptions, PrizeType, PrizeTypeIsActionOptions, PrizeTypeIsPrizeTableOptions, PrizeLimit, PrizeLimitOptions, DrawnPrize, DrawnPrizeOptions, BoxItem, BoxItemOptions, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, LotteryModel, LotteryModelOptions, LotteryModelMode, LotteryModelMethod, LotteryModelMethodIsPrizeTableOptions, LotteryModelMethodIsScriptOptions, PrizeTable, PrizeTableOptions, Prize, PrizeOptions, PrizeType, PrizeTypeIsActionOptions, PrizeTypeIsPrizeTableOptions, PrizeLimit, PrizeLimitOptions, DrawnPrize, DrawnPrizeOptions, BoxItem, BoxItemOptions, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

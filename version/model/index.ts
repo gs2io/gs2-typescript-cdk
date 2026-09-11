@@ -30,6 +30,8 @@ import TargetVersion from "./TargetVersion";
 import { TargetVersionOptions } from "./options/TargetVersionOptions";
 import SignTargetVersion from "./SignTargetVersion";
 import { SignTargetVersionOptions } from "./options/SignTargetVersionOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import Version from "./Version";
 import { VersionOptions } from "./options/VersionOptions";
 import ScheduleVersion from "./ScheduleVersion";
@@ -54,6 +56,8 @@ export {
     TargetVersionOptions,
     SignTargetVersion,
     SignTargetVersionOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     Version,
     VersionOptions,
     ScheduleVersion,

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.RepeatSchedule = exports.RepeatSettingEndDayOfWeek = exports.RepeatSettingBeginDayOfWeek = exports.RepeatSettingRepeatType = exports.RepeatSetting = exports.EventRepeatEndDayOfWeek = exports.EventRepeatBeginDayOfWeek = exports.EventRepeatType = exports.EventScheduleType = exports.Event = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.RepeatSchedule = exports.RepeatSettingEndDayOfWeek = exports.RepeatSettingBeginDayOfWeek = exports.RepeatSettingRepeatType = exports.RepeatSetting = exports.EventRepeatEndDayOfWeek = exports.EventRepeatBeginDayOfWeek = exports.EventRepeatType = exports.EventScheduleType = exports.Event = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -39,6 +39,8 @@ const RepeatSettingEndDayOfWeek_1 = require("./enums/RepeatSettingEndDayOfWeek")
 Object.defineProperty(exports, "RepeatSettingEndDayOfWeek", { enumerable: true, get: function () { return RepeatSettingEndDayOfWeek_1.RepeatSettingEndDayOfWeek; } });
 const RepeatSchedule_1 = tslib_1.__importDefault(require("./RepeatSchedule"));
 exports.RepeatSchedule = RepeatSchedule_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

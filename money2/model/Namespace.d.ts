@@ -13,7 +13,9 @@ export default class Namespace extends CdkResource {
     private readonly sharedFreeCurrency;
     private readonly platformSetting;
     private readonly description;
+    /** @deprecated */
     private readonly transactionSetting;
+    private readonly transactionSettingV2;
     private readonly depositBalanceScript;
     private readonly withdrawBalanceScript;
     private readonly verifyReceiptScript;

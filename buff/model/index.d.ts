@@ -14,7 +14,9 @@ import { BuffEntryModelTargetTypeIsModelOptions } from "./options/BuffEntryModel
 import { BuffEntryModelTargetTypeIsActionOptions } from "./options/BuffEntryModelTargetTypeIsActionOptions";
 import OverrideBuffRate from "./OverrideBuffRate";
 import { OverrideBuffRateOptions } from "./options/OverrideBuffRateOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import { BuffTargetActionTargetActionName } from "./enums/BuffTargetActionTargetActionName";
 import { BuffTargetModelTargetModelName } from "./enums/BuffTargetModelTargetModelName";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, BuffTargetModel, BuffTargetModelOptions, BuffTargetAction, BuffTargetActionOptions, BuffTargetGrn, BuffTargetGrnOptions, BuffEntryModel, BuffEntryModelOptions, BuffEntryModelExpression, BuffEntryModelTargetType, BuffEntryModelTargetTypeIsModelOptions, BuffEntryModelTargetTypeIsActionOptions, OverrideBuffRate, OverrideBuffRateOptions, BuffTargetActionTargetActionName, BuffTargetModelTargetModelName, CurrentMasterData, };
+export { Namespace, NamespaceOptions, BuffTargetModel, BuffTargetModelOptions, BuffTargetAction, BuffTargetActionOptions, BuffTargetGrn, BuffTargetGrnOptions, BuffEntryModel, BuffEntryModelOptions, BuffEntryModelExpression, BuffEntryModelTargetType, BuffEntryModelTargetTypeIsModelOptions, BuffEntryModelTargetTypeIsActionOptions, OverrideBuffRate, OverrideBuffRateOptions, TransactionSettingV2, TransactionSettingV2Options, BuffTargetActionTargetActionName, BuffTargetModelTargetModelName, CurrentMasterData, };

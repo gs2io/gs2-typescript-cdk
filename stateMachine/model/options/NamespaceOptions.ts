@@ -14,6 +14,7 @@
  * permissions and limitations under the License.
  */
 import TransactionSetting from "../../../core/model/TransactionSetting";
+import TransactionSettingV2 from "../TransactionSettingV2";
 import ScriptSetting from "../../../core/model/ScriptSetting";
 import LogSetting from "../../../core/model/LogSetting";
 import { NamespaceSupportSpeculativeExecution } from "../enums/NamespaceSupportSpeculativeExecution";
@@ -21,7 +22,9 @@ import { NamespaceSupportSpeculativeExecution } from "../enums/NamespaceSupportS
 export interface NamespaceOptions {
     description?: string|null;
     supportSpeculativeExecution?: NamespaceSupportSpeculativeExecution|null;
+    /** @deprecated */
     transactionSetting?: TransactionSetting|null;
+    transactionSettingV2?: TransactionSettingV2|null;
     startScript?: ScriptSetting|null;
     passScript?: ScriptSetting|null;
     errorScript?: ScriptSetting|null;

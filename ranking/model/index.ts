@@ -29,6 +29,8 @@ import FixedTiming from "./FixedTiming";
 import { FixedTimingOptions } from "./options/FixedTimingOptions";
 import CalculatedAt from "./CalculatedAt";
 import { CalculatedAtOptions } from "./options/CalculatedAtOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -48,5 +50,7 @@ export {
     FixedTimingOptions,
     CalculatedAt,
     CalculatedAtOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     CurrentMasterData,
 }

@@ -21,18 +21,21 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         super("Datastore_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.logSetting = null;
         this.doneUploadScript = null;
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.logSetting = (_c = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _c !== void 0 ? _c : null;
-        this.doneUploadScript = (_d = options === null || options === void 0 ? void 0 : options.doneUploadScript) !== null && _d !== void 0 ? _d : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
+        this.doneUploadScript = (_e = options === null || options === void 0 ? void 0 : options.doneUploadScript) !== null && _e !== void 0 ? _e : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -42,7 +45,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Datastore::Namespace";
     }
     properties() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -53,11 +56,14 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_b = this.logSetting) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.doneUploadScript != null) {
-            properties["DoneUploadScript"] = (_c = this.doneUploadScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["DoneUploadScript"] = (_d = this.doneUploadScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         return properties;
     }

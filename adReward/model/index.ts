@@ -21,6 +21,8 @@ import UnityAd from "./UnityAd";
 import { UnityAdOptions } from "./options/UnityAdOptions";
 import AppLovinMax from "./AppLovinMax";
 import { AppLovinMaxOptions } from "./options/AppLovinMaxOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 
 export {
     Namespace,
@@ -31,4 +33,6 @@ export {
     UnityAdOptions,
     AppLovinMax,
     AppLovinMaxOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
 }

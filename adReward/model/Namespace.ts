@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import AdMob from "./AdMob";
 import UnityAd from "./UnityAd";
 import AppLovinMax from "./AppLovinMax";
@@ -32,7 +33,9 @@ export default class Namespace extends CdkResource {
     private readonly stack: Stack;
     private readonly name: string;
     private readonly description: string|null = null;
+    /** @deprecated */
     private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly transactionSettingV2: TransactionSettingV2|null = null;
     private readonly admob: AdMob|null = null;
     private readonly unityAd: UnityAd|null = null;
     private readonly appLovinMaxes: AppLovinMax[]|null = null;
@@ -54,6 +57,7 @@ export default class Namespace extends CdkResource {
         this.name = name;
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
+        this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
         this.admob = options?.admob ?? null;
         this.unityAd = options?.unityAd ?? null;
         this.appLovinMaxes = options?.appLovinMaxes ?? null;
@@ -89,6 +93,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
+        }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = this.transactionSettingV2?.properties(
             );
         }
         if (this.admob != null) {

@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import PlatformSetting from "./PlatformSetting";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
@@ -37,7 +38,9 @@ export default class Namespace extends CdkResource {
     private readonly sharedFreeCurrency: boolean;
     private readonly platformSetting: PlatformSetting;
     private readonly description: string|null = null;
+    /** @deprecated */
     private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly transactionSettingV2: TransactionSettingV2|null = null;
     private readonly depositBalanceScript: ScriptSetting|null = null;
     private readonly withdrawBalanceScript: ScriptSetting|null = null;
     private readonly verifyReceiptScript: ScriptSetting|null = null;
@@ -67,6 +70,7 @@ export default class Namespace extends CdkResource {
         this.platformSetting = platformSetting;
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
+        this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
         this.depositBalanceScript = options?.depositBalanceScript ?? null;
         this.withdrawBalanceScript = options?.withdrawBalanceScript ?? null;
         this.verifyReceiptScript = options?.verifyReceiptScript ?? null;
@@ -107,6 +111,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
+        }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = this.transactionSettingV2?.properties(
             );
         }
         if (this.sharedFreeCurrency != null) {

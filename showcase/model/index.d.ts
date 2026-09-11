@@ -25,5 +25,7 @@ import AcquireActionResult from "./AcquireActionResult";
 import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
 import TransactionResult from "./TransactionResult";
 import { TransactionResultOptions } from "./options/TransactionResultOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, SalesItem, SalesItemOptions, SalesItemGroup, SalesItemGroupOptions, Showcase, ShowcaseOptions, DisplayItem, DisplayItemOptions, DisplayItemType, DisplayItemTypeIsSalesItemOptions, DisplayItemTypeIsSalesItemGroupOptions, RandomShowcase, RandomShowcaseOptions, PurchaseCount, PurchaseCountOptions, RandomDisplayItemModel, RandomDisplayItemModelOptions, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, SalesItem, SalesItemOptions, SalesItemGroup, SalesItemGroupOptions, Showcase, ShowcaseOptions, DisplayItem, DisplayItemOptions, DisplayItemType, DisplayItemTypeIsSalesItemOptions, DisplayItemTypeIsSalesItemGroupOptions, RandomShowcase, RandomShowcaseOptions, PurchaseCount, PurchaseCountOptions, RandomDisplayItemModel, RandomDisplayItemModelOptions, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.DistributeResource = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.BatchResultPayload = exports.BatchRequestPayloadService = exports.BatchRequestPayload = exports.DistributorModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.DistributeResource = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.BatchResultPayload = exports.BatchRequestPayloadService = exports.BatchRequestPayload = exports.DistributorModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,8 @@ const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResu
 exports.VerifyActionResult = VerifyActionResult_1.default;
 const DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource"));
 exports.DistributeResource = DistributeResource_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

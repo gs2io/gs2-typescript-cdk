@@ -11,5 +11,7 @@ import { GameResultOptions } from "./options/GameResultOptions";
 import SignedBallot from "./SignedBallot";
 import { SignedBallotOptions } from "./options/SignedBallotOptions";
 import { WrittenBallotOptions } from "./options/WrittenBallotOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, MatchSession, MatchSessionOptions, SeasonModel, SeasonModelOptions, TierModel, TierModelOptions, GameResult, GameResultOptions, SignedBallot, SignedBallotOptions, WrittenBallotOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, MatchSession, MatchSessionOptions, SeasonModel, SeasonModelOptions, TierModel, TierModelOptions, GameResult, GameResultOptions, SignedBallot, SignedBallotOptions, WrittenBallotOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

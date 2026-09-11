@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.ScheduleVersion = exports.Version = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.VersionModelApproveRequirement = exports.VersionModelType = exports.VersionModelScope = exports.VersionModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.ScheduleVersion = exports.Version = exports.TransactionSettingV2 = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.VersionModelApproveRequirement = exports.VersionModelType = exports.VersionModelScope = exports.VersionModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,8 @@ const TargetVersion_1 = tslib_1.__importDefault(require("./TargetVersion"));
 exports.TargetVersion = TargetVersion_1.default;
 const SignTargetVersion_1 = tslib_1.__importDefault(require("./SignTargetVersion"));
 exports.SignTargetVersion = SignTargetVersion_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const Version_1 = tslib_1.__importDefault(require("./Version"));
 exports.Version = Version_1.default;
 const ScheduleVersion_1 = tslib_1.__importDefault(require("./ScheduleVersion"));

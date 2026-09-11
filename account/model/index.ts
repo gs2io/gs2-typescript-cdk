@@ -25,6 +25,8 @@ import PlatformUser from "./PlatformUser";
 import { PlatformUserOptions } from "./options/PlatformUserOptions";
 import BanStatus from "./BanStatus";
 import { BanStatusOptions } from "./options/BanStatusOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -40,5 +42,7 @@ export {
     PlatformUserOptions,
     BanStatus,
     BanStatusOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     CurrentMasterData,
 }

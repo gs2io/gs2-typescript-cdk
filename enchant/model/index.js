@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RarityParameterValue = exports.BalanceParameterValue = exports.RarityParameterValueModel = exports.RarityParameterCountModel = exports.BalanceParameterValueModel = exports.RarityParameterModel = exports.BalanceParameterModelInitialValueStrategy = exports.BalanceParameterModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RarityParameterValue = exports.BalanceParameterValue = exports.RarityParameterValueModel = exports.RarityParameterCountModel = exports.BalanceParameterValueModel = exports.RarityParameterModel = exports.BalanceParameterModelInitialValueStrategy = exports.BalanceParameterModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -43,6 +43,8 @@ const AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionRe
 exports.AcquireActionResult = AcquireActionResult_1.default;
 const TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
 exports.TransactionResult = TransactionResult_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

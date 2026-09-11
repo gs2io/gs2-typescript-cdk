@@ -15,5 +15,7 @@ import VerifyActionResult from "./VerifyActionResult";
 import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
 import DistributeResource from "./DistributeResource";
 import { DistributeResourceOptions } from "./options/DistributeResourceOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, DistributorModel, DistributorModelOptions, BatchRequestPayload, BatchRequestPayloadOptions, BatchRequestPayloadService, BatchResultPayload, BatchResultPayloadOptions, AcquireActionResult, AcquireActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, VerifyActionResult, VerifyActionResultOptions, DistributeResource, DistributeResourceOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, DistributorModel, DistributorModelOptions, BatchRequestPayload, BatchRequestPayloadOptions, BatchRequestPayloadService, BatchResultPayload, BatchResultPayloadOptions, AcquireActionResult, AcquireActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, VerifyActionResult, VerifyActionResultOptions, DistributeResource, DistributeResourceOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

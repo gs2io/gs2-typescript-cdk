@@ -1,5 +1,7 @@
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import LimitModel from "./LimitModel";
 import { LimitModelOptions } from "./options/LimitModelOptions";
 import { LimitModelResetType } from "./enums/LimitModelResetType";
@@ -10,4 +12,4 @@ import { LimitModelResetTypeIsWeeklyOptions } from "./options/LimitModelResetTyp
 import { LimitModelResetTypeIsMonthlyOptions } from "./options/LimitModelResetTypeIsMonthlyOptions";
 import { LimitModelResetTypeIsDaysOptions } from "./options/LimitModelResetTypeIsDaysOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, LimitModel, LimitModelOptions, LimitModelResetType, LimitModelResetDayOfWeek, LimitModelResetTypeIsNotResetOptions, LimitModelResetTypeIsDailyOptions, LimitModelResetTypeIsWeeklyOptions, LimitModelResetTypeIsMonthlyOptions, LimitModelResetTypeIsDaysOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, TransactionSettingV2, TransactionSettingV2Options, LimitModel, LimitModelOptions, LimitModelResetType, LimitModelResetDayOfWeek, LimitModelResetTypeIsNotResetOptions, LimitModelResetTypeIsDailyOptions, LimitModelResetTypeIsWeeklyOptions, LimitModelResetTypeIsMonthlyOptions, LimitModelResetTypeIsDaysOptions, CurrentMasterData, };

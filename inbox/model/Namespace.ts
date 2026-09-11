@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
@@ -32,7 +33,9 @@ export default class Namespace extends CdkResource {
     private readonly name: string;
     private readonly description: string|null = null;
     private readonly isAutomaticDeletingEnabled: boolean|null = null;
+    /** @deprecated */
     private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly transactionSettingV2: TransactionSettingV2|null = null;
     private readonly receiveMessageScript: ScriptSetting|null = null;
     private readonly readMessageScript: ScriptSetting|null = null;
     private readonly deleteMessageScript: ScriptSetting|null = null;
@@ -53,6 +56,7 @@ export default class Namespace extends CdkResource {
         this.description = options?.description ?? null;
         this.isAutomaticDeletingEnabled = options?.isAutomaticDeletingEnabled ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
+        this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
         this.receiveMessageScript = options?.receiveMessageScript ?? null;
         this.readMessageScript = options?.readMessageScript ?? null;
         this.deleteMessageScript = options?.deleteMessageScript ?? null;
@@ -89,6 +93,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
+        }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = this.transactionSettingV2?.properties(
             );
         }
         if (this.receiveMessageScript != null) {

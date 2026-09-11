@@ -6,8 +6,12 @@ export default class Namespace extends CdkResource {
     private readonly stack;
     private readonly name;
     private readonly description;
+    /** @deprecated */
     private readonly transactionSetting;
+    private readonly transactionSettingV2;
+    /** @deprecated */
     private readonly firebaseSecret;
+    private readonly firebaseProjectId;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;

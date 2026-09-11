@@ -22,10 +22,12 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, assumeUserId, options = null) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         super("Version_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.acceptVersionScript = null;
         this.checkVersionTriggerScriptId = null;
         this.logSetting = null;
@@ -34,9 +36,10 @@ class Namespace extends model_1.CdkResource {
         this.assumeUserId = assumeUserId;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.acceptVersionScript = (_c = options === null || options === void 0 ? void 0 : options.acceptVersionScript) !== null && _c !== void 0 ? _c : null;
-        this.checkVersionTriggerScriptId = (_d = options === null || options === void 0 ? void 0 : options.checkVersionTriggerScriptId) !== null && _d !== void 0 ? _d : null;
-        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.acceptVersionScript = (_d = options === null || options === void 0 ? void 0 : options.acceptVersionScript) !== null && _d !== void 0 ? _d : null;
+        this.checkVersionTriggerScriptId = (_e = options === null || options === void 0 ? void 0 : options.checkVersionTriggerScriptId) !== null && _e !== void 0 ? _e : null;
+        this.logSetting = (_f = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _f !== void 0 ? _f : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -46,7 +49,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Version::Namespace";
     }
     properties() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -57,17 +60,20 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.assumeUserId != null) {
             properties["AssumeUserId"] = this.assumeUserId;
         }
         if (this.acceptVersionScript != null) {
-            properties["AcceptVersionScript"] = (_b = this.acceptVersionScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["AcceptVersionScript"] = (_c = this.acceptVersionScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.checkVersionTriggerScriptId != null) {
             properties["CheckVersionTriggerScriptId"] = this.checkVersionTriggerScriptId;
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
         }
         return properties;
     }

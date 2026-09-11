@@ -5,5 +5,7 @@ import { IssueJobOptions } from "./options/IssueJobOptions";
 import { IssueJobStatus } from "./enums/IssueJobStatus";
 import CampaignModel from "./CampaignModel";
 import { CampaignModelOptions } from "./options/CampaignModelOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, IssueJob, IssueJobOptions, IssueJobStatus, CampaignModel, CampaignModelOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, IssueJob, IssueJobOptions, IssueJobStatus, CampaignModel, CampaignModelOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

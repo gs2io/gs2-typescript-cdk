@@ -33,6 +33,8 @@ import RatingModel from "./RatingModel";
 import { RatingModelOptions } from "./options/RatingModelOptions";
 import SeasonModel from "./SeasonModel";
 import { SeasonModelOptions } from "./options/SeasonModelOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import AttributeRange from "./AttributeRange";
 import { AttributeRangeOptions } from "./options/AttributeRangeOptions";
 import CapacityOfRole from "./CapacityOfRole";
@@ -70,6 +72,8 @@ export {
     RatingModelOptions,
     SeasonModel,
     SeasonModelOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     AttributeRange,
     AttributeRangeOptions,
     CapacityOfRole,

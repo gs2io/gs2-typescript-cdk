@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RandomUsed = exports.RandomStatus = exports.EmitEvent = exports.ChangeStateEvent = exports.EventEventType = exports.Event = exports.Variable = exports.StackEntry = exports.StateMachineMaster = exports.NamespaceSupportSpeculativeExecution = exports.Namespace = void 0;
+exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RandomUsed = exports.RandomStatus = exports.EmitEvent = exports.ChangeStateEvent = exports.EventEventType = exports.Event = exports.TransactionSettingV2 = exports.Variable = exports.StackEntry = exports.StateMachineMaster = exports.NamespaceSupportSpeculativeExecution = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,8 @@ const StackEntry_1 = tslib_1.__importDefault(require("./StackEntry"));
 exports.StackEntry = StackEntry_1.default;
 const Variable_1 = tslib_1.__importDefault(require("./Variable"));
 exports.Variable = Variable_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const Event_1 = tslib_1.__importDefault(require("./Event"));
 exports.Event = Event_1.default;
 const EventEventType_1 = require("./enums/EventEventType");

@@ -22,10 +22,12 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         super("Mission_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.missionCompleteScript = null;
         this.counterIncrementScript = null;
         this.receiveRewardsScript = null;
@@ -35,11 +37,12 @@ class Namespace extends model_1.CdkResource {
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.missionCompleteScript = (_c = options === null || options === void 0 ? void 0 : options.missionCompleteScript) !== null && _c !== void 0 ? _c : null;
-        this.counterIncrementScript = (_d = options === null || options === void 0 ? void 0 : options.counterIncrementScript) !== null && _d !== void 0 ? _d : null;
-        this.receiveRewardsScript = (_e = options === null || options === void 0 ? void 0 : options.receiveRewardsScript) !== null && _e !== void 0 ? _e : null;
-        this.completeNotification = (_f = options === null || options === void 0 ? void 0 : options.completeNotification) !== null && _f !== void 0 ? _f : null;
-        this.logSetting = (_g = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _g !== void 0 ? _g : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.missionCompleteScript = (_d = options === null || options === void 0 ? void 0 : options.missionCompleteScript) !== null && _d !== void 0 ? _d : null;
+        this.counterIncrementScript = (_e = options === null || options === void 0 ? void 0 : options.counterIncrementScript) !== null && _e !== void 0 ? _e : null;
+        this.receiveRewardsScript = (_f = options === null || options === void 0 ? void 0 : options.receiveRewardsScript) !== null && _f !== void 0 ? _f : null;
+        this.completeNotification = (_g = options === null || options === void 0 ? void 0 : options.completeNotification) !== null && _g !== void 0 ? _g : null;
+        this.logSetting = (_h = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _h !== void 0 ? _h : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -49,7 +52,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Mission::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -60,20 +63,23 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.missionCompleteScript != null) {
-            properties["MissionCompleteScript"] = (_b = this.missionCompleteScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["MissionCompleteScript"] = (_c = this.missionCompleteScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.counterIncrementScript != null) {
-            properties["CounterIncrementScript"] = (_c = this.counterIncrementScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["CounterIncrementScript"] = (_d = this.counterIncrementScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.receiveRewardsScript != null) {
-            properties["ReceiveRewardsScript"] = (_d = this.receiveRewardsScript) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["ReceiveRewardsScript"] = (_e = this.receiveRewardsScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.completeNotification != null) {
-            properties["CompleteNotification"] = (_e = this.completeNotification) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["CompleteNotification"] = (_f = this.completeNotification) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["LogSetting"] = (_g = this.logSetting) === null || _g === void 0 ? void 0 : _g.properties();
         }
         return properties;
     }

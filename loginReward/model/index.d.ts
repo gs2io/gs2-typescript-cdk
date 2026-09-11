@@ -19,5 +19,7 @@ import AcquireActionResult from "./AcquireActionResult";
 import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
 import TransactionResult from "./TransactionResult";
 import { TransactionResultOptions } from "./options/TransactionResultOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, BonusModel, BonusModelOptions, BonusModelMode, BonusModelRepeat, BonusModelMissedReceiveRelief, BonusModelModeIsScheduleOptions, BonusModelModeIsStreamingOptions, BonusModelMissedReceiveReliefIsEnabledOptions, BonusModelMissedReceiveReliefIsDisabledOptions, Reward, RewardOptions, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, BonusModel, BonusModelOptions, BonusModelMode, BonusModelRepeat, BonusModelMissedReceiveRelief, BonusModelModeIsScheduleOptions, BonusModelModeIsStreamingOptions, BonusModelMissedReceiveReliefIsEnabledOptions, BonusModelMissedReceiveReliefIsDisabledOptions, Reward, RewardOptions, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

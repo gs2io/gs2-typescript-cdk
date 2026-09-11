@@ -17,6 +17,7 @@
 import {CdkResource, Stack} from "../../core/model";
 import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import ScriptSetting from "../../core/model/ScriptSetting";
 import LogSetting from "../../core/model/LogSetting";
 
@@ -33,7 +34,9 @@ export default class Namespace extends CdkResource {
     private readonly shareFree: boolean;
     private readonly currency: NamespaceCurrency;
     private readonly description: string|null = null;
+    /** @deprecated */
     private readonly transactionSetting: TransactionSetting|null = null;
+    private readonly transactionSettingV2: TransactionSettingV2|null = null;
     private readonly appleKey: string|null = null;
     private readonly googleKey: string|null = null;
     private readonly enableFakeReceipt: boolean|null = null;
@@ -61,6 +64,7 @@ export default class Namespace extends CdkResource {
         this.currency = currency;
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
+        this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
         this.appleKey = options?.appleKey ?? null;
         this.googleKey = options?.googleKey ?? null;
         this.enableFakeReceipt = options?.enableFakeReceipt ?? null;
@@ -96,6 +100,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = this.transactionSetting?.properties(
+            );
+        }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = this.transactionSettingV2?.properties(
             );
         }
         if (this.priority != null) {

@@ -1,10 +1,12 @@
 import { TransactionSetting } from "../../../core/model";
+import TransactionSettingV2 from "../TransactionSettingV2";
 import { ScriptSetting } from "../../../core/model";
 import { NotificationSetting } from "../../../core/model";
 import { LogSetting } from "../../../core/model";
 export interface NamespaceCompleteMatchmakingTriggerTypeIsGs2ScriptOptions {
     description?: string | null;
     transactionSetting?: TransactionSetting | null;
+    transactionSettingV2?: TransactionSettingV2 | null;
     changeRatingScript?: ScriptSetting | null;
     joinNotification?: NotificationSetting | null;
     leaveNotification?: NotificationSetting | null;

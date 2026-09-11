@@ -39,6 +39,8 @@ import { RepeatSettingRepeatTypeIsMonthlyOptions } from "./options/RepeatSetting
 import { RepeatSettingRepeatTypeIsCustomOptions } from "./options/RepeatSettingRepeatTypeIsCustomOptions"
 import RepeatSchedule from "./RepeatSchedule";
 import { RepeatScheduleOptions } from "./options/RepeatScheduleOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -68,5 +70,7 @@ export {
     RepeatSettingRepeatTypeIsCustomOptions,
     RepeatSchedule,
     RepeatScheduleOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     CurrentMasterData,
 }

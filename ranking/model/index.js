@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.CalculatedAt = exports.FixedTiming = exports.GlobalRankingSetting = exports.Scope = exports.CategoryModelScope = exports.CategoryModelOrderDirection = exports.CategoryModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.CalculatedAt = exports.FixedTiming = exports.GlobalRankingSetting = exports.Scope = exports.CategoryModelScope = exports.CategoryModelOrderDirection = exports.CategoryModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,8 @@ const FixedTiming_1 = tslib_1.__importDefault(require("./FixedTiming"));
 exports.FixedTiming = FixedTiming_1.default;
 const CalculatedAt_1 = tslib_1.__importDefault(require("./CalculatedAt"));
 exports.CalculatedAt = CalculatedAt_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 exports.CurrentMasterData = CurrentMasterData_1.default;
 //# sourceMappingURL=index.js.map

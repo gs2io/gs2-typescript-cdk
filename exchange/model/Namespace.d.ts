@@ -10,7 +10,9 @@ export default class Namespace extends CdkResource {
     private readonly description;
     private readonly enableAwaitExchange;
     private readonly enableDirectExchange;
+    /** @deprecated */
     private readonly transactionSetting;
+    private readonly transactionSettingV2;
     private readonly exchangeScript;
     private readonly incrementalExchangeScript;
     private readonly acquireAwaitScript;

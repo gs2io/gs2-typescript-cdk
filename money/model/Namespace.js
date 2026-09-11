@@ -21,10 +21,12 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, priority, shareFree, currency, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         super("Money_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.appleKey = null;
         this.googleKey = null;
         this.enableFakeReceipt = null;
@@ -39,13 +41,14 @@ class Namespace extends model_1.CdkResource {
         this.currency = currency;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.appleKey = (_c = options === null || options === void 0 ? void 0 : options.appleKey) !== null && _c !== void 0 ? _c : null;
-        this.googleKey = (_d = options === null || options === void 0 ? void 0 : options.googleKey) !== null && _d !== void 0 ? _d : null;
-        this.enableFakeReceipt = (_e = options === null || options === void 0 ? void 0 : options.enableFakeReceipt) !== null && _e !== void 0 ? _e : null;
-        this.createWalletScript = (_f = options === null || options === void 0 ? void 0 : options.createWalletScript) !== null && _f !== void 0 ? _f : null;
-        this.depositScript = (_g = options === null || options === void 0 ? void 0 : options.depositScript) !== null && _g !== void 0 ? _g : null;
-        this.withdrawScript = (_h = options === null || options === void 0 ? void 0 : options.withdrawScript) !== null && _h !== void 0 ? _h : null;
-        this.logSetting = (_j = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _j !== void 0 ? _j : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.appleKey = (_d = options === null || options === void 0 ? void 0 : options.appleKey) !== null && _d !== void 0 ? _d : null;
+        this.googleKey = (_e = options === null || options === void 0 ? void 0 : options.googleKey) !== null && _e !== void 0 ? _e : null;
+        this.enableFakeReceipt = (_f = options === null || options === void 0 ? void 0 : options.enableFakeReceipt) !== null && _f !== void 0 ? _f : null;
+        this.createWalletScript = (_g = options === null || options === void 0 ? void 0 : options.createWalletScript) !== null && _g !== void 0 ? _g : null;
+        this.depositScript = (_h = options === null || options === void 0 ? void 0 : options.depositScript) !== null && _h !== void 0 ? _h : null;
+        this.withdrawScript = (_j = options === null || options === void 0 ? void 0 : options.withdrawScript) !== null && _j !== void 0 ? _j : null;
+        this.logSetting = (_k = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _k !== void 0 ? _k : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -55,7 +58,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Money::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -65,6 +68,9 @@ class Namespace extends model_1.CdkResource {
         }
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
+        }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
         }
         if (this.priority != null) {
             properties["Priority"] = this.priority;
@@ -85,16 +91,16 @@ class Namespace extends model_1.CdkResource {
             properties["EnableFakeReceipt"] = this.enableFakeReceipt;
         }
         if (this.createWalletScript != null) {
-            properties["CreateWalletScript"] = (_b = this.createWalletScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["CreateWalletScript"] = (_c = this.createWalletScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.depositScript != null) {
-            properties["DepositScript"] = (_c = this.depositScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["DepositScript"] = (_d = this.depositScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.withdrawScript != null) {
-            properties["WithdrawScript"] = (_d = this.withdrawScript) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["WithdrawScript"] = (_e = this.withdrawScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_e = this.logSetting) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
         }
         return properties;
     }

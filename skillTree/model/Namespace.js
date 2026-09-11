@@ -22,10 +22,12 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         super("SkillTree_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.releaseScript = null;
         this.restrainScript = null;
         this.logSetting = null;
@@ -33,9 +35,10 @@ class Namespace extends model_1.CdkResource {
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.releaseScript = (_c = options === null || options === void 0 ? void 0 : options.releaseScript) !== null && _c !== void 0 ? _c : null;
-        this.restrainScript = (_d = options === null || options === void 0 ? void 0 : options.restrainScript) !== null && _d !== void 0 ? _d : null;
-        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.releaseScript = (_d = options === null || options === void 0 ? void 0 : options.releaseScript) !== null && _d !== void 0 ? _d : null;
+        this.restrainScript = (_e = options === null || options === void 0 ? void 0 : options.restrainScript) !== null && _e !== void 0 ? _e : null;
+        this.logSetting = (_f = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _f !== void 0 ? _f : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -45,7 +48,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::SkillTree::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -56,14 +59,17 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.releaseScript != null) {
-            properties["ReleaseScript"] = (_b = this.releaseScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["ReleaseScript"] = (_c = this.releaseScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.restrainScript != null) {
-            properties["RestrainScript"] = (_c = this.restrainScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["RestrainScript"] = (_d = this.restrainScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["LogSetting"] = (_e = this.logSetting) === null || _e === void 0 ? void 0 : _e.properties();
         }
         return properties;
     }

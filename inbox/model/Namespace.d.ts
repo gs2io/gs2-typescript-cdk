@@ -8,7 +8,9 @@ export default class Namespace extends CdkResource {
     private readonly name;
     private readonly description;
     private readonly isAutomaticDeletingEnabled;
+    /** @deprecated */
     private readonly transactionSetting;
+    private readonly transactionSettingV2;
     private readonly receiveMessageScript;
     private readonly readMessageScript;
     private readonly deleteMessageScript;

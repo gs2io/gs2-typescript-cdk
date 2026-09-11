@@ -21,10 +21,12 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         super("AdReward_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.admob = null;
         this.unityAd = null;
         this.appLovinMaxes = null;
@@ -36,13 +38,14 @@ class Namespace extends model_1.CdkResource {
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.admob = (_c = options === null || options === void 0 ? void 0 : options.admob) !== null && _c !== void 0 ? _c : null;
-        this.unityAd = (_d = options === null || options === void 0 ? void 0 : options.unityAd) !== null && _d !== void 0 ? _d : null;
-        this.appLovinMaxes = (_e = options === null || options === void 0 ? void 0 : options.appLovinMaxes) !== null && _e !== void 0 ? _e : null;
-        this.acquirePointScript = (_f = options === null || options === void 0 ? void 0 : options.acquirePointScript) !== null && _f !== void 0 ? _f : null;
-        this.consumePointScript = (_g = options === null || options === void 0 ? void 0 : options.consumePointScript) !== null && _g !== void 0 ? _g : null;
-        this.changePointNotification = (_h = options === null || options === void 0 ? void 0 : options.changePointNotification) !== null && _h !== void 0 ? _h : null;
-        this.logSetting = (_j = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _j !== void 0 ? _j : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.admob = (_d = options === null || options === void 0 ? void 0 : options.admob) !== null && _d !== void 0 ? _d : null;
+        this.unityAd = (_e = options === null || options === void 0 ? void 0 : options.unityAd) !== null && _e !== void 0 ? _e : null;
+        this.appLovinMaxes = (_f = options === null || options === void 0 ? void 0 : options.appLovinMaxes) !== null && _f !== void 0 ? _f : null;
+        this.acquirePointScript = (_g = options === null || options === void 0 ? void 0 : options.acquirePointScript) !== null && _g !== void 0 ? _g : null;
+        this.consumePointScript = (_h = options === null || options === void 0 ? void 0 : options.consumePointScript) !== null && _h !== void 0 ? _h : null;
+        this.changePointNotification = (_j = options === null || options === void 0 ? void 0 : options.changePointNotification) !== null && _j !== void 0 ? _j : null;
+        this.logSetting = (_k = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _k !== void 0 ? _k : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -52,7 +55,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::AdReward::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -63,26 +66,29 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.admob != null) {
-            properties["Admob"] = (_b = this.admob) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["Admob"] = (_c = this.admob) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.unityAd != null) {
-            properties["UnityAd"] = (_c = this.unityAd) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["UnityAd"] = (_d = this.unityAd) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.appLovinMaxes != null) {
             properties["AppLovinMaxes"] = this.appLovinMaxes.map(v => v.properties());
         }
         if (this.acquirePointScript != null) {
-            properties["AcquirePointScript"] = (_d = this.acquirePointScript) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["AcquirePointScript"] = (_e = this.acquirePointScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.consumePointScript != null) {
-            properties["ConsumePointScript"] = (_e = this.consumePointScript) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["ConsumePointScript"] = (_f = this.consumePointScript) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.changePointNotification != null) {
-            properties["ChangePointNotification"] = (_f = this.changePointNotification) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["ChangePointNotification"] = (_g = this.changePointNotification) === null || _g === void 0 ? void 0 : _g.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_g = this.logSetting) === null || _g === void 0 ? void 0 : _g.properties();
+            properties["LogSetting"] = (_h = this.logSetting) === null || _h === void 0 ? void 0 : _h.properties();
         }
         return properties;
     }

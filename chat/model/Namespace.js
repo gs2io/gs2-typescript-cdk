@@ -22,10 +22,12 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         super("Chat_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.allowCreateRoom = null;
         this.messageLifeTimeDays = null;
         this.postMessageScript = null;
@@ -39,15 +41,16 @@ class Namespace extends model_1.CdkResource {
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.allowCreateRoom = (_c = options === null || options === void 0 ? void 0 : options.allowCreateRoom) !== null && _c !== void 0 ? _c : null;
-        this.messageLifeTimeDays = (_d = options === null || options === void 0 ? void 0 : options.messageLifeTimeDays) !== null && _d !== void 0 ? _d : null;
-        this.postMessageScript = (_e = options === null || options === void 0 ? void 0 : options.postMessageScript) !== null && _e !== void 0 ? _e : null;
-        this.createRoomScript = (_f = options === null || options === void 0 ? void 0 : options.createRoomScript) !== null && _f !== void 0 ? _f : null;
-        this.deleteRoomScript = (_g = options === null || options === void 0 ? void 0 : options.deleteRoomScript) !== null && _g !== void 0 ? _g : null;
-        this.subscribeRoomScript = (_h = options === null || options === void 0 ? void 0 : options.subscribeRoomScript) !== null && _h !== void 0 ? _h : null;
-        this.unsubscribeRoomScript = (_j = options === null || options === void 0 ? void 0 : options.unsubscribeRoomScript) !== null && _j !== void 0 ? _j : null;
-        this.postNotification = (_k = options === null || options === void 0 ? void 0 : options.postNotification) !== null && _k !== void 0 ? _k : null;
-        this.logSetting = (_l = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _l !== void 0 ? _l : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.allowCreateRoom = (_d = options === null || options === void 0 ? void 0 : options.allowCreateRoom) !== null && _d !== void 0 ? _d : null;
+        this.messageLifeTimeDays = (_e = options === null || options === void 0 ? void 0 : options.messageLifeTimeDays) !== null && _e !== void 0 ? _e : null;
+        this.postMessageScript = (_f = options === null || options === void 0 ? void 0 : options.postMessageScript) !== null && _f !== void 0 ? _f : null;
+        this.createRoomScript = (_g = options === null || options === void 0 ? void 0 : options.createRoomScript) !== null && _g !== void 0 ? _g : null;
+        this.deleteRoomScript = (_h = options === null || options === void 0 ? void 0 : options.deleteRoomScript) !== null && _h !== void 0 ? _h : null;
+        this.subscribeRoomScript = (_j = options === null || options === void 0 ? void 0 : options.subscribeRoomScript) !== null && _j !== void 0 ? _j : null;
+        this.unsubscribeRoomScript = (_k = options === null || options === void 0 ? void 0 : options.unsubscribeRoomScript) !== null && _k !== void 0 ? _k : null;
+        this.postNotification = (_l = options === null || options === void 0 ? void 0 : options.postNotification) !== null && _l !== void 0 ? _l : null;
+        this.logSetting = (_m = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _m !== void 0 ? _m : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -57,7 +60,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Chat::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -68,6 +71,9 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.allowCreateRoom != null) {
             properties["AllowCreateRoom"] = this.allowCreateRoom;
         }
@@ -75,25 +81,25 @@ class Namespace extends model_1.CdkResource {
             properties["MessageLifeTimeDays"] = this.messageLifeTimeDays;
         }
         if (this.postMessageScript != null) {
-            properties["PostMessageScript"] = (_b = this.postMessageScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["PostMessageScript"] = (_c = this.postMessageScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.createRoomScript != null) {
-            properties["CreateRoomScript"] = (_c = this.createRoomScript) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["CreateRoomScript"] = (_d = this.createRoomScript) === null || _d === void 0 ? void 0 : _d.properties();
         }
         if (this.deleteRoomScript != null) {
-            properties["DeleteRoomScript"] = (_d = this.deleteRoomScript) === null || _d === void 0 ? void 0 : _d.properties();
+            properties["DeleteRoomScript"] = (_e = this.deleteRoomScript) === null || _e === void 0 ? void 0 : _e.properties();
         }
         if (this.subscribeRoomScript != null) {
-            properties["SubscribeRoomScript"] = (_e = this.subscribeRoomScript) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["SubscribeRoomScript"] = (_f = this.subscribeRoomScript) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.unsubscribeRoomScript != null) {
-            properties["UnsubscribeRoomScript"] = (_f = this.unsubscribeRoomScript) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["UnsubscribeRoomScript"] = (_g = this.unsubscribeRoomScript) === null || _g === void 0 ? void 0 : _g.properties();
         }
         if (this.postNotification != null) {
-            properties["PostNotification"] = (_g = this.postNotification) === null || _g === void 0 ? void 0 : _g.properties();
+            properties["PostNotification"] = (_h = this.postNotification) === null || _h === void 0 ? void 0 : _h.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_h = this.logSetting) === null || _h === void 0 ? void 0 : _h.properties();
+            properties["LogSetting"] = (_j = this.logSetting) === null || _j === void 0 ? void 0 : _j.properties();
         }
         return properties;
     }

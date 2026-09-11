@@ -24,6 +24,8 @@ import StackEntry from "./StackEntry";
 import { StackEntryOptions } from "./options/StackEntryOptions";
 import Variable from "./Variable";
 import { VariableOptions } from "./options/VariableOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import Event from "./Event";
 import { EventOptions } from "./options/EventOptions";
 import { EventEventType } from "./enums/EventEventType";
@@ -58,6 +60,8 @@ export {
     StackEntryOptions,
     Variable,
     VariableOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     Event,
     EventOptions,
     EventEventType,

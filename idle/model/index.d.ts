@@ -13,5 +13,7 @@ import TransactionResult from "./TransactionResult";
 import { TransactionResultOptions } from "./options/TransactionResultOptions";
 import AcquireActionList from "./AcquireActionList";
 import { AcquireActionListOptions } from "./options/AcquireActionListOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, CategoryModel, CategoryModelOptions, CategoryModelRewardResetMode, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, AcquireActionList, AcquireActionListOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, CategoryModel, CategoryModelOptions, CategoryModelRewardResetMode, VerifyActionResult, VerifyActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, AcquireActionResult, AcquireActionResultOptions, TransactionResult, TransactionResultOptions, AcquireActionList, AcquireActionListOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

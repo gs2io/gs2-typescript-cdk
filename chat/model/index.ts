@@ -20,6 +20,8 @@ import { CategoryModelOptions } from "./options/CategoryModelOptions";
 import { CategoryModelRejectAccessTokenPost } from "./enums/CategoryModelRejectAccessTokenPost";
 import NotificationType from "./NotificationType";
 import { NotificationTypeOptions } from "./options/NotificationTypeOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
 
 export {
@@ -30,5 +32,7 @@ export {
     CategoryModelRejectAccessTokenPost,
     NotificationType,
     NotificationTypeOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     CurrentMasterData,
 }

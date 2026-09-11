@@ -27,6 +27,8 @@ import BigInventoryModel from "./BigInventoryModel";
 import { BigInventoryModelOptions } from "./options/BigInventoryModelOptions";
 import BigItemModel from "./BigItemModel";
 import { BigItemModelOptions } from "./options/BigItemModelOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import AcquireCount from "./AcquireCount";
 import { AcquireCountOptions } from "./options/AcquireCountOptions";
 import ConsumeCount from "./ConsumeCount";
@@ -50,6 +52,8 @@ export {
     BigInventoryModelOptions,
     BigItemModel,
     BigItemModelOptions,
+    TransactionSettingV2,
+    TransactionSettingV2Options,
     AcquireCount,
     AcquireCountOptions,
     ConsumeCount,

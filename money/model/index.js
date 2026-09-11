@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WalletDetail = exports.NamespaceCurrency = exports.NamespacePriority = exports.Namespace = void 0;
+exports.TransactionSettingV2 = exports.WalletDetail = exports.NamespaceCurrency = exports.NamespacePriority = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,4 +25,6 @@ const NamespaceCurrency_1 = require("./enums/NamespaceCurrency");
 Object.defineProperty(exports, "NamespaceCurrency", { enumerable: true, get: function () { return NamespaceCurrency_1.NamespaceCurrency; } });
 const WalletDetail_1 = tslib_1.__importDefault(require("./WalletDetail"));
 exports.WalletDetail = WalletDetail_1.default;
+const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 //# sourceMappingURL=index.js.map

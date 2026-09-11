@@ -11,5 +11,7 @@ import Member from "./Member";
 import { MemberOptions } from "./options/MemberOptions";
 import ReceiveMemberRequest from "./ReceiveMemberRequest";
 import { ReceiveMemberRequestOptions } from "./options/ReceiveMemberRequestOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, GuildModel, GuildModelOptions, Inbox, InboxOptions, GuildJoinPolicy, RoleModel, RoleModelOptions, Member, MemberOptions, ReceiveMemberRequest, ReceiveMemberRequestOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, GuildModel, GuildModelOptions, Inbox, InboxOptions, GuildJoinPolicy, RoleModel, RoleModelOptions, Member, MemberOptions, ReceiveMemberRequest, ReceiveMemberRequestOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };

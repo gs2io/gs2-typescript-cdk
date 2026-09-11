@@ -22,18 +22,24 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         super("Enhance_Namespace_" + name);
         this.description = null;
+        /** @deprecated */
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.enhanceScript = null;
         this.logSetting = null;
+        /** @deprecated */
+        this.enableDirectEnhance = null;
         this.stack = stack;
         this.name = name;
         this.description = (_a = options === null || options === void 0 ? void 0 : options.description) !== null && _a !== void 0 ? _a : null;
         this.transactionSetting = (_b = options === null || options === void 0 ? void 0 : options.transactionSetting) !== null && _b !== void 0 ? _b : null;
-        this.enhanceScript = (_c = options === null || options === void 0 ? void 0 : options.enhanceScript) !== null && _c !== void 0 ? _c : null;
-        this.logSetting = (_d = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _d !== void 0 ? _d : null;
+        this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
+        this.enhanceScript = (_d = options === null || options === void 0 ? void 0 : options.enhanceScript) !== null && _d !== void 0 ? _d : null;
+        this.logSetting = (_e = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _e !== void 0 ? _e : null;
+        this.enableDirectEnhance = (_f = options === null || options === void 0 ? void 0 : options.enableDirectEnhance) !== null && _f !== void 0 ? _f : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -43,7 +49,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Enhance::Namespace";
     }
     properties() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -54,11 +60,17 @@ class Namespace extends model_1.CdkResource {
         if (this.transactionSetting != null) {
             properties["TransactionSetting"] = (_a = this.transactionSetting) === null || _a === void 0 ? void 0 : _a.properties();
         }
+        if (this.transactionSettingV2 != null) {
+            properties["TransactionSettingV2"] = (_b = this.transactionSettingV2) === null || _b === void 0 ? void 0 : _b.properties();
+        }
         if (this.enhanceScript != null) {
-            properties["EnhanceScript"] = (_b = this.enhanceScript) === null || _b === void 0 ? void 0 : _b.properties();
+            properties["EnhanceScript"] = (_c = this.enhanceScript) === null || _c === void 0 ? void 0 : _c.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_c = this.logSetting) === null || _c === void 0 ? void 0 : _c.properties();
+            properties["LogSetting"] = (_d = this.logSetting) === null || _d === void 0 ? void 0 : _d.properties();
+        }
+        if (this.enableDirectEnhance != null) {
+            properties["EnableDirectEnhance"] = this.enableDirectEnhance;
         }
         return properties;
     }

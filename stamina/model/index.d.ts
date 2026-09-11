@@ -8,5 +8,7 @@ import RecoverIntervalTable from "./RecoverIntervalTable";
 import { RecoverIntervalTableOptions } from "./options/RecoverIntervalTableOptions";
 import RecoverValueTable from "./RecoverValueTable";
 import { RecoverValueTableOptions } from "./options/RecoverValueTableOptions";
+import TransactionSettingV2 from "./TransactionSettingV2";
+import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, StaminaModel, StaminaModelOptions, MaxStaminaTable, MaxStaminaTableOptions, RecoverIntervalTable, RecoverIntervalTableOptions, RecoverValueTable, RecoverValueTableOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, StaminaModel, StaminaModelOptions, MaxStaminaTable, MaxStaminaTableOptions, RecoverIntervalTable, RecoverIntervalTableOptions, RecoverValueTable, RecoverValueTableOptions, TransactionSettingV2, TransactionSettingV2Options, CurrentMasterData, };
