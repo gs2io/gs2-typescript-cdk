@@ -21,6 +21,7 @@ import AttachSecurityPolicy from "./AttachSecurityPolicy";
 import SecurityPolicy from "./SecurityPolicy";
 
 import UserRef from "../ref/UserRef";
+import { UserDataStoreKeyScheme } from "./enums/UserDataStoreKeyScheme";
 
 import { UserOptions } from "./options/UserOptions";
 

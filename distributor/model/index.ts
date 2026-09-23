@@ -22,6 +22,8 @@ import { BatchRequestPayloadOptions } from "./options/BatchRequestPayloadOptions
 import { BatchRequestPayloadService } from "./enums/BatchRequestPayloadService";
 import BatchResultPayload from "./BatchResultPayload";
 import { BatchResultPayloadOptions } from "./options/BatchResultPayloadOptions";
+import UserDataEntry from "./UserDataEntry";
+import { UserDataEntryOptions } from "./options/UserDataEntryOptions";
 import AcquireActionResult from "./AcquireActionResult";
 import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
 import ConsumeActionResult from "./ConsumeActionResult";
@@ -46,6 +48,8 @@ export {
     BatchRequestPayloadService,
     BatchResultPayload,
     BatchResultPayloadOptions,
+    UserDataEntry,
+    UserDataEntryOptions,
     AcquireActionResult,
     AcquireActionResultOptions,
     ConsumeActionResult,
