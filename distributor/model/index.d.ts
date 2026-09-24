@@ -7,8 +7,6 @@ import { BatchRequestPayloadOptions } from "./options/BatchRequestPayloadOptions
 import { BatchRequestPayloadService } from "./enums/BatchRequestPayloadService";
 import BatchResultPayload from "./BatchResultPayload";
 import { BatchResultPayloadOptions } from "./options/BatchResultPayloadOptions";
-import UserDataEntry from "./UserDataEntry";
-import { UserDataEntryOptions } from "./options/UserDataEntryOptions";
 import AcquireActionResult from "./AcquireActionResult";
 import { AcquireActionResultOptions } from "./options/AcquireActionResultOptions";
 import ConsumeActionResult from "./ConsumeActionResult";
@@ -22,4 +20,4 @@ import { TransactionSettingV2Options } from "./options/TransactionSettingV2Optio
 import MobileNotificationMessage from "./MobileNotificationMessage";
 import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import CurrentMasterData from "./CurrentMasterData";
-export { Namespace, NamespaceOptions, DistributorModel, DistributorModelOptions, BatchRequestPayload, BatchRequestPayloadOptions, BatchRequestPayloadService, BatchResultPayload, BatchResultPayloadOptions, UserDataEntry, UserDataEntryOptions, AcquireActionResult, AcquireActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, VerifyActionResult, VerifyActionResultOptions, DistributeResource, DistributeResourceOptions, TransactionSettingV2, TransactionSettingV2Options, MobileNotificationMessage, MobileNotificationMessageOptions, CurrentMasterData, };
+export { Namespace, NamespaceOptions, DistributorModel, DistributorModelOptions, BatchRequestPayload, BatchRequestPayloadOptions, BatchRequestPayloadService, BatchResultPayload, BatchResultPayloadOptions, AcquireActionResult, AcquireActionResultOptions, ConsumeActionResult, ConsumeActionResultOptions, VerifyActionResult, VerifyActionResultOptions, DistributeResource, DistributeResourceOptions, TransactionSettingV2, TransactionSettingV2Options, MobileNotificationMessage, MobileNotificationMessageOptions, CurrentMasterData, };
