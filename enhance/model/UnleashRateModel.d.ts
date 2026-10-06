@@ -7,6 +7,7 @@ export default class UnleashRateModel {
     private readonly gradeEntries;
     private readonly description;
     private readonly metadata;
+    private readonly groupKeyHierarchy;
     constructor(name: string, targetInventoryModelId: string, gradeModelId: string, gradeEntries: UnleashRateEntryModel[], options?: UnleashRateModelOptions | null);
     properties(): {
         [name: string]: any;

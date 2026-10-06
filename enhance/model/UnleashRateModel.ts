@@ -13,6 +13,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import UnleashIndividualMaterialSetting from "./UnleashIndividualMaterialSetting";
+import UnleashQuantityMaterialSetting from "./UnleashQuantityMaterialSetting";
+import UnleashMaterial from "./UnleashMaterial";
+import UnleashRecipe from "./UnleashRecipe";
 import UnleashRateEntryModel from "./UnleashRateEntryModel";
 import { UnleashRateModelOptions } from "./options/UnleashRateModelOptions";
 
@@ -23,6 +27,7 @@ export default class UnleashRateModel {
     private readonly gradeEntries: UnleashRateEntryModel[];
     private readonly description: string|null = null;
     private readonly metadata: string|null = null;
+    private readonly groupKeyHierarchy: string[]|null = null;
 
     public constructor(
         name: string,
@@ -37,6 +42,7 @@ export default class UnleashRateModel {
         this.gradeEntries = gradeEntries;
         this.description = options?.description ?? null;
         this.metadata = options?.metadata ?? null;
+        this.groupKeyHierarchy = options?.groupKeyHierarchy ?? null;
     }
 
     public properties(
@@ -57,6 +63,9 @@ export default class UnleashRateModel {
         }
         if (this.gradeModelId != null) {
             properties["gradeModelId"] = this.gradeModelId;
+        }
+        if (this.groupKeyHierarchy != null) {
+            properties["groupKeyHierarchy"] = this.groupKeyHierarchy;
         }
         if (this.gradeEntries != null) {
             properties["gradeEntries"] = this.gradeEntries.map(v => v.properties(

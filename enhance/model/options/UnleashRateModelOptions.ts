@@ -13,10 +13,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import UnleashIndividualMaterialSetting from "../UnleashIndividualMaterialSetting";
+import UnleashQuantityMaterialSetting from "../UnleashQuantityMaterialSetting";
+import UnleashMaterial from "../UnleashMaterial";
+import UnleashRecipe from "../UnleashRecipe";
 import UnleashRateEntryModel from "../UnleashRateEntryModel";
 
 export interface UnleashRateModelOptions {
     description?: string|null;
     metadata?: string|null;
+    groupKeyHierarchy?: string[]|null;
 }
 

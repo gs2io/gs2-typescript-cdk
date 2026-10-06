@@ -13,7 +13,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import UnleashIndividualMaterialSetting from "../UnleashIndividualMaterialSetting";
+import UnleashQuantityMaterialSetting from "../UnleashQuantityMaterialSetting";
+import UnleashMaterial from "../UnleashMaterial";
+import UnleashRecipe from "../UnleashRecipe";
+import { UnleashRateEntryModelType } from "../enums/UnleashRateEntryModelType";
 
 export interface UnleashRateEntryModelOptions {
+    needCount?: number|null;
+    recipes?: UnleashRecipe[]|null;
 }
 

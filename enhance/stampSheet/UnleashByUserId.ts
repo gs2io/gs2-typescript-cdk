@@ -15,6 +15,7 @@
  */
 
 import {AcquireAction, ConsumeAction, VerifyAction} from "../../core/model";
+import UnleashMaterialSelection from "../model/UnleashMaterialSelection";
 import { Config } from "../../core/model";
 
 export default class UnleashByUserId extends AcquireAction {
@@ -22,7 +23,9 @@ export default class UnleashByUserId extends AcquireAction {
     private readonly rateName: string;
     private readonly userId: string;
     private readonly targetItemSetId: string;
-    private readonly materials: string[];
+    private readonly materials: string[]|null = null;
+    private readonly recipeName: string|null = null;
+    private readonly recipeMaterials: UnleashMaterialSelection[]|null = null;
     private readonly config: Config[]|null = null;
     private readonly timeOffsetToken: string|null = null;
 
@@ -31,7 +34,9 @@ export default class UnleashByUserId extends AcquireAction {
         namespaceName: string,
         rateName: string,
         targetItemSetId: string,
-        materials: string[],
+        materials: string[]|null = null,
+        recipeName: string|null = null,
+        recipeMaterials: UnleashMaterialSelection[]|null = null,
         config: Config[]|null = null,
         timeOffsetToken: string|null = null,
         userId: string = "#{userId}",
@@ -41,7 +46,9 @@ export default class UnleashByUserId extends AcquireAction {
         this.namespaceName = namespaceName;
         this.rateName = rateName;
         this.targetItemSetId = targetItemSetId;
-        this.materials = materials;
+        this.materials = materials ?? null;
+        this.recipeName = recipeName ?? null;
+        this.recipeMaterials = recipeMaterials ?? null;
         this.config = config ?? null;
         this.timeOffsetToken = timeOffsetToken ?? null;
         this.userId = userId;
@@ -65,6 +72,13 @@ export default class UnleashByUserId extends AcquireAction {
         }
         if (this.materials != null) {
             properties["materials"] = this.materials;
+        }
+        if (this.recipeName != null) {
+            properties["recipeName"] = this.recipeName;
+        }
+        if (this.recipeMaterials != null) {
+            properties["recipeMaterials"] = this.recipeMaterials.map(v => v.properties(
+                ));
         }
         if (this.config != null) {
             properties["config"] = this.config.map(v => v.properties(

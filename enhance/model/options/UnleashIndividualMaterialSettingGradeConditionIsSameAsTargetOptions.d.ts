@@ -1,0 +1,2 @@
+export interface UnleashIndividualMaterialSettingGradeConditionIsSameAsTargetOptions {
+}

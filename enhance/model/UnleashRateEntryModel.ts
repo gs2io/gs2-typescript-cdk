@@ -13,19 +13,58 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+import UnleashIndividualMaterialSetting from "./UnleashIndividualMaterialSetting";
+import UnleashQuantityMaterialSetting from "./UnleashQuantityMaterialSetting";
+import UnleashMaterial from "./UnleashMaterial";
+import UnleashRecipe from "./UnleashRecipe";
 import { UnleashRateEntryModelOptions } from "./options/UnleashRateEntryModelOptions";
+import { UnleashRateEntryModelTypeIsSimpleOptions } from "./options/UnleashRateEntryModelTypeIsSimpleOptions";
+import { UnleashRateEntryModelTypeIsRecipeOptions } from "./options/UnleashRateEntryModelTypeIsRecipeOptions";
+import { UnleashRateEntryModelType } from "./enums/UnleashRateEntryModelType";
 
 export default class UnleashRateEntryModel {
     private readonly gradeValue: number;
-    private readonly needCount: number;
+    private readonly type: UnleashRateEntryModelType;
+    private readonly needCount: number|null = null;
+    private readonly recipes: UnleashRecipe[]|null = null;
 
     public constructor(
         gradeValue: number,
-        needCount: number,
+        type: UnleashRateEntryModelType,
         options: UnleashRateEntryModelOptions|null = null,
     ) {
         this.gradeValue = gradeValue;
-        this.needCount = needCount;
+        this.type = type;
+        this.needCount = options?.needCount ?? null;
+        this.recipes = options?.recipes ?? null;
+    }
+
+    public static typeIsSimple(
+        gradeValue: number,
+        needCount: number,
+        options: UnleashRateEntryModelTypeIsSimpleOptions|null = null,
+    ): UnleashRateEntryModel {
+        return new UnleashRateEntryModel(
+            gradeValue,
+            UnleashRateEntryModelType.SIMPLE,
+            {
+                needCount: needCount,
+            },
+        );
+    }
+
+    public static typeIsRecipe(
+        gradeValue: number,
+        recipes: UnleashRecipe[],
+        options: UnleashRateEntryModelTypeIsRecipeOptions|null = null,
+    ): UnleashRateEntryModel {
+        return new UnleashRateEntryModel(
+            gradeValue,
+            UnleashRateEntryModelType.RECIPE,
+            {
+                recipes: recipes,
+            },
+        );
     }
 
     public properties(
@@ -35,8 +74,15 @@ export default class UnleashRateEntryModel {
         if (this.gradeValue != null) {
             properties["gradeValue"] = this.gradeValue;
         }
+        if (this.type != null) {
+            properties["type"] = this.type;
+        }
         if (this.needCount != null) {
             properties["needCount"] = this.needCount;
+        }
+        if (this.recipes != null) {
+            properties["recipes"] = this.recipes.map(v => v.properties(
+                ));
         }
 
         return properties;
