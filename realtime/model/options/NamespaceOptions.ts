@@ -15,6 +15,8 @@
  */
 import TransactionSetting from "../../../core/model/TransactionSetting";
 import TransactionSettingV2 from "../TransactionSettingV2";
+import SyncSetting from "../SyncSetting";
+import StateMachineSetting from "../StateMachineSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
 import { NamespaceServerType } from "../enums/NamespaceServerType";
@@ -25,9 +27,8 @@ export interface NamespaceOptions {
     /** @deprecated */
     transactionSetting?: TransactionSetting|null;
     transactionSettingV2?: TransactionSettingV2|null;
-    objectCatalog?: string|null;
-    stateMachineNamespaceId?: string|null;
-    stateMachineVersion?: number|null;
+    syncSetting?: SyncSetting|null;
+    stateMachineSetting?: StateMachineSetting|null;
     createNotification?: NotificationSetting|null;
     logSetting?: LogSetting|null;
 }
