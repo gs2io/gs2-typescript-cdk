@@ -36,6 +36,9 @@ export default class Namespace extends CdkResource {
     /** @deprecated */
     private readonly transactionSetting: TransactionSetting|null = null;
     private readonly transactionSettingV2: TransactionSettingV2|null = null;
+    private readonly objectCatalog: string|null = null;
+    private readonly stateMachineNamespaceId: string|null = null;
+    private readonly stateMachineVersion: number|null = null;
     private readonly createNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
@@ -57,6 +60,9 @@ export default class Namespace extends CdkResource {
         this.description = options?.description ?? null;
         this.transactionSetting = options?.transactionSetting ?? null;
         this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
+        this.objectCatalog = options?.objectCatalog ?? null;
+        this.stateMachineNamespaceId = options?.stateMachineNamespaceId ?? null;
+        this.stateMachineVersion = options?.stateMachineVersion ?? null;
         this.createNotification = options?.createNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
@@ -98,6 +104,15 @@ export default class Namespace extends CdkResource {
         }
         if (this.serverSpec != null) {
             properties["ServerSpec"] = this.serverSpec;
+        }
+        if (this.objectCatalog != null) {
+            properties["ObjectCatalog"] = this.objectCatalog;
+        }
+        if (this.stateMachineNamespaceId != null) {
+            properties["StateMachineNamespaceId"] = this.stateMachineNamespaceId;
+        }
+        if (this.stateMachineVersion != null) {
+            properties["StateMachineVersion"] = this.stateMachineVersion;
         }
         if (this.createNotification != null) {
             properties["CreateNotification"] = this.createNotification?.properties(

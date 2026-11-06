@@ -18,5 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NamespaceServerType = void 0;
 exports.NamespaceServerType = {
     RELAY: "relay",
+    SYNC: "sync",
+    STATE_MACHINE: "stateMachine",
 };
 //# sourceMappingURL=NamespaceServerType.js.map

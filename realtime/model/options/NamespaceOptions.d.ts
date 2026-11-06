@@ -7,6 +7,9 @@ export interface NamespaceOptions {
     /** @deprecated */
     transactionSetting?: TransactionSetting | null;
     transactionSettingV2?: TransactionSettingV2 | null;
+    objectCatalog?: string | null;
+    stateMachineNamespaceId?: string | null;
+    stateMachineVersion?: number | null;
     createNotification?: NotificationSetting | null;
     logSetting?: LogSetting | null;
 }

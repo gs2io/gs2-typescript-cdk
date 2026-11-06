@@ -18,5 +18,7 @@
 
 export const NamespaceServerType = {
     RELAY: "relay",
+    SYNC: "sync",
+    STATE_MACHINE: "stateMachine",
 } as const;
 export type NamespaceServerType = typeof NamespaceServerType[keyof typeof NamespaceServerType];
