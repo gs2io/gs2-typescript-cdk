@@ -32,6 +32,8 @@ import PurchaseCount from "./PurchaseCount";
 import { PurchaseCountOptions } from "./options/PurchaseCountOptions";
 import RandomDisplayItemModel from "./RandomDisplayItemModel";
 import { RandomDisplayItemModelOptions } from "./options/RandomDisplayItemModelOptions";
+import Bonus from "./Bonus";
+import { BonusOptions } from "./options/BonusOptions";
 import VerifyActionResult from "./VerifyActionResult";
 import { VerifyActionResultOptions } from "./options/VerifyActionResultOptions";
 import ConsumeActionResult from "./ConsumeActionResult";
@@ -64,6 +66,8 @@ export {
     PurchaseCountOptions,
     RandomDisplayItemModel,
     RandomDisplayItemModelOptions,
+    Bonus,
+    BonusOptions,
     VerifyActionResult,
     VerifyActionResultOptions,
     ConsumeActionResult,

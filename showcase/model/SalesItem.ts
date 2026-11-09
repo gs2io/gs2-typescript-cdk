@@ -16,6 +16,7 @@
 import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
+import Bonus from "./Bonus";
 import { SalesItemOptions } from "./options/SalesItemOptions";
 
 export default class SalesItem {
@@ -24,6 +25,7 @@ export default class SalesItem {
     private readonly metadata: string|null = null;
     private readonly verifyActions: VerifyAction[]|null = null;
     private readonly consumeActions: ConsumeAction[]|null = null;
+    private readonly bonuses: Bonus[]|null = null;
 
     public constructor(
         name: string,
@@ -35,6 +37,7 @@ export default class SalesItem {
         this.metadata = options?.metadata ?? null;
         this.verifyActions = options?.verifyActions ?? null;
         this.consumeActions = options?.consumeActions ?? null;
+        this.bonuses = options?.bonuses ?? null;
     }
 
     public properties(
@@ -57,6 +60,10 @@ export default class SalesItem {
         }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties(
+                ));
+        }
+        if (this.bonuses != null) {
+            properties["bonuses"] = this.bonuses.map(v => v.properties(
                 ));
         }
 

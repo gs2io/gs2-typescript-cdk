@@ -6,6 +6,7 @@ export default class SalesItem {
     private readonly metadata;
     private readonly verifyActions;
     private readonly consumeActions;
+    private readonly bonuses;
     constructor(name: string, acquireActions: AcquireAction[], options?: SalesItemOptions | null);
     properties(): {
         [name: string]: any;

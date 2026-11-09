@@ -2,15 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class SalesItem {
     constructor(name, acquireActions, options = null) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         this.metadata = null;
         this.verifyActions = null;
         this.consumeActions = null;
+        this.bonuses = null;
         this.name = name;
         this.acquireActions = acquireActions;
         this.metadata = (_a = options === null || options === void 0 ? void 0 : options.metadata) !== null && _a !== void 0 ? _a : null;
         this.verifyActions = (_b = options === null || options === void 0 ? void 0 : options.verifyActions) !== null && _b !== void 0 ? _b : null;
         this.consumeActions = (_c = options === null || options === void 0 ? void 0 : options.consumeActions) !== null && _c !== void 0 ? _c : null;
+        this.bonuses = (_d = options === null || options === void 0 ? void 0 : options.bonuses) !== null && _d !== void 0 ? _d : null;
     }
     properties() {
         let properties = {};
@@ -28,6 +30,9 @@ class SalesItem {
         }
         if (this.acquireActions != null) {
             properties["acquireActions"] = this.acquireActions.map(v => v.properties());
+        }
+        if (this.bonuses != null) {
+            properties["bonuses"] = this.bonuses.map(v => v.properties());
         }
         return properties;
     }

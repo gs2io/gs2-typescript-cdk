@@ -16,6 +16,7 @@
 import { VerifyAction } from "../../core/model";
 import { ConsumeAction } from "../../core/model";
 import { AcquireAction } from "../../core/model";
+import Bonus from "./Bonus";
 import SalesItem from "./SalesItem";
 import { SalesItemGroupOptions } from "./options/SalesItemGroupOptions";
 

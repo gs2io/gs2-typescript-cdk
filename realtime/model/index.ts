@@ -18,7 +18,16 @@
 import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import { NamespaceServerType } from "./enums/NamespaceServerType";
+import { NamespaceServerTypeIsRelayOptions } from "./options/NamespaceServerTypeIsRelayOptions"
+import { NamespaceServerTypeIsSyncOptions } from "./options/NamespaceServerTypeIsSyncOptions"
+import { NamespaceServerTypeIsStateMachineOptions } from "./options/NamespaceServerTypeIsStateMachineOptions"
 import { NamespaceServerSpec } from "./enums/NamespaceServerSpec";
+import SyncSetting from "./SyncSetting";
+import { SyncSettingOptions } from "./options/SyncSettingOptions";
+import StateMachineSetting from "./StateMachineSetting";
+import { StateMachineSettingOptions } from "./options/StateMachineSettingOptions";
+import MobileNotificationMessage from "./MobileNotificationMessage";
+import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 
@@ -26,7 +35,16 @@ export {
     Namespace,
     NamespaceOptions,
     NamespaceServerType,
+    NamespaceServerTypeIsRelayOptions,
+    NamespaceServerTypeIsSyncOptions,
+    NamespaceServerTypeIsStateMachineOptions,
     NamespaceServerSpec,
+    SyncSetting,
+    SyncSettingOptions,
+    StateMachineSetting,
+    StateMachineSettingOptions,
+    MobileNotificationMessage,
+    MobileNotificationMessageOptions,
     TransactionSettingV2,
     TransactionSettingV2Options,
 }

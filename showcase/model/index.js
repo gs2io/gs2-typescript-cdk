@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TransactionSettingV2 = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.RandomDisplayItemModel = exports.PurchaseCount = exports.RandomShowcase = exports.DisplayItemType = exports.DisplayItem = exports.Showcase = exports.SalesItemGroup = exports.SalesItem = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.TransactionResult = exports.AcquireActionResult = exports.ConsumeActionResult = exports.VerifyActionResult = exports.Bonus = exports.RandomDisplayItemModel = exports.PurchaseCount = exports.RandomShowcase = exports.DisplayItemType = exports.DisplayItem = exports.Showcase = exports.SalesItemGroup = exports.SalesItem = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,8 @@ const PurchaseCount_1 = tslib_1.__importDefault(require("./PurchaseCount"));
 exports.PurchaseCount = PurchaseCount_1.default;
 const RandomDisplayItemModel_1 = tslib_1.__importDefault(require("./RandomDisplayItemModel"));
 exports.RandomDisplayItemModel = RandomDisplayItemModel_1.default;
+const Bonus_1 = tslib_1.__importDefault(require("./Bonus"));
+exports.Bonus = Bonus_1.default;
 const VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
 exports.VerifyActionResult = VerifyActionResult_1.default;
 const ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));

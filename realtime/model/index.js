@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.NamespaceServerSpec = exports.NamespaceServerType = exports.Namespace = void 0;
+exports.TransactionSettingV2 = exports.MobileNotificationMessage = exports.StateMachineSetting = exports.SyncSetting = exports.NamespaceServerSpec = exports.NamespaceServerType = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,12 @@ const NamespaceServerType_1 = require("./enums/NamespaceServerType");
 Object.defineProperty(exports, "NamespaceServerType", { enumerable: true, get: function () { return NamespaceServerType_1.NamespaceServerType; } });
 const NamespaceServerSpec_1 = require("./enums/NamespaceServerSpec");
 Object.defineProperty(exports, "NamespaceServerSpec", { enumerable: true, get: function () { return NamespaceServerSpec_1.NamespaceServerSpec; } });
+const SyncSetting_1 = tslib_1.__importDefault(require("./SyncSetting"));
+exports.SyncSetting = SyncSetting_1.default;
+const StateMachineSetting_1 = tslib_1.__importDefault(require("./StateMachineSetting"));
+exports.StateMachineSetting = StateMachineSetting_1.default;
+const MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
 exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 //# sourceMappingURL=index.js.map
