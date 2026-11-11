@@ -2,6 +2,7 @@ import TransactionSetting from "../../../core/model/TransactionSetting";
 import TransactionSettingV2 from "../TransactionSettingV2";
 import SyncSetting from "../SyncSetting";
 import StateMachineSetting from "../StateMachineSetting";
+import ParticipantSetting from "../ParticipantSetting";
 import NotificationSetting from "../../../core/model/NotificationSetting";
 import LogSetting from "../../../core/model/LogSetting";
 export interface NamespaceOptions {
@@ -11,6 +12,7 @@ export interface NamespaceOptions {
     transactionSettingV2?: TransactionSettingV2 | null;
     syncSetting?: SyncSetting | null;
     stateMachineSetting?: StateMachineSetting | null;
+    participantSetting?: ParticipantSetting | null;
     createNotification?: NotificationSetting | null;
     logSetting?: LogSetting | null;
 }

@@ -21,7 +21,7 @@ const func_1 = require("../../core/func");
 const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, serverType, serverSpec, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         super("Realtime_Namespace_" + name);
         this.description = null;
         /** @deprecated */
@@ -29,6 +29,7 @@ class Namespace extends model_1.CdkResource {
         this.transactionSettingV2 = null;
         this.syncSetting = null;
         this.stateMachineSetting = null;
+        this.participantSetting = null;
         this.createNotification = null;
         this.logSetting = null;
         this.stack = stack;
@@ -40,8 +41,9 @@ class Namespace extends model_1.CdkResource {
         this.transactionSettingV2 = (_c = options === null || options === void 0 ? void 0 : options.transactionSettingV2) !== null && _c !== void 0 ? _c : null;
         this.syncSetting = (_d = options === null || options === void 0 ? void 0 : options.syncSetting) !== null && _d !== void 0 ? _d : null;
         this.stateMachineSetting = (_e = options === null || options === void 0 ? void 0 : options.stateMachineSetting) !== null && _e !== void 0 ? _e : null;
-        this.createNotification = (_f = options === null || options === void 0 ? void 0 : options.createNotification) !== null && _f !== void 0 ? _f : null;
-        this.logSetting = (_g = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _g !== void 0 ? _g : null;
+        this.participantSetting = (_f = options === null || options === void 0 ? void 0 : options.participantSetting) !== null && _f !== void 0 ? _f : null;
+        this.createNotification = (_g = options === null || options === void 0 ? void 0 : options.createNotification) !== null && _g !== void 0 ? _g : null;
+        this.logSetting = (_h = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _h !== void 0 ? _h : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -51,7 +53,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Realtime::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -77,11 +79,14 @@ class Namespace extends model_1.CdkResource {
         if (this.stateMachineSetting != null) {
             properties["StateMachineSetting"] = (_d = this.stateMachineSetting) === null || _d === void 0 ? void 0 : _d.properties();
         }
+        if (this.participantSetting != null) {
+            properties["ParticipantSetting"] = (_e = this.participantSetting) === null || _e === void 0 ? void 0 : _e.properties();
+        }
         if (this.createNotification != null) {
-            properties["CreateNotification"] = (_e = this.createNotification) === null || _e === void 0 ? void 0 : _e.properties();
+            properties["CreateNotification"] = (_f = this.createNotification) === null || _f === void 0 ? void 0 : _f.properties();
         }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_f = this.logSetting) === null || _f === void 0 ? void 0 : _f.properties();
+            properties["LogSetting"] = (_g = this.logSetting) === null || _g === void 0 ? void 0 : _g.properties();
         }
         return properties;
     }

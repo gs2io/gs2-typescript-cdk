@@ -20,6 +20,7 @@ import TransactionSetting from "../../core/model/TransactionSetting";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import SyncSetting from "./SyncSetting";
 import StateMachineSetting from "./StateMachineSetting";
+import ParticipantSetting from "./ParticipantSetting";
 import NotificationSetting from "../../core/model/NotificationSetting";
 import LogSetting from "../../core/model/LogSetting";
 
@@ -40,6 +41,7 @@ export default class Namespace extends CdkResource {
     private readonly transactionSettingV2: TransactionSettingV2|null = null;
     private readonly syncSetting: SyncSetting|null = null;
     private readonly stateMachineSetting: StateMachineSetting|null = null;
+    private readonly participantSetting: ParticipantSetting|null = null;
     private readonly createNotification: NotificationSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
@@ -63,6 +65,7 @@ export default class Namespace extends CdkResource {
         this.transactionSettingV2 = options?.transactionSettingV2 ?? null;
         this.syncSetting = options?.syncSetting ?? null;
         this.stateMachineSetting = options?.stateMachineSetting ?? null;
+        this.participantSetting = options?.participantSetting ?? null;
         this.createNotification = options?.createNotification ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
@@ -111,6 +114,10 @@ export default class Namespace extends CdkResource {
         }
         if (this.stateMachineSetting != null) {
             properties["StateMachineSetting"] = this.stateMachineSetting?.properties(
+            );
+        }
+        if (this.participantSetting != null) {
+            properties["ParticipantSetting"] = this.participantSetting?.properties(
             );
         }
         if (this.createNotification != null) {

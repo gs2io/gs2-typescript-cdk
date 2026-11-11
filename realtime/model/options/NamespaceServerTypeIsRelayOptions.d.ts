@@ -1,6 +1,7 @@
 import { TransactionSetting } from "../../../core/model";
 import TransactionSettingV2 from "../TransactionSettingV2";
 import SyncSetting from "../SyncSetting";
+import ParticipantSetting from "../ParticipantSetting";
 import { NotificationSetting } from "../../../core/model";
 import { LogSetting } from "../../../core/model";
 export interface NamespaceServerTypeIsRelayOptions {
@@ -8,6 +9,7 @@ export interface NamespaceServerTypeIsRelayOptions {
     transactionSetting?: TransactionSetting | null;
     transactionSettingV2?: TransactionSettingV2 | null;
     syncSetting?: SyncSetting | null;
+    participantSetting?: ParticipantSetting | null;
     createNotification?: NotificationSetting | null;
     logSetting?: LogSetting | null;
     revision?: number | null;
