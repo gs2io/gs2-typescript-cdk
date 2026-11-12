@@ -25,6 +25,10 @@ import PlatformUser from "./PlatformUser";
 import { PlatformUserOptions } from "./options/PlatformUserOptions";
 import BanStatus from "./BanStatus";
 import { BanStatusOptions } from "./options/BanStatusOptions";
+import AccountDeletionSetting from "./AccountDeletionSetting";
+import { AccountDeletionSettingOptions } from "./options/AccountDeletionSettingOptions";
+import { AccountDeletionSettingLoginDuringGracePeriod } from "./enums/AccountDeletionSettingLoginDuringGracePeriod";
+import { AccountDeletionSettingCleanUserDataScope } from "./enums/AccountDeletionSettingCleanUserDataScope";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
 import CurrentMasterData from "./CurrentMasterData";
@@ -42,6 +46,10 @@ export {
     PlatformUserOptions,
     BanStatus,
     BanStatusOptions,
+    AccountDeletionSetting,
+    AccountDeletionSettingOptions,
+    AccountDeletionSettingLoginDuringGracePeriod,
+    AccountDeletionSettingCleanUserDataScope,
     TransactionSettingV2,
     TransactionSettingV2Options,
     CurrentMasterData,

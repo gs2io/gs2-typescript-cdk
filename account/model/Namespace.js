@@ -22,7 +22,7 @@ const NamespaceRef_1 = tslib_1.__importDefault(require("../ref/NamespaceRef"));
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));
 class Namespace extends model_1.CdkResource {
     constructor(stack, name, options = null) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         super("Account_Namespace_" + name);
         this.description = null;
         /** @deprecated */
@@ -36,6 +36,10 @@ class Namespace extends model_1.CdkResource {
         this.doTakeOverScript = null;
         this.banScript = null;
         this.unBanScript = null;
+        this.accountDeletionSetting = null;
+        this.requestDeletionScript = null;
+        this.cancelDeletionScript = null;
+        this.executeDeletionScript = null;
         this.logSetting = null;
         this.stack = stack;
         this.name = name;
@@ -50,7 +54,11 @@ class Namespace extends model_1.CdkResource {
         this.doTakeOverScript = (_j = options === null || options === void 0 ? void 0 : options.doTakeOverScript) !== null && _j !== void 0 ? _j : null;
         this.banScript = (_k = options === null || options === void 0 ? void 0 : options.banScript) !== null && _k !== void 0 ? _k : null;
         this.unBanScript = (_l = options === null || options === void 0 ? void 0 : options.unBanScript) !== null && _l !== void 0 ? _l : null;
-        this.logSetting = (_m = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _m !== void 0 ? _m : null;
+        this.accountDeletionSetting = (_m = options === null || options === void 0 ? void 0 : options.accountDeletionSetting) !== null && _m !== void 0 ? _m : null;
+        this.requestDeletionScript = (_o = options === null || options === void 0 ? void 0 : options.requestDeletionScript) !== null && _o !== void 0 ? _o : null;
+        this.cancelDeletionScript = (_p = options === null || options === void 0 ? void 0 : options.cancelDeletionScript) !== null && _p !== void 0 ? _p : null;
+        this.executeDeletionScript = (_q = options === null || options === void 0 ? void 0 : options.executeDeletionScript) !== null && _q !== void 0 ? _q : null;
+        this.logSetting = (_r = options === null || options === void 0 ? void 0 : options.logSetting) !== null && _r !== void 0 ? _r : null;
         stack.addResource(this);
     }
     alternateKeys() {
@@ -60,7 +68,7 @@ class Namespace extends model_1.CdkResource {
         return "GS2::Account::Namespace";
     }
     properties() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         let properties = {};
         if (this.name != null) {
             properties["Name"] = this.name;
@@ -98,8 +106,20 @@ class Namespace extends model_1.CdkResource {
         if (this.unBanScript != null) {
             properties["UnBanScript"] = (_h = this.unBanScript) === null || _h === void 0 ? void 0 : _h.properties();
         }
+        if (this.accountDeletionSetting != null) {
+            properties["AccountDeletionSetting"] = (_j = this.accountDeletionSetting) === null || _j === void 0 ? void 0 : _j.properties();
+        }
+        if (this.requestDeletionScript != null) {
+            properties["RequestDeletionScript"] = (_k = this.requestDeletionScript) === null || _k === void 0 ? void 0 : _k.properties();
+        }
+        if (this.cancelDeletionScript != null) {
+            properties["CancelDeletionScript"] = (_l = this.cancelDeletionScript) === null || _l === void 0 ? void 0 : _l.properties();
+        }
+        if (this.executeDeletionScript != null) {
+            properties["ExecuteDeletionScript"] = (_m = this.executeDeletionScript) === null || _m === void 0 ? void 0 : _m.properties();
+        }
         if (this.logSetting != null) {
-            properties["LogSetting"] = (_j = this.logSetting) === null || _j === void 0 ? void 0 : _j.properties();
+            properties["LogSetting"] = (_o = this.logSetting) === null || _o === void 0 ? void 0 : _o.properties();
         }
         return properties;
     }

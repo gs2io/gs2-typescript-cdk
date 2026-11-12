@@ -18,6 +18,10 @@ export default class Namespace extends CdkResource {
     private readonly doTakeOverScript;
     private readonly banScript;
     private readonly unBanScript;
+    private readonly accountDeletionSetting;
+    private readonly requestDeletionScript;
+    private readonly cancelDeletionScript;
+    private readonly executeDeletionScript;
     private readonly logSetting;
     constructor(stack: Stack, name: string, options?: NamespaceOptions | null);
     alternateKeys(): string;

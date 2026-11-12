@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TransactionSettingV2 = exports.BanStatus = exports.PlatformUser = exports.ScopeValue = exports.OpenIdConnectSetting = exports.TakeOverTypeModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.AccountDeletionSettingCleanUserDataScope = exports.AccountDeletionSettingLoginDuringGracePeriod = exports.AccountDeletionSetting = exports.BanStatus = exports.PlatformUser = exports.ScopeValue = exports.OpenIdConnectSetting = exports.TakeOverTypeModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,12 @@ const PlatformUser_1 = tslib_1.__importDefault(require("./PlatformUser"));
 exports.PlatformUser = PlatformUser_1.default;
 const BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
 exports.BanStatus = BanStatus_1.default;
+const AccountDeletionSetting_1 = tslib_1.__importDefault(require("./AccountDeletionSetting"));
+exports.AccountDeletionSetting = AccountDeletionSetting_1.default;
+const AccountDeletionSettingLoginDuringGracePeriod_1 = require("./enums/AccountDeletionSettingLoginDuringGracePeriod");
+Object.defineProperty(exports, "AccountDeletionSettingLoginDuringGracePeriod", { enumerable: true, get: function () { return AccountDeletionSettingLoginDuringGracePeriod_1.AccountDeletionSettingLoginDuringGracePeriod; } });
+const AccountDeletionSettingCleanUserDataScope_1 = require("./enums/AccountDeletionSettingCleanUserDataScope");
+Object.defineProperty(exports, "AccountDeletionSettingCleanUserDataScope", { enumerable: true, get: function () { return AccountDeletionSettingCleanUserDataScope_1.AccountDeletionSettingCleanUserDataScope; } });
 const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
 exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 const CurrentMasterData_1 = tslib_1.__importDefault(require("./CurrentMasterData"));

@@ -19,6 +19,7 @@ import {GetAttr} from "../../core/func";
 import TransactionSetting from "../../core/model/TransactionSetting";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import ScriptSetting from "../../core/model/ScriptSetting";
+import AccountDeletionSetting from "./AccountDeletionSetting";
 import LogSetting from "../../core/model/LogSetting";
 
 import NamespaceRef from "../ref/NamespaceRef";
@@ -42,6 +43,10 @@ export default class Namespace extends CdkResource {
     private readonly doTakeOverScript: ScriptSetting|null = null;
     private readonly banScript: ScriptSetting|null = null;
     private readonly unBanScript: ScriptSetting|null = null;
+    private readonly accountDeletionSetting: AccountDeletionSetting|null = null;
+    private readonly requestDeletionScript: ScriptSetting|null = null;
+    private readonly cancelDeletionScript: ScriptSetting|null = null;
+    private readonly executeDeletionScript: ScriptSetting|null = null;
     private readonly logSetting: LogSetting|null = null;
 
     public constructor(
@@ -66,6 +71,10 @@ export default class Namespace extends CdkResource {
         this.doTakeOverScript = options?.doTakeOverScript ?? null;
         this.banScript = options?.banScript ?? null;
         this.unBanScript = options?.unBanScript ?? null;
+        this.accountDeletionSetting = options?.accountDeletionSetting ?? null;
+        this.requestDeletionScript = options?.requestDeletionScript ?? null;
+        this.cancelDeletionScript = options?.cancelDeletionScript ?? null;
+        this.executeDeletionScript = options?.executeDeletionScript ?? null;
         this.logSetting = options?.logSetting ?? null;
         stack.addResource(
             this,
@@ -129,6 +138,22 @@ export default class Namespace extends CdkResource {
         }
         if (this.unBanScript != null) {
             properties["UnBanScript"] = this.unBanScript?.properties(
+            );
+        }
+        if (this.accountDeletionSetting != null) {
+            properties["AccountDeletionSetting"] = this.accountDeletionSetting?.properties(
+            );
+        }
+        if (this.requestDeletionScript != null) {
+            properties["RequestDeletionScript"] = this.requestDeletionScript?.properties(
+            );
+        }
+        if (this.cancelDeletionScript != null) {
+            properties["CancelDeletionScript"] = this.cancelDeletionScript?.properties(
+            );
+        }
+        if (this.executeDeletionScript != null) {
+            properties["ExecuteDeletionScript"] = this.executeDeletionScript?.properties(
             );
         }
         if (this.logSetting != null) {
