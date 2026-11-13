@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentMasterData = exports.TransactionSettingV2 = exports.AccountDeletionSettingCleanUserDataScope = exports.AccountDeletionSettingLoginDuringGracePeriod = exports.AccountDeletionSetting = exports.BanStatus = exports.PlatformUser = exports.ScopeValue = exports.OpenIdConnectSetting = exports.TakeOverTypeModel = exports.Namespace = void 0;
+exports.CurrentMasterData = exports.TransactionSettingV2 = exports.AccountDeletionSettingCleanUserDataScope = exports.AccountDeletionSettingLoginDuringGracePeriod = exports.AccountDeletionSetting = exports.BanStatus = exports.PlatformUser = exports.ScopeValue = exports.IssuedCodeSetting = exports.OpenIdConnectSetting = exports.TakeOverTypeModelTakeOverMethod = exports.TakeOverTypeModel = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,8 +21,12 @@ const Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 const TakeOverTypeModel_1 = tslib_1.__importDefault(require("./TakeOverTypeModel"));
 exports.TakeOverTypeModel = TakeOverTypeModel_1.default;
+const TakeOverTypeModelTakeOverMethod_1 = require("./enums/TakeOverTypeModelTakeOverMethod");
+Object.defineProperty(exports, "TakeOverTypeModelTakeOverMethod", { enumerable: true, get: function () { return TakeOverTypeModelTakeOverMethod_1.TakeOverTypeModelTakeOverMethod; } });
 const OpenIdConnectSetting_1 = tslib_1.__importDefault(require("./OpenIdConnectSetting"));
 exports.OpenIdConnectSetting = OpenIdConnectSetting_1.default;
+const IssuedCodeSetting_1 = tslib_1.__importDefault(require("./IssuedCodeSetting"));
+exports.IssuedCodeSetting = IssuedCodeSetting_1.default;
 const ScopeValue_1 = tslib_1.__importDefault(require("./ScopeValue"));
 exports.ScopeValue = ScopeValue_1.default;
 const PlatformUser_1 = tslib_1.__importDefault(require("./PlatformUser"));

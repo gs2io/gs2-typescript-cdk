@@ -17,8 +17,13 @@ import Namespace from "./Namespace";
 import { NamespaceOptions } from "./options/NamespaceOptions";
 import TakeOverTypeModel from "./TakeOverTypeModel";
 import { TakeOverTypeModelOptions } from "./options/TakeOverTypeModelOptions";
+import { TakeOverTypeModelTakeOverMethod } from "./enums/TakeOverTypeModelTakeOverMethod";
+import { TakeOverTypeModelTakeOverMethodIsOpenIdConnectOptions } from "./options/TakeOverTypeModelTakeOverMethodIsOpenIdConnectOptions"
+import { TakeOverTypeModelTakeOverMethodIsIssuedCodeOptions } from "./options/TakeOverTypeModelTakeOverMethodIsIssuedCodeOptions"
 import OpenIdConnectSetting from "./OpenIdConnectSetting";
 import { OpenIdConnectSettingOptions } from "./options/OpenIdConnectSettingOptions";
+import IssuedCodeSetting from "./IssuedCodeSetting";
+import { IssuedCodeSettingOptions } from "./options/IssuedCodeSettingOptions";
 import ScopeValue from "./ScopeValue";
 import { ScopeValueOptions } from "./options/ScopeValueOptions";
 import PlatformUser from "./PlatformUser";
@@ -38,8 +43,13 @@ export {
     NamespaceOptions,
     TakeOverTypeModel,
     TakeOverTypeModelOptions,
+    TakeOverTypeModelTakeOverMethod,
+    TakeOverTypeModelTakeOverMethodIsOpenIdConnectOptions,
+    TakeOverTypeModelTakeOverMethodIsIssuedCodeOptions,
     OpenIdConnectSetting,
     OpenIdConnectSettingOptions,
+    IssuedCodeSetting,
+    IssuedCodeSettingOptions,
     ScopeValue,
     ScopeValueOptions,
     PlatformUser,

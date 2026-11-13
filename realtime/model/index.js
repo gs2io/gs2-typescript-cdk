@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.MobileNotificationMessage = exports.StateMachineSetting = exports.SyncSetting = exports.NamespaceServerSpec = exports.NamespaceServerType = exports.Namespace = void 0;
+exports.ParticipantSetting = exports.TransactionSettingV2 = exports.MobileNotificationMessage = exports.StateMachineSetting = exports.SyncSetting = exports.NamespaceServerSpec = exports.NamespaceServerType = exports.Namespace = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -33,4 +33,6 @@ const MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNot
 exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 const TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
 exports.TransactionSettingV2 = TransactionSettingV2_1.default;
+const ParticipantSetting_1 = tslib_1.__importDefault(require("./ParticipantSetting"));
+exports.ParticipantSetting = ParticipantSetting_1.default;
 //# sourceMappingURL=index.js.map

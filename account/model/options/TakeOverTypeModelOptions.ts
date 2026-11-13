@@ -15,8 +15,12 @@
  */
 import ScopeValue from "../ScopeValue";
 import OpenIdConnectSetting from "../OpenIdConnectSetting";
+import IssuedCodeSetting from "../IssuedCodeSetting";
+import { TakeOverTypeModelTakeOverMethod } from "../enums/TakeOverTypeModelTakeOverMethod";
 
 export interface TakeOverTypeModelOptions {
     metadata?: string|null;
+    openIdConnectSetting?: OpenIdConnectSetting|null;
+    issuedCodeSetting?: IssuedCodeSetting|null;
 }
 

@@ -30,6 +30,8 @@ import MobileNotificationMessage from "./MobileNotificationMessage";
 import { MobileNotificationMessageOptions } from "./options/MobileNotificationMessageOptions";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import { TransactionSettingV2Options } from "./options/TransactionSettingV2Options";
+import ParticipantSetting from "./ParticipantSetting";
+import { ParticipantSettingOptions } from "./options/ParticipantSettingOptions";
 
 export {
     Namespace,
@@ -47,4 +49,6 @@ export {
     MobileNotificationMessageOptions,
     TransactionSettingV2,
     TransactionSettingV2Options,
+    ParticipantSetting,
+    ParticipantSettingOptions,
 }
