@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const AcquirePointByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AcquirePointByUserId"));
 const ConsumePointByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ConsumePointByUserId"));
+const VerifyPointByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyPointByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -28,6 +29,9 @@ class NamespaceRef {
     }
     consumePoint(point, userId = "#{userId}") {
         return new ConsumePointByUserId_1.default(this.namespaceName, point, userId);
+    }
+    verifyPoint(verifyType, point, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
+        return new VerifyPointByUserId_1.default(this.namespaceName, verifyType, point, multiplyValueSpecifyingQuantity, userId);
     }
     grn() {
         return new func_1.Join(":", [

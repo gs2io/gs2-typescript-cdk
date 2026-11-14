@@ -17,6 +17,8 @@
 import {GetAttr, Join} from "../../core/func";
 import AcquirePointByUserId from "../stampSheet/AcquirePointByUserId";
 import ConsumePointByUserId from "../stampSheet/ConsumePointByUserId";
+import VerifyPointByUserId from "../stampSheet/VerifyPointByUserId";
+import { PointVerifyType } from "../stampSheet/enums/PointVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -45,6 +47,21 @@ export default class NamespaceRef {
         return new ConsumePointByUserId(
             this.namespaceName,
             point,
+            userId,
+        );
+    }
+
+    public verifyPoint(
+        verifyType: PointVerifyType,
+        point: number,
+        multiplyValueSpecifyingQuantity: boolean|null = null,
+        userId: string = "#{userId}",
+    ): VerifyPointByUserId {
+        return new VerifyPointByUserId(
+            this.namespaceName,
+            verifyType,
+            point,
+            multiplyValueSpecifyingQuantity,
             userId,
         );
     }

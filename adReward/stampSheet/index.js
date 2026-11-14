@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumePointByUserId = exports.AcquirePointByUserId = void 0;
+exports.VerifyPointByUserId = exports.ConsumePointByUserId = exports.AcquirePointByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,6 @@ const AcquirePointByUserId_1 = tslib_1.__importDefault(require("./AcquirePointBy
 exports.AcquirePointByUserId = AcquirePointByUserId_1.default;
 const ConsumePointByUserId_1 = tslib_1.__importDefault(require("./ConsumePointByUserId"));
 exports.ConsumePointByUserId = ConsumePointByUserId_1.default;
+const VerifyPointByUserId_1 = tslib_1.__importDefault(require("./VerifyPointByUserId"));
+exports.VerifyPointByUserId = VerifyPointByUserId_1.default;
 //# sourceMappingURL=index.js.map
