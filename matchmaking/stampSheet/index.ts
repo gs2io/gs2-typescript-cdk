@@ -14,7 +14,9 @@
  * permissions and limitations under the License.
  */
 import VerifyIncludeParticipantByUserId from "./VerifyIncludeParticipantByUserId";
+import VerifyRatingByUserId from "./VerifyRatingByUserId";
 
 export {
     VerifyIncludeParticipantByUserId,
+    VerifyRatingByUserId,
 }

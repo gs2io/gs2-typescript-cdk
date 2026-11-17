@@ -15,11 +15,16 @@
  * permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
+const VerifyRatingByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyRatingByUserId"));
 class RatingModelRef {
     constructor(namespaceName, ratingName) {
         this.namespaceName = namespaceName;
         this.ratingName = ratingName;
+    }
+    verifyRating(verifyType, rateValue, userId = "#{userId}") {
+        return new VerifyRatingByUserId_1.default(this.namespaceName, this.ratingName, verifyType, rateValue, userId);
     }
     grn() {
         return new func_1.Join(":", [

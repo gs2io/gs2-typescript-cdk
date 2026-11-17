@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyIncludeParticipantByUserId = void 0;
+exports.VerifyRatingByUserId = exports.VerifyIncludeParticipantByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,4 +19,6 @@ const tslib_1 = require("tslib");
  */
 const VerifyIncludeParticipantByUserId_1 = tslib_1.__importDefault(require("./VerifyIncludeParticipantByUserId"));
 exports.VerifyIncludeParticipantByUserId = VerifyIncludeParticipantByUserId_1.default;
+const VerifyRatingByUserId_1 = tslib_1.__importDefault(require("./VerifyRatingByUserId"));
+exports.VerifyRatingByUserId = VerifyRatingByUserId_1.default;
 //# sourceMappingURL=index.js.map

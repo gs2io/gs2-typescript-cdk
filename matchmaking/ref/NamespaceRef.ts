@@ -19,6 +19,8 @@ import RatingModelRef from "./RatingModelRef";
 import SeasonModelRef from "./SeasonModelRef";
 import VerifyIncludeParticipantByUserId from "../stampSheet/VerifyIncludeParticipantByUserId";
 import { SeasonGatheringVerifyType } from "../stampSheet/enums/SeasonGatheringVerifyType";
+import VerifyRatingByUserId from "../stampSheet/VerifyRatingByUserId";
+import { RatingVerifyType } from "../stampSheet/enums/RatingVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -62,6 +64,21 @@ export default class NamespaceRef {
             tier,
             verifyType,
             seasonGatheringName,
+            userId,
+        );
+    }
+
+    public verifyRating(
+        ratingName: string,
+        verifyType: RatingVerifyType,
+        rateValue: number,
+        userId: string = "#{userId}",
+    ): VerifyRatingByUserId {
+        return new VerifyRatingByUserId(
+            this.namespaceName,
+            ratingName,
+            verifyType,
+            rateValue,
             userId,
         );
     }

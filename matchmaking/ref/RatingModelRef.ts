@@ -15,6 +15,8 @@
  */
 
 import {GetAttr, Join} from "../../core/func";
+import VerifyRatingByUserId from "../stampSheet/VerifyRatingByUserId";
+import { RatingVerifyType } from "../stampSheet/enums/RatingVerifyType";
 
 export default class RatingModelRef {
     private readonly namespaceName: string;
@@ -26,6 +28,20 @@ export default class RatingModelRef {
     ) {
         this.namespaceName = namespaceName;
         this.ratingName = ratingName;
+    }
+
+    public verifyRating(
+        verifyType: RatingVerifyType,
+        rateValue: number,
+        userId: string = "#{userId}",
+    ): VerifyRatingByUserId {
+        return new VerifyRatingByUserId(
+            this.namespaceName,
+            this.ratingName,
+            verifyType,
+            rateValue,
+            userId,
+        );
     }
 
     public grn(
