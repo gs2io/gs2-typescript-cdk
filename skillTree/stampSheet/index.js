@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MarkRestrainByUserId = exports.MarkReleaseByUserId = void 0;
+exports.VerifyStatusByUserId = exports.MarkRestrainByUserId = exports.MarkReleaseByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,6 @@ const MarkReleaseByUserId_1 = tslib_1.__importDefault(require("./MarkReleaseByUs
 exports.MarkReleaseByUserId = MarkReleaseByUserId_1.default;
 const MarkRestrainByUserId_1 = tslib_1.__importDefault(require("./MarkRestrainByUserId"));
 exports.MarkRestrainByUserId = MarkRestrainByUserId_1.default;
+const VerifyStatusByUserId_1 = tslib_1.__importDefault(require("./VerifyStatusByUserId"));
+exports.VerifyStatusByUserId = VerifyStatusByUserId_1.default;
 //# sourceMappingURL=index.js.map

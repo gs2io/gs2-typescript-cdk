@@ -18,6 +18,8 @@ import {GetAttr, Join} from "../../core/func";
 import NodeModelRef from "./NodeModelRef";
 import MarkReleaseByUserId from "../stampSheet/MarkReleaseByUserId";
 import MarkRestrainByUserId from "../stampSheet/MarkRestrainByUserId";
+import VerifyStatusByUserId from "../stampSheet/VerifyStatusByUserId";
+import { StatusVerifyType } from "../stampSheet/enums/StatusVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -59,6 +61,21 @@ export default class NamespaceRef {
             this.namespaceName,
             propertyId,
             nodeModelNames,
+            userId,
+        );
+    }
+
+    public verifyStatus(
+        propertyId: string,
+        nodeModelName: string,
+        verifyType: StatusVerifyType,
+        userId: string = "#{userId}",
+    ): VerifyStatusByUserId {
+        return new VerifyStatusByUserId(
+            this.namespaceName,
+            propertyId,
+            nodeModelName,
+            verifyType,
             userId,
         );
     }

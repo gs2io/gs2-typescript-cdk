@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const NodeModelRef_1 = tslib_1.__importDefault(require("./NodeModelRef"));
 const MarkReleaseByUserId_1 = tslib_1.__importDefault(require("../stampSheet/MarkReleaseByUserId"));
 const MarkRestrainByUserId_1 = tslib_1.__importDefault(require("../stampSheet/MarkRestrainByUserId"));
+const VerifyStatusByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyStatusByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -32,6 +33,9 @@ class NamespaceRef {
     }
     markRestrain(propertyId, nodeModelNames, userId = "#{userId}") {
         return new MarkRestrainByUserId_1.default(this.namespaceName, propertyId, nodeModelNames, userId);
+    }
+    verifyStatus(propertyId, nodeModelName, verifyType, userId = "#{userId}") {
+        return new VerifyStatusByUserId_1.default(this.namespaceName, propertyId, nodeModelName, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [
