@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteProgressByUserId = exports.CreateProgressByUserId = void 0;
+exports.VerifyCompletedQuestListByUserId = exports.DeleteProgressByUserId = exports.CreateProgressByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,6 @@ const CreateProgressByUserId_1 = tslib_1.__importDefault(require("./CreateProgre
 exports.CreateProgressByUserId = CreateProgressByUserId_1.default;
 const DeleteProgressByUserId_1 = tslib_1.__importDefault(require("./DeleteProgressByUserId"));
 exports.DeleteProgressByUserId = DeleteProgressByUserId_1.default;
+const VerifyCompletedQuestListByUserId_1 = tslib_1.__importDefault(require("./VerifyCompletedQuestListByUserId"));
+exports.VerifyCompletedQuestListByUserId = VerifyCompletedQuestListByUserId_1.default;
 //# sourceMappingURL=index.js.map

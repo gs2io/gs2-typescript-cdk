@@ -19,6 +19,8 @@ import QuestGroupModelRef from "./QuestGroupModelRef";
 import CreateProgressByUserId from "../stampSheet/CreateProgressByUserId";
 import { Config } from "../../core/model";
 import DeleteProgressByUserId from "../stampSheet/DeleteProgressByUserId";
+import VerifyCompletedQuestListByUserId from "../stampSheet/VerifyCompletedQuestListByUserId";
+import { CompletedQuestListVerifyType } from "../stampSheet/enums/CompletedQuestListVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -58,6 +60,21 @@ export default class NamespaceRef {
     ): DeleteProgressByUserId {
         return new DeleteProgressByUserId(
             this.namespaceName,
+            userId,
+        );
+    }
+
+    public verifyCompletedQuestList(
+        questGroupName: string,
+        questName: string,
+        verifyType: CompletedQuestListVerifyType,
+        userId: string = "#{userId}",
+    ): VerifyCompletedQuestListByUserId {
+        return new VerifyCompletedQuestListByUserId(
+            this.namespaceName,
+            questGroupName,
+            questName,
+            verifyType,
             userId,
         );
     }

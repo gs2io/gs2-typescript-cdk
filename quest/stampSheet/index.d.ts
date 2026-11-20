@@ -1,3 +1,4 @@
 import CreateProgressByUserId from "./CreateProgressByUserId";
 import DeleteProgressByUserId from "./DeleteProgressByUserId";
-export { CreateProgressByUserId, DeleteProgressByUserId, };
+import VerifyCompletedQuestListByUserId from "./VerifyCompletedQuestListByUserId";
+export { CreateProgressByUserId, DeleteProgressByUserId, VerifyCompletedQuestListByUserId, };

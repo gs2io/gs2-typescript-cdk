@@ -20,6 +20,7 @@ const func_1 = require("../../core/func");
 const QuestGroupModelRef_1 = tslib_1.__importDefault(require("./QuestGroupModelRef"));
 const CreateProgressByUserId_1 = tslib_1.__importDefault(require("../stampSheet/CreateProgressByUserId"));
 const DeleteProgressByUserId_1 = tslib_1.__importDefault(require("../stampSheet/DeleteProgressByUserId"));
+const VerifyCompletedQuestListByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyCompletedQuestListByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
@@ -32,6 +33,9 @@ class NamespaceRef {
     }
     deleteProgress(userId = "#{userId}") {
         return new DeleteProgressByUserId_1.default(this.namespaceName, userId);
+    }
+    verifyCompletedQuestList(questGroupName, questName, verifyType, userId = "#{userId}") {
+        return new VerifyCompletedQuestListByUserId_1.default(this.namespaceName, questGroupName, questName, verifyType, userId);
     }
     grn() {
         return new func_1.Join(":", [
