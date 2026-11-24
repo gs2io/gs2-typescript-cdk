@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyRarityParameterStatusByUserId = exports.SetRarityParameterStatusByUserId = exports.AddRarityParameterStatusByUserId = exports.ReDrawRarityParameterStatusByUserId = exports.SetBalanceParameterStatusByUserId = exports.ReDrawBalanceParameterStatusByUserId = void 0;
+exports.VerifyRarityParameterStatusByUserId = exports.VerifyBalanceParameterStatusByUserId = exports.SetRarityParameterStatusByUserId = exports.AddRarityParameterStatusByUserId = exports.ReDrawRarityParameterStatusByUserId = exports.SetBalanceParameterStatusByUserId = exports.ReDrawBalanceParameterStatusByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,8 @@ const AddRarityParameterStatusByUserId_1 = tslib_1.__importDefault(require("./Ad
 exports.AddRarityParameterStatusByUserId = AddRarityParameterStatusByUserId_1.default;
 const SetRarityParameterStatusByUserId_1 = tslib_1.__importDefault(require("./SetRarityParameterStatusByUserId"));
 exports.SetRarityParameterStatusByUserId = SetRarityParameterStatusByUserId_1.default;
+const VerifyBalanceParameterStatusByUserId_1 = tslib_1.__importDefault(require("./VerifyBalanceParameterStatusByUserId"));
+exports.VerifyBalanceParameterStatusByUserId = VerifyBalanceParameterStatusByUserId_1.default;
 const VerifyRarityParameterStatusByUserId_1 = tslib_1.__importDefault(require("./VerifyRarityParameterStatusByUserId"));
 exports.VerifyRarityParameterStatusByUserId = VerifyRarityParameterStatusByUserId_1.default;
 //# sourceMappingURL=index.js.map

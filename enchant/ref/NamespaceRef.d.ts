@@ -7,6 +7,8 @@ import ReDrawRarityParameterStatusByUserId from "../stampSheet/ReDrawRarityParam
 import AddRarityParameterStatusByUserId from "../stampSheet/AddRarityParameterStatusByUserId";
 import SetRarityParameterStatusByUserId from "../stampSheet/SetRarityParameterStatusByUserId";
 import RarityParameterValue from "../model/RarityParameterValue";
+import VerifyBalanceParameterStatusByUserId from "../stampSheet/VerifyBalanceParameterStatusByUserId";
+import { BalanceParameterStatusVerifyType } from "../stampSheet/enums/BalanceParameterStatusVerifyType";
 import VerifyRarityParameterStatusByUserId from "../stampSheet/VerifyRarityParameterStatusByUserId";
 import { RarityParameterStatusVerifyType } from "../stampSheet/enums/RarityParameterStatusVerifyType";
 export default class NamespaceRef {
@@ -19,6 +21,7 @@ export default class NamespaceRef {
     reDrawRarityParameterStatus(parameterName: string, propertyId: string, fixedParameterNames?: string[] | null, userId?: string): ReDrawRarityParameterStatusByUserId;
     addRarityParameterStatus(parameterName: string, propertyId: string, count?: number | null, userId?: string): AddRarityParameterStatusByUserId;
     setRarityParameterStatus(parameterName: string, propertyId: string, parameterValues?: RarityParameterValue[] | null, userId?: string): SetRarityParameterStatusByUserId;
+    verifyBalanceParameterStatus(parameterName: string, propertyId: string, parameterValueName: string, verifyType: BalanceParameterStatusVerifyType, parameterValue: number, userId?: string): VerifyBalanceParameterStatusByUserId;
     verifyRarityParameterStatus(parameterName: string, propertyId: string, verifyType: RarityParameterStatusVerifyType, parameterValueName?: string | null, parameterCount?: number | null, multiplyValueSpecifyingQuantity?: boolean | null, userId?: string): VerifyRarityParameterStatusByUserId;
     grn(): string;
 }

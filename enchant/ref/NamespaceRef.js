@@ -24,6 +24,7 @@ const SetBalanceParameterStatusByUserId_1 = tslib_1.__importDefault(require("../
 const ReDrawRarityParameterStatusByUserId_1 = tslib_1.__importDefault(require("../stampSheet/ReDrawRarityParameterStatusByUserId"));
 const AddRarityParameterStatusByUserId_1 = tslib_1.__importDefault(require("../stampSheet/AddRarityParameterStatusByUserId"));
 const SetRarityParameterStatusByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetRarityParameterStatusByUserId"));
+const VerifyBalanceParameterStatusByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyBalanceParameterStatusByUserId"));
 const VerifyRarityParameterStatusByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyRarityParameterStatusByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
@@ -49,6 +50,9 @@ class NamespaceRef {
     }
     setRarityParameterStatus(parameterName, propertyId, parameterValues = null, userId = "#{userId}") {
         return new SetRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, parameterValues, userId);
+    }
+    verifyBalanceParameterStatus(parameterName, propertyId, parameterValueName, verifyType, parameterValue, userId = "#{userId}") {
+        return new VerifyBalanceParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, parameterValueName, verifyType, parameterValue, userId);
     }
     verifyRarityParameterStatus(parameterName, propertyId, verifyType, parameterValueName = null, parameterCount = null, multiplyValueSpecifyingQuantity = null, userId = "#{userId}") {
         return new VerifyRarityParameterStatusByUserId_1.default(this.namespaceName, parameterName, propertyId, verifyType, parameterValueName, parameterCount, multiplyValueSpecifyingQuantity, userId);

@@ -24,6 +24,8 @@ import ReDrawRarityParameterStatusByUserId from "../stampSheet/ReDrawRarityParam
 import AddRarityParameterStatusByUserId from "../stampSheet/AddRarityParameterStatusByUserId";
 import SetRarityParameterStatusByUserId from "../stampSheet/SetRarityParameterStatusByUserId";
 import RarityParameterValue from "../model/RarityParameterValue";
+import VerifyBalanceParameterStatusByUserId from "../stampSheet/VerifyBalanceParameterStatusByUserId";
+import { BalanceParameterStatusVerifyType } from "../stampSheet/enums/BalanceParameterStatusVerifyType";
 import VerifyRarityParameterStatusByUserId from "../stampSheet/VerifyRarityParameterStatusByUserId";
 import { RarityParameterStatusVerifyType } from "../stampSheet/enums/RarityParameterStatusVerifyType";
 
@@ -125,6 +127,25 @@ export default class NamespaceRef {
             parameterName,
             propertyId,
             parameterValues,
+            userId,
+        );
+    }
+
+    public verifyBalanceParameterStatus(
+        parameterName: string,
+        propertyId: string,
+        parameterValueName: string,
+        verifyType: BalanceParameterStatusVerifyType,
+        parameterValue: number,
+        userId: string = "#{userId}",
+    ): VerifyBalanceParameterStatusByUserId {
+        return new VerifyBalanceParameterStatusByUserId(
+            this.namespaceName,
+            parameterName,
+            propertyId,
+            parameterValueName,
+            verifyType,
+            parameterValue,
             userId,
         );
     }
