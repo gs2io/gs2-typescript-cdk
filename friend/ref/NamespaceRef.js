@@ -18,12 +18,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const UpdateProfileByUserId_1 = tslib_1.__importDefault(require("../stampSheet/UpdateProfileByUserId"));
+const VerifyFollowByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyFollowByUserId"));
+const VerifyFriendByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyFriendByUserId"));
+const VerifyFriendCountByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyFriendCountByUserId"));
 class NamespaceRef {
     constructor(namespaceName) {
         this.namespaceName = namespaceName;
     }
     updateProfile(publicProfile = null, followerProfile = null, friendProfile = null, userId = "#{userId}") {
         return new UpdateProfileByUserId_1.default(this.namespaceName, publicProfile, followerProfile, friendProfile, userId);
+    }
+    verifyFollow(targetUserId, verifyType, userId = "#{userId}") {
+        return new VerifyFollowByUserId_1.default(this.namespaceName, targetUserId, verifyType, userId);
+    }
+    verifyFriend(targetUserId, verifyType, userId = "#{userId}") {
+        return new VerifyFriendByUserId_1.default(this.namespaceName, targetUserId, verifyType, userId);
+    }
+    verifyFriendCount(verifyType, count, userId = "#{userId}") {
+        return new VerifyFriendCountByUserId_1.default(this.namespaceName, verifyType, count, userId);
     }
     grn() {
         return new func_1.Join(":", [

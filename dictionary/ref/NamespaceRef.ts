@@ -20,6 +20,7 @@ import AddEntriesByUserId from "../stampSheet/AddEntriesByUserId";
 import DeleteEntriesByUserId from "../stampSheet/DeleteEntriesByUserId";
 import VerifyEntryByUserId from "../stampSheet/VerifyEntryByUserId";
 import { EntryVerifyType } from "../stampSheet/enums/EntryVerifyType";
+import VerifyEntryCountByUserId from "../stampSheet/VerifyEntryCountByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -70,6 +71,21 @@ export default class NamespaceRef {
             this.namespaceName,
             entryModelName,
             verifyType,
+            userId,
+        );
+    }
+
+    public verifyEntryCount(
+        verifyType: EntryVerifyType,
+        count: number,
+        entryModelNames: string[]|null = null,
+        userId: string = "#{userId}",
+    ): VerifyEntryCountByUserId {
+        return new VerifyEntryCountByUserId(
+            this.namespaceName,
+            verifyType,
+            count,
+            entryModelNames,
             userId,
         );
     }

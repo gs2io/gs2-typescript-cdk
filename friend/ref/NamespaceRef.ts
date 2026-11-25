@@ -16,6 +16,11 @@
 
 import {GetAttr, Join} from "../../core/func";
 import UpdateProfileByUserId from "../stampSheet/UpdateProfileByUserId";
+import VerifyFollowByUserId from "../stampSheet/VerifyFollowByUserId";
+import { FollowVerifyType } from "../stampSheet/enums/FollowVerifyType";
+import VerifyFriendByUserId from "../stampSheet/VerifyFriendByUserId";
+import { FriendVerifyType } from "../stampSheet/enums/FriendVerifyType";
+import VerifyFriendCountByUserId from "../stampSheet/VerifyFriendCountByUserId";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -37,6 +42,45 @@ export default class NamespaceRef {
             publicProfile,
             followerProfile,
             friendProfile,
+            userId,
+        );
+    }
+
+    public verifyFollow(
+        targetUserId: string,
+        verifyType: FollowVerifyType,
+        userId: string = "#{userId}",
+    ): VerifyFollowByUserId {
+        return new VerifyFollowByUserId(
+            this.namespaceName,
+            targetUserId,
+            verifyType,
+            userId,
+        );
+    }
+
+    public verifyFriend(
+        targetUserId: string,
+        verifyType: FriendVerifyType,
+        userId: string = "#{userId}",
+    ): VerifyFriendByUserId {
+        return new VerifyFriendByUserId(
+            this.namespaceName,
+            targetUserId,
+            verifyType,
+            userId,
+        );
+    }
+
+    public verifyFriendCount(
+        verifyType: FriendVerifyType,
+        count: number,
+        userId: string = "#{userId}",
+    ): VerifyFriendCountByUserId {
+        return new VerifyFriendCountByUserId(
+            this.namespaceName,
+            verifyType,
+            count,
             userId,
         );
     }

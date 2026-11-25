@@ -17,7 +17,11 @@
 
 
 export const EntryVerifyType = {
-    HAVENT: "havent",
-    HAVE: "have",
+    LESS: "less",
+    LESS_EQUAL: "lessEqual",
+    GREATER: "greater",
+    GREATER_EQUAL: "greaterEqual",
+    EQUAL: "equal",
+    NOT_EQUAL: "notEqual",
 } as const;
 export type EntryVerifyType = typeof EntryVerifyType[keyof typeof EntryVerifyType];

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateProfileByUserId = void 0;
+exports.VerifyFriendCountByUserId = exports.VerifyFriendByUserId = exports.VerifyFollowByUserId = exports.UpdateProfileByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -19,4 +19,10 @@ const tslib_1 = require("tslib");
  */
 const UpdateProfileByUserId_1 = tslib_1.__importDefault(require("./UpdateProfileByUserId"));
 exports.UpdateProfileByUserId = UpdateProfileByUserId_1.default;
+const VerifyFollowByUserId_1 = tslib_1.__importDefault(require("./VerifyFollowByUserId"));
+exports.VerifyFollowByUserId = VerifyFollowByUserId_1.default;
+const VerifyFriendByUserId_1 = tslib_1.__importDefault(require("./VerifyFriendByUserId"));
+exports.VerifyFriendByUserId = VerifyFriendByUserId_1.default;
+const VerifyFriendCountByUserId_1 = tslib_1.__importDefault(require("./VerifyFriendCountByUserId"));
+exports.VerifyFriendCountByUserId = VerifyFriendCountByUserId_1.default;
 //# sourceMappingURL=index.js.map

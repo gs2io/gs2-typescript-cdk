@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyEntryByUserId = exports.DeleteEntriesByUserId = exports.AddEntriesByUserId = void 0;
+exports.VerifyEntryCountByUserId = exports.VerifyEntryByUserId = exports.DeleteEntriesByUserId = exports.AddEntriesByUserId = void 0;
 const tslib_1 = require("tslib");
 /*
  * Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
@@ -23,4 +23,6 @@ const DeleteEntriesByUserId_1 = tslib_1.__importDefault(require("./DeleteEntries
 exports.DeleteEntriesByUserId = DeleteEntriesByUserId_1.default;
 const VerifyEntryByUserId_1 = tslib_1.__importDefault(require("./VerifyEntryByUserId"));
 exports.VerifyEntryByUserId = VerifyEntryByUserId_1.default;
+const VerifyEntryCountByUserId_1 = tslib_1.__importDefault(require("./VerifyEntryCountByUserId"));
+exports.VerifyEntryCountByUserId = VerifyEntryCountByUserId_1.default;
 //# sourceMappingURL=index.js.map

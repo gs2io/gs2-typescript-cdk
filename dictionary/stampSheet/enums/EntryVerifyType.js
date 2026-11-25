@@ -17,7 +17,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EntryVerifyType = void 0;
 exports.EntryVerifyType = {
-    HAVENT: "havent",
-    HAVE: "have",
+    LESS: "less",
+    LESS_EQUAL: "lessEqual",
+    GREATER: "greater",
+    GREATER_EQUAL: "greaterEqual",
+    EQUAL: "equal",
+    NOT_EQUAL: "notEqual",
 };
 //# sourceMappingURL=EntryVerifyType.js.map
