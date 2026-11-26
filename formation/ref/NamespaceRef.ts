@@ -26,6 +26,9 @@ import SetFormByUserId from "../stampSheet/SetFormByUserId";
 import Slot from "../model/Slot";
 import AcquireActionsToPropertyFormProperties from "../stampSheet/AcquireActionsToPropertyFormProperties";
 import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
+import VerifyFormByUserId from "../stampSheet/VerifyFormByUserId";
+import { FormCountType } from "../stampSheet/enums/FormCountType";
+import { FormVerifyType } from "../stampSheet/enums/FormVerifyType";
 
 export default class NamespaceRef {
     private readonly namespaceName: string;
@@ -138,6 +141,29 @@ export default class NamespaceRef {
             this.namespaceName,
             moldModelName,
             capacity,
+            userId,
+        );
+    }
+
+    public verifyForm(
+        moldModelName: string,
+        index: number,
+        propertyIdRegex: string,
+        verifyType: FormVerifyType,
+        count: number,
+        slotName: string|null = null,
+        countType: FormCountType|null = null,
+        userId: string = "#{userId}",
+    ): VerifyFormByUserId {
+        return new VerifyFormByUserId(
+            this.namespaceName,
+            moldModelName,
+            index,
+            propertyIdRegex,
+            verifyType,
+            count,
+            slotName,
+            countType,
             userId,
         );
     }

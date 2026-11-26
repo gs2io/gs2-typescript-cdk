@@ -19,6 +19,7 @@ import AcquireActionsToFormProperties from "./AcquireActionsToFormProperties";
 import SetFormByUserId from "./SetFormByUserId";
 import AcquireActionsToPropertyFormProperties from "./AcquireActionsToPropertyFormProperties";
 import SubMoldCapacityByUserId from "./SubMoldCapacityByUserId";
+import VerifyFormByUserId from "./VerifyFormByUserId";
 
 export {
     AddMoldCapacityByUserId,
@@ -27,4 +28,5 @@ export {
     SetFormByUserId,
     AcquireActionsToPropertyFormProperties,
     SubMoldCapacityByUserId,
+    VerifyFormByUserId,
 }

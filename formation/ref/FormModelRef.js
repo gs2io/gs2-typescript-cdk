@@ -19,6 +19,7 @@ const tslib_1 = require("tslib");
 const func_1 = require("../../core/func");
 const AcquireActionsToFormProperties_1 = tslib_1.__importDefault(require("../stampSheet/AcquireActionsToFormProperties"));
 const SetFormByUserId_1 = tslib_1.__importDefault(require("../stampSheet/SetFormByUserId"));
+const VerifyFormByUserId_1 = tslib_1.__importDefault(require("../stampSheet/VerifyFormByUserId"));
 class FormModelRef {
     constructor(namespaceName, moldModelName) {
         this.namespaceName = namespaceName;
@@ -29,6 +30,9 @@ class FormModelRef {
     }
     setForm(index, slots, userId = "#{userId}") {
         return new SetFormByUserId_1.default(this.namespaceName, this.moldModelName, index, slots, userId);
+    }
+    verifyForm(index, propertyIdRegex, verifyType, count, slotName = null, countType = null, userId = "#{userId}") {
+        return new VerifyFormByUserId_1.default(this.namespaceName, this.moldModelName, index, propertyIdRegex, verifyType, count, slotName, countType, userId);
     }
     grn() {
         return new func_1.Join(":", [

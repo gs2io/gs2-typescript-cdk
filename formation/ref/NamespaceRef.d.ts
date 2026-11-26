@@ -9,6 +9,9 @@ import SetFormByUserId from "../stampSheet/SetFormByUserId";
 import Slot from "../model/Slot";
 import AcquireActionsToPropertyFormProperties from "../stampSheet/AcquireActionsToPropertyFormProperties";
 import SubMoldCapacityByUserId from "../stampSheet/SubMoldCapacityByUserId";
+import VerifyFormByUserId from "../stampSheet/VerifyFormByUserId";
+import { FormCountType } from "../stampSheet/enums/FormCountType";
+import { FormVerifyType } from "../stampSheet/enums/FormVerifyType";
 export default class NamespaceRef {
     private readonly namespaceName;
     constructor(namespaceName: string);
@@ -20,5 +23,6 @@ export default class NamespaceRef {
     setForm(moldModelName: string, index: number, slots: Slot[], userId?: string): SetFormByUserId;
     acquireActionsToPropertyFormProperties(propertyFormModelName: string, propertyId: string, acquireAction: AcquireAction, config?: Config[] | null, userId?: string): AcquireActionsToPropertyFormProperties;
     subMoldCapacity(moldModelName: string, capacity: number, userId?: string): SubMoldCapacityByUserId;
+    verifyForm(moldModelName: string, index: number, propertyIdRegex: string, verifyType: FormVerifyType, count: number, slotName?: string | null, countType?: FormCountType | null, userId?: string): VerifyFormByUserId;
     grn(): string;
 }
