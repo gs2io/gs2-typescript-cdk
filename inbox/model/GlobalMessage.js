@@ -2,17 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class GlobalMessage {
     constructor(name, metadata, options = null) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         this.readAcquireActions = null;
         this.expiresTimeSpan = null;
         this.expiresAt = null;
         this.messageReceptionPeriodEventId = null;
+        this.verifyActions = null;
         this.name = name;
         this.metadata = metadata;
         this.readAcquireActions = (_a = options === null || options === void 0 ? void 0 : options.readAcquireActions) !== null && _a !== void 0 ? _a : null;
         this.expiresTimeSpan = (_b = options === null || options === void 0 ? void 0 : options.expiresTimeSpan) !== null && _b !== void 0 ? _b : null;
         this.expiresAt = (_c = options === null || options === void 0 ? void 0 : options.expiresAt) !== null && _c !== void 0 ? _c : null;
         this.messageReceptionPeriodEventId = (_d = options === null || options === void 0 ? void 0 : options.messageReceptionPeriodEventId) !== null && _d !== void 0 ? _d : null;
+        this.verifyActions = (_e = options === null || options === void 0 ? void 0 : options.verifyActions) !== null && _e !== void 0 ? _e : null;
     }
     properties() {
         var _a;
@@ -34,6 +36,9 @@ class GlobalMessage {
         }
         if (this.messageReceptionPeriodEventId != null) {
             properties["messageReceptionPeriodEventId"] = this.messageReceptionPeriodEventId;
+        }
+        if (this.verifyActions != null) {
+            properties["verifyActions"] = this.verifyActions.map(v => v.properties());
         }
         return properties;
     }

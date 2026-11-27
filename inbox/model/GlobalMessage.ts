@@ -15,6 +15,7 @@
  */
 import { AcquireAction } from "../../core/model";
 import TimeSpan from "./TimeSpan";
+import { VerifyAction } from "../../core/model";
 import { GlobalMessageOptions } from "./options/GlobalMessageOptions";
 
 export default class GlobalMessage {
@@ -24,6 +25,7 @@ export default class GlobalMessage {
     private readonly expiresTimeSpan: TimeSpan|null = null;
     private readonly expiresAt: number|null = null;
     private readonly messageReceptionPeriodEventId: string|null = null;
+    private readonly verifyActions: VerifyAction[]|null = null;
 
     public constructor(
         name: string,
@@ -36,6 +38,7 @@ export default class GlobalMessage {
         this.expiresTimeSpan = options?.expiresTimeSpan ?? null;
         this.expiresAt = options?.expiresAt ?? null;
         this.messageReceptionPeriodEventId = options?.messageReceptionPeriodEventId ?? null;
+        this.verifyActions = options?.verifyActions ?? null;
     }
 
     public properties(
@@ -61,6 +64,10 @@ export default class GlobalMessage {
         }
         if (this.messageReceptionPeriodEventId != null) {
             properties["messageReceptionPeriodEventId"] = this.messageReceptionPeriodEventId;
+        }
+        if (this.verifyActions != null) {
+            properties["verifyActions"] = this.verifyActions.map(v => v.properties(
+                ));
         }
 
         return properties;
